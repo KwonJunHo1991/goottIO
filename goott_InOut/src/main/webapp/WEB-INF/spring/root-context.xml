@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
@@ -14,7 +16,8 @@
      <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 	   <property name="dataSource" ref="dataSource" />
         <property name="configLocation" value="classpath:/mybatis-config.xml" />
-        <property name="mapperLocations" value="classpath:/CompMapper.xml" />
+<!--기존 셋팅 + xml파일 resources 로  <property name="mapperLocations" value="classpath:/CompMapper.xml" /> -->
+        <property name="mapperLocations" value="classpath:mappers/**/*.xml" />
     </bean>    
     
      <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
@@ -22,6 +25,7 @@
 	
     </bean>  
 
-    <!-- DAO 등 bean으로 올리는 곳 -->    
-    	
+    <!-- DAO 등 bean으로 올리는 곳 -->  
+    <!-- dao 패키지안에 모든 다오 scan 해주는것  -->  
+    <context:component-scan base-package="kr.co.InOut.dao"></context:component-scan>
 </beans>
