@@ -17,6 +17,7 @@ public class IO_Comp_BasicDAO {
 	}
 	
 	public List<IO_Comp_BasicDTO> selectAllCompBasic() {
+		System.out.println(ss);
 		return ss.selectList("selectAllCompBasic");
 	}
 }

@@ -5,7 +5,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace=" ">
-    <select id="selectAllCompBasic">
+    <select id="selectAllCompBasic" resultType="CBDTO">
         select * from io_comp_basic
     </select>
     
