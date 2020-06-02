@@ -20,7 +20,9 @@ public class IO_BoardDAO {
 	}
 	
 	public String getTime() {
+		
 		System.out.println(session);
+		
 		return session.selectOne("getTime");
 	}
 	
