@@ -25,7 +25,5 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="src/main/resources/junit-4.7.jar"/>
-	<classpathentry kind="lib" path="src/main/resources/spring-test-5.2.6.RELEASE.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
