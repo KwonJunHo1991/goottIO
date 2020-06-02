@@ -6,18 +6,24 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
+	
+<!-- 	<bean id="dao" class="kr.co.InOut.dao.IO_BoardDAO">
+		<property name="session" ref="sqlSessionTemplate" />
+	</bean> -->
+	
+	
     <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://localhost:3306/goottio?userSSL=false" />
+        <property name="url" value="jdbc:mysql://localhost:3306/goottio?useSSL=false" />
         <property name="username" value="scott" />
-        <property name="password" value="1234" />
+        <property name="password" value="tiger" />
 	</bean>
     
      <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 	   <property name="dataSource" ref="dataSource" />
         <property name="configLocation" value="classpath:/mybatis-config.xml" />
 <!--기존 셋팅 + xml파일 resources 로  <property name="mapperLocations" value="classpath:/CompMapper.xml" /> -->
-        <property name="mapperLocations" value="classpath:mappers/**/*.xml" />
+        <property name="mapperLocations" value="classpath:/mapper/**/*.xml" />
     </bean>    
     
      <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
@@ -27,5 +33,8 @@
 
     <!-- DAO 등 bean으로 올리는 곳 -->  
     <!-- dao 패키지안에 모든 다오 scan 해주는것  -->  
-    <context:component-scan base-package="kr.co.InOut.dao"></context:component-scan>
+<context:component-scan base-package="kr.co.InOut.dao"></context:component-scan>
+    
+
+    
 </beans>
