@@ -3,84 +3,84 @@ package kr.co.InOut.dto;
 import java.util.Date;
 
 public class IO_ReBoardDTO {
-	int reBoard_Num;
-	int board_Num;
-	String mem_Id;
-	int comp_Num;
-	String comp_Id;
-	String reBoard_Content;
-	Date reBoard_Date;
+	int reBoard_num;
+	int board_num;
+	String mem_id;
+	int comp_num;
+	String comp_id;
+	String reBoard_content;
+	Date reBoard_date;
 	
 	public IO_ReBoardDTO() {
 		
 	}
 
-	public IO_ReBoardDTO(int reBoard_Num, int board_Num, String mem_Id, int comp_Num, String comp_Id,
-			String reBoard_Content, Date reBoard_Date) {
+	public int getReBoard_num() {
+		return reBoard_num;
+	}
+
+	public void setReBoard_num(int reBoard_num) {
+		this.reBoard_num = reBoard_num;
+	}
+
+	public int getBoard_num() {
+		return board_num;
+	}
+
+	public void setBoard_num(int board_num) {
+		this.board_num = board_num;
+	}
+
+	public String getMem_id() {
+		return mem_id;
+	}
+
+	public void setMem_id(String mem_id) {
+		this.mem_id = mem_id;
+	}
+
+	public int getComp_num() {
+		return comp_num;
+	}
+
+	public void setComp_num(int comp_num) {
+		this.comp_num = comp_num;
+	}
+
+	public String getComp_id() {
+		return comp_id;
+	}
+
+	public void setComp_id(String comp_id) {
+		this.comp_id = comp_id;
+	}
+
+	public String getReBoard_content() {
+		return reBoard_content;
+	}
+
+	public void setReBoard_content(String reBoard_content) {
+		this.reBoard_content = reBoard_content;
+	}
+
+	public Date getReBoard_date() {
+		return reBoard_date;
+	}
+
+	public void setReBoard_date(Date reBoard_date) {
+		this.reBoard_date = reBoard_date;
+	}
+
+	public IO_ReBoardDTO(int reBoard_num, int board_num, String mem_id, int comp_num, String comp_id,
+			String reBoard_content, Date reBoard_date) {
 		super();
-		this.reBoard_Num = reBoard_Num;
-		this.board_Num = board_Num;
-		this.mem_Id = mem_Id;
-		this.comp_Num = comp_Num;
-		this.comp_Id = comp_Id;
-		this.reBoard_Content = reBoard_Content;
-		this.reBoard_Date = reBoard_Date;
-	}
-
-	public int getReBoard_Num() {
-		return reBoard_Num;
-	}
-
-	public void setReBoard_Num(int reBoard_Num) {
-		this.reBoard_Num = reBoard_Num;
-	}
-
-	public int getBoard_Num() {
-		return board_Num;
-	}
-
-	public void setBoard_Num(int board_Num) {
-		this.board_Num = board_Num;
-	}
-
-	public String getMem_Id() {
-		return mem_Id;
-	}
-
-	public void setMem_Id(String mem_Id) {
-		this.mem_Id = mem_Id;
-	}
-
-	public int getComp_Num() {
-		return comp_Num;
-	}
-
-	public void setComp_Num(int comp_Num) {
-		this.comp_Num = comp_Num;
-	}
-
-	public String getComp_Id() {
-		return comp_Id;
-	}
-
-	public void setComp_Id(String comp_Id) {
-		this.comp_Id = comp_Id;
-	}
-
-	public String getReBoard_Content() {
-		return reBoard_Content;
-	}
-
-	public void setReBoard_Content(String reBoard_Content) {
-		this.reBoard_Content = reBoard_Content;
-	}
-
-	public Date getReBoard_Date() {
-		return reBoard_Date;
-	}
-
-	public void setReBoard_Date(Date reBoard_Date) {
-		this.reBoard_Date = reBoard_Date;
+		this.reBoard_num = reBoard_num;
+		this.board_num = board_num;
+		this.mem_id = mem_id;
+		this.comp_num = comp_num;
+		this.comp_id = comp_id;
+		this.reBoard_content = reBoard_content;
+		this.reBoard_date = reBoard_date;
 	}
 	
 }
