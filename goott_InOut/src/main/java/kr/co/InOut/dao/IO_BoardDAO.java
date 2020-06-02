@@ -2,8 +2,10 @@ package kr.co.InOut.dao;
 
 import java.util.ArrayList;
 
-import kr.co.InOut.dto.IO_BoardDTO;
+import org.springframework.stereotype.Component;
 
+import kr.co.InOut.dto.IO_BoardDTO;
+@Component
 public class IO_BoardDAO {
 	
 	//전체 조회.(return list)
