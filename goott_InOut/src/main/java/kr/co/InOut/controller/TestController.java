@@ -19,6 +19,7 @@ public class TestController {
 
 	public void setDao(IO_BoardDAO dao) {
 		this.dao = dao;
+		//test
 	}
 	
 	@RequestMapping(value = "/a")
