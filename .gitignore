@@ -1,6 +1,8 @@
 /target/
 *.properties
 
+/META-INF/
+*.MF
 # Compiled class file
 *.class
 
