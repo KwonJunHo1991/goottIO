@@ -2,7 +2,7 @@ package kr.co.InOut.dto;
 
 import java.util.Date;
 
-public class IO_Notice {
+public class IO_NoticeDTO {
 	int notice_num;
 	int comp_num;
 	String notice_title;
@@ -34,7 +34,7 @@ public class IO_Notice {
 	String notice_prcs_job;
 	Date notice_prcs_start;
 	Date notice_prcs_end;
-	public IO_Notice(int notice_num, int comp_num, String notice_title, String notice_man, String notice_man_dept,
+	public IO_NoticeDTO(int notice_num, int comp_num, String notice_title, String notice_man, String notice_man_dept,
 			String notice_man_tel, String notice_man_mp, String notice_man_email, String notice_comp_type,
 			int notice_comp_adrs1, String notice_comp_ards1_detail, int notice_comp_adrs2, String notice_comp_benefits,
 			int notice_req_edu, int notice_req_sal, String notice_req_worktype, int notice_req_jgj_susb,
