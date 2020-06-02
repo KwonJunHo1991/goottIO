@@ -3,74 +3,75 @@ package kr.co.InOut.dto;
 import java.util.Date;
 
 public class IO_BoardDTO {
-	int board_Num;
-	String mem_Id;
-	String board_Title;
-	String board_Content;
-	Date board_Date;
-	int board_Type;	
+	int board_num;
+	String mem_id;
+	String board_title;
+	String board_content;
+	Date board_date;
+	int board_type;	
 	
 	public IO_BoardDTO() {
 		
 	}
 
-	public IO_BoardDTO(int board_Num, String mem_Id, String board_Title, String board_Content, Date board_Date,
-			int board_Type) {
+	public IO_BoardDTO(int board_num, String mem_id, String board_title, String board_content, Date board_date,
+			int board_type) {
 		super();
-		this.board_Num = board_Num;
-		this.mem_Id = mem_Id;
-		this.board_Title = board_Title;
-		this.board_Content = board_Content;
-		this.board_Date = board_Date;
-		this.board_Type = board_Type;
+		this.board_num = board_num;
+		this.mem_id = mem_id;
+		this.board_title = board_title;
+		this.board_content = board_content;
+		this.board_date = board_date;
+		this.board_type = board_type;
 	}
 
-	public int getBoard_Num() {
-		return board_Num;
+	public int getBoard_num() {
+		return board_num;
 	}
 
-	public void setBoard_Num(int board_Num) {
-		this.board_Num = board_Num;
+	public void setBoard_num(int board_num) {
+		this.board_num = board_num;
 	}
 
-	public String getMem_Id() {
-		return mem_Id;
+	public String getMem_id() {
+		return mem_id;
 	}
 
-	public void setMem_Id(String mem_Id) {
-		this.mem_Id = mem_Id;
+	public void setMem_id(String mem_id) {
+		this.mem_id = mem_id;
 	}
 
-	public String getBoard_Title() {
-		return board_Title;
+	public String getBoard_title() {
+		return board_title;
 	}
 
-	public void setBoard_Title(String board_Title) {
-		this.board_Title = board_Title;
+	public void setBoard_title(String board_title) {
+		this.board_title = board_title;
 	}
 
-	public String getBoard_Content() {
-		return board_Content;
+	public String getBoard_content() {
+		return board_content;
 	}
 
-	public void setBoard_Content(String board_Content) {
-		this.board_Content = board_Content;
+	public void setBoard_content(String board_content) {
+		this.board_content = board_content;
 	}
 
-	public Date getBoard_Date() {
-		return board_Date;
+	public Date getBoard_date() {
+		return board_date;
 	}
 
-	public void setBoard_Date(Date board_Date) {
-		this.board_Date = board_Date;
+	public void setBoard_date(Date board_date) {
+		this.board_date = board_date;
 	}
 
-	public int getBoard_Type() {
-		return board_Type;
+	public int getBoard_type() {
+		return board_type;
 	}
 
-	public void setBoard_Type(int board_Type) {
-		this.board_Type = board_Type;
+	public void setBoard_type(int board_type) {
+		this.board_type = board_type;
 	}
+
 	
 }
