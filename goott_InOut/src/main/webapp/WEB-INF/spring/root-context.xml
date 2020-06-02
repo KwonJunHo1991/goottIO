@@ -4,26 +4,23 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd">
 	
 	<!-- Root Context: defines shared resources visible to all other web components -->
-	<bean id="dataSource" class="org.springframework.jdbc.datasource.SimpleDriverDataSource">
-        <property name="driverClass" value="${driver}"></property>
-        <property name="url" value="${url}" />
-        <property name="username" value="${username}" />
-        <property name="password" value="${password}" />
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/goottio?userSSL=false" />
+        <property name="username" value="scott" />
+        <property name="password" value="1234" />
 	</bean>
-    <bean id="property" class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
-	   <property name="location" value="classpath:/db.properties" />
-    </bean>
     
-<!--     <bean id="sqlSessionFactoryBean" class="org.mybatis.spring.SqlSessionFactoryBean">
+     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
 	   <property name="dataSource" ref="dataSource" />
-        <property name="configLocation" value="classpath:/SqlMapConfig.xml" />
-        <property name="mapperLocations" value="classpath:/Mapper.xml" />
+        <property name="configLocation" value="classpath:/mybatis-config.xml" />
+        <property name="mapperLocations" value="classpath:/CompMapper.xml" />
     </bean>    
     
-    <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
-        <constructor-arg ref="sqlSessionFactoryBean"></constructor-arg>
+     <bean id="sqlSessionTemplate" class="org.mybatis.spring.SqlSessionTemplate">
+        <constructor-arg ref="sqlSessionFactory" name="sqlSessionFactory" ></constructor-arg>
 	
-    </bean> -->
+    </bean>  
 
     <!-- DAO 등 bean으로 올리는 곳 -->    
     	
