@@ -6,6 +6,8 @@
     <configuration>
         <typeAliases>
             <typeAlias type="kr.co.InOut.dto.IO_Comp_BasicDTO" alias="CBDTO"/>
+        
+        	<typeAlias type="kr.co.InOut.dto.IO_BoardDTO" alias="BoardDTO"/>
         </typeAliases>
-    
+        
     </configuration>
