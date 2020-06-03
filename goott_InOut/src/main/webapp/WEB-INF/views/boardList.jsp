@@ -7,8 +7,17 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
+	/* 여기에서 특정 식별자의 value를 집어넣어주는 문구 if(curPage == null) var curPage = 1
+		(식별자).value() = curPage ; 
+	*/
 	function fn_paging(curPage) {
-	location.href = "/InOut/board/boardList.do?curPage=" + curPage;
+//	location.href = "/InOut/board/boardSearch.do?curPage=" + curPage;
+//	location.href = document.location.href+"&curPage=" + curPage;
+	var url = document.location.href.split('&curPage');
+	console.log(url);
+	location.href = urlArray[0]+"&curPage=" + curPage;
+	
+	
 	}
 
 </script>
@@ -26,7 +35,8 @@
 				<td>${b.board_num }</td>
 				<td>${b.mem_id }</td>
 				<td>${b.board_title }</td>
-				<td>${b.board_date }</td>
+				<td>${b.board_category }</td>
+				<td>${b.board_type }</td>
 			</tr>
 		</c:forEach>
 		
@@ -71,6 +81,12 @@
 	</div>
 	
 	총 게시글 수 : ${page.listCnt } / 총 페이지 수 : ${page.pageCnt }
+	
+	<form action="/InOut/board/boardSearch.do">
+		<input type="text" name="board_category" id="board_category" />
+		<input type="hidden" name="curPage" value="1"/>
+		<input type="submit" value="검색" />
+	</form>
 	
 	
 	

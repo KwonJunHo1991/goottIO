@@ -12,6 +12,7 @@ public class IO_BoardDTO {
 	int board_category;
 	int board_hits;
 	
+	
 	public IO_BoardDTO() {
 		
 	}
