@@ -17,7 +17,18 @@ public class IO_Comp_BasicDAO {
 	}
 	
 	public List<IO_Comp_BasicDTO> selectAllCompBasic() {
-		System.out.println(ss);
 		return ss.selectList("selectAllCompBasic");
+	}
+	
+	public void insertOneCompBasic(IO_Comp_BasicDTO dto) {
+		ss.insert("insertOneCompBasic", dto);
+	}
+	
+	public IO_Comp_BasicDTO selectOneCompBasicByCn(int comp_num) {
+		return ss.selectOne("selectOneCompBasicByCn", comp_num);
+	}
+	
+	public void updateOneCompBasic(IO_Comp_BasicDTO dto) {
+		ss.update("updateOneCompBasicByCn", dto);
 	}
 }
