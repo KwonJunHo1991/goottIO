@@ -19,12 +19,24 @@
 		from io_board;
   	</select>
   	
-<!--   	<select id="selectBoard" >
+  	<select id="selectSearchBoard" resultType="BoardDTO" parameterType="BoardDTO">
   		select * from io_board
-  		<if test="category != null"></if>
-  			
-  	</select> -->
+		<trim prefix="where" prefixOverrides="AND">
+			<if test="board_category != 100">and board_category = #{board_category}</if>
+			<if test="board_type != 100">and board_type = #{board_type}</if>
+		</trim>
+		limit #{board_hits},10
+  	</select>
   	
+  	
+
+	<select id="countSearchBoard" resultType="int" parameterType="BoardDTO">
+		select count(*) from io_board
+		<trim prefix="where" prefixOverrides="AND">
+			<if test="board_category != 100"> board_category = #{board_category}</if>
+			<if test="board_type != 100">and board_type = #{board_type}</if>
+		</trim>
+	</select>  	
 
   	
   	
