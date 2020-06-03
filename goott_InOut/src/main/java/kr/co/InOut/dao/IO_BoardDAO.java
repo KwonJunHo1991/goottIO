@@ -1,7 +1,7 @@
 package kr.co.InOut.dao;
 
-import java.util.ArrayList;
 
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -29,18 +29,29 @@ public class IO_BoardDAO {
 	}
 	
 	//전체 조회.(return list)
-	public ArrayList<IO_BoardDTO> selectAllBoard(){
+	public List<IO_BoardDTO> selectAllBoard(int startIndex){
 
 		//DB에서 받아오기.
 		
+		List<IO_BoardDTO> list = session.selectList("selectAllBoard",startIndex);
 		
 		//ArrayList<IO_BoardDTO> list = 
 		
 		//return list;
+		System.out.println(session);
+		System.out.println(list);
 	
-	return null;
+	return list;
 		
 	}
 	//총 게시글수 조회.(count)
+	public int countBoard() {
+		
+		int a =session.selectOne("countBoard");
+//		System.out.println(a);
+		
+		return a;
+		
+	}
 
 }
