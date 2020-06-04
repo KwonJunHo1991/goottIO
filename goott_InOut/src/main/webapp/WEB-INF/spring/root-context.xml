@@ -30,10 +30,13 @@
         <constructor-arg ref="sqlSessionFactory" name="sqlSessionFactory" ></constructor-arg>
 	
     </bean>  
+    
+	
+	
 
     <!-- DAO 등 bean으로 올리는 곳 -->  
     <!-- dao 패키지안에 모든 다오 scan 해주는것  -->  
-<context:component-scan base-package="kr.co.InOut.dao"></context:component-scan>
+<context:component-scan base-package="kr.co.InOut.*"></context:component-scan>
     
 
     
