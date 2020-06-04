@@ -8,7 +8,8 @@ public class IO_BoardDTO {
 	String board_title;
 	String board_content;
 	Date board_date;
-	int board_type;	
+	int board_type;
+	int board_category;
 	int board_hits;
 	
 	public IO_BoardDTO() {
@@ -17,8 +18,10 @@ public class IO_BoardDTO {
 
 
 
+
+
 	public IO_BoardDTO(int board_num, String mem_id, String board_title, String board_content, Date board_date,
-			int board_type, int board_hits) {
+			int board_type, int board_category, int board_hits) {
 		super();
 		this.board_num = board_num;
 		this.mem_id = mem_id;
@@ -26,8 +29,27 @@ public class IO_BoardDTO {
 		this.board_content = board_content;
 		this.board_date = board_date;
 		this.board_type = board_type;
+		this.board_category = board_category;
 		this.board_hits = board_hits;
 	}
+
+
+
+
+
+	public int getBoard_category() {
+		return board_category;
+	}
+
+
+
+
+
+	public void setBoard_category(int board_category) {
+		this.board_category = board_category;
+	}
+
+
 
 
 
