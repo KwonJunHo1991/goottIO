@@ -28,7 +28,7 @@ public class IO_LoginController {
 	
 	
 	//로그인화면
-	@RequestMapping("login.do")
+	@RequestMapping("/member/login.do")
 	public String login() {
 		return "login";
 		
@@ -37,7 +37,7 @@ public class IO_LoginController {
 	}
 	
 	//2 로그인처리
-	@RequestMapping("loginCheck.do")
+	@RequestMapping("/member/loginCheck.do")
 	public ModelAndView loginCheck(@ModelAttribute IO_MemberDTO dto, HttpSession session) {
 		boolean result = io_memberservice.loginCheck(dto, session);
 		ModelAndView mav = new ModelAndView();

@@ -9,14 +9,15 @@ public class IO_MemberDTO {
 	private String mem_email;
 	private int mem_phone;
 	private String mem_add;
+	private String mem_add1;
 	private String mem_image;
 	private String mem_anno;
 	private int mem_sex;
 	
 	public IO_MemberDTO() {}
-	
+
 	public IO_MemberDTO(String mem_id, String mem_pw, String mem_name, int mem_birth, String mem_email, int mem_phone,
-			String mem_add, String mem_image, String mem_anno, int mem_sex) {
+			String mem_add, String mem_add1, String mem_image, String mem_anno, int mem_sex) {
 		super();
 		this.mem_id = mem_id;
 		this.mem_pw = mem_pw;
@@ -25,6 +26,7 @@ public class IO_MemberDTO {
 		this.mem_email = mem_email;
 		this.mem_phone = mem_phone;
 		this.mem_add = mem_add;
+		this.mem_add1 = mem_add1;
 		this.mem_image = mem_image;
 		this.mem_anno = mem_anno;
 		this.mem_sex = mem_sex;
@@ -86,6 +88,14 @@ public class IO_MemberDTO {
 		this.mem_add = mem_add;
 	}
 
+	public String getMem_add1() {
+		return mem_add1;
+	}
+
+	public void setMem_add1(String mem_add1) {
+		this.mem_add1 = mem_add1;
+	}
+
 	public String getMem_image() {
 		return mem_image;
 	}
@@ -114,8 +124,11 @@ public class IO_MemberDTO {
 	public String toString() {
 		return "IO_MemberDTO [mem_id=" + mem_id + ", mem_pw=" + mem_pw + ", mem_name=" + mem_name + ", mem_birth="
 				+ mem_birth + ", mem_email=" + mem_email + ", mem_phone=" + mem_phone + ", mem_add=" + mem_add
-				+ ", mem_image=" + mem_image + ", mem_anno=" + mem_anno + ", mem_sex=" + mem_sex + "]";
+				+ ", mem_add1=" + mem_add1 + ", mem_image=" + mem_image + ", mem_anno=" + mem_anno + ", mem_sex="
+				+ mem_sex + "]";
 	}
+	
+	
 	
 	
 	
