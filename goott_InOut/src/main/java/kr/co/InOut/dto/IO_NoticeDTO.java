@@ -5,6 +5,7 @@ import java.util.Date;
 public class IO_NoticeDTO {
 	int notice_num;
 	int comp_num;
+	String comp_id;
 	String notice_title;
 	String notice_man;
 	String notice_man_dept;
@@ -34,7 +35,7 @@ public class IO_NoticeDTO {
 	String notice_prcs_job;
 	Date notice_prcs_start;
 	Date notice_prcs_end;
-	public IO_NoticeDTO(int notice_num, int comp_num, String notice_title, String notice_man, String notice_man_dept,
+	public IO_NoticeDTO(int notice_num, int comp_num, String comp_id, String notice_title, String notice_man, String notice_man_dept,
 			String notice_man_tel, String notice_man_mp, String notice_man_email, String notice_comp_type,
 			int notice_comp_adrs1, String notice_comp_ards1_detail, int notice_comp_adrs2, String notice_comp_benefits,
 			int notice_req_edu, int notice_req_sal, String notice_req_worktype, int notice_req_jgj_susb,
@@ -45,6 +46,7 @@ public class IO_NoticeDTO {
 		super();
 		this.notice_num = notice_num;
 		this.comp_num = comp_num;
+		this.comp_id = comp_id;
 		this.notice_title = notice_title;
 		this.notice_man = notice_man;
 		this.notice_man_dept = notice_man_dept;
@@ -87,6 +89,13 @@ public class IO_NoticeDTO {
 	public void setComp_num(int comp_num) {
 		this.comp_num = comp_num;
 	}
+	public String getComp_id() {
+		return comp_id;
+	}
+	public void setComp_id(String comp_id) {
+		this.comp_id = comp_id;
+	}
+	
 	public String getNotice_title() {
 		return notice_title;
 	}

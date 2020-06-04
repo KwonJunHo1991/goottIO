@@ -6,8 +6,15 @@
   
   <mapper namespace=" ">
     
+    
+<!-- comp_basic start -->
     <select id="selectAllCompBasic" resultType="CBDTO">
         select * from io_comp_basic
+    </select>
+    
+    <select id="compLoginCheck" resultType="String">
+        SELECT comp_id FROM io_comp_basic
+        WHERE comp_id = #{comp_id} AND comp_pw = #{comp_pw}
     </select>
     
     <!-- 사업자등록번호로 기업기본정보 1개 데이터 가져오기 -->
@@ -24,6 +31,9 @@
     <select id="selectOneCompBasicByCn" parameterType="int" resultType="CBDTO">
         select * from io_comp_basic where comp_num = #{comp_num}
     </select>
+    <select id="selectOneCompBasicById" parameterType="String" resultType="CBDTO">
+        select * from io_comp_basic where comp_id = #{comp_id}
+    </select>
     
     <update id="updateOneCompBasicByCn" parameterType="CBDTO">
         update io_comp_basic
@@ -34,4 +44,27 @@
         comp_type = #{comp_type}
         where comp_num = #{comp_num}        
     </update>
+<!-- comp_basic end -->
+
+<!-- notice start -->
+    <select id="selectAllNotice" resultType="NoticeDTO">
+        select * from io_notice
+    </select>
+    
+    <insert id="insertOneNotice" parameterType="NoticeDTO">
+        insert into io_notice
+        values (
+            null,#{comp_num},#{comp_id},
+            #{notice_title}, #{notice_man}, #{notice_man_dept}, #{notice_man_tel}, #{notice_man_mp}, #{notice_man_email},
+            #{notice_comp_type}, #{notice_comp_adrs1}, #{notice_comp_adrs1_detail}, #{notice_comp_adrs2}, #{notice_comp_benefits},
+            #{notice_req_edu}, #{notice_req_sal}, #{notice_req_worktype}, #{notice_req_jgj_susb}, #{notice_req_gyj_gigan}, #{notice_req_gyj_tojgj}, #{notice_req_int_gigan}, #{notice_req_int_tojgj}, #{notice_req_pgj_gigan}, #{notice_req_pgj_tojgj}, #{notice_req_workday}, #{notice_req_worktime}, #{notice_req_gender}, #{notice_req_minage}, #{notice_req_maxage},
+            #{notice_prcs_job}, #{notice_prcs_start}, #{notice_prcs_end}
+        )
+        
+    </insert>
+    
+    <select id="selectOneNoticeByCnNn" parameterType="NoticeDTO" resultType="NoticeDTO">
+        select * from io_notice where comp_num = #{comp_num} and notice_num = #{notice_num}
+    </select>
+<!-- notice end -->
   </mapper>
