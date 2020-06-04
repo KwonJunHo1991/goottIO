@@ -31,16 +31,16 @@ public class IO_BoardController {
 	
 	@RequestMapping(value="/board/boardList.do")
 	public String boardList(Model model,
-			@RequestParam(defaultValue="1") int curPage,
+			@RequestParam(value = "curPage" , defaultValue="1") int curPage,
 			HttpServletRequest req
 			) {
-		 
+		
+		  
 		
 		//전체 게시글수 
 		int listCnt = dao.countBoard();
 		
 		IO_Board_Paging page = new IO_Board_Paging(listCnt, curPage);
-		
 		
 		//전체 게시글 조회하기.
 		List<IO_BoardDTO> list = dao.selectAllBoard(page.getStartIndex());
@@ -56,5 +56,31 @@ public class IO_BoardController {
 		return "boardList";
 	}
 	
+	@RequestMapping(value="/board/boardSearch.do")
+	public String boardSearch(Model model,
+			@RequestParam(value = "board_type" , defaultValue="100") int board_type,
+			@RequestParam(value = "board_category",defaultValue="100") int board_category,
+			@RequestParam(value = "curPage" , defaultValue="1") int curPage
+			) {
+		
+		
+		
+		
+		//조회한 게시글수
+		int listCnt = dao.countSearchBoard(board_category, board_type);
+		
+		IO_Board_Paging page = new IO_Board_Paging(listCnt, curPage);
+		
+		//조회한 게시글 조회.
+		
+		List<IO_BoardDTO> list = dao.selectSearchBoard(page.getStartIndex(), board_category, board_type);
+		
+		model.addAttribute("list", list);
+		model.addAttribute("page", page);
+		
+		
+		
+		return "boardList";
+	}
 	
 }

@@ -5,11 +5,33 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace=" ">
+    
     <select id="selectAllCompBasic" resultType="CBDTO">
         select * from io_comp_basic
     </select>
     
+    <!-- 사업자등록번호로 기업기본정보 1개 데이터 가져오기 -->
     <select id="selectOneCompBasicByComp_num" parameterType="CBDTO">
         select * from io_comp_basic where comp_num = #{comp_num}
     </select>
+    
+    <!-- 회원가입(기업기본정보 insert) -->
+    <insert id="insertOneCompBasic" parameterType="CBDTO">
+        insert into io_comp_basic (comp_num, comp_id, comp_pw, comp_inf_period)
+        values (#{comp_num}, #{comp_id}, #{comp_pw}, #{comp_inf_period})
+    </insert>
+    
+    <select id="selectOneCompBasicByCn" parameterType="int" resultType="CBDTO">
+        select * from io_comp_basic where comp_num = #{comp_num}
+    </select>
+    
+    <update id="updateOneCompBasicByCn" parameterType="CBDTO">
+        update io_comp_basic
+        set comp_inf_period = #{comp_inf_period},
+        comp_username = #{comp_username},
+        comp_usertel = #{comp_usertel},
+        comp_useremail = #{comp_useremail},
+        comp_type = #{comp_type}
+        where comp_num = #{comp_num}        
+    </update>
   </mapper>
