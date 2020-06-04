@@ -13,7 +13,7 @@
   
   	</select>
   
-  	<select id="viewMember" resultType="kr.co.InOut.dto.IO_MemberDTO">
+  	<select id="viewMember" resultType="MemberDTO">
   	
   	select mem_name,
   	mem_id,
@@ -21,12 +21,13 @@
   	from io_member
   	where mem_id = #{mem_id} and mem_pw = #{mem_pw}
   	
-  	
-  	
-  	
   	</select>
   	
+  	<insert id="insertOneRegister" parameterType="MemberDTO">
+  	insert into io_member (mem_id, mem_pw, mem_email, mem_name, mem_birth, mem_phone, mem_sex, mem_add, mem_add1)
+  	values (#{mem_id},#{mem_pw},#{mem_email},#{mem_name},#{mem_birth},#{mem_phone},#{mem_sex},#{mem_add},#{mem_add1})
   	
+  	</insert>
   	
   	
   	

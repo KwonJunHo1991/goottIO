@@ -7,15 +7,34 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-	/* 여기에서 특정 식별자의 value를 집어넣어주는 문구 if(curPage == null) var curPage = 1
-		(식별자).value() = curPage ; 
-	*/
+
 	function fn_paging(curPage) {
 //	location.href = "/InOut/board/boardSearch.do?curPage=" + curPage;
-//	location.href = document.location.href+"&curPage=" + curPage;
-	var url = document.location.href.split('&curPage');
-	console.log(url);
-	location.href = urlArray[0]+"&curPage=" + curPage;
+
+ 	var url = document.location.href.split('curPage');
+ 	
+//	console.log(url);
+//	console.log(url[0]);
+	
+	
+	
+			
+	//? 처리하자, &도 처리하자.
+	
+	//? 없음 --->> 아예 첫 시작페이지.
+	if(url[0].indexOf('?') == -1){
+//		console.log('?없음');
+		location.href = url[0] + "?curPage=" + curPage;
+		
+	}else if(url[0].indexOf('?')==-1 && url[0].indexOf('&')==-1)
+		location.href = url[0] + "&curPage=" + curPage;
+	else{
+//		console.log('?있땅!');
+		location.href = url[0] + "curPage=" + curPage;
+	}
+			
+	
+	
 	
 	
 	}
@@ -28,13 +47,17 @@
 	<h1>IO 게시판</h1>
  	<table>
 			<tr>
-				<td>게시판</td>
+				<td>번호</td>
+				<td>작성자</td>
+				<td>제목</td>
+				<td>카테고리</td>
+				<td>업종</td>
 			</tr>
 		<c:forEach var="b" items="${list}">
 			<tr>
 				<td>${b.board_num }</td>
 				<td>${b.mem_id }</td>
-				<td>${b.board_title }</td>
+				<td><a href="/InOut/board/boardDetail.do?board_num=${b.board_num }">${b.board_title }</a></td>
 				<td>${b.board_category }</td>
 				<td>${b.board_type }</td>
 			</tr>
