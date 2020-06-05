@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace=" ">
+  	
+  	<select id="loginCheck" resultType="String">
+  	
+  	SELECT MEM_NAME FROM io_member
+  	WHERE mem_id = #{mem_id} AND mem_pw = #{mem_pw}
+  	
+  
+  	</select>
+  
+  	<select id="viewMember" resultType="MemberDTO">
+  	
+  	select mem_name,
+  	mem_id,
+  	mem_email 
+  	from io_member
+  	where mem_id = #{mem_id} and mem_pw = #{mem_pw}
+  	
+  	</select>
+  	
+  	<insert id="insertOneRegister" parameterType="MemberDTO">
+  	insert into io_member (mem_id, mem_pw, mem_email, mem_name, mem_birth, mem_phone, mem_sex, mem_add, mem_add1)
+  	values (#{mem_id},#{mem_pw},#{mem_email},#{mem_name},#{mem_birth},#{mem_phone},#{mem_sex},#{mem_add},#{mem_add1})
+  	
+  	</insert>
+  	
+  	
+  	
+  
+  
+  
+  
+  
+  </mapper>
