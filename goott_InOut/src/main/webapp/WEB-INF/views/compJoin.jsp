@@ -7,7 +7,7 @@
 <title>기업 회원가입 창</title>
 </head>
 <body>
-	<form action="./join.do" method="post">
+	<form action="#" method="post">
 		<table>
 			<tr>
 				<th>사업자등록번호</th>

@@ -42,8 +42,7 @@ public class IO_CompBasicController {
 	@RequestMapping(value = "/company/loginCheck.do")
 	public String loginCheck(@ModelAttribute IO_Comp_BasicDTO dto, HttpSession session, Model model) {
 		String loginResult ="";
-		boolean result = service.loginCheck(dto, session);
-		
+		boolean result = service.loginCheck(dto, session);	
 		if(result == true) { //로그인 성공
 			loginResult = "compHome";
 			model.addAttribute("msg","success"); // 성공하면 home.jsp에서 session에서 id를 빼준다
@@ -51,9 +50,6 @@ public class IO_CompBasicController {
 			//로그인 jsp로 이동
 			loginResult = "compLogin";
 			model.addAttribute("msg","failure");
-			
-			
-		
 		}
 		return loginResult;
 	}

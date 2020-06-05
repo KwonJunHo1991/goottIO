@@ -7,7 +7,7 @@
 <title>기업의 mypage</title>
 </head>
 <body>
-	<h1>기업의 mypage</h1>
+	<h1>기업의 mypage</h1> <a href="./newNotice.do"><input type="button" value="공고 등록" /></a>
 	<form action="./mypageUpdate.do" method="post">
 		<table>
 			<tr>
