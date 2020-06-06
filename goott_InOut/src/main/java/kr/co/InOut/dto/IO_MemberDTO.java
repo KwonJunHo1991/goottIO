@@ -5,6 +5,7 @@ public class IO_MemberDTO {
 	private String mem_id;
 	private String mem_pw;
 	private String mem_name;
+	private int mem_seekwork;
 	private int mem_birth;
 	private String mem_email;
 	private int mem_phone;
@@ -16,12 +17,13 @@ public class IO_MemberDTO {
 	
 	public IO_MemberDTO() {}
 
-	public IO_MemberDTO(String mem_id, String mem_pw, String mem_name, int mem_birth, String mem_email, int mem_phone,
+	public IO_MemberDTO(String mem_id, String mem_pw, String mem_name, int mem_seekwork, int mem_birth, String mem_email, int mem_phone,
 			String mem_add, String mem_add1, String mem_image, String mem_anno, int mem_sex) {
 		super();
 		this.mem_id = mem_id;
 		this.mem_pw = mem_pw;
 		this.mem_name = mem_name;
+		this.mem_seekwork = mem_seekwork;
 		this.mem_birth = mem_birth;
 		this.mem_email = mem_email;
 		this.mem_phone = mem_phone;
@@ -55,7 +57,16 @@ public class IO_MemberDTO {
 	public void setMem_name(String mem_name) {
 		this.mem_name = mem_name;
 	}
+	
+	public int getMem_seekwork() {
+		return mem_seekwork;
+	}
 
+	public void setMem_seekwork(int mem_seekwork) {
+		this.mem_seekwork = mem_seekwork;
+	}
+	
+	
 	public int getMem_birth() {
 		return mem_birth;
 	}
@@ -122,7 +133,7 @@ public class IO_MemberDTO {
 
 	@Override
 	public String toString() {
-		return "IO_MemberDTO [mem_id=" + mem_id + ", mem_pw=" + mem_pw + ", mem_name=" + mem_name + ", mem_birth="
+		return "IO_MemberDTO [mem_id=" + mem_id + ", mem_pw=" + mem_pw + ", mem_name=" + mem_name + ", mem_seekwork=" + mem_seekwork + ",  mem_birth="
 				+ mem_birth + ", mem_email=" + mem_email + ", mem_phone=" + mem_phone + ", mem_add=" + mem_add
 				+ ", mem_add1=" + mem_add1 + ", mem_image=" + mem_image + ", mem_anno=" + mem_anno + ", mem_sex="
 				+ mem_sex + "]";

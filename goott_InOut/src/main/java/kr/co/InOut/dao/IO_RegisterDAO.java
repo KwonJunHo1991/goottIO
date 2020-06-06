@@ -5,6 +5,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Component;
 
+import kr.co.InOut.dto.IO_CarrerDTO;
 import kr.co.InOut.dto.IO_MemberDTO;
 
 @Component

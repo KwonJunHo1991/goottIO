@@ -43,13 +43,11 @@ public class IO_RegisterController {
 		
 		}else {
 		return "resume";
-	
-		
-		
 		
 	}
 	
 	}
+
 	
 }
 
