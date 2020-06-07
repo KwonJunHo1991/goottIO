@@ -19,7 +19,7 @@ public class IO_BoardDAO {
 	private SqlSession session;	
 	
 	public void setSession(SqlSession session) {
-		this.session = session;
+		this.session = session; 
 	}
 	
 //

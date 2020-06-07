@@ -8,13 +8,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import kr.co.InOut.HomeController;
 import kr.co.InOut.dto.IO_MemberDTO;
 import kr.co.InOut.service.IO_MemberService;
-import kr.co.InOut.service.IO_MemberServiceImple;
 
 @Controller
 public class IO_LoginController {
@@ -28,7 +25,7 @@ public class IO_LoginController {
 	
 	
 	//로그인화면
-	@RequestMapping("login.do")
+	@RequestMapping("/member/login.do")
 	public String login() {
 		return "login";
 		
@@ -37,13 +34,12 @@ public class IO_LoginController {
 	}
 	
 	//2 로그인처리
-	@RequestMapping("loginCheck.do")
+	@RequestMapping("/member/loginCheck.do")
 	public ModelAndView loginCheck(@ModelAttribute IO_MemberDTO dto, HttpSession session) {
 		boolean result = io_memberservice.loginCheck(dto, session);
 		ModelAndView mav = new ModelAndView();
 		
 		if(result == true) { //로그인 성공
-			
 			mav.setViewName("home");
 			mav.addObject("msg", "success");
 		}else { // 로그인 실패
