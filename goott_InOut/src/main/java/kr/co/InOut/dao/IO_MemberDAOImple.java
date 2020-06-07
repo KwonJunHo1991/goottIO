@@ -43,4 +43,7 @@ public class IO_MemberDAOImple implements IO_MemberDAO{
 		return sqlsession.selectList("selectmember");
 	}
 
+	//회원가입시 이력서 창으로 그회원의 정보만 넘어가 이력서 기본사항에 보여지도록
+	
+	
 }
