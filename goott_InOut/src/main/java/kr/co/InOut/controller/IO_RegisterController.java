@@ -2,21 +2,26 @@ package kr.co.InOut.controller;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 import kr.co.InOut.dao.IO_RegisterDAO;
 import kr.co.InOut.dto.IO_MemberDTO;
+import kr.co.InOut.service.IO_MemberService;
 
 @Controller
 public class IO_RegisterController {
 	@Inject
 	IO_RegisterDAO dao;
 	
+	@Inject
+	IO_MemberService io_memberservice;
 	public void setDao(IO_RegisterDAO dao) {
 		this.dao = dao;
 		
@@ -29,7 +34,9 @@ public class IO_RegisterController {
 	}
 	
 	@RequestMapping(value = "/member/register.do")
-	public String register2(HttpServletRequest req, @ModelAttribute() IO_MemberDTO dto) {
+	public String register2(HttpServletRequest req, @ModelAttribute() IO_MemberDTO dto, HttpSession session) {
+		String result = io_memberservice.MemberCheck(dto, session);
+		ModelAndView mav = new ModelAndView();
 		
 		dao.insertOneRegister(dto);
 		

@@ -1,5 +1,7 @@
 package kr.co.InOut.dao;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -32,6 +34,13 @@ public class IO_MemberDAOImple implements IO_MemberDAO{
 	public IO_MemberDTO viewMember(IO_MemberDTO dto) {
 		// TODO Auto-generated method stub
 		return sqlsession.selectOne("viewMember", dto);
+	}
+
+	@Override
+	public List<IO_MemberDTO> selectmember() {
+		
+		
+		return sqlsession.selectList("selectmember");
 	}
 
 }

@@ -35,4 +35,10 @@ public class IO_MemberServiceImple implements IO_MemberService{
 		return io_memberdao.viewMember(dto);
 	}
 
+	@Override
+	public String MemberCheck(IO_MemberDTO dto, HttpSession session) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

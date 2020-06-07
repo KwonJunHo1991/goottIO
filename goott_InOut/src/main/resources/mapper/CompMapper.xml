@@ -6,8 +6,16 @@
   
   <mapper namespace=" ">
     
+    
+<!-- comp_basic start -->
     <select id="selectAllCompBasic" resultType="CBDTO">
         select * from io_comp_basic
+    </select>
+    
+    <!-- DB에서 해당 id와 pw가 매칭되는지 체크 -->
+    <select id="compLoginCheck" resultType="String">
+        SELECT comp_id FROM io_comp_basic
+        WHERE comp_id = #{comp_id} AND comp_pw = #{comp_pw}
     </select>
     
     <!-- 사업자등록번호로 기업기본정보 1개 데이터 가져오기 -->
@@ -21,10 +29,16 @@
         values (#{comp_num}, #{comp_id}, #{comp_pw}, #{comp_inf_period})
     </insert>
     
+    <!-- comp_num으로 한건 조회 -->   
     <select id="selectOneCompBasicByCn" parameterType="int" resultType="CBDTO">
         select * from io_comp_basic where comp_num = #{comp_num}
     </select>
+    <!-- comp_id로 한건 조회 -->
+    <select id="selectOneCompBasicById" parameterType="String" resultType="CBDTO">
+        select * from io_comp_basic where comp_id = #{comp_id}
+    </select>
     
+    <!-- comp_num으로 comp_basic 한 건 업데이트 -->
     <update id="updateOneCompBasicByCn" parameterType="CBDTO">
         update io_comp_basic
         set comp_inf_period = #{comp_inf_period},
@@ -34,4 +48,44 @@
         comp_type = #{comp_type}
         where comp_num = #{comp_num}        
     </update>
+<!-- comp_basic end -->
+
+<!-- notice start -->
+    <!-- comp_num으로 모든 공고 가져오기 -->
+    <select id="selectAllNotice" parameterType="int" resultType="NoticeDTO">
+        select * from io_notice where comp_num = #{comp_num}
+    </select>
+    <!-- 공고 입력(32개 컬럼) -->
+    <insert id="insertOneNotice" parameterType="NoticeDTO">
+        insert into io_notice
+        values (
+            null,#{comp_num},#{comp_id},
+            #{notice_title}, #{notice_man}, #{notice_man_dept}, #{notice_man_tel}, #{notice_man_mp}, #{notice_man_email},
+            #{notice_comp_type}, #{notice_comp_adrs1}, #{notice_comp_adrs1_detail}, #{notice_comp_adrs2}, #{notice_comp_benefits},
+            #{notice_req_edu}, #{notice_req_sal}, #{notice_req_worktype}, #{notice_req_jgj_susb}, #{notice_req_gyj_gigan}, #{notice_req_gyj_tojgj}, #{notice_req_int_gigan}, #{notice_req_int_tojgj}, #{notice_req_pgj_gigan}, #{notice_req_pgj_tojgj}, #{notice_req_workday}, #{notice_req_worktime}, #{notice_req_gender}, #{notice_req_minage}, #{notice_req_maxage},
+            #{notice_prcs_job}, #{notice_prcs_start}, #{notice_prcs_end}
+        )
+    </insert>
+    
+    <!-- 공고에 연결된 테이블 입력 -->
+    <insert id="insertOneNoticeWant">
+        insert into io_notice_want
+        values (
+            null, #{notice_num}, #{comp_num}, #{comp_id},
+            #{notice_want_many}, #{notice_want_mincar}, #{notice_want_maxcar}, #{notice_want_task}, #{notice_want_dept}, #{notice_want_condition}, #{notice_want_name}
+        )        
+    </insert>
+    <insert id="insertOneNoticeQna">
+        insert into io_notice_qna
+        values (null, #{notice_num}, #{comp_num}, #{comp_id}, #{notice_qna_q}, #{notice_qna_a})    
+    </insert>
+    <insert id="insertOneNoticePrcs">
+        insert into io_notice_prcs
+        values (null, #{notice_num}, #{comp_num}, #{comp_id}, #{notice_prcs_name}, #{notice_prcs_type}, #{notice_prcs_detail_start}, #{notice_prcs_detail_end})
+    </insert>
+    
+    <select id="selectOneNoticeByCnNn" parameterType="NoticeDTO" resultType="NoticeDTO">
+        select * from io_notice where comp_num = #{comp_num} and notice_num = #{notice_num}
+    </select>
+<!-- notice end -->
   </mapper>

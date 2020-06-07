@@ -29,7 +29,11 @@
   	
   	</insert>
   	
+  	<select id="selectmember" resultType="MemberDTO">
+  	select * from io_member
   	
+  	
+  	</select>
   	
   
   

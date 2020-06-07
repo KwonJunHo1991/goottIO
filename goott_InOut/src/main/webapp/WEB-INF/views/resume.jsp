@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -22,7 +24,7 @@ $(function(){
 
 </head>
 <body>
-<h2>resume.jsp</h2>
+<h2>resdddume.jsp</h2>
 
 <form action="">
 
@@ -30,41 +32,44 @@ $(function(){
 	<!-- 기본정보는 member 테이블에서 불러온다  -->
 		<h2>기본정보</h2>
 		
+		<c:forEach var="i" items="${list }">
 		
 		<tr>
 			<td>이름</td>
-			<td><input type="text" name="mem_id" id = "mem_id" /></td>
+			<td><input type="text" name="mem_id" id = "mem_id" value="${i.mem_id }"/></td>
 		</tr>
 		
 		<tr>
 			<td>생년월일</td>
-			<td><input type="text" name="mem_birth" id = "mem_birth"/></td>
+			<td><input type="text" name="mem_birth" id = "mem_birth" value="${i.mem_birth}"/></td>
 		</tr>
 		
 		<tr>
 			<td>이메일</td>
-			<td><input type="text" name="mem_email" id = "mem_email"/></td>
+			<td><input type="text" name="mem_email" id = "mem_email" value="${i.mem_email}"/></td>
 		</tr>
 		
 		<tr>
 			<td>휴대폰</td>
-			<td><input type="text" name="mem_phone" id = "mem_phone"/></td>
+			<td><input type="text" name="mem_phone" id = "mem_phone" value="${i.mem_phone}"/></td>
 		</tr>
 		
 		<tr>
 			<td>전화번호</td>
-			<td><input type="text" name="mem_phone" id = "mem_phone"/></td>
+			<td><input type="text" name="mem_phone" id = "mem_phone" value="${i.mem_phone}"/></td>
 		</tr>
 		
 		<tr>
 			<td>주소</td>
-			<td><input type="text" name="mem_add1" id = "mem_add1"/></td>
+			<td><input type="text" name="mem_add" id = "mem_add" value="${i.mem_add}"/></td>
 		</tr>
 		
 		<tr>
 			<td>상세주소</td>
-			<td><input type="text" name="mem_add1" id = "mem_add1"/></td>
+			<td><input type="text" name="mem_add1" id = "mem_add1" value="${i.mem_add1}"/></td>
 		</tr>
+		</c:forEach>
+	
 		
 		<tr>
 			<td><h2>학력사항</h2></td>
@@ -101,7 +106,7 @@ $(function(){
 			<select name = "selectmajor">
 				<option value="1">ddd</option>
 				<option value="2">sss</option>
-			
+				
 			</select>
 			</td>
 		</tr>
