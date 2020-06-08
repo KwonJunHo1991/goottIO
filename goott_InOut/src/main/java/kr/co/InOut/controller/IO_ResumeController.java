@@ -21,8 +21,8 @@ public class IO_ResumeController {
 	}
 	@RequestMapping(value = "/member/resume.do")
 	public String resume1(Model model) {
-		java.util.List<IO_MemberDTO> list = mdao.selectmember();
-		model.addAttribute("list", list);
+		
+	
 		
 		return "resume";
 	}

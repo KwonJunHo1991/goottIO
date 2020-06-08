@@ -13,6 +13,6 @@ public interface IO_MemberDAO {
 	
 	public IO_MemberDTO viewMember(IO_MemberDTO dto);
 	
-	public List<IO_MemberDTO> selectmember();
+
 
 }

@@ -35,15 +35,8 @@ public class IO_MemberDAOImple implements IO_MemberDAO{
 		// TODO Auto-generated method stub
 		return sqlsession.selectOne("viewMember", dto);
 	}
+	
 
-	@Override
-	public List<IO_MemberDTO> selectmember() {
-		
-		
-		return sqlsession.selectList("selectmember");
-	}
-
-	//회원가입시 이력서 창으로 그회원의 정보만 넘어가 이력서 기본사항에 보여지도록
 	
 	
 }

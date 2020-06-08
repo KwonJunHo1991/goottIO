@@ -35,10 +35,7 @@ public class IO_RegisterController {
 	
 	@RequestMapping(value = "/member/register.do")
 	public String register2(HttpServletRequest req, @ModelAttribute() IO_MemberDTO dto, HttpSession session) {
-		String result = io_memberservice.MemberCheck(dto, session);
-		ModelAndView mav = new ModelAndView();
-		
-		dao.insertOneRegister(dto);
+
 		
 		
 		
