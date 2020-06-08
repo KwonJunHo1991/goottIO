@@ -38,7 +38,7 @@ display: inline-block;
 }	
 
 </style>
-<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
 <script type="text/javascript">
 	$(function () {
 	$('#donaBtn').hover(function () {
@@ -53,7 +53,7 @@ display: inline-block;
 
 </head>
 <body>
-<input type="image" src="/resources/img/chat1.png" alt="로그인하기" id="donaBtn2" onclick="location.href='../support/done_main.jsp'"/>
-<input type="image" src="/resources/img/bell1.png" alt="로그인하기" id="donaBtn" onclick="location.href='../support/done_main.jsp'"/>
+<input type="image" src="/InOut/resources/img/chat1.png" alt="로그인하기" id="donaBtn2" onclick="location.href='../support/done_main.jsp'"/>
+<input type="image" src="/InOut/resources/img/bell1.png" alt="로그인하기" id="donaBtn" onclick="location.href='../support/done_main.jsp'"/>
 </body>
 </html>
