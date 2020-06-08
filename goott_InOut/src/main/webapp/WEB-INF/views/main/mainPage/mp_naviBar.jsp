@@ -31,30 +31,6 @@
     <link rel="stylesheet" href="<c:url value="/resources/css/css_1/style.css"/>">
 <style>
 
-	.main_menu_iner {
-
-        text-align: left;
-
-        background-color: #ffffff;
-
-        width: 100%;
-
-		z-index: 6;
-      }
-
-      .topFixBannerFixed {
-
-        position: fixed;
-
-        top: 0px;
-
-		text-align:left;
-
-		z-index: 6;
-
-		padding-left:20px;
-
-      }
 
 </style> 
 
@@ -117,7 +93,7 @@
                 <div class="row align-items-center ">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-                            <a class="navbar-brand" href="index.html"> <img src="/resources/img/logo2.png" alt="logo"> </a>
+                            <a class="navbar-brand" href="index.html"> <img src="/InOut/resources/img/logo2.png" alt="logo"> </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
