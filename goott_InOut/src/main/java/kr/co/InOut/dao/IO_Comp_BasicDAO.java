@@ -19,4 +19,23 @@ public class IO_Comp_BasicDAO {
 	public List<IO_Comp_BasicDTO> selectAllCompBasic() {
 		return ss.selectList("selectAllCompBasic");
 	}
+	
+	public void insertOneCompBasic(IO_Comp_BasicDTO dto) {
+		ss.insert("insertOneCompBasic", dto);
+	}
+	
+	public IO_Comp_BasicDTO selectOneCompBasicByCn(int comp_num) {
+		return ss.selectOne("selectOneCompBasicByCn", comp_num);
+	}
+	public IO_Comp_BasicDTO selectOneCompBasicById(String comp_id) {
+		return ss.selectOne("selectOneCompBasicById", comp_id);
+	}
+	
+	public void updateOneCompBasic(IO_Comp_BasicDTO dto) {
+		ss.update("updateOneCompBasicByCn", dto);
+	}
+	public boolean loginCheck(IO_Comp_BasicDTO dto) {
+		String name = ss.selectOne("compLoginCheck", dto);
+		return (name == null) ? false : true;
+	}
 }
