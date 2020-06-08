@@ -24,6 +24,7 @@
 			<if test="board_category != 100">and board_category = #{board_category}</if>
 			<if test="board_type != 100">and board_type = #{board_type}</if>
 		</trim>
+		order by board_num desc
 		limit #{board_hits},10
   	</select>
   	
@@ -45,7 +46,7 @@
 	
 	<insert id="insertBoard" parameterType="BoardDTO">
 		insert into io_board 
-		values (null,#{board_id},#{board_title},#{board_content},now(),#{board_type},#{board_Category},0);
+		values (null,#{mem_id},#{board_title},#{board_content},now(),#{board_type},#{board_category},0);
 	</insert>
 	
 	<select id="selectHit5" resultType="BoardDTO">

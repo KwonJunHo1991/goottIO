@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,7 +10,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
 
 <!-- CSS 적용 -->
-<link rel="stylesheet" type="text/css" href="../../etc/css/etc/companylab/cl_qaa_detail_css.css">
+<link rel="stylesheet" type="text/css" href="<c:url value='/resources/css_etc/cl_qaa_detail_css.css'/>">
 
 </head>
 <body>
@@ -22,13 +23,14 @@
 </div>
 <div class="company_review">
     <div class="view_company_cont">
-    <input type="hidden" name="report_idx" value="" id="report_idx">    <input type="hidden" name="report_type" value="" id="report_type">    <em class="name_company">모든 기업<span class="category dot">생산·제조</span><span class="category dot">기타</span>에 대한 질문입니다</em>
-    <strong class="tit_view">취준고민 제목</strong>
-    <p class="desc_view">상세내용</p>
+    <input type="hidden" name="report_idx" value="" id="report_idx">    <input type="hidden" name="report_type" value="" id="report_type">
+    <em class="name_company">모든 기업<span class="category dot">업종 : ${dto.board_type }</span><span class="category dot">카테고리 : ${dto.board_category }</span>에 대한 질문입니다</em>
+    <strong class="tit_view">제목 : ${dto.board_title }</strong>
+    <p class="desc_view">내용 : ${dto.board_content }</p>
     <div class="writer_info">
-                    <span class="thumb_gender male"><span class="blind">남성</span></span>
-                <span class="txt_info"><!-- 카테고리? -->모든 기업<span class="dot">생산·제조</span></span>
-        <span class="txt_date">작성일자</span>
+<!--                     <span class="thumb_gender male"><span class="blind">남성</span></span> -->
+<!--                 <span class="txt_info">카테고리?모든 기업<span class="dot">생산·제조</span></span> -->
+        <span class="txt_date">작성일자 : ${dto.board_date }</span>
     </div>
     <div class="info_view">
         <span class="txt_reply">답변 개수</span>

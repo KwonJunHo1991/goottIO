@@ -1,0 +1,475 @@
+@charset "UTF-8";
+html {
+    color: #000;
+    background: #fff;
+}
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, button {
+    margin: 0;
+    padding: 0;
+    font-family: 'NanumSquare', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+input, button, textarea, select {
+    line-height: normal;
+}
+input, button, textarea, select, optgroup, option {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+}
+strong, b {
+    font-weight: bold;
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-weight: normal;
+    font-style: normal;
+}
+ol, ul, li {
+    list-style: none;
+}
+button {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+input, button, textarea, select, optgroup, option {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+}
+/*@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@*/
+
+#sri_wrap {
+    display: table-row;
+    width: 100%;
+    height: 100%;
+}
+#content {
+    position: relative;
+    z-index: 1;
+    margin: 44px auto 80px auto;
+    width: 960px;
+}
+.wrap_title_recruit {
+    margin: 44px auto 0;
+    /* padding-right: 160px; */
+    width: 960px;
+}
+.wrap_title_recruit {
+    position: relative;
+    padding: 0 0 50px;
+}
+.wrap_title_recruit .title_common {
+    display: inline-block;
+    color: #444;
+    font-size: 32px;
+    font-weight: normal;
+    letter-spacing: -4px;
+    line-height: 36px;
+    vertical-align: top;
+}
+.company_review {
+    margin: 0 auto 80px auto;
+    padding-right: 160px;
+    width: 960px;
+    letter-spacing: -1px;
+}
+.ask_company_review {
+    padding: 80px 100px;
+    border: 1px solid #666;
+}
+.ask_company_review .desc_ask {
+    color: #666;
+    font-size: 15px;
+    line-height: 21px;
+}
+.ask_company_review .tit_ask {
+    display: block;
+    margin-top: 40px;
+    color: #444;
+    font-size: 15px;
+    line-height: 18px;
+}
+.ask_company_review .list_ask>li {
+    display: table;
+    border-bottom: 1px solid #eaeaea;
+}
+
+.ask_company_review .list_ask .wrap_tit {
+    display: table-cell;
+    position: relative;
+    padding: 21px 0 23px 40px;
+    width: 185px;
+    box-sizing: border-box;
+    color: #666;
+    font-size: 15px;
+    line-height: 18px;
+    vertical-align: top;
+    background: #f7f7f7;
+}
+.ask_company_review .list_ask .wrap_tit {
+    display: table-cell;
+    position: relative;
+    padding: 21px 0 23px 40px;
+    width: 185px;
+    box-sizing: border-box;
+    color: #666;
+    font-size: 15px;
+    line-height: 18px;
+    vertical-align: top;
+    background: #f7f7f7;
+}
+.ask_company_review .list_ask .point:before {
+    position: absolute;
+    top: 24px;
+    left: 22px;
+    width: 6px;
+    height: 6px;
+    color: #f00;
+    content: "*";
+}
+.hidden, .blind {
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+}
+
+.ask_company_review .list_ask .tit_list {
+    color: #666;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 17px;
+}
+.ask_company_review .wrap_inp {
+    display: table-cell;
+    padding: 12px 20px;
+    width: 574px;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+.ask_company_review .inpSel {
+    height: 40px;
+}
+.inpSel {
+    display: inline-block;
+    height: 32px;
+    border: 1px solid #dbdbdb;
+    box-sizing: border-box;
+    vertical-align: middle;
+    background: #fff;
+}
+.ask_company_review .inpSel select {
+    padding: 0 29px 1px 15px;
+    width: 340px;
+    height: 100%;
+    font-size: 15px;
+    line-height: 30px;
+    background-position: 100% 4px;
+}
+.inpSel select {
+    padding: 5px 6px 6px\0/;
+}
+.inpSel select {
+    padding: 0 29px 1px 11px;
+    width: 100%;
+    height: 30px;
+    border: none;
+    box-sizing: border-box;
+    color: #444;
+    font-family: 'NanumSquare', sans-serif;
+    font-size: 13px;
+    letter-spacing: -1px;
+    line-height: 29px;
+    text-align: left;
+    vertical-align: top;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background: url("../../../../etc/css/icon/ico_select_arr.png") no-repeat 100% 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.ask_company_review .inpSel select option {
+    height: 36px;
+    font-size: 15px;
+}
+.inpSel select option {
+    height: 32px;
+    font-size: 13px;
+    color: #444;
+    line-height: 16px;
+}
+.ask_company_review .inpSel+.auto_search {
+    margin-top: 12px;
+}
+.company_review .auto_search {
+    position: relative;
+    width: 535px;
+}
+.company_review .auto_search .list_auto_search {
+    display: none;
+    overflow: hidden;
+    overflow-y: auto;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    max-height: 202px;
+    border: 1px solid #666;
+    border-top: 0;
+    box-sizing: border-box;
+    font-size: 13px;
+    letter-spacing: -1px;
+    line-height: 17px;
+    background: #fff;
+}
+.company_review .auto_search .no_search {
+    padding: 34px 0;
+    color: #444;
+    font-size: 14px;
+    text-align: center;
+}
+.ask_company_review .msgInvalid {
+    display: block;
+    margin-top: 6px;
+    color: #f00;
+    font-size: 12px;
+    line-height: 14px;
+}
+.ask_company_review .list_ask .wrap_tit {
+    display: table-cell;
+    position: relative;
+    padding: 21px 0 23px 40px;
+    width: 185px;
+    box-sizing: border-box;
+    color: #666;
+    font-size: 15px;
+    line-height: 18px;
+    vertical-align: top;
+    background: #f7f7f7;
+}
+.ask_company_review .list_ask .point:before {
+    position: absolute;
+    top: 24px;
+    left: 22px;
+    width: 6px;
+    height: 6px;
+    color: #f00;
+    content: "*";
+}
+
+.hidden, .blind {
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+}
+.ask_company_review .list_ask .tit_list {
+    color: #666;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 17px;
+}
+.ask_company_review .wrap_inp {
+    display: table-cell;
+    padding: 12px 20px;
+    width: 574px;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+.company_review .auto_search {
+    position: relative;
+    width: 535px;
+}
+
+.company_review .auto_search .inpTypo {
+    padding: 0 15px 1px 15px;
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    letter-spacing: -1px;
+}
+.inpTypo {
+    padding: 0 11px 1px 11px;
+    width: 100%;
+    height: 32px;
+    border: 1px solid #dbdbdb;
+    box-sizing: border-box;
+    color: #444;
+    font-size: 13px;
+    line-height: 28px;
+    vertical-align: middle;
+    background: #fff;
+}
+.company_review .auto_search .list_auto_search {
+    display: none;
+    overflow: hidden;
+    overflow-y: auto;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    max-height: 202px;
+    border: 1px solid #666;
+    border-top: 0;
+    box-sizing: border-box;
+    font-size: 13px;
+    letter-spacing: -1px;
+    line-height: 17px;
+    background: #fff;
+}
+.company_review .auto_search .no_search {
+    padding: 34px 0;
+    color: #444;
+    font-size: 14px;
+    text-align: center;
+}
+
+.ask_company_review .msgInvalid {
+    display: block;
+    margin-top: 6px;
+    color: #f00;
+    font-size: 12px;
+    line-height: 14px;
+}
+
+.ask_company_review .list_ask .wrap_tit {
+    display: table-cell;
+    position: relative;
+    padding: 21px 0 23px 40px;
+    width: 185px;
+    box-sizing: border-box;
+    color: #666;
+    font-size: 15px;
+    line-height: 18px;
+    vertical-align: top;
+    background: #f7f7f7;
+}
+.ask_company_review .list_ask .point:before {
+    position: absolute;
+    top: 24px;
+    left: 22px;
+    width: 6px;
+    height: 6px;
+    color: #f00;
+    content: "*";
+}
+.hidden, .blind {
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+}
+.ask_company_review .list_ask .tit_list {
+    color: #666;
+    font-size: 15px;
+    font-weight: normal;
+    line-height: 17px;
+}
+.ask_company_review .wrap_inp {
+    display: table-cell;
+    padding: 12px 20px;
+    width: 574px;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+.ask_company_review .tit_inp {
+    position: relative;
+    padding-right: 60px;
+    height: 40px;
+    border: 1px solid #dbdbdb;
+    box-sizing: border-box;
+}
+.ask_company_review .tarea_ask {
+    padding: 15px;
+    width: 535px;
+    height: 120px;
+    border: 1px solid #dbdbdb;
+    border-top: 0;
+    box-sizing: border-box;
+    color: #444;
+    font-size: 15px;
+    letter-spacing: -1px;
+    resize: none;
+}
+.ask_company_review .msgInvalid {
+    display: block;
+    margin-top: 6px;
+    color: #f00;
+    font-size: 12px;
+    line-height: 14px;
+}
+.ask_company_review .btn_complete {
+    display: block;
+    margin: 40px auto 0;
+    padding: 14px 8px 16px;
+    width: 212px;
+    height: 58px;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 18px;
+    letter-spacing: -1px;
+    text-align: center;
+    background: #4876ef;
+}
+
+.ask_company_review .state_inp {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #a9a9a9;
+    font-size: 12px;
+}
+.ask_company_review .tit_inp .inpTypo {
+    padding: 0 15px 1px 15px;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    font-size: 15px;
+    letter-spacing: -1px;
+}
+.ask_company_review .state_inp .txt {
+    color: #000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
