@@ -50,6 +50,42 @@
 
 } 
 
+.jc_container{
+ width: 100%;
+ padding-left: 200px;
+ padding-right: 850px;
+ 
+
+ }
+
+ .jc_main_container{
+ margin-left: 300px;
+ width: 1300px;
+ padding-right: 300px;
+ } 
+  .lc_container{
+ width: 100%;
+ padding-left: 250px;
+ padding-right: 750px;
+
+ 
+
+ }
+
+ .lc_main_container{
+ margin-left: 300px;
+ width: 1300px;
+ padding-right: 300px;
+ }
+.Lc_sidebar{
+    width: 300px;
+    margin-right: 60px;
+   margin-left: 100PX;
+    display: block;
+       float: left;
+   
+}
+
 :root {
   --blue: #007bff;
   --indigo: #6610f2;

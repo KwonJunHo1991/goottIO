@@ -679,7 +679,7 @@
 		        		</a>
 	        		</div>
 	        		<div class="item">
-	        			<a href="#" class="team text-center">
+	        			<a href="../board/boardSearch.do" class="team text-center">
 		        			<div class="img" style="background-image: url(/InOut/resources/images/person_4.png);"></div>
 		        			<h2>Employment Talking</h2>
 		        			<span class="position">취준 고민</span>

@@ -12,6 +12,8 @@
         	<typeAlias type="kr.co.InOut.dto.IO_BoardDTO" alias="BoardDTO"/>
         	
         	<typeAlias type="kr.co.InOut.dto.IO_MemberDTO" alias="MemberDTO"/>
+        	
+        	<typeAlias type="kr.co.InOut.dto.IO_ReBoardDTO" alias="ReBoardDTO"/>
         </typeAliases>
         
         

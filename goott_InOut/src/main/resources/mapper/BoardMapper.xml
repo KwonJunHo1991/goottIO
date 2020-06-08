@@ -54,7 +54,19 @@
 		order by board_hits desc 
 		limit 5;
 	</select>
+	
+	
+	<!-- Re Board -->
 
+	<insert id="insertReBoard" parameterType="ReBoardDTO">
+		insert into io_reboard
+		values (null,#{board_num},#{mem_id},#{comp_num},#{comp_id},#{reboard_content},null)
+	</insert>
+	
+	<select id="selectReBoard" parameterType="int" resultType="ReBoardDTO">
+		select * from io_reboard
+		where board_num = #{board_num}
+	</select>
   	
   	
   	
