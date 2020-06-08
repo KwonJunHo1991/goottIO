@@ -233,7 +233,7 @@
 		<div class="bottom_btn_wrap">
         <a href="#" class="my_question">
         	MY 질문</a>
-        <a href="#" class="quest">
+        <a href="boardInsert.do" class="quest">
         	질문하기</a>
     	</div>
     	<!-- MY 질문 / 질문하기 버튼 끝 -->
@@ -248,7 +248,7 @@
 		                	<c:forEach var="h" items="${hitList }">
 		                	
 			                	<li>
-			                		<a href="#"><!-- 질문 제목 -->제목 : ${h.board_title }<span class="viewer"><!-- 조회수? -->${h.board_hits }</span></a>
+			                		<a href="boardDetail.do?board_num=${h.board_num }"><!-- 질문 제목 -->제목 : ${h.board_title }<span class="viewer"><!-- 조회수? -->${h.board_hits }</span></a>
 			                  	</li>
 		                	
 		                	</c:forEach>
@@ -487,7 +487,7 @@
             <c:forEach var="b" items="${list }">
             
                 <div class="box_review">
-	                <a href="#" class="link_detail"></a>
+	                <a href="boardDetail.do?board_num=${b.board_num }" class="link_detail"></a>
 	                <em class="name_company">
 	                    <span class="job">직무 카테고리 : ${b.board_category }</span>
 	                </em>
