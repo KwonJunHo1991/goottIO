@@ -12,7 +12,7 @@
 
 <!-- CSS 적용 -->
 <!-- <link rel="stylesheet" type="text/css" href="/resources/css/cl_qaa_css.css"> -->
-<link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/cl_qaa_css.css'/>">
+<link rel="stylesheet" type="text/css" href="<c:url value='/resources/css_etc/cl_qaa_css.css'/>">
 
 <script type="text/javascript">
 	function fn_paging(curPage) {

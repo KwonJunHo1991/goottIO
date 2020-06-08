@@ -10,7 +10,7 @@
 <link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
 
 <!-- CSS 적용 -->
-<link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/cl_qaa_detail_css.css'/>">
+<link rel="stylesheet" type="text/css" href="<c:url value='/resources/css_etc/cl_qaa_detail_css.css'/>">
 
 </head>
 <body>

@@ -9,7 +9,7 @@
 
 <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@1.0/nanumsquare.css">
 
-<link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/cl_qaa_q_css.css'/>">
+<link rel="stylesheet" type="text/css" href="<c:url value='/resources/css_etc/cl_qaa_q_css.css'/>">
 
 </head>
 <body>
