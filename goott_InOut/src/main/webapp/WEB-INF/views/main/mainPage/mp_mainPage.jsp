@@ -32,27 +32,7 @@
     
 
  <style type="text/css">
- .container_2{
- width: 100%;
- padding-left: 650px;
- padding-right: 200px;
 
- }
- .container_3{
- width: 100%;
- padding-left: 400px;
- padding-right: 400px;
-
- }
- #container_2m{
- }
- .main_sidebar{
- 	width: 300px;
- 	margin-left: 80px;
- }
- .img{
- width: 100px;
- }
  </style>   
   </head>
   <body>
@@ -60,9 +40,14 @@
    <jsp:include page="./loginPop.jsp"></jsp:include>
 	 
 <!-- InOut 메인 페이지 -->	 
-    
+
     <!-- 상단이미지 -->
-    <div class="hero-wrap img" style="background-image: url(/resources/images/bg_1.jpg);">
+    
+    
+
+<%-- <c:url value="/resources/images/bg_1.jpg"/> --%>
+<!--     <div class="hero-wrap img" style="background-image: /resources/images/bg_1.jpg;"> -->
+    <div class="hero-wrap img" style="background-image:url('/InOut/resources/images/bg_1.jpg');">
       <div class="overlay"></div>
       <div class="container">
       	<div class="row d-md-flex no-gutters slider-text align-items-center justify-content-center">
@@ -614,7 +599,7 @@
 		        </div>
 		        <div class="sidebar-box ftco-animate">
 		        	<div class="">
-			        	<a href="#" class="company-wrap"><img src="/resources/images/company-1.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
+			        	<a href="#" class="company-wrap"><img src="/InOut/resources/images/company-1.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
 			        	<div class="text p-3">
 			        		<h3><a href="#">Company Company</a></h3>
 			        		<p><span class="number">500</span> <span>Open position</span></p>
@@ -623,7 +608,7 @@
 		        </div>
 		        <div class="sidebar-box ftco-animate">
 		        	<div class="">
-			        	<a href="#" class="company-wrap"><img src="/resources/images/company-2.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
+			        	<a href="#" class="company-wrap"><img src="/InOut/resources/images/company-2.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
 			        	<div class="text p-3">
 			        		<h3><a href="#">Facebook Company</a></h3>
 			        		<p><span class="number">700</span> <span>Open position</span></p>
@@ -632,7 +617,7 @@
 		        </div>
 		        <div class="sidebar-box ftco-animate">
 		        	<div class="">
-			        	<a href="#" class="company-wrap"><img src="/resources/images/company-3.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
+			        	<a href="#" class="company-wrap"><img src="/InOut/resources/images/company-3.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
 			        	<div class="text p-3">
 			        		<h3><a href="#">IT Programming INC</a></h3>
 			        		<p><span class="number">700</span> <span>Open position</span></p>
@@ -641,7 +626,7 @@
 		        </div>
 		        <div class="sidebar-box ftco-animate">
 		        	<div class="">
-			        	<a href="#" class="company-wrap"><img src="/resources/images/company-4.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
+			        	<a href="#" class="company-wrap"><img src="/InOut/resources/images/company-4.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
 			        	<div class="text p-3">
 			        		<h3><a href="#">IT Programming INC</a></h3>
 			        		<p><span class="number">700</span> <span>Open position</span></p>
@@ -672,56 +657,56 @@
         		<div class="carousel-candidates owl-carousel">
         			<div class="item">
 		        		<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(/resources/images/person_1.png);"></div>
+		        			<div class="img" style="background-image: url(/InOut/resources/images/person_1.png);"></div>
 		        			<h2>MyPage</h2>
 		        			<span class="position">마이페이지</span>
 		        		</a>
         			</div>
         			<div class="item">
 	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(/resources/images/person_2.png);"></div>
+		        			<div class="img" style="background-image: url(/InOut/resources/images/person_2.png);"></div>
 		        			<h2>Support Status</h2>
 		        			<span class="position">이력서 지원현황</span>
 		        		</a>
 	        		</div>
 	        		<div class="item">
 	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(/resources/images/person_3.png);"></div>
+		        			<div class="img" style="background-image: url(/InOut/resources/images/person_3.png);"></div>
 		        			<h2>Counting characters</h2>
 		        			<span class="position">글자수 세기</span>
 		        		</a>
 	        		</div>
 	        		<div class="item">
 	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(/resources/images/person_4.png);"></div>
+		        			<div class="img" style="background-image: url(/InOut/resources/images/person_4.png);"></div>
 		        			<h2>Employment Talking</h2>
 		        			<span class="position">취준 고민</span>
 		        		</a>
 	        		</div>
 	        		<div class="item">
 	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(/resources/images/person_5.png);"></div>
+		        			<div class="img" style="background-image: url(/InOut/resources/images/person_5.png);"></div>
 		        			<h2>Applicant management</h2>
 		        			<span class="position">지원자 관리</span>
 		        		</a>
 	        		</div>
 	        		<div class="item">
 	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(/resources/images/person_6.png);"></div>
+		        			<div class="img" style="background-image: url(/InOut/resources/images/person_6.png);"></div>
 		        			<h2>Corporate announcement</h2>
 		        			<span class="position">기업 공고</span>
 		        		</a>
 	        		</div>
 	        		<div class="item">
 	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(/resources/images/person_7.png);"></div>
+		        			<div class="img" style="background-image: url(/InOut/resources/images/person_7.png);"></div>
 		        			<h2>Resume writing</h2>
 		        			<span class="position">이력서 작성</span>
 		        		</a>
 	        		</div>
 	        		<div class="item">
 	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(/resources/images/person_8.png);"></div>
+		        			<div class="img" style="background-image: url(/InOut/resources/images/person_8.png);"></div>
 		        			<h2>Adoption products</h2>
 		        			<span class="position">채용 상품</span>
 		        		</a>
@@ -756,7 +741,7 @@
       </div>
     </section>
 
-    <jsp:include page="./mp_footer.jsp"></jsp:include>   
+   <%--  <jsp:include page="./mp_footer.jsp"></jsp:include>    --%>
   
 
   <!-- loader -->
