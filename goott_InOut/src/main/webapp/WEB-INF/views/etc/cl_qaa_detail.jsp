@@ -11,7 +11,9 @@
 
 <!-- CSS 적용 -->
 <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css_etc/cl_qaa_detail_css.css'/>">
+<style type="text/css">
 
+</style>
 
 </head>
 <body>
@@ -61,7 +63,7 @@
         <div class="re_answer_box_main">
         <div class="guide">
         <div id="re_answer">
-		<textarea name="" id="textarea_placehold" maxlength="10000">개인정보를 공유 및 요청하거나, 명예 훼손, 무단 광고, 불법 정보 유포시 모니터링 후 삭제될 수 있으며, 이에 대한 민형사상 책임은 게시자에게 있습니다.
+		<textarea name="" id="textarea_placehold" maxlength="10000" onclick="this.value=''">개인정보를 공유 및 요청하거나, 명예 훼손, 무단 광고, 불법 정보 유포시 모니터링 후 삭제될 수 있으며, 이에 대한 민형사상 책임은 게시자에게 있습니다.
 		</textarea>
         </div>
         </div>
@@ -73,7 +75,7 @@
  <!-- 답변작성 박스 -->   
         <div class="list_review_reply non_login">
                
-                                            <div class="info_reply" id="220732">
+ <!--                                            <div class="info_reply" id="220732">
         <div class="box_reply">
             <p class="txt_reply">
                 경력은 아닙니다. 하지만 이력서에 작성을 해야하는 경력이라면 작성하셔도 무방하지만, 왜 3-4개월만하고 퇴사했냐라는 답변이 당당하게 나오지 않은다면 이력서기재는 안하시는것이 좋습니다. 이직사유로 퇴사했다는 것은 이직을 바로 하셨다는 건가요? 아니면 이직을 준비하려고 퇴사하신건가요?<br>
@@ -221,7 +223,9 @@
             </div>
         </div>
     </div>
-                    </div>
+  --> 
+  
+          </div>
                     <button type="button" class="btn_more list_review_reply_btn_more" data-page="1" onclick="REVIEW_QST_AND_ANS.getAnwrList('4709')">더보기</button>
         
     </div><!-- //view_company_reply -->
