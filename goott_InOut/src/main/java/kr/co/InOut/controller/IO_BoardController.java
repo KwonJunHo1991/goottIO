@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import kr.co.InOut.dao.IO_BoardDAO;
 import kr.co.InOut.dto.IO_BoardDTO;
 import kr.co.InOut.dto.IO_Comp_BasicDTO;
+import kr.co.InOut.dto.IO_ReBoardDTO;
 import kr.co.InOut.service.IO_Board_Paging;
 
 @Controller
@@ -55,7 +56,7 @@ public class IO_BoardController {
 	 * //jsp 파일경로. return "boardList"; }
 	 */
 	
-	//게시글 조회.
+	//전체게시글 조회.
 	@RequestMapping(value="/board/boardSearch.do")
 	public String boardSearch(Model model,
 			@RequestParam(value = "board_type" , defaultValue="100") int board_type,
@@ -82,6 +83,10 @@ public class IO_BoardController {
 		
 		model.addAttribute("hitList", hitList);
 		
+		//select Re Top 5
+		List<IO_BoardDTO> reTop5 = dao.selectReTop5();
+		model.addAttribute("reTop5", reTop5);
+		
 		//return "boardList";
 		return "/etc/cl_qaa";
 	}
@@ -93,9 +98,19 @@ public class IO_BoardController {
 							  Model model
 			) {
 		
+		//조회수 증가
+		dao.upHits(board_num);
+		
+		//내가쓴 게시글 담아 보내기.
 		IO_BoardDTO dto = dao.selectBoardDetail(board_num);
 		
 		model.addAttribute("dto",dto);
+		
+		//답글 담아 보내기.
+		List<IO_ReBoardDTO> reList = dao.selectReBoard(board_num);
+		
+		model.addAttribute("reList",reList);
+		
 		
 		
 		return "/etc/cl_qaa_detail";
@@ -109,13 +124,22 @@ public class IO_BoardController {
 	
 	
 	
-	//게시글 등록.
+	//게시글 등록 페이지
 	@RequestMapping(value ="/board/boardInsertOk.do")
 	public String insertBoardOk(@ModelAttribute() IO_BoardDTO dto) {
-
-		
 		dao.insertBoard(dto);
 		//리다이렉트 어디로갈까 ->리스트?
+		return "redirect:/board/boardSearch.do";
+	}
+	
+	
+	//게시글 등록.
+	@RequestMapping(value = "/board/ReBoardInsertOk.do")
+	public String insertReBoard(@ModelAttribute() IO_ReBoardDTO dto) {
+		
+		dao.insertReBoard(dto);
+		
+		
 		return "redirect:/board/boardSearch.do";
 	}
 	

@@ -633,7 +633,7 @@ position: absolute;
 }
 
 #textarea_placehold{
-color: #ccc;
+
 display: block;
     overflow-x: hidden;
     overflow-y: auto;
@@ -650,6 +650,7 @@ display: block;
     resize: none;
     -webkit-appearance: none;
     box-sizing: border-box;
+    
 }
 .re_answer_box{
 position: relative;

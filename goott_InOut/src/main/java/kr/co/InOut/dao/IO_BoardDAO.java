@@ -10,6 +10,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import kr.co.InOut.dto.IO_BoardDTO;
+import kr.co.InOut.dto.IO_ReBoardDTO;
 
  
 @Repository
@@ -112,6 +113,10 @@ public class IO_BoardDAO {
 		
 		return list;
 	}
+	
+	public void upHits(int board_num) {
+		session.update("upHit", board_num);
+	}
 
 	
 	//게시글 수정 (ID 일치하면)
@@ -119,7 +124,20 @@ public class IO_BoardDAO {
 	
 	
 	//답변하기(insert) 
+	public void insertReBoard(IO_ReBoardDTO dto) {
+		session.insert("insertReBoard", dto);
+	}
 	//답변조회(select)
+	public List<IO_ReBoardDTO> selectReBoard(int board_num) {
+		List<IO_ReBoardDTO> list = session.selectList("selectReBoard", board_num);
+		return list;
+	}
+	
+	//답변 탑 5
+	public List<IO_BoardDTO> selectReTop5(){
+		List<IO_BoardDTO> list = session.selectList("countReBoardTop5");
+		return list;
+	}
 
 	
 }
