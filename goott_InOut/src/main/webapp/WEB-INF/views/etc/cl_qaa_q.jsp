@@ -29,7 +29,15 @@
 
  --> 
  <form action="boardInsertOk.do">
+ 
+ 
+ <!-- 아이디 정보 바꾸기!!!!!!!!!!!! -->
     <input type="hidden" name="mem_id" value="testId" />
+    
+    
+    
+    
+    
    <p class="desc_ask">취준고민은 <strong>익명</strong>으로 등록됩니다.<br>
                 궁금하신 질문과 내용을 자세히 작성하시면 정확한 답변을 얻으실 수 있습니다.<br>
                 기업명 or 직종을 1개 이상 입력해주세요.

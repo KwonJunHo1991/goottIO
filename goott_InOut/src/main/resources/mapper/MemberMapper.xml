@@ -15,9 +15,15 @@
   
   	<select id="viewMember" resultType="MemberDTO">
   	
-  	select mem_name,
+  	select 
   	mem_id,
-  	mem_email 
+  	mem_name,
+  	mem_birth,
+  	mem_email,
+  	mem_phone,
+  	mem_add,
+  	mem_add1
+  	 
   	from io_member
   	where mem_id = #{mem_id} and mem_pw = #{mem_pw}
   	
@@ -45,7 +51,9 @@
   
   	<insert id="InsertResume" parameterType="ResumeDTO">
   	
-  	insert into io_resume ()
+  	insert into io_resume
+  	values (
+  		null, #{mem_id})
   	
   	
   	</insert>

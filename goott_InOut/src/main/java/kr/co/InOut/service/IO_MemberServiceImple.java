@@ -25,6 +25,14 @@ public class IO_MemberServiceImple implements IO_MemberService{
 			
 			session.setAttribute("mem_id", dto1.getMem_id());
 			session.setAttribute("mem_name", dto1.getMem_name());
+			session.setAttribute("mem_birth", dto1.getMem_birth());
+			session.setAttribute("mem_email", dto1.getMem_email());
+			session.setAttribute("mem_phone", dto1.getMem_phone());
+			session.setAttribute("mem_phone", dto1.getMem_phone());
+			session.setAttribute("mem_add", dto1.getMem_add());
+			session.setAttribute("mem_add1", dto1.getMem_add1());
+			
+		
 		}
 		
 		return result;

@@ -12,8 +12,12 @@
 $(function(){
 	$("#resumecommit").click(function(){
 		
+		console.log("ddd");
+		var mem_id = $("#mem_id").val();
 		
-		
+			document.frm1.action = "./resume.do";
+			document.frm1.method = "get";
+			document.frm1.submit();
 	});
 });
 
@@ -26,12 +30,18 @@ $(function(){
 <body>
 <h2>resdddume.jsp</h2>
 
-<form action="">
 
+	<form name="frm1">
 	<table>
 	<!-- 기본정보는 member 테이블에서 불러온다  -->
 		<h2>기본정보</h2>
 		
+	
+		<tr>
+			<td>id</td>
+			<td><input type="text" name="mem_id" id="mem_id" value="${sessionScope.mem_id }" /></td>
+		</tr>
+	
 	
 		
 		<tr>
@@ -69,7 +79,7 @@ $(function(){
 			<td><input type="text" name="mem_add1" id = "mem_add1" value="${sessionScope.mem_add1 }"/></td>
 		</tr>
 	
-	
+		
 		
 		<tr>
 			<td><h2>학력사항</h2></td>
@@ -384,8 +394,7 @@ $(function(){
 			</select></td>
 		</tr>
 
-		
-		
+	
 		
 		
 		
@@ -415,11 +424,11 @@ $(function(){
 		
 		
 	</table>
-
-
-
-
-
 </form>
+
+
+
+
+
 </body>
 </html>
