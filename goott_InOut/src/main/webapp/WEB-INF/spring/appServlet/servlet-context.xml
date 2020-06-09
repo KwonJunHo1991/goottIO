@@ -12,6 +12,14 @@
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<annotation-driven />
 
+ 
+	<resources mapping="/main/mainPage/main/**" location="/mainPage/" />
+    <resources mapping="/resource/fonts/**" location="/resources/fonts/" />
+
+
+
+<!--     <resources mapping="/resources/images/**" location="/resources/images/" /> -->
+    
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
 
