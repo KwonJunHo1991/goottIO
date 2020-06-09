@@ -27,7 +27,8 @@ public class IO_ResumeDTO {
 	private int res_pre_support;
 	private Date res_make_date;
 	private int res_total_career;
-
+	private String res_maincap;
+	private String res_title;
 
 	public IO_ResumeDTO() {}
 
@@ -35,7 +36,7 @@ public class IO_ResumeDTO {
 	public IO_ResumeDTO(int res_num, String mem_id, int res_lev, String res_school, Date res_stdate, int res_stdatesub,
 			Date res_enddate, int res_enddatesub, int res_major, Date res_career_date, String res_shiftpattern,
 			int res_income, int res_workarea, String res_too, String res_tob, int res_rep_area, String res_rep_too,
-			int res_pre_ob, int res_pre_mil, int res_pre_support, Date res_make_date, int res_total_career) {
+			int res_pre_ob, int res_pre_mil, int res_pre_support, Date res_make_date, int res_total_career, String res_maincap, String res_title) {
 		super();
 		this.res_num = res_num;
 		this.mem_id = mem_id;
@@ -59,6 +60,18 @@ public class IO_ResumeDTO {
 		this.res_pre_support = res_pre_support;
 		this.res_make_date = res_make_date;
 		this.res_total_career = res_total_career;
+		this.res_maincap = res_maincap;
+		this.res_title = res_title;
+	}
+
+
+	public String getRes_title() {
+		return res_title;
+	}
+
+
+	public void setRes_title(String res_title) {
+		this.res_title = res_title;
 	}
 
 
@@ -182,6 +195,16 @@ public class IO_ResumeDTO {
 	}
 
 
+	public String getRes_maincap() {
+		return res_maincap;
+	}
+
+
+	public void setRes_maincap(String res_maincap) {
+		this.res_maincap = res_maincap;
+	}
+
+
 	public int getRes_workarea() {
 		return res_workarea;
 	}
@@ -291,13 +314,21 @@ public class IO_ResumeDTO {
 				+ ", res_workarea=" + res_workarea + ", res_too=" + res_too + ", res_tob=" + res_tob + ", res_rep_area="
 				+ res_rep_area + ", res_rep_too=" + res_rep_too + ", res_pre_ob=" + res_pre_ob + ", res_pre_mil="
 				+ res_pre_mil + ", res_pre_support=" + res_pre_support + ", res_make_date=" + res_make_date
-				+ ", res_total_career=" + res_total_career + "]";
+				+ ", res_total_career=" + res_total_career + ", res_maincap=" + res_maincap + ", res_title=" + res_title
+				+ "]";
 	}
 
 
-	
+
+
+	}
+
+
+
+
 
 	
 
+	
 
-}
+

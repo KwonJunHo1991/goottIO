@@ -98,21 +98,28 @@ public class IO_BoardController {
 		model.addAttribute("dto",dto);
 		
 		
-		return "boardDetail";
+		return "/etc/cl_qaa_detail";
 	}
+	
+	@RequestMapping(value = "/board/boardInsert.do")
+	public String insertBoard() {
+		
+		return "/etc/cl_qaa_q";
+	}
+	
+	
 	
 	//게시글 등록.
 	@RequestMapping(value ="/board/boardInsertOk.do")
-	public String insertBoard(@ModelAttribute() IO_BoardDTO dto) {
-		
-		
+	public String insertBoardOk(@ModelAttribute() IO_BoardDTO dto) {
+
 		
 		dao.insertBoard(dto);
-		
-		
 		//리다이렉트 어디로갈까 ->리스트?
-		return "boardList";
+		return "redirect:/board/boardSearch.do";
 	}
+	
+	
 	
 	
 	

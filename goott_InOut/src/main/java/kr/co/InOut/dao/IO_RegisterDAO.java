@@ -18,4 +18,8 @@ public class IO_RegisterDAO {
 		ss.insert("insertOneRegister", dto);
 		
 	}
+	
+	public IO_MemberDTO TransferResume(String mem_id) {
+		return ss.selectOne("TransferResume", mem_id);
+	}
 }

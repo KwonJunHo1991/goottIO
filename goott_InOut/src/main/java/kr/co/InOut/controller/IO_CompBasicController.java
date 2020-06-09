@@ -74,7 +74,8 @@ public class IO_CompBasicController {
 	@RequestMapping(value = "/company/join.do", method = RequestMethod.POST)
 	public String compJoinOk(@ModelAttribute()IO_Comp_BasicDTO dto, Model model, HttpSession session) {
 		dao.insertOneCompBasic(dto);
-		session.setAttribute("loginComp", dao.selectOneCompBasicByCn(dto.getComp_num()));
+		session.setAttribute("loginComp"
+				+ "", dao.selectOneCompBasicByCn(dto.getComp_num()));
 		return "main";
 	}
 	

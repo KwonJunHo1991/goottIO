@@ -35,6 +35,11 @@ public class IO_MemberDAOImple implements IO_MemberDAO{
 		// TODO Auto-generated method stub
 		return sqlsession.selectOne("viewMember", dto);
 	}
+
+	@Override
+	public List<IO_MemberDTO> selectmember() {
+		return sqlsession.selectList("selectmember");
+	}
 	
 
 	

@@ -15,4 +15,5 @@ public interface IO_MemberService {
 	
 	//회원 가입시 이력서로 넘어갈때 세션보존
 
+	
 }

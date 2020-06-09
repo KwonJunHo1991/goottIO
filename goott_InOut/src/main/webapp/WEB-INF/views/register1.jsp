@@ -10,7 +10,16 @@
 $(function(){
       $("#btn").click(function(){
  
-      
+    	  var mem_id = $("#mem_id").val(); 
+    	  var mem_pw = $("#mem_pw").val();
+    	  var mem_email = $("#mem_email").val();
+    	  var mem_name = $("#mem_name").val();
+    	  var mem_birth = $("#mem_birth").val();
+    	  var mem_phone = $("#mem_phone").val();
+    	  var mem_sex = $("#mem_sex").val();
+    	  var mem_add = $("#mem_add").val();
+    	  var mem_add1 = $("#mem_add1").val();
+    	  
       document.form1.action = "./register.do";
       document.form1.method = "get"; 
       document.form1.submit();

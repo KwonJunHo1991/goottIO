@@ -36,9 +36,18 @@
   	
   	</select>
   	
+  	<select id="TransferResume" parameterType="String" resultType="MemberDTO">
+  	select * from io_member where mem_id = #{mem_id}
+  	
+  	
+  	</select>
   
   
-  
-  
+  	<insert id="InsertResume" parameterType="ResumeDTO">
+  	
+  	insert into io_resume ()
+  	
+  	
+  	</insert>
   
   </mapper>

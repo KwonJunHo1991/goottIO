@@ -16,13 +16,18 @@ public class IO_CarrerDTO {
 	private int car_workarea;
 	private String car_dept;
 	private int car_income;
+	private String car_res_bus;
+	private String car_pro_name;
+	private Date car_pro_stdate;
+	private Date car_pro_enddate;
+	private String car_pro_contents;
 	
 	
 	public IO_CarrerDTO() {}
 
 
 	public IO_CarrerDTO(int car_num, int res_num, String mem_id, String car_name, Date car_stdate, Date car_enddate,
-			int car_resign, String car_position, String car_too, int car_workarea, String car_dept, int car_income) {
+			int car_resign, String car_position, String car_too, int car_workarea, String car_dept, int car_income, String car_res_bus, String car_pro_name, Date car_pro_stdate, Date car_pro_enddate, String car_pro_contents) {
 		super();
 		this.car_num = car_num;
 		this.res_num = res_num;
@@ -36,6 +41,61 @@ public class IO_CarrerDTO {
 		this.car_workarea = car_workarea;
 		this.car_dept = car_dept;
 		this.car_income = car_income;
+		this.car_res_bus = car_res_bus;
+		this.car_pro_name = car_pro_name;
+		this.car_pro_stdate = car_pro_stdate;
+		this.car_pro_enddate = car_pro_enddate;
+		this.car_pro_contents = car_pro_contents;
+	}
+
+
+	public String getCar_res_bus() {
+		return car_res_bus;
+	}
+
+
+	public void setCar_res_bus(String car_res_bus) {
+		this.car_res_bus = car_res_bus;
+	}
+
+
+	public String getCar_pro_name() {
+		return car_pro_name;
+	}
+
+
+	public void setCar_pro_name(String car_pro_name) {
+		this.car_pro_name = car_pro_name;
+	}
+
+
+	public Date getCar_pro_stdate() {
+		return car_pro_stdate;
+	}
+
+
+	public void setCar_pro_stdate(Date car_pro_stdate) {
+		this.car_pro_stdate = car_pro_stdate;
+	}
+
+
+	public Date getCar_pro_enddate() {
+		return car_pro_enddate;
+	}
+
+
+	public void setCar_pro_enddate(Date car_pro_enddate) {
+		this.car_pro_enddate = car_pro_enddate;
+	}
+
+
+	public String getCar_pro_contents() {
+		return car_pro_contents;
+	}
+
+
+	public void setCar_pro_contents(String car_pro_contents) {
+		this.car_pro_contents = car_pro_contents;
 	}
 
 
@@ -164,8 +224,13 @@ public class IO_CarrerDTO {
 		return "IO_CarrerDTO [car_num=" + car_num + ", res_num=" + res_num + ", mem_id=" + mem_id + ", car_name="
 				+ car_name + ", car_stdate=" + car_stdate + ", car_enddate=" + car_enddate + ", car_resign="
 				+ car_resign + ", car_position=" + car_position + ", car_too=" + car_too + ", car_workarea="
-				+ car_workarea + ", car_dept=" + car_dept + ", car_income=" + car_income + "]";
+				+ car_workarea + ", car_dept=" + car_dept + ", car_income=" + car_income + ", car_res_bus="
+				+ car_res_bus + ", car_pro_name=" + car_pro_name + ", car_pro_stdate=" + car_pro_stdate
+				+ ", car_pro_enddate=" + car_pro_enddate + ", car_pro_contents=" + car_pro_contents + "]";
 	}
+
+
+
 
 	
 	
