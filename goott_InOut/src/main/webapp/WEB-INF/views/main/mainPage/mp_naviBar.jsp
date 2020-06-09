@@ -29,10 +29,7 @@
     <link rel="stylesheet" href="<c:url value="/resources/css/css_1/slick.css"/>">
     <!-- style CSS -->
     <link rel="stylesheet" href="<c:url value="/resources/css/css_1/style.css"/>">
-<style>
 
-
-</style> 
 
 
  
@@ -165,7 +162,7 @@
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item" href="blog.html">기업에 대한 Q&A</a>
-                                            <a class="dropdown-item" href="single-blog.html">취준고민</a>
+                                            <a class="dropdown-item" href="../board/boardSearch.do">취준고민</a>
                                             <a class="dropdown-item" href="single-blog.html">취업뉴스</a>
                                             <a class="dropdown-item" href="single-blog.html">이력서 무료다운</a>
                                             <a class="dropdown-item" href="single-blog.html">글자수 체크</a>

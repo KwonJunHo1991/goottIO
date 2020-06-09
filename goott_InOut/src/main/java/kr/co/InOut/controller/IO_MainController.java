@@ -12,4 +12,18 @@ public class IO_MainController {
 		
 		return "/main/mainPage/mp_mainPage";
 	}
+	@RequestMapping(value= "/main/local.do")
+	public String locaPage() {
+		
+		
+		return "/main/localChoice/lc_localChoice";
+	}
+	@RequestMapping(value= "/main/job.do")
+	public String jobPage() {
+		
+		
+		return "/main/jobChoice/jc_jobChoice";
+	}
+	
+	
 }

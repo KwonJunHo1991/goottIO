@@ -273,22 +273,26 @@
 		                <strong class="tit_tab">답변 많은 질문</strong>
 		                <span class="criteria">최근 1주일 기준</span>
                			<ol>
-		                	<li>
-		                		<a href="#"><!-- 질문 제목 -->제목<span class="viewer"><!-- 조회수? -->조회수</span></a>
+		                	<c:forEach var="re" items="${reTop5 }">
+			                	<li>
+			                		<a href="boardDetail.do?board_num=${re.board_num }">제목 : ${re.board_title }<span class="viewer"><!-- 조회수 --></span></a>
+			                  	</li>
+		                  	</c:forEach>
+		     
+		                  	<!-- <li>
+		                		<a href="#">질문 제목제목<span class="viewer">조회수?조회수</span></a>
 		                  	</li>
 		                  	<li>
-		                		<a href="#"><!-- 질문 제목 -->제목<span class="viewer"><!-- 조회수? -->조회수</span></a>
+		                		<a href="#">질문 제목제목<span class="viewer">조회수?조회수</span></a>
 		                  	</li>
 		                  	<li>
-		                		<a href="#"><!-- 질문 제목 -->제목<span class="viewer"><!-- 조회수? -->조회수</span></a>
+		                		<a href="#">질문 제목제목<span class="viewer">조회수?조회수</span></a>
 		                  	</li>
 		                  	<li>
-		                		<a href="#"><!-- 질문 제목 -->제목<span class="viewer"><!-- 조회수? -->조회수</span></a>
+		                		<a href="#">질문 제목제목<span class="viewer">조회수?조회수</span></a>
 		                  	</li>
-		                  	<li>
-		                		<a href="#"><!-- 질문 제목 -->제목<span class="viewer"><!-- 조회수? -->조회수</span></a>
-		                  	</li>
-		                 </ol>
+		     -->
+		                  </ol>
             		</div>
             </div>
             
