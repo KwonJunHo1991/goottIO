@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
 
 import kr.co.InOut.dao.IO_MemberDAO;
+import kr.co.InOut.dao.IO_ResumeDAO;
 import kr.co.InOut.dto.IO_MemberDTO;
 import kr.co.InOut.dto.IO_ResumeDTO;
 
@@ -19,22 +20,40 @@ import kr.co.InOut.dto.IO_ResumeDTO;
 public class IO_ResumeController {
 
 	@Autowired
-	IO_MemberDAO mdao;
+	IO_ResumeDAO rdao;
 	
-	public void setDao(IO_MemberDAO mdao) {
-		this.mdao = mdao;
+	public void setDao(IO_ResumeDAO mdao) {
+		this.rdao = rdao;
 	}
-	@RequestMapping(value = "/member/resume.do")
+	@RequestMapping(value = "/member/resumelist.do")
 	
-	public String resume1(HttpServletRequest req, @ModelAttribute() IO_ResumeDTO dto, HttpSession session) {
+	public String resume1() {
 		
 		
 		
-		
-		
-		
+
 		return "resume";
 	}
+	
+	@RequestMapping(value = "/member/insertresume.do")
+	
+	public String resume2(HttpServletRequest req, @ModelAttribute() IO_ResumeDTO dto, HttpSession session) {
+			
 		
+		
+		
+		
+		rdao.InsertResume(dto);
+		
+		return "myresume";
+	}
+	
+	@RequestMapping(value = "/member/insertuniversity.do")
+	public String resume3() {
+		
+		
+		
+		return null;
+	}
 	
 }

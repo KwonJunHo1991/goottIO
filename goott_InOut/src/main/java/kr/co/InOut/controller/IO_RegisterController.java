@@ -43,6 +43,7 @@ public class IO_RegisterController {
 		
 		session.setAttribute("mem_id", req.getParameter("mem_id"));
 		session.setAttribute("mem_pw", req.getParameter("mem_pw"));
+		session.setAttribute("mem_sex", req.getParameter("mem_sex"));
 		session.setAttribute("mem_email", req.getParameter("mem_email"));
 		session.setAttribute("mem_name", req.getParameter("mem_name"));
 		session.setAttribute("mem_birth", req.getParameter("mem_birth"));

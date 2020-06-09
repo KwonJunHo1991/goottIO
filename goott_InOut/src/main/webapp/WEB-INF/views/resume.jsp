@@ -13,9 +13,9 @@ $(function(){
 	$("#resumecommit").click(function(){
 		
 		console.log("ddd");
-		var mem_id = $("#mem_id").val();
+
 		
-			document.frm1.action = "./resume.do";
+			document.frm1.action = "./insertresume.do";
 			document.frm1.method = "get";
 			document.frm1.submit();
 	});
@@ -49,6 +49,10 @@ $(function(){
 			<td><input type="text" name="mem_name" id = "mem_name" value="${sessionScope.mem_name }"/></td>
 		</tr>
 		
+		<tr>
+			<td>성별</td>
+			<td><input type="text" name="mem_sex" id="mem_sex" value="${sessionScope.mem_sex }"/></td>
+		</tr>
 		<tr>
 			<td>생년월일</td>
 			<td><input type="text" name="mem_birth" id = "mem_birth" value="${sessionScope.mem_birth }"/></td>
@@ -94,7 +98,17 @@ $(function(){
 			<td>학교명</td>
 			<td><input type="text" name = "res_school" id = "res_school"/></td>
 		</tr>
-		
+		<tr>
+			<td>지역</td>
+			<td><select name="res_area" id="res_area">
+				<option value="1">서울</option>
+				<option value="2">대전</option>
+				<option value="3">부산</option>
+			
+			
+			
+			</select></td>
+		</tr>
 		<tr>
 			<td>재학기간</td>
 			<td><input type="text" name="res_stdate" id="res_stdate" /></td>
@@ -338,9 +352,14 @@ $(function(){
 		
 		<tr>
 			<td>근무형태</td>
-			<td>정규직<input type="checkbox" name="" id="" value="dd" /></td>
-			<td>파트<input type="checkbox" name="" id="" value="dd" /></td>
-			<td>교육생<input type="checkbox" name="" id="" value="dd" /></td>
+			<td><select name="res_shiftpattern" id="res_shiftpattern">
+				<option value="1">정규직</option>
+				<option value="2">파트</option>
+				<option value="3">교육생</option>
+			
+			
+			</select></td>
+
 		</tr>
 		
 		<tr>
@@ -357,30 +376,44 @@ $(function(){
 		
 				<tr>
 			<td>근무지역</td>
+			<td><select name="res_workarea" id="res_workarea">
+				<option value="1">광진구</option>
+				<option value="2">강남구</option>
+				<option value="3">강북구</option>
 			
-			<td>강남구<input type="checkbox" name="res_workarea" id="res_workarea" value="dd" /></td>
-			<td>광진구<input type="checkbox" name="res_workarea" id="res_workarea" value="dd" /></td>
-			<td>강북구<input type="checkbox" name="res_workarea" id="res_workarea" value="dd" /></td>
+			</select></td>
+			
 		
 		</tr>
-				<tr>
+		<tr>
 			<td>직종</td>
-			<td>기획<input type="checkbox" name="res_too" id="res_too" value="dd" /></td>
-			<td>총무<input type="checkbox" name="res_too" id="res_too" value="dd" /></td>
-			<td>경리<input type="checkbox" name="res_too" id="res_too" value="dd" /></td>
-		</tr>
+			<td><select name="res_too" id="res_too">
+					<option value="1">기획</option>
+					<option value="2">총리</option>
+					<option value="3">경리</option>
+				
+				</select></td>
+			
+			
+			
+					</tr>
 		<tr>
 			<td>업종</td>
-			<td>호텔<input type="checkbox" name="res_tob" id="res_tob" value="dd" /></td>
-			<td>외식<input type="checkbox" name="res_tob" id="res_tob" value="dd" /></td>
-			<td>레저<input type="checkbox" name="res_tob" id="res_tob" value="dd" /></td>
+			<td><select name="res_tob" id="res_tob">
+				<option value="1">호텔</option>
+				<option value="2">외식</option>
+				<option value="3">레저</option>
+			
+			
+			</select></td>
+
 		</tr>
 		<tr>
 			<td><h2>희망 조건 대표 선택</h2></td>
 		</tr>
 		<tr>
 			<td>관심 근무지역</td>
-			<td><select name="res_req_area" id="res_req_area">
+			<td><select name="res_rep_area" id="res_req_area">
 				<option value="1">관심 근무지역 선택 </option>
 			
 			</select></td>
@@ -393,7 +426,11 @@ $(function(){
 				<option value="1">관심 직종 선택 </option>
 			</select></td>
 		</tr>
-
+		
+		<tr>
+			<td>작성날짜</td>
+			<td><input type="text" name="res_make_date" id="res_make_date"  /></td>
+		</tr>
 	
 		
 		

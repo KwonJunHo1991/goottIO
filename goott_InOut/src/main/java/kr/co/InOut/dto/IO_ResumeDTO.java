@@ -2,6 +2,8 @@ package kr.co.InOut.dto;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class IO_ResumeDTO {
 
 		
@@ -9,11 +11,14 @@ public class IO_ResumeDTO {
 	private String mem_id;
 	private int res_lev;
 	private String res_school;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date res_stdate;
 	private int res_stdatesub;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date res_enddate;
 	private int res_enddatesub;
 	private int res_major;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date res_career_date;
 	private String res_shiftpattern;
 	private int res_income;
@@ -25,6 +30,7 @@ public class IO_ResumeDTO {
 	private int res_pre_ob;
 	private int res_pre_mil;
 	private int res_pre_support;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date res_make_date;
 	private int res_total_career;
 	private String res_maincap;

@@ -8,12 +8,18 @@ import javax.servlet.http.HttpSession;
 import org.springframework.stereotype.Service;
 
 import kr.co.InOut.dao.IO_MemberDAO;
+import kr.co.InOut.dao.IO_ResumeDAO;
 import kr.co.InOut.dto.IO_MemberDTO;
+import kr.co.InOut.dto.IO_ResumeDTO;
 @Service
 public class IO_MemberServiceImple implements IO_MemberService{
 
 	@Inject
 	IO_MemberDAO io_memberdao;
+	
+	@Inject
+	IO_ResumeDAO io_resumedao;
+	
 	
 	@Override
 	public boolean loginCheck(IO_MemberDTO dto, HttpSession session) {
@@ -21,9 +27,11 @@ public class IO_MemberServiceImple implements IO_MemberService{
 		
 		if(result) {//트루일 경우 세션에 등록
 			IO_MemberDTO dto1 = viewMember(dto);
+			/* IO_ResumeDTO dto2 = viewMember(dto2); */
 			//세션 변수 등록
 			
 			session.setAttribute("mem_id", dto1.getMem_id());
+			session.setAttribute("mem_sex", dto1.getMem_sex());
 			session.setAttribute("mem_name", dto1.getMem_name());
 			session.setAttribute("mem_birth", dto1.getMem_birth());
 			session.setAttribute("mem_email", dto1.getMem_email());

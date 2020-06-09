@@ -17,7 +17,8 @@
         	<typeAlias type="kr.co.InOut.dto.IO_ResumeDTO" alias="ResumeDTO"/>
 
         	<typeAlias type="kr.co.InOut.dto.IO_ReBoardDTO" alias="ReBoardDTO"/>
-
+			
+			<typeAlias type="kr.co.InOut.dto.IO_UniversityDTO" alias="UniversityDTO"/>
         </typeAliases>
         
         

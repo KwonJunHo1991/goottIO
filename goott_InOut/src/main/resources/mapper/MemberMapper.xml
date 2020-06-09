@@ -51,9 +51,21 @@
   
   	<insert id="InsertResume" parameterType="ResumeDTO">
   	
-  	insert into io_resume
-  	values (
-  		null, #{mem_id})
+  	insert into io_resume (res_num, mem_id, res_lev, res_school, res_stdate, res_stdatesub, res_area, res_enddate, res_enddatesub, res_major, res_shiftpattern, res_income, res_workarea, res_too, res_tob, res_rep_area, res_rep_too, res_make_date, res_title)
+  	values (null, #{mem_id},#{res_lev},#{res_school},#{res_stdate},#{res_stdatesub},#{res_area},#{res_enddate},
+  		#{res_enddatesub},#{res_major},#{res_shiftpattern},#{res_income},#{res_workarea},
+  		#{res_too},#{res_tob},#{res_rep_area},#{res_rep_too},
+  		#{res_make_date},#{res_title})
+  	
+  	
+  	</insert>
+  
+  	<insert id="insertuniversity" parameterType="UniversityDTO">
+  	
+  	insert into io_university 
+  	
+  	
+  	
   	
   	
   	</insert>

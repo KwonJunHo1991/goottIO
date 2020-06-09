@@ -3,6 +3,7 @@ package kr.co.InOut.dao;
 import java.util.List;
 
 import kr.co.InOut.dto.IO_MemberDTO;
+import kr.co.InOut.dto.IO_ResumeDTO;
 
 public interface IO_MemberDAO {
 	
@@ -13,6 +14,11 @@ public interface IO_MemberDAO {
 	
 	public IO_MemberDTO viewMember(IO_MemberDTO dto);
 	
+	
+
+	
+	
 	public List<IO_MemberDTO> selectmember();
+	
 
 }

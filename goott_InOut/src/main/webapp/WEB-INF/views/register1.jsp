@@ -12,6 +12,7 @@ $(function(){
  
     	  var mem_id = $("#mem_id").val(); 
     	  var mem_pw = $("#mem_pw").val();
+    	  var mem_sex = $("#mem_sex").val();
     	  var mem_email = $("#mem_email").val();
     	  var mem_name = $("#mem_name").val();
     	  var mem_birth = $("#mem_birth").val();
@@ -70,7 +71,12 @@ $(function(){
 		
 		<tr>
 		<td>성별</td>
-		<td><input name="mem_sex" id="mem_sex" /></td>
+		
+		<td><select name="mem_sex" id="mem_sex">
+			<option value="1">남자</option>
+			<option value="2">여자</option>
+		
+		</select></td>
 		</tr>
 		
 		

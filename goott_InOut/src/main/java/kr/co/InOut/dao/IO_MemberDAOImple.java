@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import kr.co.InOut.dto.IO_MemberDTO;
+import kr.co.InOut.dto.IO_ResumeDTO;
 
 @Repository
 public class IO_MemberDAOImple implements IO_MemberDAO{
@@ -40,8 +41,10 @@ public class IO_MemberDAOImple implements IO_MemberDAO{
 	public List<IO_MemberDTO> selectmember() {
 		return sqlsession.selectList("selectmember");
 	}
-	
 
+
+	
+	
 	
 	
 }
