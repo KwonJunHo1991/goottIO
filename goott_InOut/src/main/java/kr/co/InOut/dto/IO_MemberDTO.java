@@ -5,14 +5,14 @@ public class IO_MemberDTO {
 	private String mem_id;
 	private String mem_pw;
 	private String mem_name;
-	private int mem_birth;
+	private Integer mem_birth;
 	private String mem_email;
-	private int mem_phone;
+	private Integer mem_phone;
 	private String mem_add;
 	private String mem_add1;
 	private String mem_image;
 	private String mem_anno;
-	private int mem_sex;
+	private Integer mem_sex;
 	
 	public IO_MemberDTO() {}
 

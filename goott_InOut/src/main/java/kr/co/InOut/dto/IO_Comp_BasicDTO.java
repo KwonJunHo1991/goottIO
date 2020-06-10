@@ -1,15 +1,15 @@
 package kr.co.InOut.dto;
 
 public class IO_Comp_BasicDTO {
-	int comp_num;
+	Integer comp_num;
 	String comp_id;
 	String comp_pw;
-	int comp_inf_period;
+	Integer comp_inf_period;
 	String comp_username;
 	String comp_usertel;
 	String comp_useremail;
-	int comp_grade;
-	int comp_type;
+	Integer comp_grade;
+	Integer comp_type;
 	public IO_Comp_BasicDTO() {
 	}
 	public int getComp_num() {

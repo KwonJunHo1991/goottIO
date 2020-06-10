@@ -1,7 +1,7 @@
 package kr.co.InOut.dto;
 
 public class IO_Notice_WantDTO {
-	private int notice_want_num, notice_num, comp_num, notice_want_many, notice_want_mincar, notice_want_maxcar;
+	private Integer notice_want_num, notice_num, comp_num, notice_want_many, notice_want_mincar, notice_want_maxcar;
 	private String comp_id, notice_want_task, notice_want_dept, notice_want_condition;
 	public IO_Notice_WantDTO() {
 	}

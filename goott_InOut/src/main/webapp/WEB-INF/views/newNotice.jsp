@@ -11,6 +11,8 @@
 	<h1>새로운 공고를 등록하는 창</h1>
 	
 	<form action="./newNoticeStep1.do" method="post">
+		<input type="hidden" name="comp_num" value='1000000001' />
+		<input type="hidden" name="comp_id" value='test1' />
 		<table>
 			<tr>
 				<th>채용공고이름</th>
@@ -42,7 +44,7 @@
 			</tr>
 			<tr>
 				<th>대표 근무지역(구분값)</th>
-				<td><input type="text" name="notice_comp_adrs1" id="" value="10101"/></td>
+				<td><input type="text" name="notice_comp_adrs1" id="" value="101010"/></td>
 			</tr>
 			<tr>
 				<th>세부 지역</th>
@@ -50,7 +52,7 @@
 			</tr>
 			<tr>
 				<th>인근지역(구분값)</th>
-				<td><input type="text" name="notice_comp_adrs2" id="" value="0"/></td>
+				<td><input type="text" name="notice_comp_adrs2" id="" value="101020"/></td>
 			</tr>
 			<tr>
 				<th>복리후생</th>
@@ -58,11 +60,11 @@
 			</tr>
 			<tr>
 				<th>지원자 학력(구분값)</th>
-				<td><input type="text" name="notice_req_edu" id="" value="2"/></td>
+				<td><input type="text" name="notice_req_edu" id="" value="0"/></td>
 			</tr>
 			<tr>
 				<th>연봉/급여(구분값)</th>
-				<td><input type="text" name="notice_req_sal" id="" /></td>
+				<td><input type="text" name="notice_req_sal" id="" value="0" /></td>
 			</tr>
 			<tr>
 				<th>근무형태(체크박스)</th>
@@ -74,27 +76,27 @@
 			</tr>
 			<tr>
 				<th>계약직계약기간</th>
-				<td><input type="text" name="notice_req_gyj_gigan" id="" /></td>
+				<td><input type="text" name="notice_req_gyj_gigan" id="" value="0"/></td>
 			</tr>
 			<tr>
 				<th>계약직-정규직전환여부(구분값)</th>
-				<td><input type="text" name="notice_req_gyj_tojgj" id="" /></td>
+				<td><input type="text" name="notice_req_gyj_tojgj" id="" value="0"/></td>
 			</tr>
 			<tr>
 				<th>인턴기간</th>
-				<td><input type="text" name="notice_req_int_gigan" id="" /></td>
+				<td><input type="text" name="notice_req_int_gigan" id="" value="0"/></td>
 			</tr>
 			<tr>
 				<th>인턴직-정규직전환여부(구분값)</th>
-				<td><input type="text" name="notice_req_int_tojgj" id="" /></td>
+				<td><input type="text" name="notice_req_int_tojgj" id="" value="0"/></td>
 			</tr>
 			<tr>
 				<th>파견직파견기간</th>
-				<td><input type="text" name="notice_req_pgj_gigan" id="" /></td>
+				<td><input type="text" name="notice_req_pgj_gigan" id="" value="0"/></td>
 			</tr>
 			<tr>
 				<th>파견직-정규직전환여부(구분값)</th>
-				<td><input type="text" name="notice_req_pgj_tojgj" id="" /></td>
+				<td><input type="text" name="notice_req_pgj_tojgj" id="" value="0"/></td>
 			</tr>
 			<tr>
 				<th>근무요일</th>
@@ -106,27 +108,27 @@
 			</tr>
 			<tr>
 				<th>성별구분(구분값)</th>
-				<td><input type="text" name="notice_req_gendewr" id="" /></td>
+				<td><input type="text" name="notice_req_gender" id="" value="0"/></td>
 			</tr>
 			<tr>
 				<th>최대연령(출생년도로 입력)</th>
-				<td><input type="text" name="notice_req_minage" id="" /></td>
+				<td><input type="text" name="notice_req_minage" id="" value="1992"/></td>
 			</tr>
 			<tr>
 				<th>최소연령(출생년도로 입력)</th>
-				<td><input type="text" name="notice_req_maxage" id="" /></td>
+				<td><input type="text" name="notice_req_maxage" id="" value="1992"/></td>
 			</tr>
 			<tr>
 				<th>공고대표직무</th>
-				<td><input type="text" name="notice_prcs_job" id="" /></td>
+				<td><input type="text" name="notice_prcs_job" id="" value="101"/></td>
 			</tr>
 			<tr>
 				<th>접수시작날짜</th>
-				<td><input type="text" name="notice_prcs_start" id="" /></td>
+				<td><input type="text" name="notice_prcs_start" id="" value="2020-06-10"/></td>
 			</tr>
 			<tr>
 				<th>접수종료날짜</th>
-				<td><input type="text" name="notice_prcs_end" id="" /></td>
+				<td><input type="text" name="notice_prcs_end" id="" value="2020-06-31"/></td>
 			</tr>
 			<tr>
 				<td colspan="2"><input type="submit" value="공고 저장" /> <input type="reset" value="reset" /></td>
