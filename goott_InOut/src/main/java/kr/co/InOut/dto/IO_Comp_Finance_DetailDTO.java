@@ -2,11 +2,11 @@ package kr.co.InOut.dto;
 
 public class IO_Comp_Finance_DetailDTO {
 	
-	int base_year;
-	int comp_num;
-	int capital;
-	int sales;
-	int profit;
+	Integer base_year;
+	Integer comp_num;
+	Integer capital;
+	Integer sales;
+	Integer profit;
 	
 	public IO_Comp_Finance_DetailDTO(int base_year, int comp_num, int capital, int sales, int profit) {
 		super();

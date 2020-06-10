@@ -1,7 +1,7 @@
 package kr.co.InOut.dto;
 
 public class IO_Notice_QnaDTO {
-	private int notice_qna_num, notice_num, comp_num;
+	private Integer notice_qna_num, notice_num, comp_num;
 	private String comp_id, notice_qna_q, notice_qna_a;
 	public IO_Notice_QnaDTO() {
 		// TODO Auto-generated constructor stub

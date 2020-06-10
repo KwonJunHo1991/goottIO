@@ -1,9 +1,9 @@
 package kr.co.InOut.dto;
 
 public class IO_Comp_RprsntDTO {
-	int comp_num;
+	Integer comp_num;
 	String comp_represent_imgurl;
-	int comp_tempcolor;
+	Integer comp_tempcolor;
 	String comp_bgr_imgurl;
 	String comp_oneline_intro;
 	String comp_homepage;
@@ -16,12 +16,12 @@ public class IO_Comp_RprsntDTO {
 	String comp_benefits;
 	String comp_club;
 	String comp_greeting;
-	int comp_type_foreign;
-	int comp_type_law;
-	int comp_type_artificial;
-	int comp_type_military;
-	int comp_type_export;
-	int comp_type_institution;
+	Integer comp_type_foreign;
+	Integer comp_type_law;
+	Integer comp_type_artificial;
+	Integer comp_type_military;
+	Integer comp_type_export;
+	Integer comp_type_institution;
 	String comp_outline;
 	String comp_etc;
 	String comp_inro_imgul1;

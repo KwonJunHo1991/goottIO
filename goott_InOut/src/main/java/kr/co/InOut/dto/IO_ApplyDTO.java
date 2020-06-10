@@ -4,14 +4,14 @@ import java.util.Date;
 
 public class IO_ApplyDTO {
 	int apply_num;
-	int res_num;
+	Integer res_num;
 	String mem_id;
-	int notice_num;
-	int comp_num;
+	Integer notice_num;
+	Integer comp_num;
 	Date apply_date;
 	Date mem_birth;
-	int mem_sex;
-	int res_income;
+	Integer mem_sex;
+	Integer res_income;
 	
 	public IO_ApplyDTO() { 
 		

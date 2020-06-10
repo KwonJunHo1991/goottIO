@@ -3,7 +3,7 @@ package kr.co.InOut.dto;
 import java.util.Date;
 
 public class IO_QnaDTO {
-	int qna_num;
+	Integer qna_num;
 	String mem_id;
 	String qna_title;
 	String qna_content;

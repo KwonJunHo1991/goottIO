@@ -3,10 +3,10 @@ package kr.co.InOut.dto;
 import java.util.Date;
 
 public class IO_ReBoardDTO {
-	int reBoard_num;
-	int board_num;
+	Integer reBoard_num;
+	Integer board_num;
 	String mem_id;
-	int comp_num;
+	Integer comp_num;
 	String comp_id;
 	String reBoard_content;
 	Date reBoard_date;

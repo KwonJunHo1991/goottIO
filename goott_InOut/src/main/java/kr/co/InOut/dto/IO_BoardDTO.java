@@ -3,14 +3,14 @@ package kr.co.InOut.dto;
 import java.util.Date;
 
 public class IO_BoardDTO {
-	int board_num;
+	Integer board_num;
 	String mem_id;
 	String board_title;
 	String board_content;
 	Date board_date;
-	int board_type;
-	int board_category;
-	int board_hits;
+	Integer board_type;
+	Integer board_category;
+	Integer board_hits;
 	
 	
 	public IO_BoardDTO() {

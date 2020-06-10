@@ -3,7 +3,7 @@ package kr.co.InOut.dto;
 import java.util.Date;
 
 public class IO_Notice_PrcsDTO {
-	private int notice_prcs_num, notice_num, comp_num, notice_prcs_type;
+	private Integer notice_prcs_num, notice_num, comp_num, notice_prcs_type;
 	private String comp_id, notice_prcs_name;
 	private Date notice_prcs_detail_start, notice_prcs_detail_end;
 	public IO_Notice_PrcsDTO() {
