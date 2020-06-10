@@ -13,7 +13,7 @@ $(function(){
 		console.log("ddd");
 
 		
-			document.collegeform.action = "./insertresume.do";
+			document.collegeform.action = "./insertuniversity.do";
 			document.collegeform.method = "get";
 			document.collegeform.submit();
 	});

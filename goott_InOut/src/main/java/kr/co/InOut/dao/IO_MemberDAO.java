@@ -16,7 +16,7 @@ public interface IO_MemberDAO {
 	
 	
 
-	
+	public List<IO_ResumeDTO> selectOneMemberResumeById(String mem_id);
 	
 	public List<IO_MemberDTO> selectmember();
 	

@@ -62,12 +62,21 @@
   
   	<insert id="insertuniversity" parameterType="UniversityDTO">
   	
-  	insert into io_university 
-  	
-  	
-  	
-  	
+  	insert into io_university (un_num, res_num, mem_id, un_un, un_name, un_area, un_stdate, un_stdatasub, un_enddate, un_enddatesub, un_mainmajor, un_majordept, un_time, un_grade, un_fixgrade, un_piece)
+  	values(null, )
   	
   	</insert>
+  	
+  	<select id="selectOneMemberResumeById" parameterType="String" resultType="ResumeDTO">
+  	
+  	select * from io_resume
+  	where mem_id = #{mem_id}
+  	
+  	
+  	
+  	
+  	</select>
+  	
+  	
   
   </mapper>

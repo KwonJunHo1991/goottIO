@@ -42,6 +42,12 @@ public class IO_MemberDAOImple implements IO_MemberDAO{
 		return sqlsession.selectList("selectmember");
 	}
 
+	@Override
+	public List<IO_ResumeDTO> selectOneMemberResumeById(String mem_id) {
+		
+		return sqlsession.selectList("selectOneMemberResumeById", mem_id);
+	}
+
 
 	
 	

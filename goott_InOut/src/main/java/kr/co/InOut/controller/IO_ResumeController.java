@@ -1,5 +1,6 @@
 package kr.co.InOut.controller;
 
+import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -9,10 +10,12 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.sun.xml.internal.bind.v2.schemagen.xmlschema.List;
+import java.util.List;
 
 import kr.co.InOut.dao.IO_MemberDAO;
+import kr.co.InOut.dao.IO_MemberDAOImple;
 import kr.co.InOut.dao.IO_ResumeDAO;
+import kr.co.InOut.dto.IO_BoardDTO;
 import kr.co.InOut.dto.IO_MemberDTO;
 import kr.co.InOut.dto.IO_ResumeDTO;
 
@@ -25,6 +28,14 @@ public class IO_ResumeController {
 	public void setDao(IO_ResumeDAO mdao) {
 		this.rdao = rdao;
 	}
+	
+	@Inject
+	IO_MemberDAOImple mdao;
+	
+	public void setMdao(IO_MemberDAOImple mdao) {
+		this.mdao = mdao;
+	}
+	
 	@RequestMapping(value = "/member/resumelist.do")
 	
 	public String resume1() {
@@ -37,19 +48,37 @@ public class IO_ResumeController {
 	
 	@RequestMapping(value = "/member/insertresume.do")
 	
-	public String resume2(HttpServletRequest req, @ModelAttribute() IO_ResumeDTO dto, HttpSession session) {
+	public String resume2(Model model, HttpServletRequest req, @ModelAttribute() IO_ResumeDTO dto, HttpSession session) {
 			
-		
-		
+		String mem_id = (String)session.getAttribute("mem_id");
+		List<IO_ResumeDTO> list = mdao.selectOneMemberResumeById(mem_id);
+		model.addAttribute("list", list);
 		
 		
 		rdao.InsertResume(dto);
 		
-		return "myresume";
+		return "resumelist";
+	}
+	//id 기준으로 이력서 정보를 보여라
+	@RequestMapping(value = "/member/coresumelist.do")
+	public String resume3(Model model, HttpSession session, @ModelAttribute() IO_ResumeDTO dto) {
+		String mem_id = (String)session.getAttribute("mem_id");
+		
+		System.out.println(mem_id);
+		
+		List<IO_ResumeDTO> list = mdao.selectOneMemberResumeById(mem_id);
+		
+		model.addAttribute("list", list);
+		
+		
+		//String mem_id = redto.getMem_id();
+		//model.addAttribute("redto", mdao.selectOneMemberResumeById(mem_id));
+		
+		return "resumelist";
 	}
 	
 	@RequestMapping(value = "/member/insertuniversity.do")
-	public String resume3() {
+	public String resume4() {
 		
 		
 		

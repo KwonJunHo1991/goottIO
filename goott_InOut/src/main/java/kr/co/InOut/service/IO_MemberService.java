@@ -3,6 +3,7 @@ package kr.co.InOut.service;
 import javax.servlet.http.HttpSession;
 
 import kr.co.InOut.dto.IO_MemberDTO;
+import kr.co.InOut.dto.IO_ResumeDTO;
 
 public interface IO_MemberService {
 	

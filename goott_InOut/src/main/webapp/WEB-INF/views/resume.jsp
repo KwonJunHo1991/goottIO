@@ -16,7 +16,7 @@ $(function(){
 
 		
 			document.frm1.action = "./insertresume.do";
-			document.frm1.method = "get";
+			document.frm1.method = "post";
 			document.frm1.submit();
 	});
 });
@@ -36,12 +36,14 @@ $(function(){
 	<!-- 기본정보는 member 테이블에서 불러온다  -->
 		<h2>기본정보</h2>
 		
-	
+
+		
+		
 		<tr>
 			<td>id</td>
 			<td><input type="text" name="mem_id" id="mem_id" value="${sessionScope.mem_id }" /></td>
 		</tr>
-	
+		
 	
 		
 		<tr>
@@ -400,9 +402,9 @@ $(function(){
 		<tr>
 			<td>업종</td>
 			<td><select name="res_tob" id="res_tob">
-				<option value="1">호텔</option>
-				<option value="2">외식</option>
-				<option value="3">레저</option>
+				<option value="호텔">호텔</option>
+				<option value="외식">외식</option>
+				<option value="레저">레저</option>
 			
 			
 			</select></td>

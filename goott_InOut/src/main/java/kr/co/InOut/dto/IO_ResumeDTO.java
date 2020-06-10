@@ -323,18 +323,7 @@ public class IO_ResumeDTO {
 	}
 
 
-	@Override
-	public String toString() {
-		return "IO_ResumeDTO [res_num=" + res_num + ", mem_id=" + mem_id + ", res_lev=" + res_lev + ", res_school="
-				+ res_school + ", res_stdate=" + res_stdate + ", res_stdatesub=" + res_stdatesub + ", res_enddate="
-				+ res_enddate + ", res_enddatesub=" + res_enddatesub + ", res_major=" + res_major + ", res_career_date="
-				+ res_career_date + ", res_shiftpattern=" + res_shiftpattern + ", res_income=" + res_income
-				+ ", res_workarea=" + res_workarea + ", res_too=" + res_too + ", res_tob=" + res_tob + ", res_rep_area="
-				+ res_rep_area + ", res_rep_too=" + res_rep_too + ", res_pre_ob=" + res_pre_ob + ", res_pre_mil="
-				+ res_pre_mil + ", res_pre_support=" + res_pre_support + ", res_make_date=" + res_make_date
-				+ ", res_total_career=" + res_total_career + ", res_maincap=" + res_maincap + ", res_title=" + res_title
-				+ ", res_area=" + res_area + "]";
-	}
+
 
 
 
