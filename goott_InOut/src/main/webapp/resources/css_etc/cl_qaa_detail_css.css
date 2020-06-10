@@ -364,8 +364,50 @@ body.has_lnb #sri_section {
 .info_list_reply .num_total .emph {
     font-weight: bold;
 }
+#re_answer_btn{
+position: absolute;
+    right: -1px;
+    bottom: -1px;
+    width: 68px;
+    height: 45px;
+    border: 1px solid #4876ef;
+    background-color: white;
+    color: #4876ef;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 43px;
+	
+}
 
-
+#textarea_placehold{
+color: #ccc;
+display: block;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+    height: 85px;
+    margin: 0;
+    padding: 20px;
+    border: 0;
+    background-color: transparent;
+    background-color: rgba(255,255,255,0.001);
+    font-size: 14px;
+    line-height: 22px;
+    vertical-align: top;
+    resize: none;
+    -webkit-appearance: none;
+    box-sizing: border-box;
+}
+.re_answer_box{
+position: relative;
+    height: 43px;
+    border-top: 1px solid #f4f4f4;
+}
+.re_answer_box_main{
+    position: relative;
+    border: 1px solid #b3b3b3;
+    background-color: #fff;
+}
 .list_review_reply {
     overflow: hidden;
 	border: 1px solid #e4e5e7;
@@ -610,63 +652,6 @@ body.has_lnb #sri_section {
 
 
 
-
-.view_company_write {
-    border: 1px solid #e4e5e7;
-    border-top: 1px solid #e4e5e7;
-}
-#re_answer_btn{
-position: absolute;
-    right: -1px;
-    bottom: -1px;
-    width: 68px;
-    height: 45px;
-    border: 1px solid #4876ef;
-    background-color: white;
-    color: #4876ef;
-    font-size: 13px;
-    font-weight: bold;
-    line-height: 43px;
-
-
-	
-}
-
-#textarea_placehold{
-
-display: block;
-    overflow-x: hidden;
-    overflow-y: auto;
-    width: 100%;
-    height: 85px;
-    margin: 0;
-    padding: 20px;
-    border: 0;
-    background-color: transparent;
-    background-color: rgba(255,255,255,0.001);
-    font-size: 14px;
-    line-height: 22px;
-    vertical-align: top;
-    resize: none;
-    -webkit-appearance: none;
-    box-sizing: border-box;
-    
-}
-.re_answer_box{
-position: relative;
-    height: 43px;
-    border-top: 1px solid #f4f4f4;
-}
-.re_answer_box_main{
-    position: relative;
-    border: 1px solid #b3b3b3;
-    background-color: #fff;
-    }
-.list_review_reply {
-    overflow: hidden;
-	border: 1px solid #e4e5e7;
-    border-bottom: 1px solid #ebebeb;
-}
 
 
 
