@@ -18,6 +18,7 @@ import kr.co.InOut.dao.IO_ResumeDAO;
 import kr.co.InOut.dto.IO_BoardDTO;
 import kr.co.InOut.dto.IO_MemberDTO;
 import kr.co.InOut.dto.IO_ResumeDTO;
+import kr.co.InOut.dto.IO_UniversityDTO;
 
 @Controller
 public class IO_ResumeController {
@@ -32,6 +33,7 @@ public class IO_ResumeController {
 	@Inject
 	IO_MemberDAOImple mdao;
 	
+
 	public void setMdao(IO_MemberDAOImple mdao) {
 		this.mdao = mdao;
 	}
@@ -76,13 +78,21 @@ public class IO_ResumeController {
 		
 		return "resumelist";
 	}
+	@RequestMapping(value = "/member/goresume.do")
+	public String resume4(Model model, @ModelAttribute() IO_MemberDTO dto) {
+		
+		
+				
+				
+		return "myresume";
+		
+		
+	}
 	
 	@RequestMapping(value = "/member/insertuniversity.do")
-	public String resume4() {
-		
-		
-		
-		return null;
+	public String resume5(@ModelAttribute() IO_UniversityDTO dto) {
+		rdao.insertuniversity(dto);
+		return "myresume";
 	}
 	
 }

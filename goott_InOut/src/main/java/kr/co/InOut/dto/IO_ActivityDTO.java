@@ -4,7 +4,7 @@ import java.util.Date;
 
 public class IO_ActivityDTO {
 
-	private int ac_num;
+	private Integer ac_num;
 	private int res_num;
 	private String mem_id;
 	private int ac_div;

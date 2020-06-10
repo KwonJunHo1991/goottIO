@@ -19,6 +19,6 @@ public class IO_ResumeDAO {
 	}
 	
 	public void insertuniversity(IO_UniversityDTO dto) {
-		/* ss.insert("insertuniversity", dto); */
+		ss.insert("insertuniversity", dto);
 	}
 }

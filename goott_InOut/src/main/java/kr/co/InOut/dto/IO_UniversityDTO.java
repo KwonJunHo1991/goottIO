@@ -2,6 +2,8 @@ package kr.co.InOut.dto;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class IO_UniversityDTO {
 
 	private int un_num;
@@ -10,8 +12,10 @@ public class IO_UniversityDTO {
 	private int un_un;
 	private String un_name;
 	private int un_area;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date un_stdate;
 	private int un_stdatesub;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date un_enddate;
 	private int un_enddatesub;
 	private int un_mainmajor;
@@ -19,12 +23,13 @@ public class IO_UniversityDTO {
 	private int un_grade;
 	private int un_fixgrade;
 	private String un_piece;
+	private int un_time;
 	
 	public IO_UniversityDTO() {}
 
 	public IO_UniversityDTO(int un_num, int res_num, String mem_id, int un_un, String un_name, int un_area,
 			Date un_stdate, int un_stdatesub, Date un_enddate, int un_enddatesub, int un_mainmajor, String un_majordept,
-			int un_grade, int un_fixgrade, String un_piece) {
+			int un_grade, int un_fixgrade, String un_piece, int un_time) {
 		super();
 		this.un_num = un_num;
 		this.res_num = res_num;
@@ -41,6 +46,15 @@ public class IO_UniversityDTO {
 		this.un_grade = un_grade;
 		this.un_fixgrade = un_fixgrade;
 		this.un_piece = un_piece;
+		this.un_time = un_time;
+	}
+
+	public int getUn_time() {
+		return un_time;
+	}
+
+	public void setUn_time(int un_time) {
+		this.un_time = un_time;
 	}
 
 	public int getUn_num() {

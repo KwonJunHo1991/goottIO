@@ -62,8 +62,8 @@
   
   	<insert id="insertuniversity" parameterType="UniversityDTO">
   	
-  	insert into io_university (un_num, res_num, mem_id, un_un, un_name, un_area, un_stdate, un_stdatasub, un_enddate, un_enddatesub, un_mainmajor, un_majordept, un_time, un_grade, un_fixgrade, un_piece)
-  	values(null, )
+  	insert into io_university (un_num, res_num, mem_id, un_un, un_name, un_area, un_stdate, un_stdatesub, un_enddate, un_enddatesub, un_mainmajor, un_majordept, un_time, un_grade, un_fixgrade, un_piece)
+  	values(null, #{res_num}, #{mem_id}, #{un_un}, #{un_name}, #{un_area}, #{un_stdate}, #{un_stdatesub}, #{un_enddate}, #{un_enddatesub}, #{un_mainmajor}, #{un_majordept}, #{un_time}, #{un_grade}, #{un_fixgrade}, #{un_piece})
   	
   	</insert>
   	

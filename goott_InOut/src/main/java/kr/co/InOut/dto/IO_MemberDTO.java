@@ -131,13 +131,7 @@ public class IO_MemberDTO {
 		this.mem_sex = mem_sex;
 	}
 
-	@Override
-	public String toString() {
-		return "IO_MemberDTO [mem_id=" + mem_id + ", mem_pw=" + mem_pw + ", mem_name=" + mem_name + ", mem_seekwork=" + mem_seekwork + ",  mem_birth="
-				+ mem_birth + ", mem_email=" + mem_email + ", mem_phone=" + mem_phone + ", mem_add=" + mem_add
-				+ ", mem_add1=" + mem_add1 + ", mem_image=" + mem_image + ", mem_anno=" + mem_anno + ", mem_sex="
-				+ mem_sex + "]";
-	}
+
 	
 	
 	

@@ -7,14 +7,46 @@
 <head>
 <meta charset="UTF-8">
 <title>기업연구소 - 취준고민</title>
-<!-- 나눔스퀘어  -->
-<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+
 
 <!-- CSS 적용 -->
 <!-- <link rel="stylesheet" type="text/css" href="/resources/css/cl_qaa_css.css"> -->
 <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css_etc/cl_qaa_css.css'/>">
 
+<style type="text/css">
+
+</style>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
+$(document).ready(function () {
+	
+	$(".checkbox_check1").hide();
+	$(".checkbox_check2").hide();
+	
+	$('input:radio').change(function () {	
+		$(".empty_txt").text("")
+		var value = $('input[name=board_category]:checked').val();
+		var value2 = $('input[name=board_type]:checked').val();
+		var value3 = $('input[name=board_category]:checked').next();
+		var value4 = $('input[name=board_type]:checked').next();
+
+		if(value != null){
+			console.log(value3.text());
+			$(".checkbox_check1").show();
+			$(".checkbox_check1").val(value3.text());
+		}
+		if( value2 != null){
+			$(".checkbox_check2").show();
+			$(".checkbox_check2").val(value4.text());
+		}
+		
+		
+		
+	});		
+
+
+});
+	
 	function fn_paging(curPage) {
 	
 	 	var url = document.location.href.split('curPage');
@@ -31,13 +63,18 @@
 
 </head>
 <body>
+   <div>
+   <jsp:include page="../main/mainPage/mp_naviBar.jsp"></jsp:include>
+   </div> 
+   
+   <jsp:include page="../main/mainPage/loginPop.jsp"></jsp:include>
+    <!-- END nav -->
 	<div id="sri_wrap">
-		<div id="content">
+   <jsp:include page="cl_sideNavi.jsp"></jsp:include>
 			<div class="wrap_title_recruit" >
 				<h1 class="title_common">기업연구소 - 취준고민</h1>
 			</div>
 			<!-- 맨 위 목록 시작 -->
-			<div class="company_review">
 			<div class="intro_company_review">
 				::before
 				<strong class="tit_query">
@@ -50,13 +87,14 @@
 					<button type="button">로그인</button>
 					해서 더 정확한 추천을 받아보세요
 				</div>
+			<div id="content">	
 				
 				<!-- @@@@@@@@@@@@@@@@@@목록 보이기 시작@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 				<div class="wrap_list_review">
         <div class="bx-wrapper">
             <div class="bx-wrapper" style="max-width: 1482px;">
             
-            <div class="bx-viewport" aria-live="polite" style="width: 100%; overflow: hidden; position: relative; height: 172px;">
+            <div class="bx-viewport" aria-live="polite" style="width: 100%; overflow: hidden; position: relative; height: 272px;">
             <ul class="list_company_review" style="width: 9215%; position: relative; transition-duration: 0.5s; transform: translate3d(-2384px, 0px, 0px);">
             <li style="float: left; list-style: none; position: relative; width: 290px; margin-right: 8px;" class="bx-clone" aria-hidden="true">
                             <div class="cont_list ">
@@ -205,16 +243,7 @@
                                 </div>
                             </div>
                         </li></ul></div>
-                        <!-- 클릭시 목록 이동하는 버튼 시작  -->
-                        <div class="bx-controls bx-has-pager">
-                        <div class="bx-pager bx-default-pager">
-                        <div class="bx-pager-item">
-                        <a href="" data-slide-index="0" class="bx-pager-link active">1</a></div>
-                        <div class="bx-pager-item">
-                        <a href="" data-slide-index="1" class="bx-pager-link ">2</a></div>
-                        <div class="bx-pager-item">
-                        <a href="" data-slide-index="2" class="bx-pager-link">3</a></div></div></div>
-                        <!-- 클릭시 목록 이동하는 버튼 끝  -->
+
                         </div>
             <div class="bx-controls bx-has-pager">
                 <div class="bx-pager bx-default-pager">
@@ -231,13 +260,16 @@
     
     	<!-- MY 질문 / 질문하기 버튼 -->
 		<div class="bottom_btn_wrap">
-        <a href="#" class="my_question">
+        <a href="../board/boardMy.do" class="my_question">
         	MY 질문</a>
         <a href="boardInsert.do" class="quest">
         	질문하기</a>
     	</div>
     	<!-- MY 질문 / 질문하기 버튼 끝 -->
 		</div>
+		</div>
+		<div id="content">
+			<div class="company_review">
 		<!-- 많이 본 질문 / 답변 많은 질문 시작  -->
 		
 			<div class="tab_company_review">
@@ -273,13 +305,13 @@
 		                <strong class="tit_tab">답변 많은 질문</strong>
 		                <span class="criteria">최근 1주일 기준</span>
                			<ol>
+               			               	
 		                	<c:forEach var="re" items="${reTop5 }">
 			                	<li>
 			                		<a href="boardDetail.do?board_num=${re.board_num }">제목 : ${re.board_title }<span class="viewer"><!-- 조회수 --></span></a>
 			                  	</li>
 		                  	</c:forEach>
-		     
-		                  	<!-- <li>
+<!-- 		                	<li>
 		                		<a href="#">질문 제목제목<span class="viewer">조회수?조회수</span></a>
 		                  	</li>
 		                  	<li>
@@ -291,8 +323,10 @@
 		                  	<li>
 		                		<a href="#">질문 제목제목<span class="viewer">조회수?조회수</span></a>
 		                  	</li>
-		     -->
-		                  </ol>
+		                  	<li>
+		                		<a href="#">질문 제목제목<span class="viewer">조회수?조회수</span></a>
+		                  	</li> -->
+		                 </ol>
             		</div>
             </div>
             
@@ -303,6 +337,7 @@
 			<!-- 맨 위 목록 끝 -->
 			<!-- 검색창 -->
 			<div class="search_company_review" id="search_company_review">
+			<form action="#">
 			    <strong class="tit_box">궁금한 리뷰를 검색해보세요</strong>
 			    <div class="search_area">
 			        <div class="top_search_wrap on">
@@ -314,143 +349,26 @@
 			            </div>
 			            <div class="search_selector">
 			                <ul class="input_list">
-			                                        <li>
-			                        <span class="inpChk">
-			                            <input type="checkbox" id="category_company_job" name="category[]" value="company_job" data-value="company_job" data-name="직무">
-			                            <label class="lbl" for="category_company_job">직무</label>
-			                        </span>
-			                    </li>
-			                                        <li>
-			                        <span class="inpChk">
-			                            <input type="checkbox" id="category_company_culture" name="category[]" value="company_culture" data-value="company_culture" data-name="조직문화">
-			                            <label class="lbl" for="category_company_culture">조직문화</label>
-			                        </span>
-			                    </li>
-			                                        <li>
-			                        <span class="inpChk">
-			                            <input type="checkbox" id="category_working_env" name="category[]" value="working_env" data-value="working_env" data-name="근무환경">
-			                            <label class="lbl" for="category_working_env">근무환경</label>
-			                        </span>
-			                    </li>
-			                                        <li>
-			                        <span class="inpChk">
-			                            <input type="checkbox" id="category_salary_welfare" name="category[]" value="salary_welfare" data-value="salary_welfare" data-name="급여 및 복지">
-			                            <label class="lbl" for="category_salary_welfare">급여 및 복지</label>
-			                        </span>
-			                    </li>
-			                                        <li>
-			                        <span class="inpChk">
-			                            <input type="checkbox" id="category_self_dev" name="category[]" value="self_dev" data-value="self_dev" data-name="자기개발">
-			                            <label class="lbl" for="category_self_dev">자기개발</label>
-			                        </span>
-			                    </li>
-			                                        <li>
-			                        <span class="inpChk">
-			                            <input type="checkbox" id="category_directorate" name="category[]" value="directorate" data-value="directorate" data-name="경영진">
-			                            <label class="lbl" for="category_directorate">경영진</label>
-			                        </span>
-			                    </li>
-			                                        <li>
-			                        <span class="inpChk">
-			                            <input type="checkbox" id="category_interview_letter" name="category[]" value="interview_letter" data-value="interview_letter" data-name="면접/자소서">
-			                            <label class="lbl" for="category_interview_letter">면접/자소서</label>
-			                        </span>
-			                    </li>
-			                                        <li>
-			                        <span class="inpChk">
-			                            <input type="checkbox" id="category_turnover_leave" name="category[]" value="turnover_leave" data-value="turnover_leave" data-name="이직/퇴사">
-			                            <label class="lbl" for="category_turnover_leave">이직/퇴사</label>
-			                        </span>
-			                    </li>
-			                                        <li>
-			                        <span class="inpChk">
-			                            <input type="checkbox" id="category_etc" name="category[]" value="etc" data-value="etc" data-name="기타">
-			                            <label class="lbl" for="category_etc">기타</label>
-			                        </span>
-			                    </li>
-			                                    </ul>
+								<li><input type="radio" name="board_category" id="li_cd1" value="1"><span> 직무</span></input></li>
+								<li><input type="radio" name="board_category" id="li_cd2" value="2"><span> 조직문화</span></input></li>
+								<li><input type="radio" name="board_category" id="li_cd3" value="3"><span> 근무환경</span></input></li>
+								<li><input type="radio" name="board_category" id="li_cd4" value="4"><span> 급여 및 복지</span></input></li>
+								<li><input type="radio" name="board_category" id="li_cd5" value="5"><span> 자기개발</span></input></li>
+								<li><input type="radio" name="board_category" id="li_cd6" value="6"><span> 경영진</span></input></li>
+								<li><input type="radio" name="board_category" id="li_cd7" value="7"><span> 면접/자소서</span></input></li>
+								<li><input type="radio" name="board_category" id="li_cd8" value="8"><span> 이직/퇴사</span></input></li>
+								<li><input type="radio" name="board_category" id="li_cd9" value="9"><span> 기타</span></input></li>
+			                </ul>
 			            </div>
 			            <div class="search_selector">
 			                <ul class="input_list">
-			                                        <li>
-			                        <span class="inpRdo ">
-			                            <input type="radio" id="job_cd_1" name="job_cd" value="1" data-name="경영·사무">
-			                            <label class="lbl" for="job_cd_1">경영·사무</label>
-			                        </span>
-			                    </li>
-			                                        <li>
-			                        <span class="inpRdo ">
-			                            <input type="radio" id="job_cd_2" name="job_cd" value="2" data-name="영업·고객상담">
-			                            <label class="lbl" for="job_cd_2">영업·고객상담</label>
-			                        </span>
-			                    </li>
-			                                        <li>
-			                        <span class="inpRdo ">
-			                            <input type="radio" id="job_cd_3" name="job_cd" value="3" data-name="생산·제조">
-			                            <label class="lbl" for="job_cd_3">생산·제조</label>
-			                        </span>
-			                    </li>
-			                                        <li>
-			                        <span class="inpRdo ">
-			                            <input type="radio" id="job_cd_4" name="job_cd" value="4" data-name="IT·인터넷">
-			                            <label class="lbl" for="job_cd_4">IT·인터넷</label>
-			                        </span>
-			                    </li>
-			                                        <li>
-			                        <span class="inpRdo ">
-			                            <input type="radio" id="job_cd_5" name="job_cd" value="5" data-name="전문직">
-			                            <label class="lbl" for="job_cd_5">전문직</label>
-			                        </span>
-			                    </li>
-			                                        <li>
-			                        <span class="inpRdo ">
-			                            <input type="radio" id="job_cd_6" name="job_cd" value="6" data-name="교육">
-			                            <label class="lbl" for="job_cd_6">교육</label>
-			                        </span>
-			                    </li>
-			                                        <li>
-			                        <span class="inpRdo ">
-			                            <input type="radio" id="job_cd_7" name="job_cd" value="7" data-name="미디어">
-			                            <label class="lbl" for="job_cd_7">미디어</label>
-			                        </span>
-			                    </li>
-			                                        <li>
-			                        <span class="inpRdo ">
-			                            <input type="radio" id="job_cd_8" name="job_cd" value="8" data-name="특수계층·공공">
-			                            <label class="lbl" for="job_cd_8">특수계층·공공</label>
-			                        </span>
-			                    </li>
-			                                        <li>
-			                        <span class="inpRdo ">
-			                            <input type="radio" id="job_cd_9" name="job_cd" value="9" data-name="건설">
-			                            <label class="lbl" for="job_cd_9">건설</label>
-			                        </span>
-			                    </li>
-			                                        <li>
-			                        <span class="inpRdo ">
-			                            <input type="radio" id="job_cd_10" name="job_cd" value="10" data-name="유통·무역">
-			                            <label class="lbl" for="job_cd_10">유통·무역</label>
-			                        </span>
-			                    </li>
-			                                        <li>
-			                        <span class="inpRdo ">
-			                            <input type="radio" id="job_cd_11" name="job_cd" value="11" data-name="서비스">
-			                            <label class="lbl" for="job_cd_11">서비스</label>
-			                        </span>
-			                    </li>
-			                                        <li>
-			                        <span class="inpRdo ">
-			                            <input type="radio" id="job_cd_12" name="job_cd" value="12" data-name="디자인">
-			                            <label class="lbl" for="job_cd_12">디자인</label>
-			                        </span>
-			                    </li>
-			                                        <li>
-			                        <span class="inpRdo ">
-			                            <input type="radio" id="job_cd_13" name="job_cd" value="13" data-name="의료">
-			                            <label class="lbl" for="job_cd_13">의료</label>
-			                        </span>
-			                    </li>
-			                                    </ul>
+			                	<li><input type="radio" name="board_type" id="li_cd10" value="1"><span> 경영·사무</span></input></li>     
+			                	<li><input type="radio" name="board_type" id="li_cd11" value="2"><span> 영업·고객상담</span></input></li>     
+			                	<li><input type="radio" name="board_type" id="li_cd12" value="3"><span> 생산·제조</span></input></li>     
+			                	<li><input type="radio" name="board_type" id="li_cd13" value="4"><span> IT·인터넷</span></input></li>     
+			                	<li><input type="radio" name="board_type" id="li_cd14" value="5"><span> 유통·무역</span></input></li>     
+			                	<li><input type="radio" name="board_type" id="li_cd15" value="6"><span> 서비스</span></input></li>     
+			                </ul>
 			            </div>
 			            <button class="ic_close"><span class="blind">검색창 닫기</span></button>
 			        </div>
@@ -459,8 +377,13 @@
 			        <ul class="selected_list" style="display: none"></ul>
 			        <button type="button" class="btn_reset" style="display: none">선택초기화</button>
 			        <span class="empty_txt">검색조건을 설정해 주세요</span>
-			        <button type="button" class="btn_search" id="btn_search" disabled="disabled">검색하기</button>
+			        	<input type="button" class="checkbox_check1" id="hello1" value="hello" />
+			        	<input type="button" class="checkbox_check2" id="hello2" value="hello" />
+			        
+			        
+			 			        <button type="submit" class="btn_search" id="btn_search" >검색하기</button>
 			    </div>
+			    </form>
 			</div>
 			<script type="template/html" id="preview">
     <li>{{optionText}}<button type="button" class="btn_del" id="result_{{optionId}}" data-name="{{optionName}}" data-value="{{optionValue}}"><span class="blind">삭제</span></button></li>
@@ -493,7 +416,7 @@
                 <div class="box_review">
 	                <a href="boardDetail.do?board_num=${b.board_num }" class="link_detail"></a>
 	                <em class="name_company">
-	                    <span class="job">직무 카테고리 : ${b.board_category }</span>
+	                    <span class="job">카테고리 : ${b.board_category } 직종 : ${b.board_type }</span>
 	                </em>
 	                <strong class="tit_box">번호 : ${b.board_num} 제목 : ${b.board_title }</strong>
 	                <p class="txt_box">내용 : ${b.board_content }</p>
@@ -501,6 +424,10 @@
 	                <span class="txt_date">작성 일자 : ${b.board_date }</span>
                 </div>
             </c:forEach>   
+            
+            <c:if test="${empty list }">
+            	검색 결과가 없습니다.
+            </c:if>
                
 <!--                
                 <div class="box_review">
@@ -576,8 +503,8 @@
     <div class="page_nation">
         
         
-        <a href="#" class="num" onClick="fn_paging(1)">[처음]</a>
-		<c:if test="${page.curPage ne 1 }"> <a class="num" href="#" onClick="fn_paging('${page.prevPage }')">[이전]</a> </c:if> 
+        <a href="#" class="num" onClick="fn_paging(1)">처음</a>
+		<c:if test="${page.curPage ne 1 }"> <a class="num" href="#" onClick="fn_paging('${page.prevPage }')">이전</a> </c:if> 
  		<c:forEach var="pageNum" begin="${page.startPage }" end="${page.endPage }">
 			<c:choose>
 				<c:when test="${pageNum eq page.curPage }">
@@ -591,9 +518,9 @@
 		
 		</c:forEach>
 		<c:if test="${page.curPage ne page.pageCnt && page.pageCnt >0 }">
-			<a href="#"  class="num" onClick="fn_paging('${page.nextPage }')">[다음]</a>
+			<a href="#"  class="num" onClick="fn_paging('${page.nextPage }')">다음</a>
 		</c:if>
-			<a href="#" class="num" onClick="fn_paging('${page.pageCnt }')">[끝]</a>
+			<a href="#" class="num" onClick="fn_paging('${page.pageCnt }')">끝</a>
         
 <!--                         <strong>1</strong>
                             <a class="num" href="#">2</a>
@@ -615,5 +542,6 @@
             </div>
 		</div>
      </div>
+       <jsp:include page="../main/mainPage/mp_footer.jsp"></jsp:include>
 </body>
 </html>

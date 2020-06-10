@@ -26,7 +26,7 @@ public class IO_MemberServiceImple implements IO_MemberService{
 		boolean result = io_memberdao.loginCheck(dto);
 		
 		if(result) {//트루일 경우 세션에 등록
-			IO_MemberDTO dto2 = viewMember(dto);
+			IO_MemberDTO dto2 =  (IO_MemberDTO) viewMember(dto);
 			/* IO_ResumeDTO dto2 = viewMember(dto2); */
 			//세션 변수 등록
 			

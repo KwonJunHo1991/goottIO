@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>     
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +11,7 @@
     
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="<c:url value="/resources/css/open-iconic-bootstrap.min.css"/>   ">
+    <link rel="stylesheet" href="<c:url value="/resources/css/open-iconic-bootstrap.min.css"/> ">
     <link rel="stylesheet" href="<c:url value="/resources/css/animate.css"/>">
     
     <link rel="stylesheet" href="<c:url value="/resources/css/owl.carousel.min.css"/>">
@@ -19,14 +20,14 @@
 
     <link rel="stylesheet" href="<c:url value="/resources/css/aos.css"/> ">
 
-    <link rel="stylesheet" href="<c:url value="/resources/css/ionicons.min.css"/> ">
+    <link rel="stylesheet" href="<c:url value="/resources/css/ionicons.min.css"/>">
 
     <link rel="stylesheet" href="<c:url value="/resources/css/bootstrap-datepicker.css"/>">
     <link rel="stylesheet" href="<c:url value="/resources/css/jquery.timepicker.css"/>">
 
     
-    <link rel="stylesheet" href="<c:url value="/resources/css/flaticon.css"/>    ">
-    <link rel="stylesheet" href="<c:url value="/resources/css/icomoon.css"/>   ">
+    <link rel="stylesheet" href="<c:url value="/resources/css/flaticon.css"/> ">
+    <link rel="stylesheet" href="<c:url value="/resources/css/icomoon.css"/> ">
     <link rel="stylesheet" href="<c:url value="/resources/css/style.css"/>">
     
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
@@ -63,7 +64,17 @@ $(function () {
 
 </script>
  <style type="text/css">
+ .lc_container{
+	width: 90%;
+	padding-left: 400px;
+	padding-right: 200px;
+	display: block;
 
+ }
+
+ .lc_main_container{
+	width: 900px;
+ }
  </style>
 </head>
 <body>
@@ -209,12 +220,11 @@ $(function () {
 	</div>
 
 	<section class="ftco-section bg-light">
-				<jsp:include page="./lc_sideNavi.jsp"></jsp:include>
-
+				
 		<div class="lc_container" id="lc_container">
-			<div class="hu">
+			<div class="row">
 				<div class="lc_main_container">
-					<div class="row">
+
 						<div class="col-md-12 ftco-animate">
 							<div
 								class="job-post-item p-4 d-block d-lg-flex align-items-center">
@@ -548,29 +558,30 @@ $(function () {
 						</div>
 						<%-- 	<jsp:include page="/main/localChoice/lc_rightNavi.jsp"></jsp:include> --%>
 						<!-- end -->
-					</div>
-					<div class="row mt-5">
-						<div class="col text-center">
-							<div class="block-27">
-								<ul>
-									<li><a href="#">&lt;</a></li>
-									<li class="active"><span>1</span></li>
-									<li><a href="#">2</a></li>
-									<li><a href="#">3</a></li>
-									<li><a href="#">4</a></li>
-									<li><a href="#">5</a></li>
-									<li><a href="#">&gt;</a></li>
-								</ul>
-							</div>
+			</div>
+				<jsp:include page="./lc_sideNavi.jsp"></jsp:include>
+			</div>
+				<div class="row mt-5">
+					<div class="col text-center">
+						<div class="block-27">
+							<ul>
+								<li><a href="#">&lt;</a></li>
+								<li class="active"><span>1</span></li>
+								<li><a href="#">2</a></li>
+								<li><a href="#">3</a></li>
+								<li><a href="#">4</a></li>
+								<li><a href="#">5</a></li>
+								<li><a href="#">&gt;</a></li>
+							</ul>
 						</div>
 					</div>
 				</div>
 
 
-			</div>
-			<!-- 본문 내용들 끝 -->
 		</div>
+
 	</section>
+
 
 
 	<section class="ftco-section-parallax">
@@ -615,22 +626,22 @@ $(function () {
 	</div>
 
 
-	<script src="/resources/js/jquery.min.js"></script>
-	<script src="/resources/js/jquery-migrate-3.0.1.min.js"></script>
-	<script src="/resources/js/popper.min.js"></script>
-	<script src="/resources/js/bootstrap.min.js"></script>
-	<script src="/resources/js/jquery.easing.1.3.js"></script>
-	<script src="/resources/js/jquery.waypoints.min.js"></script>
-	<script src="/resources/js/jquery.stellar.min.js"></script>
-	<script src="/resources/js/owl.carousel.min.js"></script>
-	<script src="/resources/js/jquery.magnific-popup.min.js"></script>
-	<script src="/resources/js/aos.js"></script>
-	<script src="/resources/js/jquery.animateNumber.min.js"></script>
-	<script src="/resources/js/scrollax.min.js"></script>
-	<script
-		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-	<script src="/resources/js/google-map.js"></script>
-	<script src="/resources/js/main.js"></script>
+
+  <script src="<c:url value="/resources/js/jquery.min.js"/>"></script>
+  <script src="<c:url value="/resources/js/jquery-migrate-3.0.1.min.js"/>"></script>
+  <script src="<c:url value="/resources/js/popper.min.js"/>"></script>
+  <script src="<c:url value="/resources/js/bootstrap.min.js"/>"></script>
+  <script src="<c:url value="/resources/js/jquery.easing.1.3.js"/>"></script>
+  <script src="<c:url value="/resources/js/jquery.waypoints.min.js"/>"></script>
+  <script src="<c:url value="/resources/js/jquery.stellar.min.js"/>"></script>
+  <script src="<c:url value="/resources/js/owl.carousel.min.js"/>"></script>
+  <script src="<c:url value="/resources/js/jquery.magnific-popup.min.js"/>"></script>
+  <script src="<c:url value="/resources/js/aos.js"/>"></script>
+  <script src="<c:url value="/resources/js/jquery.animateNumber.min.js"/>"></script>
+  <script src="<c:url value="/resources/js/scrollax.min.js"/>"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+  <script src="<c:url value="/resources/js/google-map.js"/>"></script>
+  <script src="<c:url value="/resources/js/main.js"/>"></script>
 
 </body>
 </html>

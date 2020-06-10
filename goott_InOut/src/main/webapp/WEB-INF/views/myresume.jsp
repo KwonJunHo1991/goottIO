@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+        <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,23 +29,40 @@ $(function(){
 </head>
 <body>
 <h2>나의 이력서</h2>
-
+<form name="collegeform">
+<table>
 	<h2>기본정보</h2>
+	
+	
+
 	<tr>
 		<td>${sessionScope.mem_name }</td>
+	</tr>	
+	<tr>
 		<td>${sessionScope.mem_sex }</td>
+	</tr>	
+	<tr>
 		<td>${sessionScope.mem_birth }</td>
+	</tr>
+	<tr>
 		<td>${sessionScope.mem_email }</td>
+	</tr>	
+	<tr>
 		<td>${sessionScope.mem_phone }</td>
+	</tr>	
+	<tr>
 		<td>${sessionScope.mem_add }</td>
 	</tr>
 	
+	
+</table>	
 <h2>학력사항</h2>
 
-<form name="collegeform">
-<table>
-			<td><h2>대학 정보입력</h2></td>
-		</tr>
+
+<td><h2>대학 정보입력</h2></td>
+
+<table>			
+		
 		<tr>
 			<td>대학</td>
 			<td>
@@ -116,7 +134,7 @@ $(function(){
 		
 		<tr>
 			<td>학점</td>
-			<td><input type="text" name="un_grade" id="un_grade" value="학점입력" /></td>
+			<td><input type="text" name="un_grade" id="un_grade" value="" /></td>
 			<td>
 				<select name="un_fixgrade" id="un_fixgrade">학점기준선택
 					<option value="1">1.0</option>
@@ -134,8 +152,9 @@ $(function(){
 			
 			</td>
 		</tr>
-		<input type="button" value="작성완료" id="collegecommit" /> 
-
+		<tr>
+		<td><input type="button" value="작성완료" id="collegecommit" /></td> 
+		</tr>
 </table>
 </form>
 </body>

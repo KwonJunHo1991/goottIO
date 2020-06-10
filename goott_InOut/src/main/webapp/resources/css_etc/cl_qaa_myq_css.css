@@ -1,0 +1,408 @@
+@charset "UTF-8";
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, button {
+    margin: 0;
+    padding: 0;
+    font-family: 'NanumSquare', sans-serif;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    -webkit-text-size-adjust: none;
+}
+html {
+    color: #000;
+    background: #fff;
+}
+button {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+input, button, textarea, select {
+    line-height: normal;
+}
+input, button, textarea, select, optgroup, option {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-weight: normal;
+    font-style: normal;
+}
+a {
+    color: #444;
+    text-decoration: none;
+}
+ol, ul, li {
+    list-style: none;
+}
+strong, b {
+    font-weight: bold;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-size: 100%;
+    font-weight: normal;
+}
+ol, ul, li {
+    list-style: none;
+}
+button {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+input, button, textarea, select {
+    line-height: normal;
+}
+input, button, textarea, select, optgroup, option {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+}
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+body.has_lnb #sri_section {
+    padding-left: 220px;
+}
+#sri_section {
+    display: table;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+#sri_wrap {
+    display: table-row;
+    width: 100%;
+    height: 100%;
+}
+#content {
+    position: relative;
+    z-index: 1;
+    margin: 44px auto 80px auto;
+    width: 960px;
+}
+.wrap_title_recruit {
+    margin: 44px auto 0;
+    /* padding-right: 160px; */
+    width: 960px;
+}
+.wrap_title_recruit {
+    position: relative;
+    padding: 0 0 50px;
+}
+
+.wrap_title_recruit .title_common {
+    display: inline-block;
+    color: #444;
+    font-size: 32px;
+    font-weight: normal;
+    letter-spacing: -4px;
+    line-height: 36px;
+    vertical-align: top;
+}
+.company_review {
+    margin: 0 auto 80px auto;
+    padding-right: 160px;
+    width: 960px;
+    letter-spacing: -1px;
+}
+.tabList {
+    width: 100%;
+}
+.company_review.my .tabList>li.select {
+    font-weight: normal;
+}
+.company_review.my .tabList>li {
+    width: 50%;
+    font-size: 17px;
+}
+.tabList>li.select:first-child {
+    border-left: 1px solid #666;
+}
+.tabList>li.select {
+    position: relative;
+    z-index: 1;
+    border-color: #666;
+    border-right: 1px solid #666;
+    border-bottom-color: #fff;
+    border-left: 1px solid #666;
+    font-weight: bold;
+    background: #fff;
+}
+.tabList>li {
+    float: left;
+    width: 20%;
+    height: 100%;
+    border: 1px solid #dedede;
+    border-right: 0;
+    border-bottom-color: #666;
+    box-sizing: border-box;
+    color: #222;
+    font-size: 16px;
+    vertical-align: top;
+    background: #fbfbfb;
+}
+.company_review.my .tabList>li .inTab {
+    padding: 14px 0 13px;
+    letter-spacing: -1px;
+}
+.tabList>li .inTab {
+    display: block;
+    padding: 16px 0 15px;
+    width: 100%;
+    text-align: center;
+}
+.tabList:after {
+    display: table;
+    clear: both;
+    content: "";
+    table-layout: fixed;
+}
+
+.company_review.my .tabList+.search_company_review {
+    padding: 16px 0 17px;
+}
+.search_company_review {
+    float: left;
+    padding: 40px 0 11px 0;
+    width: 100%;
+}
+.search_company_review {
+    margin-top: 50px;
+    width: 100%;
+}
+.search_company_review .form_review {
+    float: right;
+}
+.search_company_review .searchTypoBox {
+    float: left;
+}
+.search_company_review div {
+    box-sizing: border-box;
+}
+.searchTypoBox {
+    width: auto;
+    height: auto;
+    font-size: 0;
+}
+.company_review .search_company_review .auto_search {
+    float: left;
+    width: 197px;
+}
+.company_review .auto_search {
+    position: relative;
+    width: 535px;
+}
+.search_company_review div {
+    box-sizing: border-box;
+}
+.company_review .search_company_review .searchTypoBox .inpTypo {
+    width: 197px;
+    height: 32px;
+    color: #888;
+    font-size: 13px;
+}
+.company_review .auto_search .inpTypo {
+    padding: 0 15px 1px 15px;
+    width: 100%;
+    height: 40px;
+    font-size: 15px;
+    letter-spacing: -1px;
+}
+.searchTypoBox .inpTypo {
+    display: inline-block;
+    padding-left: 10px;
+    width: 187px;
+    border: 1px solid #ddd;
+    border-right: 0 none;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #888;
+    letter-spacing: -1px;
+}
+.inpTypo {
+    padding: 0 11px 1px 11px;
+    width: 100%;
+    height: 32px;
+    border: 1px solid #dbdbdb;
+    box-sizing: border-box;
+    color: #444;
+    font-size: 13px;
+    line-height: 28px;
+    vertical-align: middle;
+    background: #fff;
+}
+.company_review .search_company_review .auto_search .list_auto_search {
+    top: 32px;
+}
+.company_review .auto_search .list_auto_search {
+    display: none;
+    overflow: hidden;
+    overflow-y: auto;
+    position: absolute;
+    top: 40px;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    max-height: 202px;
+    border: 1px solid #666;
+    border-top: 0;
+    box-sizing: border-box;
+    font-size: 13px;
+    letter-spacing: -1px;
+    line-height: 17px;
+    background: #fff;
+}
+
+.searchTypoBox .btnTypoSearch {
+    width: 52px;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    background-color: #6d82f3;
+    color: #fff;
+    font-size: 13px;
+    font-weight: bold;
+    vertical-align: top;
+}
+.searchTypoBox .btnTypoSearch, .searchTypoBox .btnTypoReset {
+    padding-bottom: 4px;
+    height: 32px;
+    border: 0;
+    cursor: pointer;
+}
+.searchTypoBox .btnTypoReset {
+    margin-left: 5px;
+    width: 32px;
+    font-size: 0;
+    vertical-align: middle;
+    background: url('../../../../etc/css/icon/ico_search_btn_reset.png') no-repeat -2px -2px;
+}
+.searchTypoBox .btnTypoSearch, .searchTypoBox .btnTypoReset {
+    padding-bottom: 4px;
+    height: 32px;
+    border: 0;
+    cursor: pointer;
+}
+.company_review.my .list_company_review {
+    border-top-color: #ebebeb;
+}
+.list_company_review {
+    clear: both;
+    border-top: 1px solid #444;
+}
+.box_review.nodata {
+    padding: 56px 20px 60px;
+    text-align: center;
+}
+.list_company_review .box_review {
+    position: relative;
+    padding: 28px 20px 28px 40px;
+    border-bottom: 1px solid #ebebeb;
+}
+.box_review.nodata .desc_nodata {
+    color: #444;
+    font-size: 15px;
+    line-height: 22px;
+}
+.company_review .btn_register {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 11px 25px 13px;
+    height: 40px;
+    border-radius: 2px;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: -1px;
+    line-height: 16px;
+    background: #4876ef;
+}
+.list_company_review .cont_list:before, .list_company_review .cont_list.request:before, .list_company_review .cont_list.answer:before, .intro_company_review .tit_bottom:before, .intro_company_review .link_bottom:after, .list_company_review .cont_list.answer .ico_new, .tab_company_review .list_tab .inner_tab:after, .box_review .box_desc:before, .company_review .btn_register:before, .about_company_review .tit_company_review:before, .rank_company_review .tit_company_review:before, .view_step li:before, .view_company_cont .writer_info .thumb_gender, .view_company_cont .info_view .txt_reply:before, .view_company_cont .info_view .btn_empathy:before, .company_review .info_view .btn_more_layer:before, .company_review .layer_more .btn_layer:before, .list_review_reply .info_reply:before, .list_review_reply .info_reply .btn_empathy:before, .company_review .btn_more:after, .view_company_similar .tit_company_review:before, .company_review .link_review_more:before, .company_review .link_review_more:after, .ask_company_review .info_ask_complete:after, .view_company_cont .box_vote a.txt_vote:after, .company_review .box_vote:before, .company_review .box_vote:after, .tab_company_review .bx-next, .tab_company_review .bx-prev {
+    display: inline-block;
+    vertical-align: top;
+    background: url("../../../../etc/css/icon/ico_review_191118.png") no-repeat 0 0;
+    content: "";
+}
+.company_review .btn_register:before {
+    margin: 3px 5px 0 0;
+    width: 13px;
+    height: 14px;
+    background-position: -200px -40px;
+}
+.wrap_btn_answer {
+    overflow: hidden;
+}
+.wrap_btn_answer .btn_register {
+    float: right;
+}
+.company_review .page_nation {
+    margin-top: 20px;
+}
+.page_nation {
+    margin-top: 20px;
+    text-align: center;
+    vertical-align: middle;
+}
+.noti_company_review {
+    margin-top: 147px;
+    padding: 18px 44px;
+    background: #f7f7f7;
+}
+.noti_company_review li {
+    position: relative;
+    margin: 5px 0;
+    padding-left: 10px;
+    color: #444;
+    font-size: 13px;
+    line-height: 18px;
+}
+.noti_company_review li:before {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%;
+    vertical-align: top;
+    background: #444;
+    content: "";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -143,6 +143,14 @@ public class IO_BoardController {
 		return "redirect:/board/boardSearch.do";
 	}
 	
+	//MY 질문
+	@RequestMapping(value = "/board/boardMy.do")
+	public String myBoard(Model model) {
+		List<IO_BoardDTO> list = dao.selectMy("testId12");
+		model.addAttribute("list", list);
+		return "/etc/cl_qaa_myq";
+	}
+	
 	
 	
 	

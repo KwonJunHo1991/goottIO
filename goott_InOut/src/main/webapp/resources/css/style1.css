@@ -4,52 +4,6 @@
  * Copyright 2011-2019 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
-
- .container_2{
-	width: 90%;
-	padding-left: 400px;
-	padding-right: 200px;
-
- }
- .container_3{
- width: 100%;
- padding-left: 400px;
- padding-right: 400px;
-
- }
- #container_2m{
- }
- .main_sidebar{
- 	width: 200px;
- 	margin-left: 80px;
- }
-
-
-.main_menu_iner {
-
-        text-align: left;
-
-        background-color: #ffffff;
-
-        width: 100%;
-
-		z-index: 6;
-}
-
-.topFixBannerFixed {
-
-        position: fixed;
-
-        top: 0px;
-
-		text-align:left;
-
-		z-index: 6;
-
-		padding-left:20px;
-
-} 
-
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -77,7 +31,7 @@
   --breakpoint-md: 768px;
   --breakpoint-lg: 992px;
   --breakpoint-xl: 1200px;
-  --font-family-sans-serif: "나눔스퀘어";
+  --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
 
 *,
@@ -97,11 +51,13 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
 
 body {
   margin: 0;
-
-    font-family: "나눔스퀘어";
-
-
- }
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  text-align: left;
+  background-color: #fff; }
 
 [tabindex="-1"]:focus {
   outline: 0 !important; }
@@ -517,7 +473,6 @@ pre {
   margin-left: auto; }
 
 .row {
-	
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -542,8 +497,8 @@ pre {
 .col-xl-auto {
   position: relative;
   width: 100%;
-  padding-right: 5px;
-  padding-left: 5px; }
+  padding-right: 15px;
+  padding-left: 15px; }
 
 .col {
   -ms-flex-preferred-size: 0;
@@ -926,8 +881,8 @@ pre {
   .col-md-3 {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 25%;
-   flex: 0 0 25%;
-    max-width: 25%;  }
+    flex: 0 0 25%;
+    max-width: 25%; }
   .col-md-4 {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 33.33333%;
@@ -1116,7 +1071,7 @@ pre {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 75%;
     flex: 0 0 75%;
-    max-width: 100%; }
+    max-width: 75%; }
   .col-lg-10 {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 83.33333%;
@@ -5394,7 +5349,7 @@ a.close.disabled {
   vertical-align: text-top !important; }
 
 .bg-primary {
-  background-color: white; !important; }
+  background-color: #007bff !important; }
 
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
@@ -6602,7 +6557,6 @@ button.bg-dark:focus {
 .mb-0,
 .my-0 {
   margin-bottom: 0 !important; }
-
 
 .ml-0,
 .mx-0 {
@@ -8564,8 +8518,7 @@ h1, h2, h3, h4, h5,
     display: inline-block; }
 
 .bg-light {
-  background: #f8f9fa !important; 
-  padding: 8em;}
+  background: #f8f9fa !important; }
 
 .bg-primary {
   background: #206dfb; }
@@ -8667,10 +8620,9 @@ h1, h2, h3, h4, h5,
     font-size: 22px;
     font-weight: 400; }
     .category li a {
-    	height : 300px;
       display: block;
       color: #1a1a1a;
-      border-bottom: 1px solid #206dfb;
+      border-bottom: 1px solid #ffefdb;
       padding: 10px 15px 10px 0;
       position: relative; }
       .category li a i {
@@ -8693,73 +8645,21 @@ h1, h2, h3, h4, h5,
       .category li a span.number {
         font-size: 16px;
         background: #fffaf5;
-        color: #206dfb;
+        color: #fdab44;
         padding: 2px 5px;
         -webkit-border-radius: 5px;
         -moz-border-radius: 5px;
         -ms-border-radius: 5px;
         border-radius: 5px; }
       .category li a:hover, .category li a:focus {
-        color: white;
-        background: #5e96ff; }
+        color: #206dfb;
+        background: #ffefdb; }
         .category li a:hover i, .category li a:focus i {
           right: 15px;
           opacity: 1; }
         .category li a:hover span, .category li a:focus span {
           color: rgba(0, 0, 0, 0.8); }
         .category li a:hover .number, .category li a:focus .number {
-          color: #206dfb; }
-.category_1 {
-  padding: 0; }
-.category_1 li {
-    list-style: none;
-    margin-bottom: 0px;
-    font-size: 22px;
-    font-weight: 400; }
- 
-    .category_1 li a {
-    height : 200px;
-      display: block;
-      color: #1a1a1a;
-        border-bottom: 1px solid #fdab44;
-      padding: 10px 15px 10px 0;
-      position: relative; }
-      .category_1 li a i {
-        position: absolute;
-        top: 50%;
-        right: 30px;
-        -webkit-transform: translateY(-50%);
-        -ms-transform: translateY(-50%);
-        transform: translateY(-50%);
-        color: #fdab44;
-        opacity: 0;
-        -moz-transition: all 0.3s ease;
-        -o-transition: all 0.3s ease;
-        -webkit-transition: all 0.3s ease;
-        -ms-transition: all 0.3s ease;
-        transition: all 0.3s ease; }
-      .category_1 li a span {
-        color: rgba(0, 0, 0, 0.3);
-        font-size: 15px; }
-      .category_1 li a span.number {
-          font-size: 16px;
-        background: #fffaf5;
-        color: #fdab44;
-        padding: 2px 5px;
-        -webkit-border-radius: 5px;
-        -moz-border-radius: 5px;
-        -ms-border-radius: 5px;
-        border-radius: 5px; }
-      .category_1 li a:hover, .category_1 li a:focus {
-           color: white;
-        background: #ffc275;
-         }
-        .category_1 li a:hover i, .category_1 li a:focus i {
-          right: 15px;
-          opacity: 1; }
-        .category_1 li a:hover span, .category_1 li a:focus span {
-          color: rgba(0, 0, 0, 0.8); }
-        .category_1 li a:hover .number, .category_1 li a:focus .number {
           color: #fdab44; }
 
 .job-post-item {
@@ -8767,7 +8667,6 @@ h1, h2, h3, h4, h5,
   background: #fff;
   position: relative;
   width: 100%;
-  height: 80%;
   margin-bottom: 20px;
   -moz-transition: all 0.3s ease;
   -o-transition: all 0.3s ease;
@@ -8775,7 +8674,7 @@ h1, h2, h3, h4, h5,
   -ms-transition: all 0.3s ease;
   transition: all 0.3s ease; }
   .job-post-item h2 {
-    font-size: 16px; }
+    font-size: 28px; }
     .job-post-item h2 a {
       color: #000000; }
   .job-post-item .one-third {
@@ -8844,27 +8743,26 @@ h1, h2, h3, h4, h5,
   .team.team-2 h2 {
     font-size: 24px !important; }
   .team .img {
-    width: 150px;
-    height: 150px;
+    width: 180px;
+    height: 180px;
     margin: 0 auto;
     margin-bottom: 20px;
     position: relative;
     overflow: hidden;
- 
-    -webkit-border-radius: 20%;
-    -moz-border-radius: 20%;
-    -ms-border-radius: 20%;
-    border-radius: 20%; }
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    border-radius: 50%; }
   .team h2 {
     font-size: 20px;
     font-weight: 500;
     margin-bottom: 0px;
-    color: black; }
+    color: #fff; }
   .team .position {
     font-size: 14px;
     text-transform: uppercase;
     font-weight: 600;
-    color: black; }
+    color: rgba(255, 255, 255, 0.7); }
 
 .ftco-candidates {
   position: relative; }
@@ -9097,7 +8995,7 @@ h1, h2, h3, h4, h5,
       -ms-border-radius: 5px;
       border-radius: 5px; }
       .search-job .form-group .form-control.btn.btn-primary {
-        background: #7379FF !important; }
+        background: #206dfb !important; }
   .search-job .form-group .select-wrap {
     position: relative; }
     .search-job .form-group .select-wrap select {
@@ -9167,7 +9065,7 @@ h1, h2, h3, h4, h5,
     background-position: center center;
     position: relative;
     padding: 4em 0;
-    background: white; }
+    background: #206dfb; }
   .ftco-section-parallax .heading-section-white h2 {
     font-weight: 400 !important; }
 
@@ -9215,7 +9113,7 @@ textarea.form-control {
   visibility: hidden; }
 
 .bg-primary {
-  background: white !important; }
+  background: #206dfb !important; }
 
 .media-custom {
   background: #fff; }
@@ -9233,19 +9131,6 @@ textarea.form-control {
 
 .ftco-section {
   padding: 6em 0;
-  position: relative; }
-  @media (max-width: 767.98px) {
-    .ftco-section {
-      padding: 6em 0; } }
-.ftco-section_1 {
-  padding: 2em 0;
-
-  position: relative; }
-  @media (max-width: 767.98px) {
-    .ftco-section {
-      padding: 6em 0; } }
-.ftco-section_2 {
-  padding: 3em 0;
   position: relative; }
   @media (max-width: 767.98px) {
     .ftco-section {
@@ -9398,20 +9283,20 @@ textarea.form-control {
   text-transform: uppercase; }
 
 .heading-section h2 {
-  font-size: 28px;
+  font-size: 38px;
   font-weight: 500; }
   @media (max-width: 767.98px) {
     .heading-section h2 {
       font-size: 28px; } }
 
 .heading-section.heading-section-white .subheading {
-  color: black; }
+  color: rgba(255, 255, 255, 0.9); }
 
 .heading-section.heading-section-white h2 {
-  color: black; }
+  color: #fff; }
 
 .heading-section.heading-section-white p {
-  color: black; }
+  color: rgba(255, 255, 255, 0.9); }
 
 .img,
 .blog-img,
@@ -9813,7 +9698,7 @@ textarea.form-control {
   border-radius: 0; }
   .subscribe-form .form-group input {
     background: white !important;
-    border: 1px solid #206dfb;
+    border: 1px solid transparent;
     color: rgba(0, 0, 0, 0.7) !important;
     font-size: 16px;
     border-radius: 5px 0px 0px 5px; }
@@ -10067,13 +9952,3 @@ textarea.form-control {
   100% {
     stroke-dasharray: 89, 200;
     stroke-dashoffset: -136px; } }
-<<<<<<< HEAD
- 
- 
-=======
-
-
-
-    
-    
->>>>>>> branch 'dev' of https://github.com/KwonJunHo1991/goottIO.git

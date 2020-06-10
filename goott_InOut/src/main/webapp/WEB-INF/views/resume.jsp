@@ -1,3 +1,4 @@
+<%@page import="kr.co.InOut.dto.IO_ResumeDTO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -31,12 +32,23 @@ $(function(){
 <h2>resdddume.jsp</h2>
 
 
+<%-- <%
+
+IO_ResumeDTO resume = new IO_ResumeDTO();
+
+
+%> --%>
+
 	<form name="frm1">
 	<table>
 	<!-- 기본정보는 member 테이블에서 불러온다  -->
 		<h2>기본정보</h2>
 		
-
+	<tr>
+	
+<%-- 	<td>num</td>
+	<td><input type="hidden" name="res_num" id="res_num" />${resume.res_num }</td>
+	</tr> --%>
 		
 		
 		<tr>

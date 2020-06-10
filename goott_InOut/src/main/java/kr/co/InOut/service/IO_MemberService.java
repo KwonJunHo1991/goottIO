@@ -1,5 +1,7 @@
 package kr.co.InOut.service;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import kr.co.InOut.dto.IO_MemberDTO;

@@ -12,12 +12,22 @@
 <!-- CSS 적용 -->
 <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css_etc/cl_qaa_detail_css.css'/>">
 <style type="text/css">
-
+#content{
+margin-top: 200px;
+margin-left: 550px;
+}
 </style>
 
 </head>
 <body>
+  <div>
+   <jsp:include page="../main/mainPage/mp_naviBar.jsp"></jsp:include>
+   </div> 
+   
+   <jsp:include page="../main/mainPage/loginPop.jsp"></jsp:include>
+    <!-- END nav -->
 <div id="sri_section">
+    <jsp:include page="cl_sideNavi.jsp"></jsp:include>
         <div id="sri_wrap">
             <div id="content">
 
@@ -346,6 +356,7 @@
             </div>
         </div>
                 </div>
+           <jsp:include page="../main/mainPage/mp_footer.jsp"></jsp:include>
         </div>
                      
     </div>
