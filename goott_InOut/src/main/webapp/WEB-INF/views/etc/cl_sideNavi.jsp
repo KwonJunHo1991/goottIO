@@ -23,7 +23,7 @@ body.has_lnb #sri_section {
     height: 100%;
     box-sizing: border-box;
 }
-body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, button {
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input,  p, blockquote,  {
     margin: 0;
     padding: 0;
     font-family: "Malgun Gothic",dotum,gulim,sans-serif;
@@ -105,11 +105,13 @@ ul {
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
+    cursor: pointer;
 
 }
 #sri_lnb_wrap {
     position: fixed;
     top: 60px;
+	z-index: -1;
     bottom: 0;
     left: 0;
     z-index: 20;
@@ -228,17 +230,12 @@ element.style {
     font-size: 15px;
     letter-spacing: -1px;
 }
-button {
-    border: 0;
-    background: transparent;
-    cursor: pointer;
-	
-}
 
-input, button, textarea, select {
+
+input, select {
     line-height: normal;
 }
-input, button, textarea, select, optgroup, option {
+input, select, optgroup, option {
     font-family: inherit;
     font-size: inherit;
     font-weight: inherit;
@@ -280,7 +277,7 @@ $(document).ready(function () {
             <a href="/zf_user/companylab" class="li_menu_a" data-track_event=""><strong>홈</strong> <i class="sri_lnb_icon ic_new"></i></a>
         </li>
         <li class="lnb_menu">
-            <a href="/zf_user/company-review-qst-and-ans/" class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>취준진담</strong> <i class="sri_lnb_icon ic_new"></i></a>
+            <a href="../board/boardSearch.do" class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>취준진담</strong> <i class="sri_lnb_icon ic_new"></i></a>
         </li>
         <li class="li_menu">
             <a class="li_menu_a" data-track_event="section|lnb|salaries|lnb1310"><strong>기업연구소</strong><span class="sri_lnb_icon arrow"></span></a> <!-- WMG-25293 -->

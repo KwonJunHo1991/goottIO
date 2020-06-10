@@ -29,7 +29,12 @@
     <link rel="stylesheet" href="<c:url value="/resources/css/css_1/slick.css"/>">
     <!-- style CSS -->
     <link rel="stylesheet" href="<c:url value="/resources/css/css_1/style.css"/>">
+<style type="text/css">
+.main_menu_iner{
+z-index: 5;
+}
 
+</style> 
 
 
  

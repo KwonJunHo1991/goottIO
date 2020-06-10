@@ -61,6 +61,12 @@
 		where board_num = #{board_num};
 	</update>
 	
+	<select id="selectMyBoard" resultType="BoardDTO" parameterType="String">
+		select * from io_board
+		where mem_id = '${mem_id}'
+	
+	</select>
+	
 	
 	<!--dddddddddddddddddddddd Re Board dddddddddddddddddddddddddddddddd-->
 

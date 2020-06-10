@@ -12,6 +12,6 @@ public class Test {
 	public String test() {
 		
 		
-		return "/etc/cl_char_count";
+		return "/etc/cl_qaa_myq";
 	}
 }

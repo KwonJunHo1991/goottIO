@@ -7,68 +7,45 @@
 <head>
 <meta charset="UTF-8">
 <title>기업연구소 - 취준고민</title>
-<!-- 나눔스퀘어  -->
-<link rel="stylesheet" type="text/css" href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
+
 
 <!-- CSS 적용 -->
 <!-- <link rel="stylesheet" type="text/css" href="/resources/css/cl_qaa_css.css"> -->
 <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css_etc/cl_qaa_css.css'/>">
-<style type="text/css">
-#sri_wrap {
-	margin-left: 300px;
-    display: table-row;
-    width: 100%;
-    height: 100%;
-}
-#content{
-margin-left: 500px;
-}
-.checkbox_check1 , .checkbox_check2{
-	display: inline-block;
-    width: 150px;
-    height: 60px;
-    border: 1px solid #ddd;
-    color: black;
-    background-color: #fff;
-    box-shadow: none;
 
-}
+<style type="text/css">
+
 </style>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
-	$(document).ready(function () {
-		
-		$(".checkbox_check1").hide();
-		$(".checkbox_check2").hide();
-		
-		$('input:radio').change(function () {	
-			$(".empty_txt").text("")
-			var value = $('input[name=board_category]:checked').val();
-			var value2 = $('input[name=board_type]:checked').val();
-			var value3 = $('input[name=board_category]:checked').next();
-			var value4 = $('input[name=board_type]:checked').next();
-			//console.log(value3.text());
-			//console.dir($('input[name=li_cd]:checked').prev('span'));
-			
-			console.log(value);
+$(document).ready(function () {
+	
+	$(".checkbox_check1").hide();
+	$(".checkbox_check2").hide();
+	
+	$('input:radio').change(function () {	
+		$(".empty_txt").text("")
+		var value = $('input[name=board_category]:checked').val();
+		var value2 = $('input[name=board_type]:checked').val();
+		var value3 = $('input[name=board_category]:checked').next();
+		var value4 = $('input[name=board_type]:checked').next();
+
+		if(value != null){
 			console.log(value3.text());
-			
-			if(value != null){
-				console.log(value3.text());
-				$(".checkbox_check1").show();
-				$(".checkbox_check1").val(value3.text());
-			}
-			if( value2 != null){
-				$(".checkbox_check2").show();
-				$(".checkbox_check2").val(value4.text());
-			}
-			
-			
-			
-		});		
-	
-	
-	});
+			$(".checkbox_check1").show();
+			$(".checkbox_check1").val(value3.text());
+		}
+		if( value2 != null){
+			$(".checkbox_check2").show();
+			$(".checkbox_check2").val(value4.text());
+		}
+		
+		
+		
+	});		
+
+
+});
 	
 	function fn_paging(curPage) {
 	
@@ -92,15 +69,12 @@ margin-left: 500px;
    
    <jsp:include page="../main/mainPage/loginPop.jsp"></jsp:include>
     <!-- END nav -->
-   <jsp:include page="cl_sideNavi.jsp"></jsp:include>
-   
 	<div id="sri_wrap">
-		<div id="content">
+   <jsp:include page="cl_sideNavi.jsp"></jsp:include>
 			<div class="wrap_title_recruit" >
 				<h1 class="title_common">기업연구소 - 취준고민</h1>
 			</div>
 			<!-- 맨 위 목록 시작 -->
-			<div class="company_review">
 			<div class="intro_company_review">
 				::before
 				<strong class="tit_query">
@@ -113,6 +87,7 @@ margin-left: 500px;
 					<button type="button">로그인</button>
 					해서 더 정확한 추천을 받아보세요
 				</div>
+			<div id="content">	
 				
 				<!-- @@@@@@@@@@@@@@@@@@목록 보이기 시작@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
 				<div class="wrap_list_review">
@@ -268,16 +243,7 @@ margin-left: 500px;
                                 </div>
                             </div>
                         </li></ul></div>
-                        <!-- 클릭시 목록 이동하는 버튼 시작  -->
-                        <div class="bx-controls bx-has-pager">
-                        <div class="bx-pager bx-default-pager">
-                        <div class="bx-pager-item">
-                        <a href="" data-slide-index="0" class="bx-pager-link active">1</a></div>
-                        <div class="bx-pager-item">
-                        <a href="" data-slide-index="1" class="bx-pager-link ">2</a></div>
-                        <div class="bx-pager-item">
-                        <a href="" data-slide-index="2" class="bx-pager-link">3</a></div></div></div>
-                        <!-- 클릭시 목록 이동하는 버튼 끝  -->
+
                         </div>
             <div class="bx-controls bx-has-pager">
                 <div class="bx-pager bx-default-pager">
@@ -294,13 +260,16 @@ margin-left: 500px;
     
     	<!-- MY 질문 / 질문하기 버튼 -->
 		<div class="bottom_btn_wrap">
-        <a href="#" class="my_question">
+        <a href="../board/boardMy.do" class="my_question">
         	MY 질문</a>
         <a href="boardInsert.do" class="quest">
         	질문하기</a>
     	</div>
     	<!-- MY 질문 / 질문하기 버튼 끝 -->
 		</div>
+		</div>
+		<div id="content">
+			<div class="company_review">
 		<!-- 많이 본 질문 / 답변 많은 질문 시작  -->
 		
 			<div class="tab_company_review">
@@ -336,13 +305,13 @@ margin-left: 500px;
 		                <strong class="tit_tab">답변 많은 질문</strong>
 		                <span class="criteria">최근 1주일 기준</span>
                			<ol>
+               			               	
 		                	<c:forEach var="re" items="${reTop5 }">
 			                	<li>
 			                		<a href="boardDetail.do?board_num=${re.board_num }">제목 : ${re.board_title }<span class="viewer"><!-- 조회수 --></span></a>
 			                  	</li>
 		                  	</c:forEach>
-		     
-		                  	<!-- <li>
+<!-- 		                	<li>
 		                		<a href="#">질문 제목제목<span class="viewer">조회수?조회수</span></a>
 		                  	</li>
 		                  	<li>
@@ -354,8 +323,10 @@ margin-left: 500px;
 		                  	<li>
 		                		<a href="#">질문 제목제목<span class="viewer">조회수?조회수</span></a>
 		                  	</li>
-		     -->
-		                  </ol>
+		                  	<li>
+		                		<a href="#">질문 제목제목<span class="viewer">조회수?조회수</span></a>
+		                  	</li> -->
+		                 </ol>
             		</div>
             </div>
             
@@ -391,12 +362,12 @@ margin-left: 500px;
 			            </div>
 			            <div class="search_selector">
 			                <ul class="input_list">
-			                	<li><input type="radio" name="board_type" id="li_cd10" value="0"><span> 경영·사무</span></input></li>     
-			                	<li><input type="radio" name="board_type" id="li_cd11" value="1"><span> 영업·고객상담</span></input></li>     
-			                	<li><input type="radio" name="board_type" id="li_cd12" value="2"><span> 생산·제조</span></input></li>     
-			                	<li><input type="radio" name="board_type" id="li_cd13" value="3"><span> IT·인터넷</span></input></li>     
-			                	<li><input type="radio" name="board_type" id="li_cd14" value="4"><span> 유통·무역</span></input></li>     
-			                	<li><input type="radio" name="board_type" id="li_cd15" value="5"><span> 서비스</span></input></li>     
+			                	<li><input type="radio" name="board_type" id="li_cd10" value="1"><span> 경영·사무</span></input></li>     
+			                	<li><input type="radio" name="board_type" id="li_cd11" value="2"><span> 영업·고객상담</span></input></li>     
+			                	<li><input type="radio" name="board_type" id="li_cd12" value="3"><span> 생산·제조</span></input></li>     
+			                	<li><input type="radio" name="board_type" id="li_cd13" value="4"><span> IT·인터넷</span></input></li>     
+			                	<li><input type="radio" name="board_type" id="li_cd14" value="5"><span> 유통·무역</span></input></li>     
+			                	<li><input type="radio" name="board_type" id="li_cd15" value="6"><span> 서비스</span></input></li>     
 			                </ul>
 			            </div>
 			            <button class="ic_close"><span class="blind">검색창 닫기</span></button>
@@ -410,7 +381,7 @@ margin-left: 500px;
 			        	<input type="button" class="checkbox_check2" id="hello2" value="hello" />
 			        
 			        
-			        <button type="submit" class="btn_search" id="btn_search" >검색하기</button>
+			 			        <button type="submit" class="btn_search" id="btn_search" >검색하기</button>
 			    </div>
 			    </form>
 			</div>
@@ -445,7 +416,7 @@ margin-left: 500px;
                 <div class="box_review">
 	                <a href="boardDetail.do?board_num=${b.board_num }" class="link_detail"></a>
 	                <em class="name_company">
-	                    <span class="job"> 카테고리 : ${b.board_category } 직종 : ${b.board_type }</span>
+	                    <span class="job">카테고리 : ${b.board_category } 직종 : ${b.board_type }</span>
 	                </em>
 	                <strong class="tit_box">번호 : ${b.board_num} 제목 : ${b.board_title }</strong>
 	                <p class="txt_box">내용 : ${b.board_content }</p>
@@ -453,6 +424,10 @@ margin-left: 500px;
 	                <span class="txt_date">작성 일자 : ${b.board_date }</span>
                 </div>
             </c:forEach>   
+            
+            <c:if test="${empty list }">
+            	검색 결과가 없습니다.
+            </c:if>
                
 <!--                
                 <div class="box_review">
@@ -528,8 +503,8 @@ margin-left: 500px;
     <div class="page_nation">
         
         
-        <a href="#" class="num" onClick="fn_paging(1)">[처음]</a>
-		<c:if test="${page.curPage ne 1 }"> <a class="num" href="#" onClick="fn_paging('${page.prevPage }')">[이전]</a> </c:if> 
+        <a href="#" class="num" onClick="fn_paging(1)">처음</a>
+		<c:if test="${page.curPage ne 1 }"> <a class="num" href="#" onClick="fn_paging('${page.prevPage }')">이전</a> </c:if> 
  		<c:forEach var="pageNum" begin="${page.startPage }" end="${page.endPage }">
 			<c:choose>
 				<c:when test="${pageNum eq page.curPage }">
@@ -543,9 +518,9 @@ margin-left: 500px;
 		
 		</c:forEach>
 		<c:if test="${page.curPage ne page.pageCnt && page.pageCnt >0 }">
-			<a href="#"  class="num" onClick="fn_paging('${page.nextPage }')">[다음]</a>
+			<a href="#"  class="num" onClick="fn_paging('${page.nextPage }')">다음</a>
 		</c:if>
-			<a href="#" class="num" onClick="fn_paging('${page.pageCnt }')">[끝]</a>
+			<a href="#" class="num" onClick="fn_paging('${page.pageCnt }')">끝</a>
         
 <!--                         <strong>1</strong>
                             <a class="num" href="#">2</a>
@@ -567,5 +542,6 @@ margin-left: 500px;
             </div>
 		</div>
      </div>
+       <jsp:include page="../main/mainPage/mp_footer.jsp"></jsp:include>
 </body>
 </html>

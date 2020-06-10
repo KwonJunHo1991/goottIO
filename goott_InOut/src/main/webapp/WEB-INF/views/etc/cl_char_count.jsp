@@ -53,12 +53,24 @@ $(function(){
 	}
 
 </script>
-
+<style type="text/css">
+#content{
+margin-left: 500px;
+margin-top: 100px;
+}
+</style>
 
 
 </head>
 <body>
+  <div>
+   <jsp:include page="../main/mainPage/mp_naviBar.jsp"></jsp:include>
+   </div> 
+   
+   <jsp:include page="../main/mainPage/loginPop.jsp"></jsp:include>
+    <!-- END nav -->
 <div id="sri_wrap">
+    <jsp:include page="cl_sideNavi.jsp"></jsp:include>
             <div id="content">
                 
 <div class="wrap_title_recruit">
@@ -93,5 +105,6 @@ $(function(){
 </div>
 </div>
 </div>
+       <jsp:include page="../main/mainPage/mp_footer.jsp"></jsp:include>
 </body>
 </html>

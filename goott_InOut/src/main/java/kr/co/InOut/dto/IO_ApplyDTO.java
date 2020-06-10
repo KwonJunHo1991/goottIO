@@ -13,7 +13,7 @@ public class IO_ApplyDTO {
 	int mem_sex;
 	int res_income;
 	
-	public IO_ApplyDTO() {
+	public IO_ApplyDTO() { 
 		
 	}
 
