@@ -11,9 +11,12 @@
 	<h1>새로운 공고를 등록하는 창</h1>
 	
 	<form action="./newNoticeStep1.do" method="post">
-		<input type="hidden" name="comp_num" value='1000000001' />
-		<input type="hidden" name="comp_id" value='test1' />
+		<input type="hidden" name="comp_id" value='${sessionScope.loginComp.comp_id }' />
 		<table>
+			<tr>
+				<th>회사이름</th>
+				<td><input type="text" name="comp_name" id=""  value="${sessionScope.loginComp.comp_name }"/></td>
+			</tr>
 			<tr>
 				<th>채용공고이름</th>
 				<td><input type="text" name="notice_title" id=""  value="채용공고 이름"/></td>
@@ -124,11 +127,11 @@
 			</tr>
 			<tr>
 				<th>접수시작날짜</th>
-				<td><input type="text" name="notice_prcs_start" id="" value="2020-06-10"/></td>
+				<td><input type="text" name="notice_prcs_start" id="" value="2020/06/10"/></td>
 			</tr>
 			<tr>
 				<th>접수종료날짜</th>
-				<td><input type="text" name="notice_prcs_end" id="" value="2020-06-31"/></td>
+				<td><input type="text" name="notice_prcs_end" id="" value="2020/06/30"/></td>
 			</tr>
 			<tr>
 				<td colspan="2"><input type="submit" value="공고 저장" /> <input type="reset" value="reset" /></td>
