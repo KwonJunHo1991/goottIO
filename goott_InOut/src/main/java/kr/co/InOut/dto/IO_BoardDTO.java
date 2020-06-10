@@ -2,11 +2,14 @@ package kr.co.InOut.dto;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class IO_BoardDTO {
 	Integer board_num;
 	String mem_id;
 	String board_title;
 	String board_content;
+	@DateTimeFormat(pattern = "yyyy/MM/dd")
 	Date board_date;
 	Integer board_type;
 	Integer board_category;
