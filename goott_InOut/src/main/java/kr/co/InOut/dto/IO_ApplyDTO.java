@@ -2,13 +2,17 @@ package kr.co.InOut.dto;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class IO_ApplyDTO {
 	Integer apply_num;
 	Integer res_num;
 	String mem_id;
 	Integer notice_num;
 	Integer comp_num;
+	@DateTimeFormat(pattern = "yyyy/MM/dd")
 	Date apply_date;
+	@DateTimeFormat(pattern = "yyyy/MM/dd")
 	Date mem_birth;
 	Integer mem_sex;
 	Integer res_income;

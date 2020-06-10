@@ -2,6 +2,8 @@ package kr.co.InOut.dto;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class IO_ReBoardDTO {
 	Integer reBoard_num;
 	Integer board_num;
@@ -9,6 +11,7 @@ public class IO_ReBoardDTO {
 	Integer comp_num;
 	String comp_id;
 	String reBoard_content;
+	@DateTimeFormat(pattern = "yyyy/MM/dd")
 	Date reBoard_date;
 	
 	public IO_ReBoardDTO() {

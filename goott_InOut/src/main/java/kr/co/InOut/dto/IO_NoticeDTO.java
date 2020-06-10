@@ -2,6 +2,8 @@ package kr.co.InOut.dto;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class IO_NoticeDTO {
 	Integer notice_num;
 	Integer comp_num;
@@ -33,7 +35,9 @@ public class IO_NoticeDTO {
 	Integer notice_req_minage;
 	Integer notice_req_maxage;
 	String notice_prcs_job;
+	@DateTimeFormat(pattern = "yyyy/MM/dd")
 	Date notice_prcs_start;
+	@DateTimeFormat(pattern = "yyyy/MM/dd")
 	Date notice_prcs_end;
 	public Integer getNotice_num() {
 		return notice_num;

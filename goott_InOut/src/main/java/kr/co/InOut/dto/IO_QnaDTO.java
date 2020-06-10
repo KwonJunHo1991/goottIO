@@ -2,12 +2,15 @@ package kr.co.InOut.dto;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class IO_QnaDTO {
 	Integer qna_num;
 	String mem_id;
 	String qna_title;
 	String qna_content;
 	String qna_re;
+	@DateTimeFormat(pattern = "yyyy/MM/dd")
 	Date qna_date;
 	
 	public IO_QnaDTO() {
