@@ -10,6 +10,10 @@
 	<form action="#" method="post">
 		<table>
 			<tr>
+				<th>회사이름</th>
+				<td><input type="text" name="comp_name" id="comp_name" /></td>
+			</tr>
+			<tr>
 				<th>사업자등록번호</th>
 				<td><input type="text" name="comp_num" id="comp_num" /></td>
 			</tr>

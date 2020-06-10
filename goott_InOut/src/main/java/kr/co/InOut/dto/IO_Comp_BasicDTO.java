@@ -1,6 +1,7 @@
 package kr.co.InOut.dto;
 
 public class IO_Comp_BasicDTO {
+	String comp_name;
 	Integer comp_num;
 	String comp_id;
 	String comp_pw;
@@ -12,6 +13,15 @@ public class IO_Comp_BasicDTO {
 	Integer comp_type;
 	public IO_Comp_BasicDTO() {
 	}
+	
+	public String getComp_name() {
+		return comp_name;
+	}
+
+	public void setComp_name(String comp_name) {
+		this.comp_name = comp_name;
+	}
+
 	public Integer getComp_num() {
 		return comp_num;
 	}
@@ -66,7 +76,7 @@ public class IO_Comp_BasicDTO {
 	public void setComp_type(Integer comp_type) {
 		this.comp_type = comp_type;
 	}
-	public IO_Comp_BasicDTO(Integer comp_num, String comp_id, String comp_pw,
+	public IO_Comp_BasicDTO(String comp_name, Integer comp_num, String comp_id, String comp_pw,
 			Integer comp_inf_period, String comp_username, String comp_usertel,
 			String comp_useremail, Integer comp_grade, Integer comp_type) {
 		super();

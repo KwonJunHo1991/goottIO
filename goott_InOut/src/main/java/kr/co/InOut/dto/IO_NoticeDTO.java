@@ -5,6 +5,7 @@ import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
 
 public class IO_NoticeDTO {
+	String comp_name;
 	Integer notice_num;
 	Integer comp_num;
 	String comp_id;
@@ -39,6 +40,12 @@ public class IO_NoticeDTO {
 	Date notice_prcs_start;
 	@DateTimeFormat(pattern = "yyyy/MM/dd")
 	Date notice_prcs_end;
+	public String getComp_name() {
+		return comp_name;
+	}
+	public void setComp_name(String comp_name) {
+		this.comp_name = comp_name;
+	}
 	public Integer getNotice_num() {
 		return notice_num;
 	}
@@ -231,7 +238,7 @@ public class IO_NoticeDTO {
 	public void setNotice_prcs_end(Date notice_prcs_end) {
 		this.notice_prcs_end = notice_prcs_end;
 	}
-	public IO_NoticeDTO(Integer notice_num, Integer comp_num, String comp_id,
+	public IO_NoticeDTO(String comp_name, Integer notice_num, Integer comp_num, String comp_id,
 			String notice_title, String notice_man, String notice_man_dept,
 			String notice_man_tel, String notice_man_mp,
 			String notice_man_email, String notice_comp_type,
