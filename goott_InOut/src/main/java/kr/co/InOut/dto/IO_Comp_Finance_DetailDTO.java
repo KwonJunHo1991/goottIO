@@ -7,8 +7,38 @@ public class IO_Comp_Finance_DetailDTO {
 	Integer capital;
 	Integer sales;
 	Integer profit;
-	
-	public IO_Comp_Finance_DetailDTO(int base_year, int comp_num, int capital, int sales, int profit) {
+	public Integer getBase_year() {
+		return base_year;
+	}
+	public void setBase_year(Integer base_year) {
+		this.base_year = base_year;
+	}
+	public Integer getComp_num() {
+		return comp_num;
+	}
+	public void setComp_num(Integer comp_num) {
+		this.comp_num = comp_num;
+	}
+	public Integer getCapital() {
+		return capital;
+	}
+	public void setCapital(Integer capital) {
+		this.capital = capital;
+	}
+	public Integer getSales() {
+		return sales;
+	}
+	public void setSales(Integer sales) {
+		this.sales = sales;
+	}
+	public Integer getProfit() {
+		return profit;
+	}
+	public void setProfit(Integer profit) {
+		this.profit = profit;
+	}
+	public IO_Comp_Finance_DetailDTO(Integer base_year, Integer comp_num,
+			Integer capital, Integer sales, Integer profit) {
 		super();
 		this.base_year = base_year;
 		this.comp_num = comp_num;
@@ -16,46 +46,7 @@ public class IO_Comp_Finance_DetailDTO {
 		this.sales = sales;
 		this.profit = profit;
 	}
-
-	public int getBase_year() {
-		return base_year;
-	}
-
-	public void setBase_year(int base_year) {
-		this.base_year = base_year;
-	}
-
-	public int getComp_num() {
-		return comp_num;
-	}
-
-	public void setComp_num(int comp_num) {
-		this.comp_num = comp_num;
-	}
-
-	public int getCapital() {
-		return capital;
-	}
-
-	public void setCapital(int capital) {
-		this.capital = capital;
-	}
-
-	public int getSales() {
-		return sales;
-	}
-
-	public void setSales(int sales) {
-		this.sales = sales;
-	}
-
-	public int getProfit() {
-		return profit;
-	}
-
-	public void setProfit(int profit) {
-		this.profit = profit;
-	}
+	
 	
 	
 	
