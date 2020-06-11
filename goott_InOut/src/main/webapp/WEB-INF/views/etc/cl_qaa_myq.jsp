@@ -40,8 +40,8 @@ margin-left: 550px;
 				
 				<div class="company_review my">
 				    <ul class="tabList">
-				        <li class="select"><button type="button" class="inTab"><span>질문 내역 (0건)</span></button></li>
-				        <li><button type="button" class="inTab" onclick="location.href='#'"><span>답변 내역 (0건)</span></button></li>
+				        <li class="select"><button type="button" class="inTab"><span>질문 내역 </span></button></li>
+				        <li><button type="button" class="inTab" onclick="location.href='#'"><span>답변 내역 </span></button></li>
 				    </ul>
 				    <div class="search_company_review">
 				        <form class="form_review">

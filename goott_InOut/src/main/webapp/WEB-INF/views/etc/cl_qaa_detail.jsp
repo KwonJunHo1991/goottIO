@@ -37,7 +37,35 @@ margin-left: 550px;
 <div class="company_review">
     <div class="view_company_cont">
     <input type="hidden" name="report_idx" value="" id="report_idx">    <input type="hidden" name="report_type" value="" id="report_type">
-    <em class="name_company">모든 기업<span class="category dot">업종 : ${dto.board_type }</span><span class="category dot">카테고리 : ${dto.board_category }</span>에 대한 질문입니다</em>
+    <em class="name_company">모든 기업
+    	<span class="category dot">
+                <c:choose>
+                   	<c:when test="${dto.board_category eq 1}">직무</c:when>
+                   	<c:when test="${dto.board_category eq 2}">조직문화</c:when>
+                   	<c:when test="${dto.board_category eq 3}">근무환경</c:when>
+                   	<c:when test="${dto.board_category eq 4}">급여 및 복지</c:when>
+                   	<c:when test="${dto.board_category eq 5}">자기개발</c:when>
+                   	<c:when test="${dto.board_category eq 6}">경영진</c:when>
+                   	<c:when test="${dto.board_category eq 7}">면접/자소서</c:when>
+                   	<c:when test="${dto.board_category eq 8}">이직/퇴사</c:when>
+                   	<c:when test="${dto.board_category eq 9}">기타</c:when>
+              </c:choose>
+    	
+    	</span>
+    	<span class="category dot">
+    		
+				<c:choose>
+                   	<c:when test="${dto.board_type eq 1}">직무</c:when>
+                   	<c:when test="${dto.board_type eq 2}">조직문화</c:when>
+                   	<c:when test="${dto.board_type eq 3}">근무환경</c:when>
+                   	<c:when test="${dto.board_type eq 4}">급여 및 복지</c:when>
+                   	<c:when test="${dto.board_type eq 5}">자기개발</c:when>
+                   	<c:when test="${dto.board_type eq 6}">경영진</c:when>
+
+                   </c:choose>	  
+    			
+    	</span>&nbsp;&nbsp;에 대한 질문입니다
+    </em>
     <strong class="tit_view">제목 : ${dto.board_title }</strong>
     <p class="desc_view">내용 : ${dto.board_content }</p>
     <div class="writer_info">
@@ -46,7 +74,7 @@ margin-left: 550px;
         <span class="txt_date">작성일자 : ${dto.board_date }</span>
     </div>
     <div class="info_view">
-        <span class="txt_reply">답변 개수</span>
+        <span class="txt_reply">답변 </span>
         <button type="button" class="btn_empathy " onclick="REVIEW_QST_AND_ANS.likeClick(this, '4709', 'qust')"><span class="blind">좋아요</span>0</button>
         <button type="button" class="btn_more_layer btn_report_layer"><span class="blind">더보기</span></button>
         <ul class="layer_more report_layer" style="display:none">
@@ -66,7 +94,7 @@ margin-left: 550px;
     </div>
         <div class="view_company_reply">
         <div class="info_list_reply">
-            <em class="num_total">답변 <span class="emph">26</span>건</em>
+            <em class="num_total">답변 </em>
         </div>
      <div class="view_company_write non_login">
  <!--답변작성하기 박스 --> 

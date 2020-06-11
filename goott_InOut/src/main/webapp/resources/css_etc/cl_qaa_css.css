@@ -1031,3 +1031,6 @@ margin-left: 550px;
     box-shadow: none;
 
 }
+#search_company_review , #qst_and_ans_list{
+	margin-left: 65px;
+}
