@@ -33,7 +33,41 @@
 
  <style type="text/css">
 
- </style>   
+ </style>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
+<script type="text/javascript">
+$(function() {
+	$('#form-control1_1').show();
+	$('#form-control1_2').hide();
+	$('#form-control2_1').show();
+	$('#form-control2_2').hide();
+	jQuery('#form-control1').change(function() {
+		var state = $('#form-control1').val();
+
+		if (state == '1') {
+			jQuery('#form-control1_1').show();
+			jQuery('#form-control1_2').hide();
+
+		} else if (state == '2') {
+			jQuery('#form-control1_2').show();
+			jQuery('#form-control1_1').hide();
+		}
+	});
+	jQuery('#form-control2').change(function() {
+		var state = $('#form-control2').val();
+
+		if (state == '1') {
+			jQuery('#form-control2_1').show();
+			jQuery('#form-control2_2').hide();
+
+		} else if (state == '2') {
+			jQuery('#form-control2_2').show();
+			jQuery('#form-control2_1').hide();
+		}
+	});
+		
+});	
+</script>   
   </head>
   <body>
    <jsp:include page="./mp_naviBar.jsp"></jsp:include>
@@ -128,11 +162,9 @@
 				              					<div class="form-field">
 					              					<div class="select-wrap">
 							                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-							                      <select name="" id="" class="form-control">
-							                      	<option value="">지역별</option>
-							                      	<option value="">서울</option>
-							                        <option value="">성남</option>
-							                        <option value="">수원</option>
+							                      <select name="" id="form-control1" class="form-control">
+							                      	<option value="1">직업별</option>
+							                      	<option value="2">지역별</option>
 							                      </select>
 							                    </div>
 									              </div>
@@ -143,8 +175,8 @@
 				              					<div class="form-field">
 					              					<div class="select-wrap">
 							                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-							                      <select name="" id="" class="form-control">
-												    <option value="">직업별</option>
+							                      <select name="" id="form-control1_1" class="form-control">
+												    <option value="">직업</option>
 							                      	<option value="">경영.사무</option>
 							                        <option value="">영업.고객상담</option>
 							                        <option value="">생산.제조</option>
@@ -158,6 +190,11 @@
 							                        <option value="">서비스</option>
 							                        <option value="">디자인</option>
 							                        <option value="">의료</option>
+							                      </select><select name="" id="form-control1_2" class="form-control">
+							                      	<option value="">지역</option>
+							                      	<option value="">서울</option>
+							                        <option value="">성남</option>
+							                        <option value="">수원</option>
 							                      </select>
 							                    </div>
 									              </div>
@@ -191,11 +228,9 @@
 				              					<div class="form-field">
 					              					<div class="select-wrap">
 							                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-							                      <select name="" id="" class="form-control">
-							                      	<option value="">지역별</option>
-							                      	<option value="">서울</option>
-							                        <option value="">성남</option>
-							                        <option value="">수원</option>
+							                      <select name="" id="form-control2" class="form-control">
+							                      	<option value="1">직업별</option>
+							                      	<option value="2">지역별</option>
 							                      </select>
 							                    </div>
 									              </div>
@@ -206,8 +241,8 @@
 				              					<div class="form-field">
 					              					<div class="select-wrap">
 							                      <div class="icon"><span class="ion-ios-arrow-down"></span></div>
-							                      <select name="" id="" class="form-control">
-												    <option value="">직업별</option>
+							                      <select name="" id="form-control2_1" class="form-control">
+												    <option value="">직업</option>
 							                      	<option value="">경영.사무</option>
 							                        <option value="">영업.고객상담</option>
 							                        <option value="">생산.제조</option>
@@ -221,6 +256,11 @@
 							                        <option value="">서비스</option>
 							                        <option value="">디자인</option>
 							                        <option value="">의료</option>
+							                      </select><select name="" id="form-control2_2" class="form-control">
+							                      	<option value="">지역</option>
+							                      	<option value="">서울</option>
+							                        <option value="">성남</option>
+							                        <option value="">수원</option>
 							                      </select>
 							                    </div>
 									              </div>
@@ -743,13 +783,13 @@
       </div>
     </section>
 
-   <%--  <jsp:include page="./mp_footer.jsp"></jsp:include>    --%>
+     <jsp:include page="./mp_footer.jsp"></jsp:include>    
   
 
   <!-- loader -->
   <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00"/></svg></div>
 
-<c:url value=""/>
+
 
   <script src="<c:url value="/resources/js/jquery.min.js"/>"></script>
   <script src="<c:url value="/resources/js/jquery-migrate-3.0.1.min.js"/>"></script>

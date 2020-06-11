@@ -12,9 +12,27 @@
 <!-- CSS 적용 -->
 <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css_etc/cl_qaa_detail_css.css'/>">
 
+<style type="text/css">
+#content{
+margin-top: 200px;
+margin-left: 550px;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+
+</script>
+
 </head>
 <body>
+
+   <jsp:include page="../main/mainPage/mp_naviBar.jsp"></jsp:include>
+
+   
+   <jsp:include page="../main/mainPage/loginPop.jsp"></jsp:include>
+    <!-- END nav -->
 <div id="sri_section">
+    <jsp:include page="cl_sideNavi.jsp"></jsp:include>
         <div id="sri_wrap">
             <div id="content">
 
@@ -55,6 +73,21 @@
         <div class="info_list_reply">
             <em class="num_total">답변 <span class="emph">26</span>건</em>
         </div>
+            <div class="view_company_write non_login">
+ <!--답변작성하기 박스 -->           
+        <div class="re_answer_box_main">
+        <div class="guide">
+        <div id="re_answer">
+		<textarea name="" id="textarea_placehold" maxlength="10000">개인정보를 공유 및 요청하거나, 명예 훼손, 무단 광고, 불법 정보 유포시 모니터링 후 삭제될 수 있으며, 이에 대한 민형사상 책임은 게시자에게 있습니다.
+		</textarea>
+        </div>
+        </div>
+        <div class="re_answer_box">
+        <button type="button" id="re_answer_btn" class="re_answer_btn">등록</button>
+        </div>
+    </div>
+        </div>    
+ <!-- 답변작성 박스 -->   
         <div class="list_review_reply non_login">
                
                                             <div class="info_reply" id="220732">
@@ -306,6 +339,7 @@
             <div id="div-gpt-ad-1400664864294-11-inner" style="">
                 <div id="div-gpt-ad-1400664864294-11" data-google-query-id="CNmixaWX5ekCFUl4iwod8V0JDw">
                     <div id="google_ads_iframe_/61280259/etc_728x90_0__container__" style="border: 0pt none;"><iframe id="google_ads_iframe_/61280259/etc_728x90_0" title="3rd party ad content" name="google_ads_iframe_/61280259/etc_728x90_0" width="728" height="90" scrolling="no" marginwidth="0" marginheight="0" frameborder="0" srcdoc="" data-google-container-id="1" style="border: 0px; vertical-align: bottom;" data-load-complete="true"></iframe></div>
+                	  <jsp:include page="../main/mainPage/mp_footer.jsp" ></jsp:include>
                 </div>
             </div>
         </div>
@@ -313,5 +347,6 @@
         </div>
                      
     </div>
+	
 </body>
 </html>

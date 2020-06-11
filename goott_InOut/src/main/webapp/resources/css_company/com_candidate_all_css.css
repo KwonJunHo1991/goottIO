@@ -1,0 +1,612 @@
+@charset "utf-8";
+
+#content.basic .wrap_content.search_talent_wrap {padding:40px 45px 60px;font-size:13px}
+#content.basic .wrap_content.search_talent_wrap.more_renew {padding:0;background-color:transparent;border-radius:0;box-shadow:none}
+
+/* 검색패널 레이아웃 */
+ul{
+	padding: 0px;
+}
+.wrap_talent_search {padding:0 0 30px}
+.wrap_talent_search .wrap_expand_util {padding-bottom:17px;height:23px;text-align:right}
+.wrap_talent_search .wrap_expand_util li {display:inline-block}
+.wrap_talent_search .wrap_expand_util li button {padding:0 0 2px 20px;height:23px;letter-spacing:-1px;background:url(//www.saraminimage.co.kr/sri/company/talent/ico_panel_expand_util.png) no-repeat}
+.wrap_talent_search .wrap_expand_util li.btn_saved_condition button {margin-right:13px;background-position:0 5px}
+.wrap_talent_search .wrap_expand_util li.btn_saved_condition::after {display:inline-block;width:1px;height:13px;vertical-align:middle;background-color:#e4e4e4;content:""}
+.wrap_talent_search .wrap_expand_util li.btn_unfold button {margin-left:13px;background-position:0 -43px}
+.wrap_talent_search .wrap_expand_util li.btn_unfold button.expand {background-position:0 -94px}
+#search_panel {color:#555;text-align:left}
+#search_panel .tab_category {width:1200px; height:46px;border:1px solid #e4e4e4;border-bottom-color:#666;color:#555;font-size:14px;letter-spacing:-1px;background-color:#fbfbfb}
+#search_panel .tab_category::after {display:block;visibility:hidden;clear:both;height:0;content:""}
+#search_panel .tab_category li {float:left;position:relative;width:89px;height:46px}
+#search_panel .tab_category li::after {display:block;position:absolute;top:17px;right:0;width:1px;height:12px;background-color:#e4e4e4;content:""}
+#search_panel .tab_category li:last-child::after {display:none;z-index:2}
+#search_panel .tab_category li>button.tab_menu {width:88px;height:46px;line-height:44px}
+#search_panel .tab_category li>button.tab_menu:hover {background-color:#e9e9e9}
+#search_panel .tab_category li.basic_search {width:367px;font-size:18px}
+#search_panel .tab_category li.basic_search>button.tab_menu {width:365px}
+#search_panel .tab_category li.basic_search>button.tab_menu span {display:inline-block;padding-left:24px;background:url(//www.saraminimage.co.kr/sri/company/talent/ico_panel_tab.png) no-repeat 0 15px}
+#search_panel .tab_category li.select {position:relative}
+#search_panel .tab_category li.select>button.tab_menu {position:absolute;top:-1px;left:-1px;z-index:3;width:91px;height:48px;border:solid #666;border-width:1px 1px 0 1px;color:#313131;font-weight:bold;background-color:#fff}
+#search_panel .tab_category li.basic_search.select button.tab_menu {width:369px}
+#search_panel .tab_category li.basic_search.select button.tab_menu span {background-position:0 -35px}
+#search_panel .tab_category li.check>button.tab_menu::before {display:inline-block;padding-right:3px;width:10px;height:10px;vertical-align:middle;background:url(//www.saraminimage.co.kr/sri/company/talent/ico_panel_tab.png) no-repeat 0 -100px;content:""}
+#search_panel .wrap_category_contents {position:relative;margin-top:15px;width:1170px;height:307px}
+#search_panel .wrap_category_contents.slide {overflow:hidden}
+#search_panel .wrap_category_contents>.inner {position:relative;height:307px}
+#search_panel .wrap_category_contents.slide>.inner {width:11700px}
+#search_panel .wrap_category_contents .wrap_category {display:none;float:left;width:1200px;height:307px;border:solid #a9a9a9;border-width:0 1px 1px}
+#search_panel .wrap_category_contents .wrap_category.expand {display:block}
+#search_panel .wrap_category_contents .wrap_category:after {display:table;clear:both;content:"";table-layout:fixed}
+#search_panel .wrap_category_contents .title_panel {display:none;padding-top:13px;color:#333;font-size:16px;font-weight:bold;line-height:32px}
+#search_panel .wrap_detail_panel {display:block;float:left;height:306px;border:solid #a9a9a9;border-width:1px 0 0 1px}
+#search_panel .wrap_detail_panel:first-of-type {border-width:1px 0 0 0}
+#search_panel .title_detail_box {padding:0 15px;height:46px;border-bottom:1px solid #ddd;font-size:16px;letter-spacing:-1px;line-height:44px;text-align:left}
+#search_panel .title_detail_box strong {font-weight:bold}
+/* 검색패널 컴퍼넌트 */
+#search_panel .frm_chkbox01 input[type=checkbox] {display:inline-block;position:absolute;left:-1000px;width:1px;height:1px;opacity:0}
+#search_panel .frm_chkbox01 span {display:block;position:relative;padding-left:15px; height:38px;box-sizing:border-box;color:#666;font-size:14px;line-height:36px;text-align:left}
+#search_panel .frm_chkbox01 span em {font-size:12px;letter-spacing:0}
+#search_panel .frm_chkbox01 input:checked+span {border:1px solid #555;color:#fff;background-color:#686868; width: 225px;}
+#search_panel .frm_chkbox01 input:checked+li {border:1px solid #555;color:#fff;background-color:#686868; width: 225px;}
+#search_panel .frm_chkbox01 span em.ico_under,
+#search_panel .frm_chkbox01 span em.ico_over {display:inline-block;width:12px;height:15px;color:#fff;font-size:0;line-height:1px;vertical-align:middle;background:url(//www.saraminimage.co.kr/sri/company/talent/ico_panel_button.png) no-repeat}
+#search_panel .frm_chkbox01 span em.ico_under {background-position:3px 1px}
+#search_panel .frm_chkbox01 span em.ico_over {background-position:3px -49px}
+#search_panel .frm_chkbox01 input:checked+span em.ico_under {background-position:3px -299px}
+#search_panel .frm_chkbox01 input:checked+span em.ico_over {background-position:3px -349px}
+#search_panel .frm_chkbox02 input[type=checkbox] {display:inline-block;position:absolute;left:-1000px;width:1px;height:1px;opacity:0}
+#search_panel .frm_chkbox02 span {display:block;position:relative;padding-left:15px; height:38px;box-sizing:border-box;color:#666;font-size:14px;line-height:36px;text-align:left}
+#search_panel .frm_chkbox02 span em {font-size:12px;letter-spacing:0}
+#search_panel .frm_chkbox02 input:checked+span {border:1px solid #555;color:#fff;background-color:#686868; width: 111px;}
+#search_panel .frm_chkbox02 input:checked+li {border:1px solid #555;color:#fff;background-color:#686868; width: 111px;}
+#search_panel .frm_chkbox02 span em.ico_under,
+#search_panel .frm_chkbox02 span em.ico_over {display:inline-block;width:12px;height:15px;color:#fff;font-size:0;line-height:1px;vertical-align:middle;background:url(//www.saraminimage.co.kr/sri/company/talent/ico_panel_button.png) no-repeat}
+#search_panel .frm_chkbox02 span em.ico_under {background-position:3px 1px}
+#search_panel .frm_chkbox02 span em.ico_over {background-position:3px -49px}
+#search_panel .frm_chkbox02 input:checked+span em.ico_under {background-position:3px -299px}
+#search_panel .frm_chkbox02 input:checked+span em.ico_over {background-position:3px -349px}
+#search_panel .frm_radio01 input[type=radio] {display:inline-block;position:absolute;left:-1000px;width:1px;height:1px;opacity:0}
+#search_panel .frm_radio01 span {display:inline-block;position:relative;padding-left:12px;width:108px;height:38px;box-sizing:border-box;color:#555;font-size:14px;line-height:36px;text-align:left}
+#search_panel .frm_radio01 input:checked+span {border:1px solid #555;color:#fff;background-color:#686868}
+#search_panel .frm_radio01 input[disabled=disabled]+span,
+#search_panel .frm_radio01 input[disabled]+span {border-color:#e6e6e6;color:#cacaca;background-color:#f4f4f4;cursor:default}
+#search_panel input[type=checkbox] {margin-right:0;vertical-align:middle}
+#search_panel .wrap_list_value {width:225px;border:solid #ddd;border-width:1px 0 0 1px}
+#search_panel .wrap_list_value li { display:block;position:relative;height:38px;border:solid #ddd;border-width:0 1px 1px 0}
+#search_panel .wrap_list_value.column_two { width:224px}
+#search_panel .wrap_list_value.column_two li {float:left;width:111px}
+#search_panel .wrap_list_value.column_three {width:229px}
+#search_panel .wrap_list_value.column_three li {float:left; width: 111px;}
+#search_panel .wrap_list_value.column_four {width:876px}
+#search_panel .wrap_list_value.column_four li {float:left;width:218px}
+#search_panel .wrap_list_value.column_two:after,
+#search_panel .wrap_list_value.column_three:after,
+#search_panel .wrap_list_value.column_four:after,
+#search_panel .wrap_list_value.type_radio:after {display:table;clear:both;content:"";table-layout:fixed}
+#search_panel .wrap_list_value.type_radio {width:218px}
+#search_panel .wrap_list_value.type_radio li {float:left;width:108px}
+#search_panel .wrap_category_menu {margin-left:10px;  width:194px;background-color:#f7f7f7}
+#search_panel .wrap_category_menu:after {display:table;clear:both;content:"";table-layout:fixed}
+#search_panel .wrap_category_menu li {position:relative;height:36px;border:0}
+#search_panel .wrap_category_menu li:first-child {border-top:0}
+#search_panel .wrap_category_menu li button.btn_category_depth1 {padding:0 30px 2px 16px;width:100%;height:36px;box-sizing:border-box;color:#555;text-align:left}
+#search_panel .wrap_category_menu li button.btn_category_depth1 strong {font-size:14px}
+#search_panel .wrap_category_menu li button.btn_category_depth1 strong+span {font-size:12px;letter-spacing:0}
+#search_panel .wrap_category_menu li.checked {background-color:#686868}
+#search_panel .wrap_category_menu li.checked button.btn_category_depth1 {color:#fff}
+#search_panel .wrap_category_menu li.select button.btn_category_depth1 {padding-left:15px;border:1px solid #888;color:#555;background:#fff url(//www.saraminimage.co.kr/sri/company/talent/ico_panel_button.png) no-repeat 171px -91px}
+#search_panel .wrap_category_menu.column_two {width:390px;border:0}
+#search_panel .wrap_category_menu.column_two li {float:left;width:194px;border:solid #eee;border-width:0 0 1px 0}
+#search_panel .wrap_category_menu.column_two li:nth-child(odd) {border-width:0 1px 1px 0}
+#search_panel .list_depth2_select,
+#search_panel .list_depth3_select {padding-top:8px;box-sizing:border-box;line-height:28px}
+#search_panel .list_depth2_select li,
+#search_panel .list_depth3_select li {box-sizing:border-box}
+#search_panel .list_depth2_select li span.txt,
+#search_panel .list_depth3_select li span.txt {display:inline-block;overflow:hidden;padding-right:2px;max-width:113px;text-overflow:ellipsis;vertical-align:middle;white-space:nowrap}
+#search_panel .list_depth2_select li span.count,
+#search_panel .list_depth3_select li span.count {display:inline-block;vertical-align:middle}
+#search_panel .list_depth2_select li span.count.all {display:none}
+#search_panel .wrap_interval_value {margin-top:30px}
+#search_panel .wrap_interval_value:after {display:table;clear:both;content:"";table-layout:fixed}
+#search_panel .wrap_interval_value .inpSel,
+#search_panel .wrap_interval_value .dash {float:left}
+#search_panel .wrap_interval_value select {width:99px}
+#search_panel .wrap_interval_value .inpSel {margin-right:0}
+#search_panel .wrap_interval_value .dash {display:block;width:23px;line-height:38px;text-align:center}
+#search_panel .wrap_detail_panel.edu_last .box_option_check {padding-top:10px;font-size:13px;line-height:33px}
+#search_panel .wrap_detail_panel.edu_last .box_option_check label {display:inline-block}
+#search_panel .wrap_detail_panel.edu_last .box_option_check label:first-child {margin-right:28px}
+#search_panel .wrap_detail_panel.edu_last .box_option_check label.type_block {display:block;border-top:1px solid #eee}
+#search_panel .wrap_detail_panel.edu_last .box_option_check input {vertical-align:middle}
+#search_panel .ico_tooltip {position:relative;margin:0 0 0 6px;line-height:1;vertical-align:middle}
+#search_panel .ico_tooltip .toolTip {left:-26px;margin-top:12px;font-size:13px;letter-spacing:-1px;line-height:21px}
+#search_panel .ico_tooltip .toolTip strong {display:block;padding-bottom:10px}
+#search_panel .box_add_util {display:inline-block;margin-left:6px;font-size:12px;letter-spacing:-1px;vertical-align:top}
+#search_panel .box_add_util .txt_desc {padding-left:6px}
+#search_panel .ico_notice_new:after {display:inline-block;margin-left:5px;width:13px;height:13px;vertical-align:middle;background:url(//www.saraminimage.co.kr/sri/company/talent/ico_notice_new.png) no-repeat 0 0;content:""}
+#search_panel .ico_notice_new .txt_notice {background-image:url(//www.saraminimage.co.kr/sri/company/talent/ico_notice_new.png)}
+#search_panel .btn_more_view {padding-right:14px;color:#313131;font-size:13px;letter-spacing:-1px;line-height:18px;text-align:right;text-decoration:underline;background:url(//www.saraminimage.co.kr/ui/layout/mypage_2016/btn_more.png) no-repeat 100% -47px}
+#search_panel .btn_more_view.selected {background-position:100% 7px} /* show more list _add class selected */
+#search_panel hr {margin:30px 0;height:1px;border:0;background-color:#eee}
+#search_panel .box_detail_panel .title_basic_sub {display:none;float:left;width:100px;font-size:14px;font-weight:bold;line-height:36px}
+#search_panel .box_detail_panel .title_sub {display:none;float:left;width:150px;font-size:14px;font-weight:bold;line-height:36px}
+/* 검색패널-기본항목 */
+#search_panel .basic_search {display:block;position:relative}
+#search_panel .basic_search .title_detail_box strong {display:inline-block;padding-left:9px;border-color:#a9a9a9;background:url(//www.saraminimage.co.kr/sri/company/talent/bul_panel_title.png) no-repeat 0 21px}
+#search_panel .basic_search .wrap_detail_panel.career_years,
+#search_panel .basic_search .wrap_detail_panel.age_interval,
+#search_panel .basic_search .wrap_detail_panel.edu_last {width:255px}
+#search_panel .basic_search .wrap_detail_panel.area_domestic {width:200px}
+#search_panel .basic_search .wrap_detail_panel.job_division {width:230px}
+#search_panel .basic_search .box_detail_panel {padding:15px 15px 22px}
+#search_panel .basic_search .box_detail_panel .inpChk {padding-left:10px}
+#search_panel .basic_search .box_detail_panel .inpChk:first-of-type {padding-left:0}
+#search_panel .basic_search .wrap_detail_panel.career_years .wrap_list_value,
+#search_panel .basic_search .wrap_detail_panel.age_interval .wrap_list_value {margin-top:10px}
+#search_panel .basic_search .wrap_detail_panel.area_domestic .box_detail_panel,
+#search_panel .basic_search .wrap_detail_panel.job_division .box_detail_panel {overflow-x:hidden;overflow-y:scroll;padding:0;height:259px}
+#search_panel .basic_search .wrap_detail_panel.area_domestic .wrap_list_value {border:0}
+#search_panel .basic_search .wrap_detail_panel.area_domestic .wrap_list_value li {margin-top:0;border-width:0 0 1px 0;border-color:#fff}
+#search_panel .basic_search .wrap_detail_panel.job_division .wrap_category_menu {background-color:#fff}
+#search_panel .basic_search .wrap_detail_panel.job_division .wrap_category_menu li,
+#search_panel .basic_search .wrap_detail_panel.job_division .wrap_category_menu li button {height:39px}
+#search_panel .basic_search .wrap_detail_panel.job_division .wrap_category_menu li button strong {font-size:14px;font-weight:normal}
+/* 검색패널-직종&업종 */
+#search_panel .category_type_column_two .wrap_category_menu {position:relative}
+#search_panel .category_type_column_two .wrap_category_menu li.select button.btn_category_depth1 {position:relative}
+#search_panel .category_type_column_two.job_category .wrap_category_menu li:nth-child(even).select button.btn_category_depth1 {z-index:2;border-right:1px solid #e4e4e4}
+#search_panel .category_type_column_two .wrap_detail_panel.depth1_division {width:388px}
+#search_panel .category_type_column_two .wrap_detail_panel.depth2_division {position:relative;width:779px;border-color:#888}
+#search_panel .category_type_column_two .ico_tooltip .toolTip {width:290px}
+#search_panel .category_type_column_two .wrap_detail_panel.depth2_division .btn_depth3_expand {position:absolute;top:0;right:0;width:81px;height:47px;color:#666;font-size:12px;letter-spacing:-2px;line-height:45px;text-align:center}
+#search_panel .category_type_column_two .wrap_detail_panel.depth2_division .btn_depth3_expand span {display:inline-block;padding-right:18px;line-height:45px;background:url(//www.saraminimage.co.kr/sri/company/talent/ico_panel_button.png) no-repeat 44px -133px}
+#search_panel .category_type_column_two .box_detail_panel .list_depth2_select {overflow-y:scroll;height:259px;font-size:12px;background:url(//www.saraminimage.co.kr/sri/company/talent/bg_list_line01.png) repeat}
+#search_panel .category_type_column_two .box_detail_panel .list_depth2_select li {float:left;width:25%;height:28px;box-sizing:border-box}
+#search_panel .category_type_column_two .box_detail_panel .list_depth2_select .select {text-decoration:underline}
+#search_panel .category_type_column_two .box_detail_panel .list_depth3_select {display:none;font-size:12px}
+#search_panel .category_type_column_two .box_detail_panel .list_depth2_select li input[type=checkbox],
+#search_panel .category_type_column_two .box_detail_panel .list_depth3_select li input[type=checkbox] {margin-top:3px}
+#search_panel .category_type_column_two .box_detail_panel.expand .list_depth2_select {float:left;width:390px;background-position:-5px 0}
+#search_panel .category_type_column_two .box_detail_panel.expand .list_depth2_select li {width:50%}
+#search_panel .category_type_column_two .box_detail_panel.expand .btn_depth3_expand {border-left:1px solid #ddd;background-color:#f7f7f7}
+#search_panel .category_type_column_two .box_detail_panel.expand .btn_depth3_expand span {background-position:44px -183px}
+#search_panel .category_type_column_two .box_detail_panel.expand .list_depth3_select {display:block;overflow-y:scroll;float:left;width:388px;height:259px;border-left:1px solid #ddd;background:#f7f7f7 url(//www.saraminimage.co.kr/sri/company/talent/bg_list_line01.png) repeat -5px 0}
+#search_panel .category_type_column_two .box_detail_panel.expand .list_depth3_select li {float:left;width:50%}
+/* 검색패널-지역 */
+#search_panel .category_type_column_two.job_area .wrap_category_menu {overflow-x:hidden;overflow-y:scroll;position:relative;height:259px}
+#search_panel .category_type_column_two.job_area .wrap_category_menu.column_two li {width:50%;box-sizing:border-box}
+#search_panel .category_type_column_two.job_area .wrap_category_menu li:nth-child(odd).select button.btn_category_depth1 {width:calc(100% + 1px)}
+#search_panel .category_type_column_two.job_area .wrap_category_menu li.select button.btn_category_depth1 {background-position:162px -91px}
+#search_panel .category_type_column_two.job_area .btn_small_typ_b1::after {display:inline-block;margin-left:5px;width:6px;height:11px;vertical-align:middle;background:url(//www.saraminimage.co.kr/sri/company/talent/ico_panel_button.png) no-repeat 0 -250px;content:""}
+/* 검색패널-학력 */
+#search_panel .edu_level .wrap_detail_panel {position:relative}
+#search_panel .edu_level .wrap_detail_panel.box_tabmenu {width:193px;background-color:#f7f7f7}
+#search_panel .edu_level .wrap_detail_panel.edu_last,
+#search_panel .edu_level .wrap_detail_panel.specialism {display:none;width:974px;border-color:#888}
+#search_panel .edu_level .wrap_detail_panel.expand {display:block}
+#search_panel .edu_level .wrap_detail_panel.edu_last .box_detail_panel {float:left;padding:30px 15px 0;height:306px;box-sizing:border-box}
+#search_panel .edu_level .wrap_detail_panel.edu_last .box_detail_panel:first-child {border-right:1px solid #ddd}
+#search_panel .edu_level .ico_tooltip .toolTip {width:495px}
+#search_panel .edu_level .entry_box_typ01 .entry_item {padding-right:44px}
+#search_panel .edu_level .toolTip strong {padding-bottom:9px;font-size:14px;line-height:23px}
+#search_panel .edu_level .toolTip ol>li {padding-top:9px}
+#search_panel .edu_level .toolTip ol>li:first-child {padding-top:0}
+#search_panel .edu_level .toolTip .example {padding:2px 0 0 14px;color:#888;font-size:12px;line-height:21px}
+
+#search_panel .edu_level .entry_item {margin-bottom:39px}
+#search_panel .edu_level .entry_item:after {display:table;clear:both;content:"";table-layout:fixed}
+#search_panel .edu_level .entry_item .entry_tit,
+#search_panel .edu_level .entry_item .entry_form {float:left}
+#search_panel .edu_level .entry_item .entry_form .inpSel,
+#search_panel .edu_level .entry_item .entry_form .form_nm {float:left;margin-right:8px}
+#search_panel .edu_level .entry_item .entry_form .search_keyword {width:394px}
+#search_panel .edu_level .edu_last_school .entry_item .entry_tit {margin-top:13px;width:113px}
+#search_panel .edu_level .edu_last_school .entry_item .entry_form input {margin-right:8px;width:334px}
+#search_panel .edu_level .edu_dept_grade {padding:20px 0 20px 20px;height:40px;border-top:1px solid #ddd}
+#search_panel .edu_level .edu_dept_grade .edu_grade {padding-left:36px}
+#search_panel .edu_level .edu_dept_grade .entry_item {display:inline-block;vertical-align:top}
+#search_panel .edu_level .edu_dept_grade .entry_item .entry_tit {margin-top:13px;width:40px}
+#search_panel .edu_level .edu_dept_grade .entry_item .entry_form select {width:98px}
+#search_panel .edu_level .edu_dept_grade .entry_item .entry_form input {margin-right:8px;width:218px}
+#search_panel .edu_level .edu_dept_grade .entry_item .entry_form .form_nm {position:relative;margin-right:0}
+#search_panel .edu_level .edu_dept_grade .entry_item .entry_form .form_nm input {padding-right:45px;width:118px}
+#search_panel .edu_level .edu_dept_grade .entry_item .entry_form .form_nm input+.txt_unit {position:absolute;left:77px;color:#666;line-height:38px}
+#search_panel .edu_level .ico_tooltip {margin:0 0 0 2px}
+#search_panel .edu_level .box_detail_panel .list_depth2_select {overflow-y:scroll;height:224px;background:url(//www.saraminimage.co.kr/sri/company/talent/bg_list_line02.png) repeat}
+#search_panel .edu_level .box_detail_panel .list_depth2_select li {float:left;width:25%;box-sizing:border-box}
+#search_panel .edu_level .wrap_category_menu {position:relative;border-bottom:1px solid #eee}
+#search_panel .edu_level .wrap_category_menu li.select button.btn_category_depth1 {position:relative;left:-1px;z-index:2;width:195px;border-right:1px solid #e4e4e4}
+#search_panel .edu_level .wrap_category_menu li:first-child.select button.btn_category_depth1 {top:-1px;height:37px}
+#search_panel .edu_level .btn_more_view.type_edu {display:none}
+/* 검색패널-근무조건 */
+#search_panel .job_condition .wrap_detail_panel:first-of-type {width:584px}
+#search_panel .job_condition .wrap_detail_panel:last-of-type {width:583px}
+#search_panel .job_condition .box_detail_panel {padding:15px}
+#search_panel .job_condition .wrap_list_value.column_three {width:552px}
+#search_panel .job_condition .wrap_list_value.column_three li {width:183px}
+#search_panel .job_condition .wrap_interval_value select {width:140px}
+#search_panel .job_condition .wrap_interval_value .box_option_check {display:inline-block;line-height:38px}
+#search_panel .job_condition .wrap_interval_value .box_option_check label {padding-left:15px}
+#search_panel .job_condition .btn_more_view.type_job {display:none}
+/* 검색패널-어학 */
+#search_panel .language_abroad .wrap_detail_panel:first-of-type {width:194px}
+#search_panel .language_abroad .wrap_detail_panel:last-of-type {width:973px;border-color:#888}
+
+#search_panel .language_abroad .wrap_category_menu {overflow-x:hidden;overflow-y:scroll;position:relative;height:259px}
+#search_panel .language_abroad .wrap_category_menu li.select button.btn_category_depth1 {background-position:152px -91px}
+#search_panel .language_abroad .box_detail_panel .list_depth2_select {overflow-y:scroll;height:208px;background:url(//www.saraminimage.co.kr/sri/company/talent/bg_list_line03.png) repeat}
+#search_panel .language_abroad .wrap_detail_panel:last-of-type .expand .list_depth2_select {height:259px}
+#search_panel .language_abroad .box_detail_panel .list_depth2_select li {float:left;width:25%;height:28px;box-sizing:border-box}
+#search_panel .language_abroad .value_grade {padding:8px 20px 0;height:32px;border-top:1px solid #ddd}
+#search_panel .language_abroad .value_grade .edu_grade {padding-left:36px}
+#search_panel .language_abroad .value_grade .entry_tit {overflow:hidden;float:left;padding:7px 11px 0 0;max-width:195px;font-weight:bold;text-overflow:ellipsis;vertical-align:middle;white-space:nowrap}
+#search_panel .language_abroad .value_grade .entry_form {float:left;height:32px}
+#search_panel .language_abroad .value_grade .entry_form input {margin-right:8px;width:218px}
+#search_panel .language_abroad .value_grade .entry_form select {width:123px}
+#search_panel .language_abroad .value_grade .entry_form .form_nm {display:inline-block;position:relative;margin-right:0;height:32px}
+#search_panel .language_abroad .value_grade .entry_form .form_nm input {margin-right:4px;width:98px}
+#search_panel .language_abroad .value_grade .entry_form .txt_unit {padding-right:15px;color:#666}
+#search_panel .language_abroad .value_grade .entry_check {float:right}
+#search_panel .language_abroad .ico_tooltip .toolTip {right:-26px;left:auto;width:305px}
+#search_panel .language_abroad .ico_tooltip .toolTip:after {left:302px}
+/* 검색패널-해외 */
+#search_panel .area_overseas .wrap_detail_panel {display:table-cell;float:none;width:1168px;text-align:center;vertical-align:middle}
+#search_panel .area_overseas .wrap_box {display:inline-block;width:904px;text-align:left}
+#search_panel .area_overseas .title_detail_box {padding:0;height:auto;border-bottom:0;font-size:14px;font-weight:bold;line-height:18px}
+#search_panel .area_overseas .area_abroad {padding-top:20px}
+#search_panel .area_overseas .area_abroad:after {display:table;clear:both;content:"";table-layout:fixed}
+#search_panel .area_overseas .area_abroad .wrap_list_value,
+#search_panel .area_overseas .area_abroad .ico_next,
+#search_panel .area_overseas .area_abroad .inpSel {float:left;line-height:36px}
+#search_panel .area_overseas .area_abroad .ico_next {overflow:hidden;width:42px;text-indent:-100px;background:url(//www.saraminimage.co.kr/sri/company/talent/bg_next01.png) no-repeat 18px 12px}
+#search_panel .area_overseas .area_abroad .inpSel {margin-right:0}
+#search_panel .area_overseas .area_abroad select {width:298px}
+#search_panel .area_overseas .area_abroad.inactive .inpSel {border-color:#e6e6e6;background-color:#f7f7f7}
+#search_panel .area_overseas .area_abroad.inactive .inpSel select {color:#cacaca;background:url(//www.saraminimage.co.kr/ui/layout/mypage_2016/ico_search_panel.png) no-repeat 278px -379px}
+/* 검색패널-직급·직책 */
+#search_panel .job_position .wrap_detail_panel {overflow-y:auto;float:none;padding:40px 40px 0;width:1088px;height:265px}
+#search_panel .job_position .title_detail_box {display:inline-block;padding:0;width:101px;height:auto;border-bottom:0;font-size:14px;font-weight:bold;line-height:36px}
+#search_panel .job_position .title_detail_box,
+#search_panel .job_position .wrap_box {float:left;padding-bottom:40px}
+#search_panel .job_position .box_detail_panel {position:relative;width:940px}
+#search_panel .job_position .box_detail_panel .btn_more_view {position:absolute;right:0;bottom:13px}
+#search_panel .job_position .box_detail_panel .btn_more_view+.column_four {display:none;border-top:0}
+#search_panel .job_position .box_detail_panel .btn_more_view+.column_four.expand {display:block}
+#search_panel .job_position hr {display:inline-block;width:876px}
+/* 검색패널-자격증·면허증 */
+#search_panel .job_license .wrap_detail_panel {float:none}
+#search_panel .job_license .title_detail_box {display:block;position:relative;padding:28px 30px;height:64px;border-bottom:0;font-size:14px;line-height:16px}
+#search_panel .job_license .ico_tooltip .toolTip {width:310px}
+#search_panel .job_license .form_nm {display:block;position:relative;margin-top:8px}
+#search_panel .job_license .form_nm .inpTypo {margin-right:5px;width:532px}
+#search_panel .job_license .add_license {position:absolute;right:30px;bottom:28px;color:#777;font-size:13px;text-align:right}
+#search_panel .job_license .btn_add_license {display:inline-block;padding:0 10px 0 8px;color:#6693f9;font-size:14px;letter-spacing:-1px;text-align:left;text-decoration:underline;vertical-align:text-bottom;background:url(//www.saraminimage.co.kr/ui/layout/mypage_2016/ico_search_panel.png) no-repeat 148px -153px}
+#search_panel .job_license .form_nm .search_box {display:none;position:absolute;top:39px;left:0;z-index:3;width:532px;max-height:278px;border:1px solid #b8b8b8;box-sizing:border-box;background:#fff}
+#search_panel .job_license .form_nm .search_box.open {display:block}
+#search_panel .job_license .form_nm .btn_box {border-top:1px solid #eee;box-sizing:border-box;text-align:center}
+#search_panel .job_license .form_nm .btn_box button {margin:10px 0}
+#search_panel .job_license .search_box .chk_tit {padding:0 12px;height:24px;color:#999;font-size:12px;line-height:24px;background:#f7f7f7}
+#search_panel .job_license .search_box .chk_list {overflow-y:auto;max-height:200px}
+#search_panel .job_license .search_box .chk_list li {padding:8px 12px;color:#555;font-size:13px}
+#search_panel .job_license .search_box .chk_list li:hover {background:#eee}
+#search_panel .job_license .search_box .chk_list li.on {background:#eee}
+#search_panel .job_license .search_box .chk_list li:after {display:table;clear:both;content:"";table-layout:fixed}
+#search_panel .job_license .form_nm .search_box .chk_l {float:left;width:350px}
+#search_panel .job_license .form_nm .search_box .chk_l label {display:inline-block;overflow:hidden;width:90%;line-height:15px;text-overflow:ellipsis;vertical-align:text-top;white-space:nowrap}
+#search_panel .job_license .form_nm .search_box .chk_l .match {color:#5774d9}
+#search_panel .job_license .form_nm .search_box .chk_r {float:right;width:130px;font-size:12px;text-align:right}
+#search_panel .job_license .form_nm .search_box .chk_r span {display:inline-block;overflow:hidden;width:100%;line-height:13px;text-overflow:ellipsis;white-space:nowrap}
+#search_panel .job_license .form_nm .search_box .chk_list .chk_r {color:#777}
+#search_panel .job_license .wrap_detail_panel .box_detail_panel {float:left}
+#search_panel .job_license .wrap_detail_panel:after {display:table;clear:both;content:"";table-layout:fixed}
+#search_panel .job_license .wrap_detail_panel .box_detail_panel {position:relative;width:388px;height:185px;border-top:1px solid #ddd;background-color:#f7f7f7}
+#search_panel .job_license .wrap_detail_panel .box_detail_panel:last-of-type {width:779px;border:solid #888;border-width:1px 0 0 1px;background-color:#fff}
+#search_panel .job_license .wrap_category_menu {position:relative}
+#search_panel .job_license .wrap_category_menu li.select button.btn_category_depth1 {position:relative}
+#search_panel .job_license .wrap_category_menu li:nth-child(even).select button.btn_category_depth1 {z-index:2;border-right:1px solid #e4e4e4}
+#search_panel .job_license .box_detail_panel .list_depth2_select {overflow-y:scroll;height:184px;background:url(//www.saraminimage.co.kr/sri/company/talent/bg_list_line04.png) repeat}
+#search_panel .job_license .box_detail_panel .list_depth2_select li {float:left;width:33.3%;box-sizing:border-box}
+#search_panel .job_license .btn_more_view.type_license {display:none}
+/* 검색패널-펼쳐보기 */
+#search_panel.expand {border-top:1px solid #666}
+#search_panel.expand .tab_category {display:none}
+#search_panel.expand .wrap_category_contents>.inner {width:1170px;height:auto}
+#search_panel.expand .wrap_category_contents {margin-top:0;height:auto}
+#search_panel.expand .wrap_category_contents .title_panel {display:block;position:relative;left:-1px;width:1170px;background-color:#fff}
+#search_panel.expand .wrap_category {display:block;float:none;height:auto}
+#search_panel.expand .box_detail_panel .title_basic_sub,
+#search_panel.expand .box_detail_panel .title_sub {display:block}
+#search_panel.expand .wrap_interval_value {margin-top:20px}
+#search_panel.expand .basic_search {height:auto}
+#search_panel.expand .basic_search .box_detail_panel .frm_chk02 {padding-top:7px}
+#search_panel.expand .basic_search .edu_last,
+#search_panel.expand .basic_search .area_domestic,
+#search_panel.expand .basic_search .job_division,
+#search_panel.expand .basic_search .wrap_list_value,
+#search_panel.expand .basic_search .title_detail_box {display:none}
+#search_panel.expand .basic_search .age_interval {border-left-color:#eee}
+#search_panel.expand .basic_search .wrap_detail_panel.career_years {width:584px;height:144px}
+#search_panel.expand .basic_search .wrap_detail_panel.age_interval {width:583px;height:144px}
+#search_panel.expand .basic_search .box_detail_panel {padding:30px 39px}
+#search_panel.expand .edu_level {position:relative}
+#search_panel.expand .edu_level .box_tabmenu {display:none}
+#search_panel.expand .edu_level .wrap_detail_panel.edu_last .box_detail_panel,
+#search_panel.expand .edu_level .wrap_detail_panel.specialism .box_detail_panel {padding:30px 0 0 39px}
+#search_panel.expand .edu_level .wrap_detail_panel.edu_last .box_detail_panel:first-child {padding-bottom:25px;border-right:0}
+#search_panel.expand .edu_level .wrap_detail_panel.specialism .box_detail_panel {margin-bottom:75px;padding-bottom:80px}
+#search_panel.expand .edu_level .edu_last .box_detail_panel.edu_last_school {padding-top:35px;border-top:1px solid #eee}
+#search_panel.expand .edu_level .edu_last,
+#search_panel.expand .edu_level .specialism {display:block;width:1168px;height:auto;border-left:0}
+#search_panel.expand .edu_level .specialism {border:0}
+#search_panel.expand .edu_level .edu_last .box_detail_panel {float:none;height:auto}
+#search_panel.expand .edu_level .edu_last .wrap_list_value {float:left;width:auto}
+#search_panel.expand .edu_level .edu_last .wrap_list_value li {float:left;width:172px}
+#search_panel.expand .edu_level .edu_last .box_option_check {clear:both;padding-left:150px}
+#search_panel.expand .wrap_detail_panel.edu_last .box_option_check label {margin-right:28px}
+#search_panel.expand .wrap_detail_panel.edu_last .box_option_check label.type_block {display:inline-block;border-top:0}
+#search_panel.expand .edu_level .entry_item {margin-bottom:20px}
+#search_panel.expand .edu_level .edu_last_school,
+#search_panel.expand .edu_level .specialism {display:none}
+#search_panel.expand .edu_level .edu_last_school.expand,
+#search_panel.expand .edu_level .specialism.expand {display:block}
+#search_panel.expand .edu_level .edu_last_school .entry_item .entry_tit {width:150px}
+#search_panel.expand .edu_level .edu_last .wrap_list_value.column_three {float:left;width:865px}
+#search_panel.expand .edu_level .box_detail_panel .list_depth2_select {border:1px solid #ddd}
+#search_panel.expand .edu_level .wrap_detail_panel.specialism .edu_dept_grade {position:absolute;right:0;bottom:75px;width:958px;border:solid #ddd;border-width:0 0 1px 1px}
+#search_panel.expand .edu_level .btn_more_view.type_edu {display:block;position:absolute;right:20px;bottom:30px;z-index:2}
+#search_panel.expand .job_condition .wrap_detail_panel {float:none;width:1168px;height:auto;border-left:0}
+#search_panel.expand .job_condition .wrap_detail_panel:last-child {border-top:0}
+#search_panel.expand .job_condition .wrap_detail_panel:last-child .wrap_list_value {display:none}
+#search_panel.expand .job_condition .box_detail_panel {position:relative;padding:30px 39px 20px}
+#search_panel.expand .job_condition .wrap_detail_panel:last-child .box_detail_panel {padding-top:0}
+#search_panel.expand .job_condition .box_detail_panel:after {display:table;clear:both;content:"";table-layout:fixed}
+#search_panel.expand .job_condition .wrap_list_value {overflow:hidden;float:left;width:736px;height:39px}
+#search_panel.expand .job_condition .wrap_list_value.expand {height:auto}
+#search_panel.expand .job_condition .title_detail_box {display:none}
+#search_panel.expand .job_condition .wrap_interval_value {margin-top:0}
+#search_panel.expand .job_condition .btn_more_view.type_job {display:block;position:absolute;right:20px;bottom:30px;z-index:2}
+#search_panel.expand .job_license .wrap_detail_panel {position:relative;height:auto}
+#search_panel.expand .job_license .add_license {right:117px;bottom:47px}
+#search_panel.expand .job_license .add_license .btn_add_license {display:block;padding-left:0;width:154px}
+#search_panel.expand .job_license .box_detail_panel {display:none}
+#search_panel.expand .job_license .box_detail_panel.expand {display:block}
+#search_panel.expand .job_license .form_nm {display:inline-block;margin-left:21px}
+#search_panel.expand .job_license .btn_more_view.type_license {display:block;position:absolute;top:80px;right:20px;z-index:2}
+#search_panel.expand .wrap_keyword_search {position:relative;margin-top:30px}
+#search_panel .btn_more_option {display:none}
+#search_panel.expand .more_category {display:none}
+#search_panel.expand .more_category.expand {display:block}
+#search_panel.expand .btn_more_option {display:block;margin-top:30px;width:100%;border-top:2px solid #666;text-align:center}
+#search_panel.expand .btn_more_option button {display:inline-block;width:170px;height:32px;border-radius:0 0 5px 5px;color:#fff;line-height:30px;background:#666}
+#search_panel.expand .btn_more_option span {display:inline-block;padding-left:18px;background:url(//www.saraminimage.co.kr/ui/layout/mypage_2016/btn_cal_check.png) 0 -39px no-repeat}
+#search_panel.expand .btn_more_option .opened span {background-position:0 11px}
+
+
+/* 키워드 검색 */
+#search_panel .wrap_keyword_search {padding:14px 25px;height:32px;border:1px solid #a9a9a9;line-height:30px;background-color:#fbfbfb}
+#search_panel .wrap_keyword_search h2 {display:inline-block;color:#555;font-size:16px;font-weight:bold}
+#search_panel .wrap_keyword_search .box_check_condition {display:inline-block;float:right}
+#search_panel .wrap_keyword_search .box_check_condition .form_sp,
+#search_panel .wrap_keyword_search .box_check_condition button,
+#search_panel .wrap_keyword_search .box_check_condition .keyword {vertical-align:top}
+#search_panel .wrap_keyword_search .box_check_condition>label,
+#search_panel .wrap_keyword_search .box_check_condition .inpSel {display:inline-block;margin-left:18px;font-size:13px;vertical-align:top}
+#search_panel .wrap_keyword_search .box_check_condition .inpSel {width:129px}
+#search_panel .wrap_keyword_search .box_check_condition .form_nm {display:inline-block;position:relative;margin-left:5px;height:32px}
+#search_panel .wrap_keyword_search .box_check_condition .form_nm .inpSel {width:128px}
+#search_panel .wrap_keyword_search .box_check_condition .form_nm .inpTypo {width:366px;height:32px;line-height:28px;background-color:#fff}
+#search_panel .wrap_keyword_search .box_check_condition .form_nm .btnSizeS {margin-left:5px}
+#search_panel .wrap_keyword_search .ico_tooltip {position:relative;margin:-1px 0 0 6px;vertical-align:middle}
+#search_panel .wrap_keyword_search .ico_tooltip strong {font-size:16px;font-weight:bold}
+#search_panel .wrap_keyword_search .toolTip {right:-26px;left:auto;padding:24px 32px 32px 30px;width:596px}
+#search_panel .wrap_keyword_search .toolTip:after {left:509px}
+#search_panel .wrap_keyword_search .toolTip .option_notice {margin-top:10px;border-top:1px solid #e1e1e1}
+#search_panel .wrap_keyword_search .toolTip .option_notice th {padding-left:18px;border-bottom:1px solid #e1e1e1;background:#f7f7f7}
+#search_panel .wrap_keyword_search .toolTip .option_notice label {padding-left:1px;font-size:12px;letter-spacing:0;line-height:15px;cursor:default}
+#search_panel .wrap_keyword_search .toolTip .option_notice td {padding:12px 0 12px 15px;border-bottom:1px solid #e1e1e1;color:#333;font-size:14px;line-height:18px}
+#search_panel .wrap_keyword_search .toolTip .option_notice td .underline {text-decoration:underline}
+#search_panel .wrap_keyword_search .toolTip .option_notice td .txt {display:inline;font-size:13px;text-indent:0;vertical-align:baseline;background:none;cursor:default}
+#search_panel .wrap_keyword_search .toolTip .notice_more {margin:8px 0 4px;padding:8px 0 12px 13px;width:349px;color:#555;font-size:12px;background:#f4f4f4}
+#search_panel .wrap_keyword_search .toolTip .notice_more p {margin-bottom:-2px}
+#search_panel .wrap_keyword_search .toolTip .notice_more a {color:#555;font-size:12px;letter-spacing:-1px;text-decoration:underline}
+#search_panel .wrap_keyword_search .toolTip .reference {display:block;padding:14px 0 0 1px;color:#666;font-size:13px;font-weight:bold}
+#search_panel .wrap_keyword_search .toolTip .reference_list li {padding-left:1px;color:#666;font-size:13px;line-height:16px}
+#search_panel .search_keyword {display:none;overflow-y:auto;position:absolute;top:31px;left:0;z-index:10;width:366px;max-height:299px;border:1px solid #b8b8b8;box-sizing:border-box;background:#fff}
+#search_panel .search_keyword ul {padding:10px 0;line-height:13px}
+#search_panel .search_keyword li {padding:0 12px;text-align:left;cursor:pointer}
+#search_panel .search_keyword li:hover {background:#eee}
+#search_panel .search_keyword li.on {background:#eee}
+#search_panel .search_keyword p {overflow:hidden;padding:6px 0;width:100%;color:#303030;font-size:14px;text-overflow:ellipsis;white-space:nowrap}
+#search_panel .search_keyword .match {color:#425ad4;font-weight:bold}
+
+/* 선택된 검색조건 노출영역 */
+#panel-search-data .search_option {position:relative;margin:10px auto 0;padding:15px 30px 15px 0;width:1170px;min-height:67px;border:1px solid #ddd;box-sizing:border-box;background:#e9e9e9}
+#panel-search-data .search_option:after {display:table;clear:both;content:"";table-layout:fixed}
+#panel-search-data .search_option .talent_number {float:left;width:194px;min-height:67px;text-align:center}
+#panel-search-data .search_option .talent_number p {color:#303030;font-size:16px}
+#panel-search-data .search_option .talent_number p.all {padding:7px 0 8px;font-weight:bold}
+#panel-search-data .search_option .talent_number p.today {color:#777;font-size:15px}
+#panel-search-data .search_option .talent_number p strong {display:inline-block;padding:0 3px;color:#6b80f1;font-size:26px;letter-spacing:-2px;vertical-align:-3px}
+#panel-search-data .search_option .talent_number p.today strong {color:#777;font-size:18px;font-weight:bold;cursor:pointer}
+#panel-search-data .search_option .keyword_box {float:left;position:relative;padding:5px 30px 20px;width:882px;min-height:42px;border-left:1px solid #ddd;text-align:left}
+#panel-search-data .search_option .option_area {overflow:hidden;width:100%;height:66px}
+#panel-search-data .search_option .option_area li {float:left;padding:0 15px 5px 0;height:17px}
+#panel-search-data .search_option .option_area span {color:#666;font-size:13px;vertical-align:top}
+#panel-search-data .search_option .btn_del {overflow:hidden;margin-left:5px;width:13px;height:13px;text-indent:-1000px;vertical-align:middle;background:url(//www.saraminimage.co.kr/sri/company/talent/btn_del01.png) no-repeat 0 0}
+#panel-search-data .search_option .btns_area {position:absolute;right:0;bottom:0;text-align:right}
+#panel-search-data .search_option .btns_area button {margin-left:9px}
+#panel-search-data .search_option .btns_area button:not(.btnSizeXS) {font-size:12px;letter-spacing:-1px;text-align:right;text-decoration:underline}
+#panel-search-data .search_option .btn_show span {display:inline-block;padding-right:14px;text-decoration:underline;background:url(//www.saraminimage.co.kr/ui/layout/mypage_2016/btn_show.png) no-repeat 100% 7px}
+#panel-search-data .search_option .btn_show.selected span {background-position:100% -19px}
+#panel-search-data .search_option .btns_area .btn_save {color:#444;font-weight:bold}
+#panel-search-data .search_option p.txt {display:none;padding-top:20px;height:13px;color:#666;text-align:left}
+#panel-search-data .search_option.no_option p.txt {display:block}
+#panel-search-data .search_option.no_option .has_option {display:none}
+#panel-search-data .search_option.more .has_option .option_area {height:100%}
+#panel-search-data .btn_option_open {display:none}
+/* floating search option */
+#panel-search-data.floating_search_option {position:fixed;bottom:0;left:0;z-index:1010;width:100%;border-top:1px solid #2f2f2f;background:#fff}
+#panel-search-data.floating_search_option .search_option {margin:20px auto}
+#panel-search-data.floating_search_option .btn_option_open {display:block;position:absolute;top:-43px;left:50%;margin-left:440px;width:165px;height:42px;border-radius:5px 5px 0 0;color:#fff;font-size:15px;font-weight:bold;letter-spacing:-1px;line-height:42px;text-align:center;background:#2f2f2f}
+#panel-search-data.floating_search_option .btn_option_open .icon {display:inline-block;width:29px;height:42px;vertical-align:middle;background:url(//www.saraminimage.co.kr/sri/company/talent/btn_floating_option.png) no-repeat 100% 10px;content:""}
+#panel-search-data.floating_search_option.close .search_option {display:none}
+#panel-search-data.floating_search_option.close .btn_option_open .icon {background-position-y:-59px}
+
+/* 저장된 검색조건 */
+#search_panel .lpop_wrap {display:none;position:absolute;top:135px;left:50%;z-index:99;margin-left:-585px;padding:0;width:1170px;border:1px solid #686868;box-sizing:border-box;background:#fff}
+#search_panel .lpop_wrap:after {display:inline-block;position:absolute;top:-8px;right:140px;width:14px;height:8px;background:url(//www.saraminimage.co.kr/ui/layout/mypage_2016/bg_talkbox01.png) no-repeat 0 0;content:""}
+#search_panel .save_option_area {overflow-y:scroll;position:relative;padding:25px 40px 0;height:480px}
+#search_panel .save_option_area>h3 {padding-bottom:20px;font-size:28px;line-height:32px;text-align:left}
+#search_panel .save_option_area .tblWrap {width:100%}
+#search_panel .save_option_area .tblWrap td {padding:0;height:80px;box-sizing:border-box;line-height:22px}
+#search_panel .save_option_area .tblWrap th.delete,
+#search_panel .save_option_area .tblWrap td.delete {text-align:center}
+#search_panel .save_option_area .tblWrap th.delete input[type=checkbox] {vertical-align:middle}
+#search_panel .save_option_area .tblWrap td.save {position:relative;line-height:24px;text-align:left}
+#search_panel .save_option_area .tblWrap td.edit_option {position:relative;text-align:left}
+#search_panel .save_option_area .tblWrap td.search_button {text-align:center}
+#search_panel .save_option_area .tblWrap td.no_search_result {text-align:center}
+#search_panel .save_option_area .tblWrap tbody tr:hover {background:none}
+#search_panel .save_option_area .tbl_count_wrap {float:none;margin-top:0;height:43px;font-size:0;text-align:right}
+#search_panel .save_option_area .tbl_count_wrap .inpSel.sort01 {width:104px}
+#search_panel .save_option_area .tbl_count_wrap .inpSel.sort02 {margin-right:0;width:76px}
+#search_panel .save_option_area .tbl_count_wrap .inpTypo {margin-right:5px;width:208px;height:32px;border-radius:2px 0 0 2px;line-height:28px}
+#search_panel .save_option_area .tbl_count_wrap .inpTypo:hover,
+#search_panel .save_option_area .tbl_count_wrap .inpTypo:focus {position:relative;z-index:2}
+#search_panel .save_option_area .tbl_count_wrap .btnSizeS.colorWhite {border-radius:0 2px 2px 0;vertical-align:middle}
+#search_panel .save_option_area .tbl_count_wrap .inpSel,
+#search_panel .save_option_area .tbl_count_wrap .btnSizeS {margin-right:7px}
+#search_panel .save_option_area .save .tit {padding-right:30px;color:#555;font-size:13px}
+#search_panel .save_option_area .title {display:inline-block;overflow:hidden;padding-right:2px;max-width:320px;color:#313131;font-size:15px;font-weight:bold;text-overflow:ellipsis;vertical-align:top;white-space:nowrap;cursor:pointer}
+#search_panel .save_option_area .title:hover {text-decoration:underline}
+#search_panel .save_option_area .tit>span {display:inline-block;padding-left:28px;color:#888;vertical-align:top}
+#search_panel .save_option_area .tit>p {display:inline-block;overflow:hidden;padding-left:28px;width:180px;color:#888;line-height:24px;text-overflow:ellipsis;vertical-align:top;white-space:nowrap}
+#search_panel .save_option_area .manager>b {padding-left:9px}
+#search_panel .save_option_area .tblWrap .save_option {overflow:hidden;padding-right:60px;color:#444;line-height:24px;text-overflow:ellipsis;white-space:nowrap}
+#search_panel .save_option_area .tblWrap .save_option span.ico_division {padding:0 8px 0 10px;color:#e2e2e2}
+#search_panel .save_option_area .tblWrap .inner {display:inline-block}
+#search_panel .save_option_area .tblWrap .save_option.show_edit {padding-top:10px}
+#search_panel .save_option_area .tblWrap .inner.show_edit {display:none}
+#search_panel .save_option_area button.btn_save_option {overflow:hidden;border:1px solid #c8c8ca;box-sizing:border-box;font-size:14px;letter-spacing:-1px;text-align:left;vertical-align:top;background:#fff url(//www.saraminimage.co.kr/sri/company/talent/ico_save_option.png) no-repeat 0 0}
+#search_panel .save_option_area button.btn_save_option:hover {border-color:#353535}
+#search_panel .save_option_area button.btn_save_option.btn_delete {float:left;padding:0 30px 2px 13px;height:32px;border-radius:2px;background-position:100% 9px}
+#search_panel .save_option_area button.btn_save_option.btn_delete .count {color:#ff4800;font-weight:bold}
+#search_panel .save_option_area button.btn_save_option.btn_edit,
+#search_panel .save_option_area button.btn_save_option.btn_change {padding:0 10px 3px 25px;width:94px;height:24px;color:#313131;font-size:11px;letter-spacing:-2px}
+#search_panel .save_option_area button.btn_save_option.btn_edit {background-position:9px -46px}
+#search_panel .save_option_area button.btn_save_option.btn_change {margin-top:-1px;background-position:9px -95px}
+#search_panel .save_option_area button.btn_save_option.btn_preview {margin-left:16px;padding-left:20px;border:none;color:#666;font-size:13px;vertical-align:middle;background-position:0 -148px}
+#search_panel .save_option_area button.btn_save_option.btn_preview:hover {text-decoration:underline}
+#search_panel .save_option_area .btns {display:inline-block;vertical-align:middle}
+#search_panel .save_option_area .btns button {z-index:1}
+#search_panel .save_option_area .btns button:hover {position:relative;z-index:2}
+#search_panel .save_option_area .mail {display:inline-block;padding-left:10px;font-size:13px;vertical-align:middle}
+#search_panel .save_option_area .mail input {margin-right:0;vertical-align:text-bottom}
+#search_panel .save_option_area .mail label {color:#666}
+#search_panel .save_option_area .talent_list .noti {padding-top:9px;color:#313131;line-height:15px;text-align:right}
+#search_panel .save_option_area .noti span {color:#ff4800}
+#search_panel .save_option_area .edit_box {display:none;position:absolute;top:11px;right:-338px;left:-1px;z-index:1;color:#888;line-height:32px;background:#fff}
+#search_panel .save_option_area .edit_box .inpTypo {width:225px;height:32px;line-height:28px}
+#search_panel .save_option_area .edit_box span {display:inline-block;padding-left:28px;vertical-align:middle}
+#search_panel .save_option_area .edit_box .manager_ipt,
+#search_panel .save_option_area .edit_box .mail_ipt {display:inline-block}
+#search_panel .save_option_area .edit_box .manager_ipt .inpTypo {margin-left:7px;width:76px}
+#search_panel .save_option_area .edit_box .mail_ipt .inpTypo {margin-left:7px;width:180px}
+#search_panel .save_option_area .edit_box .btn_edit_box_area {position:absolute;top:0;right:0;padding:8px 0;background-color:#fff}
+#search_panel .save_option_area .edit_box .btn_edit_box_area button {margin-left:4px}
+#search_panel .save_option_area .detail_box {display:none;position:absolute;top:16px;right:110px;z-index:3;width:648px;height:236px;border:1px solid #4d4d4d;box-sizing:border-box;background:#fff}
+#search_panel .save_option_area .detail_box .box_tit {padding:17px 0 0 20px;height:33px;color:#fff;font-size:18px;text-align:left;background:#4d4d4d}
+#search_panel .save_option_area .detail_box .save_option_list {overflow-y:auto;height:181px;line-height:18px}
+#search_panel .save_option_area .detail_box ul {padding:16px 0}
+#search_panel .save_option_area .detail_box li {padding:0 0 5px 20px;text-align:left}
+#search_panel .save_option_area .detail_box .tit {display:inline-block;width:107px;color:#555;vertical-align:top}
+#search_panel .save_option_area .detail_box .txt {display:inline-block;overflow:hidden;width:80%;color:#313131;text-overflow:ellipsis;white-space:nowrap}
+#search_panel .save_option_area .detail_box .industry_txt {display:inline-block;overflow:hidden;width:80%;color:#313131;text-overflow:ellipsis}
+#search_panel .save_option_area .detail_box .btn_close_lpop {position:absolute;top:18px;right:17px;width:17px;height:17px;font-size:1px;text-indent:-3000px;background:url(//www.saraminimage.co.kr/ui/layout/mypage_2016/btn_close_lpop04.png) no-repeat}
+#search_panel .save_option_area .pagination {padding:16px 0 25px}
+#search_panel .wrap_save_option .lpop_wrap {top:80px}
+#search_panel .wrap_save_option .lpop_wrap .save_option_area .btn_close_lpop01 {right:25px}
+.search_option{
+    position: relative;
+
+    width: 1200px;
+    min-height: 67px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    background: #e9e9e9;}
+#panel-search-data .search_option .talent_number p strong {
+    display: inline-block;
+    padding: 0 3px;
+    color: #6b80f1;
+    font-size: 26px;
+    letter-spacing: -2px;
+    vertical-align: -3px;
+}    
+.btn_del{
+    overflow: hidden;
+    margin-left: 5px;
+    width: 13px;
+    height: 17px;
+    text-indent: -1000px;
+    vertical-align: middle;
+    background: url(//www.saraminimage.co.kr/sri/company/talent/btn_del01.png) no-repeat 0 0;
+}
+#panel-search-data .search_option .option_area span {
+    color: #666;
+    font-size: 13px;
+    vertical-align: top;
+}
+.btn_save{
+background-color: #206dfb;
+color: white;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100px;
+    height: 50px;
+        padding: 0;
+    border: 0px;
+}
+.btn_reset_cancel{
+	background-color: #fdab44;
+color: white;
+    font-size: 16px;
+    font-weight: bold;
+    width: 100px;
+    height: 50px;
+        padding: 0;
+    border: 0px;
+	
+}
+.btns_area{
+	
+	text-align: right;
+}
+.hiden_li{
+	list-style: none;
+	    float: left;
+    padding: 0 15px 5px 0;
+    height: 17px;
+}
+#contents_list{
+width: 1200px;
+margin-top: 150px;
+margin-left: 400px;
+	
+}
+.person_list{
+	width: 1200px;
+
+	
+}
+.img_person{
+	width: 130px;
+    height: 130px;
+    margin: 0 0 30px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+	
+}
+
