@@ -21,13 +21,16 @@ public class IO_CarrerDTO {
 	private Date car_pro_stdate;
 	private Date car_pro_enddate;
 	private String car_pro_contents;
+	private int car_enddatesub;
+	private int car_year;
+	private int car_incomesub;
 	
 	
 	public IO_CarrerDTO() {}
 
 
 	public IO_CarrerDTO(int car_num, int res_num, String mem_id, String car_name, Date car_stdate, Date car_enddate,
-			int car_resign, String car_position, String car_too, int car_workarea, String car_dept, int car_income, String car_res_bus, String car_pro_name, Date car_pro_stdate, Date car_pro_enddate, String car_pro_contents) {
+			int car_resign, String car_position, String car_too, int car_workarea, String car_dept, int car_income, String car_res_bus, String car_pro_name, Date car_pro_stdate, Date car_pro_enddate, String car_pro_contents, int car_enddatesub, int car_year,int car_incomesub) {
 		super();
 		this.car_num = car_num;
 		this.res_num = res_num;
@@ -46,6 +49,42 @@ public class IO_CarrerDTO {
 		this.car_pro_stdate = car_pro_stdate;
 		this.car_pro_enddate = car_pro_enddate;
 		this.car_pro_contents = car_pro_contents;
+		this.car_enddatesub = car_enddatesub;
+		this.car_year = car_year;
+		this.car_incomesub = car_incomesub;
+	
+	
+	
+	}
+
+
+	public int getCar_incomesub() {
+		return car_incomesub;
+	}
+
+
+	public void setCar_incomesub(int car_incomesub) {
+		this.car_incomesub = car_incomesub;
+	}
+
+
+	public int getCar_year() {
+		return car_year;
+	}
+
+
+	public void setCar_year(int car_year) {
+		this.car_year = car_year;
+	}
+
+
+	public int getCar_enddatesub() {
+		return car_enddatesub;
+	}
+
+
+	public void setCar_enddatesub(int car_enddatesub) {
+		this.car_enddatesub = car_enddatesub;
 	}
 
 

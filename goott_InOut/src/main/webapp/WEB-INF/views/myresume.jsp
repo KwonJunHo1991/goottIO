@@ -11,8 +11,7 @@
 $(function(){
 	$("#collegecommit").click(function(){
 		
-		console.log("ddd");
-
+		
 		
 			document.collegeform.action = "./insertuniversity.do";
 			document.collegeform.method = "get";
@@ -21,6 +20,16 @@ $(function(){
 });
 
 
+$(function(){
+	$("#careerbtn").click(function(){
+		
+	
+		
+			document.meminfo.action = "./careerlist.do";
+			document.meminfo.method = "get";
+			document.meminfo.submit();
+	});
+});
 
 
 
@@ -29,10 +38,14 @@ $(function(){
 </head>
 <body>
 <h2>나의 이력서</h2>
-<form name="collegeform">
+
 <table>
 	<h2>기본정보</h2>
-	
+	<tr>
+		<input type="button" value="경력사항" id="careerbtn" />
+		<input type="button" value="자기소개서" />
+		<input type="button" value="기타능력및활동" />
+	</tr>
 	
 
 	<tr>
@@ -59,10 +72,20 @@ $(function(){
 <h2>학력사항</h2>
 
 
-<td><h2>대학 정보입력</h2></td>
 
-<table>			
+
+	<form name="meminfo">
+	<table>
+	<tr>
+		<input type="hidden" name="mem_id" value="${mem_id }" />
+		<input type="hidden" name="res_num" value="${res_num }"/>
 		
+<form name="collegeform">		
+<td><h2>대학 정보입력</h2></td>
+	</tr>
+	</table>
+	</form>
+	<table>	
 		<tr>
 			<td>대학</td>
 			<td>
@@ -154,6 +177,7 @@ $(function(){
 		</tr>
 		<tr>
 		<td><input type="button" value="작성완료" id="collegecommit" /></td> 
+
 		</tr>
 </table>
 </form>

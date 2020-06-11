@@ -13,10 +13,9 @@
 $(function(){
 	$("#resumecommit").click(function(){
 		
-		console.log("ddd");
 
 		
-			document.frm1.action = "./insertresume.do";
+			document.frm1.action = "./goresume.do";
 			document.frm1.method = "post";
 			document.frm1.submit();
 	});
@@ -53,7 +52,7 @@ IO_ResumeDTO resume = new IO_ResumeDTO();
 		
 		<tr>
 			<td>id</td>
-			<td><input type="text" name="mem_id" id="mem_id" value="${sessionScope.mem_id }" /></td>
+			<td><input type="hidden" name="mem_id" id="mem_id" value="${sessionScope.mem_id }" /></td>
 		</tr>
 		
 	
@@ -61,6 +60,13 @@ IO_ResumeDTO resume = new IO_ResumeDTO();
 		<tr>
 			<td>이름</td>
 			<td><input type="text" name="mem_name" id = "mem_name" value="${sessionScope.mem_name }"/></td>
+		
+			<td><select name="res_" id="mem_seekwork" name="mem_seekwokr">
+				<option value="1">구직준비중</option>
+				<option value="2">구직중</option>
+				<option value="3">재직중</option>
+			
+			</select></td>
 		</tr>
 		
 		<tr>

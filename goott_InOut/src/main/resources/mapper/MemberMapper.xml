@@ -71,12 +71,16 @@
   	
   	select * from io_resume
   	where mem_id = #{mem_id}
-  	
-  	
-  	
-  	
+
   	</select>
-  	
+	
+	<insert id="insertcareer" parameterType="CareerDTO">
+	insert into io_carrer (car_num, res_num, mem_id, car_name, car_stdate, car_enddate, car_enddatesub, car_resign, car_position, car_too, car_year, car_workarea, car_dept, car_income, car_incomesub, car_res_bus, car_pro_name, car_pro_stdate, car_pro_enddate, car_pro_contents)
+	values(null, #{res_num},#{mem_id},#{car_name},#{car_stdate},#{car_enddate},#{car_enddatesub},#{car_resign},#{car_position},#{car_too},#{car_year},#{car_wokrarea}, #{car_dept},#{car_income},#{car_incomesub},#{car_res_bus},#{car_pro_name},#{car_pro_stdate},#{car_pro_enddate},#{car_pro_contents})
+	
+	
+	
+	</insert>  	
   	
   
   </mapper>

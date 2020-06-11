@@ -48,7 +48,7 @@ $(function(){
 <c:forEach var="i" items="${list }">
 	<tr>
 		<td>${i.mem_id }</td>	<input type="hidden" name="mem_id" value="${i.mem_id }" />
-		<td>${i.res_num }</td> 	<input type="hidden" name="res_id" value="${i.res_num }"/>
+		<td>${i.res_num }</td> 	<input type="hidden" name="res_num" value="${i.res_num }"/>
 		<td>${i.res_title }</td>
 		<td>${i.res_income }</td>
 	</tr>

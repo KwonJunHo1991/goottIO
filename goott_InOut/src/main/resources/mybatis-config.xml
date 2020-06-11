@@ -19,6 +19,8 @@
         	<typeAlias type="kr.co.InOut.dto.IO_ReBoardDTO" alias="ReBoardDTO"/>
 			
 			<typeAlias type="kr.co.InOut.dto.IO_UniversityDTO" alias="UniversityDTO"/>
+			
+			<typeAlias type="kr.co.InOut.dto.IO_CarrerDTO" alias="CareerDTO"/>
         </typeAliases>
         
         
