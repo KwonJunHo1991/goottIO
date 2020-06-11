@@ -13,11 +13,17 @@ public class IO_NoticeDTO {
 	String notice_man;
 	String notice_man_dept;
 	String notice_man_tel;
+	String notice_man_tel1;
+	String notice_man_tel2;
+	String notice_man_tel3;
 	String notice_man_mp;
+	String notice_man_mp1;
+	String notice_man_mp2;
+	String notice_man_mp3;
 	String notice_man_email;
 	String notice_comp_type;
 	Integer notice_comp_adrs1;
-	String notice_comp_ards1_detail;
+	String notice_comp_adrs1_detail;
 	Integer notice_comp_adrs2;
 	String notice_comp_benefits;
 	Integer notice_req_edu;
@@ -36,13 +42,62 @@ public class IO_NoticeDTO {
 	Integer notice_req_minage;
 	Integer notice_req_maxage;
 	String notice_prcs_job;
-	@DateTimeFormat(pattern = "yyyy/MM/dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	Date notice_prcs_start;
-	@DateTimeFormat(pattern = "yyyy/MM/dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	Date notice_prcs_end;
 	public String getComp_name() {
 		return comp_name;
 	}
+	
+	public String getNotice_man_mp1() {
+		return notice_man_mp1;
+	}
+
+	public void setNotice_man_mp1(String notice_man_mp1) {
+		this.notice_man_mp1 = notice_man_mp1;
+	}
+
+	public String getNotice_man_mp2() {
+		return notice_man_mp2;
+	}
+
+	public void setNotice_man_mp2(String notice_man_mp2) {
+		this.notice_man_mp2 = notice_man_mp2;
+	}
+
+	public String getNotice_man_mp3() {
+		return notice_man_mp3;
+	}
+
+	public void setNotice_man_mp3(String notice_man_mp3) {
+		this.notice_man_mp3 = notice_man_mp3;
+	}
+
+	public String getNotice_man_tel1() {
+		return notice_man_tel1;
+	}
+
+	public void setNotice_man_tel1(String notice_man_tel1) {
+		this.notice_man_tel1 = notice_man_tel1;
+	}
+
+	public String getNotice_man_tel2() {
+		return notice_man_tel2;
+	}
+
+	public void setNotice_man_tel2(String notice_man_tel2) {
+		this.notice_man_tel2 = notice_man_tel2;
+	}
+
+	public String getNotice_man_tel3() {
+		return notice_man_tel3;
+	}
+
+	public void setNotice_man_tel3(String notice_man_tel3) {
+		this.notice_man_tel3 = notice_man_tel3;
+	}
+
 	public void setComp_name(String comp_name) {
 		this.comp_name = comp_name;
 	}
@@ -112,11 +167,11 @@ public class IO_NoticeDTO {
 	public void setNotice_comp_adrs1(Integer notice_comp_adrs1) {
 		this.notice_comp_adrs1 = notice_comp_adrs1;
 	}
-	public String getNotice_comp_ards1_detail() {
-		return notice_comp_ards1_detail;
+	public String getNotice_comp_adrs1_detail() {
+		return notice_comp_adrs1_detail;
 	}
-	public void setNotice_comp_ards1_detail(String notice_comp_ards1_detail) {
-		this.notice_comp_ards1_detail = notice_comp_ards1_detail;
+	public void setNotice_comp_adrs1_detail(String notice_comp_adrs1_detail) {
+		this.notice_comp_adrs1_detail = notice_comp_adrs1_detail;
 	}
 	public Integer getNotice_comp_adrs2() {
 		return notice_comp_adrs2;
@@ -242,7 +297,7 @@ public class IO_NoticeDTO {
 			String notice_title, String notice_man, String notice_man_dept,
 			String notice_man_tel, String notice_man_mp,
 			String notice_man_email, String notice_comp_type,
-			Integer notice_comp_adrs1, String notice_comp_ards1_detail,
+			Integer notice_comp_adrs1, String notice_comp_adrs1_detail,
 			Integer notice_comp_adrs2, String notice_comp_benefits,
 			Integer notice_req_edu, Integer notice_req_sal,
 			String notice_req_worktype, Integer notice_req_jgj_susb,
@@ -265,7 +320,7 @@ public class IO_NoticeDTO {
 		this.notice_man_email = notice_man_email;
 		this.notice_comp_type = notice_comp_type;
 		this.notice_comp_adrs1 = notice_comp_adrs1;
-		this.notice_comp_ards1_detail = notice_comp_ards1_detail;
+		this.notice_comp_adrs1_detail = notice_comp_adrs1_detail;
 		this.notice_comp_adrs2 = notice_comp_adrs2;
 		this.notice_comp_benefits = notice_comp_benefits;
 		this.notice_req_edu = notice_req_edu;

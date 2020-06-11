@@ -55,11 +55,13 @@
     <insert id="insertOneNotice" parameterType="NoticeDTO">
         insert into io_notice
         values (
-            null,#{comp_num},#{comp_id},
+            null,#{comp_num},#{comp_id},#{comp_name},
             #{notice_title}, #{notice_man}, #{notice_man_dept}, #{notice_man_tel}, #{notice_man_mp}, #{notice_man_email},
             #{notice_comp_type}, #{notice_comp_adrs1}, #{notice_comp_adrs1_detail}, #{notice_comp_adrs2}, #{notice_comp_benefits},
-            #{notice_req_edu}, #{notice_req_sal}, #{notice_req_worktype}, #{notice_req_jgj_susb}, #{notice_req_gyj_gigan}, #{notice_req_gyj_tojgj}, #{notice_req_int_gigan}, #{notice_req_int_tojgj}, #{notice_req_pgj_gigan}, #{notice_req_pgj_tojgj}, #{notice_req_workday}, #{notice_req_worktime}, #{notice_req_gender}, #{notice_req_minage}, #{notice_req_maxage},
-            #{notice_prcs_job}, #{notice_prcs_start}, #{notice_prcs_end}
+            #{notice_req_edu}, #{notice_req_sal}, #{notice_req_worktype}, #{notice_req_jgj_susb}, #{notice_req_gyj_gigan}, 
+            #{notice_req_gyj_tojgj}, #{notice_req_int_gigan}, #{notice_req_int_tojgj}, #{notice_req_pgj_gigan}, 
+            #{notice_req_pgj_tojgj}, #{notice_req_workday}, #{notice_req_worktime}, #{notice_req_gender}, #{notice_req_minage},
+            #{notice_req_maxage}, #{notice_prcs_job}, #{notice_prcs_start}, #{notice_prcs_end}
         )
     </insert>
     

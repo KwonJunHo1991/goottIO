@@ -10,7 +10,7 @@ public class IO_QnaDTO {
 	String qna_title;
 	String qna_content;
 	String qna_re;
-	@DateTimeFormat(pattern = "yyyy/MM/dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	Date qna_date;
 	
 	public IO_QnaDTO() {
