@@ -18,15 +18,10 @@
         WHERE comp_id = #{comp_id} AND comp_pw = #{comp_pw}
     </select>
     
-    <!-- 사업자등록번호로 기업기본정보 1개 데이터 가져오기 -->
-    <select id="selectOneCompBasicByComp_num" parameterType="CBDTO">
-        select * from io_comp_basic where comp_num = #{comp_num}
-    </select>
-    
     <!-- 회원가입(기업기본정보 insert) -->
     <insert id="insertOneCompBasic" parameterType="CBDTO">
-        insert into io_comp_basic (comp_num, comp_id, comp_pw, comp_inf_period)
-        values (#{comp_num}, #{comp_id}, #{comp_pw}, #{comp_inf_period})
+        insert into io_comp_basic (comp_name, comp_num, comp_id, comp_pw, comp_inf_period)
+        values (#{comp_name}, #{comp_num}, #{comp_id}, #{comp_pw}, #{comp_inf_period})
     </insert>
     
     <!-- comp_num으로 한건 조회 -->   
@@ -41,7 +36,8 @@
     <!-- comp_num으로 comp_basic 한 건 업데이트 -->
     <update id="updateOneCompBasicByCn" parameterType="CBDTO">
         update io_comp_basic
-        set comp_inf_period = #{comp_inf_period},
+        set comp_name = #{comp_name}, 
+        comp_inf_period = #{comp_inf_period},
         comp_username = #{comp_username},
         comp_usertel = #{comp_usertel},
         comp_useremail = #{comp_useremail},
@@ -59,11 +55,13 @@
     <insert id="insertOneNotice" parameterType="NoticeDTO">
         insert into io_notice
         values (
-            null,#{comp_num},#{comp_id},
+            null,#{comp_num},#{comp_id},#{comp_name},
             #{notice_title}, #{notice_man}, #{notice_man_dept}, #{notice_man_tel}, #{notice_man_mp}, #{notice_man_email},
             #{notice_comp_type}, #{notice_comp_adrs1}, #{notice_comp_adrs1_detail}, #{notice_comp_adrs2}, #{notice_comp_benefits},
-            #{notice_req_edu}, #{notice_req_sal}, #{notice_req_worktype}, #{notice_req_jgj_susb}, #{notice_req_gyj_gigan}, #{notice_req_gyj_tojgj}, #{notice_req_int_gigan}, #{notice_req_int_tojgj}, #{notice_req_pgj_gigan}, #{notice_req_pgj_tojgj}, #{notice_req_workday}, #{notice_req_worktime}, #{notice_req_gender}, #{notice_req_minage}, #{notice_req_maxage},
-            #{notice_prcs_job}, #{notice_prcs_start}, #{notice_prcs_end}
+            #{notice_req_edu}, #{notice_req_sal}, #{notice_req_worktype}, #{notice_req_jgj_susb}, #{notice_req_gyj_gigan}, 
+            #{notice_req_gyj_tojgj}, #{notice_req_int_gigan}, #{notice_req_int_tojgj}, #{notice_req_pgj_gigan}, 
+            #{notice_req_pgj_tojgj}, #{notice_req_workday}, #{notice_req_worktime}, #{notice_req_gender}, #{notice_req_minage},
+            #{notice_req_maxage}, #{notice_prcs_job}, #{notice_prcs_start}, #{notice_prcs_end}
         )
     </insert>
     

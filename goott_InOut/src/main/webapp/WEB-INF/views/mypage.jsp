@@ -10,6 +10,11 @@
 	<h1>기업의 mypage</h1> <a href="./newNotice.do"><input type="button" value="공고 등록" /></a>
 	<form action="./mypageUpdate.do" method="post">
 		<table>
+		
+			<tr>
+				<th>기업 이름</th>
+				<td><input type="text" name='comp_name' value='${cbdto.comp_name}' /></td>
+			</tr>
 			<tr>
 				<th>ID</th>
 				<td>${cbdto.comp_id }</td>

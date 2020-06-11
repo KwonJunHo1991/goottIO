@@ -1,21 +1,31 @@
 package kr.co.InOut.dto;
 
 public class IO_Comp_BasicDTO {
-	int comp_num;
+	String comp_name;
+	Integer comp_num;
 	String comp_id;
 	String comp_pw;
-	int comp_inf_period;
+	Integer comp_inf_period;
 	String comp_username;
 	String comp_usertel;
 	String comp_useremail;
-	int comp_grade;
-	int comp_type;
+	Integer comp_grade;
+	Integer comp_type;
 	public IO_Comp_BasicDTO() {
 	}
-	public int getComp_num() {
+	
+	public String getComp_name() {
+		return comp_name;
+	}
+
+	public void setComp_name(String comp_name) {
+		this.comp_name = comp_name;
+	}
+
+	public Integer getComp_num() {
 		return comp_num;
 	}
-	public void setComp_num(int comp_num) {
+	public void setComp_num(Integer comp_num) {
 		this.comp_num = comp_num;
 	}
 	public String getComp_id() {
@@ -30,10 +40,10 @@ public class IO_Comp_BasicDTO {
 	public void setComp_pw(String comp_pw) {
 		this.comp_pw = comp_pw;
 	}
-	public int getComp_inf_period() {
+	public Integer getComp_inf_period() {
 		return comp_inf_period;
 	}
-	public void setComp_inf_period(int comp_inf_period) {
+	public void setComp_inf_period(Integer comp_inf_period) {
 		this.comp_inf_period = comp_inf_period;
 	}
 	public String getComp_username() {
@@ -54,21 +64,21 @@ public class IO_Comp_BasicDTO {
 	public void setComp_useremail(String comp_useremail) {
 		this.comp_useremail = comp_useremail;
 	}
-	public int getComp_grade() {
+	public Integer getComp_grade() {
 		return comp_grade;
 	}
-	public void setComp_grade(int comp_grade) {
+	public void setComp_grade(Integer comp_grade) {
 		this.comp_grade = comp_grade;
 	}
-	public int getComp_type() {
+	public Integer getComp_type() {
 		return comp_type;
 	}
-	public void setComp_type(int comp_type) {
+	public void setComp_type(Integer comp_type) {
 		this.comp_type = comp_type;
 	}
-	public IO_Comp_BasicDTO(int comp_num, String comp_id, String comp_pw,
-			int comp_inf_period, String comp_username, String comp_usertel,
-			String comp_useremail, int comp_grade, int comp_type) {
+	public IO_Comp_BasicDTO(String comp_name, Integer comp_num, String comp_id, String comp_pw,
+			Integer comp_inf_period, String comp_username, String comp_usertel,
+			String comp_useremail, Integer comp_grade, Integer comp_type) {
 		super();
 		this.comp_num = comp_num;
 		this.comp_id = comp_id;

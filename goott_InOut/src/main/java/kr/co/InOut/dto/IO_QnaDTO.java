@@ -2,23 +2,26 @@ package kr.co.InOut.dto;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class IO_QnaDTO {
-	int qna_num;
+	Integer qna_num;
 	String mem_id;
 	String qna_title;
 	String qna_content;
 	String qna_re;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	Date qna_date;
 	
 	public IO_QnaDTO() {
 		
 	}
 
-	public int getQna_num() {
+	public Integer getQna_num() {
 		return qna_num;
 	}
 
-	public void setQna_num(int qna_num) {
+	public void setQna_num(Integer qna_num) {
 		this.qna_num = qna_num;
 	}
 
@@ -62,7 +65,8 @@ public class IO_QnaDTO {
 		this.qna_date = qna_date;
 	}
 
-	public IO_QnaDTO(int qna_num, String mem_id, String qna_title, String qna_content, String qna_re, Date qna_date) {
+	public IO_QnaDTO(Integer qna_num, String mem_id, String qna_title,
+			String qna_content, String qna_re, Date qna_date) {
 		super();
 		this.qna_num = qna_num;
 		this.mem_id = mem_id;
@@ -71,6 +75,7 @@ public class IO_QnaDTO {
 		this.qna_re = qna_re;
 		this.qna_date = qna_date;
 	}
+
 	
 
 	

@@ -2,32 +2,35 @@ package kr.co.InOut.dto;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class IO_ReBoardDTO {
-	int reBoard_num;
-	int board_num;
+	Integer reBoard_num;
+	Integer board_num;
 	String mem_id;
-	int comp_num;
+	Integer comp_num;
 	String comp_id;
 	String reBoard_content;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	Date reBoard_date;
 	
 	public IO_ReBoardDTO() {
 		
 	}
 
-	public int getReBoard_num() {
+	public Integer getReBoard_num() {
 		return reBoard_num;
 	}
 
-	public void setReBoard_num(int reBoard_num) {
+	public void setReBoard_num(Integer reBoard_num) {
 		this.reBoard_num = reBoard_num;
 	}
 
-	public int getBoard_num() {
+	public Integer getBoard_num() {
 		return board_num;
 	}
 
-	public void setBoard_num(int board_num) {
+	public void setBoard_num(Integer board_num) {
 		this.board_num = board_num;
 	}
 
@@ -39,11 +42,11 @@ public class IO_ReBoardDTO {
 		this.mem_id = mem_id;
 	}
 
-	public int getComp_num() {
+	public Integer getComp_num() {
 		return comp_num;
 	}
 
-	public void setComp_num(int comp_num) {
+	public void setComp_num(Integer comp_num) {
 		this.comp_num = comp_num;
 	}
 
@@ -71,8 +74,9 @@ public class IO_ReBoardDTO {
 		this.reBoard_date = reBoard_date;
 	}
 
-	public IO_ReBoardDTO(int reBoard_num, int board_num, String mem_id, int comp_num, String comp_id,
-			String reBoard_content, Date reBoard_date) {
+	public IO_ReBoardDTO(Integer reBoard_num, Integer board_num, String mem_id,
+			Integer comp_num, String comp_id, String reBoard_content,
+			Date reBoard_date) {
 		super();
 		this.reBoard_num = reBoard_num;
 		this.board_num = board_num;
@@ -82,5 +86,6 @@ public class IO_ReBoardDTO {
 		this.reBoard_content = reBoard_content;
 		this.reBoard_date = reBoard_date;
 	}
+
 	
 }

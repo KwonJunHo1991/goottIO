@@ -2,6 +2,8 @@ package kr.co.InOut.dao;
 
 import java.util.List;
 
+import javax.inject.Inject;
+
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Component;
 
@@ -12,6 +14,7 @@ import kr.co.InOut.dto.IO_Notice_WantDTO;
 
 @Component
 public class IO_NoticeDAO {
+	@Inject
 	SqlSession ss;
 	public void setSs(SqlSession ss) {
 		this.ss = ss;
