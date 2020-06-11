@@ -7,7 +7,10 @@
 <title>인사통 등록</title>
 </head>
 <body>
-	<form action="./newNoticeOk" method="post">
+	<form action="./newNoticeOk.do" method="post">
+		<input type="hidden" name="notice_num" value="${noticeNum }" />
+	<input type="hidden" name="comp_id" value='${sessionScope.loginComp.comp_id }' />
+	<input type="hidden" name="comp_num" value='${sessionScope.loginComp.comp_num }' />
 		<table>
 			<tr>
 				<th>인사통질문</th>
@@ -16,6 +19,9 @@
 			<tr>
 				<th>인사통답변</th>
 				<td><input type="text" name="notice_qna_a" id="" value="인사통답변"/></td>
+			</tr>
+			<tr>
+				<td><input type="submit" value="등록" /></td>
 			</tr>
 		</table>
 	</form>

@@ -46,6 +46,10 @@ public class IO_NoticeDTO {
 	Date notice_prcs_start;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	Date notice_prcs_end;
+	public IO_NoticeDTO() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public String getComp_name() {
 		return comp_name;
 	}

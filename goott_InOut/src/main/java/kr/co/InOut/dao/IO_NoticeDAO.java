@@ -20,8 +20,12 @@ public class IO_NoticeDAO {
 		this.ss = ss;
 	}
 	
-	public List<IO_NoticeDTO> selectAllNotice(){
-		return ss.selectList("selectAllNotice");
+	public List<IO_NoticeDTO> selectAllNotice(int comp_num){
+		return ss.selectList("selectAllNotice", comp_num);
+	}
+	
+	public Integer selectLastNoticeNum() {
+		return (Integer)ss.selectList("selectLastNoticeNum").get(0);
 	}
 	
 	public void insertOneNotice(IO_NoticeDTO dto) {

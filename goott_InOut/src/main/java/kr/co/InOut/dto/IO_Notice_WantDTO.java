@@ -2,7 +2,13 @@ package kr.co.InOut.dto;
 
 public class IO_Notice_WantDTO {
 	private Integer notice_want_num, notice_num, comp_num, notice_want_many, notice_want_mincar, notice_want_maxcar;
-	private String comp_id, notice_want_task, notice_want_dept, notice_want_condition, pre003, pre004, pre006, pre035, pre034, pre029, pre030, pre031, pre007, pre005, pre061;
+	private String notice_want_name, comp_id, notice_want_task, notice_want_dept, notice_want_condition, pre003, pre004, pre006, pre035, pre034, pre029, pre030, pre031, pre007, pre005, pre061;
+	public String getNotice_want_name() {
+		return notice_want_name;
+	}
+	public void setNotice_want_name(String notice_want_name) {
+		this.notice_want_name = notice_want_name;
+	}
 	public IO_Notice_WantDTO() {
 	}
 	public Integer getNotice_want_num() {
