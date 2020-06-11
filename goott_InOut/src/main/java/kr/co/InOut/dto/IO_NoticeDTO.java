@@ -47,10 +47,6 @@ public class IO_NoticeDTO {
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	Date notice_prcs_end;
 
-	public String getComp_name() {
-		return comp_name;
-	}
-	
 	public String getNotice_man_mp1() {
 		return notice_man_mp1;
 	}
@@ -97,10 +93,6 @@ public class IO_NoticeDTO {
 
 	public void setNotice_man_tel3(String notice_man_tel3) {
 		this.notice_man_tel3 = notice_man_tel3;
-	}
-
-	public void setComp_name(String comp_name) {
-		this.comp_name = comp_name;
 	}
 
 	public Integer getNotice_num() {
