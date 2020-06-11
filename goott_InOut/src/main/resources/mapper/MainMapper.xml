@@ -5,7 +5,7 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
   <mapper namespace=" ">
-  
+<!-- 등급별 검색 -->  
   <select id="selectNoticeByGrade" resultType="IO_NoticeDTO" parameterType="int">
   	select * from io_notice
 	where comp_num in
@@ -13,9 +13,43 @@
 			select comp_num from io_comp_basic
             where comp_grade = #{comp_grade}
 			
-        )
+        )	
  </select>
-  
-  
+ 
+<!-- 지역별 검색 -->
+ <select id="selectNoticeByLocal" parameterType="int" resultType="IO_NoticeDTO">
+ 	select * from io_notice 
+ 	<choose>
+ 		<when test="comp_adrs == 999999"></when>
+ 		<when test="comp_adrs == 101000">where notice_comp_adrs1 like '101%'</when>
+ 		<when test="comp_adrs == 102180">where notice_comp_adrs1 in (102180,102190,102200,102210)</when>
+ 		<when test="comp_adrs == 102220">where notice_comp_adrs1 in (102220,102230,102240,102250,102260)</when>
+ 		<otherwise>where notice_comp_adrs1 = #{comp_adrs}</otherwise>
+ 	</choose>
+ 	
+ 
+ </select>
+ 
+ <select id="selectNoticeByJob" parameterType="int" resultType="IO_NoticeDTO">
+ 
+ 	select * from io_notice
+ 	
+ 	where notice_prcs_job = ${notice_prcs_job}
+ 	
+ </select>
+
+ <select id="selectNoticeByType" parameterType="int" resultType="IO_NoticeDTO">
+ 
+ 	select * from io_notice
+ 	
+ 	where notice_comp_type = ${notice_comp_type}
+ 	
+ </select>
+ 
+ <select id="selectAllNoticeSearch" resultType="IO_NoticeDTO">
+ 	select * from io_notice
+ </select>
+
+
   
   </mapper>

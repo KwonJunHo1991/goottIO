@@ -267,7 +267,7 @@ $(document).ready(function () {
 </head>
 <body>
 
-<div id="sri_section">
+
         <div id="sri_lnb_wrap" >
     <div class="viewport">
         <div id="sri_lnb_content" class="overview" style="top: 0px;">
@@ -282,7 +282,7 @@ $(document).ready(function () {
         <li class="li_menu">
             <a class="li_menu_a" data-track_event="section|lnb|salaries|lnb1310"><strong>기업연구소</strong><span class="sri_lnb_icon arrow"></span></a> <!-- WMG-25293 -->
             <ul class="li_menu_hide">
-                <li><a href="/zf_user/company-review" class="track_event" data-track_event="section|lnb|salaries|lnb1311">취준고민</a></li>
+                <li><a href="../board/boardSearch.do" class="track_event" data-track_event="section|lnb|salaries|lnb1311">취준고민</a></li>
                 <li><a href="/zf_user/company-review-report" class="track_event" data-track_event="section|lnb|salaries|lnb1314">취준뉴스<i class="sri_lnb_icon ic_new"></i></a></li>
                 <li><a href="/zf_user/interview-review" class="track_event" data-track_event="section|lnb|salaries|lnb1312">이력서 무료 다운</a></li>
                 <li><a href="../board/boardCharCheck.do" class="track_event" data-track_event="section|lnb|salaries|lnb1313">글자수 체크</a></li>
@@ -375,7 +375,7 @@ $(document).ready(function () {
     </div>
     
 </div>
-</div>
+
 
 </body>
 </html>

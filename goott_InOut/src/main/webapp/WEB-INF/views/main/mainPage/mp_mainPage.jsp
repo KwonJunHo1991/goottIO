@@ -32,7 +32,27 @@
     
 
  <style type="text/css">
+.container_2{
+ width: 100%;
+ padding-left: 650px;
+ padding-right: 200px;
 
+ }
+ .container_3{
+ width: 100%;
+ padding-left: 400px;
+ padding-right: 400px;
+
+ }
+ #container_2m{
+ }
+ .main_sidebar{
+    width: 300px;
+    margin-left: 80px;
+ }
+ .img{
+ width: 100px;
+ }
  </style>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
 <script type="text/javascript">

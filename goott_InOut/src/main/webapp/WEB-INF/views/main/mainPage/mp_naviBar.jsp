@@ -105,7 +105,11 @@ z-index: 5;
                             <div class="collapse navbar-collapse main-menu-item justify-content-center"
                                 id="navbarSupportedContent">
                                 <ul class="navbar-nav">
-                                   <li class="nav-item dropdown">
+         
+									<li class="nav-item">
+                                        <a class="nav-link" href="../main/local.do">지역별</a>
+                                    </li>
+<!--                                    <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="../main/local.do" id="navbarDropdown"
                                             role="button" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
@@ -113,7 +117,7 @@ z-index: 5;
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item" href="../main/local.do">전체</a>
-                                            <a class="dropdown-item" href="blog.html">서울</a>
+                                            <a class="dropdown-item" href="../main/local.do?comp_adrs=101000">서울</a>
                                             <a class="dropdown-item" href="single-blog.html">경기</a>
                                             <a class="dropdown-item" href="single-blog.html">인천</a>
                                             <a class="dropdown-item" href="single-blog.html">부산</a>
@@ -123,8 +127,11 @@ z-index: 5;
                                             <a class="dropdown-item" href="single-blog.html">성남</a>
                                             <a class="dropdown-item" href="single-blog.html">수원</a>
                                         </div>
+                                    </li> -->
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="../main/job.do">직업별</a>
                                     </li>
-                                     <li class="nav-item dropdown">
+<!--                                      <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="../main/job.do" id="navbarDropdown"
                                             role="button" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
@@ -146,7 +153,7 @@ z-index: 5;
                                             <a class="dropdown-item" href="single-blog.html">디자인</a>
                                             <a class="dropdown-item" href="single-blog.html">의료</a>
                                         </div>
-                                    </li>
+                                    </li> -->
                                    <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
                                             role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -161,7 +168,10 @@ z-index: 5;
                                             <a class="dropdown-item" href="single-blog.html">스타트업</a>
                                         </div>
                                     </li>
-                                    <li class="nav-item dropdown">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="../board/boardMain.do">기업연구소</a>
+                                    </li>
+<!--                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
                                             role="button" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
@@ -172,11 +182,11 @@ z-index: 5;
                                             <a class="dropdown-item" href="../board/boardSearch.do">취준고민</a>
                                             <a class="dropdown-item" href="single-blog.html">취업뉴스</a>
                                             <a class="dropdown-item" href="single-blog.html">이력서 무료다운</a>
-                                            <a class="dropdown-item" href="single-blog.html">글자수 체크</a>
+                                            <a class="dropdown-item" href="../main/char.do">글자수 체크</a>
                                         </div>
-                                    </li>
+                                    </li> -->
                                     <li class="nav-item">
-                                        <a class="nav-link" href="contact.html">인재검색</a>
+                                        <a class="nav-link" href="../main/findPerson.do">인재검색</a>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"

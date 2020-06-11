@@ -12,6 +12,6 @@ public class Test {
 	public String test() { 
 		
 		
-		return "boardDetail";
+		return "/company/com_candidate_all";
 	}
 }

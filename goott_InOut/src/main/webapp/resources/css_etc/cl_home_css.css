@@ -1,0 +1,1393 @@
+@charset "UTF-8";
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, button {
+    margin: 0;
+    padding: 0;
+    font-family: 'NanumSquare', sans-serif;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    -webkit-text-size-adjust: none;
+}
+html {
+    color: #000;
+    background: #fff;
+}
+button {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+input, button, textarea, select {
+    line-height: normal;
+}
+input, button, textarea, select, optgroup, option {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-weight: normal;
+    font-style: normal;
+}
+a {
+    color: #444;
+    text-decoration: none;
+}
+ol, ul, li {
+    list-style: none;
+}
+strong, b {
+    font-weight: bold;
+}
+caption, th {
+    text-align: left;
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-weight: normal;
+    font-style: normal;
+}
+fieldset, img {
+    border: 0;
+}
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+body.has_lnb #sri_section {
+    padding-left: 220px;
+}
+#sri_section {
+    display: table;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+#sri_wrap {
+    display: table-row;
+    width: 100%;
+    height: 100%;
+}
+#content.layout_full {
+    margin: 0;
+    width: 100%;
+}
+#content {
+    position: relative;
+    z-index: 1;
+    margin: 44px auto 80px auto;
+    width: 960px;
+}
+.wrap_enterprise {
+    padding-bottom: 100px;
+    min-height: 960px;
+    /* background: #f2f6f9; */
+}
+.wrap_enterprise:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 460px;
+    background: #1c2a64;
+    content: "";
+}
+.wrap_enterprise .inner_wrap {
+    position: relative;
+    margin: 0 auto;
+    padding-top: 65px;
+    width: 1260px;
+}
+.wrap_enterprise .inner_wrap:before {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 48px;
+    right: -26px;
+    width: 684px;
+    height: 268px;
+    background: url(//www.saraminimage.co.kr/sri/company/bg/bg_companylab.png) no-repeat 0 0;
+    content: "";
+}
+.wrap_enterprise .wrap_title>h1.title {
+    margin-bottom: 24px;
+}
+.wrap_enterprise .wrap_title>h1.title:before {
+    display: block;
+    overflow: hidden;
+    width: 335px;
+    height: 133px;
+    background: url(//www.saraminimage.co.kr/sri/company/bg/bg_companylab_tit.png) no-repeat 0 0;
+    content: "";
+}
+.hidden, .blind {
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+}
+.wrap_enterprise .wrap_title>p.text {
+    margin-bottom: 46px;
+    color: #fff;
+    font-size: 16px;
+    letter-spacing: -1px;
+    line-height: 24px;
+}
+.header_enterprise {
+    border-radius: 16px 4px 16px 16px;
+    background: #fff;
+}
+.header_enterprise>div {
+    float: left;
+    padding: 35px 48px 0;
+    width: 630px;
+    height: 280px;
+    box-sizing: border-box;
+}
+.header_lab_search {
+    border-radius: 16px 0 0 16px;
+    background: #6e89ff;
+}
+.header_lab_search h2.title {
+    margin-bottom: 18px;
+    color: #fff;
+}
+.header_enterprise h2.title {
+    font-size: 20px;
+}
+
+.header_lab_search .wrap_search {
+    margin: 0 0 16px;
+    padding: 0;
+}
+.wrap_enterprise .wrap_search {
+    float: none;
+}
+.wrap_search {
+    float: left;
+    position: relative;
+    margin-right: 15px;
+    padding-top: 12px;
+}
+
+legend {
+    color: #000;
+}
+.wrap_search legend {
+    clip: rect(1px,1px,1px,1px);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+}
+.header_lab_search .wrap_search .main_option {
+    background: none;
+}
+.company_search_panel .main_option {
+    border-radius: 8px 8px 0 0;
+    background: #fff;
+}
+.wrap_main_panel .main_option {
+    position: relative;
+    z-index: 5;
+}
+.company_search_panel .tab_section li.keyword_section {
+    border-top-left-radius: 8px;
+}
+.wrap_main_panel .tab_section li:first-child {
+    margin-left: 0;
+}
+.header_lab_search .tab_section li {
+    border: none;
+}
+.company_search_panel .tab_section li {
+    border-color: #1c2a64;
+    border-bottom: 0;
+}
+.wrap_main_panel .tab_section li {
+    float: left;
+    position: relative;
+    z-index: 0;
+    margin-left: -1px;
+    border: 1px solid #ddd;
+}
+.header_lab_search .tab_section .keyword_section .btn_keyword {
+    padding-left: 52px;
+    width: 333px;
+    border-radius: 8px 0 0 8px;
+    background: #fff;
+}
+.company_search_panel .tab_section li:first-child button {
+    padding-left: 58px;
+    width: 885px;
+}
+.wrap_main_panel .tab_section li:first-child button {
+    width: 418px;
+}
+.header_lab_search .tab_section .keyword_section button {
+    float: left;
+}
+.wrap_main_panel .tab_section button.btn_keyword {
+    width: 359px;
+}
+.header_lab_search .tab_section li button {
+    height: 56px;
+}
+.company_search_panel .tab_section button {
+    height: 65px;
+    vertical-align: top;
+}
+.wrap_main_panel .tab_section button {
+    position: relative;
+    padding: 0 15px 0 45px;
+    width: 419px;
+    height: 48px;
+    color: #666;
+    font-size: 15px;
+    letter-spacing: -1px;
+    text-align: left;
+}
+
+.wrap_main_panel .tab_section button:before {
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 20px;
+    height: 18px;
+    background: url(//www.saraminimage.co.kr/sri/person/search_panel/ico_main_search_panel.png) no-repeat 0 0;
+    content: "";
+}
+.header_lab_search .tab_section button.btn_keyword:before, .header_lab_search .layer_search_keyword .ipt_keyword:before {
+    top: 19px;
+    left: 20px;
+}
+.company_search_panel .tab_section button.btn_keyword:before, .company_search_panel .layer_search_keyword .ipt_keyword:before {
+    top: 23px;
+    left: 26px;
+}
+.wrap_main_panel .tab_section button.btn_keyword:before {
+    width: 18px;
+    height: 19px;
+    background-position: 0 -69px;
+}
+.header_lab_search .tab_section .keyword_section .btn_keyword span {
+    font-size: 14px;
+    font-weight: normal;
+}
+.company_search_panel .tab_section button span.input_placeholder {
+    margin-top: 3px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 24px;
+    color: #c5c5c5;
+}
+.wrap_main_panel .tab_section button span {
+    display: inline-block;
+    overflow: hidden;
+    margin-top: 2px;
+    padding-right: 1px;
+    max-width: 91%;
+    line-height: 20px;
+    text-overflow: ellipsis;
+    vertical-align: -1px;
+    white-space: nowrap;
+}
+.header_lab_search .tab_section .keyword_section .btn_keyword span {
+    font-size: 14px;
+    font-weight: normal;
+}
+.company_search_panel .tab_section button span.input_text {
+    margin-top: 0;
+    color: #444;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 24px;
+}
+.wrap_main_panel .tab_section button span {
+    display: inline-block;
+    overflow: hidden;
+    margin-top: 2px;
+    padding-right: 1px;
+    max-width: 91%;
+    line-height: 20px;
+    text-overflow: ellipsis;
+    vertical-align: -1px;
+    white-space: nowrap;
+}
+.header_lab_search .tab_section .keyword_section .btn_search {
+    margin: 0;
+    padding: 0;
+    width: 190px;
+    border-radius: 0 8px 8px 0;
+    color: #fff;
+    font-weight: normal;
+    text-align: center;
+    text-indent: 0;
+    background: #4e6cec;
+}
+.company_search_panel .tab_section li:first-child button {
+    padding-left: 58px;
+    width: 885px;
+}
+.wrap_main_panel .tab_section li:first-child button {
+    width: 418px;
+}
+.header_lab_search .tab_section .keyword_section button {
+    float: left;
+}
+.header_lab_search .tab_section li button {
+    height: 56px;
+}
+.company_search_panel .tab_section button {
+    height: 65px;
+    vertical-align: top;
+}
+.wrap_main_panel .tab_section button {
+    position: relative;
+    padding: 0 15px 0 45px;
+    width: 419px;
+    height: 48px;
+    color: #666;
+    font-size: 15px;
+    letter-spacing: -1px;
+    text-align: left;
+}
+
+.header_lab_search .tab_section .keyword_section:after {
+    display: table;
+    clear: both;
+    content: "";
+    table-layout: fixed;
+}
+.wrap_main_panel .tab_section:after {
+    display: table;
+    clear: both;
+    content: "";
+    table-layout: fixed;
+}
+
+.header_lab_search .group_tag {
+    margin-bottom: 37px;
+    max-width: 325px;
+    height: 32px;
+    overflow: hidden;
+}
+.header_lab_search .group_tag a {
+    display: inline-block;
+    padding: 0 16px 0 15px;
+    border-radius: 20px;
+    line-height: 32px;
+    text-align: center;
+    vertical-align: top;
+    background: #637ffd;
+}
+.header_lab_search .group_tag a span {
+    color: #fff;
+    font-size: 13px;
+    vertical-align: top;
+    opacity: 0.8;
+}
+.header_lab_search .trend_keyword {
+    float: none;
+    width: 100%;
+}
+.trend_keyword {
+    float: right;
+    position: relative;
+    width: 395px;
+}
+
+.trend_keyword dl dt {
+    display: block;
+    float: left;
+    line-height: 32px;
+}
+.trend_keyword .trend_title {
+    display: inline-block;
+    overflow: hidden;
+    float: left;
+    margin-top: 10px;
+    width: 84px;
+    height: 13px;
+    line-height: 999;
+    vertical-align: top;
+    background-position-y: -29px;
+}
+.header_company_search h1.title, .trend_keyword .trend_title, .wrap_main_panel .tab_section button.btn_detail_option:before, .trend_keyword .btn_more_trend:before, .list_company_search .total_sort .sort_option .employ_ing .text_check:before, .wrap_list_company .area_info .title .link_employ:after, .wrap_list_company .area_info .interested_corp:after, .wrap_list_company .company_info .certify_list li a:before, .wrap_list_company .company_info .certify_wrap .link_certify:before, .company_finance .finance_list li a:before, .list_company_search .box_feedback .btn_close {
+    background: url("../../../../etc/css/icon/spr_company_result.png") no-repeat 0 0;
+}
+.header_lab_search .trend_keyword .toolTipWrap {
+    margin: 8px 0 0 7px;
+}
+.trend_keyword .toolTipWrap {
+    margin: 8px 10px 0 6px;
+    width: 15px;
+    height: 15px;
+    vertical-align: top;
+}
+.toolTipWrap {
+    display: inline-block;
+    position: relative;
+}
+.header_lab_search .trend_keyword .toolTipWrap .tooltip_round {
+    background-color: #637ffd;
+}
+.toolTipWrap .tooltip_round {
+    display: inline-block;
+    overflow: hidden;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    vertical-align: top;
+    background: #3a4b90;
+}
+.toolTipWrap .tooltip_round:after {
+    display: inline-block;
+    color: #fff;
+    font-size: 12px;
+    line-height: 15px;
+    vertical-align: top;
+    content: "?";
+}
+.toolTipWrap .toolTip {
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.1);
+}
+.toolTip {
+    display: none;
+    position: absolute;
+    z-index: 200;
+    padding: 18px 22px 20px 22px;
+    min-width: 33px;
+    border: 1px solid #444;
+    border-radius: 2px;
+    color: #222;
+    font-family: "Malgun Gothic",dotum,gulim,sans-serif;
+    font-size: 13px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px #d8d8d8;
+}
+.toolTip .tail.tail_top_center {
+    top: -7px;
+    left: 50%;
+    margin-left: -6px;
+    width: 11px;
+    height: 7px;
+    background-position: 0 -7px;
+}
+.toolTip .tail {
+    position: absolute;
+    background: url(//www.saraminimage.co.kr/sri/common/tooltip_tail.png) no-repeat;
+}
+.toolTip .toolTipCont {
+    line-height: 20px;
+}
+.header_lab_search .trend_keyword dl dd {
+    width: 420px;
+    background: #6e89ff;
+}
+.trend_keyword dl dd {
+    overflow: hidden;
+    float: right;
+    position: relative;
+    width: 280px;
+    height: 32px;
+    border-radius: 22px;
+    background: #3a4b90;
+}
+.trend_keyword .trend_rank li a {
+    display: inline-block;
+    line-height: 32px;
+    vertical-align: top;
+}
+.trend_keyword .trend_rank li .rank_num {
+    margin-left: 24px;
+    font-style: italic;
+    opacity: 0.5;
+}
+.trend_keyword .trend_rank li span {
+    display: block;
+    float: left;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: -1px;
+    line-height: 32px;
+}
+.header_lab_search .trend_keyword .trend_rank li .rank_text {
+    overflow: hidden;
+    width: 340px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.header_lab_search .trend_keyword .trend_rank li .rank_name {
+    display: inline-block;
+    vertical-align: top;
+    margin-right: 4px;
+    width: auto;
+    max-width: 92px;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: -1px;
+    line-height: 32px;
+}
+.trend_keyword .trend_rank li .rank_name {
+    overflow: hidden;
+    margin-left: 16px;
+    width: 190px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.trend_keyword dl:after {
+    display: table;
+    clear: both;
+    content: "";
+    table-layout: fixed;
+}
+.trend_keyword .btn_more_trend {
+    display: block;
+    overflow: hidden;
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    z-index: 1;
+    width: 32px;
+    height: 32px;
+}
+.trend_keyword .btn_more_trend:before {
+    display: inline-block;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -3px 0 0 -7px;
+    width: 14px;
+    height: 6px;
+    background-position: -90px -36px;
+    content: "";
+}
+.hidden, .blind {
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+}
+.header_enterprise>div {
+    float: left;
+    padding: 35px 48px 0;
+    width: 630px;
+    height: 280px;
+    box-sizing: border-box;
+}
+.employ_tip {
+    box-shadow: 0 2px 12px 0 rgba(43, 45, 107, 0.1);
+    border-radius: 0 4px 16px 0;
+}
+.header_enterprise h2.title {
+    font-size: 20px;
+}
+
+.employ_tip .title {
+    font-size: 20px;
+}
+.employ_tip ul {
+    margin-top: 22px;
+}
+.employ_tip ul li a {
+    display: block;
+}
+.employ_tip ul li.review strong {
+    border-color: #d2d1fe;
+    color: #6a67fe;
+}
+.employ_tip ul li strong {
+    display: block;
+    margin-right: 24px;
+    padding-top: 5px;
+    width: 96px;
+    height: 32px;
+    border: 1px solid #d2d1fe;
+    border-radius: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+.employ_tip ul li strong, .employ_tip ul li p {
+    float: left;
+    font-size: 14px;
+    letter-spacing: -1px;
+}
+.employ_tip ul li p {
+    overflow: hidden;
+    width: 414px;
+    color: #666;
+    padding-top: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+}
+.employ_tip ul li strong, .employ_tip ul li p {
+    float: left;
+    font-size: 14px;
+    letter-spacing: -1px;
+}
+.employ_tip ul li a:after {
+    display: table;
+    clear: both;
+    content: "";
+    table-layout: fixed;
+}
+.employ_tip ul li+li {
+    margin-top: 12px;
+}
+.employ_tip ul li.practice strong {
+    border-color: #f2e2d2;
+    color: #d5a16c;
+}
+.employ_tip ul li.curation strong {
+    border-color: #cfdaff;
+    color: #5f84ff;
+}
+.employ_tip ul li.employ_news strong {
+    border-color: #b5eaed;
+    color: #01b7c2;
+}
+.header_enterprise:after {
+    display: table;
+    clear: both;
+    content: "";
+    table-layout: fixed;
+}
+.wrap_enterprise .wrap_contents {
+    position: relative;
+    z-index: 0;
+    margin-top: 40px;
+}
+.wrap_enterprise .wrap_contents .area_left {
+    float: left;
+    padding: 48px 48px 60px;
+    /* width: 914px; */
+}
+.wrap_enterprise .wrap_contents .area_left, .wrap_enterprise .wrap_contents .area_right {
+    box-sizing: border-box;
+}
+
+.wrap_enterprise .wrap_contents h2.title:after {
+    display: inline-block;
+    overflow: hidden;
+    margin-left: 8px;
+    width: 32px;
+    height: 32px;
+    vertical-align: top;
+    background: url("../../../../etc/css/icon/ico_companylab_emoji_new.png") no-repeat -254px -10px;
+    content: "";
+}
+.area_left .wrap_review ul li {
+    float: left;
+    position: relative;
+    margin-right: 16px;
+    padding: 30px 24px 24px;
+    width: 262px;
+    box-sizing: border-box;
+    
+    margin-bottom: 15px; /* 추가 */
+    margin-left: 13px; /* 추가 */
+}
+.area_left .wrap_review .badge {
+    display: inline-block;
+    vertical-align: top;
+    margin-bottom: 16px;
+    height: 17px;
+    padding: 2px 9px 5px;
+    border-radius: 4px;
+    color: #7472ff;
+    font-size: 14px;
+    letter-spacing: -1px;
+    background: #e4e4ff;
+}
+.area_left .wrap_review .box_text strong {
+    display: block;
+    overflow: hidden;
+    color: #222;
+    font-size: 16px;
+    letter-spacing: -1px;
+    line-height: 32px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+}
+.area_left .wrap_review .box_text p {
+    overflow: hidden;
+    margin-bottom: 8px;
+    height: 48px;
+    color: #666;
+    font-size: 14px;
+    letter-spacing: -1px;
+    line-height: 24px;
+}
+.area_left .wrap_review .box_text span {
+    display: block;
+    overflow: hidden;
+    color: #888;
+    font-size: 13px;
+    letter-spacing: -1px;
+    line-height: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+}
+.area_left .wrap_review .group_tag {
+    margin-top: 24px;
+}
+.area_left .wrap_review .group_tag span {
+    display: inline-block;
+    color: #949494;
+    font-size: 13px;
+    letter-spacing: -1px;
+    line-height: 24px;
+    vertical-align: top;
+}
+.area_left .wrap_review ul li a {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #e5e6eb;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+.area_left .wrap_review ul li a:hover {
+    border-color: #7472ff;
+}
+.area_left .wrap_review .answer a:hover {
+    border-color: #00d5bb;
+}
+.area_left .wrap_review .beloved a:hover {
+    border-color: #21ceff;
+}
+.hidden, .blind {
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+}
+.area_left .wrap_review .answer .badge {
+    color: #00d5bb;
+    background: #e5faf8;
+}
+.area_left .wrap_review .beloved .badge {
+    color: #21ceff;
+    background: #d9f6fe;
+}
+.area_left .wrap_review ul:after {
+    display: table;
+    clear: both;
+    content: "";
+    table-layout: fixed;
+}
+.area_left .link_more {
+    display: inline-block;
+    position: absolute;
+    top: 16px;
+    right: 0;
+    padding-right: 16px;
+    color: #949494;
+    font-size: 13px;
+    letter-spacing: -1px;
+    line-height: 17px;
+}
+.area_left .link_more:after {
+    position: absolute;
+    top: 1px;
+    right: 0;
+    display: block;
+    overflow: hidden;
+    width: 16px;
+    height: 16px;
+    background: url(//www.saraminimage.co.kr/sri/company/ico/ico_companylab_emoji_new.png) no-repeat -10px -10px;
+    content: "";
+}
+.wrap_enterprise .wrap_contents .area_left>div+div {
+    margin-top: 56px;
+}
+
+
+.area_left .wrap_curation h2.title:after {
+    background-position-x: -202px;
+}
+
+.area_left .wrap_curation .inner_box {
+    position: relative;
+}
+.area_left .wrap_curation .inner_box:before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #5f84ff;
+    border-radius: 12px;
+    box-sizing: border-box;
+    content: "";
+}
+.area_left .wrap_curation .inner_box .area_title {
+    height: 272px;
+    background-color: #5f84ff;
+}
+.area_left .inner_box .area_title {
+    float: left;
+    position: relative;
+    padding: 32px;
+    width: 262px;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+.area_left .inner_box .area_title:before {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 262px;
+    height: 120px;
+    background: url(//www.saraminimage.co.kr/sri/company/bg/bg_companylab_box.png) no-repeat -10px -10px;
+    content: "";
+}
+.area_left .inner_box .area_title h3 {
+    display: block;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: -2px;
+    line-height: 24px;
+}
+.area_left .inner_box .area_title p {
+    overflow: hidden;
+    margin-top: 10px;
+    height: 40px;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: -1px;
+    line-height: 20px;
+}
+.area_left .wrap_curation .wrap_company {
+    padding: 44px 40px 0 24px;
+    box-sizing: border-box;
+}
+.area_left .wrap_curation .inner_info {
+    float: left;
+    width: 222px;
+	
+	margin-right: 50px; /* 추가 */
+}
+.area_left .wrap_curation .inner_info .logo {
+    display: table;
+    margin-bottom: 16px;
+    padding: 10px;
+    width: 100%;
+    height: 100px;
+    border: 1px solid #e5e6eb;
+    box-sizing: border-box;
+    text-align: center;
+}
+.area_left .wrap_curation .inner_info .logo .inner_logo {
+    display: table-cell;
+    height: 78px;
+    vertical-align: middle;
+}
+.area_left .wrap_curation .inner_info .logo .inner_logo img {
+    max-width: 145px;
+    height: auto;
+    max-height: 78px;
+    vertical-align: middle;
+}
+
+.area_left .wrap_curation .inner_info strong {
+    display: block;
+    overflow: hidden;
+    color: #444;
+    font-size: 15px;
+    letter-spacing: -1px;
+    line-height: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+}
+.area_left .wrap_curation .inner_info .group_info {
+    margin-top: 11px;
+}
+.wrap_enterprise .group_info li {
+    overflow: hidden;
+    float: left;
+    position: relative;
+    margin: 0 6px 5px 0;
+    max-width: 105px;
+    color: #888;
+    font-size: 13px;
+    letter-spacing: -1px;
+    line-height: 16px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+}
+.wrap_enterprise .group_info li:nth-child(2n) {
+    padding-left: 6px;
+    max-width: 99px;
+}
+.wrap_enterprise .group_info li:nth-child(2n):before {
+    display: block;
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 1px;
+    height: 10px;
+    background: #949494;
+    content: "";
+}
+
+.wrap_enterprise .group_info li:first-child:nth-last-child(3):last-child, .wrap_enterprise .group_info li:first-child:nth-last-child(3)~li:last-child {
+    max-width: 100%;
+}
+.wrap_enterprise .group_info li:nth-child(3) {
+    clear: both;
+}
+.wrap_enterprise .group_info:after {
+    display: table;
+    clear: both;
+    content: "";
+    table-layout: fixed;
+}
+.area_left .wrap_curation .inner_box .link_curation {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    content: "";
+}
+.area_left .inner_box:after {
+    display: table;
+    clear: both;
+    content: "";
+    table-layout: fixed;
+}
+
+.area_left .wrap_curation .list_curation {
+    margin-top: 20px;
+}
+.area_left .wrap_curation .list_curation li {
+    float: left;
+    position: relative;
+    width: 262px;
+    border: 1px solid #e5e6eb;
+    border-radius: 12px;
+    box-sizing: border-box;
+    
+    margin-left: 25px;  /* 추가 */
+}
+.area_left .wrap_curation .list_curation li:before {
+    display: block;
+    position: absolute;
+    top: 24px;
+    right: 16px;
+    width: 48px;
+    height: 48px;
+    border-radius: 24px;
+    background: #eff2ff;
+    content: "";
+}
+.area_left .wrap_curation .list_curation li a {
+    display: block;
+    padding: 22px 16px 19px;
+    height: 48px;
+}
+.area_left .wrap_curation .list_curation li strong {
+    display: block;
+    overflow: hidden;
+    margin-bottom: 8px;
+    width: 162px;
+    color: #222;
+    font-size: 16px;
+    letter-spacing: -1px;
+    line-height: 24px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+}
+.area_left .wrap_curation .list_curation li .group_tag {
+    display: block;
+    width: 175px;
+}
+.area_left .wrap_curation .list_curation li .group_tag span {
+    display: block;
+    overflow: hidden;
+    float: left;
+    max-width: 102px;
+    color: #5f84ff;
+    font-size: 13px;
+    letter-spacing: -1px;
+    line-height: 16px;
+    text-overflow: ellipsis;
+    vertical-align: top;
+    white-space: nowrap;
+    word-break: break-all;
+}
+.area_left .wrap_curation .list_curation li .group_tag span+span {
+    margin-left: 7px;
+    max-width: 65px;
+}
+.area_left .wrap_curation .list_curation li .group_tag:after {
+    display: table;
+    clear: both;
+    content: "";
+    table-layout: fixed;
+}
+.area_left .wrap_curation .list_curation li:after {
+    display: inline-block;
+    overflow: hidden;
+    position: absolute;
+    top: 36px;
+    right: 28px;
+    width: 24px;
+    height: 24px;
+    vertical-align: top;
+    background: url(//www.saraminimage.co.kr/sri/company/ico/ico_companylab_badge.png) no-repeat -10px -10px;
+    content: "";
+}
+
+
+.area_left .inner_box .area_title h3 {
+    display: block;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: -2px;
+    line-height: 24px;
+}
+.area_left .wrap_choice .area_title dt, .area_left .wrap_choice .area_title dd {
+    display: inline-block;
+    margin-bottom: 4px;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: -1px;
+    line-height: 16px;
+    vertical-align: top;
+}
+
+.area_left .inner_box .inner_right {
+    float: left;
+    margin-left: 16px;
+    width: 880px;
+}
+.area_left .wrap_vote .list_vote li {
+    float: left;
+    width: 262px;
+}
+.area_left .wrap_vote .list_vote li input[type="radio"] {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+}
+.area_left .wrap_vote .list_vote li label {
+    display: block;
+    position: relative;
+}
+.area_left .wrap_vote .list_vote li input[type="radio"]:checked+label:before {
+    background-position-x: -10px;
+}
+.area_left .wrap_vote .list_vote li label:before {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    width: 32px;
+    height: 32px;
+    background: url(//www.saraminimage.co.kr/sri/company/ico/ico_companylab_vote.png) no-repeat -62px -10px;
+    content: "";
+}
+.area_left .wrap_vote .img_vote {
+    display: table;
+    overflow: hidden;
+    position: relative;
+    width: 262px;
+    height: 176px;
+    border-radius: 12px;
+}
+.area_left .wrap_vote .list_vote li input[type="radio"]:checked+label .img_vote:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #00c5d1;
+    border-radius: 12px;
+    box-sizing: border-box;
+    content: '';
+}
+.area_left .wrap_vote .img_vote .inner_img {
+    display: table-cell;
+    overflow: hidden;
+    height: 176px;
+    border-radius: 12px;
+    vertical-align: middle;
+}
+.area_left .wrap_vote .img_vote .inner_img img {
+    width: 100%;
+    height: 100%;
+    vertical-align: top;
+}
+.area_left .wrap_vote .list_vote li input[type="radio"]:checked+label .img_vote:after {
+    opacity: 0;
+}
+.area_left .wrap_vote .list_vote li .img_vote:after {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 12px;
+    content: "";
+    background: #000;
+    opacity: 0.2;
+}
+.area_left .wrap_vote .list_vote .text_vote {
+    display: block;
+    overflow: hidden;
+    margin-top: 10px;
+    color: #444;
+    font-size: 16px;
+    letter-spacing: -1px;
+    line-height: 18px;
+    text-align: center;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+}
+.area_left .wrap_vote .list_vote li+li {
+    float: right;
+}
+
+.area_left .wrap_vote .list_vote li input[type="radio"] {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+}
+.area_left .wrap_vote .btn_group {
+    margin-top: 28px;
+}
+.area_left .wrap_vote .btn_group button.on {
+    border-color: #00c5d1;
+    color: #00c5d1;
+}
+.area_left .wrap_vote .btn_group button {
+    display: block;
+    float: left;
+    width: 262px;
+    height: 40px;
+    border: 1px solid #dbdbdb;
+    border-radius: 20px;
+    box-sizing: border-box;
+    color: #949494;
+    font-size: 14px;
+    letter-spacing: -1px;
+    line-height: 38px;
+    text-align: center;
+}
+.area_left .wrap_vote .btn_group button+button {
+    float: right;
+}
+.area_left .wrap_vote .btn_group:after {
+    display: table;
+    clear: both;
+    content: "";
+    table-layout: fixed;
+}
+.area_left .wrap_vote:after {
+    display: table;
+    clear: both;
+    content: "";
+    table-layout: fixed;
+}
+
+.area_left .inner_box:after {
+    display: table;
+    clear: both;
+    content: "";
+    table-layout: fixed;
+}
+
+.wrap_enterprise h2.title {
+    color: #000;
+    font-size: 24px;
+    letter-spacing: -2px;
+}
+
+.area_left .inner_box .area_title {
+    float: left;
+    position: relative;
+    padding: 32px;
+    width: 262px;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+.area_left .inner_box .area_title h3 {
+    display: block;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: -2px;
+    line-height: 24px;
+}
+
+.area_left .link_more {
+    display: inline-block;
+    position: absolute;
+    top: 16px;
+    right: 0;
+    padding-right: 16px;
+    color: #949494;
+    font-size: 13px;
+    letter-spacing: -1px;
+    line-height: 17px;
+}
+.area_left .link_more:after {
+    position: absolute;
+    top: 1px;
+    right: 0;
+    display: block;
+    overflow: hidden;
+    width: 16px;
+    height: 16px;
+    background: url(//www.saraminimage.co.kr/sri/company/ico/ico_companylab_emoji_new.png) no-repeat -10px -10px;
+    content: "";
+}
+.area_left .inner_box:after {
+    display: table;
+    clear: both;
+    content: "";
+    table-layout: fixed;
+}
+
+.wrap_enterprise .wrap_contents .area_left:after, .wrap_enterprise .wrap_contents .area_right:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 914px;
+    height: 100%;
+    border-radius: 12px;
+    background: #fff;
+    content: "";
+}
+.wrap_enterprise .wrap_contents .area_right {
+    float: right;
+    padding: 48px 30px 60px;
+    width: 322px;
+}
+.wrap_enterprise .wrap_contents h2.title {
+    margin-bottom: 24px;
+}
+.wrap_enterprise h2.title {
+    color: #000;
+    font-size: 24px;
+    letter-spacing: -2px;
+}
+.wrap_contents .area_right h2.title span {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 88px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    word-break: break-all;
+}
+.wrap_contents .area_right h2.title:after {
+    background-position-x: -46px;
+    margin-left: 3px;
+}
+
+/* 취업뉴스 */
+
+.tblType {
+    border-top: 1px solid #b9b9b9;
+    
+    position: relative; /* 추가 */
+    float: inherit; /* 추가 */
+}
+.tblType table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+.tblType tbody td.content_tit {
+    padding-left: 20px;
+    text-align: left;
+}
+.tblType tbody td {
+    height: 60px;
+}
+.tblType thead th, .tblType tbody th, .tblType tbody td {
+    margin: 0;
+    border-bottom: 1px solid #e1e1e1;
+    box-sizing: border-box;
+    color: #222;
+    font-size: 14px;
+    letter-spacing: -1px;
+    line-height: 18px;
+    text-align: center;
+}
+.tblType tbody td {
+    padding: 14px 10px;
+    height: 47px;
+    white-space: normal;
+    word-break: break-all;
+}
+
+.tblType tbody td.content_tit a {
+    display: inline-block;
+    overflow: hidden;
+    padding-right: 3px;
+    max-width: 95%;
+    color: #222;
+    line-height: 18px;
+    text-overflow: ellipsis;
+    vertical-align: middle;
+    white-space: nowrap;
+}.tblType tbody td {
+    height: 60px;
+}
+.tblType tbody td.date {
+    color: #888;
+}
+.area_left .news h2.title:after {
+    background-position-x: -50px;
+}
+
+
