@@ -42,7 +42,7 @@ public class IO_NoticeDTO {
 	Integer notice_req_minage;
 	Integer notice_req_maxage;
 	String notice_prcs_job;
-	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd") 
 	Date notice_prcs_start;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	Date notice_prcs_end;
@@ -120,13 +120,6 @@ public class IO_NoticeDTO {
 	}
 	public void setComp_id(String comp_id) {
 		this.comp_id = comp_id;
-	}
-
-	public String getComp_name() {
-		return comp_name;
-	}
-	public void setComp_name(String comp_name) {
-		this.comp_name = comp_name;
 	}
 
 	public String getNotice_title() {
