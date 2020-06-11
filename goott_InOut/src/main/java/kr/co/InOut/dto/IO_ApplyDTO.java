@@ -2,34 +2,38 @@ package kr.co.InOut.dto;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class IO_ApplyDTO {
-	int apply_num;
-	int res_num;
+	Integer apply_num;
+	Integer res_num;
 	String mem_id;
-	int notice_num;
-	int comp_num;
+	Integer notice_num;
+	Integer comp_num;
+	@DateTimeFormat(pattern = "yyyy/MM/dd")
 	Date apply_date;
+	@DateTimeFormat(pattern = "yyyy/MM/dd")
 	Date mem_birth;
-	int mem_sex;
-	int res_income;
+	Integer mem_sex;
+	Integer res_income;
 	
 	public IO_ApplyDTO() { 
 		
 	}
 
-	public int getApply_num() {
+	public Integer getApply_num() {
 		return apply_num;
 	}
 
-	public void setApply_num(int apply_num) {
+	public void setApply_num(Integer apply_num) {
 		this.apply_num = apply_num;
 	}
 
-	public int getRes_num() {
+	public Integer getRes_num() {
 		return res_num;
 	}
 
-	public void setRes_num(int res_num) {
+	public void setRes_num(Integer res_num) {
 		this.res_num = res_num;
 	}
 
@@ -41,19 +45,19 @@ public class IO_ApplyDTO {
 		this.mem_id = mem_id;
 	}
 
-	public int getNotice_num() {
+	public Integer getNotice_num() {
 		return notice_num;
 	}
 
-	public void setNotice_num(int notice_num) {
+	public void setNotice_num(Integer notice_num) {
 		this.notice_num = notice_num;
 	}
 
-	public int getComp_num() {
+	public Integer getComp_num() {
 		return comp_num;
 	}
 
-	public void setComp_num(int comp_num) {
+	public void setComp_num(Integer comp_num) {
 		this.comp_num = comp_num;
 	}
 
@@ -73,24 +77,25 @@ public class IO_ApplyDTO {
 		this.mem_birth = mem_birth;
 	}
 
-	public int getMem_sex() {
+	public Integer getMem_sex() {
 		return mem_sex;
 	}
 
-	public void setMem_sex(int mem_sex) {
+	public void setMem_sex(Integer mem_sex) {
 		this.mem_sex = mem_sex;
 	}
 
-	public int getRes_income() {
+	public Integer getRes_income() {
 		return res_income;
 	}
 
-	public void setRes_income(int res_income) {
+	public void setRes_income(Integer res_income) {
 		this.res_income = res_income;
 	}
 
-	public IO_ApplyDTO(int apply_num, int res_num, String mem_id, int notice_num, int comp_num, Date apply_date,
-			Date mem_birth, int mem_sex, int res_income) {
+	public IO_ApplyDTO(Integer apply_num, Integer res_num, String mem_id,
+			Integer notice_num, Integer comp_num, Date apply_date,
+			Date mem_birth, Integer mem_sex, Integer res_income) {
 		super();
 		this.apply_num = apply_num;
 		this.res_num = res_num;
@@ -103,6 +108,5 @@ public class IO_ApplyDTO {
 		this.res_income = res_income;
 	}
 
-	
 	
 }
