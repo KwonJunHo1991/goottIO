@@ -95,7 +95,7 @@ z-index: 5;
                 <div class="row align-items-center ">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-                            <a class="navbar-brand" href="index.html"> <img src="/InOut/resources/img/logo2.png" alt="logo"> </a>
+                            <a class="navbar-brand" href="../main/main.do"> <img src="/InOut/resources/img/logo2.png" alt="logo"> </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
@@ -106,12 +106,13 @@ z-index: 5;
                                 id="navbarSupportedContent">
                                 <ul class="navbar-nav">
                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
+                                        <a class="nav-link dropdown-toggle" href="../main/local.do" id="navbarDropdown"
                                             role="button" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
                                             지역별
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="../main/local.do">전체</a>
                                             <a class="dropdown-item" href="blog.html">서울</a>
                                             <a class="dropdown-item" href="single-blog.html">경기</a>
                                             <a class="dropdown-item" href="single-blog.html">인천</a>
@@ -124,12 +125,13 @@ z-index: 5;
                                         </div>
                                     </li>
                                      <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
+                                        <a class="nav-link dropdown-toggle" href="../main/job.do" id="navbarDropdown"
                                             role="button" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
                                             직업별
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="../main/job.do">전체</a>
                                             <a class="dropdown-item" href="blog.html">경영.사무</a>
                                             <a class="dropdown-item" href="single-blog.html">영업.고객상담</a>
                                             <a class="dropdown-item" href="single-blog.html">생산.제조</a>

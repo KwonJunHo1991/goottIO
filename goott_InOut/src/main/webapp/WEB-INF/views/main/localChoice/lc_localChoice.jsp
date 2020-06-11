@@ -95,7 +95,7 @@ $(function () {
 						<span class="mr-3"><a href="index.html">Home <i
 								class="ion-ios-arrow-forward"></i></a></span> <span>About</span>
 					</p>
-					<h1 class="mb-3 bread">직업/산업별</h1>
+					<h1 class="mb-3 bread">지역별</h1>
 					<div class="ftco-search my-md-5">
 						<div class="row">
 							<div class="col-md-12 nav-link-wrap">
@@ -103,7 +103,7 @@ $(function () {
 									role="tablist" aria-orientation="vertical">
 									<a class="nav-link active mr-md-1" id="v-pills-2-tab"
 										data-toggle="pill" href="#v-pills-1" role="tab"
-										aria-controls="v-pills-1" aria-selected="true">직업별 찾기</a> 
+										aria-controls="v-pills-1" aria-selected="true">지역별 찾기</a> 
 
 								</div>
 							</div>

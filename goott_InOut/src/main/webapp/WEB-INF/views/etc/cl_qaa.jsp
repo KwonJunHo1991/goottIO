@@ -50,14 +50,32 @@ $(document).ready(function () {
 	function fn_paging(curPage) {
 	
 	 	var url = document.location.href.split('curPage');
-		
-		if(url[0].indexOf('?') == -1){
+	 	var url2 = url[0].replace("#","");
+	 	
+	 	//없으면 -1
+	 	
+		if(url2.indexOf('?') == -1){
+			location.href = url2 + "?curPage=" + curPage;
+		}else if(url2.indexOf('?')==-1 && url2.indexOf('&')==-1){
+			
+		}
+		else{
+			
+			location.href = url2 + "&curPage=" + curPage;
+/* 			alert("dd");
+			location.href = url2 + "curPage=" + curPage;
+ */		}
+	 	
+	 	
+/* 		if(url[0].indexOf('?') == -1){
 			location.href = url[0] + "?curPage=" + curPage;
 		}else if(url[0].indexOf('?')==-1 && url[0].indexOf('&')==-1)
 			location.href = url[0] + "&curPage=" + curPage;
 		else{
+			
+			alert("dd");
 			location.href = url[0] + "curPage=" + curPage;
-		}
+		} */
 	}
 </script>
 
@@ -416,7 +434,35 @@ $(document).ready(function () {
                 <div class="box_review">
 	                <a href="boardDetail.do?board_num=${b.board_num }" class="link_detail"></a>
 	                <em class="name_company">
-	                    <span class="job">카테고리 : ${b.board_category } 직종 : ${b.board_type }</span>
+
+	                    
+	                    <span class="job">
+	                    	카테고리 : 
+	                    <c:choose>
+	                    	<c:when test="${b.board_category eq 1}">직무</c:when>
+	                    	<c:when test="${b.board_category eq 2}">조직문화</c:when>
+	                    	<c:when test="${b.board_category eq 3}">근무환경</c:when>
+	                    	<c:when test="${b.board_category eq 4}">급여 및 복지</c:when>
+	                    	<c:when test="${b.board_category eq 5}">자기개발</c:when>
+	                    	<c:when test="${b.board_category eq 6}">경영진</c:when>
+	                    	<c:when test="${b.board_category eq 7}">면접/자소서</c:when>
+	                    	<c:when test="${b.board_category eq 8}">이직/퇴사</c:when>
+	                    	<c:when test="${b.board_category eq 9}">기타</c:when>
+	                    </c:choose>
+	                    &nbsp;&nbsp;|&nbsp;&nbsp;
+	                    	직종 : 
+						<c:choose>
+	                    	<c:when test="${b.board_type eq 1}">직무</c:when>
+	                    	<c:when test="${b.board_type eq 2}">조직문화</c:when>
+	                    	<c:when test="${b.board_type eq 3}">근무환경</c:when>
+	                    	<c:when test="${b.board_type eq 4}">급여 및 복지</c:when>
+	                    	<c:when test="${b.board_type eq 5}">자기개발</c:when>
+	                    	<c:when test="${b.board_type eq 6}">경영진</c:when>
+
+	                    </c:choose>	                    
+	                    </span>
+	                    
+	                    
 	                </em>
 	                <strong class="tit_box">번호 : ${b.board_num} 제목 : ${b.board_title }</strong>
 	                <p class="txt_box">내용 : ${b.board_content }</p>
@@ -508,7 +554,7 @@ $(document).ready(function () {
  		<c:forEach var="pageNum" begin="${page.startPage }" end="${page.endPage }">
 			<c:choose>
 				<c:when test="${pageNum eq page.curPage }">
-					<span style="font-weight: bold;"><a href="#" class="num" onClick="fn_paging('${pageNum }')">${pageNum }</a></span>
+					<span style="font-weight: bold;"><a class="num" onClick="fn_paging('${pageNum }')">${pageNum }</a></span>
 				</c:when>
 				<c:otherwise>
 					<a href="#"  onClick="fn_paging('${pageNum }')">${pageNum }</a>

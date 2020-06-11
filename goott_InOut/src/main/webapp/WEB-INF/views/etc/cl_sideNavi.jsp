@@ -285,7 +285,7 @@ $(document).ready(function () {
                 <li><a href="/zf_user/company-review" class="track_event" data-track_event="section|lnb|salaries|lnb1311">취준고민</a></li>
                 <li><a href="/zf_user/company-review-report" class="track_event" data-track_event="section|lnb|salaries|lnb1314">취준뉴스<i class="sri_lnb_icon ic_new"></i></a></li>
                 <li><a href="/zf_user/interview-review" class="track_event" data-track_event="section|lnb|salaries|lnb1312">이력서 무료 다운</a></li>
-                <li><a href="/zf_user/my-introduce-review" class="track_event" data-track_event="section|lnb|salaries|lnb1313">글자수 체크</a></li>
+                <li><a href="../board/boardCharCheck.do" class="track_event" data-track_event="section|lnb|salaries|lnb1313">글자수 체크</a></li>
             </ul>
         </li>
         <li class="li_menu">

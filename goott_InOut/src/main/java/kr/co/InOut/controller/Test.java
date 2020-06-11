@@ -9,9 +9,9 @@ public class Test {
 	
 	
 	@RequestMapping(value="test.do")
-	public String test() {
+	public String test() { 
 		
 		
-		return "/etc/cl_qaa_myq";
+		return "boardDetail";
 	}
 }
