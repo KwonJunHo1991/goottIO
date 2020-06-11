@@ -41,20 +41,15 @@ $(function () {
 		var state = $('#form-control1').val();
 		
 		if ( state == '1' ) {
-
-			jQuery('#form-control1_1').show();
-			jQuery('#form-control1_2').hide();
-			jQuery('#form-control1_3').hide();
-
+			
+			document.getElementById('form-control1_1').innerHTML='<option value="101000">서울 전체</option>			<option value="101010">강남구</option>			<option value="101020">강동구</option>			<option value="101030">강북구</option>			<option value="101040">강서구</option>			<option value="101050">관악구</option>			<option value="101060">광진구</option>			<option value="101070">구로구</option>			<option value="101080">금천구</option>			<option value="101090">노원구</option>			<option value="101100">도봉구</option>			<option value="101110">동대문구</option>			<option value="101120">동작구</option>			<option value="101130">마포구</option>			<option value="101140">서대문구</option>			<option value="101150">서초구</option>			<option value="101160">성동구</option>			<option value="101170">성북구</option>			<option value="101180">송파구</option>			<option value="101190">양천구</option>			<option value="101200">영등포구</option>			<option value="101210">용산구</option>			<option value="101220">은평구</option>			<option value="101230">종로구</option>			<option value="101240">중구</option>			<option value="101250">중랑구</option>';			
 		} else if( state == '2'){
-			jQuery('#form-control1_2').show();
-			jQuery('#form-control1_1').hide();
-			jQuery('#form-control1_3').hide();
-
+			document.getElementById('form-control1_1').innerHTML='<option value="102180">성남시 전체</option>	<option value="102190">성남시 분당구</option><option value="102200">성남시 수정구</option>	<option value="102210">성남시 중원구</option>';
+			
 		} else if( state == '3'){
-			jQuery('#form-control1_3').show();
-			jQuery('#form-control1_1').hide();
-			jQuery('#form-control1_2').hide();
+			
+			document.getElementById('form-control1_1').innerHTML="<option value='102220'>수원시 전체</option><option value='102230'>수원시 권선구</option><option value='102240'>수원시 영통구</option><option value='102250'>수원시 장안구</option><option value='102260'>수원시 팔달구</option>";
+			
 		}                                                      
 
 });
@@ -95,7 +90,7 @@ $(function () {
 						<span class="mr-3"><a href="index.html">Home <i
 								class="ion-ios-arrow-forward"></i></a></span> <span>About</span>
 					</p>
-					<h1 class="mb-3 bread">직업/산업별</h1>
+					<h1 class="mb-3 bread">지역별</h1>
 					<div class="ftco-search my-md-5">
 						<div class="row">
 							<div class="col-md-12 nav-link-wrap">
@@ -103,7 +98,7 @@ $(function () {
 									role="tablist" aria-orientation="vertical">
 									<a class="nav-link active mr-md-1" id="v-pills-2-tab"
 										data-toggle="pill" href="#v-pills-1" role="tab"
-										aria-controls="v-pills-1" aria-selected="true">직업별 찾기</a> 
+										aria-controls="v-pills-1" aria-selected="true">지역별 찾기</a> 
 
 								</div>
 							</div>
@@ -143,6 +138,7 @@ $(function () {
 														</div>
 													</div>
 												</div>
+											
 												<div class="col-md mr-md-2">
 													<div class="form-group">
 														<div class="form-field">
@@ -150,47 +146,25 @@ $(function () {
 																<div class="icon">
 																	<span class="ion-ios-arrow-down"></span>
 																</div>
-																<select name="" id="form-control1_1"
+																<select name="comp_adrs" id="form-control1_1"
 																	class="form-control">
-																	<option value="">강남구</option>
-																	<option value="">강동구</option>
-																	<option value="">강북구</option>
-																	<option value="">강서구</option>
-																	<option value="">관악구</option>
-																	<option value="">광진구</option>
-																	<option value="">구로구</option>
-																	<option value="">금천구</option>
-																	<option value="">노원구</option>
-																	<option value="">도봉구</option>
-																	<option value="">동대문구</option>
-																	<option value="">동작구</option>
-																	<option value="">마포구</option>
-																	<option value="">서대문구</option>
-																	<option value="">서초구</option>
-																	<option value="">성동구</option>
-																	<option value="">성북구</option>
-																	<option value="">송파구</option>
-																	<option value="">양천구</option>
-																	<option value="">영등포구</option>
-																	<option value="">용산구</option>
-																	<option value="">은평구</option>
-																	<option value="">종로구</option>
-																	<option value="">중구</option>
-																	<option value="">중랑구</option>
-																</select> <select name="" id="form-control1_2"
-																	class="form-control">
-																	<option value="">성남시</option>
-																	<option value="">성남시 분당구</option>
-																	<option value="">성남시 수정구</option>
-																	<option value="">성남시 중원구</option>
-																</select> <select name="" id="form-control1_3"
-																	class="form-control">
-																	<option value="">수원시</option>
-																	<option value="">수원시 권선구</option>
-																	<option value="">수원시 영통구</option>
-																	<option value="">수원시 장안구</option>
-																	<option value="">수원시 팔달구</option>
+																	<option value="999999">지역 선택</option>
+
 																</select>
+<!-- 																 <select name="comp_adrs" id="form-control1_2"
+																	class="form-control">
+																	<option value="102180">성남시 전체</option>
+																	<option value="102190">성남시 분당구</option>
+																	<option value="102200">성남시 수정구</option>
+																	<option value="102210">성남시 중원구</option>
+																</select> <select name="comp_adrs" id="form-control1_3"
+																	class="form-control">
+																	<option value="102220">수원시 전체</option>
+																	<option value="102230">수원시 권선구</option>
+																	<option value="102240">수원시 영통구</option>
+																	<option value="102250">수원시 장안구</option>
+																	<option value="102260">수원시 팔달구</option>
+																</select> -->
 
 															</div>
 														</div>
@@ -205,6 +179,8 @@ $(function () {
 														</div>
 													</div>
 												</div>
+												
+												
 											</div>
 										</form>
 									</div>
@@ -219,20 +195,24 @@ $(function () {
 		</div>
 	</div>
 
+
 	<section class="ftco-section bg-light">
 				
 		<div class="lc_container" id="lc_container">
 			<div class="row">
 				<div class="lc_main_container">
 
+
+	<c:forEach items="${list }" var="list">
+
 						<div class="col-md-12 ftco-animate">
 							<div
 								class="job-post-item p-4 d-block d-lg-flex align-items-center">
 								<div class="one-third mb-4 mb-md-0">
 									<div class="job-post-item-header align-items-center">
-										<span class="subadge">Partime</span>
+										<span class="subadge">공고 번호 : ${list.notice_num }</span>
 										<h2 class="mr-3 text-black">
-											<a href="#">Frontend Development</a>
+											<a href="#">공고제목 : ${list.notice_title }</a>
 										</h2>
 									</div>
 									<div class="job-post-item-body d-block d-md-flex">
@@ -260,9 +240,12 @@ $(function () {
 								</div>
 							</div>
 						</div>
+	</c:forEach>						
+						
+						
 						<!-- end -->
 
-						<div class="col-md-12 ftco-animate">
+<!-- 						<div class="col-md-12 ftco-animate">
 							<div
 								class="job-post-item p-4 d-block d-lg-flex align-items-center">
 								<div class="one-third mb-4 mb-md-0">
@@ -297,7 +280,7 @@ $(function () {
 								</div>
 							</div>
 						</div>
-						<!-- end -->
+						end
 
 						<div class="col-md-12 ftco-animate">
 							<div
@@ -334,7 +317,7 @@ $(function () {
 								</div>
 							</div>
 						</div>
-						<!-- end -->
+						end
 
 						<div class="col-md-12 ftco-animate">
 							<div
@@ -371,7 +354,7 @@ $(function () {
 								</div>
 							</div>
 						</div>
-						<!-- end -->
+						end
 
 						<div class="col-md-12 ftco-animate">
 							<div
@@ -408,7 +391,7 @@ $(function () {
 								</div>
 							</div>
 						</div>
-						<!-- end -->
+						end
 
 						<div class="col-md-12 ftco-animate">
 							<div
@@ -445,7 +428,7 @@ $(function () {
 								</div>
 							</div>
 						</div>
-						<!-- end -->
+						end
 
 						<div class="col-md-12 ftco-animate">
 							<div
@@ -482,7 +465,7 @@ $(function () {
 								</div>
 							</div>
 						</div>
-						<!-- end -->
+						end
 
 						<div class="col-md-12 ftco-animate">
 							<div
@@ -519,7 +502,7 @@ $(function () {
 								</div>
 							</div>
 						</div>
-						<!-- end -->
+						end
 
 						<div class="col-md-12 ftco-animate">
 							<div
@@ -556,7 +539,7 @@ $(function () {
 								</div>
 							</div>
 						</div>
-						<%-- 	<jsp:include page="/main/localChoice/lc_rightNavi.jsp"></jsp:include> --%>
+ -->
 						<!-- end -->
 			</div>
 				<jsp:include page="./lc_sideNavi.jsp"></jsp:include>

@@ -32,7 +32,27 @@
     
 
  <style type="text/css">
+.container_2{
+ width: 100%;
+ padding-left: 650px;
+ padding-right: 200px;
 
+ }
+ .container_3{
+ width: 100%;
+ padding-left: 400px;
+ padding-right: 400px;
+
+ }
+ #container_2m{
+ }
+ .main_sidebar{
+    width: 300px;
+    margin-left: 80px;
+ }
+ .img{
+ width: 100px;
+ }
  </style>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
 <script type="text/javascript">
@@ -68,6 +88,7 @@ $(function() {
 		
 });	
 </script>   
+ <script>history.scrollRestoration = "manual"</script>
   </head>
   <body>
    <jsp:include page="./mp_naviBar.jsp"></jsp:include>
@@ -352,14 +373,30 @@ $(function() {
           </div>
         </div>
         <div class="row">
-        	<div class="col-md-3 ftco-animate">
-        		<ul class="category text-center">
-        			<li><a href="#">Web Development <br><span class="number">354</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-        			<li><a href="#">Graphic Designer <br><span class="number">143</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-        			<li><a href="#">Multimedia <br><span class="number">100</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-        			<li><a href="#">Advertising <br><span class="number">90</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
+
+
+        <c:forEach items="${pList }" var="list">
+		 <div class="col-md-3 ftco-animate">
+        
+	        	<ul class="category text-center">
+
+	        			<li><a href="#">공고 제목 :${list.notice_title } <br><span class="number">공고 번호 : ${list.notice_num }</span>&nbsp; <span>기업이름</span><i class="ion-ios-arrow-forward"></i></a></li>
         		</ul>
-        	</div>
+	     </div>  
+        </c:forEach>
+	</div>
+	</div>
+	</section>
+<!--     
+        
+        
+        
+        
+        
+        	
+        	
+        	
+        	
         	<div class="col-md-3 ftco-animate">
         		<ul class="category text-center">
         			<li><a href="#">Education &amp; Training <br><span class="number">100</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
@@ -387,28 +424,37 @@ $(function() {
         </div>
     	</div>
     </section>
-<!-- 플랜티넘 광고 끝 -->
-<!-- 스페셜 광고 -->
+플랜티넘 광고 끝
+-->
+<!-- 스페셜광고 -->
     <section class="ftco-section_1">
     	<div class="container">
     		<div class="row justify-content-center mb-5">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-          	<span class="subheading">Special Categories</span>
-            <h3 class="mb-0">스페셜</h3>
-          </div>
+       		   <div class="col-md-7 heading-section text-center ftco-animate">
+       		   	<span class="subheading">Special Categories</span>
+        	    <h3 class="mb-0">스페셜</h3>
+       		   </div>
         </div>
-        <div class="row">
+	        <div class="row">
+	        
+	        <c:forEach items="${sList}" var="list">
+	        	<div class="col-md-3 ftco-animate">
+	        		<ul class="category_1 text-center">
+	        			<li><a href="#">제목 : ${list.notice_title }<br><span class="number">공고 번호 : ${list.notice_num }</span> <span>???</span><i class="ion-ios-arrow-forward"></i></a></li>
+	        			
+	        		</ul>
+	        	</div>
+	        </c:forEach>
+	        	
+			</div>
+		</div>
+	</section>    
+        	
+        	
+<!--         	
         	<div class="col-md-3 ftco-animate">
         		<ul class="category_1 text-center">
-        			<li><a href="#">Web Development <br><span class="number">354</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-        			<li><a href="#">Graphic Designer <br><span class="number">143</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-        			<li><a href="#">Multimedia <br><span class="number">100</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-        			<li><a href="#">Advertising <br><span class="number">90</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-        		</ul>
-        	</div>
-        	<div class="col-md-3 ftco-animate">
-        		<ul class="category_1 text-center">
-        			<li><a href="#">Education &amp; Training <br><span class="number">100</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
+        			<li><a href="#">공고 제목 <br><span class="number">공고 번호</span> <span>공고 내용.</span><i class="ion-ios-arrow-forward"></i></a></li>
         			<li><a href="#">English <br><span class="number">200</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
         			<li><a href="#">Social Media <br><span class="number">300</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
         			<li><a href="#">Writing <br><span class="number">150</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
@@ -432,7 +478,7 @@ $(function() {
         	</div>
         </div>
     	</div>
-    </section>
+    </section>  -->
 <!-- 스페셜 광고 끝 -->
 
 <!-- 베이직 광고 -->
@@ -447,12 +493,15 @@ $(function() {
 		          </div>
 		        </div>
 						<div class="row">
+						
+						
+			<c:forEach items="${bList }" var="list">			
 				<div class="col-md-12 ftco-animate">
 		            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
 		              <div class="one-third mb-4 mb-md-0">
 		                <div class="job-post-item-header align-items-center">
-		                	<span class="subadge">Partime</span>
-		                  <h2 class="mr-3 text-black"><a href="#">Frontend Development</a></h2>
+		                	<span class="subadge">${list.notice_num }</span>
+		                  <h2 class="mr-3 text-black"><a href="#">${list.notice_title }</a></h2>
 		                </div>
 		        
 		              </div>
@@ -466,9 +515,10 @@ $(function() {
 		                <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
 		              </div>
 		            </div>
-		          </div><!-- end -->
+		          </div>
+		    </c:forEach>
 
-							<div class="col-md-12 ftco-animate">
+<!-- 							<div class="col-md-12 ftco-animate">
 		            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
 		              <div class="one-third mb-4 mb-md-0">
 		                <div class="job-post-item-header align-items-center">
@@ -486,7 +536,7 @@ $(function() {
 		                <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
 		              </div>
 		            </div>
-		          </div><!-- end -->
+		          </div>end
 
 		          <div class="col-md-12 ftco-animate">
 		            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
@@ -506,7 +556,7 @@ $(function() {
 		                <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
 		              </div>
 		            </div>
-		          </div><!-- end -->
+		          </div>end
 
 		          <div class="col-md-12 ftco-animate">
 		            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
@@ -526,7 +576,7 @@ $(function() {
 		                <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
 		              </div>
 		            </div>
-		          </div><!-- end -->
+		          </div>end
 
 		          <div class="col-md-12 ftco-animate">
 		            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
@@ -546,7 +596,7 @@ $(function() {
 		                <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
 		              </div>
 		            </div>
-		          </div><!-- end -->
+		          </div>end
 
 		         	<div class="col-md-12 ftco-animate">
 		            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
@@ -566,7 +616,7 @@ $(function() {
 		                <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
 		              </div>
 		            </div>
-		          </div><!-- end -->
+		          </div>end
 
 		          <div class="col-md-12 ftco-animate">
 		            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
@@ -586,7 +636,7 @@ $(function() {
 		                <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
 		              </div>
 		            </div>
-		          </div><!-- end -->
+		          </div>end
 
 		          <div class="col-md-12 ftco-animate">
 		            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
@@ -606,7 +656,7 @@ $(function() {
 		                <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
 		              </div>
 		            </div>
-		          </div><!-- end -->
+		          </div>end
 
 		          <div class="col-md-12 ftco-animate">
 		            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
@@ -626,9 +676,11 @@ $(function() {
 		                <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
 		              </div>
 		            </div>
-		          </div><!-- end -->
+		          </div>end -->
 		        </div>
 		      </div>
+		    
+		      
 <!-- 베이직 광고 끝-->		      
 <!-- 사이드 오늘의 추천공고 -->		      
 		      <div class="main_sidebar">
