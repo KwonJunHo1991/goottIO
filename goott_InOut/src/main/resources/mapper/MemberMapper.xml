@@ -15,11 +15,18 @@
   
   	<select id="viewMember" resultType="MemberDTO">
   	
-  	select mem_name,
+  	select 
   	mem_id,
-  	mem_email 
+  	mem_name,
+  	mem_birth,
+  	mem_email,
+  	mem_phone,
+  	mem_add,
+  	mem_add1
+  	 
   	from io_member
   	where mem_id = #{mem_id} and mem_pw = #{mem_pw}
+  	
   	
   	</select>
   	
@@ -29,11 +36,51 @@
   	
   	</insert>
   	
+  	<select id="selectmember" resultType="MemberDTO">
+  	select * from io_member
   	
   	
+  	</select>
+  	
+  	<select id="TransferResume" parameterType="String" resultType="MemberDTO">
+  	select * from io_member where mem_id = #{mem_id}
+  	
+  	
+  	</select>
   
   
+  	<insert id="InsertResume" parameterType="ResumeDTO">
+  	
+  	insert into io_resume (res_num, mem_id, res_lev, res_school, res_stdate, res_stdatesub, res_area, res_enddate, res_enddatesub, res_major, res_shiftpattern, res_income, res_workarea, res_too, res_tob, res_rep_area, res_rep_too, res_make_date, res_title)
+  	values (null, #{mem_id},#{res_lev},#{res_school},#{res_stdate},#{res_stdatesub},#{res_area},#{res_enddate},
+  		#{res_enddatesub},#{res_major},#{res_shiftpattern},#{res_income},#{res_workarea},
+  		#{res_too},#{res_tob},#{res_rep_area},#{res_rep_too},
+  		#{res_make_date},#{res_title})
+  	
+  	
+  	</insert>
   
-  
+  	<insert id="insertuniversity" parameterType="UniversityDTO">
+  	
+  	insert into io_university (un_num, res_num, mem_id, un_un, un_name, un_area, un_stdate, un_stdatesub, un_enddate, un_enddatesub, un_mainmajor, un_majordept, un_time, un_grade, un_fixgrade, un_piece)
+  	values(null, #{res_num}, #{mem_id}, #{un_un}, #{un_name}, #{un_area}, #{un_stdate}, #{un_stdatesub}, #{un_enddate}, #{un_enddatesub}, #{un_mainmajor}, #{un_majordept}, #{un_time}, #{un_grade}, #{un_fixgrade}, #{un_piece})
+  	
+  	</insert>
+  	
+  	<select id="selectOneMemberResumeById" parameterType="String" resultType="ResumeDTO">
+  	
+  	select * from io_resume
+  	where mem_id = #{mem_id}
+
+  	</select>
+	
+	<insert id="insertcareer" parameterType="CareerDTO">
+	insert into io_carrer (car_num, res_num, mem_id, car_name, car_stdate, car_enddate, car_enddatesub, car_resign, car_position, car_too, car_year, car_workarea, car_dept, car_income, car_incomesub, car_res_bus, car_pro_name, car_pro_stdate, car_pro_enddate, car_pro_contents)
+	values(null, #{res_num},#{mem_id},#{car_name},#{car_stdate},#{car_enddate},#{car_enddatesub},#{car_resign},#{car_position},#{car_too},#{car_year},#{car_wokrarea}, #{car_dept},#{car_income},#{car_incomesub},#{car_res_bus},#{car_pro_name},#{car_pro_stdate},#{car_pro_enddate},#{car_pro_contents})
+	
+	
+	
+	</insert>  	
+  	
   
   </mapper>

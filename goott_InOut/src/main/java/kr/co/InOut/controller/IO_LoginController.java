@@ -45,6 +45,7 @@ public class IO_LoginController {
 		}else { // 로그인 실패
 			//로그인 jsp로 이동
 			
+			
 			mav.setViewName("login");
 			mav.addObject("msg", "failure");
 			
