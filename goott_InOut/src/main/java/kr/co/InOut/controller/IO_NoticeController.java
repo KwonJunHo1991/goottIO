@@ -12,6 +12,7 @@ import kr.co.InOut.dto.IO_NoticeDTO;
 import kr.co.InOut.dto.IO_Notice_PrcsDTO;
 import kr.co.InOut.dto.IO_Notice_QnaDTO;
 import kr.co.InOut.dto.IO_Notice_WantDTO;
+import kr.co.InOut.service.IO_CheckBoxService;
 
 @Controller
 public class IO_NoticeController {
@@ -19,6 +20,11 @@ public class IO_NoticeController {
 	IO_NoticeDAO dao;
 	public void setDao(IO_NoticeDAO dao) {
 		this.dao = dao;
+	}
+	@Inject
+	IO_CheckBoxService cbs;
+	public void setCbs(IO_CheckBoxService cbs) {
+		this.cbs = cbs;
 	}
 	
 	// 새 공고 등록하는 창 들어가기
@@ -31,12 +37,15 @@ public class IO_NoticeController {
 	// 새 공고 등록작업(기본정보 DB에 넣고 모집분야 입력하는 창으로)
 	@RequestMapping(value = "/company/newNoticeStep1.do", method = RequestMethod.POST)
 	public String insertNotice(@ModelAttribute()IO_NoticeDTO dto) {
+		dto.setNotice_man_mp(dto.getNotice_man_mp1()+"-"+dto.getNotice_man_mp2()+"-"+dto.getNotice_man_mp3());
+		dto.setNotice_man_tel(dto.getNotice_man_tel1()+"-"+dto.getNotice_man_tel2()+"-"+dto.getNotice_man_tel3());
 		dao.insertOneNotice(dto);
 		return "newNoticeStep1";
 	}
 	// 새 공고 등록작업(모집분야 DB에 넣고 채용절차 입력하는 창으로)
 	@RequestMapping(value = "/company/newNoticeStep2.do", method = RequestMethod.POST)
 	public String insertNotice2(@ModelAttribute()IO_Notice_WantDTO dto2) {
+		dto2.setNotice_want_condition(cbs.io_CheckBoxIntegration(dto2));
 		dao.insertOneNoticeWant(dto2);
 		return "newNoticeStep2";
 	}

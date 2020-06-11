@@ -9,7 +9,7 @@ public class IO_BoardDTO {
 	String mem_id;
 	String board_title;
 	String board_content;
-	@DateTimeFormat(pattern = "yyyy/MM/dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	Date board_date;
 	Integer board_type;
 	Integer board_category;

@@ -7,7 +7,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class IO_Notice_PrcsDTO {
 	private Integer notice_prcs_num, notice_num, comp_num, notice_prcs_type;
 	private String comp_id, notice_prcs_name;
-	@DateTimeFormat(pattern = "yyyy/MM/dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date notice_prcs_detail_start, notice_prcs_detail_end;
 	public IO_Notice_PrcsDTO() {
 		// TODO Auto-generated constructor stub

@@ -5,6 +5,7 @@ public class IO_MemberDTO {
 	private String mem_id;
 	private String mem_pw;
 	private String mem_name;
+	private Integer mem_seekwork;
 	private Integer mem_birth;
 	private String mem_email;
 	private Integer mem_phone;
@@ -17,14 +18,15 @@ public class IO_MemberDTO {
 	public IO_MemberDTO() {}
 
 
-	public IO_MemberDTO(String mem_id, String mem_pw, String mem_name,
-			Integer mem_birth, String mem_email, Integer mem_phone,
-			String mem_add, String mem_add1, String mem_image, String mem_anno,
+
+	public IO_MemberDTO(String mem_id, String mem_pw, String mem_name, Integer mem_seekwork, Integer mem_birth,
+			String mem_email, Integer mem_phone, String mem_add, String mem_add1, String mem_image, String mem_anno,
 			Integer mem_sex) {
 		super();
 		this.mem_id = mem_id;
 		this.mem_pw = mem_pw;
 		this.mem_name = mem_name;
+		this.mem_seekwork = mem_seekwork;
 		this.mem_birth = mem_birth;
 		this.mem_email = mem_email;
 		this.mem_phone = mem_phone;
@@ -34,6 +36,7 @@ public class IO_MemberDTO {
 		this.mem_anno = mem_anno;
 		this.mem_sex = mem_sex;
 	}
+
 
 
 	public String getMem_id() {
@@ -64,7 +67,15 @@ public class IO_MemberDTO {
 	public void setMem_name(String mem_name) {
 		this.mem_name = mem_name;
 	}
+	
+	public Integer getMem_seekwork() {
+		return mem_seekwork;
+	}
 
+	public void setMem_seekwork(Integer mem_seekwork) {
+		this.mem_seekwork = mem_seekwork;
+	}
+	
 
 	public Integer getMem_birth() {
 		return mem_birth;
@@ -144,6 +155,7 @@ public class IO_MemberDTO {
 	public void setMem_sex(Integer mem_sex) {
 		this.mem_sex = mem_sex;
 	}
+
 
 
 	@Override
