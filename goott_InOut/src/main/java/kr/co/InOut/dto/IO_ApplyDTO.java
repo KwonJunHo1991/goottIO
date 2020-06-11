@@ -10,9 +10,9 @@ public class IO_ApplyDTO {
 	String mem_id;
 	Integer notice_num;
 	Integer comp_num;
-	@DateTimeFormat(pattern = "yyyy/MM/dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	Date apply_date;
-	@DateTimeFormat(pattern = "yyyy/MM/dd")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	Date mem_birth;
 	Integer mem_sex;
 	Integer res_income;
