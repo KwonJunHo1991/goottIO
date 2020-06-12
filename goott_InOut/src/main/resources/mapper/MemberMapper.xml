@@ -81,6 +81,10 @@
 	
 	
 	</insert>  	
+  	<select id="selectOneResumeByNum" resultType="ResumeDTO">
+  	select * from io_resume
+  	where res_num = #{res_num}
   	
+  	</select>
   
   </mapper>

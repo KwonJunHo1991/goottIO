@@ -80,7 +80,7 @@
             <div class="row">
             
                <c:forEach var="i" items="${list }">
-   <form name="resume" action="./goresume.do">
+   <form name="resume" action="./selectresumebynum.do">
                   
                   
                   <div class="job-post-item p-4 d-block d-lg-flex align-items-center" style="width: 850px;">
@@ -104,7 +104,7 @@
                             <span class="icon-heart"></span>
                          </a>
                       </div>
-                      <input type="submit" class="btn btn-primary py-2" value="완성하기" id="complete" />
+                     <input type="submit" class="btn btn-primary py-2" value="완성하기" id="complete" />
                     </div>
                   </div>
 </form>

@@ -41,6 +41,16 @@ public class IO_ResumeController {
 		this.mdao = mdao;
 	}
 	
+	
+
+	
+	
+	
+	
+	
+	
+	
+	
 	@RequestMapping(value = "/member/resumelist.do")
 	
 	public String resume1() {
@@ -106,9 +116,10 @@ public class IO_ResumeController {
 		model.addAttribute("mem_id", mem_id);
 		model.addAttribute("res_num",res_num);
 		
+		List<IO_ResumeDTO> list = mdao.selectOneMemberResumeById(mem_id);
 		
-		System.out.println(mem_id);
-		System.out.println(res_num);
+		model.addAttribute("list", list);
+	
 				
 		return "myresume";
 		
@@ -163,4 +174,20 @@ public class IO_ResumeController {
 		
 		return "self_intro";
 	}
+	
+	@RequestMapping(value = "/member/selectresumebynum.do")
+	public String resume9(@ModelAttribute() IO_ResumeDTO dto, Model model, HttpServletRequest req) {
+		
+		List<IO_ResumeDTO> onelist = rdao.selectOneResumeByNum(dto.getRes_num());
+		model.addAttribute("onelist", onelist);
+		
+		
+		return "myresume";
+	}
+	
+	
+	
+	
+	
+	
 }
