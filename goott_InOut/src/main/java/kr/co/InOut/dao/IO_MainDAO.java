@@ -40,4 +40,8 @@ public class IO_MainDAO {
 		return session.selectList("selectAllNoticeSearch");
 	}
 	
+	public IO_NoticeDTO selectNoticeDetailByNoticeNum(int notice_num) {
+		return session.selectOne("selectNoticeDetailByNoticeNum", notice_num);
+	}
+	
 }

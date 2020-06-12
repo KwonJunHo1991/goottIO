@@ -33,6 +33,33 @@
 
  <style type="text/css">
 
+ 
+  #bottom_im1{
+ background-image: url("<c:url value="/resources/images/person_1.png"/>");  
+ }
+ #bottom_im2{
+ background-image: url("<c:url value="/resources/images/person_2.png"/>");  
+ }
+ #bottom_im3{
+ background-image: url("<c:url value="/resources/images/person_3.png"/>");  
+ }
+ #bottom_im4{
+ background-image: url("<c:url value="/resources/images/person_4.png"/>");  
+ }
+ #bottom_im5{
+ background-image: url("<c:url value="/resources/images/person_5.png"/>");  
+ }
+ #bottom_im6{
+ background-image: url("<c:url value="/resources/images/person_6.png"/>");  
+ }
+ #bottom_im7{
+ background-image: url("<c:url value="/resources/images/person_7.png"/>");  
+ }
+ #bottom_im8{
+ background-image: url("<c:url value="/resources/images/person_8.png"/>");  
+ }
+
+
 .container_2{
  width: 100%;
  padding-left: 650px;
@@ -58,31 +85,6 @@
  background-image: url("<c:url value="/resources/images/bg_1.jpg"/>");  
  }
  
- #bottom_im1{
- background-image: url("<c:url value="/resources/images/person_1.png"/>");  
- }
- #bottom_im2{
- background-image: url("<c:url value="/resources/images/person_2.png"/>");  
- }
- #bottom_im3{
- background-image: url("<c:url value="/resources/images/person_3.png"/>");  
- }
- #bottom_im4{
- background-image: url("<c:url value="/resources/images/person_4.png"/>");  
- }
- #bottom_im5{
- background-image: url("<c:url value="/resources/images/person_5.png"/>");  
- }
- #bottom_im6{
- background-image: url("<c:url value="/resources/images/person_6.png"/>");  
- }
- #bottom_im7{
- background-image: url("<c:url value="/resources/images/person_7.png"/>");  
- }
- #bottom_im8{
- background-image: url("<c:url value="/resources/images/person_8.png"/>");  
- }
- 
  </style>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
 <script type="text/javascript">
@@ -96,23 +98,25 @@ $(function() {
 
 		if (state == '1') {
 			jQuery('#form-control1_1').show();
-			jQuery('#form-control1_2').hide();
+			//document.getElementById('form-control1_1').innerHTML = "";
+			
+			
 
 		} else if (state == '2') {
-			jQuery('#form-control1_2').show();
-			jQuery('#form-control1_1').hide();
+			//document.getElementById('form-control1_1').innerHTML = "";
+
 		}
 	});
 	jQuery('#form-control2').change(function() {
 		var state = $('#form-control2').val();
 
 		if (state == '1') {
-			jQuery('#form-control2_1').show();
-			jQuery('#form-control2_2').hide();
+			//document.getElementById('form-control1_1').innerHTML = "";
+
 
 		} else if (state == '2') {
-			jQuery('#form-control2_2').show();
-			jQuery('#form-control2_1').hide();
+			//document.getElementById('form-control1_1').innerHTML = "";
+
 		}
 	});
 		
@@ -410,7 +414,7 @@ $(function() {
         
 	        	<ul class="category text-center">
 
-	        			<li><a href="#">공고 제목 :${list.notice_title } <br><span class="number">공고 번호 : ${list.notice_num }</span>&nbsp; <span>기업이름</span><i class="ion-ios-arrow-forward"></i></a></li>
+	        			<li><a href="../company/noticeDetailMain.do?notice_num=${list.notice_num }">${list.notice_title } <br><span class="number">공고 번호 : ${list.notice_num }</span>&nbsp; <span>기업이름</span><i class="ion-ios-arrow-forward"></i></a></li>
         		</ul>
 	     </div>  
         </c:forEach>
@@ -470,7 +474,7 @@ $(function() {
 	        <c:forEach items="${sList}" var="list">
 	        	<div class="col-md-3 ftco-animate">
 	        		<ul class="category_1 text-center">
-	        			<li><a href="#">제목 : ${list.notice_title }<br><span class="number">공고 번호 : ${list.notice_num }</span> <span>???</span><i class="ion-ios-arrow-forward"></i></a></li>
+	        			<li><a href="../company/noticeDetailMain.do?notice_num=${list.notice_num }">${list.notice_title }<br><span class="number">공고 번호 : ${list.notice_num }</span> <span>???</span><i class="ion-ios-arrow-forward"></i></a></li>
 	        			
 	        		</ul>
 	        	</div>
@@ -531,7 +535,7 @@ $(function() {
 		              <div class="one-third mb-4 mb-md-0">
 		                <div class="job-post-item-header align-items-center">
 		                	<span class="subadge">${list.notice_num }</span>
-		                  <h2 class="mr-3 text-black"><a href="#">${list.notice_title }</a></h2>
+		                  <h2 class="mr-3 text-black"><a href="../company/noticeDetailMain.do?notice_num=${list.notice_num }">${list.notice_title }</a></h2>
 		                </div>
 		        
 		              </div>
@@ -542,7 +546,7 @@ $(function() {
 			                	<span class="icon-heart"></span>
 			                </a>
 		                </div>
-		                <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
+		                <a href="../company/noticeDetailMain.do?notice_num=${list.notice_num }" class="btn btn-primary py-2">Apply Job</a>
 		              </div>
 		            </div>
 		          </div>
@@ -765,16 +769,17 @@ $(function() {
 
 <!-- 취업성공 도우미 -->
     <section class="ftco-section ftco-candidates bg-primary">
-    	<div class="container_3">
-    		<div class="row justify-content-center pb-3">
+       <div class="container_3">
+          <div class="row justify-content-center pb-3">
           <div class="col-md-10 heading-section heading-section-white text-center ftco-animate">
-          	<span class="subheading">InOut</span>
+             <span class="subheading">InOut</span>
             <h2 class="mb-4">취업 성공 도우미</h2>
           </div>
         </div>
-    	</div>
-    	<div class="container_3">
+       </div>
+       <div class="container_3">
         <div class="row">
+
         	<div class="col-md-12 ftco-animate">
         		<div class="carousel-candidates owl-carousel">
         			<div class="item">
@@ -837,8 +842,9 @@ $(function() {
 	        		</div>
         		</div>
         	</div>
+
         </div>
-    	</div>
+       </div>
     </section>
 
     

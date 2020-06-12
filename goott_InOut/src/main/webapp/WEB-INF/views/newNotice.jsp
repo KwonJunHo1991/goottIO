@@ -70,6 +70,22 @@
 			}
 
 		});
+			
+		var selected;
+		/* 업종 카테고리 textfield에 올릴려고 시도ing... */
+		$('.on1').click(function(){
+			//console.log($(this)[0].innerText);
+			selected = $(this)[0].innerText;
+			console.log(selected);
+			
+			/* 업종 카테고리에 확인 버튼 누르면, textfield에 올라오게 하기 */
+			$('#btn_lit_chk').click(function(){
+				console.log("확인");
+				$("#list_selected_item").val(selected);
+			});
+			
+		});
+		
 		
 		
 
@@ -164,7 +180,15 @@
 .wrap_recruit_frm {
 	padding-top: 175px;
 }
+/* 정규직 전환 가능 체크했을 때  색깔 변경*/
+input[type=checkbox] + label {
+   border: 1px solid #bcbcbc;
+   border-radius: 5px;
+}
 
+input[type=checkbox]:checked + label{
+   background-color: #bcbcbc;
+}
 .age_limit {
 	display: none;
 }
@@ -809,13 +833,13 @@ body {
 						</div>
 						<div class="area_data">
 							<span class="manager_phone">
-								<input type="text" name="cell1" id="notice_man_mp1" class="inpTypo sizeL" title="휴대폰 첫번째 자리 입력" maxlength="3" placeholder="010"/>
+								<input type="text" name="notice_man_mp1" id="cell1" class="inpTypo sizeL" title="휴대폰 첫번째 자리 입력" maxlength="3" placeholder="010"/>
 							</span>
 							<span class="manager_phone"> <p class="dash">-</p>
-								<input type="text" name="cell2" id="notice_man_mp2" class="inpTypo sizeL" title="휴대폰 두번째 자리 입력" maxlength="4" placeholder="1234"/>
+								<input type="text" name="notice_man_mp2" id="cell2" class="inpTypo sizeL" title="휴대폰 두번째 자리 입력" maxlength="4" placeholder="1234"/>
 							</span>
 							<span class="manager_phone"> <p class="dash">-</p>
-								<input type="text" name="cell3" id="notice_man_mp3" class="inpTypo sizeL" title="휴대폰 세번째 자리 입력" maxlength="4" placeholder="5678"/>
+								<input type="text" name="notice_man_mp3" id="cell3" class="inpTypo sizeL" title="휴대폰 세번째 자리 입력" maxlength="4" placeholder="5678"/>
 							</span>
 						</div>
 					</div>
@@ -835,7 +859,7 @@ body {
 							<div class="selected_item" id="industry_summary">
 								<!-- <p class="txt_placeholder">업종은 최대 1개 선택할 수 있습니다.</p> -->
 								<!-- <ul class="list_selected_item frm_box_list" data-help_target="industry"> -->
-								<input type="text" name="" id="list_selected_item frm_box_list" class="inpTypo sizeL inp_keyword"
+								<input type="text" name="" id="list_selected_item" class=" inpTypo sizeL inp_keyword"
 									style="border: none;" title="업종명" placeholder="업종명을 입력하세요">
 								<button type="button" class="btn_add btn btn-link btn_more_ly" id="btn_cat_area" >수정·추가하기</button>
 							</div>
@@ -876,72 +900,73 @@ body {
 										<div class="depth2" id="100" style="display: table-cell;">
 											<div class="area_scroll category_step">
 												<ul class="list_category">
-													<li class="on" data-depth="1" data-mcode="1" data-bcode="108" value="108">
+													<li class="on1" data-depth="1" data-mcode="1" data-bcode="108" value="호텔·여행·항공">
 													<button type="button" class="btn_depth2" value="호텔·여행·항공">호텔·여행·항공</button></li>
 
-													<li class="on" data-depth="1" data-mcode="1" data-bcode="109" value="109">
+													<li class="on1" data-depth="1" data-mcode="1" data-bcode="109" value="외식업·식음료">
 													<button type="button" class="btn_depth2" value="외식업·식음료">외식업·식음료</button></li>
 
-													<li class="on" data-depth="1" data-mcode="1" data-bcode="111" value="111">
+													<li class="on1" data-depth="1" data-mcode="1" data-bcode="111" value="시설관리·경비·용역">
 													<button type="button" class="btn_depth2" value="시설관리·경비·용역">시설관리·경비·용역</button></li>
 
-													<li class="on" data-depth="1" data-mcode="1" data-bcode="115" value="115">
+													<li class="on1" data-depth="1" data-mcode="1" data-bcode="115" value="레저·스포츠·여가">
 													<button type="button" class="btn_depth2" value="레저·스포츠·여가">레저·스포츠·여가</button></li>
 
-													<li class="on" data-depth="1" data-mcode="1" data-bcode="118" value="118">
+													<li class="on1" data-depth="1" data-mcode="1" data-bcode="118" value="AS·카센터·주유">
 													<button type="button" class="btn_depth2" value="AS·카센터·주유">AS·카센터·주유</button></li>
 
-													<li class="on" data-depth="1" data-mcode="1" data-bcode="119" value="119">
+													<li class="on1" data-depth="1" data-mcode="1" data-bcode="119" value="렌탈·임대">
 													<button type="button" class="btn_depth2" value="렌탈·임대">렌탈·임대</button></li>
 
-													<li class="on" data-depth="1" data-mcode="1" data-bcode="120" value="120">
+													<li class="on1" data-depth="1" data-mcode="1" data-bcode="120" value="웨딩·장례·이벤트">
 													<button type="button" class="btn_depth2" value="웨딩·장례·이벤트">웨딩·장례·이벤트</button></li>
 
-													<li class="on" data-depth="1" data-mcode="1" data-bcode="121" value="121">
+													<li class="on1" data-depth="1" data-mcode="1" data-bcode="121" value="기타서비스업">
 													<button type="button" class="btn_depth2" value="기타서비스업">기타서비스업</button></li>
 
-													<li class="on" data-depth="1" data-mcode="1" data-bcode="122" value="122">
+													<li class="on1" data-depth="1" data-mcode="1" data-bcode="122" value="뷰티·미용">
 													<button type="button" class="btn_depth2" value="뷰티·미용">뷰티·미용</button></li>
 												</ul>
 											</div>
 										</div>
 										
 										<div class="depth2" id="200" style="display: table-cell;">
+											<div class="depth2" id="200" style="display: table-cell;">
 											<div class="area_scroll category_step">
 												<ul class="list_category">
-													<li class="on" data-depth="1" data-mcode="2" data-bcode="201" value="201">
+													<li class="on1" data-depth="1" data-mcode="2" data-bcode="201" value="전기·전자·제어">
 														<button type="button">전기·전자·제어</button>
 													</li>
 
-													<li class="on" data-depth="1" data-mcode="2" data-bcode="202" value="202">
+													<li class="on1" data-depth="1" data-mcode="2" data-bcode="202" value="기계·설비·자동차">
 														<button type="button">기계·설비·자동차</button>
 													</li>
 
-													<li class="on" data-depth="1" data-mcode="2" data-bcode="204" value="204">
+													<li class="on1" data-depth="1" data-mcode="2" data-bcode="204" value="석유·화학·에너지">
 														<button type="button">석유·화학·에너지</button>
 													</li>
 
-													<li class="on" data-depth="1" data-mcode="2" data-bcode="205" value="205">
+													<li class="on1" data-depth="1" data-mcode="2" data-bcode="205" value="섬유·의류·패션">
 														<button type="button">섬유·의류·패션</button>
 													</li>
 
-													<li class="on" data-depth="1" data-mcode="2" data-bcode="207" value="207">
+													<li class="on1" data-depth="1" data-mcode="2" data-bcode="207" value="화장품·뷰티">
 														<button type="button">화장품·뷰티</button>
 													</li>
 
-													<li class="on" data-depth="1" data-mcode="2" data-bcode="208" value="208">
+													<li class="on1" data-depth="1" data-mcode="2" data-bcode="208" value="생활용품·소비재·사무">
 														<button type="button">생활용품·소비재·사무</button>
 													</li>
 
-													<li class="on" data-depth="1" data-mcode="2" data-bcode="209" value="209">
+													<li class="on" data-depth="1" data-mcode="2" data-bcode="209" value="가구·목재·제지">
 														<button type="button">가구·목재·제지</button>
 													</li>
 
-													<li class="on" data-depth="1" data-mcode="2" data-bcode="210" value="210">
+													<li class="on" data-depth="1" data-mcode="2" data-bcode="210" value="농업·어업·광업·임업">
 														<button type="button">농업·어업·광업·임업</button>
 													</li>
 
-													<li class="on" data-depth="1" data-mcode="2" data-bcode="211" value="211">
+													<li class="on" data-depth="1" data-mcode="2" data-bcode="211" value="금속·재료·철강·요업">
 														<button type="button">금속·재료·철강·요업</button>
 													</li>
 
@@ -967,19 +992,19 @@ body {
 												</ul>
 											</div>
 										</div>
-										
+
 										<div class="depth2" id="300" style="display: table-cell;">
 											<div class="area_scroll category_step">
 												<ul class="list_category">
-													<li class="on" data-depth="1" data-mcode="3" data-bcode="301">
+													<li class="on1" data-depth="1" data-mcode="3" data-bcode="301" value="솔루션·SI·ERP·CRM">
 														<button type="button">솔루션·SI·ERP·CRM</button>
 													</li>
 
-													<li class="on" data-depth="1" data-mcode="3" data-bcode="302">
+													<li class="on1" data-depth="1" data-mcode="3" data-bcode="302" value="웹에이젼시">
 														<button type="button">웹에이젼시</button>
 													</li>
 
-													<li class="on" data-depth="1" data-mcode="3" data-bcode="304">
+													<li class="on1" data-depth="1" data-mcode="3" data-bcode="304" value="쇼핑몰·오픈마켓">
 														<button type="button">쇼핑몰·오픈마켓</button>
 													</li>
 
@@ -1006,54 +1031,54 @@ body {
 													<li class="" data-depth="1" data-mcode="3" data-bcode="314">
 														<button type="button">게임</button>
 													</li>
-                            
+
 												</ul>
 											</div>
 										</div>
-										
+
 										<div class="depth2" id="400" style="display: table-cell;">
 											<div class="area_scroll category_step">
 												<ul class="list_category">
-													<li class="" data-depth="1" data-mcode="4" data-bcode="401">
+													<li class="on1" data-depth="1" data-mcode="4" data-bcode="401" value="은행·금융·저축">
 														<button type="button">은행·금융·저축</button>
 													</li>
 
-													<li class="" data-depth="1" data-mcode="4" data-bcode="402">
+													<li class="on1" data-depth="1" data-mcode="4" data-bcode="402" value="대출·캐피탈·여신">
 														<button type="button">대출·캐피탈·여신</button>
 													</li>
 
-													<li class="" data-depth="1" data-mcode="4" data-bcode="405">
+													<li class="on1" data-depth="1" data-mcode="4" data-bcode="405" value="기타금융">
 														<button type="button">기타금융</button>
 													</li>
 
-													<li class="" data-depth="1" data-mcode="4" data-bcode="406">
+													<li class="on1" data-depth="1" data-mcode="4" data-bcode="406" value="증권·보험·카드">
 														<button type="button">증권·보험·카드</button>
 													</li>
 
 												</ul>
 											</div>
 										</div>
-										
+
 										<div class="depth2" id="500" style="display: table-cell;">
 											<div class="area_scroll category_step">
 												<ul class="list_category">
-													<li class="" data-depth="1" data-mcode="5" data-bcode="501">
+													<li class="on1" data-depth="1" data-mcode="5" data-bcode="501" value="신문·잡지·언론사">
 														<button type="button">신문·잡지·언론사</button>
 													</li>
 
-													<li class="" data-depth="1" data-mcode="5" data-bcode="502">
+													<li class="on1" data-depth="1" data-mcode="5" data-bcode="502" value="방송사·케이블">
 														<button type="button">방송사·케이블</button>
 													</li>
 
-														<li class="" data-depth="1" data-mcode="5" data-bcode="503">
+														<li class="on1" data-depth="1" data-mcode="5" data-bcode="503" value="연예·엔터테인먼트">
 														<button type="button">연예·엔터테인먼트</button>
 													</li>
 
-													<li class="" data-depth="1" data-mcode="5" data-bcode="504">
+													<li class="on1" data-depth="1" data-mcode="5" data-bcode="504" value="광고·홍보·전시">
 														<button type="button">광고·홍보·전시</button>
 													</li>
 
-													<li class="" data-depth="1" data-mcode="5" data-bcode="505">
+													<li class="on1" data-depth="1" data-mcode="5" data-bcode="505" value="영화·배급·음악">
 														<button type="button">영화·배급·음악</button>
 													</li>
 
@@ -1076,27 +1101,27 @@ body {
 												</ul>
 											</div>
 										</div>
-										
+
 										<div class="depth2" id="1000" style="display: table-cell;">
 											<div class="area_scroll category_step">
 												<ul class="list_category">
-													<li class="" data-depth="1" data-mcode="10" data-bcode="1001">
+													<li class="on1" data-depth="1" data-mcode="10" data-bcode="1001" value="정부·공공기관·공기업">
 														<button type="button">정부·공공기관·공기업</button>
 													</li>
 
-													<li class="" data-depth="1" data-mcode="10" data-bcode="1002">
+													<li class="on1" data-depth="1" data-mcode="10" data-bcode="1002" value="협회·단체">
 														<button type="button">협회·단체</button>
 													</li>
-													
-													<li class="" data-depth="1" data-mcode="10" data-bcode="1003">
+
+													<li class="on1" data-depth="1" data-mcode="10" data-bcode="1003" value="법률·법무·특허">
 														<button type="button">법률·법무·특허</button>
 													</li>
-													
-													<li class="" data-depth="1" data-mcode="10" data-bcode="1004">
+
+													<li class="on1" data-depth="1" data-mcode="10" data-bcode="1004" value="세무·회계">
 														<button type="button">세무·회계</button>
 													</li>
 
-													<li class="" data-depth="1" data-mcode="10" data-bcode="1005">
+													<li class="on1" data-depth="1" data-mcode="10" data-bcode="1005" value="연구소·컨설팅·조사">
 														<button type="button">연구소·컨설팅·조사</button>
 													</li>
 
@@ -1109,8 +1134,8 @@ body {
 									<!-- area_category_select end -->
 									
 									<div class="area_btn">
-										<button type="button" class="btnSizeL colorWhite close_layer">취소</button>
-										<button type="button" class="btnSizeL colorBlue confirm_layer">확인</button>
+										<button type="button" class="btnSizeL colorWhite close_layer" id="btn_lit_cnc">취소</button>
+										<button type="button" class="btnSizeL colorBlue confirm_layer" id="btn_lit_chk">확인</button>
 									</div>
 									<!-- area_btn end -->
 									
@@ -1393,11 +1418,10 @@ body {
 									<option value="2교대">2교대</option>
 									<option value="3교대">3교대</option>
 									<option value="4교대">4교대</option>
-									<option value="wsh999">직접입력</option>
 								</select>
 							</div>
 							<!-- 직접입력  선택 시 나옴 -->
-							<input type="text" id="work_shift_value" name="notice_req_workday" maxlength="30" class="inpTypo sizeL" title="근무요일 직접입력" placeholder="예) 월 4회 휴일, 주5일(매주 금요일 휴일) 등" style="display: none;">
+						<!-- 	<input type="text" id="work_shift_value" name="notice_req_workday" maxlength="30" class="inpTypo sizeL" title="근무요일 직접입력" placeholder="예) 월 4회 휴일, 주5일(매주 금요일 휴일) 등" style="display: none;"> -->
 							
 						</div> <!-- condition_day end -->
 					</div>	<!-- area_data end -->
@@ -1413,15 +1437,14 @@ body {
 								<div class="inpSel sizeL">
 									<select id="work_shift_time_cd" name="notice_req_worktime" style="width: 300px;" title="근무시간">
 										<option value="">선택</option>
-										<option value="1">오전 9시~오후 6시</option>
-										<option value="2">오전 8시 30분~오후 5시 30분</option>
-										<option value="3">오전 10시~오후 7시</option>
-										<option value="4">탄력근무제</option>
-										<option value="5">직접입력</option>
+										<option value="오전 9시~오후 6시">오전 9시~오후 6시</option>
+										<option value="오전 8시 30분~오후 5시 30분">오전 8시 30분~오후 5시 30분</option>
+										<option value="오전 10시~오후 7시">오전 10시~오후 7시</option>
+										<option value="탄력근무제">탄력근무제</option>
 									</select>
 								</div>
-								<input type="text" id="work_shift_time" name="work_shift_time" maxlength="30" class="inpTypo sizeL" title="근무시간 직접입력"
-									placeholder="예) 1주일 순환근무, 교대 근무" style="display: none;">
+<!-- 								<input type="text" id="work_shift_time" name="notice_req_worktime" maxlength="30" class="inpTypo sizeL" title="근무시간 직접입력"
+									placeholder="예) 1주일 순환근무, 교대 근무" style="display: none;"> -->
 							</div>
 						</div>
 					</div>
@@ -1640,8 +1663,8 @@ body {
 				
 			</div>
 		</div>
-		<button type="submit" id="btn_next" class="btn btn-primary btn-lg" style="float: right;">다음 페이지</button>
-		
+		<!-- <button type="button" id="btn_next" class="btn btn-primary btn-lg" style="float: right;"><a href="jobPost_want.jsp">다음 페이지</a></button> -->
+		<input type="submit" value="다음페이지" id="btn_next" class="btn btn-primary btn-lg" style="border: none; background-color: white; margin: 0 auto; width:100%; "/>
 		
 		
 		
