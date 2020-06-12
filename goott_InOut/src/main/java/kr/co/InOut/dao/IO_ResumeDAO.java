@@ -1,5 +1,7 @@
 package kr.co.InOut.dao;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -25,5 +27,9 @@ public class IO_ResumeDAO {
 	
 	public void insertcareer(IO_CarrerDTO dto) {
 		ss.insert("insertcareer", dto);
+	}
+	
+	public List<IO_ResumeDTO> selectOneResumeByNum(int res_num){
+		return ss.selectList("selectOneResumeByNum", res_num);
 	}
 }

@@ -1,22 +1,33 @@
 package kr.co.InOut.controller;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import kr.co.InOut.dao.IO_MemberDAOImple;
 import kr.co.InOut.dto.IO_MemberDTO;
+import kr.co.InOut.dto.IO_ResumeDTO;
 import kr.co.InOut.service.IO_MemberService;
 
 @Controller
 public class IO_LoginController {
 
+	@Inject
+	IO_MemberDAOImple mdao;
+	
 
+	public void setMdao(IO_MemberDAOImple mdao) {
+		this.mdao = mdao;
+	}
 	private static final Logger logger = LoggerFactory.getLogger(IO_LoginController.class);
 	
 	
@@ -35,12 +46,22 @@ public class IO_LoginController {
 	
 	//2 로그인처리
 	@RequestMapping("/member/loginCheck.do")
-	public ModelAndView loginCheck(@ModelAttribute IO_MemberDTO dto, HttpSession session) {
+	public ModelAndView loginCheck(Model model, @ModelAttribute IO_MemberDTO dto, HttpSession session) {
 		boolean result = io_memberservice.loginCheck(dto, session);
 		ModelAndView mav = new ModelAndView();
 		
+		String mem_id = (String)session.getAttribute("mem_id");
+		
+		
+		
+		List<IO_ResumeDTO> list = mdao.selectOneMemberResumeById(mem_id);
+		
+		model.addAttribute("list", list);
+		
+		
+		
 		if(result == true) { //로그인 성공
-			mav.setViewName("home");
+			mav.setViewName("resumelist");
 			mav.addObject("msg", "success");
 		}else { // 로그인 실패
 			//로그인 jsp로 이동

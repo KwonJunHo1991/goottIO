@@ -78,6 +78,8 @@ $(function(){
 						<li id="pass_tab"><a href="#" type="button" class="inTab"
 							onclick="pushDataLayer('ga_lead','Home_Tapmenu-acceptance-manage', 'acceptance-manage');"><span>합격자
 									관리</span></a></li>
+						<li id="new_notice_tab"><a href="./newNotice.do" type="button" class="inTab"	>
+						<span>공고 등록</span></a></li>
 					</ul>
 				</div>
 				<section id="inner_content_list" class="tabpanel">
@@ -116,8 +118,9 @@ $(function(){
 							<ul>
 							<c:forEach var="notice" items="${noticeList }" >
 								<li class="row"><strong class="badge_status ">일반채용</strong>
+								<input type="hidden" name="notice_num" value="${notice.notice_num }" />
 									<div class="info_recruit">
-										<a href="../post_detail.jsp" class="title"> ${notice.notice_title }</a>
+										<a href="./post_detail.do?notice_num=${notice.notice_num }" class="title"> ${notice.notice_title }</a>
 										<div class="date">
 											<dl>
 												<dt class="blind">접수기간</dt>

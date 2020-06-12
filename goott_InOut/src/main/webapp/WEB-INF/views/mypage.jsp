@@ -8,6 +8,8 @@
 </head>
 <body>
 	<h1>기업의 mypage</h1> <a href="./newNotice.do"><input type="button" value="공고 등록" /></a>
+	<a href="./noticeList.do"><input type="button" value="공고 목록" /></a>
+	<a href="./comp_notice_info.do"><input type="button" value="공고 내 기업정보" /></a>
 	<form action="./mypageUpdate.do" method="post">
 		<table>
 		
