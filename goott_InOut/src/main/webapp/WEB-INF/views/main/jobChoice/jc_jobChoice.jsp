@@ -49,15 +49,21 @@
 	$(function() {
 		$('#form-control1_1').show();
 
+
+
 		jQuery('#form-control1').change(function() {
 			var state = $('#form-control1').val();
 
+
 			if (state == '1') {
+
 				jQuery('#form-control1_1').show();
 				document.getElementById('form-control1_1').innerHTML='<option value="101">기획·전략·경영</option>			<option value="102">총무·법무·사무</option>			<option value="103">경리·출납·결산</option>			<option value="104">홍보·PR·사보</option>			<option value="107">비서·안내·수행원</option>			<option value="108">사무보조·문서작성</option>			<option value="113">인사·교육·노무</option>			<option value="114">회계·재무·세무·IR</option>			<option value="119">마케팅·광고·분석</option>			<option value="120">전시·컨벤션·세미나</option>';
 			} else if (state == '2') {
 				document.getElementById('form-control1_1').innerHTML='<option value="203">판매·매장관리</option>			<option value="205">IT·솔루션영업</option>			<option value="206">금융·보험영업</option>			<option value="207">광고영업</option>			<option value="208">기술영업</option>			<option value="209">영업기획·관리·지원</option>			<option value="210">TM·아웃바운드</option>			<option value="211">TM·인바운드</option>			<option value="212">고객센터·CS</option>			<option value="213">QA·CS강사·수퍼바이저</option>';
 			} else if (state == '3') {
+
+
 
 				document.getElementById('form-control1_1').innerHTML='<option value="302">기계·기계설비</option>			<option value="303">화학·에너지</option>			<option value="304">섬유·의류·패션</option>			<option value="308">전기·전자·제어</option>			<option value="309">생산관리·품질관리</option>			<option value="314">반도체·디스플레이·LCD</option>			<option value="315">생산·제조·포장·조립</option>			<option value="316">비금속·요업·신소재</option>			<option value="317">바이오·제약·식품</option>			<option value="318">설계·CAD·CAM</option>			<option value="319">안경·렌즈·광학</option>';
 			} else if (state == '4') {
@@ -164,6 +170,7 @@
 																	<span class="ion-ios-arrow-down"></span>
 																</div>
 																<select name="" id="form-control1" class="form-control">
+
 																	<option value="7">직업/직종별</option>
 																	<option value="1">경영·사무</option>
 																	<option value="2">영업·고객상담</option>
@@ -253,6 +260,7 @@
 																	<option value="">선택</option>
 
 
+
 																</select>
 															</div>
 														</div>
@@ -283,7 +291,9 @@
 
 			<div class="row">
 				<div class="jc_main_container">
+
 	<c:forEach items="${list }" var="list">
+
 
 						<div class="col-md-12 ftco-animate">
 							<div
@@ -614,6 +624,7 @@
 							</div>
 						</div>
 					</div> -->
+
 					<!-- end -->
 				</div>
 				<jsp:include page="./jc_sideNavi.jsp"></jsp:include>

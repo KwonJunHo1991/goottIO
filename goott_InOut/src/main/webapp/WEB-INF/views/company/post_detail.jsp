@@ -43,7 +43,7 @@ dt {
 }
 
 dd {
-	padding-left: 50px;
+	padding-left: 80px;
 }
 
 #content {
@@ -73,6 +73,7 @@ dd {
 	background: #fff;
 	float: left;
 	min-width: 800px;
+	max-height: 1900px;
 }
 
 .jview .btn_jview {
@@ -116,7 +117,7 @@ dd {
 
 .jv_header .btn_scrap {
 	position: absolute;
-	top: 14px;
+	top: 4px;
 	right: 195px;
 }
 
@@ -126,6 +127,10 @@ dd {
 	right: 0;
 	width: 185px;
 	text-align: center;
+}
+.txt_scrap{
+margin-top: 20px;
+width: 20px;
 }
 
 .jv_cont>.cont {
@@ -143,10 +148,13 @@ dd {
 	margin-left: -5px;
 	box-sizing: unset;
 }
-
+#col1{
+width: 50%;
+}
 #col2 {
 	position: absolute;
 	right: 0;
+	width: 50%;
 }
 
 .blind {
@@ -161,7 +169,7 @@ dd {
 }
 
 .jv_summary .col+.col {
-	margin-left: 30px;
+	    margin-left: 290px;
 }
 
 .jv_summary .col>dl:first-child {
@@ -172,7 +180,7 @@ dd {
 	display: block;
 	position: relative;
 	margin-top: 5px;
-	padding-left: 86px;
+	padding-left: 26px;
 	min-height: 22px;
 }
 
@@ -209,16 +217,21 @@ dd {
 
 .jv_company .logo {
 	overflow: hidden;
+	display: block;
 	float: left;
-	width: 260px;
-	height: 155px;
+	width: 40%;
+	height: 100%;
 	line-height: 155px;
 	text-align: center;
 }
 
 .jv_company .logo+.wrap_info {
-	padding: 0 15px 0 290px;
-	width: 535px;
+	display:block;
+	float: left;
+	width: 60%;
+	height: 100%;
+	background: #f8f9fa;
+	padding: 0 20px;
 }
 
 .jv_company .wrap_info .title {
@@ -263,13 +276,30 @@ dd {
 
 .sri_btn_lg span.sri_btn_immediately {
 	position: relative;
+	font-size: 20px;
 }
 
 .jv_header .btn_apply .sri_btn_lg span.sri_btn_immediately, .jv_howto .cont.box .sri_btn_lg span.sri_btn_immediately
 	{
 	border: 1px solid #ff8d5a;
+	width: 150px;
 	color: #fff;
 	background: #ff8d5a;
+}
+.for_btn_event{
+	margin-top : 20px;
+	border: 1px solid #ff8d5a;
+	width: 150px;
+	height: 50px;
+	color: #fff;
+	background: #ff8d5a;
+
+}
+.for_btn_event:hover{
+background: #4e6cec;
+	border: 1px solid #4e6cec;
+	font-size: 16px;
+	font-weight: bold;
 }
 
 .jv_location .address {
@@ -382,6 +412,10 @@ dd {
 	box-sizing: border-box;
 	font-size: 14px;
 	background: #f8f9fa;
+	list-style: none;
+}
+.guide li{
+padding-top: 20px;
 }
 
 .jv_howto .noti {
@@ -447,7 +481,7 @@ dd {
 }
 
 .jv_footer .cont {
-	padding-top: 90px;
+	padding-top: 30px;
 }
 
 .jv_footer .utils {
@@ -472,14 +506,26 @@ button {
 body, div, dl, dt, dd, ul, ol, li, p, button {
 	font-family: "나눔스퀘어";
 }
+.cont_box{
+border: 1px solid #ebebeb;
+    border-top-color: #999;
+    width: 100%;
+    height: 100%;
+    
+}
+.jv_company{
+height: 500px;
+}
 </style>
 
 <title>job_post_detail.jsp</title>
 </head>
 <body>
-
-  <%--  <jsp:include page="../main/mainPage/mp_naviBar.jsp"></jsp:include> --%>
-
+   <div>
+   <jsp:include page="../main/mainPage/mp_naviBar.jsp"></jsp:include>
+   </div> 
+   
+   <jsp:include page="../main/mainPage/loginPop.jsp"></jsp:include>
 	<div id="content">
 		<div class="wrap_jview">
 			<div class="jview">
@@ -496,9 +542,7 @@ body, div, dl, dt, dd, ul, ol, li, p, button {
 							<a href="#" class="btn_jview btn_careers" target="_blank" onclick="window.open(this.href, ''); return false;"
 							onmousedown="try{n_trackEvent('relay_view', 'title', 'company', 'recruit-list');}catch(e){}"><span>채용중 <span class="num">4</span></span></a>
 							<h1 class="tit_job">클라우드(Cloud) 개발/운영 임원 채용</h1>
-							
-							<button type="button" class="btn_scrap scrap-38217319" title="공고스크랩" onclick="Saramin.btnJob('scrap', this, '', 'quick_login');" 
-							onmousedown="try{n_trackEvent('relay_view', 'summary', 'scrap', '');}catch(e){}"><span class="txt_scrap">☆</span></button>
+					
 							
 							<div class="btn_apply"><span class="dday">D-50</span>
 							
@@ -507,8 +551,7 @@ body, div, dl, dt, dd, ul, ol, li, p, button {
 								t_ref_content=logo_recruit&amp;t_ref_scnid=&amp;dpId=&amp;inner_source=saramin&amp;inner_medium=pattern&amp;
 								inner_campaign=relay_view_apply_0&amp;inner_term=list', ''); return false;} catch (e) {}; return false; -->
 								
-								<button class="sri_btn_lg for_btn_event" title="클릭하면 입사지원할 수 있는 창이 뜹니다." onclick=""
-								onmousedown="try{n_trackEvent('relay_view','summary','quick_apply','');}catch(e){}" style="margin: auto; width: 50%;">
+								<button class="for_btn_event" title="클릭하면 입사지원할 수 있는 창이 뜹니다." >
 									<span class="sri_btn_immediately">즉시지원</span>
 								</button>
 							</div>
@@ -525,11 +568,11 @@ body, div, dl, dt, dd, ul, ol, li, p, button {
 								</dl>
 								<dl>
 									<dt>학력</dt>
-									<dd>@</dd>
+									<dd>${notice.notice_req_edu }</dd>
 								</dl>
 								<dl>
 									<dt>근무형태</dt>
-									<dd>@</dd>
+									<dd>${notice.notice_req_worktype }</dd>
 								</dl>
 								<dl>
 									<dt>필수사항</dt>
@@ -543,7 +586,7 @@ body, div, dl, dt, dd, ul, ol, li, p, button {
 							<div class="col" id="col2">
 								<dl>
 									<dt>급여</dt>
-									<dd>@</dd>
+									<dd>${notice.notice_req_sal }</dd>
 								</dl>
 								<dl>
 									<dt>직급/직책</dt>
@@ -555,7 +598,7 @@ body, div, dl, dt, dd, ul, ol, li, p, button {
 								</dl>
 								<dl>
 									<dt>근무지역</dt>
-									<dd>@</dd>
+									<dd>${notcie_comp_adrs1_detail }</dd>
 								</dl>
 							</div>
 							
@@ -593,7 +636,7 @@ body, div, dl, dt, dd, ul, ol, li, p, button {
 												<div class="col-md-12 mb-3 mb-md-0">
 													<label for="fullname" class="font-weight-bold">담당자 이름</label>
 													<!-- 담당자 이름 받아오기 -->
-													<span class="mng_name">(담당자 이름)</span>
+													<span class="mng_name">${notice.notice_man }</span>
 													<span class="mng_name" id="mng_part">(담당자 부서명)</span>
 												</div>
 											</div>
@@ -603,12 +646,12 @@ body, div, dl, dt, dd, ul, ol, li, p, button {
 												<div class="col-md-12 mb-3 mb-md-0">
 													<label class="font-weight-bold" for="fullname">담당자 전화번호</label>
 													<span class="mng_phone">
-														<span class="tel" id="tell1">(tell1)</span>
+														<span class="tel" id="tell1">${notice.notice_man_tel }</span>
 													</span> <span class="mng_phone"> -
-														<span class="tel" id="tell2">(tell2)</span>
+														<span class="tel" id="tell2"></span>
 													</span>
 													<span class="mng_phone"> - 
-														<span class="tel" id="tell3">(tell3)</span>
+														<span class="tel" id="tell3"></span>
 													</span>
 												</div>
 											</div>
@@ -618,13 +661,13 @@ body, div, dl, dt, dd, ul, ol, li, p, button {
 												<div class="col-md-12 mb-3 mb-md-0">
 													<label class="font-weight-bold" for="fullname">담당자 휴대폰번호</label>
 													<span class="mng_phone">
-														<span class="cell" id="cell1">(cell1)</span>
+														<span class="cell" id="cell1"></span>
 													</span>
 													<span class="mng_phone"> - 
-														<span class="cell" id="cell2">(cell2)</span>
+														<span class="cell" id="cell2">${notice.notice_man_mp }</span>
 													</span>
 													<span class="mng_phone"> - 
-														<span class="cell" id="cell3">(cell3)</span>
+														<span class="cell" id="cell3"></span>
 													</span>
 												</div>
 											</div>
@@ -633,7 +676,7 @@ body, div, dl, dt, dd, ul, ol, li, p, button {
 											<div class="row form-group">
 												<div class="col-md-12 mb-3 mb-md-0">
 													<label class="font-weight-bold" for="fullname">담당자 이메일</label>
-													<span class="email">hong@naver.com</span>
+													<span class="email">${notice.notice_man_email }</span>
 												</div>
 											</div>
 
@@ -648,145 +691,134 @@ body, div, dl, dt, dd, ul, ol, li, p, button {
 							
 						</div>
 					</div>
-					
-					<div id="loc" class="jv_cont jv_location">
-						<h3 class="jv_title">근무지 위치</h3>
-						<div class="cont box">
-							<address class="adress">
-								<span class="spr_jview txt_adr"> $ 회사 주소 받아오기 $ </span>
-							</address>
-						</div>
-					</div>
-					
-					<div class="jv_cont jv_howto">
-						<div class="jv_title">접수기간 및 방법</div>
-						<div class="cont box">
-							<div class="status">
-								<div class="info_timer" data-remain-time="4347595">
-									<span class="txt">남은 기간</span><span class="day">50</span><span class="txt_day">일</span><span class="time">12:34:56</span>
-								</div>
-								<dl class="info_period">
-									<dt>시작일</dt><dd>2020.05.27 10:00</dd>
-									<dt class="end">마감일</dt>
-									<dd>2020.07.26 23:59</dd>
-								</dl>
-								<button class="sri_btn_lg for_btn_event" title="클릭하면 입사지원할 수 있는 창이 뜹니다." onclick="try{quickApplyForm('38217319','','t_category=relay_view&amp;t_content=relay_view_list&amp;t_ref=theme-samsung&amp;t_ref_content=logo_recruit&amp;t_ref_scnid=&amp;dpId=&amp;inner_source=saramin&amp;inner_medium=pattern&amp;inner_campaign=relay_view_apply_0&amp;inner_term=list', ''); return false;} catch (e) {}; return false;"
-									onmousedown="try{n_trackEvent('relay_view','contacts','quick_apply_bt','');}catch(e){}">
-									<span class="sri_btn_immediately">즉시지원</span>
-								</button>
+
+						<div id="loc" class="jv_cont jv_location">
+							<h3 class="jv_title">근무지 위치</h3>
+							<div class="cont box">
+								<address class="adress">
+									<span class="spr_jview txt_adr"> $ 회사 주소 받아오기 $ </span>
+								</address>
 							</div>
-							<dl class="guide">
-								<dt>지원방법</dt>
-								<dd class="method">
-									<button class="sri_btn_1 for_btn_event" title="클릭하면 입사지원할 수 있는 창이 뜹니다."
-										onclick="try{quickApplyForm('38217319','','t_category=relay_view&amp;t_content=relay_view_list&amp;t_ref=theme-samsung&amp;t_ref_content=logo_recruit&amp;t_ref_scnid=&amp;dpId=&amp;inner_source=saramin&amp;inner_medium=pattern&amp;inner_campaign=relay_view_apply_0&amp;inner_term=list', ''); return false;} catch (e) {}; return false;"
-										onmousedown="try{n_trackEvent('relay_view','contacts','quick_apply','');}catch(e){}" style="margin: auto; width: 50%;">
-										<span class="sri_btn_immediately">inOut 즉시지원</span>
+						</div>
+
+						<div class="jv_cont jv_howto">
+							<div class="jv_title">접수기간 및 방법</div>
+							<div class="cont box">
+								<div class="status">
+									<div class="info_timer" data-remain-time="4347595">
+										<span class="txt">남은 기간</span><span class="day">50</span><span
+											class="txt_day">일</span><span class="time">12:34:56</span>
+									</div>
+									<dl class="info_period">
+										<dt>시작일</dt>
+										<dd>${notice.notice_prcs_start }</dd>
+										<dt class="end">마감일</dt>
+										<dd>${notice.notice_prcs_end }</dd>
+									</dl>
+									<button class="for_btn_event" title="클릭하면 입사지원할 수 있는 창이 뜹니다.">
+										<span class="sri_btn_immediately">즉시지원</span>
 									</button>
-								</dd>
-								<dt>접수양식</dt>
-								<dd class="template">inOut 이력서 양식</dd>
-							</dl>
-							<p class="noti">마감일은 기업의 사정, 조기마감 등으로 변경될 수 있습니다.</p>
-						</div>
-					</div>
-					
-					
-					<!-- 지원자 통계 -->
-					<div class="jv_cont jv_statics">
-					
-					</div>
-					
-					<div class="jv_cont jv_company">
-						<div class="jv_title">기업정보</div>
-						<div class="cont box">
-							<div class="logo"><img src="../resources/images/logo.jpg" alt="회사 로고" width="260px" height="150px"/></div>
-							<div class="wrap_info">
-								<div class="title">
-									<span class="company_name">회사 이름</span>
-									<button type="button"title="관심기업 등록" class="btn_jview spr_jview btn_interest" onclick="try{Saramin.btnJob('favor', this, '', 'quick_login');}catch(e){}"
-										onmousedown="try {n_trackEvent('relay_view', 'title', 'favor', '');}catch(e){}" ><span>관심기업 등록</span></button>
-									<a href="#" title="기업정보로 이동" class="spr_jview btn_jview btn_link" onclick="window.open(this.href, ''); return false;"
-										onmousedown="try{n_trackEvent('relay_view', 'companyinfo', 'company_more', '');}catch(e){}"><strong>기업정보</strong></a>
 								</div>
-								
-								<div class="info">
-									<dl>
-										<dt>기업형태</dt>
-										<dd>@@@@@</dd>
-									</dl>
-									<dl>
-										<dt>업종</dt>
-										<dd>@@@@@</dd>
-									</dl>
-									<dl>
-										<dt>매출액</dt>
-										<dd>@@@@@</dd>
-									</dl>
-									<dl>
-										<dt>홈페이지</dt>
-										<dd>@@@@@</dd>
-									</dl>
-									<dl>
-										<dt>사원수</dt>
-										<dd>@@@@@</dd>
-									</dl>
-									<dl>
-										<dt>설립일</dt>
-										<dd>@@@@@</dd>
-									</dl>
-									<dl>
-										<dt>대표자명</dt>
-										<dd>@@@@@</dd>
-									</dl>
-									<dl class="wide">
-										<dt>기업주소</dt>
-										<dd>**********************</dd>
-									</dl>
-								</div>
-							</div>
-							
-							<!-- notice -->
-							<p class="noti">
-								<sup>*</sup> 위 항목은 본사정보와 다를 수 있습니다.
-							</p>
-							
-						</div>
-					</div>
-					
-					
-					<!-- 채용 공고 안 footer -->
-					
-					<div class="jv_cont jv_footer">
-						<div class="cont">
-							<div class="utils">
-								<p class="copy">본 채용 정보에 불법·허위·과장 또는 잘못된 내용이 있을 경우 <a href="#" target="_blank">문의</a>해 주세요!</p>
-								<!-- 문의사항으로 이동 -->
+								<ul class="guide">
+									<li>지원방법</li>
+									<dd class="method"></dd>
+									<li>접수양식</li>
+									<li class="template">inOut 이력서 양식</li>
+								</ul>
+								<p class="noti">마감일은 기업의 사정, 조기마감 등으로 변경될 수 있습니다.</p>
 							</div>
 						</div>
-					</div>
-					
+
+
+						<!-- 지원자 통계 -->
+						<div class="jv_cont jv_statics"></div>
+
+						<div class="jv_cont jv_company">
+							<div class="jv_title">기업정보</div>
+							
+							<div class="cont_box">
+								<div class="logo">
+									<img src="../resources/images/logo.jpg" alt="회사 로고"
+										width="260px" height="150px" />
+								</div>
+								<div class="wrap_info">
+									<div class="title">
+										<span class="company_name"><strong>회사 이름</strong></span>
+										<button type="button" title="관심기업 등록"
+											class="btn_jview spr_jview btn_interest" style="margin-left: 20px;">
+											<span >관심기업 등록</span>
+										</button>
+
+									</div>
+
+									<div class="info">
+										<dl>
+											<dt>기업형태</dt>
+											<dd>@@@@@</dd>
+										</dl>
+										<dl>
+											<dt>업종</dt>
+											<dd>@@@@@</dd>
+										</dl>
+										<dl>
+											<dt>매출액</dt>
+											<dd>@@@@@</dd>
+										</dl>
+										<dl>
+											<dt>홈페이지</dt>
+											<dd>@@@@@</dd>
+										</dl>
+										<dl>
+											<dt>사원수</dt>
+											<dd>@@@@@</dd>
+										</dl>
+										<dl>
+											<dt>설립일</dt>
+											<dd>@@@@@</dd>
+										</dl>
+										<dl>
+											<dt>대표자명</dt>
+											<dd>@@@@@</dd>
+										</dl>
+										<dl class="wide">
+											<dt>기업주소</dt>
+											<dd>**********************</dd>
+										</dl>
+									</div>
+								</div>
+
+								<!-- notice -->
+								<p class="noti">
+									<sup>*</sup> 위 항목은 본사정보와 다를 수 있습니다.
+								</p>
+
+							</div>
+						</div>
+
+
+						<!-- 채용 공고 안 footer -->
+
+						<div class="jv_cont jv_footer">
+							<div class="cont">
+								<div class="utils">
+									<p class="copy">
+										본 채용 정보에 불법·허위·과장 또는 잘못된 내용이 있을 경우 <a href="#" target="_blank">문의</a>해
+										주세요!
+									</p>
+									<!-- 문의사항으로 이동 -->
+						<button class="for_btn_event" title="클릭하면 입사지원할 수 있는 창이 뜹니다.">
+							<span class="sri_btn_immediately"><strong style="font-size: 18px;">InOut 즉시지원</strong></span>
+						</button>
+								</div>
+							</div>
+						</div>
+
 				</div>
 			</div>
 		</div>
-		
-	</div>
+					</div>
 
-<!-- <script type="text/javascript">
-	var i;
-	
-	window.onload = function(){
-		var aTagList = document.querySelectorAll('.user_content a,area');
-		for(i=0; i<aTagList.length; i++){
-			aTagList[i].addEventListener('mousedown', function(e){
-				var item = e.currentTarget;
-				var href = item.getAttribute('href') || '';
-				
-				checkUpdateHompage(href);
-			});
-		}
-	}
-</script> -->
+
 
 </body>
 </html>

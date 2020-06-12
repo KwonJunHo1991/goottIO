@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>       
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,7 +54,7 @@ display: inline-block;
 
 </head>
 <body>
-<input type="image" src="/InOut/resources/img/chat1.png" alt="로그인하기" id="donaBtn2" onclick="location.href='../support/done_main.jsp'"/>
-<input type="image" src="/InOut/resources/img/bell1.png" alt="로그인하기" id="donaBtn" onclick="location.href='../support/done_main.jsp'"/>
+<input type="image" src="<c:url value="/resources/img/chat1.png"/>" alt="로그인하기" id="donaBtn2" onclick="location.href='../support/done_main.jsp'"/>
+<input type="image" src="<c:url value="/resources/img/bell1.png"/>" alt="로그인하기" id="donaBtn" onclick="location.href='../support/done_main.jsp'"/>
 </body>
 </html>
