@@ -6,6 +6,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.co.InOut.dao.IO_MainDAO;
 import kr.co.InOut.dto.IO_NoticeDTO;
+import kr.co.InOut.service.IO_LogOutService;
 
 @Controller
 public class IO_MainController {
@@ -98,6 +100,11 @@ public class IO_MainController {
 		return "/company/post_detail_join";
 	}
 	
+	@RequestMapping(value = "/main/logout.do")
+	public String logout(HttpSession se) {
+		new IO_LogOutService().logOut(se);
+		return "/main/mainPage/mp_mainPage";
+	}
 	
 	
 }

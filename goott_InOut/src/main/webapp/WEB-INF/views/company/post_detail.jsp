@@ -763,6 +763,7 @@ $(document).ready(function () {
 							<div class="cont_box">
 								<div class="logo">
 									<img src="../resources/images/logo.jpg" alt="회사 로고"
+
 										width="260px" height="150px" />
 								</div>
 								<div class="wrap_info">

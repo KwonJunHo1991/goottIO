@@ -12,7 +12,6 @@
 		(	
 			select comp_num from io_comp_basic
             where comp_grade = #{comp_grade}
-			
         )	
  </select>
  

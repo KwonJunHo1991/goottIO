@@ -32,6 +32,7 @@
     
 
  <style type="text/css">
+
  
   #bottom_im1{
  background-image: url("<c:url value="/resources/images/person_1.png"/>");  
@@ -57,6 +58,7 @@
  #bottom_im8{
  background-image: url("<c:url value="/resources/images/person_8.png"/>");  
  }
+
 
 .container_2{
  width: 100%;
@@ -777,68 +779,70 @@ $(function() {
        </div>
        <div class="container_3">
         <div class="row">
-           <div class="col-md-12 ftco-animate">
-              <div class="carousel-candidates owl-carousel">
-                 <div class="item">
-                    <a href="#" class="team text-center">
 
-                       <div class="img" id="bottom_im1" ></div>
+        	<div class="col-md-12 ftco-animate">
+        		<div class="carousel-candidates owl-carousel">
+        			<div class="item">
+		        		<a href="#" class="team text-center">
 
-                       <h2>MyPage</h2>
-                       <span class="position">마이페이지</span>
-                    </a>
-                 </div>
-                 <div class="item">
-                    <a href="#" class="team text-center">
-                       <div class="img"  id="bottom_im2" ></div>
-                       <h2>Support Status</h2>
-                       <span class="position">이력서 지원현황</span>
-                    </a>
-                 </div>
-                 <div class="item">
-                    <a href="#" class="team text-center">
-                       <div class="img"id="bottom_im3" ></div>
-                       <h2>Counting characters</h2>
-                       <span class="position">글자수 세기</span>
-                    </a>
-                 </div>
-                 <div class="item">
-                    <a href="#" class="team text-center">
-                       <div class="img" id="bottom_im4"  ></div>
-                       <h2>Employment Talking</h2>
-                       <span class="position">취준 고민</span>
-                    </a>
-                 </div>
-                 <div class="item">
-                    <a href="#" class="team text-center">
-                       <div class="img"  id="bottom_im5" ></div>
-                       <h2>Applicant management</h2>
-                       <span class="position">지원자 관리</span>
-                    </a>
-                 </div>
-                 <div class="item">
-                    <a href="#" class="team text-center">
-                       <div class="img" id="bottom_im6"></div>
-                       <h2>Corporate announcement</h2>
-                       <span class="position">기업 공고</span>
-                    </a>
-                 </div>
-                 <div class="item">
-                    <a href="#" class="team text-center">
-                       <div class="img"  id="bottom_im7"></div>
-                       <h2>Resume writing</h2>
-                       <span class="position">이력서 작성</span>
-                    </a>
-                 </div>
-                 <div class="item">
-                    <a href="#" class="team text-center">
-                       <div class="img"  id="bottom_im8" ></div>
-                       <h2>Adoption products</h2>
-                       <span class="position">채용 상품</span>
-                    </a>
-                 </div>
-              </div>
-           </div>
+		        			<div class="img" id="bottom_im1" ></div>
+
+		        			<h2>MyPage</h2>
+		        			<span class="position">마이페이지</span>
+		        		</a>
+        			</div>
+        			<div class="item">
+	        			<a href="#" class="team text-center">
+		        			<div class="img"  id="bottom_im2" ></div>
+		        			<h2>Support Status</h2>
+		        			<span class="position">이력서 지원현황</span>
+		        		</a>
+	        		</div>
+	        		<div class="item">
+	        			<a href="#" class="team text-center">
+		        			<div class="img"id="bottom_im3" ></div>
+		        			<h2>Counting characters</h2>
+		        			<span class="position">글자수 세기</span>
+		        		</a>
+	        		</div>
+	        		<div class="item">
+	        			<a href="#" class="team text-center">
+		        			<div class="img" id="bottom_im4"  ></div>
+		        			<h2>Employment Talking</h2>
+		        			<span class="position">취준 고민</span>
+		        		</a>
+	        		</div>
+	        		<div class="item">
+	        			<a href="#" class="team text-center">
+		        			<div class="img"  id="bottom_im5" ></div>
+		        			<h2>Applicant management</h2>
+		        			<span class="position">지원자 관리</span>
+		        		</a>
+	        		</div>
+	        		<div class="item">
+	        			<a href="#" class="team text-center">
+		        			<div class="img" id="bottom_im6"></div>
+		        			<h2>Corporate announcement</h2>
+		        			<span class="position">기업 공고</span>
+		        		</a>
+	        		</div>
+	        		<div class="item">
+	        			<a href="#" class="team text-center">
+		        			<div class="img"  id="bottom_im7"></div>
+		        			<h2>Resume writing</h2>
+		        			<span class="position">이력서 작성</span>
+		        		</a>
+	        		</div>
+	        		<div class="item">
+	        			<a href="#" class="team text-center">
+		        			<div class="img"  id="bottom_im8" ></div>
+		        			<h2>Adoption products</h2>
+		        			<span class="position">채용 상품</span>
+		        		</a>
+	        		</div>
+        		</div>
+        	</div>
+
         </div>
        </div>
     </section>

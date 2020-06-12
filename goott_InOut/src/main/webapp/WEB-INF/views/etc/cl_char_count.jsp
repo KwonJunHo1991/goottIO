@@ -14,6 +14,7 @@
 <script type="text/javascript">
 
 $(function(){
+
 			$('textarea.checker_input').keyup(function(){
 				bytesHandler(this);
 				});
@@ -123,5 +124,6 @@ margin-top: 100px;
 </div>
 </div>
        <jsp:include page="../main/mainPage/mp_footer.jsp"></jsp:include>
+
 </body>
 </html>
