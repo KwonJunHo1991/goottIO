@@ -32,7 +32,57 @@
     
 
  <style type="text/css">
+ 
+  #bottom_im1{
+ background-image: url("<c:url value="/resources/images/person_1.png"/>");  
+ }
+ #bottom_im2{
+ background-image: url("<c:url value="/resources/images/person_2.png"/>");  
+ }
+ #bottom_im3{
+ background-image: url("<c:url value="/resources/images/person_3.png"/>");  
+ }
+ #bottom_im4{
+ background-image: url("<c:url value="/resources/images/person_4.png"/>");  
+ }
+ #bottom_im5{
+ background-image: url("<c:url value="/resources/images/person_5.png"/>");  
+ }
+ #bottom_im6{
+ background-image: url("<c:url value="/resources/images/person_6.png"/>");  
+ }
+ #bottom_im7{
+ background-image: url("<c:url value="/resources/images/person_7.png"/>");  
+ }
+ #bottom_im8{
+ background-image: url("<c:url value="/resources/images/person_8.png"/>");  
+ }
 
+.container_2{
+ width: 100%;
+ padding-left: 650px;
+ padding-right: 200px;
+
+ }
+ .container_3{
+ width: 100%;
+ padding-left: 400px;
+ padding-right: 400px;
+
+ }
+ #container_2m{
+ }
+ .main_sidebar{
+    width: 300px;
+    margin-left: 80px;
+ }
+ .img{
+ width: 100px;
+ }
+ #this_is_main{
+ background-image: url("<c:url value="/resources/images/bg_1.jpg"/>");  
+ }
+ 
  </style>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
 <script type="text/javascript">
@@ -46,28 +96,31 @@ $(function() {
 
 		if (state == '1') {
 			jQuery('#form-control1_1').show();
-			jQuery('#form-control1_2').hide();
+			//document.getElementById('form-control1_1').innerHTML = "";
+			
+			
 
 		} else if (state == '2') {
-			jQuery('#form-control1_2').show();
-			jQuery('#form-control1_1').hide();
+			//document.getElementById('form-control1_1').innerHTML = "";
+
 		}
 	});
 	jQuery('#form-control2').change(function() {
 		var state = $('#form-control2').val();
 
 		if (state == '1') {
-			jQuery('#form-control2_1').show();
-			jQuery('#form-control2_2').hide();
+			//document.getElementById('form-control1_1').innerHTML = "";
+
 
 		} else if (state == '2') {
-			jQuery('#form-control2_2').show();
-			jQuery('#form-control2_1').hide();
+			//document.getElementById('form-control1_1').innerHTML = "";
+
 		}
 	});
 		
 });	
 </script>   
+ <script>history.scrollRestoration = "manual"</script>
   </head>
   <body>
    <jsp:include page="./mp_naviBar.jsp"></jsp:include>
@@ -81,7 +134,7 @@ $(function() {
 
 <%-- <c:url value="/resources/images/bg_1.jpg"/> --%>
 <!--     <div class="hero-wrap img" style="background-image: /resources/images/bg_1.jpg;"> -->
-    <div class="hero-wrap img" style="background-image:url('/InOut/resources/images/bg_1.jpg');">
+    <div id="this_is_main" class="hero-wrap img">
       <div class="overlay"></div>
       <div class="container">
       	<div class="row d-md-flex no-gutters slider-text align-items-center justify-content-center">
@@ -352,14 +405,30 @@ $(function() {
           </div>
         </div>
         <div class="row">
-        	<div class="col-md-3 ftco-animate">
-        		<ul class="category text-center">
-        			<li><a href="#">Web Development <br><span class="number">354</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-        			<li><a href="#">Graphic Designer <br><span class="number">143</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-        			<li><a href="#">Multimedia <br><span class="number">100</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-        			<li><a href="#">Advertising <br><span class="number">90</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
+
+
+        <c:forEach items="${pList }" var="list">
+		 <div class="col-md-3 ftco-animate">
+        
+	        	<ul class="category text-center">
+
+	        			<li><a href="../company/noticeDetailMain.do?notice_num=${list.notice_num }">${list.notice_title } <br><span class="number">공고 번호 : ${list.notice_num }</span>&nbsp; <span>기업이름</span><i class="ion-ios-arrow-forward"></i></a></li>
         		</ul>
-        	</div>
+	     </div>  
+        </c:forEach>
+	</div>
+	</div>
+	</section>
+<!--     
+        
+        
+        
+        
+        
+        	
+        	
+        	
+        	
         	<div class="col-md-3 ftco-animate">
         		<ul class="category text-center">
         			<li><a href="#">Education &amp; Training <br><span class="number">100</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
@@ -387,28 +456,37 @@ $(function() {
         </div>
     	</div>
     </section>
-<!-- 플랜티넘 광고 끝 -->
-<!-- 스페셜 광고 -->
+플랜티넘 광고 끝
+-->
+<!-- 스페셜광고 -->
     <section class="ftco-section_1">
     	<div class="container">
     		<div class="row justify-content-center mb-5">
-          <div class="col-md-7 heading-section text-center ftco-animate">
-          	<span class="subheading">Special Categories</span>
-            <h3 class="mb-0">스페셜</h3>
-          </div>
+       		   <div class="col-md-7 heading-section text-center ftco-animate">
+       		   	<span class="subheading">Special Categories</span>
+        	    <h3 class="mb-0">스페셜</h3>
+       		   </div>
         </div>
-        <div class="row">
+	        <div class="row">
+	        
+	        <c:forEach items="${sList}" var="list">
+	        	<div class="col-md-3 ftco-animate">
+	        		<ul class="category_1 text-center">
+	        			<li><a href="../company/noticeDetailMain.do?notice_num=${list.notice_num }">${list.notice_title }<br><span class="number">공고 번호 : ${list.notice_num }</span> <span>???</span><i class="ion-ios-arrow-forward"></i></a></li>
+	        			
+	        		</ul>
+	        	</div>
+	        </c:forEach>
+	        	
+			</div>
+		</div>
+	</section>    
+        	
+        	
+<!--         	
         	<div class="col-md-3 ftco-animate">
         		<ul class="category_1 text-center">
-        			<li><a href="#">Web Development <br><span class="number">354</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-        			<li><a href="#">Graphic Designer <br><span class="number">143</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-        			<li><a href="#">Multimedia <br><span class="number">100</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-        			<li><a href="#">Advertising <br><span class="number">90</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
-        		</ul>
-        	</div>
-        	<div class="col-md-3 ftco-animate">
-        		<ul class="category_1 text-center">
-        			<li><a href="#">Education &amp; Training <br><span class="number">100</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
+        			<li><a href="#">공고 제목 <br><span class="number">공고 번호</span> <span>공고 내용.</span><i class="ion-ios-arrow-forward"></i></a></li>
         			<li><a href="#">English <br><span class="number">200</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
         			<li><a href="#">Social Media <br><span class="number">300</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
         			<li><a href="#">Writing <br><span class="number">150</span> <span>Open position</span><i class="ion-ios-arrow-forward"></i></a></li>
@@ -432,7 +510,7 @@ $(function() {
         	</div>
         </div>
     	</div>
-    </section>
+    </section>  -->
 <!-- 스페셜 광고 끝 -->
 
 <!-- 베이직 광고 -->
@@ -447,12 +525,15 @@ $(function() {
 		          </div>
 		        </div>
 						<div class="row">
+						
+						
+			<c:forEach items="${bList }" var="list">			
 				<div class="col-md-12 ftco-animate">
 		            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
 		              <div class="one-third mb-4 mb-md-0">
 		                <div class="job-post-item-header align-items-center">
-		                	<span class="subadge">Partime</span>
-		                  <h2 class="mr-3 text-black"><a href="#">Frontend Development</a></h2>
+		                	<span class="subadge">${list.notice_num }</span>
+		                  <h2 class="mr-3 text-black"><a href="../company/noticeDetailMain.do?notice_num=${list.notice_num }">${list.notice_title }</a></h2>
 		                </div>
 		        
 		              </div>
@@ -463,12 +544,13 @@ $(function() {
 			                	<span class="icon-heart"></span>
 			                </a>
 		                </div>
-		                <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
+		                <a href="../company/noticeDetailMain.do?notice_num=${list.notice_num }" class="btn btn-primary py-2">Apply Job</a>
 		              </div>
 		            </div>
-		          </div><!-- end -->
+		          </div>
+		    </c:forEach>
 
-							<div class="col-md-12 ftco-animate">
+<!-- 							<div class="col-md-12 ftco-animate">
 		            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
 		              <div class="one-third mb-4 mb-md-0">
 		                <div class="job-post-item-header align-items-center">
@@ -486,7 +568,7 @@ $(function() {
 		                <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
 		              </div>
 		            </div>
-		          </div><!-- end -->
+		          </div>end
 
 		          <div class="col-md-12 ftco-animate">
 		            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
@@ -506,7 +588,7 @@ $(function() {
 		                <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
 		              </div>
 		            </div>
-		          </div><!-- end -->
+		          </div>end
 
 		          <div class="col-md-12 ftco-animate">
 		            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
@@ -526,7 +608,7 @@ $(function() {
 		                <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
 		              </div>
 		            </div>
-		          </div><!-- end -->
+		          </div>end
 
 		          <div class="col-md-12 ftco-animate">
 		            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
@@ -546,7 +628,7 @@ $(function() {
 		                <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
 		              </div>
 		            </div>
-		          </div><!-- end -->
+		          </div>end
 
 		         	<div class="col-md-12 ftco-animate">
 		            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
@@ -566,7 +648,7 @@ $(function() {
 		                <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
 		              </div>
 		            </div>
-		          </div><!-- end -->
+		          </div>end
 
 		          <div class="col-md-12 ftco-animate">
 		            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
@@ -586,7 +668,7 @@ $(function() {
 		                <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
 		              </div>
 		            </div>
-		          </div><!-- end -->
+		          </div>end
 
 		          <div class="col-md-12 ftco-animate">
 		            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
@@ -606,7 +688,7 @@ $(function() {
 		                <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
 		              </div>
 		            </div>
-		          </div><!-- end -->
+		          </div>end
 
 		          <div class="col-md-12 ftco-animate">
 		            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
@@ -626,9 +708,11 @@ $(function() {
 		                <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
 		              </div>
 		            </div>
-		          </div><!-- end -->
+		          </div>end -->
 		        </div>
 		      </div>
+		    
+		      
 <!-- 베이직 광고 끝-->		      
 <!-- 사이드 오늘의 추천공고 -->		      
 		      <div class="main_sidebar">
@@ -639,7 +723,7 @@ $(function() {
 		        </div>
 		        <div class="sidebar-box ftco-animate">
 		        	<div class="">
-			        	<a href="#" class="company-wrap"><img src="/InOut/resources/images/company-1.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
+			        	<a href="#" class="company-wrap"><img src= "<c:url value="/resources/images/company-1.jpg"/>" class="img-fluid" alt="Colorlib Free Template"></a>
 			        	<div class="text p-3">
 			        		<h3><a href="#">Company Company</a></h3>
 			        		<p><span class="number">500</span> <span>Open position</span></p>
@@ -648,7 +732,7 @@ $(function() {
 		        </div>
 		        <div class="sidebar-box ftco-animate">
 		        	<div class="">
-			        	<a href="#" class="company-wrap"><img src="/InOut/resources/images/company-2.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
+			        	<a href="#" class="company-wrap"><img src="<c:url value="/resources/images/company-2.jpg"/>" class="img-fluid" alt="Colorlib Free Template"></a>
 			        	<div class="text p-3">
 			        		<h3><a href="#">Facebook Company</a></h3>
 			        		<p><span class="number">700</span> <span>Open position</span></p>
@@ -657,7 +741,7 @@ $(function() {
 		        </div>
 		        <div class="sidebar-box ftco-animate">
 		        	<div class="">
-			        	<a href="#" class="company-wrap"><img src="/InOut/resources/images/company-3.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
+			        	<a href="#" class="company-wrap"><img src="<c:url value="/resources/images/company-3.jpg"/>" class="img-fluid" alt="Colorlib Free Template"></a>
 			        	<div class="text p-3">
 			        		<h3><a href="#">IT Programming INC</a></h3>
 			        		<p><span class="number">700</span> <span>Open position</span></p>
@@ -666,7 +750,7 @@ $(function() {
 		        </div>
 		        <div class="sidebar-box ftco-animate">
 		        	<div class="">
-			        	<a href="#" class="company-wrap"><img src="/InOut/resources/images/company-4.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
+			        	<a href="#" class="company-wrap"><img src="/resources/images/company-4.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
 			        	<div class="text p-3">
 			        		<h3><a href="#">IT Programming INC</a></h3>
 			        		<p><span class="number">700</span> <span>Open position</span></p>
@@ -683,80 +767,80 @@ $(function() {
 
 <!-- 취업성공 도우미 -->
     <section class="ftco-section ftco-candidates bg-primary">
-    	<div class="container_3">
-    		<div class="row justify-content-center pb-3">
+       <div class="container_3">
+          <div class="row justify-content-center pb-3">
           <div class="col-md-10 heading-section heading-section-white text-center ftco-animate">
-          	<span class="subheading">InOut</span>
+             <span class="subheading">InOut</span>
             <h2 class="mb-4">취업 성공 도우미</h2>
           </div>
         </div>
-    	</div>
-    	<div class="container_3">
+       </div>
+       <div class="container_3">
         <div class="row">
-        	<div class="col-md-12 ftco-animate">
-        		<div class="carousel-candidates owl-carousel">
-        			<div class="item">
-		        		<a href="#" class="team text-center">
+           <div class="col-md-12 ftco-animate">
+              <div class="carousel-candidates owl-carousel">
+                 <div class="item">
+                    <a href="#" class="team text-center">
 
-		        			<div class="img" style="background-image: url(/InOut/resources/images/person_1.png);"></div>
+                       <div class="img" id="bottom_im1" ></div>
 
-		        			<h2>MyPage</h2>
-		        			<span class="position">마이페이지</span>
-		        		</a>
-        			</div>
-        			<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(/InOut/resources/images/person_2.png);"></div>
-		        			<h2>Support Status</h2>
-		        			<span class="position">이력서 지원현황</span>
-		        		</a>
-	        		</div>
-	        		<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(/InOut/resources/images/person_3.png);"></div>
-		        			<h2>Counting characters</h2>
-		        			<span class="position">글자수 세기</span>
-		        		</a>
-	        		</div>
-	        		<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(/InOut/resources/images/person_4.png);"></div>
-		        			<h2>Employment Talking</h2>
-		        			<span class="position">취준 고민</span>
-		        		</a>
-	        		</div>
-	        		<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(/InOut/resources/images/person_5.png);"></div>
-		        			<h2>Applicant management</h2>
-		        			<span class="position">지원자 관리</span>
-		        		</a>
-	        		</div>
-	        		<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(/InOut/resources/images/person_6.png);"></div>
-		        			<h2>Corporate announcement</h2>
-		        			<span class="position">기업 공고</span>
-		        		</a>
-	        		</div>
-	        		<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(/InOut/resources/images/person_7.png);"></div>
-		        			<h2>Resume writing</h2>
-		        			<span class="position">이력서 작성</span>
-		        		</a>
-	        		</div>
-	        		<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(/InOut/resources/images/person_8.png);"></div>
-		        			<h2>Adoption products</h2>
-		        			<span class="position">채용 상품</span>
-		        		</a>
-	        		</div>
-        		</div>
-        	</div>
+                       <h2>MyPage</h2>
+                       <span class="position">마이페이지</span>
+                    </a>
+                 </div>
+                 <div class="item">
+                    <a href="#" class="team text-center">
+                       <div class="img"  id="bottom_im2" ></div>
+                       <h2>Support Status</h2>
+                       <span class="position">이력서 지원현황</span>
+                    </a>
+                 </div>
+                 <div class="item">
+                    <a href="#" class="team text-center">
+                       <div class="img"id="bottom_im3" ></div>
+                       <h2>Counting characters</h2>
+                       <span class="position">글자수 세기</span>
+                    </a>
+                 </div>
+                 <div class="item">
+                    <a href="#" class="team text-center">
+                       <div class="img" id="bottom_im4"  ></div>
+                       <h2>Employment Talking</h2>
+                       <span class="position">취준 고민</span>
+                    </a>
+                 </div>
+                 <div class="item">
+                    <a href="#" class="team text-center">
+                       <div class="img"  id="bottom_im5" ></div>
+                       <h2>Applicant management</h2>
+                       <span class="position">지원자 관리</span>
+                    </a>
+                 </div>
+                 <div class="item">
+                    <a href="#" class="team text-center">
+                       <div class="img" id="bottom_im6"></div>
+                       <h2>Corporate announcement</h2>
+                       <span class="position">기업 공고</span>
+                    </a>
+                 </div>
+                 <div class="item">
+                    <a href="#" class="team text-center">
+                       <div class="img"  id="bottom_im7"></div>
+                       <h2>Resume writing</h2>
+                       <span class="position">이력서 작성</span>
+                    </a>
+                 </div>
+                 <div class="item">
+                    <a href="#" class="team text-center">
+                       <div class="img"  id="bottom_im8" ></div>
+                       <h2>Adoption products</h2>
+                       <span class="position">채용 상품</span>
+                    </a>
+                 </div>
+              </div>
+           </div>
         </div>
-    	</div>
+       </div>
     </section>
 
     
@@ -782,6 +866,7 @@ $(function() {
         </div>
       </div>
     </section>
+
 
 <jsp:include page="./mp_footer.jsp"></jsp:include>    
   

@@ -151,7 +151,17 @@ public class IO_BoardController {
 		return "/etc/cl_qaa_myq";
 	}
 	
+	//글자수 체크
+	@RequestMapping(value = "/board/boardCharCheck.do")
+	public String charCheck() {
+		return "/etc/cl_char_count";
+	}
 	
+	//기업연구소 메인
+	@RequestMapping(value = "/board/boardMain.do")
+	public String boardMain() {
+		return "/etc/cl_home";
+	}
 	
 	
 	

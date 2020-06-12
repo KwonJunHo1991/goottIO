@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace=" ">
+<!-- 등급별 검색 -->  
+  <select id="selectNoticeByGrade" resultType="NoticeDTO" parameterType="int">
+  	select * from io_notice
+	where comp_num in
+		(	
+			select comp_num from io_comp_basic
+            where comp_grade = #{comp_grade}
+			
+        )	
+ </select>
+ 
+<!-- 지역별 검색 -->
+ <select id="selectNoticeByLocal" parameterType="int" resultType="NoticeDTO">
+ 	select * from io_notice 
+ 	<choose>
+ 		<when test="comp_adrs == 999999"></when>
+ 		<when test="comp_adrs == 101000">where notice_comp_adrs1 like '101%'</when>
+ 		<when test="comp_adrs == 102180">where notice_comp_adrs1 in (102180,102190,102200,102210)</when>
+ 		<when test="comp_adrs == 102220">where notice_comp_adrs1 in (102220,102230,102240,102250,102260)</when>
+ 		<otherwise>where notice_comp_adrs1 = #{comp_adrs}</otherwise>
+ 	</choose>
+ 	
+ 
+ </select>
+ 
+ <select id="selectNoticeByJob" parameterType="int" resultType="NoticeDTO">
+ 
+ 	select * from io_notice
+ 	
+ 	where notice_prcs_job = #{notice_prcs_job}
+ 	
+ </select>
+
+ <select id="selectNoticeByType" parameterType="int" resultType="NoticeDTO">
+ 
+ 	select * from io_notice
+ 	
+ 	where notice_comp_type = #{notice_comp_type}
+ 	
+ </select>
+ 
+ <select id="selectAllNoticeSearch" resultType="NoticeDTO">
+ 	select * from io_notice
+ </select>
+ 
+ <select id="selectNoticeDetailByNoticeNum" parameterType="int" resultType="NoticeDTO">
+ 	select * from io_notice where notice_num =#{notice_num}
+ </select>
+ 
+ <!-- 입사 지원 -->
+<!--  <insert id="insertIoApply">
+ 	insert into io_apply 
+ 	values (null,#{res_num},#{mem_id},#{notice_num},#{comp_num},#{comp_id},지원,now(),#{mem_birth},#{mem_sex},#{res_income}  );
+ </insert>
+ -->
+
+
+  </mapper>

@@ -53,10 +53,9 @@ public class IO_ResumeController {
 	
 	@RequestMapping(value = "/member/resumelist.do")
 	
-	public String resume1() {
+	public String resume1(HttpSession se) {
 		
-		
-		
+		String mem_id = (String)se.getAttribute("mem_id");
 
 		return "resume";
 	}

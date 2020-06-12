@@ -8,10 +8,10 @@ public class Test {
 
 	
 	
-	@RequestMapping(value="test.do")
-	public String test() {
+	@RequestMapping(value="test/test.do")
+	public String test() { 
 		
 		
-		return "/etc/cl_qaa_myq";
+		return "/company/post_detail";
 	}
 }
