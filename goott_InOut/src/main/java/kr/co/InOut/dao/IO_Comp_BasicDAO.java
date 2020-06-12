@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Component;
 
 import kr.co.InOut.dto.IO_Comp_BasicDTO;
+import kr.co.InOut.dto.IO_Comp_Notice_InfoDTO;
 @Component
 public class IO_Comp_BasicDAO {
 	@Inject
@@ -37,5 +38,14 @@ public class IO_Comp_BasicDAO {
 	public boolean loginCheck(IO_Comp_BasicDTO dto) {
 		String name = ss.selectOne("compLoginCheck", dto);
 		return (name == null) ? false : true;
+	}
+	
+	// 아래는 comp_notice_infoDTO
+	public void insertOneCompNoticeInfo(IO_Comp_Notice_InfoDTO dto) {
+		ss.insert("insertOneCompNoticeInfo", dto);
+	}
+	
+	public IO_Comp_Notice_InfoDTO selectOneCompNoticeInfoByCn(int comp_num) {
+		return ss.selectOne("selectOneCompNoticeInfoByCn", comp_num);
 	}
 }

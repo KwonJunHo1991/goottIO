@@ -8,9 +8,9 @@
 </head>
 <body>
 	<form action="./newNoticeStep3.do" method="post">
-	<input type="hidden" name="notice_num" value="${noticeNum }" />
-	<input type="hidden" name="comp_id" value='${sessionScope.loginComp.comp_id }' />
-	<input type="hidden" name="comp_num" value='${sessionScope.loginComp.comp_num }' />
+		<input type="hidden" name="notice_num" value="${noticeNum }" />
+		<input type="hidden" name="comp_id" value='${sessionScope.loginComp.comp_id }' />
+		<input type="hidden" name="comp_num" value='${sessionScope.loginComp.comp_num }' />
 		<table>
 			<tr>
 				<th>채용절차이름</th>

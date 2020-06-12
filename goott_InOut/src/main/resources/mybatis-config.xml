@@ -22,7 +22,7 @@
 			<typeAlias type="kr.co.InOut.dto.IO_UniversityDTO" alias="UniversityDTO"/>
 			
 			<typeAlias type="kr.co.InOut.dto.IO_CarrerDTO" alias="CareerDTO"/>
-
+            <typeAlias type="kr.co.InOut.dto.IO_Comp_Notice_InfoDTO" alias="CNIDTO"/>
         </typeAliases>
         
         
