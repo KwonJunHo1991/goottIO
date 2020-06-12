@@ -518,6 +518,30 @@ height: 500px;
 }
 </style>
 
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function () {
+   
+   $(".for_btn_event").click(function(){
+      
+/*        var company_chose_name = $('.company').text();
+       var company_chose_context = $('.tit_job').text();
+       console.log(company_chose_name);
+       console.log(company_chose_context); */
+       
+   var url = ("../company/noticeDetailJoin.do?notice_num=?"+${notice.notice_num});
+       
+      window.open(url,"confirm","toolbar = no, location = no, status = np, menubar = no, width = 530, height=420, left=700, top=250, menubar =no, overflow-x:hidden,overflow-y:hidden ");
+   });
+
+   
+   
+   
+});
+
+</script>
+
 <title>job_post_detail.jsp</title>
 </head>
 <body>
@@ -598,7 +622,7 @@ height: 500px;
 								</dl>
 								<dl>
 									<dt>근무지역</dt>
-									<dd>${notcie_comp_adrs1_detail }</dd>
+									<dd>${notice.notice_comp_adrs1_detail }</dd>
 								</dl>
 							</div>
 							

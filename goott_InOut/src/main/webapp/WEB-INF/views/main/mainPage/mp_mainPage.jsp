@@ -32,6 +32,31 @@
     
 
  <style type="text/css">
+ 
+  #bottom_im1{
+ background-image: url("<c:url value="/resources/images/person_1.png"/>");  
+ }
+ #bottom_im2{
+ background-image: url("<c:url value="/resources/images/person_2.png"/>");  
+ }
+ #bottom_im3{
+ background-image: url("<c:url value="/resources/images/person_3.png"/>");  
+ }
+ #bottom_im4{
+ background-image: url("<c:url value="/resources/images/person_4.png"/>");  
+ }
+ #bottom_im5{
+ background-image: url("<c:url value="/resources/images/person_5.png"/>");  
+ }
+ #bottom_im6{
+ background-image: url("<c:url value="/resources/images/person_6.png"/>");  
+ }
+ #bottom_im7{
+ background-image: url("<c:url value="/resources/images/person_7.png"/>");  
+ }
+ #bottom_im8{
+ background-image: url("<c:url value="/resources/images/person_8.png"/>");  
+ }
 
 .container_2{
  width: 100%;
@@ -71,23 +96,25 @@ $(function() {
 
 		if (state == '1') {
 			jQuery('#form-control1_1').show();
-			jQuery('#form-control1_2').hide();
+			//document.getElementById('form-control1_1').innerHTML = "";
+			
+			
 
 		} else if (state == '2') {
-			jQuery('#form-control1_2').show();
-			jQuery('#form-control1_1').hide();
+			//document.getElementById('form-control1_1').innerHTML = "";
+
 		}
 	});
 	jQuery('#form-control2').change(function() {
 		var state = $('#form-control2').val();
 
 		if (state == '1') {
-			jQuery('#form-control2_1').show();
-			jQuery('#form-control2_2').hide();
+			//document.getElementById('form-control1_1').innerHTML = "";
+
 
 		} else if (state == '2') {
-			jQuery('#form-control2_2').show();
-			jQuery('#form-control2_1').hide();
+			//document.getElementById('form-control1_1').innerHTML = "";
+
 		}
 	});
 		
@@ -740,80 +767,80 @@ $(function() {
 
 <!-- 취업성공 도우미 -->
     <section class="ftco-section ftco-candidates bg-primary">
-    	<div class="container_3">
-    		<div class="row justify-content-center pb-3">
+       <div class="container_3">
+          <div class="row justify-content-center pb-3">
           <div class="col-md-10 heading-section heading-section-white text-center ftco-animate">
-          	<span class="subheading">InOut</span>
+             <span class="subheading">InOut</span>
             <h2 class="mb-4">취업 성공 도우미</h2>
           </div>
         </div>
-    	</div>
-    	<div class="container_3">
+       </div>
+       <div class="container_3">
         <div class="row">
-        	<div class="col-md-12 ftco-animate">
-        		<div class="carousel-candidates owl-carousel">
-        			<div class="item">
-		        		<a href="#" class="team text-center">
+           <div class="col-md-12 ftco-animate">
+              <div class="carousel-candidates owl-carousel">
+                 <div class="item">
+                    <a href="#" class="team text-center">
 
-		        			<div class="img" style="background-image: url("<c:url value="/resources/images/person_1.png"/>"); ></div>
+                       <div class="img" id="bottom_im1" ></div>
 
-		        			<h2>MyPage</h2>
-		        			<span class="position">마이페이지</span>
-		        		</a>
-        			</div>
-        			<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image:  url("<c:url value="/resources/images/person_2.png"/>"); ></div>
-		        			<h2>Support Status</h2>
-		        			<span class="position">이력서 지원현황</span>
-		        		</a>
-	        		</div>
-	        		<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image:  url("<c:url value="/resources/images/person_3.png"/>"); ></div>
-		        			<h2>Counting characters</h2>
-		        			<span class="position">글자수 세기</span>
-		        		</a>
-	        		</div>
-	        		<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image:  url("<c:url value="/resources/images/person_4.png"/>"); ></div>
-		        			<h2>Employment Talking</h2>
-		        			<span class="position">취준 고민</span>
-		        		</a>
-	        		</div>
-	        		<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image:  url("<c:url value="/resources/images/person_5.png"/>"); ></div>
-		        			<h2>Applicant management</h2>
-		        			<span class="position">지원자 관리</span>
-		        		</a>
-	        		</div>
-	        		<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image:  url("<c:url value="/resources/images/person_6.png"/>"); ></div>
-		        			<h2>Corporate announcement</h2>
-		        			<span class="position">기업 공고</span>
-		        		</a>
-	        		</div>
-	        		<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image:  url("<c:url value="/resources/images/person_7.png"/>"); ></div>
-		        			<h2>Resume writing</h2>
-		        			<span class="position">이력서 작성</span>
-		        		</a>
-	        		</div>
-	        		<div class="item">
-	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image:  url("<c:url value="/resources/images/person_8.png"/>"); ></div>
-		        			<h2>Adoption products</h2>
-		        			<span class="position">채용 상품</span>
-		        		</a>
-	        		</div>
-        		</div>
-        	</div>
+                       <h2>MyPage</h2>
+                       <span class="position">마이페이지</span>
+                    </a>
+                 </div>
+                 <div class="item">
+                    <a href="#" class="team text-center">
+                       <div class="img"  id="bottom_im2" ></div>
+                       <h2>Support Status</h2>
+                       <span class="position">이력서 지원현황</span>
+                    </a>
+                 </div>
+                 <div class="item">
+                    <a href="#" class="team text-center">
+                       <div class="img"id="bottom_im3" ></div>
+                       <h2>Counting characters</h2>
+                       <span class="position">글자수 세기</span>
+                    </a>
+                 </div>
+                 <div class="item">
+                    <a href="#" class="team text-center">
+                       <div class="img" id="bottom_im4"  ></div>
+                       <h2>Employment Talking</h2>
+                       <span class="position">취준 고민</span>
+                    </a>
+                 </div>
+                 <div class="item">
+                    <a href="#" class="team text-center">
+                       <div class="img"  id="bottom_im5" ></div>
+                       <h2>Applicant management</h2>
+                       <span class="position">지원자 관리</span>
+                    </a>
+                 </div>
+                 <div class="item">
+                    <a href="#" class="team text-center">
+                       <div class="img" id="bottom_im6"></div>
+                       <h2>Corporate announcement</h2>
+                       <span class="position">기업 공고</span>
+                    </a>
+                 </div>
+                 <div class="item">
+                    <a href="#" class="team text-center">
+                       <div class="img"  id="bottom_im7"></div>
+                       <h2>Resume writing</h2>
+                       <span class="position">이력서 작성</span>
+                    </a>
+                 </div>
+                 <div class="item">
+                    <a href="#" class="team text-center">
+                       <div class="img"  id="bottom_im8" ></div>
+                       <h2>Adoption products</h2>
+                       <span class="position">채용 상품</span>
+                    </a>
+                 </div>
+              </div>
+           </div>
         </div>
-    	</div>
+       </div>
     </section>
 
     
