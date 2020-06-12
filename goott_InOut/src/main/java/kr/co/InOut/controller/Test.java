@@ -8,7 +8,7 @@ public class Test {
 
 	
 	
-	@RequestMapping(value="test.do")
+	@RequestMapping(value="test/test.do")
 	public String test() { 
 		
 		
