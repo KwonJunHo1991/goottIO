@@ -20,6 +20,12 @@
 <script type="text/javascript">
 $(document).ready(function () {
 	
+	var msg = '${msg}';
+	
+	if(msg != ""){
+		alert(msg);
+	}
+	
 	$(".checkbox_check1").hide();
 	$(".checkbox_check2").hide();
 	

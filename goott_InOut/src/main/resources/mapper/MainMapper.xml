@@ -55,11 +55,11 @@
  </select>
  
  <!-- 입사 지원 -->
-<!--  <insert id="insertIoApply">
+ <insert id="insertIoApply">
  	insert into io_apply 
  	values (null,#{res_num},#{mem_id},#{notice_num},#{comp_num},#{comp_id},지원,now(),#{mem_birth},#{mem_sex},#{res_income}  );
  </insert>
- -->
+
 
 
   </mapper>
