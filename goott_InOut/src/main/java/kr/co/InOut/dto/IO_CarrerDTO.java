@@ -2,13 +2,17 @@ package kr.co.InOut.dto;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class IO_CarrerDTO {
 	
 	private int car_num;
 	private int res_num;
 	private String mem_id;
 	private String car_name;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date car_stdate;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date car_enddate;
 	private int car_resign; 
 	private String car_position;
@@ -18,7 +22,9 @@ public class IO_CarrerDTO {
 	private int car_income;
 	private String car_res_bus;
 	private String car_pro_name;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date car_pro_stdate;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date car_pro_enddate;
 	private String car_pro_contents;
 	private int car_enddatesub;
@@ -258,15 +264,6 @@ public class IO_CarrerDTO {
 	}
 
 
-	@Override
-	public String toString() {
-		return "IO_CarrerDTO [car_num=" + car_num + ", res_num=" + res_num + ", mem_id=" + mem_id + ", car_name="
-				+ car_name + ", car_stdate=" + car_stdate + ", car_enddate=" + car_enddate + ", car_resign="
-				+ car_resign + ", car_position=" + car_position + ", car_too=" + car_too + ", car_workarea="
-				+ car_workarea + ", car_dept=" + car_dept + ", car_income=" + car_income + ", car_res_bus="
-				+ car_res_bus + ", car_pro_name=" + car_pro_name + ", car_pro_stdate=" + car_pro_stdate
-				+ ", car_pro_enddate=" + car_pro_enddate + ", car_pro_contents=" + car_pro_contents + "]";
-	}
 
 
 

@@ -11,10 +11,10 @@
 $(function(){
 	$("#collegecommit").click(function(){
 		
-		
+		console.log("ddd");
 		
 			document.collegeform.action = "./insertuniversity.do";
-			document.collegeform.method = "get";
+			document.collegeform.method = "post";
 			document.collegeform.submit();
 	});
 });
@@ -31,6 +31,17 @@ $(function(){
 	});
 });
 
+$(function(){
+	$("#self_intro").click(function(){
+		
+	
+		
+			document.meminfo.action = "./self_intro.do";
+			document.meminfo.method = "get";
+			document.meminfo.submit();
+	});
+});
+
 
 
 </script>
@@ -39,15 +50,15 @@ $(function(){
 <body>
 <h2>나의 이력서</h2>
 
-<table>
+	<table>
 	<h2>기본정보</h2>
 	<tr>
 		<input type="button" value="경력사항" id="careerbtn" />
-		<input type="button" value="자기소개서" />
+		<input type="button" value="자기소개서" id="self_intro" />
 		<input type="button" value="기타능력및활동" />
 	</tr>
-	
-
+	</table>
+	<table>
 	<tr>
 		<td>${sessionScope.mem_name }</td>
 	</tr>	
@@ -68,8 +79,8 @@ $(function(){
 	</tr>
 	
 	
-</table>	
-<h2>학력사항</h2>
+	</table>	
+		<h2>학력사항</h2>
 
 
 
@@ -77,15 +88,23 @@ $(function(){
 	<form name="meminfo">
 	<table>
 	<tr>
-		<input type="hidden" name="mem_id" value="${mem_id }" />
-		<input type="hidden" name="res_num" value="${res_num }"/>
+		${mem_id }<td><input type="hidden" name="mem_id" value="${mem_id }" /></td>
+		${res_num }<td><input type="hidden" name="res_num" value="${res_num }"/></td>
 		
-<form name="collegeform">		
-<td><h2>대학 정보입력</h2></td>
-	</tr>
 	</table>
-	</form>
+	</form>	
+	
+	
+	
+	<form name="collegeform">		
 	<table>	
+
+	<tr>
+	<td><h2>대학 정보입력</h2></td>
+	</tr>
+	
+	
+	
 		<tr>
 			<td>대학</td>
 			<td>
@@ -129,7 +148,7 @@ $(function(){
 					<option value="2">재학</option>
 				</select>
 				</td>
-			</td>
+			
 			
 		</tr>
 		<tr>
@@ -142,7 +161,7 @@ $(function(){
 				
 				<td><input type="text" name="un_majordept" id="un_majordept" /></td>
 			
-			</td>
+			
 		</tr>
 		<tr>
 			<td>주/야간</td>
@@ -179,7 +198,7 @@ $(function(){
 		<td><input type="button" value="작성완료" id="collegecommit" /></td> 
 
 		</tr>
-</table>
-</form>
+		</table>
+		</form>
 </body>
 </html>

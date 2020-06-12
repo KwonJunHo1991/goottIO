@@ -51,11 +51,11 @@
   
   	<insert id="InsertResume" parameterType="ResumeDTO">
   	
-  	insert into io_resume (res_num, mem_id, res_lev, res_school, res_stdate, res_stdatesub, res_area, res_enddate, res_enddatesub, res_major, res_shiftpattern, res_income, res_workarea, res_too, res_tob, res_rep_area, res_rep_too, res_make_date, res_title)
+  	insert into io_resume (res_num, mem_id, res_lev, res_school, res_stdate, res_stdatesub, res_area, res_enddate, res_enddatesub, res_major, res_shiftpattern, res_income, res_workarea, res_too, res_tob, res_rep_area, res_rep_too, res_make_date, res_title, res_seekwork)
   	values (null, #{mem_id},#{res_lev},#{res_school},#{res_stdate},#{res_stdatesub},#{res_area},#{res_enddate},
   		#{res_enddatesub},#{res_major},#{res_shiftpattern},#{res_income},#{res_workarea},
   		#{res_too},#{res_tob},#{res_rep_area},#{res_rep_too},
-  		#{res_make_date},#{res_title})
+  		#{res_make_date},#{res_title},#{res_seekwork})
   	
   	
   	</insert>
@@ -76,7 +76,7 @@
 	
 	<insert id="insertcareer" parameterType="CareerDTO">
 	insert into io_carrer (car_num, res_num, mem_id, car_name, car_stdate, car_enddate, car_enddatesub, car_resign, car_position, car_too, car_year, car_workarea, car_dept, car_income, car_incomesub, car_res_bus, car_pro_name, car_pro_stdate, car_pro_enddate, car_pro_contents)
-	values(null, #{res_num},#{mem_id},#{car_name},#{car_stdate},#{car_enddate},#{car_enddatesub},#{car_resign},#{car_position},#{car_too},#{car_year},#{car_wokrarea}, #{car_dept},#{car_income},#{car_incomesub},#{car_res_bus},#{car_pro_name},#{car_pro_stdate},#{car_pro_enddate},#{car_pro_contents})
+	values(null, #{res_num},#{mem_id},#{car_name},#{car_stdate},#{car_enddate},#{car_enddatesub},#{car_resign},#{car_position},#{car_too},#{car_year},#{car_workarea}, #{car_dept},#{car_income},#{car_incomesub},#{car_res_bus},#{car_pro_name},#{car_pro_stdate},#{car_pro_enddate},#{car_pro_contents})
 	
 	
 	
