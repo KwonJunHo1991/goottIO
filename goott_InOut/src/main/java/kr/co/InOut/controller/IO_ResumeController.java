@@ -57,7 +57,7 @@ public class IO_ResumeController {
 		
 		String mem_id = (String)se.getAttribute("mem_id");
 
-		return "resume";
+		return "/member/resume";
 	}
 	
 	@RequestMapping(value = "/member/insertresume.do")
@@ -80,7 +80,7 @@ public class IO_ResumeController {
 		
 		
 		
-		return "resumelist";
+		return "/member/resumelist";
 	}
 	//id 기준으로 이력서 정보를 보여라
 	@RequestMapping(value = "/member/coresumelist.do")
@@ -104,7 +104,7 @@ public class IO_ResumeController {
 		//String mem_id = redto.getMem_id();
 		//model.addAttribute("redto", mdao.selectOneMemberResumeById(mem_id));
 		
-		return "resumelist";
+		return "/member/resumelist";
 	}
 	@RequestMapping(value = "/member/goresume.do")
 	public String resume4(Model model, @ModelAttribute() IO_MemberDTO dto, HttpServletRequest req) {
@@ -120,7 +120,7 @@ public class IO_ResumeController {
 		model.addAttribute("list", list);
 	
 				
-		return "myresume";
+		return "/member/myresume";
 		
 		
 	}
@@ -135,7 +135,7 @@ public class IO_ResumeController {
 	
 		
 		rdao.insertuniversity(dto);
-		return "myresume";
+		return "/member/myresume";
 	}
 	
 	
@@ -152,14 +152,14 @@ public class IO_ResumeController {
 		model.addAttribute("res_num",res_num);
 		
 	
-		return "careerresume";
+		return "/member/careerresume";
 	}
 	
 	@RequestMapping(value = "/member/insertcareer.do")
 	public String resume7(@ModelAttribute() IO_CarrerDTO dto, Model model, HttpServletRequest req ) {
 		
 		rdao.insertcareer(dto);
-		return "myresume";
+		return "/member/myresume";
 	}
 	@RequestMapping(value = "/member/self_intro.do")
 	public String resume8(@ModelAttribute() IO_Self_IntroDTO dto, Model model, HttpServletRequest req) {
@@ -171,7 +171,7 @@ public class IO_ResumeController {
 		
 		
 		
-		return "self_intro";
+		return "/member/self_intro";
 	}
 	
 	@RequestMapping(value = "/member/selectresumebynum.do")
@@ -181,7 +181,7 @@ public class IO_ResumeController {
 		model.addAttribute("onelist", onelist);
 		
 		
-		return "myresume";
+		return "/member/myresume";
 	}
 	
 	

@@ -313,9 +313,11 @@
                <div id="sign-up-position">
 
                   <!-- <input type="button" value="회원가입"class="SignUp_btn" id="SignUp_btn"><br /> -->
-                  <a href="회원가입.jsp들어감" class="sign-up">회원가입</a> <span> | </span><a
-                     href="아이디/비밀번호 찾기 " id="Search_id-pw">아이디 / 비밀번호 찾기</a><a
-                     href="서비스안내.jsp" id="Service-nav">서비스 안내</a>
+                  <a href="회원가입.jsp들어감" class="sign-up">회원가입</a> <span> | </span>
+                  
+                    <a href="./findpw.do " id="Search_id-pw">아이디 / 비밀번호 찾기</a>
+                     
+                    <a href="서비스안내.jsp" id="Service-nav">서비스 안내</a>
                </div>
             </div>
      

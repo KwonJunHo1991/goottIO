@@ -7,8 +7,8 @@
   	
   	<select id="loginCheck" resultType="String">
   	
-  	SELECT MEM_NAME FROM io_member
-  	WHERE mem_id = #{mem_id} AND mem_pw = #{mem_pw}
+  	select mem_name from io_member
+  	where mem_id = #{mem_id} and mem_pw = #{mem_pw}
   	
   
   	</select>

@@ -38,7 +38,7 @@ public class IO_LoginController {
 	//로그인화면
 	@RequestMapping("/member/login.do")
 	public String login() {
-		return "login";
+		return "/member/login";
 		
 
 	
@@ -61,13 +61,13 @@ public class IO_LoginController {
 		
 		
 		if(result == true) { //로그인 성공
-			mav.setViewName("resumelist");
+			mav.setViewName("/member/resumelist");
 			mav.addObject("msg", "success");
 		}else { // 로그인 실패
 			//로그인 jsp로 이동
 			
 			
-			mav.setViewName("login");
+			mav.setViewName("/member/login");
 			mav.addObject("msg", "failure");
 			
 			
@@ -75,4 +75,16 @@ public class IO_LoginController {
 		}
 		return mav;
 	}
+	
+	//비밀번호 찾기
+	@RequestMapping(value = "/member/findpw.do")
+	public String findpw() throws Exception{
+		
+		return "/member/p_search"; 
+	}
+	@RequestMapping(value = "/member/FindId.do")
+	public String findid() {
+		return "/member/p.Idsearch";
+	}
+	
 }
