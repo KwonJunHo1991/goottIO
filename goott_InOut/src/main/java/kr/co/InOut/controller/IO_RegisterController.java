@@ -52,6 +52,8 @@ public class IO_RegisterController {
 		session.setAttribute("mem_add", req.getParameter("mem_add"));
 		session.setAttribute("mem_add1", req.getParameter("mem_add1"));
 		
+	
+		
 		
 		
 		

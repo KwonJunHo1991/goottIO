@@ -28,13 +28,13 @@ $(function(){
 
 </head>
 <body>
-<form name="careerform"></form>
+<form name="careerform">
 <table>
 <tr>
 
 	<tr>
-		${mem_id }<input type="hidden" name="mem_id" value="${mem_id }" />
-		${res_num }<input type="hidden" name="res_num" value="${res_num }"/>	
+		${mem_id }<input type="text" name="mem_id" id="mem_id" value="${mem_id }" />
+		${res_num }<input type="text" name="res_num" name="res_num" value="${res_num }"/>	
 	</tr>
 
 
@@ -139,7 +139,7 @@ $(function(){
 
 		<tr> 
 		</table>
-		
+		</form>
 		<input type="button" name="careerbtn" id="careerbtn" value="경력저장" />
 </body>
 </html>

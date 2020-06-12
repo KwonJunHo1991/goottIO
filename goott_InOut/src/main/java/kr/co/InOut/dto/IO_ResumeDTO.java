@@ -36,6 +36,7 @@ public class IO_ResumeDTO {
 	private String res_maincap;
 	private String res_title;
 	private int res_area;
+	private int res_seekwork;
 
 	public IO_ResumeDTO() {}
 
@@ -43,7 +44,7 @@ public class IO_ResumeDTO {
 	public IO_ResumeDTO(int res_num, String mem_id, int res_lev, String res_school, Date res_stdate, int res_stdatesub,
 			Date res_enddate, int res_enddatesub, int res_major, Date res_career_date, String res_shiftpattern,
 			int res_income, int res_workarea, String res_too, String res_tob, int res_rep_area, String res_rep_too,
-			int res_pre_ob, int res_pre_mil, int res_pre_support, Date res_make_date, int res_total_career, String res_maincap, String res_title,int res_area) {
+			int res_pre_ob, int res_pre_mil, int res_pre_support, Date res_make_date, int res_total_career, String res_maincap, String res_title,int res_area,int res_seekwork) {
 		super();
 		this.res_num = res_num;
 		this.mem_id = mem_id;
@@ -70,6 +71,16 @@ public class IO_ResumeDTO {
 		this.res_maincap = res_maincap;
 		this.res_title = res_title;
 		this.res_area = res_area;
+	}
+
+
+	public int getRes_seekwork() {
+		return res_seekwork;
+	}
+
+
+	public void setRes_seekwork(int res_seekwork) {
+		this.res_seekwork = res_seekwork;
 	}
 
 
