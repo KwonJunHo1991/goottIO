@@ -23,6 +23,7 @@ body.has_lnb #sri_section {
     height: 100%;
     box-sizing: border-box;
 }
+
 body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input,  p, blockquote,  {
     margin: 0;
     padding: 0;
@@ -286,6 +287,7 @@ $(document).ready(function () {
                 <li><a href="/zf_user/company-review-report" class="track_event" data-track_event="section|lnb|salaries|lnb1314">취준뉴스<i class="sri_lnb_icon ic_new"></i></a></li>
                 <li><a href="/zf_user/interview-review" class="track_event" data-track_event="section|lnb|salaries|lnb1312">이력서 무료 다운</a></li>
                 <li><a href="../board/boardCharCheck.do" class="track_event" data-track_event="section|lnb|salaries|lnb1313">글자수 체크</a></li>
+
             </ul>
         </li>
         <li class="li_menu">

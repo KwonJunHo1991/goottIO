@@ -5,6 +5,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <title>기업연구소 - 취준고민 - 질문하기</title>
 
 <link rel="stylesheet" type="text/css"
@@ -12,6 +13,7 @@
 
 <link rel="stylesheet" type="text/css"
 	href="<c:url value='/resources/css_etc/cl_qaa_q_css.css'/>">
+
 
 <style type="text/css">
 #job_category {
@@ -24,8 +26,25 @@
 }
 </style>
 
+
+<style type="text/css">
+#job_category {
+	padding: 0 29px 1px 15px;
+	width: 340px;
+	height: 100%;
+	font-size: 15px;
+	line-height: 30px;
+	background-position: 100% 4px;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+
+
+</script>
 </head>
 <body>
+
    <div>
    <jsp:include page="../main/mainPage/mp_naviBar.jsp"></jsp:include>
    </div> 
@@ -34,6 +53,7 @@
     <!-- END nav -->
 	<div id="sri_wrap">
       <jsp:include page="cl_sideNavi.jsp"></jsp:include>
+
 		<div id="content">
 			<div class="wrap_title_recruit">
 				<h1 class="title_common">질문하기</h1>
@@ -43,6 +63,7 @@
 
 
 					<form action="boardInsertOk.do">
+
 						<input type="hidden" name="mem_id" value="testId12" />
 						<p class="desc_ask">
 							취준고민은 <strong>익명</strong>으로 등록됩니다.<br> 궁금하신 질문과 내용을 자세히
@@ -82,6 +103,7 @@
 												<option value="3" label="생산">생산·제조</option>
 												<option value="4" label="인터넷">IT·인터넷</option>
 												<option value="5" label="유통">유통·무역</option>
+
 												<option value="16" label="서비스">서비스</option>
 										</select>
 										</span>
