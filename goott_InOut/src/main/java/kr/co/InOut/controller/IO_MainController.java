@@ -93,6 +93,11 @@ public class IO_MainController {
 		return "/company/post_detail";
 	}
 	
+	@RequestMapping(value = "/company/noticeDetailJoin.do")
+	public String noticeJoin() {
+		return "/company/post_detail_join";
+	}
+	
 	
 	
 }

@@ -176,6 +176,10 @@ z-index: 5;
                                     <li class="nav-item">
                                         <a class="nav-link" href="../main/findPerson.do">인재검색</a>
                                     </li>
+                                    
+                              <c:choose>      
+                             	<c:when test="${sessionScope.loginComp.comp_id } == null">
+                             
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
                                             role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -187,6 +191,32 @@ z-index: 5;
                                             <a class="dropdown-item" href="../company/login.do">기업회원 로그인</a>
                                         </div>
                                     </li>
+                              	</c:when>
+                              	<c:when test="">
+                              	
+                              	
+                              	</c:when>
+                              	
+                              	<c:otherwise>
+                              	     <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
+                                            role="button" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                         ${sessionScope.loginComp.comp_id }          
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
+                                            <a class="dropdown-item" href="#">My Page</a>
+                                            <a class="dropdown-item" href="#">로그아웃</a>
+                               <!-- 마이페이지, 로그아웃 경로 설정. -->
+                                        </div>
+                                    </li>
+                              	</c:otherwise>
+                              	
+                              </c:choose>
+                              
+                              
+                              
+                                    
                                 </ul>
                             </div>
                             <a href="#" class="btn_1 d-none d-lg-block">book now</a>
