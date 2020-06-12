@@ -13,6 +13,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.co.InOut.dao.IO_NoticeDAO;
+import kr.co.InOut.dao.IO_Notice_PrcsDAO;
+import kr.co.InOut.dao.IO_Notice_QnaDAO;
+import kr.co.InOut.dao.IO_Notice_WantDAO;
 import kr.co.InOut.dto.IO_Comp_BasicDTO;
 import kr.co.InOut.dto.IO_NoticeDTO;
 import kr.co.InOut.dto.IO_Notice_PrcsDTO;
@@ -27,6 +30,22 @@ public class IO_NoticeController {
 	public void setDao(IO_NoticeDAO dao) {
 		this.dao = dao;
 	}
+	@Inject
+	IO_Notice_WantDAO daoWant;
+	public void setDaoWant(IO_NoticeDAO dao) {
+		this.dao = dao;
+	}
+	@Inject
+	IO_Notice_PrcsDAO daoPrcs;
+	public void setDaoPrcs(IO_NoticeDAO dao) {
+		this.dao = dao;
+	}
+	@Inject
+	IO_Notice_QnaDAO daoQna;
+	public void setDaoQna(IO_NoticeDAO dao) {
+		this.dao = dao;
+	}
+	
 	@Inject
 	IO_CheckBoxService cbs;
 	public void setCbs(IO_CheckBoxService cbs) {
@@ -61,23 +80,17 @@ public class IO_NoticeController {
 //			model.addAttribute("noticeNum", dao.selectLastNoticeNum());
 //			return "comp/jobPost_want";
 //	}
-	// 새 공고 등록작업(모집분야 DB에 넣고 채용절차 입력하는 창으로)
-	@RequestMapping(value = "/company/newNoticeStep2.do", method = RequestMethod.POST)
-	public String insertNotice2(@ModelAttribute()IO_Notice_WantDTO dto2, Model model) {
-		dto2.setNotice_want_condition(cbs.io_CheckBoxIntegration(dto2));
-		dao.insertOneNoticeWant(dto2);
-		model.addAttribute("noticeNum", dto2.getNotice_num());
-		
-		return "comp/jobPost_prcs";
-	}
-	// 새 공고 등록작업(채용절차 DB에 넣고 인사통 입력하는 창으로)
+
+	
+
+	// 특정 공고의 전형절차를 추가하는 작업
 	@RequestMapping(value = "/company/newNoticeStep3.do", method = RequestMethod.POST)
 	public String insertNotice3(@ModelAttribute()IO_Notice_PrcsDTO dto3, Model model) {
 		dao.insertOneNoticePrcs(dto3);
 		model.addAttribute("noticeNum", dto3.getNotice_num());
 		return "newNoticeStep3";
 	}
-	// 인사통 DB에 넣고 공고등록 완료창으로
+	// 특정 공고의 인사통을 추가하는 작업
 	@RequestMapping(value = "/company/newNoticeOk2.do", method = RequestMethod.POST)
 	public String insertNotice4(@ModelAttribute()IO_Notice_QnaDTO dto4, Model model) {
 		dao.insertOneNoticeQna(dto4);
@@ -93,8 +106,8 @@ public class IO_NoticeController {
 		dto.setComp_num(cbdto.getComp_num());
 		dto.setNotice_num(notice_num);
 		
+//		List<IO_Notice_WantDTO> listWant = daoWant.selectAllNoticeWant
 		model.addAttribute("notice", dao.selectOneNoticeByCnNn(dto));
-		
 		return "comp/post_detail";
 	}
 	
@@ -107,5 +120,11 @@ public class IO_NoticeController {
 		return "comp/noticeList";
 	}
 	
+	// 공고에 지원자 리스트 보기(미완성!!)
+	@RequestMapping(value = "/company/volunteerList.do")
+	public String showVolunteerList() {
+		
+		return "comp/volunteerList";
+	}
 	
 }
