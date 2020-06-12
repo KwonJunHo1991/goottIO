@@ -1012,3 +1012,25 @@ script {
     background: url("../../etc/css/icon/ico_recruit_paging.png") no-repeat 0 0;
     content: "";
 }
+#sri_wrap {
+
+    display: table-row;
+    width: 2000px;
+    height: 100%;
+}
+#content{
+margin-left: 550px;
+}
+.checkbox_check1 , .checkbox_check2{
+	display: inline-block;
+    width: 150px;
+    height: 60px;
+    border: 1px solid #ddd;
+    color: black;
+    background-color: #fff;
+    box-shadow: none;
+
+}
+#search_company_review , #qst_and_ans_list{
+	margin-left: 65px;
+}

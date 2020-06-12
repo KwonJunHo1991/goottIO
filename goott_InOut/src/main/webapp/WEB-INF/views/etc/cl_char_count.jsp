@@ -14,8 +14,13 @@
 <script type="text/javascript">
 
 $(function(){
-		$('textarea.checker_input').keyup(function(){
-			bytesHandler(this);
+
+			$('textarea.checker_input').keyup(function(){
+				bytesHandler(this);
+				});
+		
+			$('#spell_reset').click(function(){
+				$('#character_counter_content').val("");
 			});
 		});
 
@@ -51,7 +56,19 @@ $(function(){
 		
 		
 	}
+	
 
+	
+
+
+</script>
+<script>
+	function copy_to_clipboard() {
+	  var copyText = document.getElementById("character_counter_content");
+	  copyText.select();
+	  document.execCommand("Copy");
+	  alert("복사 되었습니다");
+	}
 </script>
 <style type="text/css">
 #content{
@@ -63,14 +80,15 @@ margin-top: 100px;
 
 </head>
 <body>
+
   <div>
    <jsp:include page="../main/mainPage/mp_naviBar.jsp"></jsp:include>
    </div> 
    
    <jsp:include page="../main/mainPage/loginPop.jsp"></jsp:include>
     <!-- END nav -->
-    <jsp:include page="cl_sideNavi.jsp"></jsp:include>
 <div id="sri_wrap">
+    <jsp:include page="cl_sideNavi.jsp"></jsp:include>
             <div id="content">
                 
 <div class="wrap_title_recruit">
@@ -92,9 +110,9 @@ margin-top: 100px;
                     <p><span>공백 제외</span><strong class="letter" id="current_msglen_except_blank">00</strong><span>자</span><strong class="byte" id="current_msg_byte_except_blank">0</strong><span>byte</span></p>
                 </div>
                 <div class="wrap_btns">
-                    <button type="button" class="btn_basic2 type03 btn_copy" id="copy_all">전체 복사</button>
+                    <button type="button" class="btn_basic2 type03 btn_copy" id="copy_all" onclick="copy_to_clipboard()">전체 복사</button>
                     <button type="button" class="btn_basic2 btn_reset" id="spell_reset">초기화</button>
-                    <button type="button" class="btn_basic2 type05" id="spell_check">검사 시작</button>
+                    <!-- <button type="button" class="btn_basic2 type05" id="spell_check">검사 시작</button> -->
               	  <button type="button" class="btn_basic2 type05" id="spell_completion" style="display:none">검사 완료</button>
             
                 </div>
@@ -105,8 +123,7 @@ margin-top: 100px;
 </div>
 </div>
 </div>
-	<div style="margin-top: 200px;">
-	  <jsp:include page="../main/mainPage/mp_footer.jsp" ></jsp:include>
-	</div>
+       <jsp:include page="../main/mainPage/mp_footer.jsp"></jsp:include>
+
 </body>
 </html>

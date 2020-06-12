@@ -14,6 +14,7 @@
 <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css_etc/cl_qaa_css.css'/>">
 
 <style type="text/css">
+
 #sri_wrap {
 
     display: table-row;
@@ -33,9 +34,11 @@ margin-left: 550px;
     box-shadow: none;
 
 }
+
 </style>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
+
 	$(document).ready(function () {
 			
 		$(".checkbox_check1").hide();
@@ -68,18 +71,37 @@ margin-left: 550px;
 	
 	
 	});
+
 	
 	function fn_paging(curPage) {
 	
 	 	var url = document.location.href.split('curPage');
-		
-		if(url[0].indexOf('?') == -1){
+	 	var url2 = url[0].replace("#","");
+	 	
+	 	//없으면 -1
+	 	
+		if(url2.indexOf('?') == -1){
+			location.href = url2 + "?curPage=" + curPage;
+		}else if(url2.indexOf('?')==-1 && url2.indexOf('&')==-1){
+			
+		}
+		else{
+			
+			location.href = url2 + "&curPage=" + curPage;
+/* 			alert("dd");
+			location.href = url2 + "curPage=" + curPage;
+ */		}
+	 	
+	 	
+/* 		if(url[0].indexOf('?') == -1){
 			location.href = url[0] + "?curPage=" + curPage;
 		}else if(url[0].indexOf('?')==-1 && url[0].indexOf('&')==-1)
 			location.href = url[0] + "&curPage=" + curPage;
 		else{
+			
+			alert("dd");
 			location.href = url[0] + "curPage=" + curPage;
-		}
+		} */
 	}
 </script>
 
@@ -91,8 +113,12 @@ margin-left: 550px;
    
    <jsp:include page="../main/mainPage/loginPop.jsp"></jsp:include>
     <!-- END nav -->
-   <jsp:include page="cl_sideNavi.jsp"></jsp:include>
+
+
 	<div id="sri_wrap">
+
+   <jsp:include page="cl_sideNavi.jsp"></jsp:include>
+
 			<div class="wrap_title_recruit" >
 				<h1 class="title_common">기업연구소 - 취준고민</h1>
 			</div>
@@ -282,7 +308,7 @@ margin-left: 550px;
     
     	<!-- MY 질문 / 질문하기 버튼 -->
 		<div class="bottom_btn_wrap">
-        <a href="#" class="my_question">
+        <a href="../board/boardMy.do" class="my_question">
         	MY 질문</a>
         <a href="boardInsert.do" class="quest">
         	질문하기</a>
@@ -327,21 +353,27 @@ margin-left: 550px;
 		                <strong class="tit_tab">답변 많은 질문</strong>
 		                <span class="criteria">최근 1주일 기준</span>
                			<ol>
-		                	<li>
-		                		<a href="#"><!-- 질문 제목 -->제목<span class="viewer"><!-- 조회수? -->조회수</span></a>
+               			               	
+		                	<c:forEach var="re" items="${reTop5 }">
+			                	<li>
+			                		<a href="boardDetail.do?board_num=${re.board_num }">제목 : ${re.board_title }<span class="viewer"><!-- 조회수 --></span></a>
+			                  	</li>
+		                  	</c:forEach>
+<!-- 		                	<li>
+		                		<a href="#">질문 제목제목<span class="viewer">조회수?조회수</span></a>
 		                  	</li>
 		                  	<li>
-		                		<a href="#"><!-- 질문 제목 -->제목<span class="viewer"><!-- 조회수? -->조회수</span></a>
+		                		<a href="#">질문 제목제목<span class="viewer">조회수?조회수</span></a>
 		                  	</li>
 		                  	<li>
-		                		<a href="#"><!-- 질문 제목 -->제목<span class="viewer"><!-- 조회수? -->조회수</span></a>
+		                		<a href="#">질문 제목제목<span class="viewer">조회수?조회수</span></a>
 		                  	</li>
 		                  	<li>
-		                		<a href="#"><!-- 질문 제목 -->제목<span class="viewer"><!-- 조회수? -->조회수</span></a>
+		                		<a href="#">질문 제목제목<span class="viewer">조회수?조회수</span></a>
 		                  	</li>
 		                  	<li>
-		                		<a href="#"><!-- 질문 제목 -->제목<span class="viewer"><!-- 조회수? -->조회수</span></a>
-		                  	</li>
+		                		<a href="#">질문 제목제목<span class="viewer">조회수?조회수</span></a>
+		                  	</li> -->
 		                 </ol>
             		</div>
             </div>
@@ -353,6 +385,7 @@ margin-left: 550px;
 			<!-- 맨 위 목록 끝 -->
 			<!-- 검색창 -->
 			<div class="search_company_review" id="search_company_review">
+			<form action="#">
 			    <strong class="tit_box">궁금한 리뷰를 검색해보세요</strong>
 			    <div class="search_area">
 			        <div class="top_search_wrap on">
@@ -364,25 +397,29 @@ margin-left: 550px;
 			            </div>
 			            <div class="search_selector">
 			                <ul class="input_list">
-								<li><input type="radio" name="li_cd" id="li_cd1" value="1"><span> 직무</span></input></li>
-								<li><input type="radio" name="li_cd" id="li_cd2" value="2"><span> 조직문화</span></input></li>
-								<li><input type="radio" name="li_cd" id="li_cd3" value="3"><span> 근무환경</span></input></li>
-								<li><input type="radio" name="li_cd" id="li_cd4" value="4"><span> 급여 및 복지</span></input></li>
-								<li><input type="radio" name="li_cd" id="li_cd5" value="5"><span> 자기개발</span></input></li>
-								<li><input type="radio" name="li_cd" id="li_cd6" value="6"><span> 경영진</span></input></li>
-								<li><input type="radio" name="li_cd" id="li_cd7" value="7"><span> 면접/자소서</span></input></li>
-								<li><input type="radio" name="li_cd" id="li_cd8" value="8"><span> 이직/퇴사</span></input></li>
-								<li><input type="radio" name="li_cd" id="li_cd9" value="9"><span> 기타</span></input></li>
+
+								<li><input type="radio" name="board_category" id="li_cd1" value="1"><span> 직무</span></input></li>
+								<li><input type="radio" name="board_category" id="li_cd2" value="2"><span> 조직문화</span></input></li>
+								<li><input type="radio" name="board_category" id="li_cd3" value="3"><span> 근무환경</span></input></li>
+								<li><input type="radio" name="board_category" id="li_cd4" value="4"><span> 급여 및 복지</span></input></li>
+								<li><input type="radio" name="board_category" id="li_cd5" value="5"><span> 자기개발</span></input></li>
+								<li><input type="radio" name="board_category" id="li_cd6" value="6"><span> 경영진</span></input></li>
+								<li><input type="radio" name="board_category" id="li_cd7" value="7"><span> 면접/자소서</span></input></li>
+								<li><input type="radio" name="board_category" id="li_cd8" value="8"><span> 이직/퇴사</span></input></li>
+								<li><input type="radio" name="board_category" id="li_cd9" value="9"><span> 기타</span></input></li>
+
 			                </ul>
 			            </div>
 			            <div class="search_selector">
 			                <ul class="input_list">
-			                	<li><input type="radio" name="li_job" id="li_cd10" value="10"><span> 경영·사무</span></input></li>     
-			                	<li><input type="radio" name="li_job" id="li_cd11" value="11"><span> 영업·고객상담</span></input></li>     
-			                	<li><input type="radio" name="li_job" id="li_cd12" value="12"><span> 생산·제조</span></input></li>     
-			                	<li><input type="radio" name="li_job" id="li_cd13" value="13"><span> IT·인터넷</span></input></li>     
-			                	<li><input type="radio" name="li_job" id="li_cd14" value="14"><span> 유통·무역</span></input></li>     
-			                	<li><input type="radio" name="li_job" id="li_cd15" value="15"><span> 서비스</span></input></li>     
+
+			                	<li><input type="radio" name="board_type" id="li_cd10" value="1"><span> 경영·사무</span></input></li>     
+			                	<li><input type="radio" name="board_type" id="li_cd11" value="2"><span> 영업·고객상담</span></input></li>     
+			                	<li><input type="radio" name="board_type" id="li_cd12" value="3"><span> 생산·제조</span></input></li>     
+			                	<li><input type="radio" name="board_type" id="li_cd13" value="4"><span> IT·인터넷</span></input></li>     
+			                	<li><input type="radio" name="board_type" id="li_cd14" value="5"><span> 유통·무역</span></input></li>     
+			                	<li><input type="radio" name="board_type" id="li_cd15" value="6"><span> 서비스</span></input></li>     
+
 			                </ul>
 			            </div>
 			            <button class="ic_close"><span class="blind">검색창 닫기</span></button>
@@ -396,8 +433,11 @@ margin-left: 550px;
 			        	<input type="button" class="checkbox_check2" id="hello2" value="hello" />
 			        
 			        
-			        <button type="button" class="btn_search" id="btn_search" disabled="disabled">검색하기</button>
+
+			 			        <button type="submit" class="btn_search" id="btn_search" >검색하기</button>
+
 			    </div>
+			    </form>
 			</div>
 			<script type="template/html" id="preview">
     <li>{{optionText}}<button type="button" class="btn_del" id="result_{{optionId}}" data-name="{{optionName}}" data-value="{{optionValue}}"><span class="blind">삭제</span></button></li>
@@ -430,7 +470,35 @@ margin-left: 550px;
                 <div class="box_review">
 	                <a href="boardDetail.do?board_num=${b.board_num }" class="link_detail"></a>
 	                <em class="name_company">
-	                    <span class="job">직무 카테고리 : ${b.board_category }</span>
+
+	                    
+	                    <span class="job">
+	                    	카테고리 : 
+	                    <c:choose>
+	                    	<c:when test="${b.board_category eq 1}">직무</c:when>
+	                    	<c:when test="${b.board_category eq 2}">조직문화</c:when>
+	                    	<c:when test="${b.board_category eq 3}">근무환경</c:when>
+	                    	<c:when test="${b.board_category eq 4}">급여 및 복지</c:when>
+	                    	<c:when test="${b.board_category eq 5}">자기개발</c:when>
+	                    	<c:when test="${b.board_category eq 6}">경영진</c:when>
+	                    	<c:when test="${b.board_category eq 7}">면접/자소서</c:when>
+	                    	<c:when test="${b.board_category eq 8}">이직/퇴사</c:when>
+	                    	<c:when test="${b.board_category eq 9}">기타</c:when>
+	                    </c:choose>
+	                    &nbsp;&nbsp;|&nbsp;&nbsp;
+	                    	직종 : 
+						<c:choose>
+	                    	<c:when test="${b.board_type eq 1}">직무</c:when>
+	                    	<c:when test="${b.board_type eq 2}">조직문화</c:when>
+	                    	<c:when test="${b.board_type eq 3}">근무환경</c:when>
+	                    	<c:when test="${b.board_type eq 4}">급여 및 복지</c:when>
+	                    	<c:when test="${b.board_type eq 5}">자기개발</c:when>
+	                    	<c:when test="${b.board_type eq 6}">경영진</c:when>
+
+	                    </c:choose>	                    
+	                    </span>
+	                    
+	                    
 	                </em>
 	                <strong class="tit_box">번호 : ${b.board_num} 제목 : ${b.board_title }</strong>
 	                <p class="txt_box">내용 : ${b.board_content }</p>
@@ -438,6 +506,10 @@ margin-left: 550px;
 	                <span class="txt_date">작성 일자 : ${b.board_date }</span>
                 </div>
             </c:forEach>   
+            
+            <c:if test="${empty list }">
+            	검색 결과가 없습니다.
+            </c:if>
                
 <!--                
                 <div class="box_review">
@@ -513,12 +585,12 @@ margin-left: 550px;
     <div class="page_nation">
         
         
-        <a href="#" class="num" onClick="fn_paging(1)">[처음]</a>
-		<c:if test="${page.curPage ne 1 }"> <a class="num" href="#" onClick="fn_paging('${page.prevPage }')">[이전]</a> </c:if> 
+        <a href="#" class="num" onClick="fn_paging(1)">처음</a>
+		<c:if test="${page.curPage ne 1 }"> <a class="num" href="#" onClick="fn_paging('${page.prevPage }')">이전</a> </c:if> 
  		<c:forEach var="pageNum" begin="${page.startPage }" end="${page.endPage }">
 			<c:choose>
 				<c:when test="${pageNum eq page.curPage }">
-					<span style="font-weight: bold;"><a href="#" class="num" onClick="fn_paging('${pageNum }')">${pageNum }</a></span>
+					<span style="font-weight: bold;"><a class="num" onClick="fn_paging('${pageNum }')">${pageNum }</a></span>
 				</c:when>
 				<c:otherwise>
 					<a href="#"  onClick="fn_paging('${pageNum }')">${pageNum }</a>
@@ -528,9 +600,9 @@ margin-left: 550px;
 		
 		</c:forEach>
 		<c:if test="${page.curPage ne page.pageCnt && page.pageCnt >0 }">
-			<a href="#"  class="num" onClick="fn_paging('${page.nextPage }')">[다음]</a>
+			<a href="#"  class="num" onClick="fn_paging('${page.nextPage }')">다음</a>
 		</c:if>
-			<a href="#" class="num" onClick="fn_paging('${page.pageCnt }')">[끝]</a>
+			<a href="#" class="num" onClick="fn_paging('${page.pageCnt }')">끝</a>
         
 <!--                         <strong>1</strong>
                             <a class="num" href="#">2</a>

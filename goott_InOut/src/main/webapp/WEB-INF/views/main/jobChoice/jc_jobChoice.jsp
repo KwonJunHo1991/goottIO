@@ -48,109 +48,51 @@
 <script type="text/javascript">
 	$(function() {
 		$('#form-control1_1').show();
-		$('#form-control1_2').hide();
-		$('#form-control1_3').hide();
-		$('#form-control1_4').hide();
-		$('#form-control1_5').hide();
-		$('#form-control1_6').hide();
-		$('#form-control2_1').show();
-		$('#form-control2_2').hide();
-		$('#form-control2_3').hide();
-		$('#form-control2_4').hide();
-		$('#form-control2_5').hide();
-		$('#form-control2_6').hide();
+
+
+
 		jQuery('#form-control1').change(function() {
 			var state = $('#form-control1').val();
 
+
 			if (state == '1') {
+
 				jQuery('#form-control1_1').show();
-				jQuery('#form-control1_2').hide();
-				jQuery('#form-control1_3').hide();
-				jQuery('#form-control1_4').hide();
-				jQuery('#form-control1_5').hide();
-				jQuery('#form-control1_6').hide();
+				document.getElementById('form-control1_1').innerHTML='<option value="101">기획·전략·경영</option>			<option value="102">총무·법무·사무</option>			<option value="103">경리·출납·결산</option>			<option value="104">홍보·PR·사보</option>			<option value="107">비서·안내·수행원</option>			<option value="108">사무보조·문서작성</option>			<option value="113">인사·교육·노무</option>			<option value="114">회계·재무·세무·IR</option>			<option value="119">마케팅·광고·분석</option>			<option value="120">전시·컨벤션·세미나</option>';
 			} else if (state == '2') {
-				jQuery('#form-control1_2').show();
-				jQuery('#form-control1_1').hide();
-				jQuery('#form-control1_3').hide();
-				jQuery('#form-control1_4').hide();
-				jQuery('#form-control1_5').hide();
-				jQuery('#form-control1_6').hide();
+				document.getElementById('form-control1_1').innerHTML='<option value="203">판매·매장관리</option>			<option value="205">IT·솔루션영업</option>			<option value="206">금융·보험영업</option>			<option value="207">광고영업</option>			<option value="208">기술영업</option>			<option value="209">영업기획·관리·지원</option>			<option value="210">TM·아웃바운드</option>			<option value="211">TM·인바운드</option>			<option value="212">고객센터·CS</option>			<option value="213">QA·CS강사·수퍼바이저</option>';
 			} else if (state == '3') {
-				jQuery('#form-control1_3').show();
-				jQuery('#form-control1_1').hide();
-				jQuery('#form-control1_2').hide();
-				jQuery('#form-control1_4').hide();
-				jQuery('#form-control1_5').hide();
-				jQuery('#form-control1_6').hide();
+
+
+
+				document.getElementById('form-control1_1').innerHTML='<option value="302">기계·기계설비</option>			<option value="303">화학·에너지</option>			<option value="304">섬유·의류·패션</option>			<option value="308">전기·전자·제어</option>			<option value="309">생산관리·품질관리</option>			<option value="314">반도체·디스플레이·LCD</option>			<option value="315">생산·제조·포장·조립</option>			<option value="316">비금속·요업·신소재</option>			<option value="317">바이오·제약·식품</option>			<option value="318">설계·CAD·CAM</option>			<option value="319">안경·렌즈·광학</option>';
 			} else if (state == '4') {
-				jQuery('#form-control1_4').show();
-				jQuery('#form-control1_1').hide();
-				jQuery('#form-control1_2').hide();
-				jQuery('#form-control1_3').hide();
-				jQuery('#form-control1_5').hide();
-				jQuery('#form-control1_6').hide();
+
+				document.getElementById('form-control1_1').innerHTML='<option value="402">서버·네트워크·보안</option>			<option value="403">웹기획·PM</option>			<option value="404">웹개발</option>			<option value="405">게임·Game</option>			<option value="406">컨텐츠·사이트운영</option>			<option value="407">응용프로그램개발</option>			<option value="408">시스템개발</option>			<option value="409">ERP·시스템분석·설계</option>		<option value="410">통신·모바일</option>			<option value="411">하드웨어·소프트웨어</option>			<option value="412">웹디자인</option>			<option value="413">퍼블리싱·UI개발</option>			<option value="414">동영상·편집·코덱</option>			<option value="415">IT·디자인·컴퓨터교육</option>			<option value="416">데이터베이스·DBA</option>			<option value="417">인공지능(AI)·빅데이터인공지능(AI)·빅데이터</option>';
 			} else if (state == '5') {
-				jQuery('#form-control1_5').show();
-				jQuery('#form-control1_1').hide();
-				jQuery('#form-control1_2').hide();
-				jQuery('#form-control1_3').hide();
-				jQuery('#form-control1_4').hide();
-				jQuery('#form-control1_6').hide();
+
+				document.getElementById('form-control1_1').innerHTML='<option value="1102">안내·도우미·나레이터</option>			<option value="1103">보안·경호·안전</option>			<option value="1104">주차·세차·주유</option>			<option value="1105">AS·서비스·수리</option>			<option value="1107">외식·식음료</option>			<option value="1108">호텔·카지노·콘도</option>			<option value="1109">여행·관광·항공</option>			<option value="1110">레저·스포츠</option>';
 			} else if (state == '6') {
-				jQuery('#form-control1_6').show();
-				jQuery('#form-control1_1').hide();
-				jQuery('#form-control1_2').hide();
-				jQuery('#form-control1_3').hide();
-				jQuery('#form-control1_4').hide();
-				jQuery('#form-control1_1').hide();
+
+				document.getElementById('form-control1_1').innerHTML='<option value="1202">출판·편집디자인</option>			<option value="1203">제품·산업디자인</option>			<option value="1204">캐릭터·만화·애니</option>			<option value="1205">의류·패션·잡화디자인</option>';
 			}
 		});
 		jQuery('#form-control2').change(function() {
 			var state = $('#form-control2').val();
 
 			if (state == '1') {
-				jQuery('#form-control2_1').show();
-				jQuery('#form-control2_2').hide();
-				jQuery('#form-control2_3').hide();
-				jQuery('#form-control2_4').hide();
-				jQuery('#form-control2_5').hide();
-				jQuery('#form-control2_6').hide();
+				document.getElementById('form-control2_1').innerHTML='<option value="109">외식업·식음료</option>			<option value="111">시설관리·경비·용역</option>			<option value="115">레저·스포츠·여가</option>			<option value="118">AS·카센터·주유</option>			<option value="119">렌탈·임대</option>			<option value="120">웨딩·장례·이벤트</option>			<option value="121">기타서비스업</option>				<option value="122">뷰티·미용</option>';
 			} else if (state == '2') {
-				jQuery('#form-control2_2').show();
-				jQuery('#form-control2_1').hide();
-				jQuery('#form-control2_3').hide();
-				jQuery('#form-control2_4').hide();
-				jQuery('#form-control2_5').hide();
-				jQuery('#form-control2_6').hide();
+				document.getElementById('form-control2_1').innerHTML='<option value="202">기계·설비·자동차</option>			<option value="204">석유·화학·에너지</option>			<option value="205">섬유·의류·패션</option>			<option value="207">화장품·뷰티</option>			<option value="208">생활용품·소비재·사무</option>			<option value="209">가구·목재·제지</option>			<option value="210">농업·어업·광업·임업</option>			<option value="211">금속·재료·철강·요업</option>			<option value="212">조선·항공·우주</option>			<option value="213">기타제조업</option>			<option value="214">식품가공·개발</option>			<option value="215">반도체·광학·LCD</option>			<option value="216">환경</option>';
 			} else if (state == '3') {
-				jQuery('#form-control2_3').show();
-				jQuery('#form-control2_1').hide();
-				jQuery('#form-control2_2').hide();
-				jQuery('#form-control2_4').hide();
-				jQuery('#form-control2_5').hide();
-				jQuery('#form-control2_6').hide();
+				document.getElementById('form-control2_1').innerHTML='<option value="302">웹에이젼시</option>			<option value="304">쇼핑몰·오픈마켓</option>			<option value="305">포털·인터넷·컨텐츠</option>			<option value="306">네트워크·통신·모바일</option>			<option value="307">하드웨어·장비</option>			<option value="308">정보보안·백신</option>			<option value="313">IT컨설팅</option>			<option value="314">게임</option>';
 			} else if (state == '4') {
-				jQuery('#form-control2_4').show();
-				jQuery('#form-control2_1').hide();
-				jQuery('#form-control2_2').hide();
-				jQuery('#form-control2_3').hide();
-				jQuery('#form-control2_5').hide();
-				jQuery('#form-control2_6').hide();
+				document.getElementById('form-control2_1').innerHTML='<option value="402">대출·캐피탈·여신</option>			<option value="405">기타금융</option>			<option value="406">증권·보험·카드</option>';
+
 			} else if (state == '5') {
-				jQuery('#form-control2_5').show();
-				jQuery('#form-control2_1').hide();
-				jQuery('#form-control2_2').hide();
-				jQuery('#form-control2_3').hide();
-				jQuery('#form-control2_4').hide();
-				jQuery('#form-control2_6').hide();
+				document.getElementById('form-control2_1').innerHTML='<option value="502">방송사·케이블</option>			<option value="503">연예·엔터테인먼트</option>			<option value="504">광고·홍보·전시</option>			<option value="505">영화·배급·음악</option>			<option value="506">공연·예술·문화</option>			<option value="509">출판·인쇄·사진</option>			<option value="510">캐릭터·애니메이션</option>			<option value="511">디자인·설계</option>';
 			} else if (state == '6') {
-				jQuery('#form-control2_6').show();
-				jQuery('#form-control2_1').hide();
-				jQuery('#form-control2_2').hide();
-				jQuery('#form-control2_3').hide();
-				jQuery('#form-control2_4').hide();
-				jQuery('#form-control2_1').hide();
+				document.getElementById('form-control2_1').innerHTML='<option value="1002">협회·단체</option>			<option value="1003">법률·법무·특허</option>			<option value="1004">캐세무·회계</option>			<option value="1005">연구소·컨설팅·조사</option>';
 			}
 		});
 	})
@@ -228,7 +170,8 @@
 																	<span class="ion-ios-arrow-down"></span>
 																</div>
 																<select name="" id="form-control1" class="form-control">
-																	<option value="7">직업별</option>
+
+																	<option value="7">직업/직종별</option>
 																	<option value="1">경영·사무</option>
 																	<option value="2">영업·고객상담</option>
 																	<option value="3">생산·제조</option>
@@ -247,82 +190,11 @@
 																<div class="icon">
 																	<span class="ion-ios-arrow-down"></span>
 																</div>
-																<select name="" id="form-control1_1"
+																<select name="notice_prcs_job" id="form-control1_1"
 																	class="form-control">
-																	<option value="">기획·전략·경영</option>
-																	<option value="">총무·법무·사무</option>
-																	<option value="">경리·출납·결산</option>
-																	<option value="">홍보·PR·사보</option>
-																	<option value="">비서·안내·수행원</option>
-																	<option value="">사무보조·문서작성</option>
-																	<option value="">인사·교육·노무</option>
-																	<option value="">회계·재무·세무·IR</option>
-																	<option value="">마케팅·광고·분석</option>
-																	<option value="">전시·컨벤션·세미나</option>
-																</select> <select name="" id="form-control1_2"
-																	class="form-control">
-																	<option value="">일반영업</option>
-																	<option value="">판매·매장관리</option>
-																	<option value="">IT·솔루션영업</option>
-																	<option value="">금융·보험영업</option>
-																	<option value="">광고영업</option>
-																	<option value="">기술영업</option>
-																	<option value="">영업기획·관리·지원</option>
-																	<option value="">TM·아웃바운드</option>
-																	<option value="">TM·인바운드</option>
-																	<option value="">고객센터·CS</option>
-																	<option value="">QA·CS강사·수퍼바이저</option>
-																</select> <select name="" id="form-control1_3"
-																	class="form-control">
-																	<option value="">금속·금형</option>
-																	<option value="">기계·기계설비</option>
-																	<option value="">화학·에너지</option>
-																	<option value="">섬유·의류·패션</option>
-																	<option value="">전기·전자·제어</option>
-																	<option value="">생산관리·품질관리</option>
-																	<option value="">반도체·디스플레이·LCD</option>
-																	<option value="">생산·제조·포장·조립</option>
-																	<option value="">비금속·요업·신소재</option>
-																	<option value="">바이오·제약·식품</option>
-																	<option value="">설계·CAD·CAM</option>
-																	<option value="">안경·렌즈·광학</option>
-																</select> <select name="" id="form-control1_4"
-																	class="form-control">
-																	<option value="">웹마스터·QA·테스터</option>
-																	<option value="">서버·네트워크·보안</option>
-																	<option value="">웹기획·PM</option>
-																	<option value="">웹개발</option>
-																	<option value="">게임·Game</option>
-																	<option value="">컨텐츠·사이트운영</option>
-																	<option value="">응용프로그램개발</option>
-																	<option value="">시스템개발</option>
-																	<option value="">ERP·시스템분석·설계</option>
-																	<option value="">통신·모바일</option>
-																	<option value="">하드웨어·소프트웨어</option>
-																	<option value="">웹디자인</option>
-																	<option value="">퍼블리싱·UI개발</option>
-																	<option value="">동영상·편집·코덱</option>
-																	<option value="">IT·디자인·컴퓨터교육</option>
-																	<option value="">데이터베이스·DBA</option>
-																	<option value="">인공지능(AI)·빅데이터인공지능(AI)·빅데이터</option>
-																</select> <select name="" id="form-control1_5"
-																	class="form-control">
-																	<option value="">웨딩·행사·이벤트</option>
-																	<option value="">안내·도우미·나레이터</option>
-																	<option value="">보안·경호·안전</option>
-																	<option value="">주차·세차·주유</option>
-																	<option value="">AS·서비스·수리</option>
-																	<option value="">외식·식음료</option>
-																	<option value="">호텔·카지노·콘도</option>
-																	<option value="">여행·관광·항공</option>
-																	<option value="">레저·스포츠</option>
-																</select> <select name="" id="form-control1_6"
-																	class="form-control">
-																	<option value="">그래픽디자인·CG</option>
-																	<option value="">출판·편집디자인</option>
-																	<option value="">제품·산업디자인</option>
-																	<option value="">캐릭터·만화·애니</option>
-																	<option value="">의류·패션·잡화디자인</option>
+																	<option value="">직종 선택</option>
+
+
 																</select>
 															</div>
 														</div>
@@ -364,7 +236,7 @@
 																	<span class="ion-ios-arrow-down"></span>
 																</div>
 																<select name="" id="form-control2" class="form-control">
-																	<option value="7">산업별</option>
+																	<option value="7">산업/업종별</option>
 																	<option value="1">서비스업</option>
 																	<option value="2">제조·화학</option>
 																	<option value="3">IT·웹·통신</option>
@@ -383,68 +255,12 @@
 																<div class="icon">
 																	<span class="ion-ios-arrow-down"></span>
 																</div>
-																<select name="" id="form-control2_1"
+																<select name="notice_comp_type" id="form-control2_1"
 																	class="form-control">
-																	<option value="">호텔·여행·항공</option>
-																	<option value="">외식업·식음료</option>
-																	<option value="">시설관리·경비·용역</option>
-																	<option value="">레저·스포츠·여가</option>
-																	<option value="">AS·카센터·주유</option>
-																	<option value="">렌탈·임대</option>
-																	<option value="">웨딩·장례·이벤트</option>
-																	<option value="">기타서비스업</option>
-																	<option value="">뷰티·미용</option>
-																</select> <select name="" id="form-control2_2"
-																	class="form-control">
-																	<option value="">전기·전자·제어</option>
-																	<option value="">기계·설비·자동차</option>
-																	<option value="">석유·화학·에너지</option>
-																	<option value="">섬유·의류·패션</option>
-																	<option value="">화장품·뷰티</option>
-																	<option value="">생활용품·소비재·사무</option>
-																	<option value="">가구·목재·제지</option>
-																	<option value="">농업·어업·광업·임업</option>
-																	<option value="">금속·재료·철강·요업</option>
-																	<option value="">조선·항공·우주</option>
-																	<option value="">기타제조업</option>
-																	<option value="">식품가공·개발</option>
-																	<option value="">반도체·광학·LCD</option>
-																	<option value="">환경</option>
-																</select> <select name="" id="form-control2_3"
-																	class="form-control">
-																	<option value="">솔루션·SI·ERP·CRM</option>
-																	<option value="">웹에이젼시</option>
-																	<option value="">쇼핑몰·오픈마켓</option>
-																	<option value="">포털·인터넷·컨텐츠</option>
-																	<option value="">네트워크·통신·모바일</option>
-																	<option value="">하드웨어·장비</option>
-																	<option value="">정보보안·백신</option>
-																	<option value="">IT컨설팅</option>
-																	<option value="">게임</option>
-																</select> <select name="" id="form-control2_4"
-																	class="form-control">
-																	<option value="">은행·금융·저축</option>
-																	<option value="">대출·캐피탈·여신</option>
-																	<option value="">기타금융</option>
-																	<option value="">증권·보험·카드</option>
-																</select> <select name="" id="form-control2_5"
-																	class="form-control">
-																	<option value="">신문·잡지·언론사</option>
-																	<option value="">방송사·케이블</option>
-																	<option value="">연예·엔터테인먼트</option>
-																	<option value="">광고·홍보·전시</option>
-																	<option value="">영화·배급·음악</option>
-																	<option value="">공연·예술·문화</option>
-																	<option value="">출판·인쇄·사진</option>
-																	<option value="">캐릭터·애니메이션</option>
-																	<option value="">디자인·설계</option>
-																</select> <select name="" id="form-control2_6"
-																	class="form-control">
-																	<option value="">정부·공공기관·공기업</option>
-																	<option value="">협회·단체</option>
-																	<option value="">법률·법무·특허</option>
-																	<option value="">캐세무·회계</option>
-																	<option value="">연구소·컨설팅·조사</option>
+																	<option value="">선택</option>
+
+
+
 																</select>
 															</div>
 														</div>
@@ -475,43 +291,47 @@
 
 			<div class="row">
 				<div class="jc_main_container">
-					<div class="col-md-12 ftco-animate">
-						<div
-							class="job-post-item p-4 d-block d-lg-flex align-items-center">
-							<div class="one-third mb-4 mb-md-0">
-								<div class="job-post-item-header align-items-center">
-									<span class="subadge">Partime</span>
-									<h2 class="mr-3 text-black">
-										<a href="#">Frontend Development</a>
-									</h2>
-								</div>
-								<div class="job-post-item-body d-block d-md-flex">
-									<div class="mr-3">
-										<span class="icon-layers"></span> <a href="#">Facebook,
-											Inc.</a>
-									</div>
-									<div>
-										<span class="icon-my_location"></span> <span>Western
-											City, UK</span>
-									</div>
-								</div>
-							</div>
 
+	<c:forEach items="${list }" var="list">
+
+
+						<div class="col-md-12 ftco-animate">
 							<div
-								class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
-								<div>
-									<a href="#"
-										class="icon text-center d-flex justify-content-center align-items-center icon mr-2">
-										<span class="icon-heart"></span>
-									</a>
+								class="job-post-item p-4 d-block d-lg-flex align-items-center">
+								<div class="one-third mb-4 mb-md-0">
+									<div class="job-post-item-header align-items-center">
+										<span class="subadge">공고 번호 : ${list.notice_num }</span>
+										<h2 class="mr-3 text-black">
+											<a href="#">공고제목 : ${list.notice_title }</a>
+										</h2>
+									</div>
+									<div class="job-post-item-body d-block d-md-flex">
+										<div class="mr-3">
+											<span class="icon-layers"></span> <a href="#">Facebook,
+												Inc.</a>
+										</div>
+										<div>
+											<span class="icon-my_location"></span> <span>Western
+												City, UK</span>
+										</div>
+									</div>
 								</div>
-								<a href="job-single.html" class="btn btn-primary py-2">Apply
-									Job</a>
+
+								<div
+									class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
+									<div>
+										<a href="#"
+											class="icon text-center d-flex justify-content-center align-items-center icon mr-2">
+											<span class="icon-heart"></span>
+										</a>
+									</div>
+									<a href="job-single.html" class="btn btn-primary py-2">Apply
+										Job</a>
+								</div>
 							</div>
 						</div>
-					</div>
-					<!-- end -->
-
+	</c:forEach>						<!-- end -->
+<!-- 
 					<div class="col-md-12 ftco-animate">
 						<div
 							class="job-post-item p-4 d-block d-lg-flex align-items-center">
@@ -546,7 +366,7 @@
 							</div>
 						</div>
 					</div>
-					<!-- end -->
+					end
 
 					<div class="col-md-12 ftco-animate">
 						<div
@@ -583,7 +403,7 @@
 							</div>
 						</div>
 					</div>
-					<!-- end -->
+					end
 
 					<div class="col-md-12 ftco-animate">
 						<div
@@ -620,7 +440,7 @@
 							</div>
 						</div>
 					</div>
-					<!-- end -->
+					end
 
 					<div class="col-md-12 ftco-animate">
 						<div
@@ -657,7 +477,7 @@
 							</div>
 						</div>
 					</div>
-					<!-- end -->
+					end
 
 					<div class="col-md-12 ftco-animate">
 						<div
@@ -693,7 +513,7 @@
 							</div>
 						</div>
 					</div>
-					<!-- end -->
+					end
 
 					<div class="col-md-12 ftco-animate">
 						<div
@@ -730,7 +550,7 @@
 							</div>
 						</div>
 					</div>
-					<!-- end -->
+					end
 
 					<div class="col-md-12 ftco-animate">
 						<div
@@ -767,7 +587,7 @@
 							</div>
 						</div>
 					</div>
-					<!-- end -->
+					end
 
 					<div class="col-md-12 ftco-animate">
 						<div
@@ -803,7 +623,8 @@
 									Job</a>
 							</div>
 						</div>
-					</div>
+					</div> -->
+
 					<!-- end -->
 				</div>
 				<jsp:include page="./jc_sideNavi.jsp"></jsp:include>

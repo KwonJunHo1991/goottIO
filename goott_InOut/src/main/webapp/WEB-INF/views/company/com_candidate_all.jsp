@@ -77,7 +77,6 @@
 												var value1 = $(
 														'input[name=RES_CAREER_DATE]:checked')
 														.val();
-												console.log(value1);
 
 												$(
 														'input[type="checkbox"][name="RES_CAREER_DATE"]')
@@ -223,7 +222,27 @@
 
 					});
 </script>
+<style type="text/css">
+#img_person_1{
+background-image: url("<c:url value="resources/images/person_1.jpg"/>");  
+}
+#img_person_2{
+background-image: url("<c:url value="resources/images/person_2.jpg"/>");  
+}
+#img_person_3{
+background-image: url("<c:url value="resources/images/person_3.jpg"/>");  
+}
+#img_person_4{
+background-image: url("<c:url value="resources/images/person_4.jpg"/>");  
+}
+#img_person_5{
+background-image: url("<c:url value="resources/images/person_5.jpg"/>");  
+}
+#img_person_6{
+background-image: url("<c:url value="resources/images/person_6.jpg"/>");  
+}
 
+</style>
 
 
 </head>
@@ -456,8 +475,8 @@
 			<div class="row">
 				<div class="col-md-12">
 					<div class="team d-md-flex p-4 bg-white">
-						<div class="img_person"
-							style="background-image: url('/InOut/resources/images/person_1.jpg');"></div>
+						<div class="img_person" id="img_person_1"
+						></div>
 						<div class="text pl-md-4">
 							<span class="location mb-0">Western City, UK</span>
 							<h2>Danica Lewis</h2>
@@ -474,8 +493,8 @@
 				</div>
 				<div class="col-md-12">
 					<div class="team d-md-flex p-4 bg-white">
-						<div class="img_person"
-							style="background-image: url('/InOut/resources/images/person_2.jpg');"></div>
+						<div class="img_person" id="img_person_2"
+						></div>
 						<div class="text pl-md-4">
 							<span class="location mb-0">Western City, UK</span>
 							<h2>Danica Lewis</h2>
@@ -492,8 +511,8 @@
 				</div>
 				<div class="col-md-12">
 					<div class="team d-md-flex p-4 bg-white">
-						<div class="img_person"
-							style="background-image: url('/InOut/resources/images/person_3.jpg');"></div>
+						<div class="img_person" id="img_person_3"
+						></div>
 						<div class="text pl-md-4">
 							<span class="location mb-0">Western City, UK</span>
 							<h2>Danica Lewis</h2>
@@ -510,8 +529,8 @@
 				</div>
 				<div class="col-md-12">
 					<div class="team d-md-flex p-4 bg-white">
-						<div class="img_person"
-							style="background-image: url('/InOut/resources/images/person_4.jpg');"></div>
+						<div class="img_person" id="img_person_4"
+						></div>
 						<div class="text pl-md-4">
 							<span class="location mb-0">Western City, UK</span>
 							<h2>Danica Lewis</h2>
@@ -528,8 +547,8 @@
 				</div>
 				<div class="col-md-12">
 					<div class="team d-md-flex p-4 bg-white">
-						<div class="img_person"
-							style="background-image: url('/InOut/resources/images/person_5.jpg');"></div>
+						<div class="img_person" id="img_person_5"
+						></div>
 						<div class="text pl-md-4">
 							<span class="location mb-0">Western City, UK</span>
 							<h2>Danica Lewis</h2>
@@ -546,8 +565,8 @@
 				</div>
 				<div class="col-md-12">
 					<div class="team d-md-flex p-4 bg-white">
-						<div class="img_person"
-							style="background-image: url('/InOut/resources/images/person_6.jpg');"></div>
+						<div class="img_person" id="img_person_6"
+							></div>
 						<div class="text pl-md-4">
 							<span class="location mb-0">Western City, UK</span>
 							<h2>Danica Lewis</h2>

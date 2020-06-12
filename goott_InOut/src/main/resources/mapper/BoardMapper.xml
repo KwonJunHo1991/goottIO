@@ -54,8 +54,49 @@
 		order by board_hits desc 
 		limit 5;
 	</select>
+	
+	<update id="upHit" parameterType="int">
+		update io_board
+		set board_hits = board_hits+1 
+		where board_num = #{board_num};
+	</update>
+	
+	<select id="selectMyBoard" resultType="BoardDTO" parameterType="String">
+		select * from io_board
+		where mem_id = '${mem_id}'
+	
+	</select>
+	
+	
+	<!--dddddddddddddddddddddd Re Board dddddddddddddddddddddddddddddddd-->
 
+	<insert id="insertReBoard" parameterType="ReBoardDTO">
+		insert into io_reboard
+		values (null,#{board_num},#{mem_id},#{comp_num},#{comp_id},#{reBoard_content},now())
+	</insert>
+	
+	<select id="selectReBoard" parameterType="int" resultType="ReBoardDTO">
+		select * from io_reboard
+		where board_num = #{board_num}
+	</select>
+	
+	<select id="countReBoardTop5" resultType="BoardDTO">
+	select * from io_board
+	where board_num in
+		(	
+			select * from 
+			( select board_num from io_reboard
+				group by board_num
+				order by count(*) desc
+	            limit 5
+			) as tmp
+        )
+		
+	</select>
   	
+  	<select id="countReBoard">
+  		select count(*) from io_reboard
+  	</select>
   	
   	
   </mapper>

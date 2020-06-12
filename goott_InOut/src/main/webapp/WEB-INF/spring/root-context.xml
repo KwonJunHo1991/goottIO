@@ -11,12 +11,14 @@
 		<property name="session" ref="sqlSessionTemplate" />
 	</bean> -->
 	
-	
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://localhost:3306/goottio?useSSL=false" />
-        <property name="username" value="scott" />
-        <property name="password" value="tiger" />
+        <property name="url" value="jdbc:mysql://sampledb.cskoq1abnfyh.ap-northeast-2.rds.amazonaws.com:3306/sampleDB" />
+        <property name="username" value="root" />
+        <property name="password" value="rootrootgoot7" />
+        <property name="initialSize" value="" />
+        <property name="maxTotal" value="" />
+        <property name="maxIdle" value="" />
 	</bean>
     
      <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">

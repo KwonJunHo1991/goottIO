@@ -11,7 +11,7 @@
 <c:if test="${msg == 'success' }">
 <h2>${sessionScope.mem_name }(${sessionScope.mem_id })님 환영합니다.</h2>
 
-
+<a href="./goresume.do">이력서 관리</a>
 </c:if>
 </body>
 </html>

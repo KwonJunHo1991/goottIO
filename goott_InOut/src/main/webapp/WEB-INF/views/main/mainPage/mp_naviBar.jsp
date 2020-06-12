@@ -11,7 +11,6 @@
     <link rel="icon" href="<c:url value="/resources/img/favicon.png"/>">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<c:url value="/resources/css/css_1/bootstrap.min.css"/>">
-
     <!-- owl carousel CSS -->
     <link rel="stylesheet" href="<c:url value="/resources/css/css_1/owl.carousel.min.css"/>">
     <!-- themify CSS -->
@@ -37,33 +36,23 @@ z-index: 5;
 </style> 
 
 
- 
+
  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>   
  <script type="text/javascript">
- 	$(function () {
- 		var bannerOffset = $( '.main_menu_iner' ).offset();
-
- 	    $( window ).scroll( function() {  //window에 스크롤링이 발생하면
-
- 	          if ( $( document ).scrollTop() > bannerOffset.top ) {   // 위치 및 사이즈를 파악하여 미리 정한 css class를 add 또는 remove 합니다.
-
- 	            $( '.main_menu_iner' ).addClass( 'topFixBannerFixed' );
-
- 	          }
-
- 	          else {
-
- 	            $( '.main_menu_iner' ).removeClass( 'topFixBannerFixed' );
-
- 	          }
-
- 	     });
-
-	});
+    $(function () {
+       var bannerOffset = $( '.main_menu_iner' ).offset();
+        $( window ).scroll( function() {  //window에 스크롤링이 발생하면
+              if ( $( document ).scrollTop() > bannerOffset.top ) {   // 위치 및 사이즈를 파악하여 미리 정한 css class를 add 또는 remove 합니다.
+                $( '.main_menu_iner' ).addClass( 'topFixBannerFixed' );
+              }
+              else {
+                $( '.main_menu_iner' ).removeClass( 'topFixBannerFixed' );
+              }
+         });
+   });
  </script> 
  
 </head>
-
 <body>
    <!--::header part start::-->
    <header class="main_menu">
@@ -95,24 +84,28 @@ z-index: 5;
                 <div class="row align-items-center ">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-                            <a class="navbar-brand" href="index.html"> <img src="/InOut/resources/img/logo2.png" alt="logo"> </a>
+                            <a class="navbar-brand" href="../main/main.do"> <img src="<c:url value="/resources/img/logo.png"/>" alt="logo" style="width: 150px;" > </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
-
                             <div class="collapse navbar-collapse main-menu-item justify-content-center"
                                 id="navbarSupportedContent">
-                                <ul class="navbar-nav">
-                                   <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
+                                    <ul class="navbar-nav">
+         
+                           <li class="nav-item">
+                                        <a class="nav-link" href="../main/local.do">지역별</a>
+                                    </li>
+<!--                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="../main/local.do" id="navbarDropdown"
                                             role="button" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
                                             지역별
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="blog.html">서울</a>
+                                            <a class="dropdown-item" href="../main/local.do">전체</a>
+                                            <a class="dropdown-item" href="../main/local.do?comp_adrs=101000">서울</a>
                                             <a class="dropdown-item" href="single-blog.html">경기</a>
                                             <a class="dropdown-item" href="single-blog.html">인천</a>
                                             <a class="dropdown-item" href="single-blog.html">부산</a>
@@ -122,14 +115,18 @@ z-index: 5;
                                             <a class="dropdown-item" href="single-blog.html">성남</a>
                                             <a class="dropdown-item" href="single-blog.html">수원</a>
                                         </div>
+                                    </li> -->
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="../main/job.do">직업별</a>
                                     </li>
-                                     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
+<!--                                      <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="../main/job.do" id="navbarDropdown"
                                             role="button" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
                                             직업별
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <a class="dropdown-item" href="../main/job.do">전체</a>
                                             <a class="dropdown-item" href="blog.html">경영.사무</a>
                                             <a class="dropdown-item" href="single-blog.html">영업.고객상담</a>
                                             <a class="dropdown-item" href="single-blog.html">생산.제조</a>
@@ -144,7 +141,7 @@ z-index: 5;
                                             <a class="dropdown-item" href="single-blog.html">디자인</a>
                                             <a class="dropdown-item" href="single-blog.html">의료</a>
                                         </div>
-                                    </li>
+                                    </li> -->
                                    <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
                                             role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -159,7 +156,10 @@ z-index: 5;
                                             <a class="dropdown-item" href="single-blog.html">스타트업</a>
                                         </div>
                                     </li>
-                                    <li class="nav-item dropdown">
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="../board/boardMain.do">기업연구소</a>
+                                    </li>
+<!--                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
                                             role="button" data-toggle="dropdown" aria-haspopup="true"
                                             aria-expanded="false">
@@ -167,14 +167,14 @@ z-index: 5;
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <a class="dropdown-item" href="blog.html">기업에 대한 Q&A</a>
-                                            <a class="dropdown-item" href="single-blog.html">취준고민</a>
+                                            <a class="dropdown-item" href="../board/boardSearch.do">취준고민</a>
                                             <a class="dropdown-item" href="single-blog.html">취업뉴스</a>
                                             <a class="dropdown-item" href="single-blog.html">이력서 무료다운</a>
-                                            <a class="dropdown-item" href="single-blog.html">글자수 체크</a>
+                                            <a class="dropdown-item" href="../main/char.do">글자수 체크</a>
                                         </div>
-                                    </li>
+                                    </li> -->
                                     <li class="nav-item">
-                                        <a class="nav-link" href="contact.html">인재검색</a>
+                                        <a class="nav-link" href="../main/findPerson.do">인재검색</a>
                                     </li>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
@@ -197,6 +197,5 @@ z-index: 5;
         </div>
     </header>
     <!-- Header part end-->
-
 </body>
 </html>

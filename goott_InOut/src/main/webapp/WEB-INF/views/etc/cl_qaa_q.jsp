@@ -14,6 +14,19 @@
 <link rel="stylesheet" type="text/css"
 	href="<c:url value='/resources/css_etc/cl_qaa_q_css.css'/>">
 
+
+<style type="text/css">
+#job_category {
+	padding: 0 29px 1px 15px;
+	width: 340px;
+	height: 100%;
+	font-size: 15px;
+	line-height: 30px;
+	background-position: 100% 4px;
+}
+</style>
+
+
 <style type="text/css">
 #job_category {
 	padding: 0 29px 1px 15px;
@@ -32,11 +45,15 @@
 </head>
 <body>
 
-   <jsp:include page="../main/mainPage/mp_naviBar.jsp"></jsp:include>   
+   <div>
+   <jsp:include page="../main/mainPage/mp_naviBar.jsp"></jsp:include>
+   </div> 
+   
    <jsp:include page="../main/mainPage/loginPop.jsp"></jsp:include>
     <!-- END nav -->
-      <jsp:include page="cl_sideNavi.jsp"></jsp:include>
 	<div id="sri_wrap">
+      <jsp:include page="cl_sideNavi.jsp"></jsp:include>
+
 		<div id="content">
 			<div class="wrap_title_recruit">
 				<h1 class="title_common">질문하기</h1>
@@ -46,7 +63,8 @@
 
 
 					<form action="boardInsertOk.do">
-						<input type="hidden" name="mem_id" value="testId" />
+
+						<input type="hidden" name="mem_id" value="testId12" />
 						<p class="desc_ask">
 							취준고민은 <strong>익명</strong>으로 등록됩니다.<br> 궁금하신 질문과 내용을 자세히
 							작성하시면 정확한 답변을 얻으실 수 있습니다.<br> 기업명 or 직종을 1개 이상 입력해주세요.
@@ -77,14 +95,15 @@
 										<input type="hidden" name="job_category_cd" value="102">
 
 										<span class="inpSel"> <!-- Board Category --> <select
-											name="board_category" name="board_type" id="job_category"
+											name="board_type" id="job_category"
 											class="inpTypo" title="직종 선택">
-												<option value="10" label="직종 선택하기" selected="selected">직종 선택하기</option>
-												<option value="11" label="경영">경영·사무</option>
-												<option value="12" label="영업">영업·고객상담</option>
-												<option value="13" label="생산">생산·제조</option>
-												<option value="14" label="인터넷">IT·인터넷</option>
-												<option value="15" label="유통">유통·무역</option>
+												<option value="0" label="직종 선택하기" selected="selected">직종 선택하기</option>
+												<option value="1" label="경영">경영·사무</option>
+												<option value="2" label="영업">영업·고객상담</option>
+												<option value="3" label="생산">생산·제조</option>
+												<option value="4" label="인터넷">IT·인터넷</option>
+												<option value="5" label="유통">유통·무역</option>
+
 												<option value="16" label="서비스">서비스</option>
 										</select>
 										</span>

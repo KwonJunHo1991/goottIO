@@ -23,8 +23,10 @@ body.has_lnb #sri_section {
     height: 100%;
     box-sizing: border-box;
 }
-body{
 
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input,  p, blockquote,  {
+    margin: 0;
+    padding: 0;
     font-family: "Malgun Gothic",dotum,gulim,sans-serif;
 }
 
@@ -40,6 +42,8 @@ element.style {
     width: 6px;
     height: 20px;
     cursor: pointer;
+
+
 
 }
 
@@ -102,7 +106,8 @@ ul {
     margin-block-end: 1em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-	 cursor: pointer;
+    cursor: pointer;
+
 }
 #sri_lnb_wrap {
     position: fixed;
@@ -125,7 +130,7 @@ ul {
     display: none; /* Chrome, Safari, Opera*/
 }    
     
-#sri_lnb_wrap .viewport_real {
+#sri_lnb_wrap .viewport {
     overflow: hidden;
     position: relative;
     z-index: 1;
@@ -177,7 +182,7 @@ text-decoration: none;
     letter-spacing: -1px;
 }
 
-.viewport_real{
+.viewport{
     position: fixed;
     top: 60px;
     bottom: 0;
@@ -228,7 +233,7 @@ element.style {
 }
 
 
-/* input, select {
+input, select {
     line-height: normal;
 }
 input, select, optgroup, option {
@@ -236,7 +241,7 @@ input, select, optgroup, option {
     font-size: inherit;
     font-weight: inherit;
     font-style: inherit;
-} */
+}
 .img_real{
 margin-left: 10px;
 }
@@ -263,24 +268,26 @@ $(document).ready(function () {
 </head>
 <body>
 
+
         <div id="sri_lnb_wrap" >
-    <div class="viewport_real">
+    <div class="viewport">
         <div id="sri_lnb_content" class="overview" style="top: 0px;">
             <nav id="sri_lnb">
-    <ul class="up_main">
+    <ul>
         <li class="lnb_menu">
             <a href="/zf_user/companylab" class="li_menu_a" data-track_event=""><strong>홈</strong> <i class="sri_lnb_icon ic_new"></i></a>
         </li>
         <li class="lnb_menu">
-            <a href="/zf_user/company-review-qst-and-ans/" class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>취준진담</strong> <i class="sri_lnb_icon ic_new"></i></a>
+            <a href="../board/boardSearch.do" class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>취준진담</strong> <i class="sri_lnb_icon ic_new"></i></a>
         </li>
         <li class="li_menu">
             <a class="li_menu_a" data-track_event="section|lnb|salaries|lnb1310"><strong>기업연구소</strong><span class="sri_lnb_icon arrow"></span></a> <!-- WMG-25293 -->
             <ul class="li_menu_hide">
-                <li><a href="/zf_user/company-review" class="track_event" data-track_event="section|lnb|salaries|lnb1311">취준고민</a></li>
+                <li><a href="../board/boardSearch.do" class="track_event" data-track_event="section|lnb|salaries|lnb1311">취준고민</a></li>
                 <li><a href="/zf_user/company-review-report" class="track_event" data-track_event="section|lnb|salaries|lnb1314">취준뉴스<i class="sri_lnb_icon ic_new"></i></a></li>
                 <li><a href="/zf_user/interview-review" class="track_event" data-track_event="section|lnb|salaries|lnb1312">이력서 무료 다운</a></li>
-                <li><a href="/zf_user/my-introduce-review" class="track_event" data-track_event="section|lnb|salaries|lnb1313">글자수 체크</a></li>
+                <li><a href="../board/boardCharCheck.do" class="track_event" data-track_event="section|lnb|salaries|lnb1313">글자수 체크</a></li>
+
             </ul>
         </li>
         <li class="li_menu">

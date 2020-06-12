@@ -11,6 +11,12 @@
 
 <!-- CSS 적용 -->
 <link rel="stylesheet" type="text/css" href="<c:url value='/resources/css_etc/cl_qaa_detail_css.css'/>">
+<style type="text/css">
+#content{
+margin-top: 200px;
+margin-left: 550px;
+}
+</style>
 
 <style type="text/css">
 #content{
@@ -26,7 +32,9 @@ margin-left: 550px;
 </head>
 <body>
 
+  <div>
    <jsp:include page="../main/mainPage/mp_naviBar.jsp"></jsp:include>
+   </div> 
 
    
    <jsp:include page="../main/mainPage/loginPop.jsp"></jsp:include>
@@ -42,7 +50,35 @@ margin-left: 550px;
 <div class="company_review">
     <div class="view_company_cont">
     <input type="hidden" name="report_idx" value="" id="report_idx">    <input type="hidden" name="report_type" value="" id="report_type">
-    <em class="name_company">모든 기업<span class="category dot">업종 : ${dto.board_type }</span><span class="category dot">카테고리 : ${dto.board_category }</span>에 대한 질문입니다</em>
+    <em class="name_company">모든 기업
+    	<span class="category dot">
+                <c:choose>
+                   	<c:when test="${dto.board_category eq 1}">직무</c:when>
+                   	<c:when test="${dto.board_category eq 2}">조직문화</c:when>
+                   	<c:when test="${dto.board_category eq 3}">근무환경</c:when>
+                   	<c:when test="${dto.board_category eq 4}">급여 및 복지</c:when>
+                   	<c:when test="${dto.board_category eq 5}">자기개발</c:when>
+                   	<c:when test="${dto.board_category eq 6}">경영진</c:when>
+                   	<c:when test="${dto.board_category eq 7}">면접/자소서</c:when>
+                   	<c:when test="${dto.board_category eq 8}">이직/퇴사</c:when>
+                   	<c:when test="${dto.board_category eq 9}">기타</c:when>
+              </c:choose>
+    	
+    	</span>
+    	<span class="category dot">
+    		
+				<c:choose>
+                   	<c:when test="${dto.board_type eq 1}">직무</c:when>
+                   	<c:when test="${dto.board_type eq 2}">조직문화</c:when>
+                   	<c:when test="${dto.board_type eq 3}">근무환경</c:when>
+                   	<c:when test="${dto.board_type eq 4}">급여 및 복지</c:when>
+                   	<c:when test="${dto.board_type eq 5}">자기개발</c:when>
+                   	<c:when test="${dto.board_type eq 6}">경영진</c:when>
+
+                   </c:choose>	  
+    			
+    	</span>&nbsp;&nbsp;에 대한 질문입니다
+    </em>
     <strong class="tit_view">제목 : ${dto.board_title }</strong>
     <p class="desc_view">내용 : ${dto.board_content }</p>
     <div class="writer_info">
@@ -51,7 +87,7 @@ margin-left: 550px;
         <span class="txt_date">작성일자 : ${dto.board_date }</span>
     </div>
     <div class="info_view">
-        <span class="txt_reply">답변 개수</span>
+        <span class="txt_reply">답변 </span>
         <button type="button" class="btn_empathy " onclick="REVIEW_QST_AND_ANS.likeClick(this, '4709', 'qust')"><span class="blind">좋아요</span>0</button>
         <button type="button" class="btn_more_layer btn_report_layer"><span class="blind">더보기</span></button>
         <ul class="layer_more report_layer" style="display:none">
@@ -71,8 +107,9 @@ margin-left: 550px;
     </div>
         <div class="view_company_reply">
         <div class="info_list_reply">
-            <em class="num_total">답변 <span class="emph">26</span>건</em>
+            <em class="num_total">답변 </em>
         </div>
+<<<<<<< HEAD
             <div class="view_company_write non_login">
  <!--답변작성하기 박스 -->           
         <div class="re_answer_box_main">
@@ -87,24 +124,56 @@ margin-left: 550px;
         </div>
     </div>
         </div>    
+=======
+     <div class="view_company_write non_login">
+ <!--답변작성하기 박스 --> 
+ 		<form action="ReBoardInsertOk.do"> 
+ 		
+ 			<input type="hidden" name="board_num" value="${dto.board_num }" />
+ 			<input type="hidden" name="mem_id" value="testMemId" />
+ 			<input type="hidden" name="comp_num" value="15" />
+ 			<input type="hidden" name="comp_id" value="testCompId" />
+ 			
+ 		
+ 		
+ 		         
+	        <div class="re_answer_box_main">
+	        <div class="guide">
+	        <div id="re_answer">
+			<textarea name="reBoard_content" id="textarea_placehold" maxlength="10000" onclick="this.value=''">개인정보를 공유 및 요청하거나, 명예 훼손, 무단 광고, 불법 정보 유포시 모니터링 후 삭제될 수 있으며, 이에 대한 민형사상 책임은 게시자에게 있습니다.
+			</textarea>
+	        </div>
+	        </div>
+	        <div class="re_answer_box">
+	        <button type="submit" id="re_answer_btn" class="re_answer_btn">등록</button>
+	        </div>
+	 	    </div>
+ 	    </form>
+     </div>    
+>>>>>>> branch 'dev' of https://github.com/KwonJunHo1991/goottIO.git
  <!-- 답변작성 박스 -->   
         <div class="list_review_reply non_login">
                
-                                            <div class="info_reply" id="220732">
-        <div class="box_reply">
-            <p class="txt_reply">
-                경력은 아닙니다. 하지만 이력서에 작성을 해야하는 경력이라면 작성하셔도 무방하지만, 왜 3-4개월만하고 퇴사했냐라는 답변이 당당하게 나오지 않은다면 이력서기재는 안하시는것이 좋습니다. 이직사유로 퇴사했다는 것은 이직을 바로 하셨다는 건가요? 아니면 이직을 준비하려고 퇴사하신건가요?<br>
-그리고 3개월 수습기간이면 경력으로 가기가 어렵습니다            </p>
-            <span class="txt_date">오늘 작성</span>
-            <div class="info_view">
-                <button type="button" class="btn_empathy " onclick="REVIEW_QST_AND_ANS.likeClick(this, '220732', 'anwr')"> 0</button>
-                <button type="button" class="btn_more_layer" onclick="REVIEW_QST_AND_ANS.detailPageReportLayer(this)"><span class="blind">더보기</span></button>
-                <ul class="layer_more" style="display:none">
-                    <li><button type="button" class="btn_layer btn_report" onclick="REVIEW_QST_AND_ANS.reportLayerShow('220732', 'anwr')">신고하기</button></li>
-                </ul>
-            </div>
-        </div>
-    </div>
+   <c:forEach var="re" items="${reList }">
+	    <div class="info_reply" id="220732">
+	        <div class="box_reply">
+	            <p class="txt_reply">
+	            	답변 번호 : ${re.reBoard_num }
+	            	게시글번호 : ${re.board_num }
+					내용 : ${re.reBoard_content }
+				</p>
+	            <span class="txt_date">작성일 : ${re.reBoard_date }</span>
+	            <div class="info_view">
+	                <button type="button" class="btn_empathy " onclick="REVIEW_QST_AND_ANS.likeClick(this, '220732', 'anwr')"> 0</button>
+	                <button type="button" class="btn_more_layer" onclick="REVIEW_QST_AND_ANS.detailPageReportLayer(this)"><span class="blind">더보기</span></button>
+	                <ul class="layer_more" style="display:none">
+	                    <li><button type="button" class="btn_layer btn_report" onclick="REVIEW_QST_AND_ANS.reportLayerShow('220732', 'anwr')">신고하기</button></li>
+	                </ul>
+	            </div>
+	        </div>
+	    </div>
+   </c:forEach>
+<!--
     <div class="info_reply" id="218986">
         <div class="box_reply">
             <p class="txt_reply">
@@ -238,7 +307,9 @@ margin-left: 550px;
             </div>
         </div>
     </div>
-                    </div>
+  --> 
+  
+          </div>
                     <button type="button" class="btn_more list_review_reply_btn_more" data-page="1" onclick="REVIEW_QST_AND_ANS.getAnwrList('4709')">더보기</button>
         
     </div><!-- //view_company_reply -->
@@ -344,6 +415,7 @@ margin-left: 550px;
             </div>
         </div>
                 </div>
+           <jsp:include page="../main/mainPage/mp_footer.jsp"></jsp:include>
         </div>
                      
     </div>

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   	
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,7 +8,8 @@
 <title>Insert title here</title>
 <style type="text/css">
 body {
-	font-family-sans-serif: "나눔스퀘어";
+
+	font-family-sans-serif: "나눔스퀘어"; 
 }
 
 .main_Contents {
@@ -60,7 +62,7 @@ body {
 	float: left;
 	width: 60px;
 	height: 60px;
-	background: url('/InOut/resources/img/emotion.png') no-repeat;
+	background: url('<c:url value="/resources/img/emotion.png"/>') no-repeat;
 	font-size: 0;
 	line-height: 0;
 }
@@ -70,7 +72,7 @@ body {
 	margin-top: -10px; float : left;
 	width: 90px;
 	height: 60px;
-	background: url('/InOut/resources/img/medal_1.png') no-repeat;
+	background: url('<c:url value="/resources/img/medal_1.png"/>') no-repeat;
 	font-size: 0;
 	line-height: 0;
 	float: left;
@@ -80,7 +82,7 @@ body {
 	margin-top: -10px; float : left;
 	width: 90px;
 	height: 60px;
-	background: url('/InOut/resources/img/medal_2.png') no-repeat;
+	background: url('<c:url value="/resources/img/medal_2.png"/>') no-repeat;
 	font-size: 0;
 	line-height: 0;
 	float: left;
@@ -90,7 +92,7 @@ body {
 	margin-top: -10px; float : left;
 	width: 90px;
 	height: 60px;
-	background: url('/InOut/resources/img/medal_3.png') no-repeat;
+	background: url('<c:url value="/resources/img/medal_3.png"/>') no-repeat;
 	font-size: 0;
 	line-height: 0;
 	float: left;

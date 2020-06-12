@@ -1,11 +1,14 @@
 package kr.co.InOut.dao;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import kr.co.InOut.dto.IO_MemberDTO;
+import kr.co.InOut.dto.IO_ResumeDTO;
 
 @Repository
 public class IO_MemberDAOImple implements IO_MemberDAO{
@@ -34,4 +37,20 @@ public class IO_MemberDAOImple implements IO_MemberDAO{
 		return sqlsession.selectOne("viewMember", dto);
 	}
 
+	@Override
+	public List<IO_MemberDTO> selectmember() {
+		return sqlsession.selectList("selectmember");
+	}
+
+	@Override
+	public List<IO_ResumeDTO> selectOneMemberResumeById(String mem_id) {
+		
+		return sqlsession.selectList("selectOneMemberResumeById", mem_id);
+	}
+
+
+	
+	
+	
+	
 }

@@ -9,13 +9,14 @@ public class Test {
 	
 	
 	@RequestMapping(value="test.do")
-	public String test() {
+	public String test() { 
 		
 		return "etc/cl_qaa";
 	}
 	@RequestMapping(value="test2.do")
 	public String test2() {
 		
+
 		return "etc/cl_qaa_q";
 	}
 	@RequestMapping(value="test3.do")
@@ -28,6 +29,7 @@ public class Test {
 		
 		return "etc/cl_char_count";
 	}
+	
 	@RequestMapping(value="test5.do")
 	public String test5() {
 		
@@ -35,7 +37,14 @@ public class Test {
 	}
 	@RequestMapping(value="test6.do")
 	public String test6() {
+
+		return "company/post_detail";
+
+	}
+	@RequestMapping(value="test7.do")
+	public String test7() {
 		
-		return "company/com_candidate_all";
+		return "company/post_detail_join";
+		
 	}
 }
