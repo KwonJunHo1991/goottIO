@@ -44,6 +44,8 @@
         comp_type = #{comp_type}
         where comp_num = #{comp_num}        
     </update>
+    
+    <insert id="insertOneCompNoticeInfo" parameterType=""></insert>
 <!-- comp_basic end -->
 
 <!-- notice start -->

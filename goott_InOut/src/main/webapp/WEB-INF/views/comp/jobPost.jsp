@@ -19,7 +19,8 @@
 		});
 		
 		/* 근무 요일 */
-		$('#work_shift_value').hide();
+	 
+	/*	$('#work_shift_value').hide();
 		jQuery('#work_shift_part').change(function(){
 			var state = jQuery('#work_shift_part option:selected').val();
 			if (state == 'wsh999') {
@@ -27,7 +28,7 @@
 			} else {
 				jQuery('#work_shift_value').hide();
 			}
-		});
+		}); */
 		
 		/* 근무 시간 */
 		
@@ -170,6 +171,7 @@
 			console.log("파견");
 			$('#dispatch_term_wrap').toggle();
 		});
+		
 
 	});
 </script>
@@ -180,15 +182,7 @@
 .wrap_recruit_frm {
 	padding-top: 175px;
 }
-/* 정규직 전환 가능 체크했을 때  색깔 변경*/
-input[type=checkbox] + label {
-   border: 1px solid #bcbcbc;
-   border-radius: 5px;
-}
 
-input[type=checkbox]:checked + label{
-   background-color: #bcbcbc;
-}
 .age_limit {
 	display: none;
 }
@@ -758,14 +752,23 @@ body {
 	left: -10px;
 	top: -10px;
 }
+
+/* 정규직 전환 가능 체크했을 때 표시나게 해줌 */
+input[type=checkbox] + label {
+	border: 1px solid #bcbcbc;
+	border-radius: 5px;
+}
+
+input[type=checkbox]:checked + label{
+	background-color: #bcbcbc;
+}
+
 </style>
 </head>
 <body>
 	
 	<div class="wrap_recruit_frm">
-		<form action="./newNoticeOk.do" method="post">
-			<input type="hidden" name="comp_id" value='${sessionScope.loginComp.comp_id }' />
-			<input type="hidden" name="comp_num" value='${sessionScope.loginComp.comp_num }' />
+		<form action="./newNoticeStep1.do" method="post">
 		<div class="step_recruit" id="frmManager">
 			<div id="manager">
 				<!-- 제목 -->
@@ -833,13 +836,13 @@ body {
 						</div>
 						<div class="area_data">
 							<span class="manager_phone">
-								<input type="text" name="notice_man_mp1" id="cell1" class="inpTypo sizeL" title="휴대폰 첫번째 자리 입력" maxlength="3" placeholder="010"/>
+								<input type="text" name="cell1" id="notice_man_mp1" class="inpTypo sizeL" title="휴대폰 첫번째 자리 입력" maxlength="3" placeholder="010"/>
 							</span>
 							<span class="manager_phone"> <p class="dash">-</p>
-								<input type="text" name="notice_man_mp2" id="cell2" class="inpTypo sizeL" title="휴대폰 두번째 자리 입력" maxlength="4" placeholder="1234"/>
+								<input type="text" name="cell2" id="notice_man_mp2" class="inpTypo sizeL" title="휴대폰 두번째 자리 입력" maxlength="4" placeholder="1234"/>
 							</span>
 							<span class="manager_phone"> <p class="dash">-</p>
-								<input type="text" name="notice_man_mp3" id="cell3" class="inpTypo sizeL" title="휴대폰 세번째 자리 입력" maxlength="4" placeholder="5678"/>
+								<input type="text" name="cell3" id="notice_man_mp3" class="inpTypo sizeL" title="휴대폰 세번째 자리 입력" maxlength="4" placeholder="5678"/>
 							</span>
 						</div>
 					</div>
@@ -1147,44 +1150,45 @@ body {
 						<!-- 업종 div의 area_data end -->
 						
 					</div>
-					<!-- 업종 items end -->
-					
-					<!-- 대표 근무지역 -->
-					<div class="items">
-						<div class="area_tit"><strong class="tit">대표 근무지역</strong></div>
-						<div class="area_data" id="address">
-							<div class="manager_location">
-								<span class="inpChk">
-									<input type="checkbox" id="chk_typ3_01" name="work-site-cd" value="site050" data-help_target="company_address">
-									<label class="lbl" for="chk_typ3_01">재택근무 가능</label>
-								</span>
-							</div>
-							
-							<!-- 근무지역 input -->
-							<div class="input_address internal">
-								<span class="manager_address">
-									<input type="text" class="inpTypo sizeL address01 _inputWrapper" id="address_depth1" name="notice_comp_adrs1" data-help_target="company_address" title="주소 입력" placeholder="서울특별시 구로구 구로3동 시흥대로 ">
-								</span>
-								<span class="manager_address2">
-									<input type="text" class="inpTypo sizeL address02 _inputWrapper" id="address_depth2" name="notice_comp_adrs1_detail" data-help_target="company_address" title="상세주소 입력" placeholder="상세주소 : 예) 187-10 코오롱싸이언스밸리">
-								</span>
-								<span class="manager_address3">
-									<input type="text" class="inpTypo sizeL address02 _inputWrapper" id="address_depth3" name="notice_comp_adrs2" data-help_target="company_address" title="인근 지역" placeholder="인근지역: 예) 관악구">
-								</span>
-							</div>
+				</div>
+				<!-- 업종 items end -->
+				
+				<!-- 대표 근무지역 -->
+				<div class="items">
+					<div class="area_tit"><strong class="tit">대표 근무지역</strong></div>
+					<div class="area_data" id="address">
+						<div class="manager_location">
+							<span class="inpChk">
+								<!-- <input type="checkbox" id="chk_typ3_01" name="work-site-cd" value="site050" data-help_target="company_address">
+								<label class="lbl" for="chk_typ3_01">재택근무 가능</label> -->
+							</span>
+						</div>
+						
+						<!-- 근무지역 input -->
+						<div class="input_address internal">
+							<span class="manager_address">
+								<input type="text" class="inpTypo sizeL address01 _inputWrapper" id="address_depth1" name="notice_comp_adrs1" data-help_target="company_address" title="주소 입력" placeholder="서울특별시 구로구 구로3동 시흥대로 ">
+							</span>
+							<span class="manager_address2">
+								<input type="text" class="inpTypo sizeL address02 _inputWrapper" id="address_depth2" name="notice_comp_adrs1_detail" data-help_target="company_address" title="상세주소 입력" placeholder="상세주소 : 예) 187-10 코오롱싸이언스밸리">
+							</span>
+							<span class="manager_address3">
+								<input type="text" class="inpTypo sizeL address02 _inputWrapper" id="address_depth3" name="notice_comp_adrs2" data-help_target="company_address" title="인근 지역" placeholder="인근지역: 예) 관악구">
+							</span>
 						</div>
 					</div>
-					<!-- 대표 근무지역 end -->
-					
 				</div>
-				<!-- frm_body frm_manager end -->
+				<!-- 대표 근무지역 end -->
+					
 				
 			</div>
-			<!-- div#manager end -->
+			<!-- frm_body frm_manager end -->
 			
 		</div>
-		<!-- #frmManager .step_recruit end -->
+		<!-- div#manager end -->
 		</div>
+		<!-- #frmManager .step_recruit end -->
+		
 		
 		<!-- 자격/조건 -->
 		<div id="frmQualification" class="step_recruit">
@@ -1318,7 +1322,8 @@ body {
 											name="notice_req_gyj_gigan" title="계약기간 입력">개월 
 										<span class="optional_inpchk">
 											<span class="inpChk">
-												<input type="checkbox" id="chk_term_jt_10" name="notice_req_gyj_tojgj" value="1">
+												<input type="checkbox" id="chk_term_jt_10" name="notice_req_gyj_tojgj" value="1"
+													style="width: 130px; height: 20px;" class="jgj_chk">
 												<label class="lbl" for="chk_term_jt_10" style="margin-left: 20px;">정규직 전환 가능</label>
 											</span>
 										</span>
@@ -1352,7 +1357,8 @@ body {
 											name="notice_req_int_gigan" title="계약기간 입력">개월 
 										<span class="optional_inpchk">
 											<span class="inpChk">
-												<input type="checkbox" id="chk_term_jt_11" name="notice_req_int_tojgj" value="1">
+												<input type="checkbox" id="chk_term_jt_11" name="notice_req_int_tojgj" value="1"
+													style="width: 130px; height: 20px;" class="jgj_chk">
 												<label class="lbl" for="chk_term_jt_11">정규직 전환 가능</label>
 											</span>
 										</span>
@@ -1385,7 +1391,8 @@ body {
 											name="notice_req_pgj_gigan" title="계약기간 입력">개월 
 										<span class="optional_inpchk">
 											<span class="inpChk">
-											<input type="checkbox" id="chk_term_jt_23" name="notice_req_pgj_tojgj" value="1">
+											<input type="checkbox" id="chk_term_jt_23" name="notice_req_pgj_tojgj" value="1"
+												style="width: 130px; height: 20px;" class="jgj_chk">
 											<label class="lbl" for="chk_term_jt_23">정규직 전환 가능</label>
 										</span>
 										</span>
@@ -1421,7 +1428,6 @@ body {
 								</select>
 							</div>
 							<!-- 직접입력  선택 시 나옴 -->
-						<!-- 	<input type="text" id="work_shift_value" name="notice_req_workday" maxlength="30" class="inpTypo sizeL" title="근무요일 직접입력" placeholder="예) 월 4회 휴일, 주5일(매주 금요일 휴일) 등" style="display: none;"> -->
 							
 						</div> <!-- condition_day end -->
 					</div>	<!-- area_data end -->
@@ -1443,8 +1449,6 @@ body {
 										<option value="탄력근무제">탄력근무제</option>
 									</select>
 								</div>
-<!-- 								<input type="text" id="work_shift_time" name="notice_req_worktime" maxlength="30" class="inpTypo sizeL" title="근무시간 직접입력"
-									placeholder="예) 1주일 순환근무, 교대 근무" style="display: none;"> -->
 							</div>
 						</div>
 					</div>
@@ -1481,7 +1485,7 @@ body {
 									<option value="limit" id="lim">연령제한</option>
 								</select>
 							</div>
-							<div class="age_limit" style="display : flex;">
+							<div class="age_limit" style="display: flex;">
 								<div class="inpSel sizeL">
 									<input type="text" class="inpTypo sizeL max_age" name="notice_req_maxage" id="max_age" title="최소 나이" placeholder="출생년도로  입력하세요. 예) 2000" />
 								</div>
