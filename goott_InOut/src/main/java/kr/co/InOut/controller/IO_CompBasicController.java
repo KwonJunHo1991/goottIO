@@ -102,15 +102,17 @@ public class IO_CompBasicController {
 	
 	// 공고내 기업정보 수정창
 	@RequestMapping(value = "/company/comp_notice_info.do")
-	public String showCompNoticeInfo() {
+	public String showCompNoticeInfo(HttpSession session, Model model) {
+		IO_Comp_BasicDTO dto = (IO_Comp_BasicDTO)session.getAttribute("loginComp");
 		
+		model.addAttribute("cnidto", dao.selectOneCompNoticeInfoByCn(dto.getComp_num()));
 		return "comp/notice_compinfo";
 	}
 	
 	// 공고내 기업정보 저장버튼 클릭시 마이페이지로
-	@RequestMapping(value = "company/compHome.do")
+	@RequestMapping(value = "company/comp_notice_infoOk.do")
 	public String compNoticeInfoOk(@ModelAttribute()IO_Comp_Notice_InfoDTO dto) {
-		
-		return "mypage";
+//		dao.insertOneCompNoticeInfo(dto);
+		return "comp_notice_infoOk";
 	}
 }

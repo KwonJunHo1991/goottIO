@@ -32,6 +32,7 @@
     
 
  <style type="text/css">
+
 .container_2{
  width: 100%;
  padding-left: 650px;
@@ -53,6 +54,10 @@
  .img{
  width: 100px;
  }
+ #this_is_main{
+ background-image: url("<c:url value="/resources/images/bg_1.jpg"/>");  
+ }
+ 
  </style>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script> 
 <script type="text/javascript">
@@ -102,7 +107,7 @@ $(function() {
 
 <%-- <c:url value="/resources/images/bg_1.jpg"/> --%>
 <!--     <div class="hero-wrap img" style="background-image: /resources/images/bg_1.jpg;"> -->
-    <div class="hero-wrap img" style="background-image:url('/InOut/resources/images/bg_1.jpg');">
+    <div id="this_is_main" class="hero-wrap img">
       <div class="overlay"></div>
       <div class="container">
       	<div class="row d-md-flex no-gutters slider-text align-items-center justify-content-center">
@@ -380,7 +385,7 @@ $(function() {
         
 	        	<ul class="category text-center">
 
-	        			<li><a href="#">공고 제목 :${list.notice_title } <br><span class="number">공고 번호 : ${list.notice_num }</span>&nbsp; <span>기업이름</span><i class="ion-ios-arrow-forward"></i></a></li>
+	        			<li><a href="../company/noticeDetailMain.do?notice_num=${list.notice_num }">${list.notice_title } <br><span class="number">공고 번호 : ${list.notice_num }</span>&nbsp; <span>기업이름</span><i class="ion-ios-arrow-forward"></i></a></li>
         		</ul>
 	     </div>  
         </c:forEach>
@@ -440,7 +445,7 @@ $(function() {
 	        <c:forEach items="${sList}" var="list">
 	        	<div class="col-md-3 ftco-animate">
 	        		<ul class="category_1 text-center">
-	        			<li><a href="#">제목 : ${list.notice_title }<br><span class="number">공고 번호 : ${list.notice_num }</span> <span>???</span><i class="ion-ios-arrow-forward"></i></a></li>
+	        			<li><a href="../company/noticeDetailMain.do?notice_num=${list.notice_num }">${list.notice_title }<br><span class="number">공고 번호 : ${list.notice_num }</span> <span>???</span><i class="ion-ios-arrow-forward"></i></a></li>
 	        			
 	        		</ul>
 	        	</div>
@@ -501,7 +506,7 @@ $(function() {
 		              <div class="one-third mb-4 mb-md-0">
 		                <div class="job-post-item-header align-items-center">
 		                	<span class="subadge">${list.notice_num }</span>
-		                  <h2 class="mr-3 text-black"><a href="#">${list.notice_title }</a></h2>
+		                  <h2 class="mr-3 text-black"><a href="../company/noticeDetailMain.do?notice_num=${list.notice_num }">${list.notice_title }</a></h2>
 		                </div>
 		        
 		              </div>
@@ -512,7 +517,7 @@ $(function() {
 			                	<span class="icon-heart"></span>
 			                </a>
 		                </div>
-		                <a href="job-single.html" class="btn btn-primary py-2">Apply Job</a>
+		                <a href="../company/noticeDetailMain.do?notice_num=${list.notice_num }" class="btn btn-primary py-2">Apply Job</a>
 		              </div>
 		            </div>
 		          </div>
@@ -691,7 +696,7 @@ $(function() {
 		        </div>
 		        <div class="sidebar-box ftco-animate">
 		        	<div class="">
-			        	<a href="#" class="company-wrap"><img src="/InOut/resources/images/company-1.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
+			        	<a href="#" class="company-wrap"><img src= "<c:url value="/resources/images/company-1.jpg"/>" class="img-fluid" alt="Colorlib Free Template"></a>
 			        	<div class="text p-3">
 			        		<h3><a href="#">Company Company</a></h3>
 			        		<p><span class="number">500</span> <span>Open position</span></p>
@@ -700,7 +705,7 @@ $(function() {
 		        </div>
 		        <div class="sidebar-box ftco-animate">
 		        	<div class="">
-			        	<a href="#" class="company-wrap"><img src="/InOut/resources/images/company-2.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
+			        	<a href="#" class="company-wrap"><img src="<c:url value="/resources/images/company-2.jpg"/>" class="img-fluid" alt="Colorlib Free Template"></a>
 			        	<div class="text p-3">
 			        		<h3><a href="#">Facebook Company</a></h3>
 			        		<p><span class="number">700</span> <span>Open position</span></p>
@@ -709,7 +714,7 @@ $(function() {
 		        </div>
 		        <div class="sidebar-box ftco-animate">
 		        	<div class="">
-			        	<a href="#" class="company-wrap"><img src="/InOut/resources/images/company-3.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
+			        	<a href="#" class="company-wrap"><img src="<c:url value="/resources/images/company-3.jpg"/>" class="img-fluid" alt="Colorlib Free Template"></a>
 			        	<div class="text p-3">
 			        		<h3><a href="#">IT Programming INC</a></h3>
 			        		<p><span class="number">700</span> <span>Open position</span></p>
@@ -718,7 +723,7 @@ $(function() {
 		        </div>
 		        <div class="sidebar-box ftco-animate">
 		        	<div class="">
-			        	<a href="#" class="company-wrap"><img src="/InOut/resources/images/company-4.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
+			        	<a href="#" class="company-wrap"><img src="/resources/images/company-4.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
 			        	<div class="text p-3">
 			        		<h3><a href="#">IT Programming INC</a></h3>
 			        		<p><span class="number">700</span> <span>Open position</span></p>
@@ -750,7 +755,7 @@ $(function() {
         			<div class="item">
 		        		<a href="#" class="team text-center">
 
-		        			<div class="img" style="background-image: url(/InOut/resources/images/person_1.png);"></div>
+		        			<div class="img" style="background-image: url("<c:url value="/resources/images/person_1.png"/>"); ></div>
 
 		        			<h2>MyPage</h2>
 		        			<span class="position">마이페이지</span>
@@ -758,49 +763,49 @@ $(function() {
         			</div>
         			<div class="item">
 	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(/InOut/resources/images/person_2.png);"></div>
+		        			<div class="img" style="background-image:  url("<c:url value="/resources/images/person_2.png"/>"); ></div>
 		        			<h2>Support Status</h2>
 		        			<span class="position">이력서 지원현황</span>
 		        		</a>
 	        		</div>
 	        		<div class="item">
 	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(/InOut/resources/images/person_3.png);"></div>
+		        			<div class="img" style="background-image:  url("<c:url value="/resources/images/person_3.png"/>"); ></div>
 		        			<h2>Counting characters</h2>
 		        			<span class="position">글자수 세기</span>
 		        		</a>
 	        		</div>
 	        		<div class="item">
 	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(/InOut/resources/images/person_4.png);"></div>
+		        			<div class="img" style="background-image:  url("<c:url value="/resources/images/person_4.png"/>"); ></div>
 		        			<h2>Employment Talking</h2>
 		        			<span class="position">취준 고민</span>
 		        		</a>
 	        		</div>
 	        		<div class="item">
 	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(/InOut/resources/images/person_5.png);"></div>
+		        			<div class="img" style="background-image:  url("<c:url value="/resources/images/person_5.png"/>"); ></div>
 		        			<h2>Applicant management</h2>
 		        			<span class="position">지원자 관리</span>
 		        		</a>
 	        		</div>
 	        		<div class="item">
 	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(/InOut/resources/images/person_6.png);"></div>
+		        			<div class="img" style="background-image:  url("<c:url value="/resources/images/person_6.png"/>"); ></div>
 		        			<h2>Corporate announcement</h2>
 		        			<span class="position">기업 공고</span>
 		        		</a>
 	        		</div>
 	        		<div class="item">
 	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(/InOut/resources/images/person_7.png);"></div>
+		        			<div class="img" style="background-image:  url("<c:url value="/resources/images/person_7.png"/>"); ></div>
 		        			<h2>Resume writing</h2>
 		        			<span class="position">이력서 작성</span>
 		        		</a>
 	        		</div>
 	        		<div class="item">
 	        			<a href="#" class="team text-center">
-		        			<div class="img" style="background-image: url(/InOut/resources/images/person_8.png);"></div>
+		        			<div class="img" style="background-image:  url("<c:url value="/resources/images/person_8.png"/>"); ></div>
 		        			<h2>Adoption products</h2>
 		        			<span class="position">채용 상품</span>
 		        		</a>
@@ -834,6 +839,7 @@ $(function() {
         </div>
       </div>
     </section>
+
 
 <jsp:include page="./mp_footer.jsp"></jsp:include>    
   

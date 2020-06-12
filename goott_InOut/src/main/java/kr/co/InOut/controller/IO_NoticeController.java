@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.co.InOut.dao.IO_NoticeDAO;
 import kr.co.InOut.dto.IO_Comp_BasicDTO;
@@ -84,11 +85,17 @@ public class IO_NoticeController {
 		return "newNoticeOk2";
 	}
 	
-	// 개인입장의 공고 세부정보
-	@RequestMapping(value = "/company/noticeDetail.do")
-	public String showNoticeDetail() {
+	// 기업이 보는 공고 세부정보
+	@RequestMapping(value = "/company/post_detail.do")
+	public String showNoticeDetail(@RequestParam("notice_num")Integer notice_num, Model model, HttpSession session) {
+		IO_Comp_BasicDTO cbdto = (IO_Comp_BasicDTO)session.getAttribute("loginComp");
+		IO_NoticeDTO dto = new IO_NoticeDTO();
+		dto.setComp_num(cbdto.getComp_num());
+		dto.setNotice_num(notice_num);
 		
-		return "noticeDetail";
+		model.addAttribute("notice", dao.selectOneNoticeByCnNn(dto));
+		
+		return "comp/post_detail";
 	}
 	
 	// 공고 리스트 보는 기업 홈

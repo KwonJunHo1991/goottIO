@@ -45,7 +45,14 @@
         where comp_num = #{comp_num}        
     </update>
     
-    <insert id="insertOneCompNoticeInfo" parameterType=""></insert>
+    <insert id="insertOneCompNoticeInfo" parameterType="CNIDTO">
+        insert into io_comp_notice_info (comp_num, comp_id, comp_notice_imgurl, comp_rprsnt_name, comp_found_date, comp_emps)
+        values (#{comp_num}, #{comp_id}, #{comp_notice_imgurl}, #{comp_rprsnt_name}, #{comp_found_date}, #{comp_emps})
+    </insert>
+    
+    <select id="selectOneCompNoticeInfoByCn" parameterType="int" resultType="CNIDTO">
+        select * from io_comp_notice_info where comp_num = #{comp_num}
+    </select>
 <!-- comp_basic end -->
 
 <!-- notice start -->

@@ -1,6 +1,7 @@
 package kr.co.InOut.controller;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 import javax.inject.Inject;
@@ -71,18 +72,25 @@ public class IO_MainController {
 		return "/main/jobChoice/jc_jobChoice";
 	}
 	
-	
-	
-	
-	
-	
+	//글자수 계산
 	@RequestMapping(value = "/main/char.do")
 	public String charPage() {
 		return "/etc/cl_char_count";
 	}
+	
+	//인재검색
 	@RequestMapping(value = "/main/findPerson.do")
 	public String findPerson() {
 		return "/company/com_candidate_all";
+	}
+	
+	//채용공고 detail
+	@RequestMapping(value = "/company/noticeDetailMain.do")
+	public String noticeDetailMain(@RequestParam(value = "notice_num")int notice_num,
+									Model model) {
+		IO_NoticeDTO dto = 	dao.selectNoticeDetailByNoticeNum(notice_num);
+		model.addAttribute("notice", dto);
+		return "/company/post_detail";
 	}
 	
 	

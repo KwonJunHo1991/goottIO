@@ -195,12 +195,12 @@ $(function () {
 		</div>
 	</div>
 
-
 	<section class="ftco-section bg-light">
 				
 		<div class="lc_container" id="lc_container">
 			<div class="row">
 				<div class="lc_main_container">
+
 
 
 	<c:forEach items="${list }" var="list">

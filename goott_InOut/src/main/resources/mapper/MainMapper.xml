@@ -34,7 +34,7 @@
  
  	select * from io_notice
  	
- 	where notice_prcs_job = ${notice_prcs_job}
+ 	where notice_prcs_job = #{notice_prcs_job}
  	
  </select>
 
@@ -42,12 +42,16 @@
  
  	select * from io_notice
  	
- 	where notice_comp_type = ${notice_comp_type}
+ 	where notice_comp_type = #{notice_comp_type}
  	
  </select>
  
  <select id="selectAllNoticeSearch" resultType="NoticeDTO">
  	select * from io_notice
+ </select>
+ 
+ <select id="selectNoticeDetailByNoticeNum" parameterType="int" resultType="NoticeDTO">
+ 	select * from io_notice where notice_num =#{notice_num}
  </select>
 
 

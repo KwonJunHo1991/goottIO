@@ -11,7 +11,6 @@
     <link rel="icon" href="<c:url value="/resources/img/favicon.png"/>">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="<c:url value="/resources/css/css_1/bootstrap.min.css"/>">
-
     <!-- owl carousel CSS -->
     <link rel="stylesheet" href="<c:url value="/resources/css/css_1/owl.carousel.min.css"/>">
     <!-- themify CSS -->
@@ -37,33 +36,23 @@ z-index: 5;
 </style> 
 
 
- 
+
  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>   
  <script type="text/javascript">
- 	$(function () {
- 		var bannerOffset = $( '.main_menu_iner' ).offset();
-
- 	    $( window ).scroll( function() {  //window에 스크롤링이 발생하면
-
- 	          if ( $( document ).scrollTop() > bannerOffset.top ) {   // 위치 및 사이즈를 파악하여 미리 정한 css class를 add 또는 remove 합니다.
-
- 	            $( '.main_menu_iner' ).addClass( 'topFixBannerFixed' );
-
- 	          }
-
- 	          else {
-
- 	            $( '.main_menu_iner' ).removeClass( 'topFixBannerFixed' );
-
- 	          }
-
- 	     });
-
-	});
+    $(function () {
+       var bannerOffset = $( '.main_menu_iner' ).offset();
+        $( window ).scroll( function() {  //window에 스크롤링이 발생하면
+              if ( $( document ).scrollTop() > bannerOffset.top ) {   // 위치 및 사이즈를 파악하여 미리 정한 css class를 add 또는 remove 합니다.
+                $( '.main_menu_iner' ).addClass( 'topFixBannerFixed' );
+              }
+              else {
+                $( '.main_menu_iner' ).removeClass( 'topFixBannerFixed' );
+              }
+         });
+   });
  </script> 
  
 </head>
-
 <body>
    <!--::header part start::-->
    <header class="main_menu">
@@ -95,18 +84,17 @@ z-index: 5;
                 <div class="row align-items-center ">
                     <div class="col-lg-12">
                         <nav class="navbar navbar-expand-lg navbar-light justify-content-between">
-                           <a class="navbar-brand" href=../main/main.do> <img src="/InOut/resources/img/logo.png" alt="logo" style="width: 150px;" > </a>
+                            <a class="navbar-brand" href="../main/main.do"> <img src="<c:url value="/resources/img/logo.png"/>" alt="logo" style="width: 150px;" > </a>
                             <button class="navbar-toggler" type="button" data-toggle="collapse"
                                 data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                                 aria-expanded="false" aria-label="Toggle navigation">
                                 <span class="navbar-toggler-icon"></span>
                             </button>
-
                             <div class="collapse navbar-collapse main-menu-item justify-content-center"
                                 id="navbarSupportedContent">
-                                <ul class="navbar-nav">
+                                    <ul class="navbar-nav">
          
-									<li class="nav-item">
+                           <li class="nav-item">
                                         <a class="nav-link" href="../main/local.do">지역별</a>
                                     </li>
 <!--                                    <li class="nav-item dropdown">
@@ -195,8 +183,8 @@ z-index: 5;
                                             로그인
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                            <a class="dropdown-item" href="top_place.html">개인회원 로그인</a>
-                                            <a class="dropdown-item" href="tour_details.html">기업회원 로그인</a>
+                                            <a class="dropdown-item" href="../member/login.do">개인회원 로그인</a>
+                                            <a class="dropdown-item" href="../company/login.do">기업회원 로그인</a>
                                         </div>
                                     </li>
                                 </ul>
@@ -209,6 +197,5 @@ z-index: 5;
         </div>
     </header>
     <!-- Header part end-->
-
 </body>
 </html>
