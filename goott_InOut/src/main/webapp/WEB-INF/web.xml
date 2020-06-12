@@ -29,7 +29,6 @@
 	<listener>
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
-	
 
 	<!-- Processes application requests -->
 	<servlet>

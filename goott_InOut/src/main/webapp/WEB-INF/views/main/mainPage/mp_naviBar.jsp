@@ -178,8 +178,38 @@ z-index: 5;
                                     </li>
                                     
                               <c:choose>      
-                             	<c:when test="${sessionScope.loginComp.comp_id } == null">
-                             
+                             	<c:when test="${sessionScope.loginComp !=null}">
+                     			    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
+                                            role="button" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                         ${sessionScope.loginComp.comp_id }          
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
+                                            <a class="dropdown-item" href="#">My Page</a>
+                                            <a class="dropdown-item" href="../main/logout.do">로그아웃</a>
+                               <!-- 마이페이지, 로그아웃 경로 설정. -->
+                                        </div>
+                                    </li>
+
+                              	</c:when>
+                              	<c:when test="${sessionScope.mem_id !=null }">
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
+                                            role="button" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                         ${sessionScope.mem_id }
+                                        </a>
+                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
+                                            <a class="dropdown-item" href="#">My Page</a>
+                                            <a class="dropdown-item" href="../main/logout.do">로그아웃</a>
+                                        </div>
+                                    </li>
+                              	
+                              	
+                              	</c:when>
+                              	
+                              	<c:otherwise>
                                     <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
                                             role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -189,25 +219,6 @@ z-index: 5;
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
                                             <a class="dropdown-item" href="../member/login.do">개인회원 로그인</a>
                                             <a class="dropdown-item" href="../company/login.do">기업회원 로그인</a>
-                                        </div>
-                                    </li>
-                              	</c:when>
-                              	<c:when test="">
-                              	
-                              	
-                              	</c:when>
-                              	
-                              	<c:otherwise>
-                              	     <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown_1"
-                                            role="button" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                         ${sessionScope.loginComp.comp_id }          
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                            <a class="dropdown-item" href="#">My Page</a>
-                                            <a class="dropdown-item" href="#">로그아웃</a>
-                               <!-- 마이페이지, 로그아웃 경로 설정. -->
                                         </div>
                                     </li>
                               	</c:otherwise>

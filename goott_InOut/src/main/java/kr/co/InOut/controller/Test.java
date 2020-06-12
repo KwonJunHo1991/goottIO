@@ -15,8 +15,7 @@ public class Test {
 	}
 	@RequestMapping(value="test2.do")
 	public String test2() {
-		
-<<<<<<< HEAD
+
 
 		return "etc/cl_qaa_q";
 	}
@@ -47,8 +46,6 @@ public class Test {
 		
 		return "company/post_detail_join";
 		
-=======
-		return "/company/post_detail";
->>>>>>> branch 'dev' of https://github.com/KwonJunHo1991/goottIO.git
+
 	}
 }

@@ -11,6 +11,7 @@ html {
 }
 
 #signup_window {
+margin-left: 500px;
    margin: auto;
    padding: 0;
    font-family: "나눔스퀘어";
@@ -503,9 +504,13 @@ $(function() {
 <body style="background-color: #f4f5f7; width: 100%; height: 2000px;">
 
 <form name="form1">
-
+	<div>
+   <jsp:include page="main/mainPage/mp_naviBar.jsp"></jsp:include>
+   </div> 
+   
+   <jsp:include page="main/mainPage/loginPop.jsp"></jsp:include>
    <div id="signup_window">
-
+	 <jsp:include page="etc/cl_sideNavi.jsp"></jsp:include>   
       <h1 id="head_title">
          <img src="../resources/img/logo3.png" alt="logo"
             style="width: 150px; height: 150px;">
