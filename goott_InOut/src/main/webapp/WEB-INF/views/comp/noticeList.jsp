@@ -78,6 +78,8 @@ $(function(){
 						<li id="pass_tab"><a href="#" type="button" class="inTab"
 							onclick="pushDataLayer('ga_lead','Home_Tapmenu-acceptance-manage', 'acceptance-manage');"><span>합격자
 									관리</span></a></li>
+						<li id="new_notice_tab"><a href="./newNotice.do" type="button" class="inTab"	>
+						<span>공고 등록</span></a></li>
 					</ul>
 				</div>
 				<section id="inner_content_list" class="tabpanel">

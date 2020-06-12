@@ -7,7 +7,7 @@
 <title>기업 회원가입 창</title>
 </head>
 <body>
-	<form action="#" method="post">
+	<form action="" method="post">
 		<table>
 			<tr>
 				<th>회사이름</th>
@@ -35,7 +35,28 @@
 				</td>
 			</tr>
 			<tr>
-				<td colspan="2"><input type="submit" value="회원가입 완료" /></td>
+				<th>대표 이름</th>
+				<td><input type="text" name="comp_username" id="usertext"
+					value="${cbdto.comp_username }" /></td>
+			</tr>
+			<tr>
+				<th>기업 대표 전화번호</th>
+				<td><input type="text" name="comp_usertel" id="usertext"
+					value="${cbdto.comp_usertel }" /></td>
+			</tr>
+			<tr>
+				<th>기업 대표 E-mail</th>
+				<td><input type="text" name="comp_useremail" id="usertext"
+					value="${cbdto.comp_useremail }" /></td>
+			</tr>
+			<tr>
+				<th>대표업종(체크박스로 한개만 선택할 수 있어야해요!)</th>
+				<td><input type="text" name="comp_type" id="usertext"
+					value="${cbdto.comp_type }" /></td>
+			</tr>
+			<tr>
+				
+				<td colspan="2"><input type="submit" value="저장" /></td>
 			</tr>
 		</table>
 	</form>
