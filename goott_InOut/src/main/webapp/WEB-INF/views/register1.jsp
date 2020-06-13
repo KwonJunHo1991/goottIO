@@ -210,7 +210,7 @@ margin-left: 730px;
    float: left;
    width: 500px;
    height: 60px;
-   padding: 8px 12px 0px 12px;
+   padding: 8px 12px 0px 0px;
    background-color: white;
    border: 0px;
 }
@@ -510,14 +510,14 @@ $(function() {
       <div id="two_choice">
          <div id="top1">
             <div id="top1-1">
-               <a href="p_signup_main" id="top1-1-atag"> <strong
+               <a href="../member/registerlist.do" id="top1-1-atag"> <strong
                   id="top1-1-strong">개인회원가입</strong>
                   <p id="top1-1-ptag">만 15세 이상 가능</p>
                </a>
             </div>
 
             <div id="top1-2" class="div a">
-               <a href="p_signup_Company.jsp" id="top1-2-atag"> <strong
+               <a href="../company/join.do" id="top1-2-atag"> <strong
                   id="top1-2-strong">기업회원가입</strong>
                   <p id="top1-2-ptag">InOut과 시작하세요</p>
                </a>

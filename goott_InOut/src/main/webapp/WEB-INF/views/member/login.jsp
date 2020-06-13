@@ -48,19 +48,21 @@
    font-family: "나눔스퀘어";
 }
 
-.safetyLogin_full {
+/* .safetyLogin_full {
+margin-left: 550px;
    width: 100%;
    height: 100%;
    background-color: #f5f5f5;
-   float: left;
+   
 }
-
+ */
 .inner { /* 전체 div  */
    background-color: white;
-   margin-top: 100px;
+   margin-top: 160px;
+   margin-bottom: 130px;
    letter-spacing: -1px;
-   margin-left: 200px;
-   width: 1060px;
+   margin-left: 520px;
+   width: 860px;
    height: 516px;
    border: 1px solid #cbcbca;
    background-color: white;
@@ -72,8 +74,8 @@
    height: 40px;
    line-height: 23px;
    margin: 0;
-   margin-left: 350px;
-   margin-top: 30px;
+    
+   margin-top: 15px;
    border: 1px solid #cbcbca;
 }
 
@@ -82,7 +84,7 @@
    width: 294px;
    height: 40px;
    line-height: 23px;
-   margin-left: 350px;
+    
    font-size: 14px;
    font-weight: bold;
    border: 1px solid #cbcbca; /* 회색 */
@@ -125,7 +127,7 @@
 }
 
 #login_title { /* 타이틀  */
-   margin-left: 350px;
+    margin-left: 40px;
    margin-top: 90px;
    size: 30px;
    font-size: 20px;
@@ -138,7 +140,7 @@
 }
 
 #login_title3 {
-   margin-left: 350px;
+    margin-left: 80px;
    font-size: 15px;
    font-family: "나눔스퀘어";
    font-weight: 900px;
@@ -146,9 +148,10 @@
 }
 
 #checkbox2 {
+margin-left: 250px;
    width: 350px;
    height: 20px;
-   margin-left: 350px;
+    
    margin-top: 10px;
 }
 
@@ -214,7 +217,7 @@
 }
 
 .sign-up {
-   margin-left: 350px;
+    
    color: #666;
    font-weight: bold;
    text-decoration: none;
@@ -231,7 +234,7 @@
 
 #id_pw {
    /* width: 1200px; */
-   height: 121.6px;
+   height: 111.6px;
    font-size: 12px;
 }
 
@@ -239,7 +242,7 @@
    color: #666;
    font-weight: bold;
    text-decoration: none;
-   margin-left: 50px;
+   margin-left: 200px;
    font-size: 10px;
 }
 
@@ -249,29 +252,39 @@
 
 #btn_position { /*로그인 버튼 위치*/
    float: left;
-   margin-top: 29px;
+   margin-top: 14px;
 }
 
 #sign-up-position {
    float: left;
 }
+#innerContext{
+		width: 450px;
+		
+		margin-left: 250px;
+}
 </style>
 </head>
 <body>
-						
  <form name="form1" method="get">
+   <div>
+   <jsp:include page="../main/mainPage/mp_naviBar.jsp"></jsp:include>
+   </div> 
+   
+   <jsp:include page="../main/mainPage/loginPop.jsp"></jsp:include>						
 
    <div class="safetyLogin_full">
-     
 
 
          <div class="inner">
+     <jsp:include page="../etc/cl_sideNavi.jsp"></jsp:include>   
             <!-- 로그인   -->
             <%-- <c:if test="${empty authUser}"> --%>
-         
+         	
+         	<div id="innerContext">
             <div>
                <!-- title -->
-               <h1 id="login_title">로그인이 필요한 서비스입니다.</h1>
+               <h1 id="login_title"><strong style="font-size: 40px; color:#6b80f1">개인로그인</strong>이 필요한 서비스입니다.</h1>
                <p id="login_title3">
                   사람인 회원이 아니면, 지금 <span id="login_title2"> <a href="회원가입.jsp">회원가입</a></span>
                   해주세요
@@ -294,15 +307,15 @@
                      <div id="id_pw">
                         <input type="text" name="mem_id" id="mem_id" placeholder="아이디"
                            autofocus="autofocus" style="padding-left: 10px;" required>
-                           <c:if test="${msg == 'failure' }">
-                           		<script type="text/javascript">
-									alert('<c:out value="아이디와 패스워드가 다릅니다."/>');
-								</script>
-                           
-                           </c:if>
+
                         <br /> <input type="password" name="mem_pw" id="mem_pw"
                            placeholder="패스워드" style="padding-left: 10px;" required>
-
+												<c:if test="${msg == 'failure' }">
+				<div style="color :red; font-size:18px; margin-left: 40px;">
+				 일치 하지 않습니다.
+				
+				</div>
+					</c:if>
                      </div>
                </div>
                <div id="btn_position">
@@ -313,18 +326,17 @@
                <div id="sign-up-position">
 
                   <!-- <input type="button" value="회원가입"class="SignUp_btn" id="SignUp_btn"><br /> -->
-                  <a href="회원가입.jsp들어감" class="sign-up">회원가입</a> <span> | </span>
-                  
-                    <a href="./findpw.do " id="Search_id-pw">아이디 / 비밀번호 찾기</a>
-                     
-                    <a href="서비스안내.jsp" id="Service-nav">서비스 안내</a>
+                  <a href="../member/registerlist.do" class="sign-up">회원가입</a> <span> | </span><a
+                     href="아이디/비밀번호 찾기 " id="Search_id-pw">아이디 / 비밀번호 찾기</a><a
+                     href="서비스안내.jsp" id="Service-nav">서비스 안내</a>
                </div>
+         	</div>
             </div>
      
    </div>
 
  </form>
-
+  <jsp:include page="../main/mainPage/mp_footer.jsp"></jsp:include>
 
 
 </body>

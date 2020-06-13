@@ -186,7 +186,7 @@ z-index: 5;
                          ${sessionScope.loginComp.comp_id }          
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                            <a class="dropdown-item" href="#">My Page</a>
+                                            <a class="dropdown-item" href="../company/newNotice.do">My Page</a>
                                             <a class="dropdown-item" href="../main/logout.do">로그아웃</a>
                                <!-- 마이페이지, 로그아웃 경로 설정. -->
                                         </div>
@@ -230,7 +230,7 @@ z-index: 5;
                                     
                                 </ul>
                             </div>
-                            <a href="#" class="btn_1 d-none d-lg-block">book now</a>
+                            <a href="../member/login.do" class="btn_1 d-none d-lg-block">InOut</a>
                         </nav>
                     </div>
                 </div>
