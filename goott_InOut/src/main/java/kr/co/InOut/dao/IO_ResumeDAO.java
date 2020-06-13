@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Component;
 
 import kr.co.InOut.dto.IO_CarrerDTO;
+import kr.co.InOut.dto.IO_NoticeDTO;
 import kr.co.InOut.dto.IO_ResumeDTO;
 import kr.co.InOut.dto.IO_UniversityDTO;
 @Component
@@ -31,5 +32,11 @@ public class IO_ResumeDAO {
 	
 	public List<IO_ResumeDTO> selectOneResumeByNum(int res_num){
 		return ss.selectList("selectOneResumeByNum", res_num);
+		
+		
+	}
+	
+	public List<IO_NoticeDTO> noticeList(IO_NoticeDTO dto){
+		return ss.selectList("noticelist", dto);
 	}
 }
