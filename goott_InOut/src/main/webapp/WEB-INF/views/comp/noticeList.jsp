@@ -45,9 +45,9 @@ $(function(){
     <!-- END nav -->
 
 
-	<div id="sri_section" style="margin-top: 100px;">
+	<div id="sri_section" style="margin-top: 100px; margin-left: 100px;">
 
-
+ <jsp:include page="../comp/com_sideNavi.jsp"></jsp:include>
 		<div id="content" class="basic_wide vix_main fixed">
 			<h1 class="blind">MUST 홈</h1>
 			<div class="wrap_main_content" id="wrap_main_content">

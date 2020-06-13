@@ -81,7 +81,7 @@ height: 1500px;
    <section class="ftco-section bg-light" id="this_is_main" >
    
    <div style="width: 910px; height:600px;  background-color: #f8f9fa; border: 3px solid white; margin-left: 360px; padding-left: 0px;">
-   <jsp:include page="../etc/cl_sideNavi.jsp"></jsp:include>
+   <jsp:include page="../member/mem_sideNavi.jsp"></jsp:include>
       <ul style="margin-left: 20px;">
          <strong style="font-size: 25px; color: black;">이력서 현황</strong>
          <li class="li10">이력서는 최대 10개까지 작성하여 등록 가능합니다</li>

@@ -174,10 +174,13 @@
 	});
 </script>
 <style type="text/css">
-/* .step_recruit{
+/* .step_recruits{
 	border: 1px solid black;
 } */
-.wrap_recruit_frm {
+.real_contents {
+width: 100%;
+height: 100%;
+	margin-left: 150px;
 	padding-top: 175px;
 }
 /* 정규직 전환 가능 체크했을 때  색깔 변경*/
@@ -193,17 +196,17 @@ input[type=checkbox]:checked + label{
 	display: none;
 }
 
-.wrap_recruit_frm .step_recruit {
+.real_contents .step_recruits {
 	margin: 70px auto 0;
 	width: 1260px;
 }
 
-.step_recruit .frm_header {
+.step_recruits .frm_header {
 	position: relative;
 	margin-bottom: 20px;
 }
 
-.step_recruit .frm_body {
+.step_recruits .frm_body {
 	padding: 50px 0;
 	border-radius: 6px;
 	background: #fff;
@@ -211,20 +214,20 @@ input[type=checkbox]:checked + label{
 	min-height: 600px;
 }
 
-.step_recruit .frm_header .tit_step {
+.step_recruits .frm_header .tit_step {
 	margin-bottom: 1px;
 	color: #2365f2;
 	font-size: 16px;
 	letter-spacing: -2px;
 }
 
-.step_recruit .frm_header .subhead {
+.step_recruits .frm_header .subhead {
 	font-size: 30px;
 	font-weight: bold;
 	letter-spacing: -2.5px;
 }
 
-.step_recruit .frm_body .items {
+.step_recruits .frm_body .itemss {
 	padding: 10px 60px;
 	width: 100%;
 	box-sizing: border-box;
@@ -234,7 +237,7 @@ input[type=checkbox]:checked + label{
 	border: 1px solid black;
 }
  */
-.step_recruit .area_tit {
+.step_recruits .area_tit {
 	float: left;
 	padding: 13px 10px 0 0;
 	width: 170px;
@@ -243,7 +246,7 @@ input[type=checkbox]:checked + label{
 	vertical-align: top;
 }
 
-.step_recruit .area_data {
+.step_recruits .area_data {
 	float: left;
 	width: 860px;
 	min-height: 50px;
@@ -251,17 +254,17 @@ input[type=checkbox]:checked + label{
 	vertical-align: top;
 }
 
-.frm_manager .manager_name {
+.frm_managers .manager_name {
 	float: left;
 	margin-right: 4px;
 }
 
-.frm_manager .manager_name .inpTypo, .frm_manager .manager_part .inpTypo
+.frm_managers .manager_name .inpTypo, .frm_managers .manager_part .inpTypo
 	{
 	width: 380px;
 }
 
-.step_recruit .area_data .inpTypo, .step_recruit .area_data .inpSel {
+.step_recruits .area_data .inpTypo, .step_recruits .area_data .inpSel {
 	margin-right: 6px;
 	margin-bottom: 10px;
 }
@@ -288,29 +291,29 @@ input.inpTypo {
 	background-color: #fff;
 }
 
-.frm_manager .manager_phone .inpTypo {
+.frm_managers .manager_phone .inpTypo {
 	width: 80px;
 }
 
-.frm_manager .manager_phone .dash {
+.frm_managers .manager_phone .dash {
 	display: inline-block;
 	margin: 13px 2px 0 -5px;
 	vertical-align: top;
 }
 
-.frm_manager .manager_email {
+.frm_managers .manager_email {
 	position: relative;
 }
 
-.frm_manager .manager_email .inpTypo {
+.frm_managers .manager_email .inpTypo {
 	width: 380px;
 }
 
-.step_recruit .selected_item.on, .step_recruit .selected_item.selected {
+.step_recruits .selected_item.on, .step_recruits .selected_item.selected {
 	border-color: #444;
 }
 
-.step_recruit .selected_item {
+.step_recruits .selected_item {
 	position: relative;
 	padding: 14px 108px 6px 19px;
 	min-height: 28px;
@@ -321,17 +324,17 @@ input.inpTypo {
 	background: #fff;
 }
 
-.step_recruit .selected_item.on .btn_reset, .step_recruit .selected_item.selected .list_selected_item
+.step_recruits .selected_item.on .btn_reset, .step_recruits .selected_item.selected .list_selected_item
 	{
 	display: block;
 }
 
-.step_recruit .wrap_layer {
+.step_recruits .wrap_layer {
 	position: relative;
 	/* z-index: 5; */
 }
 
-.step_recruit .wrap_layer .layer_frm {
+.step_recruits .wrap_layer .layer_frm {
 	/* display: none;
 	position: absolute; */
 	top: 0;
@@ -342,7 +345,7 @@ input.inpTypo {
 	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
 }
 
-.step_recruit .layer_frm .area_keyword {
+.step_recruits .layer_frm .area_keyword {
 	padding: 20px 30px;
 	border-bottom: 1px solid #dfe1e5;
 }
@@ -428,18 +431,18 @@ span[class^="inp"].sizeM>.lbl {
 	line-height: 21px;
 }
 
-.step_recruit .layer_frm .area_btn {
+.step_recruits .layer_frm .area_btn {
 	padding: 19px 30px 20px 0;
 	border-top: 1px solid #dfe1e5;
 	text-align: right;
 }
 
-.step_recruit .layer_frm .area_btn .btnSizeL {
+.step_recruits .layer_frm .area_btn .btnSizeL {
 	margin-left: 5px;
 	width: 100px;
 }
 
-.frm_manager .manager_location {
+.frm_managers .manager_location {
 	padding: 10px 0 10px;
 }
 
@@ -452,12 +455,12 @@ span.inpRdo>.lbl, span.inpChk>.lbl {
 	vertical-align: top;
 }
 
-.frm_manager .manager_address2 .inpTypo {
+.frm_managers .manager_address2 .inpTypo {
 	width: 390px;
 }
 
 /* 수정 추가하기 버튼 */
-.step_recruit .selected_item .btn_add, .step_recruit .selected_item .btn_reset
+.step_recruits .selected_item .btn_add, .step_recruits .selected_item .btn_reset
 	{
 	position: absolute;
 	top: 14px;
@@ -468,7 +471,7 @@ span.inpRdo>.lbl, span.inpChk>.lbl {
 }
 
 /* 여기서부터는 두번째 section */
-.step_recruit .frm_division {
+.step_recruits .frm_division {
 	padding: 0;
 	border-radius: 0;
 	background: none;
@@ -486,7 +489,7 @@ span.inpRdo>.lbl, span.inpChk>.lbl {
 	display: block;
 }
 
-/* .step_recruit .frm_body .items {
+/* .step_recruits .frm_body .itemss {
 	padding: 10px 60px;
 	width: 100%;
 	box-sizing: border-box;
@@ -500,7 +503,7 @@ span.inpRdo>.lbl, span.inpChk>.lbl {
 	width: 90px;
 }
 
-.step_recruit .area_data.type_txt {
+.step_recruits .area_data.type_txt {
 	padding-top: 13px;
 }
 
@@ -513,7 +516,7 @@ span.inpRdo>.lbl, span.inpChk>.lbl {
 }
 
 /* 정규직 등 근무 형태 */
-.step_recruit .optional_item {
+.step_recruits .optional_item {
 	/* position: relative; */
 	margin-top: 20px;
 	padding: 0 20px;
@@ -521,18 +524,18 @@ span.inpRdo>.lbl, span.inpChk>.lbl {
 	background: #fafbfc;
 }
 
-.step_recruit .optional_item dl {
+.step_recruits .optional_item dl {
 	padding: 20px 10px;
 	border-top: 1px solid #eaeaea;
 	line-height: 24px;
 }
 
-.step_recruit .optional_item dt {
+.step_recruits .optional_item dt {
 	float: left;
 	font-weight: bold;
 }
 
-.step_recruit .optional_item dd {
+.step_recruits .optional_item dd {
 	margin-left: 119px;
 }
 
@@ -572,7 +575,7 @@ span.inpRdo>.lbl, span.inpChk>.lbl {
 	line-height: 20px;
 }
 
-.step_recruit .list_checkbox input:checked+.lbl {
+.step_recruits .list_checkbox input:checked+.lbl {
     /* z-index: 2; */
     border-color: #2365f2;
     color: #2365f2;
@@ -654,11 +657,11 @@ span.inpRdo>.lbl, span.inpChk>.lbl {
 }
 
 /* 근무 형태 */
-.step_recruit .list_checkbox {
+.step_recruits .list_checkbox {
 	padding-bottom: 1px;
 }
 
-.step_recruit .list_checkbox li {
+.step_recruits .list_checkbox li {
 	float: left;
 	position: relative;
 	margin: 0 -1px -1px 0;
@@ -666,12 +669,12 @@ span.inpRdo>.lbl, span.inpChk>.lbl {
 	box-sizing: border-box;
 }
 
-.step_recruit .list_checkbox input {
+.step_recruits .list_checkbox input {
 	position: absolute;
 	opacity: 0;
 }
 
-.step_recruit .list_checkbox .lbl {
+.step_recruits .list_checkbox .lbl {
 	display: block;
 	position: relative;
 	padding: 14px 0;
@@ -761,20 +764,24 @@ body {
 </style>
 </head>
 <body>
-	
-	<div class="wrap_recruit_frm">
+
+    <!-- END nav -->
+	<div class="real_contents">
+	<div>
+<jsp:include page="comp/com_sideNavi.jsp"></jsp:include>
+	</div>	
 		<form action="./newNoticeOk.do" method="post">
 			<input type="hidden" name="comp_id" value='${sessionScope.loginComp.comp_id }' />
 			<input type="hidden" name="comp_num" value='${sessionScope.loginComp.comp_num }' />
-		<div class="step_recruit" id="frmManager">
+		<div class="step_recruits" id="frmManager">
 			<div id="manager">
 				<!-- 제목 -->
 				<div class="frm_header">
 					<h2 class="tit_step">담당자 정보</h2>
 					<p class="subhead">먼저 인사담당자님과 기업 정보가 맞는지 확인해주세요</p>
 				</div>
-				<div class="frm_body frm_manager">
-					<div class="items">
+				<div class="frm_body frm_managers">
+					<div class="itemss">
 						<div class="area_tit">
 							<strong class="tit">회사 이름</strong>
 						</div>
@@ -785,7 +792,7 @@ body {
 						</div>
 					</div>
 					
-					<div class="items">
+					<div class="itemss">
 						<div class="area_tit">
 							<strong class="tit">채용공고 이름</strong>
 						</div>
@@ -796,7 +803,7 @@ body {
 						</div>
 					</div>
 					
-					<div class="items">
+					<div class="itemss">
 						<div class="area_tit">
 							<strong class="tit">담당자 성함</strong>
 						</div>
@@ -810,7 +817,7 @@ body {
 						</div>
 					</div>
 					
-					<div class="items">
+					<div class="itemss">
 						<div class="area_tit">
 							<strong class="tit">전화번호</strong>
 						</div>
@@ -827,7 +834,7 @@ body {
 						</div>
 					</div>
 					
-					<div class="items">
+					<div class="itemss">
 						<div class="area_tit">
 							<strong class="tit">담당자 휴대폰</strong>
 						</div>
@@ -844,7 +851,7 @@ body {
 						</div>
 					</div>
 					
-					<div class="items">
+					<div class="itemss">
 						<div class="area_tit"><strong class="tit">이메일 주소</strong></div>
 						<div class="area_data">
 							<div class="manager_email">
@@ -853,7 +860,7 @@ body {
 						</div>
 					</div>
 					
-					<div class="items">
+					<div class="itemss">
 						<div class="area_tit"><strong class="tit">업종</strong></div>
 						<div class="area_data" id="industry">
 							<div class="selected_item" id="industry_summary">
@@ -1147,10 +1154,10 @@ body {
 						<!-- 업종 div의 area_data end -->
 						
 					</div>
-					<!-- 업종 items end -->
+					<!-- 업종 itemss end -->
 					
 					<!-- 대표 근무지역 -->
-					<div class="items">
+					<div class="itemss">
 						<div class="area_tit"><strong class="tit">대표 근무지역</strong></div>
 						<div class="area_data" id="address">
 							<div class="manager_location">
@@ -1177,24 +1184,24 @@ body {
 					<!-- 대표 근무지역 end -->
 					
 				</div>
-				<!-- frm_body frm_manager end -->
+				<!-- frm_body frm_managers end -->
 				
 			</div>
 			<!-- div#manager end -->
 			
 		</div>
-		<!-- #frmManager .step_recruit end -->
+		<!-- #frmManager .step_recruits end -->
 		</div>
 		
 		<!-- 자격/조건 -->
-		<div id="frmQualification" class="step_recruit">
+		<div id="frmQualification" class="step_recruits">
 			<div class="frm_header" style="float: left; width: 1260px;">
 				<h2 class="tit_step">자격 / 조건</h2>
 				<p class="subhead">지원자격과 근무조건은 어떻게 되나요?</p>
 			</div>
 			
 			<div class="frm_body frm_condition">
-				<div class="items" id="eduItem">
+				<div class="itemss" id="eduItem">
 					<div class="area_tit"><strong class="tit">지원자 학력</strong></div>
 					<div class="area_data">
 						<div class="condition_edu">
@@ -1218,9 +1225,9 @@ body {
 						</div>
 					</div>
 				</div>
-				<!-- items eduItem end -->
+				<!-- itemss eduItem end -->
 				
-				<div class="items" id="salary">
+				<div class="itemss" id="salary">
 					<div class="area_tit"><strong class="tit">연봉/급여</strong></div>
 					<div class="area_data">
 						<div class="condition_salary">
@@ -1248,9 +1255,9 @@ body {
 							</p>
 						</div> <!-- condition salary end -->
 					</div>
-				</div> <!-- salary items end -->
+				</div> <!-- salary itemss end -->
 				
-				<div class="items" id="job_type">
+				<div class="itemss" id="job_type">
 					<div class="area_tit"><strong class="tit">근무형태</strong></div>
 					<div class="are_data"> 
 						<div class="row">
@@ -1400,9 +1407,9 @@ body {
 					</div> <!-- area_data end -->
 					
 				</div>
-				<!-- items job_type end -->
+				<!-- itemss job_type end -->
 				
-				<div class="items" id="work_shift_part">
+				<div class="itemss" id="work_shift_part">
 					
 					<div class="area_data">
 					<div class="area_tit"><strong class="tit">근무요일</strong></div>
@@ -1427,7 +1434,7 @@ body {
 					</div>	<!-- area_data end -->
 				</div>
 				
-				<div class="items" id="work_shift_time_part">
+				<div class="itemss" id="work_shift_time_part">
 					
 					<div class="area_data">
 					<div class="area_tit"><strong class="tit">근무시간</strong></div>
@@ -1451,7 +1458,7 @@ body {
 				</div>		<!-- work_shift_time_part end -->
 				
 				<!-- 성별 -->
-				<div class="items" id="genderItem">
+				<div class="itemss" id="genderItem">
 					
 					<div class="area_data">
 					<div class="area_tit"><strong class="tit">성별</strong></div>
@@ -1468,7 +1475,7 @@ body {
 				</div>
 				
 				<!-- 연령 -->
-				<div class="items" id="ageItem">
+				<div class="itemss" id="ageItem">
 					
 					<div class="area_data">
 						<div class="area_tit">
@@ -1501,9 +1508,9 @@ body {
 		</div>
 		<!-- 자격 조건 section end -->
 		
-		<div class="step_recruit" id="frmHiring">
+		<div class="step_recruits" id="frmHiring">
 			<div class="frm_body frm_hiring">
-				<div class="items" id="jobCategory">
+				<div class="itemss" id="jobCategory">
 					<div class="area_tit"><strong class="tit">공고 대표 직무</strong></div>
 					<div class="area_data">
 						<input type="text" id="cat_add" name="notice_prcs_job" class="inpTypo sizeL add-part" placeholder="대표 직종/직업을 선택하세요" />
@@ -1653,7 +1660,7 @@ body {
 				</div>
 				<!-- wrap_layer end -->
 				
-				<div class="items" id="applyPeriod">
+				<div class="itemss" id="applyPeriod">
 					<div class="area_tit"><strong class="tit">지원 접수 기간</strong></div>
 					<div class="area_data">
 						<input type="date" class="inpTypo sizeL type_calendar" name="notice_prcs_start" title="접수시작" /> ~ 
@@ -1672,7 +1679,7 @@ body {
 		
 		</form>
 	</div>
-	<!-- wrap_recruit_frm end -->
+	<!-- real_contents end -->
 	
 </body>
 </html>

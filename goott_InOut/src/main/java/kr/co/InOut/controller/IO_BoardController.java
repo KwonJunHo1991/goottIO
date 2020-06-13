@@ -193,6 +193,11 @@ public class IO_BoardController {
 		return "/etc/cl_home";
 	}
 	
-	
+	   
+	@RequestMapping(value = "/board/SearchComp.do")
+	public String searchComp() {
+	      return "/etc/cl_home_search";
+	   }
+	   
 	
 }

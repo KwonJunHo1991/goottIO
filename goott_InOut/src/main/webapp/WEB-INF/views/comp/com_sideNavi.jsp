@@ -278,18 +278,20 @@ $(document).ready(function () {
             <a href="../main/main.do" class="li_menu_a" data-track_event=""><strong>홈</strong> <i class="sri_lnb_icon ic_new"></i></a>
         </li>
         <li class="lnb_menu">
-            <a href="../member/loginCheck.do" class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>이력서관리</strong> <i class="sri_lnb_icon ic_new"></i></a>
+            <a href="../company/noticeList.do" class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>나의 채용정보</strong> <i class="sri_lnb_icon ic_new"></i></a>
         </li>
         <li class="lnb_menu">
-            <a href="../member/loginCheck.do" class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>입사지원관리</strong> <i class="sri_lnb_icon ic_new"></i></a>
+            <a href="../company/newNotice.do" class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>입사지원관리</strong> <i class="sri_lnb_icon ic_new"></i></a>
         </li>
         <li class="lnb_menu">
-            <a href="../member/resumelist.do" class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>이력서 등록</strong> <i class="sri_lnb_icon ic_new"></i></a>
+            <a href="../company/newNotice.do" class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>공고 등록</strong> <i class="sri_lnb_icon ic_new"></i></a>
         </li>
         <li class="lnb_menu">
+            <a href="../company/newNotice.do" class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>결제 하기</strong> <i class="sri_lnb_icon ic_new"></i></a>
+        </li>
+		     <li class="lnb_menu">
             <a href="../board/SearchComp.do" class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>기업 검색</strong> <i class="sri_lnb_icon ic_new"></i></a>
         </li>
-
     </ul>
 </nav>         
         <ul class="items">

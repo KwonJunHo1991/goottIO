@@ -21,7 +21,7 @@
     <!-- 회원가입(기업기본정보 insert) -->
     <insert id="insertOneCompBasic" parameterType="CBDTO">
         insert into io_comp_basic (comp_name, comp_num, comp_id, comp_pw, comp_inf_period, 
-        comp_username, comp_useremail, comp_grade, comp_type)
+        comp_username, comp_useremail, 0, comp_type)
         values (#{comp_name}, #{comp_num}, #{comp_id}, #{comp_pw}, #{comp_inf_period}, 
         #{comp_username}, #{comp_useremail}, #{comp_grade}, #{comp_type})
     </insert>
