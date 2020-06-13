@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import kr.co.InOut.dto.IO_Comp_BasicDTO;
 import kr.co.InOut.dto.IO_NoticeDTO;
 
 @Repository
@@ -42,6 +43,10 @@ public class IO_MainDAO {
 	
 	public IO_NoticeDTO selectNoticeDetailByNoticeNum(int notice_num) {
 		return session.selectOne("selectNoticeDetailByNoticeNum", notice_num);
+	}
+	
+	public void payOk(IO_Comp_BasicDTO dto) {
+		session.update("payOk", dto);
 	}
 	
 }

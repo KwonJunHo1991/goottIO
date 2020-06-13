@@ -31,6 +31,16 @@ public class IO_MemberServiceImple implements IO_MemberService{
 			//세션 변수 등록
 			
 			session.setAttribute("mem_id", dto2.getMem_id());
+			session.setAttribute("mem_pw", dto2.getMem_pw());
+			session.setAttribute("mem_sex", dto2.getMem_sex());
+			session.setAttribute("mem_email", dto2.getMem_email());
+			session.setAttribute("mem_name", dto2.getMem_name());
+			session.setAttribute("mem_birth", dto2.getMem_birth());
+			session.setAttribute("mem_phone", dto2.getMem_phone());
+			session.setAttribute("mem_add", dto2.getMem_add());
+			session.setAttribute("mem_add1", dto2.getMem_add1());
+			
+			
 		
 		}
 		

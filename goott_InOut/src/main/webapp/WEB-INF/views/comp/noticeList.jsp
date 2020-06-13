@@ -131,7 +131,9 @@ $(function(){
 												<dd>취업지원</dd>
 											</dl>
 										</div>
-										<div class="use_product"></div>
+										<div class="use_product">
+										<a href="./volunteerList.do?notice_num=${notice.notice_num }"><input type="button" id="showVolunteer" value="지원자 보기" /></a>
+										<a href="./post_detail.do?notice_num=${notice.notice_num }"><input type="button" id="editNotice" value="공고 수정" /></a>
 										<div class="area_status">
 											<div class="box_status">
 												<strong class="txt_status ">마감 공고</strong>
