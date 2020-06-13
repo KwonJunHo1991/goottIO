@@ -15,9 +15,30 @@
 
 <style type="text/css">
 
+#sri_wrap {
+
+    display: table-row;
+    width: 2000px;
+    height: 100%;
+}
+#content{
+margin-left: 550px;
+}
+.checkbox_check1 , .checkbox_check2{
+	display: inline-block;
+    width: 150px;
+    height: 60px;
+    border: 1px solid #ddd;
+    color: black;
+    background-color: #fff;
+    box-shadow: none;
+
+}
+
 </style>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
+
 $(document).ready(function () {
 	
 	var msg = '${msg}';
@@ -48,10 +69,34 @@ $(document).ready(function () {
 		
 		
 		
-	});		
+		$('input:radio').change(function () {	
+			$(".empty_txt").text("")
 
+			
+			var value = $('input[name=li_cd]:checked').val();
+			
+			var value2 = $('input[name=li_job]:checked').val();
+			console.log(value);
+			console.log(value2);
+			
+			
+			if(value != null){
+			
+				$(".checkbox_check1").show();
+				$(".checkbox_check1").val(value);
+			}
+			if( value2 != null){
+				$(".checkbox_check2").show();
+				$(".checkbox_check2").val(value2);
+			}
+			
+			
+			
+		});		
+	
+	
+	});
 
-});
 	
 	function fn_paging(curPage) {
 	
@@ -93,8 +138,12 @@ $(document).ready(function () {
    
    <jsp:include page="../main/mainPage/loginPop.jsp"></jsp:include>
     <!-- END nav -->
+
+
 	<div id="sri_wrap">
+
    <jsp:include page="cl_sideNavi.jsp"></jsp:include>
+
 			<div class="wrap_title_recruit" >
 				<h1 class="title_common">기업연구소 - 취준고민</h1>
 			</div>
@@ -373,6 +422,7 @@ $(document).ready(function () {
 			            </div>
 			            <div class="search_selector">
 			                <ul class="input_list">
+
 								<li><input type="radio" name="board_category" id="li_cd1" value="1"><span> 직무</span></input></li>
 								<li><input type="radio" name="board_category" id="li_cd2" value="2"><span> 조직문화</span></input></li>
 								<li><input type="radio" name="board_category" id="li_cd3" value="3"><span> 근무환경</span></input></li>
@@ -382,16 +432,19 @@ $(document).ready(function () {
 								<li><input type="radio" name="board_category" id="li_cd7" value="7"><span> 면접/자소서</span></input></li>
 								<li><input type="radio" name="board_category" id="li_cd8" value="8"><span> 이직/퇴사</span></input></li>
 								<li><input type="radio" name="board_category" id="li_cd9" value="9"><span> 기타</span></input></li>
+
 			                </ul>
 			            </div>
 			            <div class="search_selector">
 			                <ul class="input_list">
+
 			                	<li><input type="radio" name="board_type" id="li_cd10" value="1"><span> 경영·사무</span></input></li>     
 			                	<li><input type="radio" name="board_type" id="li_cd11" value="2"><span> 영업·고객상담</span></input></li>     
 			                	<li><input type="radio" name="board_type" id="li_cd12" value="3"><span> 생산·제조</span></input></li>     
 			                	<li><input type="radio" name="board_type" id="li_cd13" value="4"><span> IT·인터넷</span></input></li>     
 			                	<li><input type="radio" name="board_type" id="li_cd14" value="5"><span> 유통·무역</span></input></li>     
 			                	<li><input type="radio" name="board_type" id="li_cd15" value="6"><span> 서비스</span></input></li>     
+
 			                </ul>
 			            </div>
 			            <button class="ic_close"><span class="blind">검색창 닫기</span></button>
@@ -405,7 +458,9 @@ $(document).ready(function () {
 			        	<input type="button" class="checkbox_check2" id="hello2" value="hello" />
 			        
 			        
+
 			 			        <button type="submit" class="btn_search" id="btn_search" >검색하기</button>
+
 			    </div>
 			    </form>
 			</div>

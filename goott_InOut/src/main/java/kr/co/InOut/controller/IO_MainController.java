@@ -102,12 +102,12 @@ public class IO_MainController {
 		return "/company/post_detail_join";
 	}
 	
-	//로그아웃 주소
 	@RequestMapping(value = "/main/logout.do")
 	public String logout(HttpSession se) {
 		new IO_LogOutService().logOut(se);
 		return "/main/mainPage/mp_mainPage";
 	}
+
 	
 	//결제 완료
 	@RequestMapping(value = "/company/payOk.do")
@@ -123,6 +123,7 @@ public class IO_MainController {
 		//기업 마이페이지로 
 		return "/main/mainPage/mp_mainPage";
 	}
+
 	
 	
 }

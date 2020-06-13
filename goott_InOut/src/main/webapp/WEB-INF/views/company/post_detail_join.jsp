@@ -10,6 +10,7 @@ body{
 
 }
 * {
+
    margin: 0;
    padding: 0;
    font-family: "나눔스퀘어";
@@ -235,6 +236,7 @@ $(document).ready(function () {
       </form>
    </div>
    <!--inner end-->
+
 
 </body>
 </html>
