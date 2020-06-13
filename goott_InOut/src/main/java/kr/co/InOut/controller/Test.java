@@ -22,6 +22,7 @@ public class Test {
 	@RequestMapping(value="test3.do")
 	public String test3() {
 		
+
 		return "etc/cl_qaa_detail";
 	}
 	@RequestMapping(value="test4.do")
@@ -48,4 +49,5 @@ public class Test {
 		
 
 	}
+	
 }

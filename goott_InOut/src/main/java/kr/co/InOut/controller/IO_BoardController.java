@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 import kr.co.InOut.dao.IO_BoardDAO;
 import kr.co.InOut.dto.IO_BoardDTO;
@@ -116,10 +118,30 @@ public class IO_BoardController {
 		return "/etc/cl_qaa_detail";
 	}
 	
+	//질문하기 페이지.
 	@RequestMapping(value = "/board/boardInsert.do")
-	public String insertBoard() {
+	public String insertBoard(HttpSession se, ModelAndView mv) {
 		
-		return "/etc/cl_qaa_q";
+		
+		String msg = "";
+		String viewPage = "/etc/cl_qaa_q";
+		
+		if(se.getAttribute("loginComp") != null) {
+			//기업이면 개인회원만....
+			msg = "개인 회원만 가능합니다";
+			viewPage = "/etc/cl_qaa";
+		}else if(se.getAttribute("mem_id") == null) {
+			msg = "로그인 하세요";
+			viewPage = "/etc/cl_qaa";
+			//로그인하세요
+		}
+		
+		
+		mv.addObject("msg", msg);
+	//	mv.setView(viewPage);
+		
+			return viewPage;
+		
 	}
 	
 	
