@@ -23,6 +23,7 @@
 			
 			<typeAlias type="kr.co.InOut.dto.IO_CarrerDTO" alias="CareerDTO"/>
             <typeAlias type="kr.co.InOut.dto.IO_Comp_Notice_InfoDTO" alias="CNIDTO"/>
+            <typeAlias type="kr.co.InOut.dto.IO_ApplyDTO" alias="ApplyDTO"/>
         </typeAliases>
         
         
