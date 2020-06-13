@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.co.InOut.dao.IO_MainDAO;
+import kr.co.InOut.dto.IO_Comp_BasicDTO;
 import kr.co.InOut.dto.IO_NoticeDTO;
 import kr.co.InOut.service.IO_LogOutService;
 
@@ -95,14 +96,31 @@ public class IO_MainController {
 		return "/company/post_detail";
 	}
 	
+	//공고 지원하기!
 	@RequestMapping(value = "/company/noticeDetailJoin.do")
 	public String noticeJoin() {
 		return "/company/post_detail_join";
 	}
 	
+	//로그아웃 주소
 	@RequestMapping(value = "/main/logout.do")
 	public String logout(HttpSession se) {
 		new IO_LogOutService().logOut(se);
+		return "/main/mainPage/mp_mainPage";
+	}
+	
+	//결제 완료
+	@RequestMapping(value = "/company/payOk.do")
+	public String payOk(HttpSession se,
+			@RequestParam(value = "grade") int grade) {
+		//다오 업데이트
+		
+		IO_Comp_BasicDTO dto = (IO_Comp_BasicDTO)se.getAttribute("loginComp");
+		System.out.println(dto);
+		dto.setComp_grade(grade);
+		dao.payOk(dto);
+		
+		//기업 마이페이지로 
 		return "/main/mainPage/mp_mainPage";
 	}
 	

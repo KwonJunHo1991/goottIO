@@ -59,6 +59,13 @@
  	insert into io_apply 
  	values (null,#{res_num},#{mem_id},#{notice_num},#{comp_num},#{comp_id},지원,now(),#{mem_birth},#{mem_sex},#{res_income}  );
  </insert>
+ 
+ <!-- payOk -->
+ <update id="payOk" parameterType="CBDTO">
+ 	update io_comp_basic
+ 	set comp_grade = ${comp_grade}
+ 	where comp_num = ${comp_num}
+ </update>
 
 
 

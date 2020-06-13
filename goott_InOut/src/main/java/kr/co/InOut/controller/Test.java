@@ -12,6 +12,7 @@ public class Test {
 	public String test() { 
 		
 		
-		return "/company/post_detail";
+		return "/company/pay/p_payChoice";
 	}
+	
 }
