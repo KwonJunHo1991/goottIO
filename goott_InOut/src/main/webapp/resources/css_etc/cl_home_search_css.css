@@ -1,0 +1,1099 @@
+@charset "UTF-8";
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, button {
+    margin: 0;
+    padding: 0;
+    font-family: 'NanumSquare', sans-serif;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    -webkit-text-size-adjust: none;
+}
+html {
+    color: #000;
+    background: #fff;
+}
+button {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+}
+input, button, textarea, select {
+    line-height: normal;
+}
+input, button, textarea, select, optgroup, option {
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-weight: normal;
+    font-style: normal;
+}
+a {
+    color: #444;
+    text-decoration: none;
+}
+ol, ul, li {
+    list-style: none;
+}
+strong, b {
+    font-weight: bold;
+}
+caption, th {
+    text-align: left;
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+    font-weight: normal;
+    font-style: normal;
+}
+fieldset, img {
+    border: 0;
+}
+legend {
+    color: #000;
+}
+/* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
+
+body.has_lnb #sri_section {
+    padding-left: 220px;
+}
+#sri_section {
+    display: table;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+#sri_wrap {
+    display: table-row;
+    width: 100%;
+    height: 100%;
+}
+#content.layout_full {
+    margin: 0;
+    width: 100%;
+}
+.wrap_company_search {
+    min-height: 960px;
+    background: #f4f6fa;
+}
+.wrap_company_search:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 189px;
+    background: #1c2a64;
+    content: "";
+}
+
+.inner_company_search {
+    position: relative;
+    margin: 0 auto;
+    padding-top: 75px;
+    width: 960px;
+}
+.header_company_search {
+    margin-bottom: 16px;
+}
+.header_company_search h1.title, .trend_keyword .trend_title, .wrap_main_panel .tab_section button.btn_detail_option:before, .trend_keyword .btn_more_trend:before, .list_company_search .total_sort .sort_option .employ_ing .text_check:before, .wrap_list_company .area_info .title .link_employ:after, .wrap_list_company .area_info .interested_corp:after, .wrap_list_company .company_info .certify_list li a:before, .wrap_list_company .company_info .certify_wrap .link_certify:before, .company_finance .finance_list li a:before, .list_company_search .box_feedback .btn_close {
+    background: url("../../../../etc/css/icon/cl_home_search_icon/spr_company_result.png") no-repeat 0 0;
+}
+.header_company_search h1.title {
+    float: left;
+    width: 288px;
+    height: 29px;
+    margin-left: 24px;
+}
+
+.hidden, .blind {
+    overflow: hidden;
+    clip: rect(1px,1px,1px,1px);
+    position: absolute !important;
+    width: 1px;
+    height: 1px;
+}
+.trend_keyword {
+    float: right;
+    position: relative;
+    width: 395px;
+}
+.trend_keyword dl dt {
+    display: block;
+    float: left;
+    line-height: 32px;
+}
+.trend_keyword .trend_title {
+    display: inline-block;
+    overflow: hidden;
+    float: left;
+    margin-top: 10px;
+    width: 84px;
+    height: 13px;
+    line-height: 999;
+    vertical-align: top;
+    background-position-y: -29px;
+}
+.trend_keyword .toolTipWrap {
+    margin: 8px 10px 0 6px;
+    width: 15px;
+    height: 15px;
+    vertical-align: top;
+}
+.toolTipWrap {
+    display: inline-block;
+    position: relative;
+}
+.toolTipWrap .tooltip_round {
+    display: inline-block;
+    overflow: hidden;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    vertical-align: top;
+    background: #3a4b90;
+}
+.toolTipWrap .tooltip_round:after {
+    display: inline-block;
+    color: #fff;
+    font-size: 12px;
+    line-height: 15px;
+    vertical-align: top;
+    content: "?";
+}
+.toolTip.on{
+	display: block;
+}
+.toolTipWrap .toolTip {
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.1);
+}
+.toolTip {
+    display: none;
+    position: absolute;
+    z-index: 200;
+    padding: 18px 22px 20px 22px;
+    min-width: 33px;
+    border: 1px solid #444;
+    border-radius: 2px;
+    color: #222;
+    font-family: 'NanumSquare', sans-serif;
+    font-size: 13px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px #d8d8d8;
+}
+
+.toolTip .tail.tail_top_center {
+    top: -7px;
+    left: 50%;
+    margin-left: -6px;
+    width: 11px;
+    height: 7px;
+    background-position: 0 -7px;
+}
+.toolTip .tail {
+    position: absolute;
+    background: url("../../../../etc/css/icon/cl_home_search_icon/tooltip_tail.png") no-repeat;
+}
+.toolTip .toolTipCont {
+    line-height: 20px;
+}
+.trend_keyword dl dd {
+    overflow: hidden;
+    float: right;
+    position: relative;
+    width: 280px;
+    height: 32px;
+    border-radius: 22px;
+    background: #3a4b90;
+}
+.trend_keyword .trend_rank li a {
+    display: inline-block;
+    line-height: 32px;
+    vertical-align: top;
+}
+.trend_keyword .trend_rank li .rank_num {
+    margin-left: 24px;
+    font-style: italic;
+    opacity: 0.5;
+}
+.trend_keyword .trend_rank li span {
+    display: block;
+    float: left;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: -1px;
+    line-height: 32px;
+}
+.trend_keyword .trend_rank li .rank_name {
+    overflow: hidden;
+    margin-left: 16px;
+    width: 190px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.trend_keyword dl:after {
+    display: table;
+    clear: both;
+    content: "";
+    table-layout: fixed;
+}
+
+.trend_keyword .btn_more_trend {
+    display: block;
+    overflow: hidden;
+    float: right;
+    position: absolute;
+    top: 0;
+    right: 10px;
+    z-index: 1;
+    width: 32px;
+    height: 32px;
+}
+.trend_keyword .btn_more_trend:before {
+    display: inline-block;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -3px 0 0 -7px;
+    width: 14px;
+    height: 6px;
+    background-position: -90px -36px;
+    content: "";
+}
+.header_company_search:after {
+    display: table;
+    clear: both;
+    content: "";
+    table-layout: fixed;
+}
+
+.company_search_panel .main_option {
+    border-radius: 8px 8px 0 0;
+    background: #fff;
+}
+.wrap_main_panel .main_option {
+    position: relative;
+    z-index: 5;
+}
+.company_search_panel .tab_section li.keyword_section {
+    border-top-left-radius: 8px;
+}
+.wrap_main_panel .tab_section li:first-child {
+    margin-left: 0;
+}
+.company_search_panel .tab_section li {
+    border-color: #1c2a64;
+    border-bottom: 0;
+}
+.wrap_main_panel .tab_section li {
+    /* float: left; */
+    position: relative;
+    z-index: 0;
+    margin-left: -1px;
+    border: 1px solid #ddd;
+}
+.company_search_panel .tab_section li:first-child button {
+    padding-left: 58px;
+    width: 885px;
+}
+.wrap_main_panel .tab_section li:first-child button {
+    width: 750px;
+}
+.wrap_main_panel .tab_section button.btn_keyword {
+    width: 359px;
+}
+.company_search_panel .tab_section button {
+    height: 65px;
+    vertical-align: top;
+}
+.wrap_main_panel .tab_section button {
+    position: relative;
+    padding: 0 15px 0 45px;
+    width: 419px;
+    height: 48px;
+    color: #666;
+    font-size: 15px;
+    letter-spacing: -1px;
+    text-align: left;
+}
+.company_search_panel .tab_section button.btn_keyword:before, .company_search_panel .layer_search_keyword .ipt_keyword:before {
+    top: 23px;
+    left: 26px;
+}
+.wrap_main_panel .tab_section button.btn_keyword:before {
+    width: 18px;
+    height: 19px;
+    background-position: 0 -69px;
+}
+.wrap_main_panel .tab_section button:before {
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 20px;
+    height: 18px;
+    background: url("../../../../etc/css/icon/cl_home_search_icon/ico_main_search_panel.png") no-repeat 0 0;
+    content: "";
+}
+
+.company_search_panel .tab_section button span.input_placeholder {
+    margin-top: 3px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 24px;
+    color: #c5c5c5;
+}
+.wrap_main_panel .tab_section button span {
+    display: inline-block;
+    overflow: hidden;
+    margin-top: 2px;
+    padding-right: 1px;
+    max-width: 91%;
+    line-height: 20px;
+    text-overflow: ellipsis;
+    vertical-align: -1px;
+    white-space: nowrap;
+}
+.company_search_panel .tab_section button span.input_text {
+    margin-top: 0;
+    color: #444;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 24px;
+}
+
+.wrap_main_panel .tab_section:after {
+    display: table;
+    clear: both;
+    content: "";
+    table-layout: fixed;
+}
+.company_search_panel .wrap_search_result.on {
+    border: 1px solid #222;
+    border-top: 0;
+    box-shadow: none;
+}
+.company_search_panel .wrap_search_result {
+    padding: 13px 20px 20px;
+    border: 1px solid #e5e6eb;
+    border-radius: 0 0 8px 8px;
+    background: #fff;
+    box-shadow: 0 3px 10px 0 rgba(112, 112, 112, 0.14);
+}
+.wrap_search_result {
+    position: relative;
+    padding: 13px 15px 20px;
+    width: 100%;
+    height: 109px;
+    border: 1px solid #ddd;
+    border-top: 0;
+    box-sizing: border-box;
+    background: #fcfcfc;
+}
+.company_search_panel .wrap_search_result .add_keyword {
+    width: 740px;
+}
+.wrap_search_result .add_keyword {
+    overflow: hidden;
+    margin-bottom: 12px;
+    width: 973px;
+    height: 47px;
+    box-sizing: border-box;
+}
+.company_search_panel .wrap_search_result .add_keyword .selected_keyword {
+    color: #888;
+}
+.wrap_search_result .add_keyword .selected_keyword {
+    display: inline-block;
+    margin: 6px 11px 0 0;
+    height: 18px;
+    color: #444;
+    font-size: 13px;
+    letter-spacing: -1px;
+    line-height: 18px;
+}
+.wrap_search_result .add_keyword .selected_keyword .btn_del {
+    overflow: hidden;
+    margin-left: 4px;
+    width: 13px;
+    height: 17px;
+    color: rgba(0,0,0,0);
+    font-size: 0;
+    vertical-align: bottom;
+    background: url("../../../../etc/css/icon/cl_home_search_icon/spr_search_panel.png") no-repeat 2px -186px;
+}
+
+.company_search_panel .wrap_search_result .area_btn {
+    padding-right: 190px;
+}
+.wrap_search_result .area_btn {
+    padding-right: 179px;
+    line-height: 15px;
+    text-align: right;
+}
+.wrap_search_result .area_btn button {
+    overflow: hidden;
+    position: relative;
+    padding-right: 14px;
+    color: #666;
+    font-size: 12px;
+    letter-spacing: -1px;
+    line-height: 16px;
+}
+.wrap_search_result .area_btn .btn_reset {
+    padding-right: 18px;
+}
+.wrap_search_result .area_btn button {
+    overflow: hidden;
+    position: relative;
+    padding-right: 14px;
+    color: #666;
+    font-size: 12px;
+    letter-spacing: -1px;
+    line-height: 16px;
+}
+.wrap_search_result .area_btn .btn_reset:after {
+    display: block;
+    position: absolute;
+    top: 4px;
+    right: 2px;
+    width: 11px;
+    height: 10px;
+    background: url("../../../../etc/css/icon/cl_home_search_icon/spr_search_panel.png") no-repeat 0 -106px;
+    content: "";
+}
+.company_search_panel .wrap_search_result .btn_search.finish_search {
+    border: 1px solid #d6d7dd;
+    color: #666;
+    background: #fff;
+    box-shadow: none;
+}
+.company_search_panel .wrap_search_result .btn_search {
+    border-radius: 5px;
+    background: #222;
+    box-shadow: 0 5px 10px 0 rgba(112, 112, 112, 0.3);
+    right: 24px;
+    width: 168px;
+    height: 72px;
+    color: #fff;
+    font-weight: bold;
+}
+
+.wrap_search_result .btn_search {
+    display: block;
+    overflow: hidden;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    width: 140px;
+    height: 69px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+    color: #949494;
+    font-size: 15px;
+    letter-spacing: -1px;
+    line-height: normal;
+    text-align: center;
+    vertical-align: top;
+    background: #fff;
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+}
+
+.wrap_search_result:after {
+    display: block;
+    visibility: hidden;
+    clear: both;
+    height: 0;
+    content: "";
+}
+.list_company_search {
+    margin: 40px 0 70px;
+}
+.list_company_search .total_sort {
+    overflow: hidden;
+    margin-bottom: 8px;
+}
+.list_company_search .total_sort .text_total {
+    float: left;
+    color: #888;
+    font-size: 14px;
+    letter-spacing: -1px;
+    line-height: 32px;
+}
+.list_company_search .total_sort .text_total .text_total_num {
+    color: #444;
+}
+.list_company_search .total_sort .sort_option {
+    float: right;
+}
+.list_company_search .total_sort .sort_option .employ_ing {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 32px;
+    line-height: 32px;
+    vertical-align: top;
+    background: #fff;
+}
+.list_company_search .total_sort .sort_option .employ_ing .inp_check {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+}
+.list_company_search .total_sort .sort_option .employ_ing .text_check {
+    display: block;
+    font-size: 13px;
+    text-align: center;
+    color: #444;
+    cursor: pointer;
+    letter-spacing: -1px;
+}
+.list_company_search .total_sort .sort_option .employ_ing .text_check:before {
+    display: inline-block;
+    margin-right: 4px;
+    width: 14px;
+    height: 11px;
+    background-position-y: -61px;
+    content: "";
+}
+.list_company_search .total_sort .sort_option .employ_ing .text_check:after {
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 80px;
+    height: 30px;
+    border: 1px solid #dbdbdb;
+    content: "";
+}
+.inpSel {
+    display: inline-block;
+    height: 32px;
+    border: 1px solid #dbdbdb;
+    box-sizing: border-box;
+    vertical-align: middle;
+    background: #fff;
+}
+
+.inpSel select {
+    padding: 0 29px 1px 11px;
+    width: 100%;
+    height: 30px;
+    border: none;
+    box-sizing: border-box;
+    color: #444;
+    font-family: 'NanumSquare', sans-serif;
+    font-size: 13px;
+    letter-spacing: -1px;
+    line-height: 29px;
+    text-align: left;
+    vertical-align: top;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    background: url("../../../../etc/css/icon/cl_home_search_icon/ico_select_arr.png") no-repeat 100% 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+.inpSel select option {
+    height: 32px;
+    font-size: 13px;
+    color: #444;
+    line-height: 16px;
+}
+.wrap_list_company {
+    margin-bottom: 32px;
+    padding: 24px 24px 32px;
+    border-radius: 8px;
+    background: #fff;
+}
+.wrap_list_company:after {
+    display: table;
+    clear: both;
+    content: "";
+    table-layout: fixed;
+}
+.wrap_list_company .logo {
+    display: table;
+    overflow: hidden;
+    float: left;
+    margin-right: 24px;
+    padding: 5px;
+    width: 52px;
+    height: 52px;
+    border: 1px solid #eceef2;
+    border-radius: 10px;
+    text-align: center;
+}
+.wrap_list_company .logo .inner_logo {
+    display: table-cell;
+    height: 52px;
+    vertical-align: middle;
+}
+
+.wrap_list_company .logo .inner_logo img {
+    width: auto;
+    max-width: 52px;
+    height: auto;
+    max-height: 52px;
+    vertical-align: middle;
+}
+.wrap_list_company .company_info {
+    float: left;
+    width: 824px;
+}
+.wrap_list_company .area_info {
+    position: relative;
+}
+.wrap_list_company .area_info .title {
+    display: block;
+    margin: 0 120px 8px 0;
+    font-size: 0;
+}
+.wrap_list_company .area_info .title a {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 32px;
+    vertical-align: top;
+    letter-spacing: -1px;
+}
+.wrap_list_company .area_info .title .link_employ {
+    display: inline-block;
+    margin-top: 10px;
+    margin-left: 8px;
+    color: #ff6e51;
+    font-size: 12px;
+    letter-spacing: -1px;
+    line-height: inherit;
+    font-weight: normal;
+}
+.wrap_list_company .area_info .title a {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 32px;
+    vertical-align: top;
+    letter-spacing: -1px;
+}
+.wrap_list_company .area_info .title .link_employ span {
+    padding-left: 4px;
+    font-weight: bold;
+}
+.wrap_list_company .area_info .title .link_employ:after {
+    display: inline-block;
+    margin: 5px 0 0 5px;
+    width: 4px;
+    height: 7px;
+    vertical-align: top;
+    background-position: -27px -72px;
+    content: "";
+}
+.wrap_list_company .area_info .interested_corp {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 36px 0 18px;
+    width: auto;
+    height: 32px;
+    border: 1px solid #e1e1e1;
+    border-radius: 16px;
+    box-sizing: border-box;
+    background: none;
+}
+button.interested_corp {
+    display: block;
+    width: 16px;
+    height: 16px;
+    border: 0;
+    vertical-align: middle;
+    background: url("../../../../etc/css/icon/cl_home_search_icon/sp_interested_corp.png") 0 1px no-repeat;
+    cursor: pointer;
+    *display: inline;
+    *zoom: 1;
+    _overflow: hidden;
+}
+.wrap_list_company .area_info .interested_corp span {
+    display: block;
+    color: #888;
+    font-size: 13px;
+    letter-spacing: -1px;
+    text-indent: 0;
+    vertical-align: top;
+    box-sizing: border-box;
+    margin-top: 1px;
+}
+button.interested_corp span {
+    display: block;
+    overflow: hidden;
+    font-size: 0;
+    text-indent: 100%;
+    white-space: nowrap;
+    _display: inline;
+}
+.wrap_list_company .area_info .interested_corp:after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 18px;
+    margin-top: -4px;
+    width: 14px;
+    height: 11px;
+    background-position: -28px -61px;
+    content: "";
+}
+.wrap_list_company .area_info .text_info {
+    margin-bottom: 16px;
+    height: 16px;
+}
+.wrap_list_company .area_info .text_info span {
+    color: #888;
+    font-size: 13px;
+    letter-spacing: -1px;
+    vertical-align: top;
+}
+.wrap_list_company .area_info .text_info span+span:before {
+    display: inline-block;
+    margin: 3px 8px 0;
+    width: 1px;
+    height: 12px;
+    vertical-align: top;
+    background: #e1e1e1;
+    content: "";
+}
+.wrap_list_company .company_info .certify_wrap {
+    overflow: hidden;
+    margin-bottom: 24px;
+    height: 24px;
+}
+.wrap_list_company .company_info .certify_list {
+    overflow: hidden;
+    float: left;
+    max-width: 800px;
+    height: 24px;
+}
+.wrap_list_company .company_info .certify_list li, .wrap_list_company .company_info .certify_wrap .link_certify {
+    float: left;
+    margin-right: 8px;
+    height: 24px;
+    border: 1px solid #e1e1e1;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+.wrap_list_company .company_info .certify_list li a {
+    display: inline-block;
+    padding: 2px 11px 3px 10px;
+    color: #666;
+    font-size: 13px;
+    letter-spacing: -1.5px;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+.wrap_list_company .company_info .certify_list li a:before {
+    display: inline-block;
+    overflow: hidden;
+    margin-top: 2px;
+    margin-right: 5px;
+    width: 16px;
+    height: 13px;
+    vertical-align: top;
+    background-position-y: -72px;
+    content: "";
+}
+.wrap_list_company .company_info .certify_wrap .link_certify {
+    display: block;
+    position: relative;
+    margin: 0;
+    width: 24px;
+    text-align: center;
+    vertical-align: top;
+}
+.wrap_list_company .company_info .certify_list li, .wrap_list_company .company_info .certify_wrap .link_certify {
+    float: left;
+    margin-right: 8px;
+    height: 24px;
+    border: 1px solid #e1e1e1;
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+.wrap_list_company .company_info .certify_wrap .link_certify:before {
+    display: inline-block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -5px 0 0 -6px;
+    width: 11px;
+    height: 10px;
+    vertical-align: top;
+    background-position: -16px -72px;
+    content: "";
+}
+.company_finance {
+    position: relative;
+    margin-bottom: 24px;
+}
+.company_finance .btn_prev {
+    right: auto;
+    left: -16px;
+}
+.company_finance .btn_prev, .company_finance .btn_next {
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    right: -16px;
+    z-index: 1;
+    margin-top: -16px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #fff;
+    box-shadow: 0 4px 10px 0 rgba(112, 112, 112, 0.15);
+}
+.company_finance .btn_next:before {
+    background-position-x: -62px;
+}
+.company_finance .btn_prev:before, .company_finance .btn_next:before {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    background: url("../../../../etc/css/icon/cl_home_search_icon/btn_finance_arr.png") no-repeat -10px -5px;
+    content: "";
+}
+.finance_wrap {
+    overflow: hidden;
+}
+.company_finance .finance_list li:first-child {
+    margin-left: 0;
+}
+.company_finance .finance_list li.finance {
+    border-color: #f5f8fc;
+    background: #f5f8fc;
+}
+.company_finance .finance_list li {
+    float: left;
+    margin-left: 16px;
+    width: 152px;
+    height: 144px;
+    border: 1px solid #e9eaf0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background: #fff;
+}
+.company_finance .finance_list li a {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.company_finance .finance_list li.sales a:before {
+    background-position-x: 0;
+}
+.company_finance .finance_list li a:before {
+    display: block;
+    position: absolute;
+    top: 24px;
+    left: 50%;
+    margin-left: -12px;
+    width: 24px;
+    height: 24px;
+    background-position: 0 -85px;
+    content: "";
+}
+.company_finance .finance_list li dl {
+    padding-top: 59px;
+}
+.company_finance .finance_list li.finance dt, .company_finance .finance_list li.finance dd {
+    color: #294591;
+}
+.company_finance .finance_list li dl dt {
+    font-weight: bold;
+    opacity: 0.6;
+}
+.company_finance .finance_list li dl dt, .company_finance .finance_list li dl dd {
+    color: #444;
+    font-size: 13px;
+    letter-spacing: -1px;
+}
+.company_finance .finance_list li dl dd {
+    font-size: 18px;
+}
+.company_finance .finance_list li dl dd em {
+    font-weight: bold;
+    font-size: 22px;
+}
+.company_finance .finance_list li dl dd.ico_finance {
+    display: inline-block;
+    padding: 0 8px;
+    border-radius: 8px;
+    font-size: 12px;
+    background: #fff;
+}
+.company_finance .finance_list li dl dd.ico_finance span {
+    opacity: 0.6;
+}
+.company_finance .finance_list li dl dd.ico_finance.up:after {
+    background-position: 0 -10px;
+}
+.company_finance .finance_list li dl dd.ico_finance:after {
+    display: inline-block;
+    margin: 6px 0 0 2px;
+    width: 7px;
+    height: 4px;
+    vertical-align: top;
+    background: url("../../../../etc/css/icon/cl_home_search_icon/ico_rank.png") no-repeat 0 -10px;
+    content: "";
+}
+
+.company_finance .finance_list li.finance {
+    border-color: #f5f8fc;
+    background: #f5f8fc;
+}
+.company_finance .finance_list li {
+    float: left;
+    margin-left: 16px;
+    width: 152px;
+    height: 144px;
+    border: 1px solid #e9eaf0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background: #fff;
+}
+.company_finance .finance_list li.net_profits a:before {
+    background-position-x: -48px;
+}
+
+.company_finance .finance_list li.business_profits a:before {
+    background-position-x: -24px;
+}
+.company_finance .finance_list li dl dd.ico_finance.up:after {
+    background-position: 0 -10px;
+}
+.company_finance .finance_list li.salary a:before {
+    background-position-x: -72px;
+}
+
+.company_finance .finance_list li {
+    float: left;
+    margin-left: 16px;
+    width: 152px;
+    height: 144px;
+    border: 1px solid #e9eaf0;
+    border-radius: 8px;
+    box-sizing: border-box;
+    background: #fff;
+}
+.company_finance .finance_list li.interview a:before {
+    background-position-x: -120px;
+}
+.company_finance .finance_list li dl dd .go_link {
+    background: #f5f8fc;
+    color: #666;
+    border-radius: 10px;
+    display: inline-block;
+    vertical-align: top;
+    font-size: 12px;
+    line-height: 20px;
+    letter-spacing: -1px;
+    padding: 0 9px;
+    margin-top: 8px;
+}
+.company_finance .finance_list li dl dd .go_link:after {
+    content: '';
+    display: inline-block;
+    vertical-align: top;
+    margin: 7px 0 0 5px;
+    width: 4px;
+    height: 7px;
+    background: url("../../../../etc/css/icon/cl_home_search_icon/ico_arr_card.png") no-repeat 0 0;
+}
+.company_finance .finance_list li.review a:before {
+    background-position-x: -144px;
+}
+.company_finance .finance_list li.career a:before {
+    background-position-x: -168px;
+}
+.company_finance .finance_list li.business_profits a:before {
+    background-position-x: -24px;
+}
+.company_finance .finance_list li.initial_salary a:before {
+    background-position-x: -96px;
+}
+
+.pagination {
+    margin-top: 30px;
+    font-size: 0;
+    letter-spacing: -1px;
+    text-align: center;
+}
+.pagination span.page {
+    border: 1px solid #444;
+    color: #444;
+    font-size: 14px;
+    font-weight: bold;
+}
+.pagination span.page, .pagination button.page, .pagination a.page {
+    display: inline-block;
+    margin: 0 5px 0 0;
+    padding: 0 2px;
+    min-width: 32px;
+    height: 32px;
+    border: 1px solid #dfdfdf;
+    box-sizing: border-box;
+    color: #444;
+    font-size: 14px;
+    line-height: 30px;
+    vertical-align: middle;
+    background: #fff;
+}
+.pagination .btnNext {
+    margin-left: 14px;
+    padding-right: 10px;
+    background: url("../../../../etc/css/icon/cl_home_search_icon/bul_page_next.png") 100% 50% no-repeat;
+}
+.inner_company_search:after {
+    display: table;
+    clear: both;
+    content: "";
+    table-layout: fixed;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

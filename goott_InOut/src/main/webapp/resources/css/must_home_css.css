@@ -62,7 +62,9 @@ button, label {
 }
 /* @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ */
 
+
 #sri_section {
+	margin-top: 300px;
     position: relative;
     min-width: 1260px;
 }
@@ -93,6 +95,8 @@ button, label {
     float: left;
     position: relative;
     width: 1242px;
+    margin-top: -30px;
+    
 }
 @media (max-width: 1579px)
 .wrap_vix_info {
@@ -390,7 +394,8 @@ select.inpSelTxt {
 }
 .wrap_main_content .wrap_list {
     padding-bottom: 60px;
-    min-height: 710px;
+    min-height: 110px;
+    max-height: 700px;
 }
 .wrap_list_recruit .wrap_list .row {
     position: relative;
@@ -642,6 +647,10 @@ select.inpSelTxt {
 }
 .wrap_main_content .wrap_list .pagination {
     min-height: 30px;
+}
+.wrap_main_content{
+	margin-top: 80px;
+	
 }
 .pagination {
     padding-top: 25px;

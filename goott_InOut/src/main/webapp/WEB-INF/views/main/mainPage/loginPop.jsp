@@ -54,7 +54,7 @@ display: inline-block;
 
 </head>
 <body>
-<input type="image" src="<c:url value="/resources/img/chat1.png"/>" alt="로그인하기" id="donaBtn2" onclick="location.href='../support/done_main.jsp'"/>
-<input type="image" src="<c:url value="/resources/img/bell1.png"/>" alt="로그인하기" id="donaBtn" onclick="location.href='../support/done_main.jsp'"/>
+<input type="image" src="<c:url value="/resources/img/chat1.png"/>" alt="로그인하기" id="donaBtn2" onclick="location.href='../member/login.do'"/>
+<input type="image" src="<c:url value="/resources/img/bell1.png"/>" alt="로그인하기" id="donaBtn" onclick="location.href='../member/login.do'"/>
 </body>
 </html>
