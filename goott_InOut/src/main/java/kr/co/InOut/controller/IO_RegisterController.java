@@ -30,7 +30,7 @@ public class IO_RegisterController {
 	public String register1() {
 		
 	
-		return "register1";
+		return "/member/register1";
 	}
 	
 	@RequestMapping(value = "/member/register.do")
@@ -48,7 +48,6 @@ public class IO_RegisterController {
 		session.setAttribute("mem_name", req.getParameter("mem_name"));
 		session.setAttribute("mem_birth", req.getParameter("mem_birth"));
 		session.setAttribute("mem_phone", req.getParameter("mem_phone"));
-		session.setAttribute("mem_sex", req.getParameter("mem_sex"));
 		session.setAttribute("mem_add", req.getParameter("mem_add"));
 		session.setAttribute("mem_add1", req.getParameter("mem_add1"));
 		
@@ -61,10 +60,10 @@ public class IO_RegisterController {
 	
 		if(ck == null) {
 			
-			return "register1";  
+			return "/member/register1";  
 		
 		}else {
-		return "resume";
+		return "/member/resume";
 		
 	}
 	

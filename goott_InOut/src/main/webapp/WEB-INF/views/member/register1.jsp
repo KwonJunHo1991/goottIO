@@ -505,12 +505,12 @@ $(function() {
 
 <form name="form1">
 	<div>
-   <jsp:include page="main/mainPage/mp_naviBar.jsp"></jsp:include>
+   <jsp:include page="../main/mainPage/mp_naviBar.jsp"></jsp:include>
    </div> 
    
-   <jsp:include page="main/mainPage/loginPop.jsp"></jsp:include>
+   <jsp:include page="../main/mainPage/loginPop.jsp"></jsp:include>
    <div id="signup_window">
-	 <jsp:include page="etc/cl_sideNavi.jsp"></jsp:include>   
+	 <jsp:include page="../etc/cl_sideNavi.jsp"></jsp:include>   
       <h1 id="head_title">
          <img src="../resources/img/logo3.png" alt="logo"
             style="width: 150px; height: 150px;">

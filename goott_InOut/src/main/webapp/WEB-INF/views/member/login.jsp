@@ -48,21 +48,19 @@
    font-family: "나눔스퀘어";
 }
 
-/* .safetyLogin_full {
-margin-left: 550px;
+.safetyLogin_full {
    width: 100%;
    height: 100%;
    background-color: #f5f5f5;
-   
+   float: left;
 }
- */
+
 .inner { /* 전체 div  */
    background-color: white;
-   margin-top: 160px;
-   margin-bottom: 130px;
+   margin-top: 100px;
    letter-spacing: -1px;
-   margin-left: 520px;
-   width: 860px;
+   margin-left: 200px;
+   width: 1060px;
    height: 516px;
    border: 1px solid #cbcbca;
    background-color: white;
@@ -74,8 +72,8 @@ margin-left: 550px;
    height: 40px;
    line-height: 23px;
    margin: 0;
-    
-   margin-top: 15px;
+   margin-left: 350px;
+   margin-top: 30px;
    border: 1px solid #cbcbca;
 }
 
@@ -84,7 +82,7 @@ margin-left: 550px;
    width: 294px;
    height: 40px;
    line-height: 23px;
-    
+   margin-left: 350px;
    font-size: 14px;
    font-weight: bold;
    border: 1px solid #cbcbca; /* 회색 */
@@ -127,7 +125,7 @@ margin-left: 550px;
 }
 
 #login_title { /* 타이틀  */
-    margin-left: 40px;
+   margin-left: 350px;
    margin-top: 90px;
    size: 30px;
    font-size: 20px;
@@ -140,7 +138,7 @@ margin-left: 550px;
 }
 
 #login_title3 {
-    margin-left: 80px;
+   margin-left: 350px;
    font-size: 15px;
    font-family: "나눔스퀘어";
    font-weight: 900px;
@@ -148,10 +146,9 @@ margin-left: 550px;
 }
 
 #checkbox2 {
-margin-left: 250px;
    width: 350px;
    height: 20px;
-    
+   margin-left: 350px;
    margin-top: 10px;
 }
 
@@ -217,7 +214,7 @@ margin-left: 250px;
 }
 
 .sign-up {
-    
+   margin-left: 350px;
    color: #666;
    font-weight: bold;
    text-decoration: none;
@@ -234,7 +231,7 @@ margin-left: 250px;
 
 #id_pw {
    /* width: 1200px; */
-   height: 111.6px;
+   height: 121.6px;
    font-size: 12px;
 }
 
@@ -242,7 +239,7 @@ margin-left: 250px;
    color: #666;
    font-weight: bold;
    text-decoration: none;
-   margin-left: 200px;
+   margin-left: 50px;
    font-size: 10px;
 }
 
@@ -252,39 +249,29 @@ margin-left: 250px;
 
 #btn_position { /*로그인 버튼 위치*/
    float: left;
-   margin-top: 14px;
+   margin-top: 29px;
 }
 
 #sign-up-position {
    float: left;
 }
-#innerContext{
-		width: 450px;
-		
-		margin-left: 250px;
-}
 </style>
 </head>
 <body>
+						
  <form name="form1" method="get">
-   <div>
-   <jsp:include page="main/mainPage/mp_naviBar.jsp"></jsp:include>
-   </div> 
-   
-   <jsp:include page="main/mainPage/loginPop.jsp"></jsp:include>						
 
    <div class="safetyLogin_full">
+     
 
 
          <div class="inner">
-     <jsp:include page="etc/cl_sideNavi.jsp"></jsp:include>   
             <!-- 로그인   -->
             <%-- <c:if test="${empty authUser}"> --%>
-         	
-         	<div id="innerContext">
+         
             <div>
                <!-- title -->
-               <h1 id="login_title"><strong style="font-size: 40px; color:#6b80f1">로그인</strong>이 필요한 서비스입니다.</h1>
+               <h1 id="login_title">로그인이 필요한 서비스입니다.</h1>
                <p id="login_title3">
                   사람인 회원이 아니면, 지금 <span id="login_title2"> <a href="회원가입.jsp">회원가입</a></span>
                   해주세요
@@ -326,17 +313,18 @@ margin-left: 250px;
                <div id="sign-up-position">
 
                   <!-- <input type="button" value="회원가입"class="SignUp_btn" id="SignUp_btn"><br /> -->
-                  <a href="회원가입.jsp들어감" class="sign-up">회원가입</a> <span> | </span><a
-                     href="아이디/비밀번호 찾기 " id="Search_id-pw">아이디 / 비밀번호 찾기</a><a
-                     href="서비스안내.jsp" id="Service-nav">서비스 안내</a>
+                  <a href="회원가입.jsp들어감" class="sign-up">회원가입</a> <span> | </span>
+                  
+                    <a href="./findpw.do " id="Search_id-pw">아이디 / 비밀번호 찾기</a>
+                     
+                    <a href="서비스안내.jsp" id="Service-nav">서비스 안내</a>
                </div>
-         	</div>
             </div>
      
    </div>
 
  </form>
-  <jsp:include page="main/mainPage/mp_footer.jsp"></jsp:include>
+
 
 
 </body>
