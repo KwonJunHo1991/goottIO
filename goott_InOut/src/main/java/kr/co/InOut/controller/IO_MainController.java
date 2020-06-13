@@ -1,6 +1,6 @@
 package kr.co.InOut.controller;
 
-import java.util.ArrayList; 
+import java.util.ArrayList;  
 import java.util.Date;
 import java.util.List;
 
@@ -14,8 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.co.InOut.dao.IO_MainDAO;
+import kr.co.InOut.dao.IO_MemberDAOImple;
+import kr.co.InOut.dto.IO_ApplyDTO;
 import kr.co.InOut.dto.IO_Comp_BasicDTO;
 import kr.co.InOut.dto.IO_NoticeDTO;
+import kr.co.InOut.dto.IO_ResumeDTO;
 import kr.co.InOut.service.IO_LogOutService;
 
 @Controller
@@ -23,6 +26,9 @@ public class IO_MainController {
 	
 	@Inject
 	IO_MainDAO dao;
+	
+	@Inject
+	IO_MemberDAOImple memdao;
 	
 	public void setDao(IO_MainDAO dao) {
 		this.dao =dao;
@@ -91,16 +97,71 @@ public class IO_MainController {
 	@RequestMapping(value = "/company/noticeDetailMain.do")
 	public String noticeDetailMain(@RequestParam(value = "notice_num")int notice_num,
 									Model model) {
+		//클릭한 공고 내용 보내기
 		IO_NoticeDTO dto = 	dao.selectNoticeDetailByNoticeNum(notice_num);
 		model.addAttribute("notice", dto);
+		
+		
+		
 		return "/company/post_detail";
 	}
 	
-	//공고 지원하기!
+	//즉시 지원하기!
 	@RequestMapping(value = "/company/noticeDetailJoin.do")
-	public String noticeJoin() {
+	public String noticeJoin(@RequestParam(value = "notice_num") Integer notice_num,
+
+			Model model,HttpSession session) {
+		
+		//로그인 정보  
+			String mem_id = (String)session.getAttribute("mem_id");
+		//id로 이력서 찾아서 가져오기.
+			List<IO_ResumeDTO> redto=memdao.selectOneMemberResumeById(mem_id);
+			model.addAttribute("resumeList", redto);
+		
+		//클릭한 공고 정보 보여주기.
+			IO_NoticeDTO dto = 	dao.selectNoticeDetailByNoticeNum(notice_num);
+			model.addAttribute("dto", dto);
+		
+		
+		
+
+
+		
+		
+		
+		//		new IO_ApplyDTO(null,
+//				res_num,
+//				session.getAttribute("mem_id"),
+//				notice_num,
+//				noticeDto.getComp_num(),
+//				null,
+//				session.getAttribute("mem_birth"),
+//				session.getAttribute("mem_sex"),
+//				2000);
+		
 		return "/company/post_detail_join";
 	}
+	
+	@RequestMapping(value ="/company/applyOk.do")
+	public void insertApply(@RequestParam(value = "notice_num") Integer notice_num,
+			@RequestParam(value =  "res_num") Integer res_num,
+			Model model,HttpSession session){
+		
+		IO_NoticeDTO noticeDto = dao.selectNoticeDetailByNoticeNum(notice_num);
+		
+		IO_ApplyDTO adto = new IO_ApplyDTO();
+		adto.setRes_num(res_num);
+		adto.setMem_id((String)session.getAttribute("mem_id"));
+		adto.setNotice_num(notice_num);
+		adto.setComp_num(noticeDto.getComp_num());
+		adto.setComp_id(noticeDto.getComp_id());
+		adto.setMem_birth((Date)session.getAttribute("mem_birth"));
+		adto.setMem_sex((Integer)session.getAttribute("mem_sex"));
+		adto.setRes_income(2000);
+		dao.insertApply(adto);
+		
+	}
+	
 	
 	@RequestMapping(value = "/main/logout.do")
 	public String logout(HttpSession se) {

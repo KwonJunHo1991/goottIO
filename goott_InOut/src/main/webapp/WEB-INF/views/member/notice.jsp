@@ -73,7 +73,7 @@ $(function(){
    <section class="ftco-section bg-light">
    <div style="width: 900px;  background-color: white; margin-left: 260px;">
       <ul>
-         <strong style="font-size: 25px; color: black;">공고현황</strong>
+         <strong style="font-size: 25px; color: black;">공고지원 현황</strong>
 
          
       
@@ -91,15 +91,14 @@ $(function(){
                   <div class="job-post-item p-4 d-block d-lg-flex align-items-center" style="width: 850px;">
                     <div class="one-third mb-4 mb-md-0">
                       <div class="job-post-item-header align-items-center">
-                      <input type="hidden" name="mem_id" value="" />
-                      <input type="hidden" name="res_num" value=""/>
+                      
                       <td></td>
                                  <span class="subadge">수정</span>
-                        <h2 class="mr-3 text-black"><a href="#">${i.notice_title }</a></h2>
+                        <h2 class="mr-3 text-black"><a href="#">${i.apply_num }</a></h2>
                       </div>
                       <div class="job-post-item-body d-block d-md-flex">
                       
-                        <div><span class="icon-my_location"></span> <span> 내규의 따름</span></div>
+                        <div><span class="icon-my_location"></span> <span>${i.apply_date }</span></div>
                       </div>
                     </div>
 

@@ -61,7 +61,7 @@ public class IO_LoginController {
 		
 		
 		if(result == true) { //로그인 성공
-			mav.setViewName("/member/resumelist");
+			mav.setViewName("redirect:/main/main.do");
 			mav.addObject("msg", "success");
 		}else { // 로그인 실패
 			//로그인 jsp로 이동

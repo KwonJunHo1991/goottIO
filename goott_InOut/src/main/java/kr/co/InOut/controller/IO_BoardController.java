@@ -63,7 +63,8 @@ public class IO_BoardController {
 	public String boardSearch(Model model,
 			@RequestParam(value = "board_type" , defaultValue="100") int board_type,
 			@RequestParam(value = "board_category",defaultValue="100") int board_category,
-			@RequestParam(value = "curPage" , defaultValue="1") int curPage
+			@RequestParam(value = "curPage" , defaultValue="1") int curPage,
+			@RequestParam(value = "msg" , defaultValue="") String msg
 			) {
 		
 		
@@ -88,7 +89,7 @@ public class IO_BoardController {
 		//select Re Top 5
 		List<IO_BoardDTO> reTop5 = dao.selectReTop5();
 		model.addAttribute("reTop5", reTop5);
-		
+		model.addAttribute("msg", msg);
 		//return "boardList";
 		return "/etc/cl_qaa";
 	}
@@ -120,7 +121,7 @@ public class IO_BoardController {
 	
 	//질문하기 페이지.
 	@RequestMapping(value = "/board/boardInsert.do")
-	public String insertBoard(HttpSession se, ModelAndView mv) {
+	public String insertBoard(HttpSession se, Model model) {
 		
 		
 		String msg = "";
@@ -129,15 +130,14 @@ public class IO_BoardController {
 		if(se.getAttribute("loginComp") != null) {
 			//기업이면 개인회원만....
 			msg = "개인 회원만 가능합니다";
-			viewPage = "/etc/cl_qaa";
+			viewPage = "redirect:/board/boardSearch.do";
 		}else if(se.getAttribute("mem_id") == null) {
 			msg = "로그인 하세요";
-			viewPage = "/etc/cl_qaa";
+			viewPage = "redirect:/board/boardSearch.do";
 			//로그인하세요
 		}
 		
-		
-		mv.addObject("msg", msg);
+		model.addAttribute("msg",msg);
 	//	mv.setView(viewPage);
 		
 			return viewPage;
@@ -167,8 +167,16 @@ public class IO_BoardController {
 	
 	//MY 질문
 	@RequestMapping(value = "/board/boardMy.do")
-	public String myBoard(Model model) {
-		List<IO_BoardDTO> list = dao.selectMy("testId12");
+	public String myBoard(Model model,
+				@RequestParam(value = "mem_id",defaultValue = "") String mem_id
+			) {
+		
+		if(mem_id =="") {
+			model.addAttribute("msg", "로그인하세요");
+			return "redirect:/board/boardSearch.do";
+		}
+		
+		List<IO_BoardDTO> list = dao.selectMy(mem_id);
 		model.addAttribute("list", list);
 		return "/etc/cl_qaa_myq";
 	}

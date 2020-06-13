@@ -87,9 +87,9 @@
   	
   	</select>
   	
-	<select id="noticelist" resultType="NODTO">
+	<select id="noticelist" resultType="ApplyDTO">
 	
-	select * from io_notice
+	select * from io_apply
 	
 	
 	

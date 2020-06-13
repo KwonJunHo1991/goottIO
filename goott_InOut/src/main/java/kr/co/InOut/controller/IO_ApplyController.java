@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import kr.co.InOut.dao.IO_ResumeDAO;
+import kr.co.InOut.dto.IO_ApplyDTO;
 import kr.co.InOut.dto.IO_MemberDTO;
 import kr.co.InOut.dto.IO_NoticeDTO;
 import kr.co.InOut.dto.IO_ResumeDTO;
@@ -21,9 +22,10 @@ public class IO_ApplyController {
 	IO_ResumeDAO dao;
 	
 	@RequestMapping(value = "/member/apply.do")
-	public String apply(Model model, @ModelAttribute IO_NoticeDTO dto) {
+	public String apply(Model model, @ModelAttribute IO_ApplyDTO dto) {
 		
-		List<IO_NoticeDTO> list = dao.noticeList(dto);
+		List<IO_ApplyDTO> list = dao.noticeList(dto);
+		
 		
 		model.addAttribute("list", list);
 		

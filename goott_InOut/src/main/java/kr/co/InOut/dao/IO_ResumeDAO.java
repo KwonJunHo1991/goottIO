@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Component;
 
+import kr.co.InOut.dto.IO_ApplyDTO;
 import kr.co.InOut.dto.IO_CarrerDTO;
 import kr.co.InOut.dto.IO_NoticeDTO;
 import kr.co.InOut.dto.IO_ResumeDTO;
@@ -36,7 +37,7 @@ public class IO_ResumeDAO {
 		
 	}
 	
-	public List<IO_NoticeDTO> noticeList(IO_NoticeDTO dto){
+	public List<IO_ApplyDTO> noticeList(IO_ApplyDTO dto){
 		return ss.selectList("noticelist", dto);
 	}
 }

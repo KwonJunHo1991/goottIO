@@ -41,11 +41,11 @@ margin-left: 550px;
 
 $(document).ready(function () {
 	
-	var msg = '${msg}';
 	
+	var msg = "<c:out value='${msg }'/>";
 	if(msg != ""){
-		alert(msg);
-	}
+		alert('<c:out value="${msg }"/>');
+	};
 	
 	$(".checkbox_check1").hide();
 	$(".checkbox_check2").hide();
@@ -66,6 +66,7 @@ $(document).ready(function () {
 			$(".checkbox_check2").show();
 			$(".checkbox_check2").val(value4.text());
 		}
+	});
 		
 		
 		
@@ -128,6 +129,8 @@ $(document).ready(function () {
 			location.href = url[0] + "curPage=" + curPage;
 		} */
 	}
+	
+
 </script>
 
 </head>
@@ -333,10 +336,13 @@ $(document).ready(function () {
     
     	<!-- MY 질문 / 질문하기 버튼 -->
 		<div class="bottom_btn_wrap">
-        <a href="../board/boardMy.do" class="my_question">
+        <a href="../board/boardMy.do?mem_id=?${sessionScope.mem_id }" class="my_question">
         	MY 질문</a>
-        <a href="boardInsert.do" class="quest">
+        <a href="../board/boardInsert.do" class="quest">
         	질문하기</a>
+        	
+        ${msg }	
+        	
     	</div>
     	<!-- MY 질문 / 질문하기 버튼 끝 -->
 		</div>

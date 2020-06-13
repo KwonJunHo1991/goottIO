@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
+import kr.co.InOut.dto.IO_ApplyDTO;
 import kr.co.InOut.dto.IO_Comp_BasicDTO;
 import kr.co.InOut.dto.IO_NoticeDTO;
 
@@ -49,4 +50,8 @@ public class IO_MainDAO {
 		session.update("payOk", dto);
 	}
 	
+	//즉시 지원하기.
+	public void insertApply(IO_ApplyDTO dto) {
+		session.insert("insertIoApply", dto);
+	}
 }
