@@ -449,7 +449,7 @@ $("#Hsch").click(function(){
             
             <div style="float: right;">
                    <!-- <label for="">구직상태<span> 선택</span></label> -->
-                    <select class="form-control" style="margin-right: 50px; width: 150px; height: 50px;" id="mem_seekwork" name="mem_seekwokr">
+                    <select class="form-control" style="margin-right: 50px; width: 150px; height: 50px;" id="mem_seekwork" name="res_seekwork">
                       <option value="1">구직상태선택</option>
                       <option value="2">구직준비중(재학생)</option>
                       <option value="3">구직중</option>

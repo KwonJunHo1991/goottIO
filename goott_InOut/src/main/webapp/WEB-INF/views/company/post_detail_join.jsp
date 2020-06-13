@@ -195,6 +195,7 @@ $(document).ready(function () {
    $("#btn_thisbtn").click(function(){
      var confirm_test = confirm("정말 제출하겠습니까?");
      if(confirm_test==true){
+    	 document.frm.submit();
         window.close();
      }else{
       return false;  
@@ -210,32 +211,40 @@ $(document).ready(function () {
 
 
 
-
+<form action="../company/applyOk.do" name="frm">
    <div id="inner">
       <div id="title">
-         <h1>${param.name} 즉시 지원하기</h1>
+         <h1>${dto.comp_name} 즉시 지원하기</h1>
          <h5>본 회사에 즉시 지원하기</h5>
       </div>
 
       <form >
          <div id="namefd">
-         <h5 id="company_name">${param.name}</h5>
-            <input type="text" title="회사이름" value="${param.content}" name="authnum"
+         <h5 id="company_name">${dto.comp_name}</h5>
+            <input type="text" title="회사이름" value="${dto.notice_title}" name="authnum"
                id="company_name_blank" autofocus="autofocus" style="padding-left: 10px;" readonly>
          </div>
 
          <div id="namefd">
-            <select name="resume_choice" id="realNum" style="padding-left: 10px;">
-                  <option value="이력서">이력서 가져오기</option>
+            <select name="res_num" id="realNum" style="padding-left: 10px;">
+            
+           		<c:forEach items="${resumeList }" var="list">
+                  <option value="${list.res_num }">${list.res_title }</option>
+            
+            
+            
+             	</c:forEach>
             </select>
          </div>
 
          <div>
+         	<input type="hidden" name="notice_num" value="${dto.notice_num }" />
             <input type="button" value="지원하기" class="btn" id="btn_thisbtn" />
          </div>
       </form>
    </div>
    <!--inner end-->
+</form>   
 
 
 </body>
