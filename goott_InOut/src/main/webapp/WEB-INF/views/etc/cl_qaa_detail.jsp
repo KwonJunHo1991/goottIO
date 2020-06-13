@@ -109,22 +109,7 @@ margin-left: 550px;
         <div class="info_list_reply">
             <em class="num_total">답변 </em>
         </div>
-<<<<<<< HEAD
-            <div class="view_company_write non_login">
- <!--답변작성하기 박스 -->           
-        <div class="re_answer_box_main">
-        <div class="guide">
-        <div id="re_answer">
-		<textarea name="" id="textarea_placehold" maxlength="10000">개인정보를 공유 및 요청하거나, 명예 훼손, 무단 광고, 불법 정보 유포시 모니터링 후 삭제될 수 있으며, 이에 대한 민형사상 책임은 게시자에게 있습니다.
-		</textarea>
-        </div>
-        </div>
-        <div class="re_answer_box">
-        <button type="button" id="re_answer_btn" class="re_answer_btn">등록</button>
-        </div>
-    </div>
-        </div>    
-=======
+
      <div class="view_company_write non_login">
  <!--답변작성하기 박스 --> 
  		<form action="ReBoardInsertOk.do"> 
@@ -150,7 +135,7 @@ margin-left: 550px;
 	 	    </div>
  	    </form>
      </div>    
->>>>>>> branch 'dev' of https://github.com/KwonJunHo1991/goottIO.git
+
  <!-- 답변작성 박스 -->   
         <div class="list_review_reply non_login">
                

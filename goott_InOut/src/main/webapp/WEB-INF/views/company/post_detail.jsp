@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -530,12 +530,12 @@ $(document).ready(function () {
        console.log(company_chose_name);
        console.log(company_chose_context); */
        
-   var url = ("../company/noticeDetailJoin.do?notice_num=?"+${notice.notice_num});
+   var url = ("../company/noticeDetailJoin.do?notice_num="+<c:out value='${notice.notice_num }'/>);
        
       window.open(url,"confirm","toolbar = no, location = no, status = np, menubar = no, width = 530, height=420, left=700, top=250, menubar =no, overflow-x:hidden,overflow-y:hidden ");
    });
 
-   
+    
    
    
 });
@@ -545,6 +545,8 @@ $(document).ready(function () {
 <title>job_post_detail.jsp</title>
 </head>
 <body>
+
+
    <div>
    <jsp:include page="../main/mainPage/mp_naviBar.jsp"></jsp:include>
    </div> 
