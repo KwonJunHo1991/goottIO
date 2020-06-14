@@ -117,193 +117,33 @@
 							<div class="tblSticky">
 
 								<table>
-									<caption class="blind">지원자 목록</caption>
-									<thead>
 
-										<tr>
-											<th scope="col"><span class="inpChk"><input
-													type="checkbox" id="check_all" value="all"><label
-													class="lbl hide" for="check_all">전체선택</label></span></th>
-											<th scope="col" class="txtCenter division">전형/분야</th>
-											<th scope="col" class="txtCenter applicant"><select
-												class="inpSelTxt" id="sort_name_age" title="이름/나이 정렬"><option
-														value="">이름/나이</option>
-													<option value="name" data-sort_type="asc">이름순</option>
-													<option value="name" data-sort_type="desc">이름역순</option>
-													<option value="age" data-sort_type="desc">나이적은순</option>
-													<option value="age" data-sort_type="asc">나이많은순</option></select></th>
-											<th scope="col"><button type="submit"
-													class="btn_sort btn_array_up" data-sort_field="9"
-													onclick="gtmDataLayerPush('manage-button', 'lineup')">경력</button></th>
-											<th scope="col"><button type="submit"
-													class="btn_sort btn_array_up" data-sort_field="5"
-													onclick="gtmDataLayerPush('manage-button', 'lineup')">최종학력</button></th>
-											<th scope="col"><button type="submit"
-													class="btn_sort btn_array_up" data-sort_field="8"
-													onclick="gtmDataLayerPush('manage-button', 'lineup')">전공/학점</button></th>
-											<th scope="col"><button type="submit"
-													class="btn_sort btn_salary btn_array_up"
-													data-sort_field="11"
-													onclick="gtmDataLayerPush('manage-button', 'lineup')">희망/최근연봉</button></th>
-											<th scope="col" class="apply_date"><button type="submit"
-													class="btn_sort btn_array_down" data-sort_field="1"
-													onclick="gtmDataLayerPush('manage-button', 'lineup')">지원일</button></th>
-											<th scope="col" class="txtCenter ai_result">AI평가</th>
-											<th scope="col" class="txtCenter evaluate_status"><div
-													class="toolTipWrap over">
-													<button type="button">
-														<span class="blind">도움말</span>
-													</button>
-													<div class="toolTip">
-														<span class="tail tail_top_center"></span>
-														<div class="toolTipCont">
-															<p class="txt">서류평가 설계시 평가상태가 노출되며,인적성검사를 요청하거나 면접일정
-																등록시 해당 지원자에 아이콘이 노출됩니다.</p>
-														</div>
-													</div>
-												</div>
-												<select class="inpSelTxt" id="sort_evaluate_status"
-												name="condition_status" title="평가상태로 정렬 선택"
-												onchange="gtmDataLayerPush('manage-button', 'sorting-evaluation')"><option
-														value="">평가상태</option>
-													<option value="before">평가미완료</option>
-													<option value="complete">평가완료</option></select></th>
-											<th scope="col" class="txtCenter"><select
-												class="inpSelTxt" id="pass_status" title="합격여부로 정렬 선택"
-												onchange="gtmDataLayerPush('manage-button', 'sorting-pass')"><option
-														value="">합격여부</option>
-													<option value="hprc001" style="font-weight: bold;">미분류</option>
-													<option value="hprc002">합격후보</option>
-													<option value="hprc003">합격</option>
-													<option value="hprc004">불합격</option></select></th>
+									<c:forEach var="volunteer" items="${volunteerList }">
+									<form action="volunteerStatusEdit.do">
+										<tr height="50px">
+											<%-- <th>${이름을 어디서가져오지....mem_name }</th> --%>
+											<td> 지원 날짜 : ${volunteer.apply_date }</td>
+											<td>/ 생년월일 : ${volunteer.mem_birth }</td>
+											<td>/ 지원자 성별 : ${volunteer.mem_sex }</td>
+											<td>/ 희망 연봉 : ${volunteer.res_income } | </td>
+											<td>상태 : ${volunteer.apply_status }</td>
+											<td>
+											<input type="hidden" name="apply_num" value="${volunteer.apply_num }" />
+											<input type="hidden" name="notice_num" value="${volunteer.notice_num }" />
+													<select class="inpSelTxt sort_filtering"
+														id="sort_filtering" name="apply_status"
+														title="합격여부 변경"><option
+															value="">합격여부 선택</option>
+														<option value="미분류" data-gtm-label="cancel-list">미분류</option>
+														<option value="합격후보" data-gtm-label="filter-list">합격후보</option>
+														<option value="합격" data-gtm-label="delete-list">합격</option>
+														<option value="불합격" data-gtm-label="block-list">불합격</option>
+														</select>
+												</td>
+												<td><input type="submit" value="상태 변경" /></td>
 										</tr>
-									</thead>
-									<tbody>
-									<!-- 여기서부터 volunteerList에 담긴 객체 하나당 한줄 생김 -->
-								<c:forEach var="volunteer" items="${volunteerList }">
-										<tr id="applicant_list_tr_247348130" class="exam-request-on "
-											data-siat_exam_seq="" data-resumetype="sr"
-											data-recruitapply_idx="247348130" data-rec_idx="38231000"
-											data-resumefileexist="1" data-age="33" data-birth_year="1988"
-											data-last_school_nm="한양사이버대학교" data-mem_idx="9505853"
-											data-photo_src="http://pds.saramin.co.kr/person/photo/2018/06/pac7no_uoat-v8xb3c_pac7no73epv8xb3cpac7ngbothv8xb3c.jpg"
-											data-sex="1" data-user_email="suhyeok6974@naver.com"
-											data-user_name="이수혁" data-user_phone_num="010-4474-5055"
-											data-is_read_condition="1"
-											data-exam_request="exam-request-on"
-											data-hiring_process_idx="10941202" data-career="14년"
-											data-eval_type="" data-rec_division="취업지원">
-											<td><span class="inpChk"><input type="checkbox"
-													name="applicant_list_chk" id="chk_247348130"
-													value="247348130"><label class="lbl hide"
-													for="chk_247348130">선택</label></span>
-											<button type="button" id="list_icon_star_247348130"
-													class="btnScrap _listBtnScrap "
-													data-recruitapply_idx="247348130"
-													onclick="gtmDataLayerPush('list-button', 'important-applicant')"
-													title="스크랩">
-													<span class="blind">스크랩</span>
-												</button></td>
-											<td class="txtTop division"><span
-												class="screening ellipsis" title="서류전형">서류전형</span><span
-												class="field ellipsis" title="취업지원">취업지원</span></td>
-											<td class="applicant"><div class="inner">
-													<a href="javascript:;" class="btn_applicant_view"
-														onclick="gtmDataLayerPush('manage-button', 'view-applicant')"
-														title="지원자 상세페이지로 바로가기"><div class="box_thumb">
-															<div class="thumb">
-																<img
-																	src="http://pds.saramin.co.kr/person/photo/2018/06/pac7no_uoat-v8xb3c_pac7no73epv8xb3cpac7ngbothv8xb3c.jpg">
-															</div>
-														</div></a>
-													<div class="box_name">
-														<a href="javascript:;" class="btn_applicant_view"
-															title="지원자 상세페이지로 바로가기"><div class="name">
-																<strong class="ellipsis">이수혁</strong> 남, 33세
-
-															</div></a>
-														<div class="utility">
-															<div class="toolTipWrap memo">
-																<button type="button" name="btn_memo_open"
-																	id="memo_open" class="util_ico btn_open "
-																	data-recruitapply_idx="247348130"
-																	data-rec_idx="38231000">
-																	<span class="blind">클릭 시 메모가 보입니다.</span>
-																</button>
-																<div name="pre_memo_tool_tip" class="toolTip">
-																	<span class="tail tail_top_center"></span>
-																	<div class="toolTipCont">
-																		<strong class="title">메모</strong>
-																		<p></p>
-																		<button type="button" name="btn_pre_memo_close"
-																			class="btnClose">
-																			<span class="blind">닫기</span>
-																		</button>
-																	</div>
-																</div>
-															</div>
-														</div>
-													</div>
-													<div class="tags">
-														<span class="tag"> #인성직무적합</span><span
-															class="tag negative">#핵심조건불일치</span><span
-															class="tag negative">#스킬개수부족</span><span
-															class="tag negative">#희망업종불일치</span>
-													</div>
-												</div></td>
-											<td class="txtTop"><a href="javascript:;"
-												class="btn_applicant_view" title="지원자 상세페이지로 바로가기"><span
-													class="value emph ellipsis">14년</span><span
-													class="value ellipsis" title="리코블라인드">리코블라인드</span></a></td>
-											<td class="txtTop"><a href="javascript:;"
-												class="btn_applicant_view" title="지원자 상세페이지로 바로가기"><span
-													class="value emph ellipsis" title="한양사이버대학교">한양사이버대학교</span><span
-													class="value ellipsis">대학4년</span></a></td>
-											<td class="txtTop"><a href="javascript:;"
-												class="btn_applicant_view" title="지원자 상세페이지로 바로가기"><span
-													class="value emph ellipsis" title="국제경영학">국제경영학</span><span
-													class="value ellipsis">2.93 / 4.5</span></a></td>
-											<td class="txtTop"><a href="javascript:;"
-												class="btn_applicant_view" title="지원자 상세페이지로 바로가기"><span
-													class="value emph ellipsis">2,600~2,800</span><span
-													class="value ellipsis">3,000</span></a></td>
-											<td class="txtTop apply_date"><a href="javascript:;"
-												class="btn_applicant_view" title="지원자 상세페이지로 바로가기"><span
-													class="value emph">2020. 06. 08</span><span
-													class="value txt"> 열람 </span></a></td>
-											<td class="txtCenter txtTop ai_result"><div
-													class="result grade_b">
-													<em class="txt">보통</em>
-												</div></td>
-											<td class="txtCenter txtTop evaluate_status"></td>
-											<td class="txtCenter txtTop"><div class="evaluate ">
-													<div class="inpSel">
-														<select name="applicant_pass_select"
-															id="appicant_status_select_247348130"
-															onchange="gtmDataLayerPush('manage-button', 'assign-pass')"
-															data-origin_pass_status="hprc001" title="합격여부 선택"><option
-																value="hprc001" selected="">미분류</option>
-															<option value="hprc002">합격후보</option>
-															<option value="hprc003">합격</option>
-															<option value="hprc004">불합격</option></select>
-													</div>
-													<div class="area_over">
-														<span class="blind">마우스 오버 시 지원자 삭제/차단하기 노출됩니다.</span>
-														<button type="button" class="btn_delete"
-															data-recruitapply_idx="247348130"
-															data-uilayer-btn="delete_applicant"
-															onclick="gtmDataLayerPush('manage-button', 'delete-applicant')">
-															<span class="blind">지원자 삭제하기</span>
-														</button>
-														<button type="button" class="btn_blacklist"
-															data-uilayer-btn="add_blacklist"
-															onclick="gtmDataLayerPush('manage-button', 'block-applicant')">
-															<span class="blind">지원자 차단하기</span>
-														</button>
-													</div>
-												</div></td>
-										</tr>
-								</c:forEach>
+									</form>			
+									</c:forEach>
 									</tbody>
 								</table>
 
