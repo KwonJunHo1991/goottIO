@@ -122,7 +122,7 @@ public class IO_NoticeController {
 	
 	// 공고에 지원자 리스트 보기(미완성!!)
 	@RequestMapping(value = "/company/volunteerList.do")
-	public String showVolunteerList() {
+	public String showVolunteerList(HttpSession session, Model model) {
 		
 		return "comp/volunteerList";
 	}

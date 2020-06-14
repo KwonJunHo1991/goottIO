@@ -752,7 +752,7 @@ $(function() {
 		        </div>
 		        <div class="sidebar-box ftco-animate">
 		        	<div class="">
-			        	<a href="#" class="company-wrap"><img src="/resources/images/company-4.jpg" class="img-fluid" alt="Colorlib Free Template"></a>
+			        	<a href="#" class="company-wrap"><img src="<c:url value="/resources/images/company-4.jpg"/>"class="img-fluid" alt="Colorlib Free Template"></a>
 			        	<div class="text p-3">
 			        		<h3><a href="#">IT Programming INC</a></h3>
 			        		<p><span class="number">700</span> <span>Open position</span></p>

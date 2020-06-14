@@ -284,7 +284,7 @@ margin-left: 250px;
          	<div id="innerContext">
             <div>
                <!-- title -->
-               <h1 id="login_title"><strong style="font-size: 40px; color:#6b80f1">로그인</strong>이 필요한 서비스입니다.</h1>
+               <h1 id="login_title"><strong style="font-size: 40px; color:#6b80f1">개인로그인</strong>이 필요한 서비스입니다.</h1>
                <p id="login_title3">
                   사람인 회원이 아니면, 지금 <span id="login_title2"> <a href="회원가입.jsp">회원가입</a></span>
                   해주세요
@@ -307,15 +307,15 @@ margin-left: 250px;
                      <div id="id_pw">
                         <input type="text" name="mem_id" id="mem_id" placeholder="아이디"
                            autofocus="autofocus" style="padding-left: 10px;" required>
-                           <c:if test="${msg == 'failure' }">
-                           		<script type="text/javascript">
-									alert('<c:out value="아이디와 패스워드가 다릅니다."/>');
-								</script>
-                           
-                           </c:if>
+
                         <br /> <input type="password" name="mem_pw" id="mem_pw"
                            placeholder="패스워드" style="padding-left: 10px;" required>
-
+												<c:if test="${msg == 'failure' }">
+				<div style="color :red; font-size:18px; margin-left: 40px;">
+				 일치 하지 않습니다.
+				
+				</div>
+					</c:if>
                      </div>
                </div>
                <div id="btn_position">
@@ -326,7 +326,7 @@ margin-left: 250px;
                <div id="sign-up-position">
 
                   <!-- <input type="button" value="회원가입"class="SignUp_btn" id="SignUp_btn"><br /> -->
-                  <a href="회원가입.jsp들어감" class="sign-up">회원가입</a> <span> | </span><a
+                  <a href="../member/registerlist.do" class="sign-up">회원가입</a> <span> | </span><a
                      href="아이디/비밀번호 찾기 " id="Search_id-pw">아이디 / 비밀번호 찾기</a><a
                      href="서비스안내.jsp" id="Service-nav">서비스 안내</a>
                </div>

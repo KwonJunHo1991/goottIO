@@ -1,40 +1,46 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+   pageEncoding="UTF-8"%>
+ <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>로그인</title>
-
+<title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
 	
 	$(function(){
 		$("#btnLogin").click(function(){
 			
-			var comp_id = $("#comp_id").val();
-			var comp_pw = $("#comp_pw").val();
+			var mem_id1 = $("#mem_id").val();
+			var mem_pw1 = $("#mem_pw").val();
 			
-			if(comp_id == ""){
+			if(mem_id1 == ""){
 				alert("아이디를 입력하세요");
-				$("#comp_id").focus();
+				$("#mem_id").focus();
 				return;
 			}
-			if(comp_pw == ""){
+			if(mem_pw1 == ""){
 				alert("비밀번호를 입력하세요");
-				$("#comp_pw").focus();
+				$("#mem_pw").focus();
 				return;
 			}
 			
-			document.form1.action= '<c:url value= "loginCheck.do"/>';
-			document.form1.method = 'post';
+
+			
+			
+			document.form1.action= '<c:url value="loginCheck.do"/>';
+			document.form1.method= 'post';
 			document.form1.submit();
 			
 		});
 		
 	});
+		
+	
 </script>
+</head>
 <style>
 * { /* 전체 css 초기화 */
    margin: 0;
@@ -62,7 +68,7 @@ margin-left: 550px;
    background-color: white;
 }
 
-#comp_id { /* 아이디 필드  */
+#mem_id { /* 아이디 필드  */
    box-sizing: border-box;
    width: 294px;
    height: 40px;
@@ -73,7 +79,7 @@ margin-left: 550px;
    border: 1px solid #cbcbca;
 }
 
-#comp_pw { /* 패스월드  필드  */
+#mem_pw { /* 패스월드  필드  */
    box-sizing: border-box;
    width: 294px;
    height: 40px;
@@ -230,7 +236,6 @@ margin-left: 250px;
    /* width: 1200px; */
    height: 111.6px;
    font-size: 12px;
-   margin-bottom: 0px;
 }
 
 #Service-nav {
@@ -248,7 +253,6 @@ margin-left: 250px;
 #btn_position { /*로그인 버튼 위치*/
    float: left;
    margin-top: 14px;
-   margin-right: 30px;
 }
 
 #sign-up-position {
@@ -262,27 +266,25 @@ margin-left: 250px;
 </style>
 </head>
 <body>
-
-
- <form name="form1" method="post" action="loginCheck.do">
+ <form name="form1" method="get">
    <div>
-   <jsp:include page="main/mainPage/mp_naviBar.jsp"></jsp:include>
+   <jsp:include page="../main/mainPage/mp_naviBar.jsp"></jsp:include>
    </div> 
    
-   <jsp:include page="main/mainPage/loginPop.jsp"></jsp:include>						
+   <jsp:include page="../main/mainPage/loginPop.jsp"></jsp:include>						
 
    <div class="safetyLogin_full">
 
 
          <div class="inner">
-     <jsp:include page="etc/cl_sideNavi.jsp"></jsp:include>   
+     <jsp:include page="../etc/cl_sideNavi.jsp"></jsp:include>   
             <!-- 로그인   -->
             <%-- <c:if test="${empty authUser}"> --%>
          	
          	<div id="innerContext">
             <div>
                <!-- title -->
-               <h1 id="login_title"><strong style="font-size: 40px; color:#6b80f1">기업로그인</strong>이 필요한 서비스입니다.</h1>
+               <h1 id="login_title"><strong style="font-size: 40px; color:#6b80f1">개인로그인</strong>이 필요한 서비스입니다.</h1>
                <p id="login_title3">
                   사람인 회원이 아니면, 지금 <span id="login_title2"> <a href="회원가입.jsp">회원가입</a></span>
                   해주세요
@@ -303,29 +305,28 @@ margin-left: 250px;
 
 
                      <div id="id_pw">
-                        <input type="text" name="comp_id" id="comp_id" placeholder="아이디"
+                        <input type="text" name="mem_id" id="mem_id" placeholder="아이디"
                            autofocus="autofocus" style="padding-left: 10px;" required>
 
-                        <br /> <input type="password" name="comp_pw" id="comp_pw"
+                        <br /> <input type="password" name="mem_pw" id="mem_pw"
                            placeholder="패스워드" style="padding-left: 10px;" required>
-								<c:if test="${msg == 'failure' }">
+												<c:if test="${msg == 'failure' }">
 				<div style="color :red; font-size:18px; margin-left: 40px;">
 				 일치 하지 않습니다.
 				
 				</div>
 					</c:if>
-
                      </div>
                </div>
                <div id="btn_position">
                   <input type="submit" value="로그인" class="login_btn" id="btnLogin">
+
                </div>
-          
 
                <div id="sign-up-position">
 
                   <!-- <input type="button" value="회원가입"class="SignUp_btn" id="SignUp_btn"><br /> -->
-                  <a href="../company/join.do" class="sign-up">회원가입</a> <span> </span><a
+                  <a href="../member/registerlist.do" class="sign-up">회원가입</a> <span> | </span><a
                      href="아이디/비밀번호 찾기 " id="Search_id-pw">아이디 / 비밀번호 찾기</a><a
                      href="서비스안내.jsp" id="Service-nav">서비스 안내</a>
                </div>
@@ -335,7 +336,7 @@ margin-left: 250px;
    </div>
 
  </form>
-  <jsp:include page="main/mainPage/mp_footer.jsp"></jsp:include>
+  <jsp:include page="../main/mainPage/mp_footer.jsp"></jsp:include>
 
 
 </body>

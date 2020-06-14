@@ -44,9 +44,9 @@
               <h2 class="ftco-heading-2">고객센터</h2>
               <p>02-2025-4733&nbsp;(평일 09:00~19:00,&nbsp;주말·공휴일 휴무)</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-3">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                <li class="ftco-animate"><a href="../main/main.do"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="../main/main.do"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="../main/main.do"><span class="icon-instagram"></span></a></li>
               </ul>
             </div>
           </div>
@@ -54,10 +54,10 @@
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">기업연구소</h2>
               <ul class="list-unstyled">
-                <li><a href="#" class="pb-1 d-block">취준 고민</a></li>
-                <li><a href="#" class="pb-1 d-block">취업 뉴스</a></li>
-                <li><a href="#" class="pb-1 d-block">이력서 무료 다운</a></li>
-                <li><a href="#" class="pb-1 d-block">글자수 체크</a></li>
+                <li><a href="../board/boardSearch.do" class="pb-1 d-block">취준 고민</a></li>
+                <li><a href="../board/boardSearch.do" class="pb-1 d-block">취업 뉴스</a></li>
+                <li><a href="../board/boardSearch.do" class="pb-1 d-block">이력서 무료 다운</a></li>
+                <li><a href="../board/boardCharCheck.do" class="pb-1 d-block">글자수 체크</a></li>
               </ul>
             </div>
           </div>
@@ -65,9 +65,9 @@
             <div class="ftco-footer-widget mb-4 ml-md-4">
               <h2 class="ftco-heading-2">지역별 공고</h2>
               <ul class="list-unstyled">
-                <li><a href="#" class="pb-1 d-block">서울</a></li>
-                <li><a href="#" class="pb-1 d-block">성남</a></li>
-                <li><a href="#" class="pb-1 d-block">수원</a></li>
+                <li><a href="../main/local.do" class="pb-1 d-block">서울</a></li>
+                <li><a href="../main/local.do" class="pb-1 d-block">성남</a></li>
+                <li><a href="../main/local.do" class="pb-1 d-block">수원</a></li>
 
               </ul>
             </div>
@@ -76,11 +76,11 @@
             <div class="ftco-footer-widget mb-4 ml-md-4">
               <h2 class="ftco-heading-2">큐레이션</h2>
               <ul class="list-unstyled">
-                <li><a href="#" class="pb-1 d-block">대기업</a></li>
-                <li><a href="#" class="pb-1 d-block">공기업</a></li>
-                <li><a href="#" class="pb-1 d-block">외국계기업</a></li>
-                <li><a href="#" class="pb-1 d-block">중견기업</a></li>
-                <li><a href="#" class="pb-1 d-block">스타트업</a></li>
+                <li><a href="../main/job.do" class="pb-1 d-block">대기업</a></li>
+                <li><a href="../main/job.do" class="pb-1 d-block">공기업</a></li>
+                <li><a href="../main/job.do" class="pb-1 d-block">외국계기업</a></li>
+                <li><a href="../main/job.do" class="pb-1 d-block">중견기업</a></li>
+                <li><a href="../main/job.do" class="pb-1 d-block">스타트업</a></li>
               </ul>
             </div>
           </div>
@@ -90,8 +90,8 @@
             	<div class="block-23 mb-3">
 	              <ul>
 	                <li><span class="icon icon-map-marker"></span><span class="text">서울시 구로구 시흥대로 163길 35 주호타워 2층 110111-6239316</span></li>
-	                <li><a href="#"><span class="icon icon-phone"></span><span class="text">02-837-9922</span></a></li>
-	                <li><a href="#"><span class="icon icon-envelope"></span><span class="text">dnflskfk395@naver.com</span></a></li>
+	                <li><a href="../main/main.do"><span class="icon icon-phone"></span><span class="text">02-837-9922</span></a></li>
+	                <li><a href="../main/main.do"><span class="icon icon-envelope"></span><span class="text">dnflskfk395@naver.com</span></a></li>
 	              </ul>
 	            </div>
             </div>

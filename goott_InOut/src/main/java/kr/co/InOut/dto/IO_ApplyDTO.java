@@ -10,6 +10,7 @@ public class IO_ApplyDTO {
 	String mem_id;
 	Integer notice_num;
 	Integer comp_num;
+	String comp_id;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	Date apply_date;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -17,6 +18,14 @@ public class IO_ApplyDTO {
 	Integer mem_sex;
 	Integer res_income;
 	
+	public String getComp_id() {
+		return comp_id;
+	}
+
+	public void setComp_id(String comp_id) {
+		this.comp_id = comp_id;
+	}
+
 	public IO_ApplyDTO() { 
 		
 	}
@@ -93,20 +102,21 @@ public class IO_ApplyDTO {
 		this.res_income = res_income;
 	}
 
-	public IO_ApplyDTO(Integer apply_num, Integer res_num, String mem_id,
-			Integer notice_num, Integer comp_num, Date apply_date,
-			Date mem_birth, Integer mem_sex, Integer res_income) {
+	public IO_ApplyDTO(Integer apply_num, Integer res_num, String mem_id, Integer notice_num, Integer comp_num,
+			String comp_id, Date apply_date, Date mem_birth, Integer mem_sex, Integer res_income) {
 		super();
 		this.apply_num = apply_num;
 		this.res_num = res_num;
 		this.mem_id = mem_id;
 		this.notice_num = notice_num;
 		this.comp_num = comp_num;
+		this.comp_id = comp_id;
 		this.apply_date = apply_date;
 		this.mem_birth = mem_birth;
 		this.mem_sex = mem_sex;
 		this.res_income = res_income;
 	}
 
+	
 	
 }

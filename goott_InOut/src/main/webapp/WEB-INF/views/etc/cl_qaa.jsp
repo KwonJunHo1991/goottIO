@@ -39,10 +39,36 @@ margin-left: 550px;
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script type="text/javascript">
 
-	$(document).ready(function () {
-			
-		$(".checkbox_check1").hide();
-		$(".checkbox_check2").hide();
+$(document).ready(function () {
+	
+	
+	var msg = "<c:out value='${msg }'/>";
+	if(msg != ""){
+		alert('<c:out value="${msg }"/>');
+	};
+	
+	$(".checkbox_check1").hide();
+	$(".checkbox_check2").hide();
+	
+	$('input:radio').change(function () {	
+		$(".empty_txt").text("")
+		var value = $('input[name=board_category]:checked').val();
+		var value2 = $('input[name=board_type]:checked').val();
+		var value3 = $('input[name=board_category]:checked').next();
+		var value4 = $('input[name=board_type]:checked').next();
+
+		if(value != null){
+			console.log(value3.text());
+			$(".checkbox_check1").show();
+			$(".checkbox_check1").val(value3.text());
+		}
+		if( value2 != null){
+			$(".checkbox_check2").show();
+			$(".checkbox_check2").val(value4.text());
+		}
+	});
+		
+		
 		
 		$('input:radio').change(function () {	
 			$(".empty_txt").text("")
@@ -103,6 +129,8 @@ margin-left: 550px;
 			location.href = url[0] + "curPage=" + curPage;
 		} */
 	}
+	
+
 </script>
 
 </head>
@@ -308,10 +336,13 @@ margin-left: 550px;
     
     	<!-- MY 질문 / 질문하기 버튼 -->
 		<div class="bottom_btn_wrap">
-        <a href="../board/boardMy.do" class="my_question">
+        <a href="../board/boardMy.do?mem_id=?${sessionScope.mem_id }" class="my_question">
         	MY 질문</a>
-        <a href="boardInsert.do" class="quest">
+        <a href="../board/boardInsert.do" class="quest">
         	질문하기</a>
+        	
+        ${msg }	
+        	
     	</div>
     	<!-- MY 질문 / 질문하기 버튼 끝 -->
 		</div>
