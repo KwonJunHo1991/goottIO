@@ -123,7 +123,7 @@ $(function(){
 							</div>
 						</div>
 						<!-- 전체 채용정보 목록 -->
-						<div class="wrap_list">
+						<div class="wrap_list" style="overflow-y:scroll;">
 							<ul>
 							<c:forEach var="notice" items="${noticeList }" >
 								<li class="row"><strong class="badge_status ">일반채용</strong>
@@ -142,7 +142,7 @@ $(function(){
 										</div>
 										<div class="use_product">
 										<a href="./volunteerList.do?notice_num=${notice.notice_num }"><input type="button" id="showVolunteer" value="지원자 보기" /></a>
-										<a href="./post_detail.do?notice_num=${notice.notice_num }"><input type="button" id="editNotice" value="공고 수정" /></a>
+										<a href="./editNotice.do?notice_num=${notice.notice_num }"><input type="button" id="editNotice" value="공고 수정" /></a>
 										<div class="area_status">
 											<div class="box_status">
 												<strong class="txt_status ">마감 공고</strong>
