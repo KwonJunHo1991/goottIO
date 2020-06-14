@@ -37,6 +37,10 @@ public class IO_ResumeDAO {
 		
 	}
 	
+	public List<IO_UniversityDTO> selectOneUniBynum(int res_num){
+		return ss.selectList("selectOneUniBynum", res_num);
+	}
+	
 	public List<IO_ApplyDTO> noticeList(IO_ApplyDTO dto){
 		return ss.selectList("noticelist", dto);
 	}

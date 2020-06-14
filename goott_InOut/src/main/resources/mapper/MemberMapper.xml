@@ -96,7 +96,11 @@
 	
 	</select>
   	
+  	<select id="selectOneUniBynum" resultType="UniversityDTO">
+  	select * from io_university
+  	where res_num = #{res_num}
   	
+  	</select>
   	
   	
   	
