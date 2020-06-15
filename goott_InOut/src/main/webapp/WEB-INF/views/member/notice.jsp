@@ -8,7 +8,16 @@
 <title>Insert title here</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
-
+$(function(){
+	$("#noticesup").click(function(){
+		
+	
+		
+			document.meminfo.action = "./noticesupport.do";
+			document.meminfo.method = "get";
+			document.meminfo.submit();
+	});
+});
 </script>
 <link rel="stylesheet" type="text/css"
    href="<c:url value='/resources/css_company/com_candidate_all_css.css'/>">
@@ -54,47 +63,24 @@
 
 
 </script>
-<style type="text/css">
-#this_is_main{
-margin-left: 200px;
-width: 2000px;
-height: 100%;
 
-}
-.bg-light{
-
-height: 1500px;
-
-}
-
-</style>
 
 
 </head>
 <body>
-	 <div >
-   <jsp:include page="../main/mainPage/mp_naviBar.jsp"></jsp:include>
-   </div> 
+
    
-   <jsp:include page="../main/mainPage/loginPop.jsp"></jsp:include>
-   
-   <section class="ftco-section bg-light" id="this_is_main" >
-   
-   <div style="width: 910px; height:600px;  background-color: #f8f9fa; border: 3px solid white; margin-left: 360px; padding-left: 0px;">
-   <jsp:include page="../member/mem_sideNavi.jsp"></jsp:include>
-      <ul style="margin-left: 20px;">
-         <strong style="font-size: 25px; color: black;">이력서 현황</strong>
-         <li class="li10">이력서는 최대 10개까지 작성하여 등록 가능합니다</li>
-         <li class="li10">이력서 공개 설정은 1개의 이력서만 가능합니다</li>
-         <li class="li10">미완성 이력서는 이력서 등록이 완료되지 않은 상태에서 저장된 이력서입니다.</li>
-         <li class="li10">미완성 이력서로 입사지원 및 이력서 공개는 불가능합니다.</li>
-         <li class="li10">"완성하기" 버튼을 클릭하여, 필수 항목을 모두 입력 후 등록을 완료해야 입사지원 및 이력서 공개가 가능합니다.</li>
+   <section class="ftco-section bg-light">
+   <div style="width: 900px;  background-color: white; margin-left: 260px;">
+      <ul>
+         <strong style="font-size: 25px; color: black;">공고지원 현황</strong>
+
          
       
       
       </ul>
       
-      <span style="margin-left: 40px;">총{n개}</span>
+      <span style="margin-left: 40px;"></span>
          <div class="container">
             <div class="row">
             
@@ -102,18 +88,17 @@ height: 1500px;
    <form name="resume" action="./selectresumebynum.do">
                   
                   
-                  <div class="job-post-item p-4 d-block d-lg-flex align-items-center" style="width: 850px; margin-left: 20px">
+                  <div class="job-post-item p-4 d-block d-lg-flex align-items-center" style="width: 850px;">
                     <div class="one-third mb-4 mb-md-0">
                       <div class="job-post-item-header align-items-center">
-                      <input type="hidden" name="mem_id" value="${mem_id }" />
-                      <input type="hidden" name="res_num" value="${i.res_num }"/>
-                      <td>${i.res_num }</td>
-                                 <span class="subadge">수정${i.res_career_date}</span>
-                        <h2 class="mr-3 text-black"><a href="#">${i.res_title }</a></h2>
+                      
+                      <td></td>
+                                 <span class="subadge">수정</span>
+                        <h2 class="mr-3 text-black"><a href="#">${i.apply_num }</a></h2>
                       </div>
                       <div class="job-post-item-body d-block d-md-flex">
                       
-                        <div><span class="icon-my_location"></span> <span> 내규의 따름</span></div>
+                        <div><span class="icon-my_location"></span> <span>${i.apply_date }</span></div>
                       </div>
                     </div>
 
@@ -123,18 +108,14 @@ height: 1500px;
                             <span class="icon-heart"></span>
                          </a>
                       </div>
-                     <input type="submit" class="btn btn-primary py-2" value="완성하기" id="complete" />
+                     <input type="submit" class="btn btn-primary py-2" value="지원하기" id="noticesup" />
                     </div>
                   </div>
 </form>
                   </c:forEach>
                   
                         
-
-
-
-<a href="./resumelist.do"><button style=" margin-left:200px; width: 500px; height: 75px; background-color: #7379FF; border: 1px solid #a3a3a3;" id="resumecommit" ><span style="margin: auto; color: white;">이력서 등록하기</span></button></a>
-
+<a href="./apply.do"><button style="width: 900px; height: 75px; background-color: #f9f9f9; border: 1px solid #a3a3a3;" id="resumecommit" ><span style="margin: auto;"></span></button></a>
                
                
                
@@ -159,7 +140,7 @@ height: 1500px;
           
             </div>
         
+         
       </section>
-              <jsp:include page="../main/mainPage/mp_footer.jsp"></jsp:include> 
 </body>
 </html>
