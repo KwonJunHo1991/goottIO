@@ -65,7 +65,29 @@
  	set comp_grade = ${comp_grade}
  	where comp_num = ${comp_num}
  </update>
+ 
+ <!-- 메인 카운트 -->
+ <select id="countNotice" resultType="int">
+	select count(*) from io_notice
+</select>
+<select id="countComp" resultType="int">
+	select count(*) from io_comp_basic
+</select>
+<select id="countMem" resultType="int">
+	select count(*) from io_member
+</select>
 
+<!-- 메인 검색 아이콘별-->
+<!-- <select id="selectMainIcon" parameterType="int">
+	select * from io_notice
+	where notice_prcs_job like '${comp_type}%%'
+</select> -->
+
+<!-- 인재검색 해보자 -->
+
+<select id="selectSearchMember">
+	
+</select>
 
 
   </mapper>
