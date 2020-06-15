@@ -156,18 +156,31 @@
 
 		/* 근무 형태 체크박스 */
 		/* 정규직 */
-		$('#prob').toggle(function() {
+		
+
+		
+		$('#prob').click(function() {
 			$('#contract_term_wrap').hide();
 			$('#internship_term_wrap').hide();
 			$('#dispatch_term_wrap').hide();
-
+			$('#probation_term_wrap').toggle(
+		
+					
+			);
+		
+			if($('#probation_term_wrap').css("display") == "none"){
 			
-			if($('#probation_term_wrap').show ){
-			$('#prob').css('background-color','#007bff');				
-			$('#prob').css('color','#fff');
-			}else if ($('#probation_term_wrap').hide()){
 			$('#prob').css('background-color','#fff');
 			$('#prob').css('color','#007bff');
+			}else{ //버튼 눌르면
+			$('#prob').css('background-color','#007bff');				
+			$('#prob').css('color','#fff');
+			$('#cont').css('background-color','#fff');
+			$('#cont').css('color','#007bff');
+			$('#intern').css('background-color','#fff');
+			$('#intern').css('color','#007bff');
+			$('#dispt').css('background-color','#fff');
+			$('#dispt').css('color','#007bff');	
 			}
 		});
 
@@ -178,16 +191,22 @@
 			$('#internship_term_wrap').hide();
 			$('#dispatch_term_wrap').hide();
 			$('#contract_term_wrap').toggle();
+			
 			if($('#contract_term_wrap').css("display") == "none"){
-				$('#cont').css('background-color','#007bff');
-				$('#cont').css('color','#fff');				
-
-				}else{
+				
 				$('#cont').css('background-color','#fff');
 				$('#cont').css('color','#007bff');
+				}else{ //버튼 눌르면
+				$('#cont').css('background-color','#007bff');				
+				$('#cont').css('color','#fff');
+				$('#prob').css('background-color','#fff');
+				$('#prob').css('color','#007bff');
+				$('#intern').css('background-color','#fff');
+				$('#intern').css('color','#007bff');
+				$('#dispt').css('background-color','#fff');
+				$('#dispt').css('color','#007bff');	
 				}
-
-		});
+			});
 
 		/* 인턴직 */
 		$('#intern').click(function() {
@@ -195,13 +214,20 @@
 			$('#dispatch_term_wrap').hide();
 			$('#probation_term_wrap').hide();
 			$('#internship_term_wrap').toggle();
+			
 			if($('#internship_term_wrap').css("display") == "none"){
-				$('#intern').css('background-color','#007bff');
-				$('#intern').css('color','#fff');				
-
-				}else{
+				
 				$('#intern').css('background-color','#fff');
 				$('#intern').css('color','#007bff');
+				}else{ //버튼 눌르면
+				$('#intern').css('background-color','#007bff');				
+				$('#intern').css('color','#fff');
+				$('#prob').css('background-color','#fff');
+				$('#prob').css('color','#007bff');
+				$('#cont').css('background-color','#fff');
+				$('#cont').css('color','#007bff');
+				$('#dispt').css('background-color','#fff');
+				$('#dispt').css('color','#007bff');	
 				}
 
 		});
@@ -213,11 +239,18 @@
 			$('#probation_term_wrap').hide();
 			$('#dispatch_term_wrap').toggle();
 			if($('#dispatch_term_wrap').css("display") == "none"){
-				$('#dispt').css('background-color','#007bff');
-				$('#dispt').css('color','#fff');				
-				}else{
+				
 				$('#dispt').css('background-color','#fff');
 				$('#dispt').css('color','#007bff');
+				}else{ //버튼 눌르면
+				$('#dispt').css('background-color','#007bff');				
+				$('#dispt').css('color','#fff');
+				$('#prob').css('background-color','#fff');
+				$('#prob').css('color','#007bff');
+				$('#cont').css('background-color','#fff');
+				$('#cont').css('color','#007bff');
+				$('#intern').css('background-color','#fff');
+				$('#intern').css('color','#007bff');	
 				}
 
 		});
@@ -501,13 +534,15 @@ span[class^="inp"].sizeM>.lbl {
 
 span.inpRdo>.lbl, span.inpChk>.lbl {
 	display: inline-block;
-	color: #222;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 123, 255);
 	font-size: 15px;
 	letter-spacing: -1px;
 	text-align:center;
 	height: 34px;
 	width: 150px;
 	margin-top: 10px;
+	margin-left: 20px;
 	margin-right: 30px;
 }
 
