@@ -125,6 +125,21 @@ public class IO_ResumeController {
 		
 	}
 	
+	@RequestMapping(value = "/member/gouniversity.do")
+	public String adduni(@ModelAttribute() IO_UniversityDTO dto, Model model, HttpServletRequest req) {
+		
+		
+		String mem_id = req.getParameter("mem_id");
+		String res_num = req.getParameter("res_num");
+		
+		model.addAttribute("mem_id", mem_id);
+		model.addAttribute("res_num",res_num);
+		
+		
+		return "/member/AddUni";
+	}
+	
+	
 	
 	
 	
@@ -135,8 +150,22 @@ public class IO_ResumeController {
 	
 		
 		rdao.insertuniversity(dto);
+		
+		List<IO_UniversityDTO> unilist = rdao.selectOneUniBynum(dto.getRes_num());
+		model.addAttribute("unilist", unilist);
+		
+		
 		return "/member/myresume";
 	}
+	
+	
+	
+	@RequestMapping(value = "/member/gocarrer.do")
+	public String addcar(@ModelAttribute() IO_UniversityDTO dto, Model model, HttpServletRequest req) {
+		
+		return "/member/AddCareer";
+	}
+	
 	
 	
 	
@@ -166,8 +195,7 @@ public class IO_ResumeController {
 		String mem_id = req.getParameter("mem_id");
 		String res_num = req.getParameter("res_num");
 		
-		System.out.println(mem_id);
-		System.out.println(res_num);
+
 		
 		
 		

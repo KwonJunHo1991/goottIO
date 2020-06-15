@@ -86,5 +86,43 @@
   	where res_num = #{res_num}
   	
   	</select>
+  	
+	<select id="noticelist" resultType="ApplyDTO">
+	
+	select * from io_apply
+	
+	
+	
+	
+	</select>
+  	
+  	<select id="selectOneUniBynum" resultType="UniversityDTO">
+  	select * from io_university
+  	where res_num = #{res_num}
+  	
+  	</select>
+  	
+  	<select id="idChk" resultType="int">
+	SELECT COUNT(*) FROM MP_MEMBER
+	WHERE USERID = #{userId}
+	</select>
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
+  	
   
   </mapper>

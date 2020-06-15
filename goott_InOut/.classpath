@@ -25,5 +25,12 @@
 			<attribute name="owner.project.facets" value="java"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="C:/Users/goott7-5/Desktop/lib/dsn.jar"/>
+	<classpathentry kind="lib" path="C:/Users/goott7-5/Desktop/lib/gimap.jar"/>
+	<classpathentry kind="lib" path="C:/Users/goott7-5/Desktop/lib/imap.jar"/>
+	<classpathentry kind="lib" path="C:/Users/goott7-5/Desktop/lib/javax.mail-api-1.4.7.jar"/>
+	<classpathentry kind="lib" path="C:/Users/goott7-5/Desktop/lib/mailapi.jar"/>
+	<classpathentry kind="lib" path="C:/Users/goott7-5/Desktop/lib/pop3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/goott7-5/Desktop/lib/smtp.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
