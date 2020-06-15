@@ -173,7 +173,14 @@ public class IO_MainController {
 		new IO_LogOutService().logOut(se);
 		return "/main/mainPage/mp_mainPage";
 	}
-
+	
+	@RequestMapping(value = "/company/pay.do")
+	public String pay(HttpSession se) {
+		
+		return "/company/pay/p_payChoice";
+	}
+	
+	
 	
 	//결제 완료
 	@RequestMapping(value = "/company/payOk.do")

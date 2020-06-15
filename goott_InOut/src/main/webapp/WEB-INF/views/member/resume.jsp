@@ -87,6 +87,592 @@ input{
    border-radius: 1px; 
 }
 
+
+.real_contents {
+width: 80%;
+height: 100%;
+	margin-left: 350px;
+	padding-top: 65px;
+}
+/* 정규직 전환 가능 체크했을 때  색깔 변경*/
+input[type=checkbox] + label {
+   border: 1px solid #bcbcbc;
+   border-radius: 5px;
+}
+
+input[type=checkbox]:checked + label{
+   background-color: #bcbcbc;
+}
+.age_limit {
+	display: none;
+}
+
+.real_contents .step_recruits {
+	margin: 70px auto 0;
+	width: 1260px;
+}
+
+.step_recruits .frm_header {
+	position: relative;
+	margin-bottom: 20px;
+}
+
+.step_recruits .frm_body {
+	padding: 50px 0;
+	border-radius: 6px;
+	background: #fff;
+	/* box-shadow: 0 6px 15px 0 rgba(180, 180, 180, 0.15); */
+	min-height: 600px;
+}
+
+.step_recruits .frm_header .tit_step {
+	margin-bottom: 1px;
+	color: #2365f2;
+	font-size: 16px;
+	letter-spacing: -2px;
+}
+
+.step_recruits .frm_header .subhead {
+	font-size: 30px;
+	font-weight: bold;
+	letter-spacing: -2.5px;
+}
+
+.step_recruits .frm_body .itemss {
+	padding: 10px 60px;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+/* .area_tit{
+	border: 1px solid black;
+}
+ */
+.step_recruits .area_tit {
+	float: left;
+	padding: 13px 10px 0 0;
+	width: 170px;
+	font-size: 16px;
+	line-height: 21px;
+	vertical-align: top;
+}
+
+.step_recruits .area_data {
+	float: left;
+	width: 860px;
+	min-height: 50px;
+	box-sizing: border-box;
+	vertical-align: top;
+}
+
+.frm_managers .manager_name {
+	float: left;
+	margin-right: 4px;
+}
+
+.frm_managers .manager_name .inpTypo, .frm_managers .manager_part .inpTypo
+	{
+	width: 380px;
+}
+
+.step_recruits .area_data .inpTypo, .step_recruits .area_data .inpSel {
+	margin-right: 6px;
+	margin-bottom: 10px;
+}
+
+input.inpTypo.sizeL {
+	padding: 0 17px 2px;
+	height: 50px;
+	font-size: 15px;
+	line-height: 46px;
+}
+
+input.inpTypo {
+	padding: 0 13px 2px;
+	height: 40px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	box-sizing: border-box;
+	color: #222;
+	font-family: "나눔 스퀘어", gulim, dotum, sans-serif;
+	font-size: 14px;
+	letter-spacing: -1px;
+	line-height: 36px;
+	vertical-align: middle;
+	background-color: #fff;
+}
+
+.frm_managers .manager_phone .inpTypo {
+	width: 80px;
+}
+
+.frm_managers .manager_phone .dash {
+	display: inline-block;
+	margin: 13px 2px 0 -5px;
+	vertical-align: top;
+}
+
+.frm_managers .manager_email {
+	position: relative;
+}
+
+.frm_managers .manager_email .inpTypo {
+	width: 380px;
+}
+
+.step_recruits .selected_item.on, .step_recruits .selected_item.selected {
+	border-color: #444;
+}
+
+.step_recruits .selected_item {
+	position: relative;
+	padding: 14px 108px 6px 19px;
+	min-height: 28px;
+	border: 1px solid #dfe1e5;
+	border-radius: 5px;
+	font-size: 15px;
+	vertical-align: middle;
+	background: #fff;
+}
+
+.step_recruits .selected_item.on .btn_reset, .step_recruits .selected_item.selected .list_selected_item
+	{
+	display: block;
+}
+
+.step_recruits .wrap_layer {
+	position: relative;
+	/* z-index: 5; */
+}
+
+.step_recruits .wrap_layer .layer_frm {
+	/* display: none;
+	position: absolute; */
+	top: 0;
+	width: 100%;
+	border-radius: 5px;
+	box-sizing: border-box;
+	background: #fff;
+	box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.15);
+}
+
+.step_recruits .layer_frm .area_keyword {
+	padding: 20px 30px;
+	border-bottom: 1px solid #dfe1e5;
+}
+
+.area_category_select {
+	display: table;
+	width: 100%;
+	font-size: 14px;
+	table-layout: fixed;
+}
+
+.area_category_select .depth1, .area_category_select .depth2 {
+	display: table-cell;
+	width: 215px;
+	border-right: 1px solid #dfe1e5;
+	box-sizing: border-box;
+	vertical-align: top;
+}
+
+.area_category_select .area_scroll {
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 229px;
+	box-sizing: border-box;
+}
+
+.area_category_select .list_category {
+	padding: 12px 0 9px;
+}
+
+.area_category_select .list_category li {
+	margin-bottom: 3px;
+}
+
+.area_category_select .list_category li>button {
+	display: block;
+	padding: 7px 0 7px 30px;
+	width: 100%;
+	letter-spacing: -1px;
+	text-align: left;
+	vertical-align: top;
+}
+
+.area_category_select .area_scroll {
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 229px;
+	box-sizing: border-box;
+}
+
+.area_category_select .depth_check {
+	display: table-cell;
+	vertical-align: top;
+}
+
+.area_category_select .list_check {
+	padding: 18px 0 4px 30px;
+}
+
+.area_category_select .list_check li {
+	float: left;
+	margin-bottom: 14px;
+	width: 50%;
+}
+
+span.inpRdo, span.inpChk {
+	display: inline-block;
+	position: relative;
+}
+
+span.inpRdo>input, span.inpChk>input {
+	position: absolute;
+	top: 0;
+	width: 5px;
+	height: 5px;
+	outline-color: #7a7f82;
+	opacity: 0;
+	pointer-events: none;
+}
+
+span[class^="inp"].sizeM>.lbl {
+	font-size: 14px;
+	line-height: 21px;
+}
+
+.step_recruits .layer_frm .area_btn {
+	padding: 19px 30px 20px 0;
+	border-top: 1px solid #dfe1e5;
+	text-align: right;
+}
+
+.step_recruits .layer_frm .area_btn .btnSizeL {
+	margin-left: 5px;
+	width: 100px;
+}
+
+.frm_managers .manager_location {
+	padding: 10px 0 10px;
+}
+
+span.inpRdo>.lbl, span.inpChk>.lbl {
+	display: inline-block;
+	color: #222;
+	font-size: 15px;
+	letter-spacing: -1px;
+	line-height: 23px;
+	vertical-align: top;
+}
+
+.frm_managers .manager_address2 .inpTypo {
+	width: 390px;
+}
+
+/* 수정 추가하기 버튼 */
+.step_recruits .selected_item .btn_add, .step_recruits .selected_item .btn_reset
+	{
+	position: absolute;
+	top: 14px;
+	right: 19px;
+	height: 20px;
+	letter-spacing: -1px;
+	text-decoration: underline;
+}
+
+/* 여기서부터는 두번째 section */
+.step_recruits .frm_division {
+	padding: 0;
+	border-radius: 0;
+	background: none;
+	box-shadow: none;
+}
+
+.frm_division .list_division>li {
+	margin-top: 10px;
+	border-radius: 6px;
+	background: #fff;
+	box-shadow: 0 6px 15px 0 rgba(180, 180, 180, 0.15);
+}
+
+.frm_division .list_division li.expand .fulldata {
+	display: block;
+}
+
+/* .step_recruits .frm_body .itemss {
+	padding: 10px 60px;
+	width: 100%;
+	box-sizing: border-box;
+} */
+.frm_division .list_division .division_name {
+	display: inline-block;
+	position: relative;
+}
+
+.frm_division .list_division .division_collect .inpTypo {
+	width: 90px;
+}
+
+.step_recruits .area_data.type_txt {
+	padding-top: 13px;
+}
+
+.frm_division .list_division .fulldata .inpTypo {
+	width: 100%;
+}
+
+.frm_division .list_division li.expand .fulldata {
+	display: block;
+}
+
+/* 정규직 등 근무 형태 */
+.step_recruits .optional_item {
+	/* position: relative; */
+	margin-top: 20px;
+	padding: 0 20px;
+	border-radius: 6px;
+	background: #fafbfc;
+}
+
+.step_recruits .optional_item dl {
+	padding: 20px 10px;
+	border-top: 1px solid #eaeaea;
+	line-height: 24px;
+}
+
+.step_recruits .optional_item dt {
+	float: left;
+	font-weight: bold;
+}
+
+.step_recruits .optional_item dd {
+	margin-left: 119px;
+}
+
+.toolTipWrap {
+	display: inline-block;
+	position: relative;
+}
+
+.recruit_add .toolTipWrap>button, .modalDrawer .toolTipWrap>button {
+	overflow: hidden;
+	width: 19px;
+	height: 17px;
+	vertical-align: middle;
+}
+
+.frm_condition .optional_item .toolTip {
+	width: 479px;
+}
+
+.toolTipWrap .toolTip .tail_top_left {
+	top: -9px;
+	left: 25px;
+	width: 15px;
+	height: 9px;
+}
+
+.frm_condition .optional_item .tit_tooltip {
+	display: block;
+	font-size: 16px;
+	line-height: 18px;
+}
+
+.frm_condition .optional_item .desc_tooltip {
+	margin-top: 10px;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 20px;
+}
+
+.step_recruits .list_checkbox input:checked+.lbl {
+    /* z-index: 2; */
+    border-color: #2365f2;
+    color: #2365f2;
+}
+
+
+
+/* 지원자 학력 */
+.frm_condition .condition_edu .inpSel {
+	width: 210px;
+}
+
+.inpSel.sizeL>select {
+	padding: 10px 33px 13px 12px;
+	height: 50px;
+	font-size: 15px;
+	letter-spacing: -1px;
+	background-position-y: 0;
+}
+
+/* 셀렉트박스 모양 꾸밈새 */
+.inpSel>select {
+	padding: 6px 33px 9px 12px;
+	width: 100%;
+	height: 40px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	box-sizing: border-box;
+	color: #222;
+	font-family: "Malgun Gothic", gulim, dotum, sans-serif;
+	font-size: 14px;
+	letter-spacing: -1px;
+	line-height: 26px;
+	text-align: left;
+	vertical-align: top;
+	background: #fff
+		url(//www.saraminimage.co.kr/sri/pattern/bg_select_default.png)
+		no-repeat 100% -6px;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+.frm_condition .condition_edu .inpTypo {
+	width: 240px;
+}
+
+/* 연봉 급여 */
+.frm_condition .condition_salary .inpSel:first-of-type {
+	width: 160px;
+}
+
+.frm_condition .condition_salary .inpSel {
+	width: 210px;
+}
+
+.frm_condition .condition_salary .salary_directly {
+	position: relative;
+}
+
+.frm_condition .condition_salary .salary_directly .inpTypo {
+	padding-right: 68px;
+	width: 220px;
+	box-sizing: border-box;
+}
+
+.frm_condition .condition_salary .salary_directly .txt {
+	position: absolute;
+	top: 3px;
+	right: 29px;
+	color: #888;
+	line-height: 17px;
+}
+
+.frm_condition .condition_salary .noti_salary {
+	margin-top: 10px;
+	color: #888;
+	font-size: 14px;
+	line-height: 22px;
+}
+
+/* 근무 형태 */
+.step_recruits .list_checkbox {
+	padding-bottom: 1px;
+}
+
+.step_recruits .list_checkbox li {
+	float: left;
+	position: relative;
+	margin: 0 -1px -1px 0;
+	width: 144px;
+	box-sizing: border-box;
+}
+
+.step_recruits .list_checkbox input {
+	position: absolute;
+	opacity: 0;
+}
+
+.step_recruits .list_checkbox .lbl {
+	display: block;
+	position: relative;
+	margin: 10px 0;
+	height: 30px;
+	width: 120px;
+	border: 1px solid #dfe1e5;
+	color: #888;
+	font-size: 15px;
+	line-height: 20px;
+	text-align: center;
+	background: #fff;
+	/* border-radius: 5px;
+	margin-right: 15px; */
+}
+
+/* 근무 요일 */
+
+/* 근무 시간 */
+.frm_condition .condition_day .inpTypo {
+	width: 310px;
+}
+
+/* 공고 대표 직무 */
+.area_category_select {
+	display: table;
+	width: 100%;
+	font-size: 14px;
+	table-layout: fixed;
+}
+
+.area_category_select .depth1, .area_category_select .depth2 {
+	display: table-cell;
+	width: 215px;
+	border-right: 1px solid #dfe1e5;
+	box-sizing: border-box;
+	vertical-align: top;
+}
+
+.area_category_select .area_scroll {
+	overflow-x: hidden;
+	overflow-y: auto;
+	height: 229px;
+	box-sizing: border-box;
+}
+
+.area_category_select .list_category {
+	padding: 12px 0 9px;
+}
+
+.area_category_select .list_category li {
+	margin-bottom: 3px;
+}
+
+.area_category_select .list_category li>button {
+	display: block;
+	padding: 7px 0 7px 30px;
+	width: 100%;
+	letter-spacing: -1px;
+	text-align: left;
+	vertical-align: top;
+}
+
+.area_category_select .depth_check {
+	display: table-cell;
+	vertical-align: top;
+}
+
+ol, ul, li {
+	list-style: none;
+}
+
+button {
+	border: 0;
+	background: transparent;
+	cursor: pointer;
+}
+
+body {
+	font-family: "나눔스퀘어";
+}
+
+.job_type_check {
+	width: 100px;
+	height: 50px;
+	left: -10px;
+	top: -10px;
+}
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
@@ -443,13 +1029,11 @@ $("#Hsch").click(function(){
 </script>
 
 </head>
-<body style="background-color: #F6F6F6;">
-
-
-
-
-   <jsp:include page="p_mypage_navbar.jsp"></jsp:include>
-   
+<body>
+   <div>
+ <jsp:include page="../main/mainPage/mp_naviBar.jsp"></jsp:include>
+   </div>
+     
 <form name="frm1">
    
    <div style="padding-left: 30px;">

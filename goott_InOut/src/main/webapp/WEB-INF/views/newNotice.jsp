@@ -142,33 +142,117 @@
 		});
 
 		$('#probation_term_wrap').hide();
+		$('#prob').css('background-color','#fff');
+		$('#prob').css('color','#007bff');
 		$('#contract_term_wrap').hide();
+		$('#cont').css('background-color','#fff');
+		$('#cont').css('color','#007bff');
 		$('#internship_term_wrap').hide();
+		$('#intern').css('background-color','#fff');
+		$('#intern').css('color','#007bff');
 		$('#dispatch_term_wrap').hide();
+		$('#dispt').css('background-color','#fff');
+		$('#dispt').css('color','#007bff');
 
 		/* 근무 형태 체크박스 */
 		/* 정규직 */
+		
+
+		
 		$('#prob').click(function() {
-			console.log("정규");
-			$('#probation_term_wrap').toggle();
+			$('#contract_term_wrap').hide();
+			$('#internship_term_wrap').hide();
+			$('#dispatch_term_wrap').hide();
+			$('#probation_term_wrap').toggle(
+		
+					
+			);
+		
+			if($('#probation_term_wrap').css("display") == "none"){
+			
+			$('#prob').css('background-color','#fff');
+			$('#prob').css('color','#007bff');
+			}else{ //버튼 눌르면
+			$('#prob').css('background-color','#007bff');				
+			$('#prob').css('color','#fff');
+			$('#cont').css('background-color','#fff');
+			$('#cont').css('color','#007bff');
+			$('#intern').css('background-color','#fff');
+			$('#intern').css('color','#007bff');
+			$('#dispt').css('background-color','#fff');
+			$('#dispt').css('color','#007bff');	
+			}
 		});
 
 		/* 계약직 */
 		$('#cont').click(function() {
-			console.log("계약");
+			
+			$('#probation_term_wrap').hide();
+			$('#internship_term_wrap').hide();
+			$('#dispatch_term_wrap').hide();
 			$('#contract_term_wrap').toggle();
-		});
+			
+			if($('#contract_term_wrap').css("display") == "none"){
+				
+				$('#cont').css('background-color','#fff');
+				$('#cont').css('color','#007bff');
+				}else{ //버튼 눌르면
+				$('#cont').css('background-color','#007bff');				
+				$('#cont').css('color','#fff');
+				$('#prob').css('background-color','#fff');
+				$('#prob').css('color','#007bff');
+				$('#intern').css('background-color','#fff');
+				$('#intern').css('color','#007bff');
+				$('#dispt').css('background-color','#fff');
+				$('#dispt').css('color','#007bff');	
+				}
+			});
 
 		/* 인턴직 */
 		$('#intern').click(function() {
-			console.log("인턴");
+			$('#contract_term_wrap').hide();
+			$('#dispatch_term_wrap').hide();
+			$('#probation_term_wrap').hide();
 			$('#internship_term_wrap').toggle();
+			
+			if($('#internship_term_wrap').css("display") == "none"){
+				
+				$('#intern').css('background-color','#fff');
+				$('#intern').css('color','#007bff');
+				}else{ //버튼 눌르면
+				$('#intern').css('background-color','#007bff');				
+				$('#intern').css('color','#fff');
+				$('#prob').css('background-color','#fff');
+				$('#prob').css('color','#007bff');
+				$('#cont').css('background-color','#fff');
+				$('#cont').css('color','#007bff');
+				$('#dispt').css('background-color','#fff');
+				$('#dispt').css('color','#007bff');	
+				}
+
 		});
 
 		/* 파견직 */
 		$('#dispt').click(function() {
-			console.log("파견");
+			$('#contract_term_wrap').hide();
+			$('#internship_term_wrap').hide();
+			$('#probation_term_wrap').hide();
 			$('#dispatch_term_wrap').toggle();
+			if($('#dispatch_term_wrap').css("display") == "none"){
+				
+				$('#dispt').css('background-color','#fff');
+				$('#dispt').css('color','#007bff');
+				}else{ //버튼 눌르면
+				$('#dispt').css('background-color','#007bff');				
+				$('#dispt').css('color','#fff');
+				$('#prob').css('background-color','#fff');
+				$('#prob').css('color','#007bff');
+				$('#cont').css('background-color','#fff');
+				$('#cont').css('color','#007bff');
+				$('#intern').css('background-color','#fff');
+				$('#intern').css('color','#007bff');	
+				}
+
 		});
 
 	});
@@ -178,10 +262,10 @@
 	border: 1px solid black;
 } */
 .real_contents {
-width: 100%;
+width: 80%;
 height: 100%;
-	margin-left: 150px;
-	padding-top: 175px;
+	margin-left: 350px;
+	padding-top: 65px;
 }
 /* 정규직 전환 가능 체크했을 때  색깔 변경*/
 input[type=checkbox] + label {
@@ -207,7 +291,7 @@ input[type=checkbox]:checked + label{
 }
 
 .step_recruits .frm_body {
-	padding: 50px 0;
+
 	border-radius: 6px;
 	background: #fff;
 	/* box-shadow: 0 6px 15px 0 rgba(180, 180, 180, 0.15); */
@@ -443,22 +527,31 @@ span[class^="inp"].sizeM>.lbl {
 }
 
 .frm_managers .manager_location {
-	padding: 10px 0 10px;
+	height: 34px;
+	width: 100px;
+
 }
 
 span.inpRdo>.lbl, span.inpChk>.lbl {
 	display: inline-block;
-	color: #222;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 123, 255);
 	font-size: 15px;
 	letter-spacing: -1px;
-	line-height: 23px;
-	vertical-align: top;
+	text-align:center;
+	height: 34px;
+	width: 150px;
+	margin-top: 10px;
+	margin-left: 20px;
+	margin-right: 30px;
 }
 
 .frm_managers .manager_address2 .inpTypo {
 	width: 390px;
 }
-
+#address{
+height: 70px;
+}
 /* 수정 추가하기 버튼 */
 .step_recruits .selected_item .btn_add, .step_recruits .selected_item .btn_reset
 	{
@@ -518,7 +611,7 @@ span.inpRdo>.lbl, span.inpChk>.lbl {
 /* 정규직 등 근무 형태 */
 .step_recruits .optional_item {
 	/* position: relative; */
-	margin-top: 20px;
+
 	padding: 0 20px;
 	border-radius: 6px;
 	background: #fafbfc;
@@ -664,8 +757,8 @@ span.inpRdo>.lbl, span.inpChk>.lbl {
 .step_recruits .list_checkbox li {
 	float: left;
 	position: relative;
-	margin: 0 -1px -1px 0;
-	width: 144px;
+	margin-top: 10px;
+	width: 124px;
 	box-sizing: border-box;
 }
 
@@ -677,8 +770,9 @@ span.inpRdo>.lbl, span.inpChk>.lbl {
 .step_recruits .list_checkbox .lbl {
 	display: block;
 	position: relative;
-	padding: 14px 0;
-	height: 20px;
+
+	height: 30px;
+	width: 120px;
 	border: 1px solid #dfe1e5;
 	color: #888;
 	font-size: 15px;
@@ -761,10 +855,31 @@ body {
 	left: -10px;
 	top: -10px;
 }
+.btn-lg{
+border: none;
+color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+    padding: 6px 12px;
+ margin-left: 400px;
+ width:250px;
+ height: 70px;
+ margin-top: 120px;
+}
+.row_button{
+margin-right: 200px;
+
+
+}
+.contract_term_wrap{
+margin-top: 
+}
 </style>
 </head>
 <body>
-
+   <div>
+ <jsp:include page="main/mainPage/mp_naviBar.jsp"></jsp:include>
+   </div>
     <!-- END nav -->
 	<div class="real_contents">
 	<div>
@@ -1156,16 +1271,19 @@ body {
 					</div>
 					<!-- 업종 itemss end -->
 					
+					
+				</div>
+				<!-- frm_body frm_managers end -->
+				
 					<!-- 대표 근무지역 -->
 					<div class="itemss">
 						<div class="area_tit"><strong class="tit">대표 근무지역</strong></div>
-						<div class="area_data" id="address">
-							<div class="manager_location">
 								<span class="inpChk">
 									<input type="checkbox" id="chk_typ3_01" name="work-site-cd" value="site050" data-help_target="company_address">
 									<label class="lbl" for="chk_typ3_01">재택근무 가능</label>
 								</span>
-							</div>
+	
+						<div class="area_data" id="address" style="margin-left: 170px;">
 							
 							<!-- 근무지역 input -->
 							<div class="input_address internal">
@@ -1182,10 +1300,6 @@ body {
 						</div>
 					</div>
 					<!-- 대표 근무지역 end -->
-					
-				</div>
-				<!-- frm_body frm_managers end -->
-				
 			</div>
 			<!-- div#manager end -->
 			
@@ -1260,16 +1374,16 @@ body {
 				<div class="itemss" id="job_type">
 					<div class="area_tit"><strong class="tit">근무형태</strong></div>
 					<div class="are_data"> 
-						<div class="row">
+						<div class="row_button">
 							<ul class="list_checkbox job_type_chk_list" id="job_type_list">
 								<li>
-									<label for="job_type_1" class="lbl" id="prob">
-										<input type="checkbox" id="job_type_1" class="job_type_check" value="1" >정규직
+									<label for="job_type_1" class="lbl" id="prob"> <span>정규직</span>
+										<input type="checkbox" id="job_type_1" class="job_type_check" value="1" >
 									</label>
 								</li>
 
 								<li>
-									<label for="job_type_2" class="lbl" id="cont">
+									<label for="job_type_2" class="lbl" id="cont"  >
 										<input type="checkbox" id="job_type_2" class="job_type_check" value="2">계약직
 									</label>
 								</li>
@@ -1287,7 +1401,7 @@ body {
 
 							</ul>
 							
-							<div class="optional_item" id="term" >
+							<div class="optional_item" id="term" style="margin-top: -60px;" >
 								<dl id="probation_term_wrap" style="margin-top: 370px; margin-left: 150px; display: flex;">
 									
 									<span style="margin-right: 15px;">정규직 수습기간</span>
@@ -1411,7 +1525,7 @@ body {
 				
 				<div class="itemss" id="work_shift_part">
 					
-					<div class="area_data">
+					<div class="area_data" >
 					<div class="area_tit"><strong class="tit">근무요일</strong></div>
 						<div class="condition_day">
 							<div class="inpSel sizeL">
@@ -1488,7 +1602,7 @@ body {
 									<option value="limit" id="lim">연령제한</option>
 								</select>
 							</div>
-							<div class="age_limit" style="display : flex;">
+							<div class="age_limit" style="display : flex; margin-left: 170px;">
 								<div class="inpSel sizeL">
 									<input type="text" class="inpTypo sizeL max_age" name="notice_req_maxage" id="max_age" title="최소 나이" placeholder="출생년도로  입력하세요. 예) 2000" />
 								</div>
@@ -1668,10 +1782,10 @@ body {
 					</div>
 				</div>
 				
+		<input type="submit" value="작성 완료" id="btn_next" class="btn btn-primary btn-lg" />
 			</div>
 		</div>
-		<!-- <button type="button" id="btn_next" class="btn btn-primary btn-lg" style="float: right;"><a href="jobPost_want.jsp">다음 페이지</a></button> -->
-		<input type="submit" value="다음페이지" id="btn_next" class="btn btn-primary btn-lg" style="border: none; background-color: white; margin: 0 auto; width:100%; "/>
+		
 		
 		
 		
