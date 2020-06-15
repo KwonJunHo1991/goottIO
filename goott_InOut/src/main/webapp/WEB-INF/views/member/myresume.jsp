@@ -27,14 +27,16 @@ word-break: break-word;
    float: left;
    width: 179px;
    height: 80px;
-   border-right: 1px solid #f7f7f7;; 
+   background-color : #f7f7f7;
+   border-right: 1px solid gray;
    margin: auto;
 }
 .li3{
 
    float: left;
    width: 179px;
-   height: 100px;
+   height: 80px;
+   background-color : #f7f7f7;
    margin: auto;
    }
    table {
@@ -103,6 +105,7 @@ $(function(){
  <c:forEach var="i" items="${onelist}"> 
 
 
+
 <h3 class="title"> ${i.res_title } </h3>
 <br />
 <hr style="width: 900px; margin-right: 100px;"/>
@@ -126,13 +129,13 @@ $(function(){
                        <span style="margin-left: 20px; padding-left: 45px; "> ${i.res_school} </span>
                     </li>
                     <li class="li2">
-                       <p style="margin-left: 60px;"><strong>경력사항</strong></p>
+                       <p style="margin-left: 75px;"><strong>경력사항</strong></p>
                        <span style="margin-left: 50px; padding-left: 45px; "> ${i.res_seekwork} </span>
                     </li>
                     <li class="li2">
-                       <p style="margin-left: 60px;"><strong>희망연봉</strong></p>
+                       <p style="margin-left: 55px; padding: 0px;"><strong>희망연봉</strong></p>
                      
-                       <span style="margin-left: 50px; padding-left: 45px; ">
+                       <span style="margin-left: 35px;  ">
                        <c:choose>
                                              
                          <c:when test="${i.res_income eq 0}">회사 내규에 따름</c:when>
@@ -155,7 +158,7 @@ $(function(){
                    
                     <li class="li2">
                        <p style="margin-left: 20px;"><strong>희망근무지/근무형태</strong></p>
-                       <span style="margin-left: 50px; padding-left: 45px; "> 
+                       <span style="margin-left: 35px;  "> 
                        
                        	 <c:choose>
                           <c:when test="${i.res_rep_area eq 1}">구로구</c:when>
@@ -184,10 +187,11 @@ $(function(){
                        
                        
                        
-                       </span> <br />
-                       <span style="margin-left: 50px; padding-left: 45px; ">
+                       </span>/
+                       <span style="margin-left: 5px;  ">
                        
       				<c:choose>
+      				<c:when test="${i.res_shiftpattern eq 0}">정규직</c:when>
 						<c:when test="${i.res_shiftpattern eq 1}">정규직</c:when>
 						<c:when test="${i.res_shiftpattern eq 2}">교육생</c:when>
 						<c:when test="${i.res_shiftpattern eq 3}">별정직</c:when>
@@ -225,7 +229,7 @@ $(function(){
                 <tr>
                    <td class="td2"></td>
                    <td class="td">value</td>
-                   <td class="td2">value</td>
+                   <td class="td2"></td>
                    <td class="td">value</td>
                    <td class="td2">value</td>
                 </tr>
@@ -238,7 +242,7 @@ $(function(){
              <input type="hidden" name="res_num" id = "res_num" value="${i.res_num }"/>
              
              
-             <button style="width: 85px; height: 35px; float: right; background-color: #f7f7f7; color: black; border: 0px;" id = "AddUni"><span style="font-family: 나눔스퀘어; font-weight: bold;" >등록/추가</span></button>
+             <button style="width: 85px; height: 35px; float: right; background-color: #e3e3e3; border-radius: 3px; color: black; border: 1px solid gray;" id = "AddUni"><span style="font-family: 나눔스퀘어; font-weight: bold;" >등록/추가</span></button>
           </form>
           
           
@@ -274,16 +278,17 @@ $(function(){
                 </tr>
                 
              </table>
-             </c:forEach>
+             
              
                 <form name = addcar >
              <input type="hidden" name="mem_id" id="mem_id" value="${sessionScope.mem_id }"/>
              <input type="hidden" name="res_num" id = "res_num" value="${i.res_num }"/>
-              <button style="width: 85px; height: 35px; float: right; background-color: #f7f7f7; color: black; border: 0px;" id = "AddCar"><span style="font-family: 나눔스퀘어; font-weight: bold;" >등록/추가</span></button>
+              <button style="width: 85px; height: 35px; float: right; background-color: #e3e3e3; border-radius : 3px; color: black; border: 1px solid gray" id = "AddCar"><span style="font-family: 나눔스퀘어; font-weight: bold;" >등록/추가</span></button>
              </form>
              
         </div> 
-        
+  
+        </c:forEach>
          <!-- <div style="width: 900px; margin-left: 0px; margin-top: 50px;">
          <h3><strong style="font-size: 25px;">자기소개서</strong> <span> |</span><span style="color:red;"> 자기소개서 안함</span></h3>
          

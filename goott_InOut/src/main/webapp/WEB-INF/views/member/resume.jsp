@@ -1,7 +1,7 @@
-<%@page import="kr.co.InOut.dto.IO_ResumeDTO"%>
+<%-- <%@page import="kr.co.InOut.dto.IO_ResumeDTO"%> --%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> --%>
     
 <!DOCTYPE html>
 <html>
@@ -23,7 +23,8 @@
 font-size: 15px; color: red; font-family: 나눔스퀘어;
 }
 .inputlavel{
-font-size: 20px;
+font-size: 22px;
+font-weight: bold;
 }
 .inputlitext{
    width: 450px;
@@ -34,14 +35,18 @@ font-size: 20px;
 width: 150px;
 height: 50px;
 float: left;
-border: 1px solid #a3a3a3;
+border: 2px solid black;
 padding: 10px 25px 10px 25px;
-margin: auto;
+margin-top:30px;
+border-radius: 2px;
+margin-left: 2px;
+
+
 }
 .carli_span{
 text-align: center;
 font-family: "나눔스퀘어";
-margin: auto;
+
 
 }
 .checks input[type="radio"] + label { display: inline-block; position: relative; padding-left: 30px; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; }
@@ -76,26 +81,26 @@ color:black;
 
 }
 select {
-	border-radius: 1px;
+   border-radius: 1px;
 }
 input{
-	border-radius: 1px; 
+   border-radius: 1px; 
 }
 
 </style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(function(){
-	$("#resumecommit").click(function(){
-		
+   $("#resumecommit").click(function(){
+      
 
-		
-			document.frm1.action = "./insertresume.do";
-			document.frm1.method = "post";
-			document.frm1.submit();
-	});
-	
-	 if($('input:radio[id=guro]').click(function(){
+      
+         document.frm1.action = "./insertresume.do";
+         document.frm1.method = "post";
+         document.frm1.submit();
+   });
+   
+    if($('input:radio[id=guro]').click(function(){
          $("#locplace").val($('input:radio[id=guro]').val());
          $("#res_req_area").val($('#locplace').val());
       }));
@@ -370,10 +375,7 @@ $(function(){
          $("#res_rep_tob").val($('#locplace3').val());
       }));  */
       
-$("#locdiv0").hide();
-      $("#zerodivcall").click(function(){
-         $("#locdiv0").toggle();
-      });
+
       
 $("#locdiv").hide();
       $("#onedivcall").click(function(){
@@ -399,11 +401,12 @@ $("#locdiv2").hide();
    });
    
    
-   $("#locdiv0").hide();
+    $("#locdiv0").hide();
    $("#zerodivcall").click(function(){
-      $("#locdiv0").toggle();
+       $("#locdiv0").toggle(); 
+      console.log("124123");
       
-   });
+   }); 
       
       
       
@@ -429,9 +432,9 @@ $("#Hsch").click(function(){
    $(".Eschool").hide();    $(".Mschool").hide();
 });
 
-	
-	
-	
+   
+   
+   
 });
 
 
@@ -450,11 +453,11 @@ $("#Hsch").click(function(){
 <form name="frm1">
    
    <div style="padding-left: 30px;">
-      <div style="padding: 0px 0px 30px 0px;">
+      <div style="padding: 30px 0px 0px 30px;">
          <span><strong style="font-size: 30px; font-family: 나눔스퀘어;">기본정보</strong></span>
       </div>
       <!-- 텍스트박스안에 기존의 DB에서 값들 불러와야합니다. -->
-      <div style="width: 1000px; height: 660px; background-color: white; margin-bottom: 40px; padding-top: 30px;">
+      <div style="width: 1000px; height: 660px; background-color: white; margin-bottom: 40px; padding-top: 30px; padding-left: 50px;">
          <ul style="padding-left: 5px;">
          <li class="inputli"><label for="" class="inputlavel">이름</label>&nbsp;&nbsp;<strong class="inputstrong">필수</strong>
          <td><input type="hidden" name="mem_id" id="mem_id" value="${sessionScope.mem_id }" /></td>
@@ -462,7 +465,7 @@ $("#Hsch").click(function(){
             
             <div style="float: right;">
                    <!-- <label for="">구직상태<span> 선택</span></label> -->
-                    <select class="form-control" style="margin-right: 50px; border:2px solid black; width: 150px; height: 50px;" id="mem_seekwork" name="res_seekwork">
+                    <select class="form-control" style="margin-right: 50px; border:2px solid black; width: 150px; height: 50px;" id="res_seekwork" name="res_seekwork">
                       <option value="1">구직상태선택</option>
                       <option value="2">구직준비중(재학생)</option>
                       <option value="3">구직중</option>
@@ -473,9 +476,9 @@ $("#Hsch").click(function(){
          </li>
          <li class="inputli"><label for="" class="inputlavel">생년월일</label>&nbsp;&nbsp;<strong class="inputstrong">필수</strong>
             <input type="text" class="inputlitext" style="margin-left: 60px;" name="mem_birth" id = "mem_birth" value="${sessionScope.mem_birth }"/>
-               <div style="float: right; margin-right: 50px;">
+               <div style="float: right; margin-right: 100px; width: 100px; height: 40px;">
                    <span>
-                       <input name="mem_sex" id="mem_sex" value="${sessionScope.mem_sex }" type="radio" />
+                       <input name="mem_sex" id="mem_sex" value="${sessionScope.mem_sex }" type="radio"  size="10px"/>
                        <label for="male">남</label>
                       </span>
                       <span>
@@ -495,18 +498,18 @@ $("#Hsch").click(function(){
             <input type="text"  class="inputlitext" style="margin-left: 100px;" name="mem_phone" id = "mem_phone" value="${sessionScope.mem_phone }"/></li>
          <li class="inputli"><label for="" class="inputlavel">주소</label>&nbsp;&nbsp;<strong class="inputstrong">필수</strong>
             <input type="text"  class="inputlitext" style="margin-left: 100px;" name="mem_add" id = "mem_add" value="${sessionScope.mem_add }"/>
-            <input type="text"  class="inputlitext" style="margin-left: 186px; width: 300px; " name="mem_add1" id = "mem_add1" value="${sessionScope.mem_add1 }"  placeholder="상세주소"/>   
+            <input type="text"  class="inputlitext" style="margin-left: 190px; width: 300px; " name="mem_add1" id = "mem_add1" value="${sessionScope.mem_add1 }"  placeholder="상세주소"/>   
          </li>
          </ul>
       </div>
       
       <!--  하력정보 div 시작 -->
       
-      <span><strong style="font-size: 30px; font-family: 나눔스퀘어;" >학력사항</strong></span>
+      <span><strong style="font-size: 30px; font-family: 나눔스퀘어; margin-left: 30px;" >학력사항</strong></span>
       
       <div style="width: 980px; height: 130px; background-color: white; margin-top: 20px; padding: 25px 10px 25px 10px;">
          <ul style="margin: auto;">
-            <li class="carli" id="Esch"><span class="carli_span">초등학교 졸업</span></li>
+            <li class="carli" id="Esch" style="margin-left: 150px;"><span class="carli_span">초등학교 졸업</span></li>
             <li class="carli" id="Msch"><span class="carli_span">중학교 졸업</span></li>
             <li class="carli" id="Hsch"><span class="carli_span">고등학교 졸업</span></li>
             <!-- <li class="carli"><span class="carli_span">대학 , 대학원 이상 졸업</span></li> -->
@@ -519,11 +522,16 @@ $("#Hsch").click(function(){
    
          <strong style="font-size: 30px; font-family: 나눔스퀘어;">초등학교 정보 입력</strong>
          <ul>
-            <li class="inputli"><label for="" class="inputlavel">학교명</label>&nbsp;&nbsp;<strong class="inputstrong">필수</strong>
-               <input type="text" name = "res_school" id = "res_school" class="inputlitext" style="margin-left: 100px; " placeholder="초등학교명 입력" /></li>
+            <li class="inputli" ><label for="" class="inputlavel">학교명</label>&nbsp;&nbsp;<strong class="inputstrong">필수</strong>
+               <input type="text"  class="inputlitext" style="margin-left: 45px; " placeholder="초등학교명 입력" /></li>
             <li class="inputli"><label for="" class="inputlavel">지역</label>&nbsp;&nbsp;<strong class="inputstrong">필수</strong>
                <!-- <input type="text" class="inputlitext" style="margin-left: 100px; " placeholder="지역선택" /></li> -->
-               <select name = "res_school" id = "res_school" style="width: 200px;  border:2px solid black; height: 50px; margin-left: 50px;">
+               
+               
+               
+               
+               <select name = "res_area" id = "res_area" style="width: 200px;  border:2px solid black; height: 50px; margin-left: 65px;">
+               
                   <option value="1">서울</option>
                   <option value="2">대전</option>
                   <option value="3">부산</option>
@@ -531,8 +539,8 @@ $("#Hsch").click(function(){
                   
                </select>
             </li>
-            <li class="inputli"><label for="" class="inputlavel" style="float: left;">제학기간</label>
-               <input type="date" name="res_stdate" id="res_stdate" style="float: left; width: 130px; height: 35px; margin-left: 30px;"/>
+            <li class="inputli"><label for="" class="inputlavel" style="float: left;">재학기간</label>
+               <input type="date" name="res_stdate" id="res_stdate" style="float: left; width: 130px; height: 35px; margin-left: 70px;"/>
                <!-- <input type="text" placeholder="입학" style="float: left; width: 130px; height: 35px; margin-left: 30px;"/> -->
                <select name="res_stdatesub" id="res_stdatesub" style="float: left; border:2px solid black; width: 130px; height: 35px; margin-left: 5px; ">
                   <option value="1">입학</option>
@@ -561,10 +569,10 @@ $("#Hsch").click(function(){
          <strong style="font-size: 30px; font-family: 나눔스퀘어;">중학교 정보 입력</strong>
          <ul>
             <li class="inputli"><label for="" class="inputlavel">학교명</label>&nbsp;&nbsp;<strong class="inputstrong">필수</strong>
-               <input type="text" class="inputlitext" style="margin-left: 100px; " placeholder="중학교명 입력" name = "res_school" id = "res_school"/></li>
+               <input type="text" class="inputlitext" style="margin-left: 45px; " placeholder="중학교명 입력" /></li>
             <li class="inputli"><label for="" class="inputlavel">지역</label>&nbsp;&nbsp;<strong class="inputstrong">필수</strong>
                <!-- <input type="text" class="inputlitext" style="margin-left: 100px; " placeholder="지역선택" /></li> -->
-               <select name="res_area" id="res_area" style="width: 200px; border:2px solid black; height: 50px; margin-left: 50px;">
+               <select name="res_area" id="res_area" style="width: 200px; border:2px solid black; height: 50px; margin-left: 65px;">
                   <option value="1">서울</option>
                   <option value="2">대전</option>
                   <option value="3">부산</option>
@@ -572,7 +580,7 @@ $("#Hsch").click(function(){
                </select>
             </li>
             <li class="inputli"><label for="" class="inputlavel" style="float: left;">제학기간</label>
-               <input type="date" name="res_stdate" id="res_stdate" style="float: left; width: 130px; height: 35px; margin-left: 30px;"/>
+               <input type="date" name="res_stdate" id="res_stdate" style="float: left; width: 130px; height: 35px; margin-left: 70px;"/>
                <!-- <input type="text" placeholder="입학" style="float: left; width: 130px; height: 35px; margin-left: 30px;"/> -->
                <select name="res_stdatesub" id="res_stdatesub" style="float: left;  border:2px solid black;width: 130px; height: 35px; margin-left: 5px; ">
                   <option value="1">입학</option>
@@ -598,27 +606,27 @@ $("#Hsch").click(function(){
          <strong style="font-size: 30px; font-family: 나눔스퀘어;">고등학교 정보 입력</strong>
          <ul>
             <li class="inputli"><label for="" class="inputlavel">학교명</label>&nbsp;&nbsp;<strong class="inputstrong">필수</strong>
-               <input type="text" name = "res_school" id = "res_school" class="inputlitext" style="margin-left: 100px; " placeholder="고등학교명 입력" /></li>
+               <input type="text" name = "res_school" id = "res_school" class="inputlitext" style="margin-left: 45px; " placeholder="고등학교명 입력" /></li>
 
             
                <li class="inputli"><label for="" class="inputlavel" style="float: left;">제학기간</label>
-               <input type="date" name="res_stdate" id="res_stdate" style="float: left; width: 130px; height: 35px; margin-left: 30px;"/>
-               <select name="res_stdatesub" id="res_stdatesub" style="float: left; border:2px solid black; width: 130px; height: 35px; margin-left: 5px; ">
+               <input type="date" name="res_stdate" id="res_stdate" style="float: left; width: 140px; height: 35px; margin-left: 70px;"/>
+               <select name="res_stdatesub" id="res_stdatesub" style="float: left; border:2px solid black; width: 100px; height: 35px; margin-left: 2px; ">
                      <option value="1">입학</option>
                      <option value="2">편입</option>
                   
                </select>
             
                
-               <input type="date"name="res_enddate" id="res_enddate"  style="float: left; width: 130px; height: 35px; margin-left: 35px; "/> 
-               <select name="res_enddatesub" id="res_enddatesub" style=" border:2px solid black; float: left; width: 130px; height: 35px; margin-left: 5px; ">
+               <input type="date"name="res_enddate" id="res_enddate"  style="float: left; width: 140px; height: 35px; margin-left: 7px; "/> 
+               <select name="res_enddatesub" id="res_enddatesub" style=" border:2px solid black; float: left; width: 100px; height: 35px; margin-left: 2px; ">
                   <option value="1">졸업</option>
                   <option value="2">재학</option>
                   <option value="3">중퇴</option>
                </select>
                
             <li class="inputli"><label for="" class="inputlavel" style="float: left;">전공 계열</label>
-               <select name = "res_major" id = "res_major" style="border:2px solid black; float: left; width: 200px; height: 35px; margin-left: 120px; ">
+               <select name = "res_major" id = "res_major" style="border:2px solid black; float: left; width: 200px; height: 35px; margin-left: 63px; ">
                   
                   <option value="1">문과계열</option>
                   <option value="2">이과계열</option>
@@ -635,12 +643,13 @@ $("#Hsch").click(function(){
       
       <!-- 경력사항 정보입력 div end -->
       <br />
-      <span><strong style="font-size: 30px; font-family: 나눔스퀘어;">경력사항</strong></span>
+      <span><strong style="font-size: 30px; font-family: 나눔스퀘어; margin-left: 30px;">경력사항</strong></span>
       <br />
       <div style="width: 980px; height: 150px; background-color: white; padding: 25px 10px 25px 10px;  margin-left: 0px;" >
          
-            <label  id="resumecallbtn" class="carrinputbutton" style="border: 1px solid #dfdfdf;; width: 200px; height: 100px;  background-color: white; text-align: center;  float: left; margin-left: 275px; "><div style="padding-top: 40px;">신입</div></label>
-            <button style="border: 1px solid #dfdfdf;; width: 200px; height: 100px;  background-color: white; text-align: center;  float: left; ">경력</button>
+            <label  id="resumecallbtn" class="carrinputbutton" style="border: 2px solid black; width: 200px; height: 100px;  background-color: white; text-align: center;  float: left; margin-left: 275px; "><div style="padding-top: 40px;">신입</div></label>
+            <!-- <button style="border: 2px solid black; width: 200px; height: 100px;  background-color: white; text-align: center;  float: left; ">경력</button> -->
+            <label  id="" class="carrinputbutton" style="border: 2px solid black; margin-left : 3px; width: 200px; height: 100px;  background-color: white; text-align: center;  float: left;"><div style="padding-top: 40px;">경력</div></label>
       </div>
       
       <div id="resumecall" style="margin-top: 50px; margin-bottom: 40px;" class="carrinput">
@@ -650,29 +659,29 @@ $("#Hsch").click(function(){
       
       
       <!-- 희망 근무조건 선택 div -->
-      <div style="padding: 30px 0px 0px 30px;">
-         <span><strong style="font-size: 30px; font-family: 나눔스퀘어;">희망 근무조건 선택</strong></span>
+      <div style="padding: 30px 0px 0px 30px; margin-bottom: 20px;">
+         <span><strong style="font-size: 30px; font-family: 나눔스퀘어; ">희망 근무조건 선택</strong></span>
       </div>
       <div style="width: 1000px; height: 1400px; background-color: white; margin-bottom: 40px;  ">
          <ul style="padding-left: 5px;">
          <li class="inputli" style="margin-bottom: 30px; border: 0px;"><label for="" class="inputlavel">근무형태</label>&nbsp;&nbsp;<strong class="inputstrong">필수</strong>
             <label for="" id="zerodivcall" style=" position:absolute; left: 200px; width: 400px; height: 30px; margin-left: 88px; border: 2px solid black; background-color: white;">
-         <input  id="locplace0"style="border: 0px solid #a3a3a3; background-color: white; " name="res_shiftpattern"/>
+         <input  id="locplace0"style="border: 0px solid #a3a3a3; background-color: white; " name=""/>
          </label>
          
-         <div  id="locdiv0" style=" background-color: white; width: 400px; height: 70px;  left: 280px; border: 1px solid #a3a3a3; margin-left: 155px; margin-top: 4px; z-index: 0;" >   
+         <div  id="locdiv0" style=" background-color: white; width: 400px; height: 70px;  left: 280px; border: 0px solid black; margin-left: 208px; margin-top: 4px; " >   
             
          
          
-            <div style="width: 383px; height: 70px; background-color: white; float: right; border: 1px solid #a3a3a3;  ">
+            <div style="width: 383px; margin-left:210px; height: 70px; background-color: white; float: right; border: 0px solid #a3a3a3;  ">
             
             
-               <div class="zerodiv" style="width:383px; height: 70px; background-color: white; border: 0px;" id="zerodiv">
-                  <input type="radio" name="res_shiftpattern" id="jung" value="1" />정규직
-                  <input type="radio" name="res_shiftpattern" id="gyo" value="2" />교육생
-                  <input type="radio" name="res_shiftpattern" id="star" value="3" />별정직<hr />
-                  <input type="radio" name="res_shiftpattern" id="pa" value="4" /> 파트
-                  <input type="radio" name="res_shiftpattern" id="im" value="5" />전임
+               <div class="zerodiv" style="width:400px; height: 70px; background-color: white; border: 2px solid black;" id="zerodiv">
+                  <input type="radio" name="res_shiftpattern" id="jung" value="1" />정규직 &nbsp;&nbsp;
+                  <input type="radio" name="res_shiftpattern" id="gyo" value="2" />교육생 &nbsp;&nbsp;
+                  <input type="radio" name="res_shiftpattern" id="star" value="3" />별정직<br />
+                  <input type="radio" name="res_shiftpattern" id="pa" value="4" /> 파트 &nbsp;&nbsp;&nbsp;
+                  <input type="radio" name="res_shiftpattern" id="im" value="5" />전임 &nbsp;&nbsp;&nbsp;
                   <input type="radio" name="res_shiftpattern" id="medi" value="6" />계약직
 
                   
@@ -701,8 +710,8 @@ $("#Hsch").click(function(){
             
                
          </li>
-         <li class="inputli" style="margin-left: 40px;"><label for="" class="inputlavel" style="">연봉</label>&nbsp;&nbsp;<strong class="inputstrong">필수</strong>
-            <select name="res_income" id="res_income"  style="width: 400px;  border:2px solid black; height: 50px; margin-left: 97px;">
+         <li class="inputli" style="margin-left: 40px;padding-top: 30px;"><label for="" class="inputlavel" style="">연봉</label>&nbsp;&nbsp;<strong class="inputstrong">필수</strong>
+            <select name="res_income" id="res_income"  style="width: 400px;  border:2px solid black; height: 50px; margin-left: 95px;">
                   <option value="1">회사규내에따름</option>
                        <option value="2">2,000~3,000</option>
                         <option value="3">3,000~4,000</option>
@@ -725,7 +734,7 @@ $("#Hsch").click(function(){
          </label>
          <!-- 근무지역 선택 div -->
          
-         <div  id="locdiv" style=" background-color: white; width: 810px; height: 300px;  left: 280px; border: 1px solid #a3a3a3; margin-left: 155px; margin-top: 11px;" >   
+         <div  id="locdiv" style=" background-color: white; width: 600px; height: 150px;  left: 280px; border: 1px solid #a3a3a3; margin-left: 215px; margin-top: 11px;" >   
             
             <!-- <ul id="clickAddUl">
                <li style=" float:left;" >
@@ -735,7 +744,7 @@ $("#Hsch").click(function(){
                
                </li>
             </ul> -->
-            <div style="width: 150px; height: 250px; background-color: white; float: left; border: 1px solid #a3a3a3;  ">
+            <div style="width: 145px; height: 150px; background-color: white; float: left; border: 1px solid #a3a3a3;  ">
             
             
             <button class="klocbutton" id="seoulbtn"><label for="" class="locbuttonlabel">서울</label></button>
@@ -749,10 +758,10 @@ $("#Hsch").click(function(){
             
             
          
-            <div style="width: 646px; height: 250px; background-color: white; float: right; border: 1px solid #a3a3a3;">
+            <div style="width: 450px; height: 150px; background-color: white; float: right; border: 1px solid #a3a3a3;">
             
             
-               <div class="seoul" style="width:598px; height: 230px; background-color: white;" id="seouldiv">
+               <div class="seoul" style="width:450px; height: 150px; background-color: white;" id="seouldiv">
                   <input type="radio" name="res_workarea" id="guro" value="1" />구로구
                   <input type="radio" name="res_workarea" id="mapo" value="2"/>마포구
                   <input type="radio" name="res_workarea" id="dongdaemoon" value="3" />동대문구 
@@ -800,10 +809,10 @@ $("#Hsch").click(function(){
          <input  id="locplace2"style="border: 0px solid #a3a3a3; background-color: white;"/>
          </label>
          
-          <div  id="locdiv2" style=" background-color: white; width: 810px; height: 300px;  left: 280px; border: 1px solid #a3a3a3; margin-left: 175px; margin-top: 4px;" >   
+          <div  id="locdiv2" style=" background-color: white; width: 600px; height: 150px;  left: 280px; border: 1px solid #a3a3a3; margin-left: 225px; margin-top: 4px;" >   
             
          
-            <div style="width: 150px; height: 250px; background-color: white; float: left; border: 1px solid #a3a3a3;  ">
+            <div style="width: 145px; height: 150px; background-color: white; float: left; border: 1px solid #a3a3a3;  ">
             
             
             <button class="klocbutton" id="kibtn"><label for="" class="locbuttonlabel">경영 *사무</label></button>
@@ -817,10 +826,10 @@ $("#Hsch").click(function(){
             
             
          
-            <div style="width: 646px; height: 250px; background-color: white; float: right; border: 1px solid #a3a3a3;  ">
+            <div style="width: 450px; height: 150px; background-color: white; float: right; border: 1px solid #a3a3a3;  ">
             
             
-               <div class="twodiv" style="width:598px; height: 230px; background-color: white;" id="twodiv">
+               <div class="twodiv" style="width:420px; height: 150px; background-color: white;" id="twodiv">
                   <input type="radio" name="res_too" id="ki" value="기획" />기획
                   <input type="radio" name="res_too" id="jun" value="전략기획" />전략기획
                   <input type="radio" name="res_too" id="ja" value="자산관리" />자산관리
@@ -856,16 +865,16 @@ $("#Hsch").click(function(){
          </li>
          
          
-         <li class="inputli" style="margin-top: 50px; "><label for="" class="inputlavel" style="margin-left: 20px;">업종</label>&nbsp;&nbsp;<strong class="inputstrong">필수</strong>
+         <li class="inputli" style="margin-top: 30px; "><label for="" class="inputlavel" style="margin-left: 38px;">업종</label>&nbsp;&nbsp;<strong class="inputstrong">필수</strong>
             <label for="" id="samdivcall" style="position:absolute; left: 200px; width: 400px; height: 30px; margin-left: 88px; border: 2px solid black; background-color: white;">
          <input  id="locplace3"style="border: 0px solid #a3a3a3; background-color: white;"/>
          </label>
-         <input type="text" name="res_tob" id="res_tob" style="float: right;"/>
+         <input type="text" name="res_tob" id="res_tob" style="float: right; margin-right: 50px; width: 190px; height: 28px;"/>
          
-          <div  id="locdiv3" style=" background-color: white; width: 810px; height: 300px;  left: 280px; border: 1px solid #a3a3a3; margin-left: 155px; margin-top: 4px;" >   
+          <div  id="locdiv3" style=" background-color: white; width: 605px; height: 150px;  left: 280px; border: 1px solid #a3a3a3; margin-left: 225px; margin-top: 4px;" >   
             
          
-            <div style="width: 150px; height: 250px; background-color: white; float: left; border: 1px solid #a3a3a3;  ">
+            <div style="width: 150px; height: 150px; background-color: white; float: left; border: 1px solid #a3a3a3;  ">
             
             
             <button class="klocbutton" id="kibtn"><label for="" class="locbuttonlabel">서비스업</label></button>
@@ -874,10 +883,10 @@ $("#Hsch").click(function(){
             <button class="klocbutton" id="itbtn"><label for="" class="locbuttonlabel">교육업</label></button>
             
             </div>
-            <div style="width: 646px; height: 250px; background-color: white; float: right; border: 1px solid #a3a3a3;  ">
+            <div style="width: 450px; height: 150px; background-color: white; float: right; border: 1px solid #a3a3a3;  ">
             
             
-               <div class="samdiv" style="width:598px; height: 230px; background-color: white;" id="samdiv">
+               <div class="samdiv" style="width:450px; height: 150px; background-color: white; border-right: 1px solid black;" id="samdiv">
                   <input type="radio" name="res_tob" id="hotel" value="호텔여행항공" />호텔.여행.항공
                   <input type="radio" name="res_tob" id="why" value="외식업" />외식업
                   <input type="radio" name="res_tob" id="sisul" value="시설관리" />시설관리
@@ -909,9 +918,10 @@ $("#Hsch").click(function(){
       
    
       </div>
-   <div style="width: 1000px; height: 350px; margin-top: 70px;">
+      
+       <div style="width: 800px; height: 350px; margin-top: 70px;">
    <span><strong style="font-size: 30px; font-family: 나눔스퀘어;">희망 근무대표 선택</strong></span>
-   <div style="  width: 1000px; height: 300px; padding: 30px 0px 0px 30px; ">
+   <div style="  width: 800px; height: 300px; padding: 30px 0px 0px 30px; background-color: white;">
    
       <ul>
             <li class="inputli" style="margin-top: 30px; padding-left: 0px;"><label for="" class="inputlavel">관심 근무지역</label>&nbsp;&nbsp;<strong class="inputstrong">필수</strong>
@@ -932,6 +942,36 @@ $("#Hsch").click(function(){
       
    
    </div>
+      
+     </div>
+      
+      </li>
+      
+      
+      
+  <!--  <div style="width: 1000px; height: 350px; margin-top: 70px;">
+   <span><strong style="font-size: 30px; font-family: 나눔스퀘어;">희망 근무대표 선택</strong></span>
+   <div style="  width: 1000px; height: 300px; padding: 30px 0px 0px 30px; background-color: white;">
+   
+      <ul>
+            <li class="inputli" style="margin-top: 30px; padding-left: 0px;"><label for="" class="inputlavel">관심 근무지역</label>&nbsp;&nbsp;<strong class="inputstrong">필수</strong>
+            <input type="text"  class="inputlitext" style="margin-left:2px; width: 250px;" name="res_rep_area" id="res_req_area"/></li>
+            
+            
+            <li class="inputli" style="margin-top: 15px; padding-left: 0px;"><label for="" class="inputlavel">관심 직종</label>&nbsp;&nbsp;<strong class="inputstrong">필수</strong>
+            <input type="text"  class="inputlitext" style="margin-left: 40px; width: 250px;" name="res_rep_too" id="res_rep_too"/></li>
+      
+      </ul>
+   
+   </div>   
+   
+   
+   <input type="button" value="이력서 저장"  id = "resumecommit" style="width: 300px; height: 100px; background-color: black; color: white; margin-left: 300px;
+            font-size: 20px; font-family: 나눔스퀘어; border-radius: 3px;
+      "/>
+      
+   
+   </div> -->
 </form>
 
 
