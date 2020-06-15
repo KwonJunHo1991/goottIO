@@ -11,6 +11,7 @@ public class IO_ApplyDTO {
 	Integer notice_num;
 	Integer comp_num;
 	String comp_id;
+	String apply_status;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	Date apply_date;
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
@@ -18,6 +19,14 @@ public class IO_ApplyDTO {
 	Integer mem_sex;
 	Integer res_income;
 	
+	public String getApply_status() {
+		return apply_status;
+	}
+
+	public void setApply_status(String apply_status) {
+		this.apply_status = apply_status;
+	}
+
 	public String getComp_id() {
 		return comp_id;
 	}

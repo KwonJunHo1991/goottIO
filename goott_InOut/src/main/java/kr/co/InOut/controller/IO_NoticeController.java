@@ -16,11 +16,14 @@ import kr.co.InOut.dao.IO_NoticeDAO;
 import kr.co.InOut.dao.IO_Notice_PrcsDAO;
 import kr.co.InOut.dao.IO_Notice_QnaDAO;
 import kr.co.InOut.dao.IO_Notice_WantDAO;
+import kr.co.InOut.dao.IO_ResumeDAO;
+import kr.co.InOut.dto.IO_ApplyDTO;
 import kr.co.InOut.dto.IO_Comp_BasicDTO;
 import kr.co.InOut.dto.IO_NoticeDTO;
 import kr.co.InOut.dto.IO_Notice_PrcsDTO;
 import kr.co.InOut.dto.IO_Notice_QnaDTO;
 import kr.co.InOut.dto.IO_Notice_WantDTO;
+import kr.co.InOut.dto.IO_ResumeDTO;
 import kr.co.InOut.service.IO_CheckBoxService;
 
 @Controller
@@ -30,22 +33,26 @@ public class IO_NoticeController {
 	public void setDao(IO_NoticeDAO dao) {
 		this.dao = dao;
 	}
+//	@Inject
+//	IO_Notice_WantDAO daoWant;
+//	public void setDaoWant(IO_NoticeDAO dao) {
+//		this.daoWant = dao;
+//	}
+//	@Inject
+//	IO_Notice_PrcsDAO daoPrcs;
+//	public void setDaoPrcs(IO_NoticeDAO dao) {
+//		this.daoPrcs = dao;
+//	}
+//	@Inject
+//	IO_Notice_QnaDAO daoQna;
+//	public void setDaoQna(IO_NoticeDAO dao) {
+//		this.daoQna = dao;
+//	}
 	@Inject
-	IO_Notice_WantDAO daoWant;
-	public void setDaoWant(IO_NoticeDAO dao) {
-		this.dao = dao;
+	IO_ResumeDAO resDao;
+	public void setResDao(IO_ResumeDAO dao) {
+		this.resDao = dao;
 	}
-	@Inject
-	IO_Notice_PrcsDAO daoPrcs;
-	public void setDaoPrcs(IO_NoticeDAO dao) {
-		this.dao = dao;
-	}
-	@Inject
-	IO_Notice_QnaDAO daoQna;
-	public void setDaoQna(IO_NoticeDAO dao) {
-		this.dao = dao;
-	}
-	
 	@Inject
 	IO_CheckBoxService cbs;
 	public void setCbs(IO_CheckBoxService cbs) {
@@ -110,6 +117,42 @@ public class IO_NoticeController {
 		model.addAttribute("notice", dao.selectOneNoticeByCnNn(dto));
 		return "comp/post_detail";
 	}
+	// 공고 수정하는 창
+	@RequestMapping(value = "/company/editNotice.do")
+	public String editNotice(@RequestParam("notice_num")Integer notice_num, Model model, HttpSession session) {
+		IO_Comp_BasicDTO cbdto = (IO_Comp_BasicDTO)session.getAttribute("loginComp");
+		IO_NoticeDTO dto = new IO_NoticeDTO();
+		dto.setComp_num(cbdto.getComp_num());
+		dto.setNotice_num(notice_num);
+		dto = dao.selectOneNoticeByCnNn(dto);
+		dto.setNotice_man_mp1(dto.getNotice_man_mp().split("-")[0]);
+		dto.setNotice_man_mp2(dto.getNotice_man_mp().split("-")[1]);
+		dto.setNotice_man_mp3(dto.getNotice_man_mp().split("-")[2]);
+		dto.setNotice_man_tel1(dto.getNotice_man_tel().split("-")[0]);
+		dto.setNotice_man_tel2(dto.getNotice_man_tel().split("-")[1]);
+		dto.setNotice_man_tel3(dto.getNotice_man_tel().split("-")[2]);
+		model.addAttribute("notice", dao.selectOneNoticeByCnNn(dto));
+		
+		return "comp/editNotice";
+	}
+	// 공고 수정 후 다시 보여주는 창(dao로 수정은 아직 안했음 대충 되는척 ㄱㄱ ㅎㅎ)
+	@RequestMapping(value = "/company/editNoticeOk.do")
+	public String editNoticeOk(@ModelAttribute()IO_NoticeDTO dto, Model model, HttpSession session) {
+		IO_Comp_BasicDTO cbdto = (IO_Comp_BasicDTO)session.getAttribute("loginComp");
+		IO_NoticeDTO dto2 = new IO_NoticeDTO();
+		dto2.setComp_num(cbdto.getComp_num());
+		dto2.setNotice_num(dto.getNotice_num());
+		dto2 = dao.selectOneNoticeByCnNn(dto2);
+		dto2.setNotice_man_mp1(dto2.getNotice_man_mp().split("-")[0]);
+		dto2.setNotice_man_mp2(dto2.getNotice_man_mp().split("-")[1]);
+		dto2.setNotice_man_mp3(dto2.getNotice_man_mp().split("-")[2]);
+		dto2.setNotice_man_tel1(dto2.getNotice_man_tel().split("-")[0]);
+		dto2.setNotice_man_tel2(dto2.getNotice_man_tel().split("-")[1]);
+		dto2.setNotice_man_tel3(dto2.getNotice_man_tel().split("-")[2]);
+		model.addAttribute("notice", dao.selectOneNoticeByCnNn(dto2));
+		return "comp/editNotice";
+	}
+	
 	
 	// 공고 리스트 보는 기업 홈
 	@RequestMapping(value = "/company/noticeList.do")
@@ -120,11 +163,24 @@ public class IO_NoticeController {
 		return "comp/noticeList";
 	}
 	
-	// 공고에 지원자 리스트 보기(미완성!!)
+	// 공고에 지원자 리스트 보기
 	@RequestMapping(value = "/company/volunteerList.do")
-	public String showVolunteerList() {
-		
+	public String showVolunteerList(@RequestParam("notice_num")Integer notice_num, HttpSession session, Model model) {
+		List<IO_ApplyDTO> list = dao.selectAllApplyByNn(notice_num);
+		model.addAttribute("volunteerList", list);
 		return "comp/volunteerList";
 	}
 	
+	// 지원자 상태 변경하기
+	@RequestMapping(value = "/company/volunteerStatusEdit.do")
+	public String volunteerStatusEdit(@RequestParam("notice_num")Integer notice_num, @RequestParam("apply_status")String apply_status, 
+			@RequestParam("apply_num")Integer apply_num, Model model) {
+		IO_ApplyDTO a = new IO_ApplyDTO();
+		a.setApply_num(apply_num);
+		a.setApply_status(apply_status);
+		a.setNotice_num(notice_num);
+		model.addAttribute("notice_num", notice_num);
+		dao.updateOneVolunteerStatusByApplyNum(a);
+		return "comp/redirectVolunteerList";
+	}
 }

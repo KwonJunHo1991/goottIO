@@ -264,7 +264,7 @@ margin-left: 250px;
 <body>
 
 
- <form name="form1" method="get">
+ <form name="form1" method="post" action="loginCheck.do">
    <div>
    <jsp:include page="main/mainPage/mp_naviBar.jsp"></jsp:include>
    </div> 
