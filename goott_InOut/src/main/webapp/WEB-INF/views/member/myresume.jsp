@@ -82,7 +82,7 @@ $(function(){
 </head>
 <body style="background-color: #eaeaea; border: 0px;">
 
-<jsp:include page="p_mypage_navbar.jsp"></jsp:include>
+
 
 
 <div style="width: 1000px;  background-color: white; margin: auto; padding: 50px 0px 0px 100px; margin-top: 30px; ">

@@ -142,20 +142,7 @@ z-index: 5;
                                             <a class="dropdown-item" href="single-blog.html">의료</a>
                                         </div>
                                     </li> -->
-                                   <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown"
-                                            role="button" data-toggle="dropdown" aria-haspopup="true"
-                                            aria-expanded="false">
-                                            큐레이션
-                                        </a>
-                                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                            <a class="dropdown-item" href="blog.html">대기업</a>
-                                            <a class="dropdown-item" href="single-blog.html">공기업</a>
-                                            <a class="dropdown-item" href="single-blog.html">외국계기업</a>
-                                            <a class="dropdown-item" href="single-blog.html">중견기업</a>
-                                            <a class="dropdown-item" href="single-blog.html">스타트업</a>
-                                        </div>
-                                    </li>
+
                                     <li class="nav-item">
                                         <a class="nav-link" href="../board/boardMain.do">기업연구소</a>
                                     </li>

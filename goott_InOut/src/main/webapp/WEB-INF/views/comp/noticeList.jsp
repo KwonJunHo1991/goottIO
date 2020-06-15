@@ -126,10 +126,10 @@ $(function(){
 						<div class="wrap_list" style="overflow-y:scroll;">
 							<ul>
 							<c:forEach var="notice" items="${noticeList }" >
-								<li class="row"><strong class="badge_status ">일반채용</strong>
-								<input type="hidden" name="notice_num" value="${notice.notice_num }" />
+								
+								<li><input type="hidden" name="notice_num" value="${notice.notice_num }" /></li>
 									<div class="info_recruit">
-										<a href="./post_detail.do?notice_num=${notice.notice_num }" class="title"> ${notice.notice_title }</a>
+										<strong style="font-size: 30px;"> <a href="./post_detail.do?notice_num=${notice.notice_num }" class="title_real"> ${notice.notice_title }</a></strong>
 										<div class="date">
 											<dl>
 												<dt class="blind">접수기간</dt>
@@ -140,21 +140,7 @@ $(function(){
 												<dd>취업지원</dd>
 											</dl>
 										</div>
-										<div class="use_product">
-										<a href="./volunteerList.do?notice_num=${notice.notice_num }"><input type="button" id="showVolunteer" value="지원자 보기" /></a>
-										<a href="./editNotice.do?notice_num=${notice.notice_num }"><input type="button" id="editNotice" value="공고 수정" /></a>
 										<div class="area_status">
-											<div class="box_status">
-												<strong class="txt_status ">마감 공고</strong>
-												<div class="area_link">
-													<a href="#" target="_blank" class="link_status"><strong>보기</strong></a>
-													<a href="#" class="link_status"
-														onclick="pushDataLayer('ga_lead', 'Home_Tapmenu-all-recruit', 'edit', 'extension');">연장</a>
-													<a href="#" class="link_status">복사</a>
-													<button type="button" class="link_status"
-														onclick="recruitAction('recruit-del','38231000', 'entire');">삭제</button>
-												</div>
-											</div>
 											<div class="status_type">
 												<a href="#" class="division">지원자 <strong
 													class="data_count ">5</strong></a> <a href="#" class="division">열람
@@ -164,8 +150,10 @@ $(function(){
 													<strong class="data_count point_color">0</strong>
 												</a>
 											</div>
-										</div>
+									
 									</div>
+										<a href="./volunteerList.do?notice_num=${notice.notice_num }"><input type="button" id="showVolunteer" value="지원자 보기" /></a>
+										<a href="./editNotice.do?notice_num=${notice.notice_num }"><input type="button" id="editNotice" value="공고 수정" /></a>
 									<div class="area_message list_etc">
 										<div class="txt_message message_type6">
 											마감된 공고입니다. 동일한 공고를 진행하시려면 복사를 눌러 등록하세요.&nbsp;<a href=""
@@ -190,7 +178,7 @@ $(function(){
 
 							<div class="area_download">
 								<button type="button" style="margin-left: 480px;" class="btnSizeM colorWhite btn_down">
-									 <a href="../company/newNotice.do"><span class="ico_down">채용정보 등록하기</span></a>
+									 <a href="../company/newNotice.do"><span class="ico_down">등록하기</span></a>
 								</button>
 								<div class="inpSel sel_sort">
 									<select id="" name="pageCount" title="리스트 개수">

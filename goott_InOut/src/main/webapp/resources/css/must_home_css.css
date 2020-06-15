@@ -138,6 +138,10 @@ button, label {
     background: url("ico_link.png") 0 0 no-repeat;
     content: "";
 }
+.title_real{
+	font-weight: bold;
+	
+}
 .wrap_vix_info .area_title .title {
     padding-top: 39px;
     color: #000;
@@ -409,7 +413,7 @@ select.inpSelTxt {
     top: 32px;
     left: 30px;
     padding: 4px 10px;
-    width: 78px;
+    width: 150px;
     height: 28px;
     border: 1px solid #d9d9d9;
     border-radius: 14px;
@@ -420,9 +424,25 @@ select.inpSelTxt {
     line-height: 16px;
     text-align: center;
 }
+ .badge_status {
+
+    padding: 4px 10px;
+    width: 350px;
+    height: 28px;
+    border: 1px solid #d9d9d9;
+    border-radius: 14px;
+    box-sizing: border-box;
+    color: #555;
+    font-size: 12px;
+    letter-spacing: -1px;
+    line-height: 16px;
+    text-align: center;
+}
+
 .wrap_list_recruit .wrap_list .info_recruit {
     padding-bottom: 28px;
     min-height: 95px;
+    width: 100%;
 }
 @media (max-width: 1579px)
 .wrap_list_recruit .wrap_list .info_recruit .date {
@@ -518,10 +538,73 @@ select.inpSelTxt {
     vertical-align: top;
     content: "";
 }
-.info_recruit .area_status .status_type {
+#showVolunteer{
+  padding: 4px 10px;
+    width: 150px;
+    height: 28px;
+    border: 1px solid #d9d9d9;
+    border-radius: 14px;
+    box-sizing: border-box;
+    color: #555;
+    font-size: 12px;
+    letter-spacing: -1px;
+    line-height: 16px;
+    text-align: center;	
+    background-color: white;
+	
+}
+#editNotice{
+	  padding: 4px 10px;
+    width: 150px;
+    height: 28px;
+    border: 1px solid #d9d9d9;
+    border-radius: 14px;
+    box-sizing: border-box;
+    color: #555;
+    font-size: 12px;
+    letter-spacing: -1px;
+    line-height: 16px;
+    text-align: center;	
+    background-color: white;
+	
+}
+.info_recruit .area_status  {
     display: inline-block;
     padding: 11px 14px;
     width: 294px;
+    height: 62px;
+
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #888;
+    font-size: 14px;
+    letter-spacing: -1px;
+    line-height: 18px;
+    text-align: center;
+}
+.area_status  {
+
+    height: 62px;
+
+    
+    display: inline-block;
+    padding: 11px 14px;
+    width: 294px;
+    height: 32px;
+
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #888;
+    font-size: 14px;
+    letter-spacing: -1px;
+    line-height: 18px;
+    text-align: center;
+}
+ .status_type {
+	margin-top: 30px;
+	margin-right: 130px;
+    padding: 11px 6px;
+    width: 280px;
     height: 62px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -531,6 +614,11 @@ select.inpSelTxt {
     letter-spacing: -1px;
     line-height: 18px;
     text-align: center;
+}
+.info_recruit{
+	padding-left: 20px;
+	padding-right: 20px;
+	
 }
 .info_recruit .area_status .status_type .division {
     display: inline-block;
@@ -559,7 +647,7 @@ select.inpSelTxt {
 .area_message {
     clear: both;
     width: 100%;
-    min-height: 45px;
+    min-height: 85px;
     border-radius: 5px;
     box-sizing: border-box;
     background-color: #f8f8f8;
@@ -671,8 +759,12 @@ select.inpSelTxt {
 
 .wrap_list_recruit .wrap_list .area_download .btn_down {
     float: left;
+    margin-right: 50px;
     margin-top: -37px;
-    width: 207px;
+    width: 280px;
+    height: 70px;
+    font-size: 35px;
+    font-weight: bold;
 }
 [class*="btnSize"].colorWhite {
     border: 1px solid #ddd;
