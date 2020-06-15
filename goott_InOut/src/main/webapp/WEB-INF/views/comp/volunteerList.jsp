@@ -12,11 +12,9 @@
 	href="https://cdn.rawgit.com/moonspam/NanumSquare/master/nanumsquare.css">
 
 <!-- CSS 적용 -->
-<link rel="stylesheet" type="text/css"
-	href="<c:url value='/resources/css/must_home_css.css'/>">
+<link rel="stylesheet" type="text/css" href="<c:url value='/resources/css/must_home_css.css'/>">
 
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
 	$(function() {
 		$('#btn1').click(function() {
@@ -37,19 +35,35 @@
 
 	});
 </script>
+<style type="text/css">
+.tblSticky th{
+    margin: 0;
+    padding: 13px 15px 15px;
+    border-bottom: 1px solid #ebebeb;
+    box-sizing: border-box;
+    color: #666;
+    font-size: 14px;
+    letter-spacing: -1px;
+    line-height: 18px;
+    text-align: center;
+    word-wrap: break-word;
+    word-break: break-all;
+    background-color: #fafbfc;
+}
+</style>
 </head>
 <body>
 	<div>
-		<jsp:include page="../main/mainPage/mp_naviBar.jsp"></jsp:include>
+		<%-- <jsp:include page="/main/mainPage/mp_naviBar.jsp"></jsp:include>
 	</div>
 
-	<jsp:include page="../main/mainPage/loginPop.jsp"></jsp:include>
+	<%-- <jsp:include page="/main/mainPage/loginPop.jsp"></jsp:include> --%>
 	<!-- END nav -->
 
 
 	<div id="sri_section" style="margin-top: 100px; margin-left: 100px;">
 
-		<jsp:include page="../comp/com_sideNavi.jsp"></jsp:include>
+		<%-- <jsp:include page="../comp/com_sideNavi.jsp"></jsp:include> --%>
 		<div id="content" class="basic_wide vix_main fixed">
 			<h1 class="blind">MUST 홈</h1>
 			<div class="wrap_main_content" id="wrap_main_content">
@@ -86,71 +100,150 @@
 					<div class="wrap_list_recruit">
 						<div class="wrap_filter">
 							<div class="area_left">
-								<span class="item"> <select class="inpSelTxt" id=""
-									name="list_type">
-										<option value="all" selected="">채용유형 전체</option>
-										<option value="bbs">속보채용 전체</option>
-										<option value="rtc001">일반채용</option>
-										<option value="rtc002">자사양식</option>
-										<option value="rtc003">블라인드</option>
-								</select>
-								</span> <span class="item"> <select class="inpSelTxt" id=""
-									name="mode">
-										<option value="entire" selected="">채용상태 전체</option>
-										<option value="ing">진행중 공고보기</option>
-										<option value="standby">대기중 공고보기</option>
-										<option value="incomplete">미완성 공고보기</option>
-										<option value="end">마감된 공고보기</option>
-								</select>
+								<span class="item">
+									<select class="inpSelTxt" id="" name="list_type">
+										<option value="all" selected="">상태 전체</option>
+										<option value="bbs">서류합격</option>
+										<option value="rtc001">인적성합격</option>
+										<option value="rtc002">면접합격</option>
+										<option value="rtc003">최종합격</option>
+										<option value="rtc004">합격(기타)</option>
+									</select>
+								</span>
+								<span class="item">
+									<select class="inpSelTxt" id="" name="list_type">
+										<option value="sex" selected="">성별 전체</option>
+										<option value="1">남</option>
+										<option value="2">여</option>
+									</select>
+								</span>
+								<span class="item"> 
+									<select class="inpSelTxt" id="" name="list_type">
+										<option value="career" selected="">경력 전체</option>
+										<option value="1">신입</option>
+										<option value="2">경력</option>
+									</select>
+								</span>
+								<span class="item"> 
+									<select class="inpSelTxt" id="" name="list_type">
+										<option value="sc" selected="">학력</option>
+									</select>
+								</span>
+								<span class="item"> 
+									<select class="inpSelTxt" id="" name="list_type">
+										<option value="gpa" selected="">전공/학점</option>
+									</select>
+								</span>
+								<span class="item"> 
+									<select class="inpSelTxt" id="" name="list_type">
+										<option value="gpa" selected="">합격일</option>
+									</select>
+								</span>
+								<span class="item">
+									<select class="inpSelTxt" id="" name="mode">
+										<option value="entire" selected="">채용 전체</option>
+										<option value="1">신입</option>
+										<option value="2">경력</option>
+									</select>
+								</span>
+								<span class="item">
+									<select class="inpSelTxt" id="" name="mode">
+										<option value="entire" selected="">연봉분석</option>
+									</select>
 								</span>
 							</div>
-							<div class="area_right">
-								<span class="item"><button type="button"
-										class="orderBtn btn_new" data-order_type="">최근등록일순</button></span> <span
-									class="item"><button type="button" class="orderBtn "
-										data-order_type="closing_dt">마감일순</button></span> <span class="item"><button
-										type="button" class="orderBtn " data-order_type="read_cnt">조회수순</button></span>
-							</div>
+							
 						</div>
 						<!-- 전체 채용정보 목록 -->
 						<div class="wrap_list" id="render_inner_list_contents">
 							<div class="tblSticky">
 
-								<table>
-
-									<c:forEach var="volunteer" items="${volunteerList }">
+								<table style="text-align: center;">
+									<caption class="blind">연락처확인 인재 표</caption>
+									<colgroup>
+										<col style="width: 80px">
+										<col style="width: 80px">
+										<col style="width: 80px">
+										<col style="width: 317px">
+										<col style="width: 230px">
+										<col style="width: 135px">
+										<col style="width: 120px">
+										<col style="width: 120px">
+										<col style="width: 80px">
+									</colgroup>
+									<thead>
+										<tr>
+											<th scope="col">이름</th>
+											<th scope="col">성별</th>
+											<th scope="col">생년월일</th>
+											<th scope="col">이력서 제목</th>
+											<th scope="col">경력/희망연봉</th>
+											<th scope="col">외국어/자격증</th>
+											<th scope="col">상태</th>
+											<th scope="col">등록일</th>
+											<th scope="col">합격여부</th>
+										</tr>
+									</thead>
+						<c:forEach var="volunteer" items="${volunteerList }">
 									<form action="volunteerStatusEdit.do">
-										<tr height="50px">
+									<tbody>
+										<tr id="acceptance1" height="50px">
 											<%-- <th>${이름을 어디서가져오지....mem_name }</th> --%>
-											<td> 지원 날짜 : ${volunteer.apply_date }</td>
-											<td>/ 생년월일 : ${volunteer.mem_birth }</td>
-											<td>/ 지원자 성별 : ${volunteer.mem_sex }</td>
-											<td>/ 희망 연봉 : ${volunteer.res_income } | </td>
-											<td>상태 : ${volunteer.apply_status }</td>
+											<td><span class="name">이름</span></td>
+											<td><span class="sex">성별${volunteer.mem_sex }</span></td>
+											<td><span class="age">나이${volunteer.mem_birth }</span></td>
+											<td class="txtLeft">
+												<div class="li-con">
+													<div style="overflow: hidden; clear: both;">
+														<div class="tit fl">
+															<a onclick="loggingRecommendUrl(this, 'y'); return false;" href="#" title="이력서 제목">지원자 이력서 제목</a>
+														</div>
+													</div>
+													<ul>
+														<li style="padding-right: 3px;">지원자 학력</li>
+														<!-- 다른 세부 정보 여기에 추가 li로 -->
+													</ul>
+													<ul>
+														<li>지원자 경력</li>
+													</ul>
+													<span class="btn-sum">
+														<a style="cursor: pointer" class="_summary_detail_icon" title="요약보기" border="0">
+														<img src="http://www.saraminimage.co.kr/category/bul_subtb_dotbo.png"></a>
+														<a target="_blank" title="새창보기" class="" href="/zf_user/mandb/view?res_idx=216469&amp;code=search">
+														<span><img src="http://www.saraminimage.co.kr/category/bul_subtb_window.png"></span></a>
+													</span>
+												</div>
+											</td>
+											<td class="info"><span class="career">경력</span><b>{지원자 경력}</b>
+													<br>${volunteer.res_income }</td>	<!-- 희망 연봉 -->
+											<td class="info">
+												<a style="cursor: pointer; color: #666;" class="eng" id="langLicense_216469">{자격증 유무}</a>
+											</td>
+											<td>상태 ${volunteer.apply_status }</td>
+											<td class="info">등록일${volunteer.apply_date }<br>	<!-- 지원 날짜 --> </td>
 											<td>
 											<input type="hidden" name="apply_num" value="${volunteer.apply_num }" />
 											<input type="hidden" name="notice_num" value="${volunteer.notice_num }" />
-													<select class="inpSelTxt sort_filtering"
-														id="sort_filtering" name="apply_status"
-														title="합격여부 변경"><option
-															value="">합격여부 선택</option>
-														<option value="미분류" data-gtm-label="cancel-list">미분류</option>
-														<option value="합격후보" data-gtm-label="filter-list">합격후보</option>
-														<option value="합격" data-gtm-label="delete-list">합격</option>
-														<option value="불합격" data-gtm-label="block-list">불합격</option>
-														</select>
-												</td>
-												<td><input type="submit" value="상태 변경" /></td>
+												<select class="inpSelTxt sort_filtering" id="sort_filtering" name="apply_status"
+													style="border: 1px solid #e4e4e4; border-radius: 3px; text-align: center;" title="합격여부 변경">
+													<option value="">합격여부 선택</option>
+													<option value="미분류" data-gtm-label="cancel-list">미분류</option>
+													<option value="합격후보" data-gtm-label="filter-list">합격후보</option>
+													<option value="합격" data-gtm-label="delete-list">합격</option>
+													<option value="불합격" data-gtm-label="block-list">불합격</option>
+												</select>
+												<input type="submit" value="상태 변경" style="background-color: white; border: none;" />
+											</td>
 										</tr>
+									</tbody>
 									</form>			
-									</c:forEach>
+					</c:forEach> 
 									</tbody>
 								</table>
 
 							</div>
 							<div class="pagination" id="page_body">
 								<span class="current page">1</span>
-
 							</div>
 						</div>
 
@@ -160,7 +253,6 @@
 				</section>
 			</div>
 
-			<script></script>
 
 			<!-- snb 영역 -->
 			<!-- 메인 snb -->

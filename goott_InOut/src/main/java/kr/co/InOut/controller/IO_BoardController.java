@@ -171,14 +171,15 @@ public class IO_BoardController {
 				@RequestParam(value = "mem_id",defaultValue = "") String mem_id
 			) {
 		
-		if(mem_id =="") {
-			model.addAttribute("msg", "로그인하세요");
+		if(mem_id.equals("")) {
+			model.addAttribute("msg", "개인회원으로 로그인하세요");
 			return "redirect:/board/boardSearch.do";
 		}
-		
-		List<IO_BoardDTO> list = dao.selectMy(mem_id);
-		model.addAttribute("list", list);
-		return "/etc/cl_qaa_myq";
+		else {
+			List<IO_BoardDTO> list = dao.selectMy(mem_id);
+			model.addAttribute("list", list);
+			return "/etc/cl_qaa_myq";
+		}
 	}
 	
 	//글자수 체크
