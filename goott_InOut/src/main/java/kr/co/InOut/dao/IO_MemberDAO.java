@@ -20,5 +20,6 @@ public interface IO_MemberDAO {
 	
 	public List<IO_MemberDTO> selectmember();
 	
-
+	//회원 아이디 중복체크
+	public int idChk(IO_MemberDTO dto) throws Exception;
 }
