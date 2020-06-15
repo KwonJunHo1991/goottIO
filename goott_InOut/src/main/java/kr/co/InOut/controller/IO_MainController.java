@@ -47,6 +47,11 @@ public class IO_MainController {
 		//베이직 공고
 		model.addAttribute("bList", dao.selectNoticeByGrade(0));
 		
+		//카운트
+		model.addAttribute("countNotice", dao.countNotice());
+		model.addAttribute("countComp", dao.countComp());
+		model.addAttribute("countMem", dao.countMem());
+		
 		return "/main/mainPage/mp_mainPage";
 	}
 	
@@ -182,8 +187,9 @@ public class IO_MainController {
 		dao.payOk(dto);
 		
 		//기업 마이페이지로 
-		return "/main/mainPage/mp_mainPage";
+		return "redirect:/main/main.do";
 	}
+	
 
 	
 	
