@@ -102,9 +102,9 @@
   	
   	</select>
   	
-  	<select id="idChk" resultType="int">
-	SELECT COUNT(*) FROM MP_MEMBER
-	WHERE USERID = #{userId}
+  	<select id="idChk" resultType="MemberDTO" >
+	select mem_id from io_member
+	where mem_id = #{mem_id}
 	</select>
   	
   	

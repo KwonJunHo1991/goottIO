@@ -48,11 +48,16 @@ public class IO_MemberDAOImple implements IO_MemberDAO{
 		return sqlsession.selectList("selectOneMemberResumeById", mem_id);
 	}
 	//아이디중복체크
+
 	@Override
-	public int idChk(IO_MemberDTO dto) throws Exception {
-		int result = sqlsession.selectOne("idChk", dto);
-		return result;
+	public IO_MemberDTO idChk(String mem_id) throws Exception {
+		
+		return sqlsession.selectOne("idChk",mem_id);
 	}
+
+
+
+
 
 
 	

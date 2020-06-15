@@ -53,6 +53,15 @@ public class IO_MemberServiceImple implements IO_MemberService{
 		// TODO Auto-generated method stub
 		return io_memberdao.viewMember(dto);
 	}
+	//아이디 중복체크
+
+	@Override
+	public IO_MemberDTO idChk(String mem_id) throws Exception {
+		
+		return io_memberdao.idChk(mem_id);
+	}
+
+
 
 	
 

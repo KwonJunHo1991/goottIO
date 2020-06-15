@@ -92,23 +92,37 @@ $(function(){
                     <div class="one-third mb-4 mb-md-0">
                       <div class="job-post-item-header align-items-center">
                       
-                      <td></td>
-                                 <span class="subadge">수정</span>
-                        <h2 class="mr-3 text-black"><a href="#">${i.apply_num }</a></h2>
+                     
+                                 <span class="subadge">회사       ${i.comp_name }</span>
+                        <h2 class="mr-3 text-black">${i.notice_title }</h2>
+                        
                       </div>
                       <div class="job-post-item-body d-block d-md-flex">
                       
-                        <div><span class="icon-my_location"></span> <span>${i.apply_date }</span></div>
+                        <div> <span>${i.apply_date }</span>
+             
+                        </div>
+                      
                       </div>
+                    <form action="./selectresumebynum.do">
+                        <div>
+                     	
+                         <span class="icon-my_location"><a href="./selectresumebynum.do?res_num=${i.res_num}"><span><span>이력서 제목 : ${i.res_title }</span></span></a></span>
+                         </div>
+                        </form>
                     </div>
 
                     <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
                        <div>
                          <a href="#" class="icon text-center d-flex justify-content-center align-items-center icon mr-2">
-                            <span class="icon-heart"></span>
+                         
+                          <span class="icon-heart">${i.apply_status }</span>
+                         
+                         
+                            
                          </a>
                       </div>
-                     <input type="submit" class="btn btn-primary py-2" value="지원하기" id="noticesup" />
+                     <input type="submit" class="btn btn-primary py-2" value="공고보기" id="noticesup" />
                     </div>
                   </div>
 </form>

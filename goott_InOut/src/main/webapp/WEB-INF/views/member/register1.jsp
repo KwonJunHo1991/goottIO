@@ -398,6 +398,31 @@ $(function(){
          
       });
 });
+
+
+$(function(){
+	$("#btnCheck").click(function(){
+	
+		//console.log(mem_id);
+		$.ajax({
+			url : "./idchk.do",
+			type : "post",
+			dataType : "json",		
+			data: {'mem_id' : $('#mem_id').val()},
+			success : function(data){
+				if(data == 1){
+					console.log(data);
+					alert("중복된 아이디입니다.");
+				}else{
+					$("#btnCheck").attr("value", "Y");
+					alert("사용가능한 아이디입니다.");
+				}
+			}
+		});
+		
+	});
+});
+
 $(function() {
 
     $("#Email_div").hide();
@@ -552,7 +577,7 @@ $(function() {
          <ul class="fieldset_ul">
             <li class="fieldset_li1" style="border-bottom: 1px solid #a3a3a3; margin-top: 0px; margin-bottom: 0px; padding-left :30px; padding: 0px;">
                <input type="text" placeholder="*아이디" class="Idinput" id="mem_id" name="mem_id"/>
-               <input type="button" id="btnCheck" name="confirm_id"  value="중복 체크"  onclick="confirmId()"/>
+               <input type="button" id="btnCheck" name="btnCheck"  value="중복 체크"  />
                
             
                

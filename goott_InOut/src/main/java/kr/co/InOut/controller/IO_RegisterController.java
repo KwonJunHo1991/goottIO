@@ -4,24 +4,34 @@ import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
+import org.springframework.stereotype.Repository;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import kr.co.InOut.dao.IO_MemberDAO;
 import kr.co.InOut.dao.IO_RegisterDAO;
 import kr.co.InOut.dto.IO_MemberDTO;
 import kr.co.InOut.service.IO_MemberService;
+import kr.co.InOut.service.IO_MemberServiceImple;
 
 @Controller
 public class IO_RegisterController {
 	@Inject
 	IO_RegisterDAO dao;
-	
 	@Inject
-	IO_MemberService io_memberservice;
+	IO_MemberDAO mdao;
+	@Inject
+	IO_MemberServiceImple io_memberservice;
+	
+	
+	
 	public void setDao(IO_RegisterDAO dao) {
 		this.dao = dao;
 		
@@ -66,11 +76,38 @@ public class IO_RegisterController {
 		return "/member/resume";
 		
 	}
-	
-	}
+
+
 
 	
 }
+	
+	
+	private static final Logger logger = LoggerFactory.getLogger(IO_RegisterController.class);
+	@ResponseBody
+	@RequestMapping(value = "/member/idchk.do")
+	public int postIdCheck(HttpServletRequest req) throws Exception{
+		
+		logger.info("post idCheck");
+		
+		
+		String mem_id = req.getParameter("mem_id");
+		IO_MemberDTO idcheck = io_memberservice.idChk(mem_id);
+		
+		int result = 0;
+		
+		if(idcheck !=null) {
+			result = 1;
+		}
+		
+		
+		
+		
+		return result;
+		
+	}
+}
+
 
 	
 	

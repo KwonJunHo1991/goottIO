@@ -18,6 +18,10 @@ public class IO_ApplyDTO {
 	Date mem_birth;
 	Integer mem_sex;
 	Integer res_income;
+	String mem_name;
+	String res_title;
+	String comp_name;
+	String notice_title;
 	
 	public String getApply_status() {
 		return apply_status;
@@ -112,7 +116,7 @@ public class IO_ApplyDTO {
 	}
 
 	public IO_ApplyDTO(Integer apply_num, Integer res_num, String mem_id, Integer notice_num, Integer comp_num,
-			String comp_id, Date apply_date, Date mem_birth, Integer mem_sex, Integer res_income) {
+			String comp_id, Date apply_date, Date mem_birth, Integer mem_sex, Integer res_income, String mem_name, String res_title, String comp_name, String notice_title) {
 		super();
 		this.apply_num = apply_num;
 		this.res_num = res_num;
@@ -124,6 +128,43 @@ public class IO_ApplyDTO {
 		this.mem_birth = mem_birth;
 		this.mem_sex = mem_sex;
 		this.res_income = res_income;
+		this.mem_name = mem_name;
+		this.res_title = res_title;
+		this.comp_name = comp_name;
+		this.notice_title = notice_title;
+				
+	}
+
+	public String getMem_name() {
+		return mem_name;
+	}
+
+	public void setMem_name(String mem_name) {
+		this.mem_name = mem_name;
+	}
+
+	public String getRes_title() {
+		return res_title;
+	}
+
+	public void setRes_title(String res_title) {
+		this.res_title = res_title;
+	}
+
+	public String getComp_name() {
+		return comp_name;
+	}
+
+	public void setComp_name(String comp_name) {
+		this.comp_name = comp_name;
+	}
+
+	public String getNotice_title() {
+		return notice_title;
+	}
+
+	public void setNotice_title(String notice_title) {
+		this.notice_title = notice_title;
 	}
 
 	
