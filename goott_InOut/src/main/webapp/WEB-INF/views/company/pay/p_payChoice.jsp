@@ -279,7 +279,7 @@ margin-left: 450px;
 	var product = "";
 	
 		$('#pay1').click(function(){
-			grade =3;
+			grade =2;
 	 		price = 108000;
 	 		product = "InOut 플레티넘";
 	 		pay();
@@ -287,7 +287,7 @@ margin-left: 450px;
 		});//
 
 		$('#pay2').click(function(){
-			grade =2;
+			grade =1;
 	 		price = 88000;
 	 		product = "InOut 스패셜";
 	 		pay();
@@ -295,7 +295,7 @@ margin-left: 450px;
 		});//
 		
 		$('#pay3').click(function(){
-			grade =1;
+			grade =0;
 	 		price = 48000;
 	 		product = "InOut 베이직";
 	 		pay();

@@ -268,16 +268,16 @@ margin-left: 250px;
 <body>
  <form name="form1" method="get">
    <div>
-   <jsp:include page="../main/mainPage/mp_naviBar.jsp"></jsp:include>
+   <jsp:include page="main/mainPage/mp_naviBar.jsp"></jsp:include>
    </div> 
    
-   <jsp:include page="../main/mainPage/loginPop.jsp"></jsp:include>						
+   <jsp:include page="main/mainPage/loginPop.jsp"></jsp:include>						
 
    <div class="safetyLogin_full">
 
 
          <div class="inner">
-     <jsp:include page="../etc/cl_sideNavi.jsp"></jsp:include>   
+     <jsp:include page="etc/cl_sideNavi.jsp"></jsp:include>   
             <!-- 로그인   -->
             <%-- <c:if test="${empty authUser}"> --%>
          	
@@ -336,7 +336,7 @@ margin-left: 250px;
    </div>
 
  </form>
-  <jsp:include page="../main/mainPage/mp_footer.jsp"></jsp:include>
+  <jsp:include page="main/mainPage/mp_footer.jsp"></jsp:include>
 
 
 </body>

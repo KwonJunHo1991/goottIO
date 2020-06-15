@@ -21,7 +21,7 @@
     <!-- 회원가입(기업기본정보 insert) -->
     <insert id="insertOneCompBasic" parameterType="CBDTO">
         insert into io_comp_basic (comp_name, comp_num, comp_id, comp_pw, comp_inf_period, 
-        comp_username, comp_useremail, comp_grade, comp_type)
+        comp_username, comp_useremail, 0, comp_type)
         values (#{comp_name}, #{comp_num}, #{comp_id}, #{comp_pw}, #{comp_inf_period}, 
         #{comp_username}, #{comp_useremail}, #{comp_grade}, #{comp_type})
     </insert>
@@ -101,4 +101,20 @@
         select * from io_notice where comp_num = #{comp_num} and notice_num = #{notice_num}
     </select>
 <!-- notice end -->
+
+
+<!-- 공고 지원자 리스트 가져오기 -->
+    <select id="selectAllApplyByNn" parameterType="int" resultType="ApplyDTO">
+        select * from io_apply where notice_num = #{notice_num}
+    </select>
+    
+    <select id="selectAllResumeByNn" parameterType="int" resultType="ResumeDTO">
+
+    </select>
+    
+<!-- 지원자 상태 변경하기 -->
+    <update id="updateOneVolunteerStatusByApplyNum" parameterType="ApplyDTO">
+        update io_apply set apply_status = #{apply_status}
+        where apply_num = #{apply_num}
+    </update>    
   </mapper>

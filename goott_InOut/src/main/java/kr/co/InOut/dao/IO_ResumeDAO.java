@@ -44,4 +44,8 @@ public class IO_ResumeDAO {
 	public List<IO_ApplyDTO> noticeList(IO_ApplyDTO dto){
 		return ss.selectList("noticelist", dto);
 	}
+	
+	public List<IO_ResumeDTO> selectAllResumeByNn(int notice_num){
+		return ss.selectList("selectAllResumeByNn", notice_num);
+	}
 }

@@ -40,7 +40,7 @@
         <h2 class="title"><strong>기업검색</strong>으로, 연봉정보부터 면접후기까지</h2>
         
 <div class="wrap_search" id="wrap_search_panel">
-    <form name="company_lab_form" id="company_lab_form" method="get">
+    <form name="company_lab_form" id="company_lab_form" method="get" action="../board/SearchComp.do">
         <input type="hidden" name="page" value="1" id="page">        <input type="hidden" name="searchWord" value="" id="searchWord">        <fieldset>
             <legend class="blind">기업연구소 통합 검색</legend>
             <div class="wrap_main_panel company_search_panel">
