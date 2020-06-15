@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>       
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>   
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>기업 회원가입 창</title>
+<title>Insert title here</title>
 <style type="text/css">
 html {
    list-style: none;
@@ -25,7 +26,7 @@ border-bottom: 2px solid #7185e8;
 margin-top: 130px;
 margin-left: 730px;
    width: 500px;
-   height: 1400px;
+   height: 1200px;
 }
 
 #head_title {
@@ -48,17 +49,15 @@ margin-left: 730px;
    height: 68px;
    margin: 0px;
    float: left;
-      background-color: white;
-   border-bottom: 1px solid #dcdcdc;
-   border-top: 1px solid #dcdcdc;
-   border-left: 1px solid #dcdcdc;
+   background-color: #7185e8;
+   border: 0px solid #71858;
    font-family: "나눔스퀘어";
    text-align: center;
 }
 
 #top1-1-strong {
    font-size: 26px;
-	color: #7185e8;
+   color: white;
    text-decoration: none;
    line-height: 1.0;
    list-style-type: none;
@@ -77,8 +76,7 @@ margin-left: 730px;
 }
 
 #top1-1-ptag {
-   color: #7185e8;
-
+   color: white;
    font-size: 13px;
 }
 
@@ -87,9 +85,10 @@ margin-left: 730px;
    height: 68px;
    margin: 0px;
    float: right;
-
-   border: 0px solid #71858;
-   background-color: #7185e8;
+   background-color: white;
+   border-bottom: 1px solid #dcdcdc;
+   border-top: 1px solid #dcdcdc;
+   border-right: 1px solid #dcdcdc;
    font-size: 10px;
 }
 
@@ -99,14 +98,14 @@ margin-left: 730px;
 }
 
 #top1-2-ptag {
-   color: white;
+   color: #7185e8;
    font-size: 13px;
    margin-left: 50px;
 }
 
 #top1-2-strong {
    font-size: 26px;
-	color: white;
+   color: #7185e8;
    text-decoration: none;
    line-height: 1.0;
    list-style-type: none;
@@ -198,11 +197,11 @@ margin-left: 730px;
    border: 1px solid #a3a3a3;
 }
 
-.fieldset_li1{
-	padding: 0px 12px 0px 12px;
+.fieldset_li1 {
    float: left;
    width: 500px;
    height: 60px;
+   padding: 8px 12px 0px 12px;
    background-color: white;
    border: 0px;
 }
@@ -212,7 +211,7 @@ margin-left: 730px;
    width: 500px;
    height: 60px;
    padding: 8px 12px 0px 0px;
-  
+   background-color: white;
    border: 0px;
 }
 
@@ -226,7 +225,6 @@ margin-left: 730px;
    width: 200px;
    height: 20px;
    border: 0px;
-   color: black;
 }
 
 .Email_li {
@@ -239,7 +237,7 @@ font-size: 14px;
 .Email_li_label {
 font-size: 14px;
    border-right: 1px solid #a3a3a3;
-   width: 100px;
+   width: 76px;
    height: 32px;
    padding-right: 10px;
 }
@@ -310,9 +308,6 @@ background-color: #7185e8;
 color: white;
 border: 0px;
 }
-
-
-
 </style>
 <script
    src="https://t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
@@ -384,14 +379,14 @@ border: 0px;
 $(function(){
       $("#btn").click(function(){
  
-    	  var comp_id = $("#comp_id").val(); 
-    	  var comp_pw = $("#comp_pw").val();
-    	  var comp_inf_period = $("#comp_inf_period").val();
-    	  var comp_num = $("#comp_num").val();
-    	  var comp_name = $("#comp_name").val();
-    	  var comp_username = $("#comp_username").val();
-    	  var comp_usertel = $("#comp_usertel").val();
-    	  var comp_inf_period = $("#comp_inf_period").val();
+    	  var mem_id = $("#mem_id").val(); 
+    	  var mem_pw = $("#mem_pw").val();
+    	  var mem_sex = $("#mem_sex").val();
+    	  var mem_email = $("#mem_email").val();
+    	  var mem_name = $("#mem_name").val();
+    	  var mem_birth = $("#mem_birth").val();
+    	  var mem_phone = $("#mem_phone").val();
+    	  var mem_sex = $("#mem_sex").val();
     	  var mem_add = $("#mem_add").val();
     	  var mem_add1 = $("#mem_add1").val();
     	  
@@ -403,12 +398,23 @@ $(function(){
 });
 $(function() {
 
+    $("#Email_div").hide();
+
+    $("#emailup").click(function() {
+       /* $("#Email_div").show(100); */
+
+       console.log("Dasdafasd");
+       $("#Email_div").show();
+    });
+    
+    
+    
     var id = $(".Idinput").val();
     
     $()
     
  
-    $('#comp_id').keyup(
+    $('#mem_id').keyup(
           function() {
           
              // console.log(this.value);
@@ -474,7 +480,7 @@ $(function() {
     });
     /* 채크박스 정리끝 */  
     
-
+ 
     
     
     
@@ -487,8 +493,7 @@ $(function() {
 </head>
 <body>
 
-	
-	<form action="" method="post">
+<form name="form1">
 	<div>
    <jsp:include page="main/mainPage/mp_naviBar.jsp"></jsp:include>
    </div> 
@@ -497,21 +502,21 @@ $(function() {
    <div id="signup_window" >
   
       <h1 id="head_title">
+       <%--   <img src="<c:url value="/resources/img/logo.png"/>" alt="logo"
+            style="width: 260px; height: 100px; margin-top: 100px; margin-left: 20px; margin-bottom: 50px;"> --%>
       </h1>
-      
- <!--내용부분  -->     
     <div id="content_all">
 
       <div id="two_choice">
          <div id="top1">
-            <div id="top1-1" class="div a">
+            <div id="top1-1">
                <a href="../member/registerlist.do" id="top1-1-atag"> <strong
                   id="top1-1-strong">개인회원가입</strong>
                   <p id="top1-1-ptag">만 15세 이상 가능</p>
                </a>
             </div>
 
-            <div id="top1-2" >
+            <div id="top1-2" class="div a">
                <a href="../company/join.do" id="top1-2-atag"> <strong
                   id="top1-2-strong">기업회원가입</strong>
                   <p id="top1-2-ptag">InOut과 시작하세요</p>
@@ -537,7 +542,6 @@ $(function() {
                href="www.kakaotalk.com" class="liadd"><img src="<c:url value="/resources/img/klogo.PNG"/>" alt=""  style="width: 25px; height: 25px; "/>카카오톡로그인</a></li>
          </ul>
       </div>
-      
       <div style="color: red; font-family:" 나눔스퀘어"; font-size="10px";>
          <storng >*필수 입력정보입니다.</storng>
       </div>
@@ -547,7 +551,7 @@ $(function() {
          <strong class="ID_PW">ID/PW</strong> <br />
          <ul class="fieldset_ul">
             <li class="fieldset_li1" style="border-bottom: 1px solid #a3a3a3; margin-top: 0px; margin-bottom: 0px; padding-left :30px; padding: 0px;">
-               <input type="text" placeholder="*아이디" class="Idinput" id="comp_id" name="comp_id"/>
+               <input type="text" placeholder="*아이디" class="Idinput" id="mem_id" name="mem_id"/>
                <input type="button" id="btnCheck" name="confirm_id"  value="중복 체크"  onclick="confirmId()"/>
                
             
@@ -558,42 +562,59 @@ $(function() {
             <div><p style="color: #a3a3a3; display: none;" id="idcheck2"><strong>사용가능한 아이디입니다.</strong></div>
                
             </li>
-            <li class="fieldset_li2">
-            <input type='password' placeholder="*비밀번호" maxlength="10"
-               class="Pwinput" style="font-family:  Arial, sans-serif ; " id="comp_pw" name="comp_pw"/></li>
+            <li class="fieldset_li2"><input type="password" placeholder="*비밀번호"
+               class="Pwinput " id="mem_pw" name="mem_pw"/></li>
          </ul>
+         <strong class="ID_PW">초간단인증</strong> <br />
+
+         <button type="button"
+            style="width: 498px; height: 69px; background-color: white; font-family: 나눔스퀘어; border: 1px solid #a3a3a3; font-size: 13px;"
+            id="emailup">
+
+            <!-- ID/PW 끝 -->
 
 
+
+            <span class="more" style="font-family: 나눔스퀘어;">이메일 인증 ></span>
+         </button>
          <div id="Email_div">
             <ul
                style="list-style: none; padding: 0px; background-color: white; margin-top: 0px;  font-family: 나눔스퀘어;  border-right: 1px solid #a3a3a3; border-left: 1px solid #a3a3a3; border-bottom: 1px solid #a3a3a3;">
                <li class="Email_li" type="hidden"><label for=""
-                  style="border-right: 1px solid #a3a3a3;  height: 32px; padding-right: 27px;">
-                     *사업자번호</label> 
-                     <input type="text" placeholder="사업번호 입력해주세요"
-                  class="EmailInput" id="comp_num" name="comp_num"
-                  style="border: 0px; margin-left: 30px; width: 250px;" /> 
+                  style="border-right: 1px solid #a3a3a3; width: 76px; height: 32px;">
+                     *이메일</label> <input type="text" placeholder="이메일 입력해주세요"
+                  class="EmailInput" id="mem_email" name="mem_email"
+                  style="border: 0px; margin-left: 30px; width: 250px;" /> <input
+                  type="button" value="인증"
+                  style="border: 1px solid #a3a3a3; float: rigth;" /> <input
+                  type="hidden" value="이메일주소를 다시 확인해주세요" /></li>
                <li class="Email_li"><label for=""
-                  style="border-right: 1px solid #a3a3a3; height: 32px; padding-right: 42px;">*회사이름</label>
-                  <input type="text" id="comp_name" name="comp_name"
+                  style="border-right: 1px solid #a3a3a3; width: 76px; height: 32px; ">*이름</label>
+                  <input type="text" id="mem_name" name="mem_name"
                   style="border: 0px; margin-left: 30px; width: 250px;" /></li>
-               <li class="Email_li"><label for="" class="Email_li_label">*대표이름</label>
-                  <input type="text" value="${cbdto.comp_username }" id="comp_username" name="comp_username"
+               <li class="Email_li"><label for="" class="Email_li_label">*생년월일</label>
+                  <input type="text" placeholder="YYYYMMDD" id="mem_birth" name="mem_birth"
                   style="border: 0px; margin-left: 30px; width: 250px;" /></li>
-               <li class="Email_li"><label for="" class="Email_li_label" style="padding-right: 27px;">*대표 연락처</label>
-                  <input type="text" value="${cbdto.comp_usertel }" id="comp_usertel" name="comp_usertel"
+               <li class="Email_li"><label for="" class="Email_li_label" style="">*연락처</label>
+                  <input type="text" placeholder="'-'없이 입력" id="mem_phone" name="mem_phone"
                   style="border: 0px; margin-left: 30px; width: 250px;" /></li>
-               <li class="Email_li"><label for="" class="Email_li_label" style="padding-right: 27px;">*대표 E-mail</label>
-                  <input type="text" value="${cbdto.comp_useremail }" id="comp_useremail" name="comp_useremail"
-                  style="border: 0px; margin-left: 30px; width: 250px;" /></li>
-               <li class="Email_li"><label for="" class="Email_li_label" style="padding-right: 27px;">*대표 업종</label>
-                  <input type="radio" value="1"   name="comp_type" id="comp_type" />서비스업
-                  <input type="radio" value="2"   name="comp_type" id="comp_type" />제조·화학
-                  <input type="radio" value="3"   name="comp_type" id="comp_type" />IT·웹·통신
-                  <input type="radio" value="4"   name="comp_type" id="comp_type" />은행·금융업             
-                  <input type="radio" value="5"   name="comp_type" id="comp_type" />미디어·디자인             
-                  <input type="radio" value="10"   name="comp_type" id="comp_type" />기관·협회             
-                </li></li>
+               <li class="Email_li"><label for="" class="Email_li_label" style="">성별</label>
+                  <input type="checkbox" value="1"   name="mem_sex" id="mem_sex" />남자
+                  <input type="checkbox" value="2"   name="mem_sex" id="mem_sex"/>여자</li>
+               <li class="Email_li"><label for="" class="Email_li_label" style="height: 45px;">주소</label>
+                  <input type="hidden" id="sample4_postcode" class="d_form mini"
+                  placeholder="우편번호" name="pcode" id="mem_add2">
+                  <input type="text" id="sample4_roadAddress"
+                  class="d_form std" placeholder="도로명주소" style="width: 350px; "
+                  name="mem_add"> <input type="text" id="mem_add"
+                  class="d_form std" placeholder="지번주소" name="addr2" style="display: none;"> <span
+                  id="guide" style="color: #999; display: none"> </span> <input
+                  type="text" id="sample4_extraAddress" class="d_form"
+                  placeholder="참고항목" name="addr3" style="display: none;"> <input type="text"
+                  id="mem_add1" class="d_form" placeholder="상세주소"
+                  name="mem_add1" style="margin-left: 180px;"> <input type="button"
+                  onclick="sample4_execDaumPostcode()" value="우편번호 찾기" class="d_btn"></li>
+               <li></li>
 
             </ul>
 
@@ -654,19 +675,19 @@ $(function() {
         </div>
         <div class="sri_radio_wrap">
             <label class="sri_check sri_radio" for="dormancy_term_1">
-                <input type="radio" id="dormancy_term_1" class="inp_check" id="year1" name="comp_inf_period" value="1">
+                <input type="radio" id="dormancy_term_1" class="inp_check" id="year1" name="dormancy_term" value="1">
                 <span class="txt_check">1년</span>
             </label>
             <label class="sri_check sri_radio" for="dormancy_term_2">
-                <input type="radio" id="dormancy_term_2" class="inp_check" id="year2" name="comp_inf_period" value="3">
+                <input type="radio" id="dormancy_term_2" class="inp_check" id="year2" name="dormancy_term" value="3">
                 <span class="txt_check">3년</span>
             </label>
             <label class="sri_check sri_radio" for="dormancy_term_3">
-                <input type="radio" id="dormancy_term_3" class="inp_check" id="year3" name="comp_inf_period" value="5">
+                <input type="radio" id="dormancy_term_3" class="inp_check" id="year3" name="dormancy_term" value="5">
                 <span class="txt_check">5년</span>
             </label>
             <label class="sri_check sri_radio" for="dormancy_term_4">
-                <input type="radio" id="dormancy_term_4" class="inp_check" id="year4" name="comp_inf_period" value="99">
+                <input type="radio" id="dormancy_term_4" class="inp_check" id="year4" name="dormancy_term" value="99">
                 <span class="txt_check">탈퇴시</span>
             </label>
         </div>
@@ -692,6 +713,8 @@ $(function() {
    </form>
    
      <jsp:include page="main/mainPage/mp_footer.jsp"></jsp:include>
-	
+
 </body>
+
+
 </html>

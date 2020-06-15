@@ -87,7 +87,7 @@ public class IO_CompBasicController {
 		IO_Comp_BasicDTO cbdto = (IO_Comp_BasicDTO)session.getAttribute("loginComp");
 		int comp_num = cbdto.getComp_num();
 		model.addAttribute("cbdto", dao.selectOneCompBasicByCn(comp_num));
-		return "mypage";
+		return "comp/mypage";
 	}
 	
 	// my페이지에서 수정/저장버튼 누르면 정보 업데이트하고 mypage로 다시 보내주세요~
@@ -97,7 +97,7 @@ public class IO_CompBasicController {
 		dao.updateOneCompBasic(dto);
 		model.addAttribute("cbdto", dao.selectOneCompBasicByCn(dto.getComp_num()));
 		
-		return "mypage";
+		return "comp/mypage";
 	}
 	
 	// 공고내 기업정보 수정창

@@ -7,6 +7,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Component;
 
+import kr.co.InOut.dto.IO_ApplyDTO;
 import kr.co.InOut.dto.IO_NoticeDTO;
 import kr.co.InOut.dto.IO_Notice_PrcsDTO;
 import kr.co.InOut.dto.IO_Notice_QnaDTO;
@@ -48,6 +49,13 @@ public class IO_NoticeDAO {
 	
 	public void updateOneNoticeByCnNn(IO_NoticeDTO dto) {
 		ss.update("updateOneNoticeByCnNn", dto);
+	}
+	
+	public List<IO_ApplyDTO> selectAllApplyByNn(int notice_num){
+		return ss.selectList("selectAllApplyByNn", notice_num);
+	}
+	public void updateOneVolunteerStatusByApplyNum(IO_ApplyDTO dto) {
+		ss.update("updateOneVolunteerStatusByApplyNum", dto);
 	}
 }
 

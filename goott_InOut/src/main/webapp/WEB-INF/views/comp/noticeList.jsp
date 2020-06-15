@@ -37,8 +37,17 @@ $(function(){
 </script>
 </head>
 <body>
-	<div id="sri_section">
+   <div >
+   <jsp:include page="../main/mainPage/mp_naviBar.jsp"></jsp:include>
+   </div> 
+   
+   <jsp:include page="../main/mainPage/loginPop.jsp"></jsp:include>
+    <!-- END nav -->
 
+
+	<div id="sri_section" style="margin-top: 100px; margin-left: 100px;">
+
+ <jsp:include page="../comp/com_sideNavi.jsp"></jsp:include>
 		<div id="content" class="basic_wide vix_main fixed">
 			<h1 class="blind">MUST 홈</h1>
 			<div class="wrap_main_content" id="wrap_main_content">
@@ -114,7 +123,7 @@ $(function(){
 							</div>
 						</div>
 						<!-- 전체 채용정보 목록 -->
-						<div class="wrap_list">
+						<div class="wrap_list" style="overflow-y:scroll;">
 							<ul>
 							<c:forEach var="notice" items="${noticeList }" >
 								<li class="row"><strong class="badge_status ">일반채용</strong>
@@ -133,7 +142,7 @@ $(function(){
 										</div>
 										<div class="use_product">
 										<a href="./volunteerList.do?notice_num=${notice.notice_num }"><input type="button" id="showVolunteer" value="지원자 보기" /></a>
-										<a href="./post_detail.do?notice_num=${notice.notice_num }"><input type="button" id="editNotice" value="공고 수정" /></a>
+										<a href="./editNotice.do?notice_num=${notice.notice_num }"><input type="button" id="editNotice" value="공고 수정" /></a>
 										<div class="area_status">
 											<div class="box_status">
 												<strong class="txt_status ">마감 공고</strong>
@@ -175,13 +184,13 @@ $(function(){
 									type="hidden" name="orderTarget" value="" id="orderTarget">
 							</form>
 							<div class="pagination" id="recruit_pagination">
-								<span class="page">1</span>
-
+								<br /><br />
+								
 							</div>
 
 							<div class="area_download">
-								<button type="button" class="btnSizeM colorWhite btn_down">
-									<span class="ico_down">채용정보 엑셀 다운로드</span>
+								<button type="button" style="margin-left: 480px;" class="btnSizeM colorWhite btn_down">
+									 <a href="../company/newNotice.do"><span class="ico_down">채용정보 등록하기</span></a>
 								</button>
 								<div class="inpSel sel_sort">
 									<select id="" name="pageCount" title="리스트 개수">
@@ -324,5 +333,6 @@ $(function(){
 		</div>
 
 	</div>
+
 </body>
 </html>

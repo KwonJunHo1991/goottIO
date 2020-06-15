@@ -768,11 +768,12 @@ body {
     <!-- END nav -->
 	<div class="real_contents">
 	<div>
-<jsp:include page="comp/com_sideNavi.jsp"></jsp:include>
+<jsp:include page="com_sideNavi.jsp"></jsp:include>
 	</div>	
-		<form action="./newNoticeOk.do" method="post">
+		<form action="./editNoticeOk.do" method="post">
 			<input type="hidden" name="comp_id" value='${sessionScope.loginComp.comp_id }' />
 			<input type="hidden" name="comp_num" value='${sessionScope.loginComp.comp_num }' />
+			<input type="hidden" name="notice_num" value="${notice.notice_num }" />
 		<div class="step_recruits" id="frmManager">
 			<div id="manager">
 				<!-- 제목 -->
@@ -787,7 +788,7 @@ body {
 						</div>
 						<div class="area_data">
 							<span class="manager_name">
-								<input type="text" name="comp_name" id="" class="inpTypo sizeL" title="회사 이름 입력" placeholder="회사 이름 입력" maxlength="30" style="width: 300px;"/>
+								<input type="text" name="comp_name" id="" class="inpTypo sizeL" title="회사 이름 입력" value="${notice.comp_name }" maxlength="30" style="width: 300px;"/>
 							</span>
 						</div>
 					</div>
@@ -798,7 +799,7 @@ body {
 						</div>
 						<div class="area_data">
 							<span class="manager_name">
-								<input type="text" name="notice_title" id="" class="inpTypo sizeL" title="채용 공고 이름 입력" placeholder="채용 공고 이름 입력" maxlength="50" style="width: 600px;"/>
+								<input type="text" name="notice_title" id="" class="inpTypo sizeL" title="채용 공고 이름 입력" value="${notice.notice_title}" maxlength="50" style="width: 600px;"/>
 							</span>
 						</div>
 					</div>
@@ -809,10 +810,10 @@ body {
 						</div>
 						<div class="area_data">
 							<span class="manager_name">
-								<input type="text" name="notice_man" id="manager_nm" class="inpTypo sizeL" title="담당자명 입력" placeholder="담당자명 입력" maxlength="30" style="width: 300px;"/>
+								<input type="text" name="notice_man" id="manager_nm" class="inpTypo sizeL" title="담당자명 입력" value="${notice.notice_man}" maxlength="30" style="width: 300px;"/>
 							</span>
 							<span class="manager_part">
-								<input type="text" name="notice_man_dept" id="manager_dept" class="inpTypo sizeL" title="담당자 부서명 입력" placeholder="담당자 부서명" maxlength="30" style="width: 300px;"/>
+								<input type="text" name="notice_man_dept" id="manager_dept" class="inpTypo sizeL" title="담당자 부서명 입력" value="${notice.notice_man_dept}"  maxlength="30" style="width: 300px;"/>
 							</span>
 						</div>
 					</div>
@@ -823,13 +824,13 @@ body {
 						</div>
 						<div class="area_data">
 							<span class="manager_phone">
-								<input type="text" id="tel1" name="notice_man_tel1" class="inpTypo sizeL _filter" title="전화번호 첫번째 자리 입력" maxlength="3" placeholder="070">
+								<input type="text" id="tel1" name="notice_man_tel1" class="inpTypo sizeL _filter" title="전화번호 첫번째 자리 입력" maxlength="3" value="${notice.notice_man_tel1}" >
 							</span>
 							<span class="manager_phone"> <p class="dash">-</p>
-								<input type="text" id="tel2" name="notice_man_tel2" class="inpTypo sizeL _filter" title="전화번호 두번째 자리 입력" maxlength="4" placeholder="1234">							
+								<input type="text" id="tel2" name="notice_man_tel2" class="inpTypo sizeL _filter" title="전화번호 두번째 자리 입력" maxlength="4" value="${notice.notice_man_tel2}" >							
 							</span>
 							<span class="manager_phone"> <p class="dash">-</p>
-								<input type="text" id="tel3" name="notice_man_tel3" class="inpTypo sizeL _filter" title="전화번호 세번째 자리 입력" maxlength="4" placeholder="5678">							
+								<input type="text" id="tel3" name="notice_man_tel3" class="inpTypo sizeL _filter" title="전화번호 세번째 자리 입력" maxlength="4" value="${notice.notice_man_tel3}" >							
 							</span>
 						</div>
 					</div>
@@ -840,13 +841,13 @@ body {
 						</div>
 						<div class="area_data">
 							<span class="manager_phone">
-								<input type="text" name="notice_man_mp1" id="cell1" class="inpTypo sizeL" title="휴대폰 첫번째 자리 입력" maxlength="3" placeholder="010"/>
+								<input type="text" name="notice_man_mp1" id="cell1" class="inpTypo sizeL" title="휴대폰 첫번째 자리 입력" maxlength="3" value="${notice.notice_man_mp1}" />
 							</span>
 							<span class="manager_phone"> <p class="dash">-</p>
-								<input type="text" name="notice_man_mp2" id="cell2" class="inpTypo sizeL" title="휴대폰 두번째 자리 입력" maxlength="4" placeholder="1234"/>
+								<input type="text" name="notice_man_mp2" id="cell2" class="inpTypo sizeL" title="휴대폰 두번째 자리 입력" maxlength="4" value="${notice.notice_man_mp2}" />
 							</span>
 							<span class="manager_phone"> <p class="dash">-</p>
-								<input type="text" name="notice_man_mp3" id="cell3" class="inpTypo sizeL" title="휴대폰 세번째 자리 입력" maxlength="4" placeholder="5678"/>
+								<input type="text" name="notice_man_mp3" id="cell3" class="inpTypo sizeL" title="휴대폰 세번째 자리 입력" maxlength="4" value="${notice.notice_man_mp3}" />
 							</span>
 						</div>
 					</div>
@@ -855,7 +856,7 @@ body {
 						<div class="area_tit"><strong class="tit">이메일 주소</strong></div>
 						<div class="area_data">
 							<div class="manager_email">
-								<input type="text" id="email" name="notice_man_email" class="inpTypo sizeL" title="이메일 주소 입력" placeholder="이메일 주소를 입력해주세요.">
+								<input type="text" id="email" name="notice_man_email" class="inpTypo sizeL" title="이메일 주소 입력" value="${notice.notice_man_email}" >
 							</div>
 						</div>
 					</div>
@@ -867,7 +868,7 @@ body {
 								<!-- <p class="txt_placeholder">업종은 최대 1개 선택할 수 있습니다.</p> -->
 								<!-- <ul class="list_selected_item frm_box_list" data-help_target="industry"> -->
 								<input type="text" name="" id="list_selected_item" class=" inpTypo sizeL inp_keyword"
-									style="border: none;" title="업종명" placeholder="업종명을 입력하세요">
+									style="border: none;" title="업종명" value="${notice.notice_comp_type}" >
 								<button type="button" class="btn_add btn btn-link btn_more_ly" id="btn_cat_area" >수정·추가하기</button>
 							</div>
 							
@@ -1170,13 +1171,13 @@ body {
 							<!-- 근무지역 input -->
 							<div class="input_address internal">
 								<span class="manager_address">
-									<input type="text" class="inpTypo sizeL address01 _inputWrapper" id="address_depth1" name="notice_comp_adrs1" data-help_target="company_address" title="주소 입력" placeholder="서울특별시 구로구 구로3동 시흥대로 ">
+									<input type="text" class="inpTypo sizeL address01 _inputWrapper" id="address_depth1" name="notice_comp_adrs1" data-help_target="company_address" title="주소 입력" value="${notice.notice_comp_adrs1}" >
 								</span>
 								<span class="manager_address2">
-									<input type="text" class="inpTypo sizeL address02 _inputWrapper" id="address_depth2" name="notice_comp_adrs1_detail" data-help_target="company_address" title="상세주소 입력" placeholder="상세주소 : 예) 187-10 코오롱싸이언스밸리">
+									<input type="text" class="inpTypo sizeL address02 _inputWrapper" id="address_depth2" name="notice_comp_adrs1_detail" data-help_target="company_address" title="상세주소 입력" value="${notice.notice_comp_adrs1_detail}">
 								</span>
 								<span class="manager_address3">
-									<input type="text" class="inpTypo sizeL address02 _inputWrapper" id="address_depth3" name="notice_comp_adrs2" data-help_target="company_address" title="인근 지역" placeholder="인근지역: 예) 관악구">
+									<input type="text" class="inpTypo sizeL address02 _inputWrapper" id="address_depth3" name="notice_comp_adrs2" data-help_target="company_address" title="인근 지역" value="${notice.notice_comp_adrs2}">
 								</span>
 							</div>
 						</div>
@@ -1206,7 +1207,7 @@ body {
 					<div class="area_data">
 						<div class="condition_edu">
 							<div class="inpSel sizeL">
-								<select id="edu_select" name="notice_req_edu" title="학력">
+								<select id="edu_select" name="notice_req_edu" title="학력" >
 									<option value="0">학력무관</option>
 
 									<option value="6">고등학교졸업이상</option>
