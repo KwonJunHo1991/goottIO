@@ -54,4 +54,19 @@ public class IO_MainDAO {
 	public void insertApply(IO_ApplyDTO dto) {
 		session.insert("insertIoApply", dto);
 	}
+	
+	//메인 카운트
+	public int countNotice() {
+		return session.selectOne("countNotice");
+	};
+	public int countComp() {
+		return session.selectOne("countComp");
+	};
+	public int countMem() {
+		return session.selectOne("countMem");
+	};
+	
+	public List<IO_NoticeDTO> selectMainIcon(int notice_prcs_job){
+		return session.selectList("selectMainIcon", notice_prcs_job);
+	}
 }

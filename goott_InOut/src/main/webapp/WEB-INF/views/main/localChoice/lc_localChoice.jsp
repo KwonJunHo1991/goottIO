@@ -235,7 +235,7 @@ $(function () {
 											<span class="icon-heart"></span>
 										</a>
 									</div>
-									<a href="job-single.html" class="btn btn-primary py-2">Apply
+									<a href="../company/noticeDetailMain.do?notice_num=${list.notice_num }" class="btn btn-primary py-2">Apply
 										Job</a>
 								</div>
 							</div>
