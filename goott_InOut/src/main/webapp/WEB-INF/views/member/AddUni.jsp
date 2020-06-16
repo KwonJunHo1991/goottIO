@@ -10,10 +10,25 @@
 
 $(function(){
 	$("#unicommit").click(function(){
+
 		
-	
+	if($("#un_name").val()==""){
+		alert("학교명을 입력해주세요");
+		$("#un_name").focus();
+		return false;
+	}else if($("#un_majordept").val()==""){
+		alert("학과를 입력해주세요");
+		$("#un_majordept").focus();
+		return false;
+	}else if($("#un_grade").val()==""){
+		alert("학점을 입력해주세요");
+		$("#un_grade").focus();
+		return false;
+	}else{
+		document.uniform.action = "./insertuniversity.do";
+	}
 		
-			document.uniform.action = "./insertuniversity.do";
+		
 			document.uniform.method = "post";
 			document.uniform.submit();
 	});
@@ -149,15 +164,18 @@ select{
 			</li>
 			<li class="inputli" style="float: left;"><label for="" class="inputlavel">전공</label>&nbsp;&nbsp;<strong class="inputstrong">필수</strong>
 				
-				<label for="" class="inputlitext" style="margin-left: 100px; ">주전공</label>
+				
 				<select name="un_mainmajor" id="un_mainmajor" style="border:2px solid black; width: 300px;height: 50px; margin-left: 102px;"><br />
-					<option value="1">어문학</option>
-					<option value="2">영어/영문</option>
-					<option value="3">중어/중문</option>
-					<option value="4">일어/일문</option>
-					<option value="5">국어/국문</option>
+					
+					<option value="1">영어/영문</option>
+					<option value="2">중어/중문</option>
+					<option value="3">일어/일문</option>
+					<option value="4">국어/국문</option>
+					<option value="5">컴퓨터/시스템공학</option>
 				</select>
+				
 				<input type="text" class="inputlitext" style="margin-left: 185px; margin-top: 2px;" id="un_majordept" name="un_majordept"/>
+			
 			</li>
 			<br />
 			<br />
@@ -178,7 +196,7 @@ select{
 				</select>
 			
 			<li class="inputli"><label for="" class="inputlavel">학점</label>&nbsp;&nbsp;<strong class="inputstrong">필수</strong>
-				<input type="text" name="un_grade" id="un_grade" placeholder="학점 입력" style="width: 200px; height:35px; margin-left: 95px;"/><select name="un_fixgrade" id="un_fixgrade" style=" border:2px solid black; width: 90px; height: 40px;">
+				<input type="number" step="0.1" name="un_grade" id="un_grade" placeholder="학점 입력" style="width: 200px; height:35px; margin-left: 95px;"/><select name="un_fixgrade" id="un_fixgrade" style=" border:2px solid black; width: 90px; height: 40px;">
 				<option value="1">1.0</option>
 				<option value="2">2.0</option>
 				<option value="3">3.0</option>

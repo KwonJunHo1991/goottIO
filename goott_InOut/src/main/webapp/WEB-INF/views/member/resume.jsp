@@ -139,12 +139,12 @@ $(function(){
       
 	   
 	   var hobbyCheck = false; 
-	   	 var getMail = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/); 
-	   	 var getCheck= RegExp(/^[a-zA-Z0-9]{4,12}$/); 
-	   	 var getName= RegExp(/^[가-힣]+$/); 
-	   	 var fmt = RegExp(/^\d{6}[1234]\d{6}$/); 
-	   	 var birthdayCheck = RegExp(/^(19|20)[0-9]{2}(0[1-9]|1[1-2])(0[1-9]|[1-2][0-9]|3[0-1])$/);
-	   	var phonNumberCheck = RegExp(/^01[0179][0-9]{7,8}$/);
+	   var getMail = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/); 
+	   var getCheck= RegExp(/^[a-zA-Z0-9]{4,12}$/); 
+	   var getName= RegExp(/^[가-힣]+$/); 
+	   var fmt = RegExp(/^\d{6}[1234]\d{6}$/); 
+	   var birthdayCheck = RegExp(/^(19|20)[0-9]{2}(0[1-9]|1[1-2])(0[1-9]|[1-2][0-9]|3[0-1])$/);
+	   var phonNumberCheck = RegExp(/^01[0179][0-9]{7,8}$/);
 	   	
 		if($("#res_title").val()==""){
 	  		alert("이력서 제목을 입력해주세요");
