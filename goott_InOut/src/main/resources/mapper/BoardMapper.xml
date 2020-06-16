@@ -49,10 +49,15 @@
 		values (null,#{mem_id},#{board_title},#{board_content},now(),#{board_type},#{board_category},0);
 	</insert>
 	
-	<select id="selectHit5" resultType="BoardDTO">
+	<select id="selectHit5" resultType="BoardDTO" parameterType="int">
 		select * from io_board 
 		order by board_hits desc 
-		limit 5;
+		limit ${limit};
+	</select>
+	
+	<select id="selectRan8Board" resultType="BoardDTO">
+		select * from io_board
+		order by rand() limit 8;
 	</select>
 	
 	<update id="upHit" parameterType="int">

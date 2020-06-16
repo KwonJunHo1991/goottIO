@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import kr.co.InOut.dto.IO_ApplyDTO;
 import kr.co.InOut.dto.IO_Comp_BasicDTO;
 import kr.co.InOut.dto.IO_NoticeDTO;
+import kr.co.InOut.dto.IO_ResumeDTO;
 
 @Repository
 public class IO_MainDAO {
@@ -68,5 +69,10 @@ public class IO_MainDAO {
 	
 	public List<IO_NoticeDTO> selectMainIcon(int notice_prcs_job){
 		return session.selectList("selectMainIcon", notice_prcs_job);
+	}
+	
+	//이력서 정보 한개
+	public IO_ResumeDTO selectOneReByNum(int res_num) {
+		return session.selectOne("selectOneResumeByNum",res_num);
 	}
 }

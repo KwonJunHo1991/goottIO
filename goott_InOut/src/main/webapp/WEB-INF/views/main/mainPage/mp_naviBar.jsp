@@ -188,7 +188,7 @@ z-index: 5;
                          ${sessionScope.mem_id }
                                         </a>
                                         <div class="dropdown-menu" aria-labelledby="navbarDropdown_1">
-                                            <a class="dropdown-item" href="../member/loginCheck.do">My Page</a>
+                                            <a class="dropdown-item" href="../member/coresumelist.do">My Page</a>
                                             <a class="dropdown-item" href="../main/logout.do">로그아웃</a>
                                         </div>
                                     </li>

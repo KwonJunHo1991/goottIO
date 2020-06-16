@@ -101,29 +101,70 @@
     <div class="employ_tip">
         <h2 class="title">나만 몰랐던 <strong>취업준비 꿀팁!</strong></h2>
         <ul>
-	        <li class="review"><a href="#" target="_blank" onmousedown="COMPANYLAB.gaEvent('Tip', 'qna')"><strong>취준고민</strong><p>취준고민</p></a></li>
+        	<c:forEach items="${topList }" var="b">
+	        	<li class="review"><a href="#" target="_blank" onmousedown="COMPANYLAB.gaEvent('Tip', 'qna')"><strong>	
+	                    <c:choose>
+	                    	<c:when test="${b.board_category eq 1}">직무</c:when>
+	                    	<c:when test="${b.board_category eq 2}">조직문화</c:when>
+	                    	<c:when test="${b.board_category eq 3}">근무환경</c:when>
+	                    	<c:when test="${b.board_category eq 4}">급여 및 복지</c:when>
+	                    	<c:when test="${b.board_category eq 5}">자기개발</c:when>
+	                    	<c:when test="${b.board_category eq 6}">경영진</c:when>
+	                    	<c:when test="${b.board_category eq 7}">면접/자소서</c:when>
+	                    	<c:when test="${b.board_category eq 8}">이직/퇴사</c:when>
+	                    	<c:when test="${b.board_category eq 9}">기타</c:when>
+	                    </c:choose></strong><p>${b.board_title }</p></a></li>
+	        </c:forEach>
+<!-- 	        <li class="review"><a href="#" target="_blank" onmousedown="COMPANYLAB.gaEvent('Tip', 'qna')"><strong>취준고민</strong><p>취준고민</p></a></li>
 	        <li class="practice"><a href="#" target="_blank" onmousedown="COMPANYLAB.gaEvent('Tip', 'interview-review')"><strong>면접연습</strong><p>22222</p></a></li>
 	        <li class="curation"><a href="#" target="_blank" onmousedown="COMPANYLAB.gaEvent('Tip', 'certification')"><strong>큐레이션</strong><p>3333</p></a></li>
-	    </ul>
+ -->
+ 	    </ul>
     </div>
 </div>        <div class="wrap_contents">
             <div class="area_left">
                 <div class="wrap_review">
     <h2 class="title">함께 고민 나눠요, <strong>취준고민</strong></h2>
     <ul>
-           <li>
+    	<c:forEach items="${midList }" var="b">
+       		    <li>
                     <strong class="badge">Today's Pick</strong>
                     <div class="box_text">
-                        <strong>제목</strong>
+                        <strong>${b.board_title }</strong>
                         <p>내용</p>
-                        <span>모든기업</span>
+                        <span>
+	                        <c:choose>
+		                    	<c:when test="${b.board_category eq 1}">직무</c:when>
+		                    	<c:when test="${b.board_category eq 2}">조직문화</c:when>
+		                    	<c:when test="${b.board_category eq 3}">근무환경</c:when>
+		                    	<c:when test="${b.board_category eq 4}">급여 및 복지</c:when>
+		                    	<c:when test="${b.board_category eq 5}">자기개발</c:when>
+		                    	<c:when test="${b.board_category eq 6}">경영진</c:when>
+		                    	<c:when test="${b.board_category eq 7}">면접/자소서</c:when>
+		                    	<c:when test="${b.board_category eq 8}">이직/퇴사</c:when>
+		                    	<c:when test="${b.board_category eq 9}">기타</c:when>
+		                    </c:choose>
+	                        
+                        </span>
                     </div>
                     <div class="group_tag">
-                        <span>#생산·제조</span>
+                        <span>
+							<c:choose>
+		                    	<c:when test="${b.board_type eq 1}">직무</c:when>
+		                    	<c:when test="${b.board_type eq 2}">조직문화</c:when>
+		                    	<c:when test="${b.board_type eq 3}">근무환경</c:when>
+		                    	<c:when test="${b.board_type eq 4}">급여 및 복지</c:when>
+		                    	<c:when test="${b.board_type eq 5}">자기개발</c:when>
+		                    	<c:when test="${b.board_type eq 6}">경영진</c:when>
+	
+		                    </c:choose>	                        
+                        
+                        </span>
                     </div>
                     <a href="#" target="_blank" onmousedown="COMPANYLAB.gaEvent('qna', 'today-pick1')"><span class="blind">상세 페이지로 이동</span></a>
                 </li>
-                <li>
+        </c:forEach>
+           <!--      <li>
                     <strong class="badge">Today's Pick</strong>
                     <div class="box_text">
                         <strong>제목</strong>
@@ -206,7 +247,7 @@
                         <span>#생산·제조</span>
                     </div>
                     <a href="#" target="_blank" onmousedown="COMPANYLAB.gaEvent('qna', 'answer2')"><span class="blind">상세 페이지로 이동</span></a>
-                </li>
+                </li> -->
                         </ul>
     <a href="#" class="link_more" title="취준진담 더보기" onmousedown="COMPANYLAB.gaEvent('qna', 'go-qna')" target="_blank">더보기</a>
 </div><div class="wrap_curation">

@@ -218,7 +218,7 @@ $(document).ready(function () {
          <h5>본 회사에 즉시 지원하기</h5>
       </div>
 
-      <form >
+      
          <div id="namefd">
          <h5 id="company_name">${dto.comp_name}</h5>
             <input type="text" title="회사이름" value="${dto.notice_title}" name="authnum"
@@ -239,9 +239,10 @@ $(document).ready(function () {
 
          <div>
          	<input type="hidden" name="notice_num" value="${dto.notice_num }" />
+         	
             <input type="button" value="지원하기" class="btn" id="btn_thisbtn" />
          </div>
-      </form>
+    
    </div>
    <!--inner end-->
 </form>   
