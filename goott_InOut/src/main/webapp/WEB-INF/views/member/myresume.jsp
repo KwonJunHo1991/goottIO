@@ -66,7 +66,7 @@ $(function(){
 
 		
 			document.adduni.action = "./gouniversity.do";
-			document.adduni.method = "post";
+			document.adduni.method = "get";
 			document.adduni.submit();
 	});
 });
@@ -78,7 +78,7 @@ $(function(){
 	
 		
 			document.addcar.action = "./gocarrer.do";
-			document.addcar.method = "post";
+			document.addcar.method = "get";
 			document.addcar.submit();
 	});
 });
@@ -336,8 +336,8 @@ $(function(){
                 </tr>
                 <tr>
                    <td rowspan="2">value</td>
-                   <td>dd</td>
-                   <td></td>
+                   <td>value</td>
+                   <td>value</td>
                    <td>value</td>
                    <td>value</td>
                 </tr>
@@ -350,7 +350,7 @@ $(function(){
              
                 <form name = addcar >
              <input type="hidden" name="mem_id" id="mem_id" value="${sessionScope.mem_id }"/>
-             <input type="hidden" name="res_num" id = "res_num" value="${i.res_num }"/>
+             <input type="hidden" name="res_num" id = "res_num" value="${onelist.res_num }"/>
              <button style="width: 85px; height: 35px; float: right; background-color: #e3e3e3; border-radius : 3px; color: black; border: 1px solid gray" id = "AddCar"><span style="font-family: 나눔스퀘어; font-weight: bold;" >등록/추가</span></button>
              	</form>
              

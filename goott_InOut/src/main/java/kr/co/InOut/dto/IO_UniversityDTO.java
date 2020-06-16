@@ -20,7 +20,7 @@ public class IO_UniversityDTO {
 	private int un_enddatesub;
 	private int un_mainmajor;
 	private String un_majordept;
-	private int un_grade;
+	private double un_grade;
 	private int un_fixgrade;
 	private String un_piece;
 	private int un_time;
@@ -29,7 +29,7 @@ public class IO_UniversityDTO {
 
 	public IO_UniversityDTO(int un_num, int res_num, String mem_id, int un_un, String un_name, int un_area,
 			Date un_stdate, int un_stdatesub, Date un_enddate, int un_enddatesub, int un_mainmajor, String un_majordept,
-			int un_grade, int un_fixgrade, String un_piece, int un_time) {
+			double un_grade, int un_fixgrade, String un_piece, int un_time) {
 		super();
 		this.un_num = un_num;
 		this.res_num = res_num;
@@ -47,6 +47,23 @@ public class IO_UniversityDTO {
 		this.un_fixgrade = un_fixgrade;
 		this.un_piece = un_piece;
 		this.un_time = un_time;
+	}
+
+
+
+
+
+
+
+
+	
+
+	public double getUn_grade() {
+		return un_grade;
+	}
+
+	public void setUn_grade(double un_grade) {
+		this.un_grade = un_grade;
 	}
 
 	public int getUn_time() {
@@ -153,13 +170,8 @@ public class IO_UniversityDTO {
 		this.un_majordept = un_majordept;
 	}
 
-	public int getUn_grade() {
-		return un_grade;
-	}
 
-	public void setUn_grade(int un_grade) {
-		this.un_grade = un_grade;
-	}
+	
 
 	public int getUn_fixgrade() {
 		return un_fixgrade;
