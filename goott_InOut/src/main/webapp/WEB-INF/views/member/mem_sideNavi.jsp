@@ -281,7 +281,7 @@ $(document).ready(function () {
             <a href="../member/loginCheck.do" class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>이력서관리</strong> <i class="sri_lnb_icon ic_new"></i></a>
         </li>
         <li class="lnb_menu">
-            <a href="../member/loginCheck.do" class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>입사지원관리</strong> <i class="sri_lnb_icon ic_new"></i></a>
+            <a href="../member/apply.do" class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>입사지원관리</strong> <i class="sri_lnb_icon ic_new"></i></a>
         </li>
         <li class="lnb_menu">
             <a href="../member/resumelist.do" class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>이력서 등록</strong> <i class="sri_lnb_icon ic_new"></i></a>

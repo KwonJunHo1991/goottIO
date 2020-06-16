@@ -68,10 +68,16 @@ $(function(){
 
 </head>
 <body>
+	<div>
+   <jsp:include page="../main/mainPage/mp_naviBar.jsp"></jsp:include>
+   </div> 
+   
+   <jsp:include page="../main/mainPage/loginPop.jsp"></jsp:include>
 
    
    <section class="ftco-section bg-light">
    <div style="width: 900px;  background-color: white; margin-left: 260px;">
+   <jsp:include page="../member/mem_sideNavi.jsp"></jsp:include>
       <ul>
          <strong style="font-size: 25px; color: black;">공고지원 현황</strong>
 

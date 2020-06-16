@@ -73,7 +73,7 @@ public class IO_RegisterController {
 			return "/member/register1";  
 		
 		}else {
-		return "/member/resume";
+		return "redirect:/member/coresumelist.do";
 		
 	}
 
