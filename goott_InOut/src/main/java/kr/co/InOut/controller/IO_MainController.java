@@ -47,6 +47,11 @@ public class IO_MainController {
 		//베이직 공고
 		model.addAttribute("bList", dao.selectNoticeByGrade(0));
 		
+		//카운트
+		model.addAttribute("countNotice", dao.countNotice());
+		model.addAttribute("countComp", dao.countComp());
+		model.addAttribute("countMem", dao.countMem());
+		
 		return "/main/mainPage/mp_mainPage";
 	}
 	
@@ -168,7 +173,14 @@ public class IO_MainController {
 		new IO_LogOutService().logOut(se);
 		return "/main/mainPage/mp_mainPage";
 	}
-
+	
+	@RequestMapping(value = "/company/pay.do")
+	public String pay(HttpSession se) {
+		
+		return "/company/pay/p_payChoice";
+	}
+	
+	
 	
 	//결제 완료
 	@RequestMapping(value = "/company/payOk.do")
@@ -182,8 +194,9 @@ public class IO_MainController {
 		dao.payOk(dto);
 		
 		//기업 마이페이지로 
-		return "/main/mainPage/mp_mainPage";
+		return "redirect:/main/main.do";
 	}
+	
 
 	
 	

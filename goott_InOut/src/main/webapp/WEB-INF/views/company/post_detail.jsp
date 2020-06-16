@@ -529,10 +529,21 @@ $(document).ready(function () {
        var company_chose_context = $('.tit_job').text();
        console.log(company_chose_name);
        console.log(company_chose_context); */
-       
-   var url = ("../company/noticeDetailJoin.do?notice_num="+<c:out value='${notice.notice_num }'/>);
+   var mem_id =  "<c:out value='${sessionScope.mem_id }'/>"
+	
+   console.log("click")
+   
+   if(mem_id ==""){
+	   console.log("로그인해라")
+	   alert("개인 회원으로 로그인 하세요");
+   }else{
+	   
+	   var url = ("../company/noticeDetailJoin.do?notice_num="+<c:out value='${notice.notice_num }'/>);
        
       window.open(url,"confirm","toolbar = no, location = no, status = np, menubar = no, width = 530, height=420, left=700, top=250, menubar =no, overflow-x:hidden,overflow-y:hidden ");
+	   
+   }
+   
    });
 
     

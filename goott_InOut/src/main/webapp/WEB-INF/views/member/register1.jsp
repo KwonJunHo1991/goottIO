@@ -392,7 +392,58 @@ $(function(){
     	  var mem_add = $("#mem_add").val();
     	  var mem_add1 = $("#mem_add1").val();
     	  
-      document.form1.action = "./register.do";
+    	  var hobbyCheck = false; 
+          var getMail = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/); 
+          var getCheck= RegExp(/^[a-zA-Z0-9]{4,12}$/); 
+          var getName= RegExp(/^[가-힣]+$/); 
+          var fmt = RegExp(/^\d{6}[1234]\d{6}$/); 
+
+         if($("#mem_id").val() == ""){
+            alert("아이디 입력해주세용"); 
+            $("#mem_id").focus(); 
+            return false; 
+           }if($("#mem_pw").val() == ""){
+              alert("비밀번호를 입력해주세요"); 
+              $("#mem_pw").focus(); 
+              return false;
+            }else if($("#mem_email").val()==""){
+              alert("이메일일를  입력해주세요");
+           $("#mem_email").focus();
+           return false;
+        }else if($("#mem_name").val()==""){
+           alert("이름을  입력해주세요");
+           $("#mem_name").focus();
+           return false;
+        }else if($("#mem_birth").val()==""){
+           alert("생년월일  입력해주세요");
+           $("#mem_birth").focus();
+           return false;
+        }else if($("#mem_phone").val()==""){
+           alert("연락처를  입력해주세요");
+           $("#mem_phone").focus();
+           return false;
+        }else if($("#sample4_roadAddress").val()==""){
+           alert("도로명주소를  입력해주세요");
+           $("#sample4_roadAddress").focus();
+           return false;
+        }else if($("#mem_add1").val()==""){
+           alert("도로명주소를  입력해주세요");
+           $("#mem_add1").focus();
+           return false;
+        }else if (!$("input:checked[id='pcheckbox']").is(":checked") ){
+            alert("약관동의해주세요"); 
+            $("#allcheckbox").focus(); 
+            return; 
+        }else if (!$("input:checked[id='pcheckbox1']").is(":checked") ){
+            alert("약관동의해주세요"); 
+            $("#allcheckbox").focus(); 
+            return; 
+        }
+        else{
+            document.form1.action = "./register.do";
+       }
+    	  
+    
       document.form1.method = "post"
       document.form1.submit();
          
@@ -490,19 +541,7 @@ $(function() {
     });
 
 
-    $("#btn").click(function() {
-       if ($("#allcheckbox").is(":checked")) {
-          $(location).attr('href', 'mainpage.do');
-          /* 요기 수정해야합니다 */
 
-       } else if($("pcheckbox").is(":checked") && $("#pcheckbox1").is(":checked")){
-          $(location).attr('href', 'mainpage.do');
-
-          
-       }else{
-          alert("모든약관에 동의해주세요!");
-       }
-    });
     /* 채크박스 정리끝 */  
     
  
@@ -623,22 +662,21 @@ $(function() {
                <li class="Email_li"><label for="" class="Email_li_label" style="">*연락처</label>
                   <input type="text" placeholder="'-'없이 입력" id="mem_phone" name="mem_phone"
                   style="border: 0px; margin-left: 30px; width: 250px;" /></li>
-               <li class="Email_li"><label for="" class="Email_li_label" style="">성별</label>
+               <li class="Email_li"><label for="" class="Email_li_label" style="">*성별</label>
                   <input type="checkbox" value="1"   name="mem_sex" id="mem_sex" />남자
                   <input type="checkbox" value="2"   name="mem_sex" id="mem_sex"/>여자</li>
-               <li class="Email_li"><label for="" class="Email_li_label" style="height: 45px;">주소</label>
+               <li class="Email_li" style="margin-bottom: 0px;"><label for="" class="Email_li_label" style="height: 30px;">*주소</label>
                   <input type="hidden" id="sample4_postcode" class="d_form mini"
                   placeholder="우편번호" name="pcode" id="mem_add2">
-                  <input type="text" id="sample4_roadAddress"
-                  class="d_form std" placeholder="도로명주소" style="width: 350px; "
-                  name="mem_add"> <input type="text" id="mem_add"
-                  class="d_form std" placeholder="지번주소" name="addr2" style="display: none;"> <span
-                  id="guide" style="color: #999; display: none"> </span> <input
-                  type="text" id="sample4_extraAddress" class="d_form"
-                  placeholder="참고항목" name="addr3" style="display: none;"> <input type="text"
-                  id="mem_add1" class="d_form" placeholder="상세주소"
-                  name="mem_add1" style="margin-left: 180px;"> <input type="button"
-                  onclick="sample4_execDaumPostcode()" value="우편번호 찾기" class="d_btn"></li>
+                  <input type="text" id="sample4_roadAddress"class="d_form std" placeholder="도로명주소" style="width: 350px; "name="mem_add"> 
+                  <input type="text"id="mem_add1" class="d_form" placeholder="상세주소"name="mem_add1" style="margin-left: 81px;"> 
+                  <input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기" class="d_btn">
+                  <input type="text" id="mem_add"class="d_form std" placeholder="지번주소" name="addr2" style="display: none;"> 
+                  <span id="guide" style="color: #999; display: none"></span> 
+                  <input type="text" id="sample4_extraAddress" class="d_form"placeholder="참고항목" name="addr3" style="display: none;">
+                  
+                  
+                  </li>
                <li></li>
 
             </ul>

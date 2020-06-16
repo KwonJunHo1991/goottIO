@@ -281,13 +281,13 @@ $(document).ready(function () {
             <a href="../company/noticeList.do" class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>나의 채용정보</strong> <i class="sri_lnb_icon ic_new"></i></a>
         </li>
         <li class="lnb_menu">
-            <a href="../company/newNotice.do" class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>입사지원관리</strong> <i class="sri_lnb_icon ic_new"></i></a>
+            <a href="../company/noticeList.do" class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>입사지원관리</strong> <i class="sri_lnb_icon ic_new"></i></a>
         </li>
         <li class="lnb_menu">
             <a href="../company/newNotice.do" class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>공고 등록</strong> <i class="sri_lnb_icon ic_new"></i></a>
         </li>
         <li class="lnb_menu">
-            <a href="../company/newNotice.do" class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>결제 하기</strong> <i class="sri_lnb_icon ic_new"></i></a>
+            <a href="../company/pay.do" class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>결제 하기</strong> <i class="sri_lnb_icon ic_new"></i></a>
         </li>
 		     <li class="lnb_menu">
             <a href="../board/SearchComp.do" class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>기업 검색</strong> <i class="sri_lnb_icon ic_new"></i></a>

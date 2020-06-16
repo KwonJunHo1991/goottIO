@@ -78,7 +78,7 @@ public class IO_CompBasicController {
 		dao.insertOneCompBasic(dto);
 		session.setAttribute("loginComp"
 				+ "", dao.selectOneCompBasicByCn(dto.getComp_num()));
-		return "main";
+		return "/main/mainPage/mp_mainPage";
 	}
 	
 	// my페이지에 들어가면 session에 담겨있는 comp_id를 기준으로 정보 보여주세요~

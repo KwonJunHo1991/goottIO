@@ -41,14 +41,7 @@ public class IO_ResumeController {
 		this.mdao = mdao;
 	}
 	
-	
 
-	
-	
-	
-	
-	
-	
 	
 	
 	@RequestMapping(value = "/member/resumelist.do")
@@ -95,17 +88,10 @@ public class IO_ResumeController {
 		model.addAttribute("list", list);
 		
 		
-		
-		
-		System.out.println(mem_id);
-		System.out.println(res_num);
-		
-		
-		//String mem_id = redto.getMem_id();
-		//model.addAttribute("redto", mdao.selectOneMemberResumeById(mem_id));
-		
 		return "/member/resumelist";
 	}
+	
+	
 	@RequestMapping(value = "/member/goresume.do")
 	public String resume4(Model model, @ModelAttribute() IO_MemberDTO dto, HttpServletRequest req) {
 		
@@ -151,8 +137,8 @@ public class IO_ResumeController {
 		
 		rdao.insertuniversity(dto);
 		
-		List<IO_UniversityDTO> unilist = rdao.selectOneUniBynum(dto.getRes_num());
-		model.addAttribute("unilist", unilist);
+		List<IO_UniversityDTO> unione = rdao.selectOneUniBynum(dto.getRes_num());
+		model.addAttribute("unione", unione);
 		
 		
 		return "/member/myresume";
@@ -165,6 +151,8 @@ public class IO_ResumeController {
 		
 		return "/member/AddCareer";
 	}
+	
+	
 	
 	
 	
@@ -184,11 +172,20 @@ public class IO_ResumeController {
 		return "/member/careerresume";
 	}
 	
+	
+	
+	
+	
+	
 	@RequestMapping(value = "/member/insertcareer.do")
 	public String resume7(@ModelAttribute() IO_CarrerDTO dto, Model model, HttpServletRequest req ) {
 		
 		rdao.insertcareer(dto);
 		return "/member/myresume";
+		
+		
+		
+		
 	}
 	@RequestMapping(value = "/member/self_intro.do")
 	public String resume8(@ModelAttribute() IO_Self_IntroDTO dto, Model model, HttpServletRequest req) {
@@ -205,7 +202,7 @@ public class IO_ResumeController {
 	@RequestMapping(value = "/member/selectresumebynum.do")
 	public String resume9(@ModelAttribute() IO_ResumeDTO dto, Model model, HttpServletRequest req) {
 		
-		List<IO_ResumeDTO> onelist = rdao.selectOneResumeByNum(dto.getRes_num());
+		IO_ResumeDTO onelist = rdao.selectOneResumeByNum(dto.getRes_num());
 		model.addAttribute("onelist", onelist);
 		
 		

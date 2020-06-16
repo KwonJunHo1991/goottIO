@@ -336,7 +336,7 @@ $(document).ready(function () {
     
     	<!-- MY 질문 / 질문하기 버튼 -->
 		<div class="bottom_btn_wrap">
-        <a href="../board/boardMy.do?mem_id=?${sessionScope.mem_id }" class="my_question">
+        <a href="../board/boardMy.do?mem_id=${sessionScope.mem_id }" class="my_question">
         	MY 질문</a>
         <a href="../board/boardInsert.do" class="quest">
         	질문하기</a>

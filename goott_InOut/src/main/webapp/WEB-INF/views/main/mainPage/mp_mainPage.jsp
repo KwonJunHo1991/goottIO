@@ -153,8 +153,8 @@ $(function() {
 				              		<span class="flaticon-worldwide"></span>
 				              	</div>
 				              	<div class="desc text-left">
-					                <strong class="number" data-number="46">0</strong>
-					                <span>채용중 대기업</span>
+					                <strong class="number" data-number="${countComp }">0</strong>
+					                <span>채용중 기업</span>
 				                </div>
 				              </div>
 				            </div>
@@ -166,8 +166,8 @@ $(function() {
 				              		<span class="flaticon-visitor"></span>
 				              	</div>
 				              	<div class="desc text-left">
-					                <strong class="number" data-number="450">0</strong>
-					                <span>채용중 공기업</span>
+					                <strong class="number" data-number="${countNotice }">0</strong>
+					                <span>채용중 공고</span>
 					              </div>
 				              </div>
 				            </div>
@@ -179,7 +179,7 @@ $(function() {
 				              		<span class="flaticon-resume"></span>
 				              	</div>
 				              	<div class="desc text-left">
-					                <strong class="number" data-number="80000">0</strong>
+					                <strong class="number" data-number="${countMem }">0</strong>
 					                <span>등록된 구직자</span>
 					              </div>
 				              </div>
@@ -349,42 +349,42 @@ $(function() {
     					<div class="row no-gutters">
     						<div class="col-md-2">
     							<div class="top-category text-center no-border-left">
-    								<h3><a href="#">IT &amp; 인터넷</a></h3>
+    								<h3><a href="../main/job.do?notice_prcs_job=401">IT &amp; 인터넷</a></h3>
     								<span class="icon flaticon-contact"></span>
     								<p><span class="number">143</span> <span>Open position</span></p>
     							</div>
     						</div>
     						<div class="col-md-2">
     							<div class="top-category text-center active">
-    								<h3><a href="#">전문직 &amp; 교육</a></h3>
+    								<h3><a href="../main/job.do?notice_prcs_job=202">영업&amp; 상담</a></h3>
     								<span class="icon flaticon-mortarboard"></span>
     								<p><span class="number">143</span> <span>Open position</span></p>
     							</div>
     						</div>
     						<div class="col-md-2">
     							<div class="top-category text-center">
-    								<h3><a href="#">디자인 &amp; 건설</a></h3>
+    								<h3><a href="../main/job.do?notice_prcs_job=301">생산 &amp; 제조</a></h3>
     								<span class="icon flaticon-idea"></span>
     								<p><span class="number">143</span> <span>Open position</span></p>
     							</div>
     						</div>
     						<div class="col-md-2">
     							<div class="top-category text-center">
-    								<h3><a href="#">경영 &amp; 사무</a></h3>
+    								<h3><a href="../main/job.do?notice_prcs_job=101">경영 &amp; 사무</a></h3>
     								<span class="icon flaticon-accounting"></span>
     								<p><span class="number">143</span> <span>Open position</span></p>
     							</div>
     						</div>
     						<div class="col-md-2">
     							<div class="top-category text-center">
-    								<h3><a href="#">서비스</a></h3>
+    								<h3><a href="../main/job.do?notice_prcs_job=401">서비스</a></h3>
     								<span class="icon flaticon-dish"></span>
     								<p><span class="number">143</span> <span>Open position</span></p>
     							</div>
     						</div>
     						<div class="col-md-2">
     							<div class="top-category text-center">
-    								<h3><a href="#">의료</a></h3>
+    								<h3><a href="../main/job.do?notice_prcs_job=501">의료</a></h3>
     								<span class="icon flaticon-stethoscope"></span>
     								<p><span class="number">143</span> <span>Open position</span></p>
     							</div>

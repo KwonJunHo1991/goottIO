@@ -61,9 +61,9 @@ public class IO_LoginController {
 		model.addAttribute("list", list);
 		
 		
-		
-		if(result == true) { //로그인 성공
+		if(result == true || mem_id != "") { //로그인 성공
 			mav.setViewName("redirect:/main/main.do");
+
 			mav.addObject("msg", "success");
 		}else { // 로그인 실패
 			//로그인 jsp로 이동

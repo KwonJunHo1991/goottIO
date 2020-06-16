@@ -14,7 +14,7 @@ $(function(){
 	
 		
 			document.uniform.action = "./insertuniversity.do";
-			document.uniform.method = "get";
+			document.uniform.method = "post";
 			document.uniform.submit();
 	});
 });
@@ -156,7 +156,7 @@ select{
 					<option value="4">일어/일문</option>
 					<option value="5">국어/국문</option>
 				</select>
-				<input type="text" class="inputlitext" style="margin-left: 185px; margin-top: 2px;"/>
+				<input type="text" class="inputlitext" style="margin-left: 185px; margin-top: 2px;" id="un_majordept" name="un_majordept"/>
 			</li>
 			<br />
 			<br />

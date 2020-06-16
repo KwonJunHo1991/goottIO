@@ -31,8 +31,8 @@ public class IO_ResumeDAO {
 		ss.insert("insertcareer", dto);
 	}
 	
-	public List<IO_ResumeDTO> selectOneResumeByNum(int res_num){
-		return ss.selectList("selectOneResumeByNum", res_num);
+	public IO_ResumeDTO selectOneResumeByNum(int res_num){
+		return ss.selectOne("selectOneResumeByNum", res_num);
 		
 		
 	}
