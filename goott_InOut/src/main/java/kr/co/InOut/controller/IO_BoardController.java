@@ -82,7 +82,7 @@ public class IO_BoardController {
 		
 		
 		//select Hits Top 5
-		List<IO_BoardDTO> hitList = dao.selectHits5();
+		List<IO_BoardDTO> hitList = dao.selectHits5(5);
 		
 		model.addAttribute("hitList", hitList);
 		
@@ -190,7 +190,14 @@ public class IO_BoardController {
 	
 	//기업연구소 메인
 	@RequestMapping(value = "/board/boardMain.do")
-	public String boardMain() {
+	public String boardMain(Model model) {
+		List<IO_BoardDTO> topList = dao.selectHits5(3);
+		
+		List<IO_BoardDTO> midList = dao.selectRan8();
+		
+		model.addAttribute("topList", topList);
+		model.addAttribute("midList", midList);
+		
 		return "/etc/cl_home";
 	}
 	

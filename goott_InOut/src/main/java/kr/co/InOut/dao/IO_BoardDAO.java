@@ -108,9 +108,9 @@ public class IO_BoardDAO {
 	}
 	
 	//많이 본 질문. (top 5)
-	public List<IO_BoardDTO> selectHits5(){
+	public List<IO_BoardDTO> selectHits5(int limit){
 		
-	List<IO_BoardDTO> list = session.selectList("selectHit5");
+	List<IO_BoardDTO> list = session.selectList("selectHit5",limit);
 		
 		return list;
 	}
@@ -145,6 +145,11 @@ public class IO_BoardDAO {
 		//아이디를 나중엔 받아오기.
 		List<IO_BoardDTO> list = session.selectList("selectMyBoard", mem_id);
 		return list;
+	}
+	
+	//기업 연구소 랜덤 8개
+	public List<IO_BoardDTO> selectRan8(){
+		return session.selectList("selectRan8Board");
 	}
 
 	

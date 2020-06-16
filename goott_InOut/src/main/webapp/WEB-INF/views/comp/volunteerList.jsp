@@ -174,11 +174,11 @@
 									<thead>
 										<tr>
 											<th scope="col">이름</th>
-											<th scope="col">성별</th>
+										
 											<th scope="col">생년월일</th>
+											<th scope="col">희망연봉</th>
 											<th scope="col">이력서 제목</th>
-											<th scope="col">경력/희망연봉</th>
-											<th scope="col">외국어/자격증</th>
+											<th scope="col">총 경력</th>
 											<th scope="col">상태</th>
 											<th scope="col">등록일</th>
 											<th scope="col">합격여부</th>
@@ -189,38 +189,27 @@
 									<tbody>
 										<tr id="acceptance1" height="50px">
 											<%-- <th>${이름을 어디서가져오지....mem_name }</th> --%>
-											<td><span class="name">이름</span></td>
-											<td><span class="sex">성별${volunteer.mem_sex }</span></td>
-											<td><span class="age">나이${volunteer.mem_birth }</span></td>
+											<td><span class="name">${volunteer.mem_name }</span></td>
+										
+											<td><span class="age">${volunteer.mem_birth }년생</span></td>
+											<td class="info"><span class="career"></span>
+													${volunteer.res_income }</td>	<!-- 희망 연봉 -->
 											<td class="txtLeft">
 												<div class="li-con">
 													<div style="overflow: hidden; clear: both;">
 														<div class="tit fl">
-															<a onclick="loggingRecommendUrl(this, 'y'); return false;" href="#" title="이력서 제목">지원자 이력서 제목</a>
+															<a onclick="loggingRecommendUrl(this, 'y'); return false;" href="../member/selectresumebynum.do?res_num=${volunteer.res_num }" title="이력서 제목">
+															${volunteer.res_title }</a>
 														</div>
 													</div>
-													<ul>
-														<li style="padding-right: 3px;">지원자 학력</li>
-														<!-- 다른 세부 정보 여기에 추가 li로 -->
-													</ul>
-													<ul>
-														<li>지원자 경력</li>
-													</ul>
-													<span class="btn-sum">
-														<a style="cursor: pointer" class="_summary_detail_icon" title="요약보기" border="0">
-														<img src="http://www.saraminimage.co.kr/category/bul_subtb_dotbo.png"></a>
-														<a target="_blank" title="새창보기" class="" href="/zf_user/mandb/view?res_idx=216469&amp;code=search">
-														<span><img src="http://www.saraminimage.co.kr/category/bul_subtb_window.png"></span></a>
-													</span>
+
 												</div>
 											</td>
-											<td class="info"><span class="career">경력</span><b>{지원자 경력}</b>
-													<br>${volunteer.res_income }</td>	<!-- 희망 연봉 -->
 											<td class="info">
-												<a style="cursor: pointer; color: #666;" class="eng" id="langLicense_216469">{자격증 유무}</a>
+												<span class="name">총 ${volunteer.mem_sex } 년</span>
 											</td>
-											<td>상태 ${volunteer.apply_status }</td>
-											<td class="info">등록일${volunteer.apply_date }<br>	<!-- 지원 날짜 --> </td>
+											<td> ${volunteer.apply_status }</td>
+											<td class="info">${volunteer.apply_date }<br>	<!-- 지원 날짜 --> </td>
 											<td>
 											<input type="hidden" name="apply_num" value="${volunteer.apply_num }" />
 											<input type="hidden" name="notice_num" value="${volunteer.notice_num }" />
@@ -243,7 +232,7 @@
 
 							</div>
 							<div class="pagination" id="page_body">
-								<span class="current page">1</span>
+	
 							</div>
 						</div>
 

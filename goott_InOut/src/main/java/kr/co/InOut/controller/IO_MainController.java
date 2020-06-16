@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import kr.co.InOut.dao.IO_MainDAO;
 import kr.co.InOut.dao.IO_MemberDAOImple;
+import kr.co.InOut.dao.IO_ResumeDAO;
 import kr.co.InOut.dto.IO_ApplyDTO;
 import kr.co.InOut.dto.IO_Comp_BasicDTO;
 import kr.co.InOut.dto.IO_NoticeDTO;
@@ -29,7 +30,7 @@ public class IO_MainController {
 	
 	@Inject
 	IO_MemberDAOImple memdao;
-	
+
 	public void setDao(IO_MainDAO dao) {
 		this.dao =dao;
 	}
@@ -108,6 +109,14 @@ public class IO_MainController {
 		
 		
 		
+		long time1 = new Date().getTime();
+		long time2 = dto.getNotice_prcs_end().getTime();
+		long left = time2 - time1;
+		int dDay = (int)Math.floor(left/(1000*60*60*24)+1);
+		model.addAttribute("dDay", dDay);
+		
+		
+		
 		return "/company/post_detail";
 	}
 	
@@ -146,7 +155,7 @@ public class IO_MainController {
 		
 		return "/company/post_detail_join";
 	}
-	
+	//입사 지원.
 	@RequestMapping(value ="/company/applyOk.do")
 	public void insertApply(@RequestParam(value = "notice_num") Integer notice_num,
 			@RequestParam(value =  "res_num") Integer res_num,
@@ -155,25 +164,34 @@ public class IO_MainController {
 		IO_NoticeDTO noticeDto = dao.selectNoticeDetailByNoticeNum(notice_num);
 		
 		IO_ApplyDTO adto = new IO_ApplyDTO();
+		
+		
 		adto.setRes_num(res_num);
 		adto.setMem_id((String)session.getAttribute("mem_id"));
 		adto.setNotice_num(notice_num);
 		adto.setComp_num(noticeDto.getComp_num());
 		adto.setComp_id(noticeDto.getComp_id());
-		adto.setMem_birth((Date)session.getAttribute("mem_birth"));
-		adto.setMem_sex((Integer)session.getAttribute("mem_sex"));
+		adto.setMem_birth((Integer)session.getAttribute("mem_birth"));
+		adto.setMem_sex(dao.selectOneReByNum(res_num).getRes_total_career());
 		adto.setRes_income(2000);
+		
+		//추가 사항 입력.
+		adto.setComp_name(noticeDto.getComp_name());
+		adto.setNotice_title(noticeDto.getNotice_title());
+		adto.setMem_name((String)session.getAttribute("mem_name"));
+		adto.setRes_title(dao.selectOneReByNum(res_num).getRes_title());
+		
 		dao.insertApply(adto);
 		
 	}
 	
-	
+	//로그아웃
 	@RequestMapping(value = "/main/logout.do")
 	public String logout(HttpSession se) {
 		new IO_LogOutService().logOut(se);
-		return "/main/mainPage/mp_mainPage";
+		return "redirect:/main/main.do";
 	}
-	
+	//결제 페이지
 	@RequestMapping(value = "/company/pay.do")
 	public String pay(HttpSession se) {
 		

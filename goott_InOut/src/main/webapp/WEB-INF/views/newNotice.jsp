@@ -1288,13 +1288,15 @@ margin-top:
 							<!-- 근무지역 input -->
 							<div class="input_address internal">
 								<span class="manager_address">
-									<input type="text" class="inpTypo sizeL address01 _inputWrapper" id="address_depth1" name="notice_comp_adrs1" data-help_target="company_address" title="주소 입력" placeholder="서울특별시 구로구 구로3동 시흥대로 ">
+									<!-- <input type="text" class="inpTypo sizeL address01 _inputWrapper" id="address_depth1" name="notice_comp_adrs1" data-help_target="company_address" title="주소 입력" placeholder="서울특별시 구로구 구로3동 시흥대로 "> -->
+									<input type="hidden" name="notice_comp_adrs1" value="1"/>
 								</span>
 								<span class="manager_address2">
 									<input type="text" class="inpTypo sizeL address02 _inputWrapper" id="address_depth2" name="notice_comp_adrs1_detail" data-help_target="company_address" title="상세주소 입력" placeholder="상세주소 : 예) 187-10 코오롱싸이언스밸리">
 								</span>
 								<span class="manager_address3">
-									<input type="text" class="inpTypo sizeL address02 _inputWrapper" id="address_depth3" name="notice_comp_adrs2" data-help_target="company_address" title="인근 지역" placeholder="인근지역: 예) 관악구">
+									<!-- <input type="text" class="inpTypo sizeL address02 _inputWrapper" id="address_depth3" name="notice_comp_adrs2" data-help_target="company_address" title="인근 지역" placeholder="인근지역: 예) 관악구"> -->
+									<input type="hidden" name="notice_comp_adrs2" value="2"/>
 								</span>
 							</div>
 						</div>
@@ -1626,17 +1628,27 @@ margin-top:
 			<div class="frm_body frm_hiring">
 				<div class="itemss" id="jobCategory">
 					<div class="area_tit"><strong class="tit">공고 대표 직무</strong></div>
-					<div class="area_data">
+<!-- 					<div class="area_data">
 						<input type="text" id="cat_add" name="notice_prcs_job" class="inpTypo sizeL add-part" placeholder="대표 직종/직업을 선택하세요" />
 						<button type="button" id="btn_add" class="btn btn-primary">추가하기</button>
-					</div>
-					
+					</div> -->
+							<div class="inpSel sizeL">
+								<select id="sex" title="직무" name="notice_prcs_job" style="width: 300px; height: ">
+											<option value="0">경영.사무</option>
+											<option value="1">영업.고객상담</option>
+											<option value="1">생산.제조</option>
+											<option value="1">IT.인터넷</option>
+											<option value="1">서비스</option>
+											<option value="1">디자인</option>
+								</select>
+							</div>
+						
 					<div class="wrap_layer_cat wrap_layer" id="wrap_layer_cat" style="">
 						<div class="layer_frm layer_add_job">
 							<div class="area_category_select" id="job_category_all_list">
 								<div class="depth1">
 									<div class="area_scroll">
-										<ul class="list_category" style="">
+<!-- 										<ul class="list_category" style="">
 											<li class="cat_list"><button type="button" class="btn_cat" data-depth="0" id="1" value="경영·사무">경영·사무</button></li>
 											<li class="cat_list"><button type="button" class="btn_cat" data-depth="0" id="2" value="영업·고객상담">영업·고객상담</button></li>
 											<li class="cat_list"><button type="button" class="btn_cat" data-depth="0" id="3" value="생산·제조">생산·제조</button></li>
@@ -1645,7 +1657,10 @@ margin-top:
 											<li class="cat_list"><button type="button" class="btn_cat" data-depth="0" id="11" value="서비스">서비스</button></li>
 											<li class="cat_list"><button type="button" class="btn_cat" data-depth="0" id="12" value="디자인">디자인</button></li>
 										</ul>
-									</div>
+											
+ -->								
+
+ 									</div>
 								</div>
 								<div class="depth2">
 									<div class="area_scroll" id="1">

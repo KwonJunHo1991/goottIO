@@ -124,12 +124,12 @@ $(function(){
 						</div>
 						<!-- 전체 채용정보 목록 -->
 						<div class="wrap_list" style="overflow-y:scroll;">
-							<ul>
 							<c:forEach var="notice" items="${noticeList }" >
+							<ul>
 								
-								<li><input type="hidden" name="notice_num" value="${notice.notice_num }" /></li>
+								<input type="hidden" name="notice_num" value="${notice.notice_num }" />
 									<div class="info_recruit">
-										<strong style="font-size: 30px;"> <a href="./post_detail.do?notice_num=${notice.notice_num }" class="title_real"> ${notice.notice_title }</a></strong>
+										<strong style="font-size: 30px;"> <a href="../company/noticeDetailMain.do?notice_num=${notice.notice_num }" class="title_real"> ${notice.notice_title }</a></strong>
 										<div class="date">
 											<dl>
 												<dt class="blind">접수기간</dt>
@@ -163,10 +163,10 @@ $(function(){
 											<a href="#" class="report" data-uilayer-btn="modal_report">채용
 												보고서</a>
 										</div>
-									</div></li>
+									</div>
+								</ul>
 									</c:forEach>
 
-							</ul>
 							<form name="recruitForm" id="recruitForm">
 								<input type="hidden" name="page" value="1" id="page"> <input
 									type="hidden" name="orderTarget" value="" id="orderTarget">
@@ -177,9 +177,10 @@ $(function(){
 							</div>
 
 							<div class="area_download">
+							<a href="../company/newNotice.do">
 								<button type="button" style="margin-left: 480px;" class="btnSizeM colorWhite btn_down">
-									 <a href="../company/newNotice.do"><span class="ico_down">등록하기</span></a>
-								</button>
+									 <span class="ico_down">등록하기</span>
+								</button></a>
 								<div class="inpSel sel_sort">
 									<select id="" name="pageCount" title="리스트 개수">
 										<option value="10">10개씩 보기</option>

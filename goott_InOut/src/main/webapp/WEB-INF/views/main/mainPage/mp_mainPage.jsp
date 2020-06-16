@@ -409,12 +409,79 @@ $(function() {
         <div class="row">
 
 
-        <c:forEach items="${pList }" var="list">
+        <c:forEach items="${pList }" var="notice">
 		 <div class="col-md-3 ftco-animate">
         
 	        	<ul class="category text-center">
 
-	        			<li><a href="../company/noticeDetailMain.do?notice_num=${list.notice_num }">${list.notice_title } <br><span class="number">대표 직무 : ${list.notice_prcs_job }</span>&nbsp; <span>${list.comp_name }</span><i class="ion-ios-arrow-forward"></i></a></li>
+	        			<li><a href="../company/noticeDetailMain.do?notice_num=${notice.notice_num }">${notice.notice_title } <br>
+	        			<span class="number">
+	        							 <c:choose>
+					                    	<c:when test="${notice.notice_prcs_job eq 101}">기획·전략·경영</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 102}">총무·법무·사무</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 103}">경리·출납·결산</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 104}">홍보·PR·사보</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 107}">비서·안내·수행원</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 108}">사무보조·문서작성</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 113}">인사·교육·노무</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 114}">회계·재무·세무·IR</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 119}">마케팅·광고·분석</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 120}">전시·컨벤션·세미나</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 202}">일반영업</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 203}">판매·매장관리</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 205}">IT·솔루션영업</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 206}">금융·보험영업</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 207}">광고영업</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 208}">기술영업</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 209}">영업기획·관리·지원</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 210}">TM·아웃바운드</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 211}">TM·인바운드</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 212}">고객센터·CS</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 213}">QA·CS강사·수퍼바이저</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 301}">금속·금형	3</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 302}">기계·기계설비</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 303}">화학·에너지</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 304}">섬유·의류·패션</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 308}">전기·전자·제어</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 309}">생산관리·품질관리</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 314}">반도체·디스플레이·LCD</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 315}">생산·제조·포장·조립</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 316}">비금속·요업·신소재</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 317}">바이오·제약·식품	</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 318}">설계·CAD·CAM</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 319}">안경·렌즈·광학</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 402}">서버·네트워크·보안</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 403}">웹기획·PM</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 404}">웹개발</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 405}">게임·Game</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 406}">컨텐츠·사이트운영</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 407}">응용프로그램개발</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 408}">시스템개발</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 409}">ERP·시스템분석·설계</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 410}">통신·모바일</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 411}">하드웨어·소프트웨어</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 412}">웹디자인</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 413}">퍼블리싱·UI개발</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 414}">동영상·편집·코덱</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 415}">IT·디자인·컴퓨터교육</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 416}">데이터베이스·DBA</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 417}">인공지능(AI)·빅데이터인공지능(AI)·빅데이터</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 1102}">안내·도우미·나레이터</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 1103}">보안·경호·안전</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 1104}">주차·세차·주유</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 1105}">AS·서비스·수리</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 1107}">외식·식음료</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 1108}">호텔·카지노·콘도</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 1109}">여행·관광·항공</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 1110}">레저·스포츠</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 1202}">출판·편집디자인</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 1203}">제품·산업디자인</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 1204}">캐릭터·만화·애니</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 1205}">의류·패션·잡화디자인</c:when>
+	
+					                    </c:choose>	
+        			</span>&nbsp; <br />
+	        			<span>${notice.comp_name }</span><i class="ion-ios-arrow-forward"></i></a></li>
         		</ul>
 	     </div>  
         </c:forEach>
@@ -471,10 +538,79 @@ $(function() {
         </div>
 	        <div class="row">
 	        
-	        <c:forEach items="${sList}" var="list">
+	        <c:forEach items="${sList}" var="notice">
 	        	<div class="col-md-3 ftco-animate">
 	        		<ul class="category_1 text-center">
-	        			<li><a href="../company/noticeDetailMain.do?notice_num=${list.notice_num }">${list.notice_title }<br><span class="number">직무 : ${list.notice_prcs_job }</span> <span>${list.comp_name }</span><i class="ion-ios-arrow-forward"></i></a></li>
+	        			<li><a href="../company/noticeDetailMain.do?notice_num=${notice.notice_num }">${notice.notice_title }<br>
+	        			
+	        			<span class="number">	        							
+	        				 <c:choose>
+					                    	<c:when test="${notice.notice_prcs_job eq 101}">기획·전략·경영</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 102}">총무·법무·사무</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 103}">경리·출납·결산</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 104}">홍보·PR·사보</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 107}">비서·안내·수행원</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 108}">사무보조·문서작성</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 113}">인사·교육·노무</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 114}">회계·재무·세무·IR</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 119}">마케팅·광고·분석</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 120}">전시·컨벤션·세미나</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 202}">일반영업</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 203}">판매·매장관리</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 205}">IT·솔루션영업</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 206}">금융·보험영업</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 207}">광고영업</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 208}">기술영업</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 209}">영업기획·관리·지원</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 210}">TM·아웃바운드</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 211}">TM·인바운드</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 212}">고객센터·CS</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 213}">QA·CS강사·수퍼바이저</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 301}">금속·금형	3</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 302}">기계·기계설비</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 303}">화학·에너지</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 304}">섬유·의류·패션</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 308}">전기·전자·제어</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 309}">생산관리·품질관리</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 314}">반도체·디스플레이·LCD</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 315}">생산·제조·포장·조립</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 316}">비금속·요업·신소재</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 317}">바이오·제약·식품	</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 318}">설계·CAD·CAM</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 319}">안경·렌즈·광학</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 402}">서버·네트워크·보안</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 403}">웹기획·PM</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 404}">웹개발</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 405}">게임·Game</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 406}">컨텐츠·사이트운영</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 407}">응용프로그램개발</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 408}">시스템개발</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 409}">ERP·시스템분석·설계</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 410}">통신·모바일</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 411}">하드웨어·소프트웨어</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 412}">웹디자인</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 413}">퍼블리싱·UI개발</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 414}">동영상·편집·코덱</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 415}">IT·디자인·컴퓨터교육</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 416}">데이터베이스·DBA</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 417}">인공지능(AI)·빅데이터인공지능(AI)·빅데이터</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 1102}">안내·도우미·나레이터</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 1103}">보안·경호·안전</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 1104}">주차·세차·주유</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 1105}">AS·서비스·수리</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 1107}">외식·식음료</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 1108}">호텔·카지노·콘도</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 1109}">여행·관광·항공</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 1110}">레저·스포츠</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 1202}">출판·편집디자인</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 1203}">제품·산업디자인</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 1204}">캐릭터·만화·애니</c:when>
+					                    	<c:when test="${notice.notice_prcs_job eq 1205}">의류·패션·잡화디자인</c:when>
+	
+					                    </c:choose>	</span> 
+	        			
+	        			<br />
+	        			<span>${notice.comp_name }</span><i class="ion-ios-arrow-forward"></i></a></li>
 	        			
 	        		</ul>
 	        	</div>
@@ -529,13 +665,13 @@ $(function() {
 						<div class="row">
 						
 						
-			<c:forEach items="${bList }" var="list">			
+			<c:forEach items="${bList }" var="notice">			
 				<div class="col-md-12 ftco-animate">
 		            <div class="job-post-item p-4 d-block d-lg-flex align-items-center">
 		              <div class="one-third mb-4 mb-md-0">
 		                <div class="job-post-item-header align-items-center">
-		                	<span class="subadge">${list.comp_name }</span>
-		                  <h2 class="mr-3 text-black"><a href="../company/noticeDetailMain.do?notice_num=${list.notice_num }">${list.notice_title }</a></h2>
+		                	<span class="subadge">${notice.comp_name }</span>
+		                  <h2 class="mr-3 text-black"><a href="../company/noticeDetailMain.do?notice_num=${notice.notice_num }">${notice.notice_title }</a></h2>
 		                </div>
 		        
 		              </div>
@@ -546,7 +682,7 @@ $(function() {
 			                	<span class="icon-heart"></span>
 			                </a>
 		                </div>
-		                <a href="../company/noticeDetailMain.do?notice_num=${list.notice_num }" class="btn btn-primary py-2">Apply Job</a>
+		                <a href="../company/noticeDetailMain.do?notice_num=${notice.notice_num }" class="btn btn-primary py-2">Apply Job</a>
 		              </div>
 		            </div>
 		          </div>
