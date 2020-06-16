@@ -101,6 +101,16 @@
 	where comp_id = #{comp_id} and apply_status = '지원';
 </select>
 
+<!-- 추천 공고 ( 랜덤 )  -->
+	<select id="selectRan4Main" resultType="NoticeDTO">
+	  	select * from io_notice
+		where comp_num in
+			(	
+				select comp_num from io_comp_basic
+	            where comp_grade = 2
+	        )
+	    order by rand() limit 4    
+	</select>
 
 
   </mapper>

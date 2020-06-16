@@ -80,4 +80,9 @@ public class IO_MainDAO {
 	public int selectCountApplyStatus(String comp_id) {
 		return session.selectOne("countApplyStatus", comp_id);
 	}
+	
+	//추천공고 랜덤 4
+	public List<IO_NoticeDTO> selectRan4Main(){
+		return session.selectList("selectRan4Main");
+	}
 }

@@ -292,7 +292,7 @@ $(document).ready(function () {
             <ul class="li_menu_hide">
                 <li><a href="../board/faqPer.do" class="track_event" data-track_event="section|lnb|salaries|lnb1331">자주묻는질문</a></li>
                 
-                <li><a href="/zf_user/salaries/industry/service-list" class="track_event" data-track_event="section|lnb|salaries|lnb1333">취업가이드</a></li>
+                <!-- <li><a href="/zf_user/salaries/industry/service-list" class="track_event" data-track_event="section|lnb|salaries|lnb1333">취업가이드</a></li> -->
                 
             </ul>
         </li>

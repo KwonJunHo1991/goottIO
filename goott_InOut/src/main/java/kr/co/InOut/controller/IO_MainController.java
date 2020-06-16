@@ -53,13 +53,9 @@ public class IO_MainController {
 		model.addAttribute("countComp", dao.countComp());
 		model.addAttribute("countMem", dao.countMem());
 		
-		//지원자 현황
-//		IO_Comp_BasicDTO compdto = (IO_Comp_BasicDTO)session.getAttribute("loginComp");
-//		
-//		if(compdto != null) {
-//			int a = dao.selectCountApplyStatus(compdto.getComp_id());
-//			model.addAttribute("applyCount", a);
-//		}
+		//추천 공고
+		model.addAttribute("ranList", dao.selectRan4Main());
+		
 		return "/main/mainPage/mp_mainPage";
 	}
 	
@@ -70,6 +66,7 @@ public class IO_MainController {
 							@RequestParam(value = "comp_adrs", required = false, defaultValue = "999999") int comp_adrs) {
 
 		model.addAttribute("list", dao.selectNoticeByLocal(comp_adrs));
+		model.addAttribute("ranList", dao.selectRan4Main());
 		
 		return "/main/localChoice/lc_localChoice";
 	}
@@ -90,6 +87,7 @@ public class IO_MainController {
 		}
 		
 			model.addAttribute("list", list);
+			model.addAttribute("ranList", dao.selectRan4Main());
 		
 		return "/main/jobChoice/jc_jobChoice";
 	}
