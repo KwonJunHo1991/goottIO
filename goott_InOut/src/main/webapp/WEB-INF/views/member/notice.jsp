@@ -13,7 +13,7 @@ $(function(){
 		
 	
 		
-			document.meminfo.action = "./noticesupport.do";
+			document.meminfo.action = "#";
 			document.meminfo.method = "get";
 			document.meminfo.submit();
 	});
@@ -85,7 +85,7 @@ $(function(){
             <div class="row">
             
                <c:forEach var="i" items="${list }">
-   <form name="resume" action="./selectresumebynum.do">
+
                   
                   
                   <div class="job-post-item p-4 d-block d-lg-flex align-items-center" style="width: 850px;">
@@ -104,12 +104,12 @@ $(function(){
                         </div>
                       
                       </div>
-                    <form action="./selectresumebynum.do">
+                    
                         <div>
                      	
-                         <span class="icon-my_location"><a href="./selectresumebynum.do?res_num=${i.res_num}"><span><span>이력서 제목 : ${i.res_title }</span></span></a></span>
+                         <span class="icon-my_location"><span><a href="./selectresumebynum.do?res_num=${i.res_num }"><span>이력서 제목 : ${i.res_title }</span></span></span></a>
                          </div>
-                        </form>
+              
                     </div>
 
                     <div class="one-forth ml-auto d-flex align-items-center mt-4 md-md-0">
@@ -125,7 +125,7 @@ $(function(){
                      <input type="submit" class="btn btn-primary py-2" value="공고보기" id="noticesup" />
                     </div>
                   </div>
-</form>
+
                   </c:forEach>
                   
                         
