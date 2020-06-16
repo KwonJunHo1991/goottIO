@@ -137,9 +137,45 @@ list-style: none;
 $(function(){
    $("#resumecommit").click(function(){
       
+	   
+	   var hobbyCheck = false; 
+	   	 var getMail = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/); 
+	   	 var getCheck= RegExp(/^[a-zA-Z0-9]{4,12}$/); 
+	   	 var getName= RegExp(/^[가-힣]+$/); 
+	   	 var fmt = RegExp(/^\d{6}[1234]\d{6}$/); 
+	   	 var birthdayCheck = RegExp(/^(19|20)[0-9]{2}(0[1-9]|1[1-2])(0[1-9]|[1-2][0-9]|3[0-1])$/);
+	   	var phonNumberCheck = RegExp(/^01[0179][0-9]{7,8}$/);
+	   	
+		if($("#res_title").val()==""){
+	  		alert("이력서 제목을 입력해주세요");
+	  		$("#res_title").focus(); 
+		}else if($("#res_school").val() == ""){
+	   		alert("고등학교 학교명을 입력해주세요"); 
+	   		$("#res_school").focus(); 
+	   		return false; 
+	   	  }else if (!$("input:checked[name='res_shiftpattern']").is(":checked") ){
+	   		alert("근무형태를 선택해주세요"); 
+	 		$("#res_shiftpattern").focus(); 
+	 		return; 
+		}else if (!$("input:checked[name='res_rep_area']").is(":checked") ){
+	   		alert("근무지역을 선택해주세요"); 
+	 		$("#res_rep_area").focus(); 
+ 		return; 
+		}else if (!$("input:checked[name='res_too']").is(":checked") ){
+	   		alert("직종을 선택해주세요"); 
+	 		$("#res_too").focus(); 
+	 		return; 
+		}else if (!$("input:checked[name='res_tob']").is(":checked") ){
+	   		alert("업종을 선택해주세요"); 
+	 		$("#res_tob").focus(); 
+	 		return; 
+		}else{
+	 		  document.frm1.action = "./insertresume.do";
+
+			}
 
       
-         document.frm1.action = "./insertresume.do";
+        
          document.frm1.method = "post";
          document.frm1.submit();
    });

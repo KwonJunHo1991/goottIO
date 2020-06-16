@@ -124,6 +124,7 @@ select{
                 	 <select class="form-control"  style="border:2px solid black; width: 450px; height: 50px; margin-right: 243px;" id="un_un" name="un_un">
 							 <option value="1">대학교(2,3학년)</option>
 							 <option value="2">대학교 4학년</option>
+							 <option value="3">대학원</option>
 					
 							                        
 					 </select>

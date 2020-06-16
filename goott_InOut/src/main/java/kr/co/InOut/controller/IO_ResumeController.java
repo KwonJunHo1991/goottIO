@@ -140,6 +140,8 @@ public class IO_ResumeController {
 		List<IO_UniversityDTO> unione = rdao.selectOneUniBynum(dto.getRes_num());
 		model.addAttribute("unione", unione);
 		
+		IO_ResumeDTO onelist = rdao.selectOneResumeByNum(dto.getRes_num());
+		model.addAttribute("onelist", onelist);
 		
 		return "/member/myresume";
 	}
@@ -205,6 +207,8 @@ public class IO_ResumeController {
 		IO_ResumeDTO onelist = rdao.selectOneResumeByNum(dto.getRes_num());
 		model.addAttribute("onelist", onelist);
 		
+		List<IO_UniversityDTO> unione = rdao.selectOneUniBynum(dto.getRes_num());
+		model.addAttribute("unione", unione);
 		
 		return "/member/myresume";
 	}

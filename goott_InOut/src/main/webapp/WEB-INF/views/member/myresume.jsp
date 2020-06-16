@@ -266,16 +266,29 @@ $(function(){
                 </tr>
                 
                 
-                
+                <c:forEach var="unione" items="${unione }">
                
                 <tr>
-                   <td class="td2"></td>
-                   <td class="td">value</td>
-                   <td class="td2"></td>
-                   <td class="td">value</td>
-                   <td class="td2">value</td>
+                   <td class="td2">${unione.un_stdate }~${unione.un_enddate }        </td>
+                   
+                   
+                   <td class="td">
+                   <c:choose>
+                  <c:when test="${unione.un_enddatesub eq 1}">졸업</c:when> 
+                  <c:when test="${unione.un_enddatesub eq 1}">재학중</c:when>
+                   <c:when test="${unione.un_enddatesub eq 1}">자퇴</c:when>
+                   <c:when test="${unione.un_enddatesub eq 1}">휴학</c:when>
+                   </c:choose>
+                   </td> 
+                   
+                   
+                   
+                   
+                   <td class="td2">${unione.un_name }</td>
+                   <td class="td">${unione.un_majordept }</td>
+                   <td class="td2">${unione.un_grade }</td>
                 </tr>
-         
+      		</c:forEach>
              </table>
          
              
