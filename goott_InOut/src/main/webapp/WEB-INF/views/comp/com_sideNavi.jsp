@@ -288,10 +288,10 @@ $(document).ready(function () {
         </li>
         <li class="lnb_menu">
             <a href="../company/pay.do" class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>결제 하기</strong> <i class="sri_lnb_icon ic_new"></i></a>
-        </li>
+<!--         </li>
 		     <li class="lnb_menu">
             <a href="../board/SearchComp.do" class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>기업 검색</strong> <i class="sri_lnb_icon ic_new"></i></a>
-        </li>
+        </li> -->
     </ul>
 </nav>         
         <ul class="items">

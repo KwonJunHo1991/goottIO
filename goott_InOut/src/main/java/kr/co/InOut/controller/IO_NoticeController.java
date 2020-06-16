@@ -192,8 +192,9 @@ public class IO_NoticeController {
 		
 		se.removeAttribute("applyStatus");
 		IO_Comp_BasicDTO dto = (IO_Comp_BasicDTO)se.getAttribute("loginComp");
-		maindao.selectCountApplyStatus(dto.getComp_id());
+		int b = maindao.selectCountApplyStatus(dto.getComp_id());
 		
+		se.setAttribute("applyStatus", b);
 		
 		return "comp/redirectVolunteerList";
 	}

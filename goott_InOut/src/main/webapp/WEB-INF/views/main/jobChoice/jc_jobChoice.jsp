@@ -747,9 +747,59 @@
 					</div> -->
 
 					<!-- end -->
-				</div>
+<%-- 				</div>
 				<jsp:include page="./jc_sideNavi.jsp"></jsp:include>
+			</div> --%>
+				</div>
+			
+		      <div class="main_sidebar">
+		        <div class="row justify-content-center pb-3">
+		          <div class="col-md-12 heading-section ftco-animate">
+		            <h2 class="mb-4">오늘의 추천공고</h2>
+		          </div>
+		        </div>
+		        <div class="sidebar-box ftco-animate">
+		        	<div class="">
+			        	<a href="#" class="company-wrap"><img src= "<c:url value="/resources/images/company-1.jpg"/>" class="img-fluid" alt="Colorlib Free Template"></a>
+			        	<div class="text p-3">
+			        		<h3><a href="${ranList[0].notice_num }">${ranList[0].notice_title }</a></h3>
+			        		<p><span class="number">${ranList[0].notice_num }</span> <span>${ranList[0].comp_name }</span></p>
+			        	</div>
+		        	</div>
+		        </div>
+		        <div class="sidebar-box ftco-animate">
+		        	<div class="">
+			        	<a href="${ranList[1].notice_num }" class="company-wrap"><img src="<c:url value="/resources/images/company-2.jpg"/>" class="img-fluid" alt="Colorlib Free Template"></a>
+			        	<div class="text p-3">
+					        	
+					        		<h3><a href="#">${ranList[1].notice_title }</a></h3>
+					        	
+			        		<p><span class="number">${ranList[1].notice_num }</span> <span>${ranList[1].comp_name }</span></p>
+			        	</div>
+			        </div>
+		        </div>
+		        <div class="sidebar-box ftco-animate">
+		        	<div class="">
+			        	<a href="${ranList[2].notice_num }" class="company-wrap"><img src="<c:url value="/resources/images/company-3.jpg"/>" class="img-fluid" alt="Colorlib Free Template"></a>
+			        	<div class="text p-3">
+			        		<h3><a href="#">${ranList[2].notice_title }</a></h3>
+			        		<p><span class="number">${ranList[2].notice_num }</span> <span>${ranList[2].comp_name }</span></p>
+			        	</div>
+			        </div>
+		        </div>
+		        <div class="sidebar-box ftco-animate">
+		        	<div class="">
+			        	<a href="${ranList[3].notice_num }" class="company-wrap"><img src="<c:url value="/resources/images/company-4.jpg"/>"class="img-fluid" alt="Colorlib Free Template"></a>
+			        	<div class="text p-3">
+			        		<h3><a href="#">${ranList[3].notice_title }</a></h3>
+			        		<p><span class="number">${ranList[3].notice_num }</span> <span>${ranList[3].comp_name }</span></p>
+			        	</div>
+			        </div>
+		        </div>
+		      </div>
 			</div>
+
+
 				<div class="row mt-5">
 					<div class="col text-center">
 						<div class="block-27">

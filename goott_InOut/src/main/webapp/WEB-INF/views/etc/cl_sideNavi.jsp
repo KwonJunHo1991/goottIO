@@ -276,30 +276,27 @@ $(document).ready(function () {
         <li class="lnb_menu">
             <a href="../main/main.do" class="li_menu_a" data-track_event=""><strong>홈</strong> <i class="sri_lnb_icon ic_new"></i></a>
         </li>
-        <li class="lnb_menu">
-            <a href="../board/boardSearch.do" class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>취준진담</strong> <i class="sri_lnb_icon ic_new"></i></a>
-        </li>
+   
+   
         <li class="li_menu">
             <a class="li_menu_a" data-track_event="section|lnb|salaries|lnb1310"><strong>기업연구소</strong><span class="sri_lnb_icon arrow"></span></a> <!-- WMG-25293 -->
             <ul class="li_menu_hide">
-                <li><a href="../board/boardSearch.do" class="track_event" data-track_event="section|lnb|salaries|lnb1311">취준고민</a></li>
-                <li><a href="../board/boardSearch.do" class="track_event" data-track_event="section|lnb|salaries|lnb1314">취준뉴스<i class="sri_lnb_icon ic_new"></i></a></li>
-                <li><a href="../board/boardSearch.do" class="track_event" data-track_event="section|lnb|salaries|lnb1312">이력서 무료 다운</a></li>
+                <li><a href="../board/boardSearch.do" class="track_event" data-track_event="section|lnb|salaries|lnb1311">취준고민/취준진담</a></li>
                 <li><a href="../board/boardCharCheck.do" class="track_event" data-track_event="section|lnb|salaries|lnb1313">글자수 체크</a></li>
+            </ul>
+        </li>
 
-            </ul>
-        </li>
-        <li class="li_menu">
-            <a class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>고객센터</strong><span class="sri_lnb_icon arrow"></span></a> <!-- WMG-25293 -->
+        
+         <li class="li_menu">
+            <a class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>고객센터</strong><span class="sri_lnb_icon arrow"></span></a> 
             <ul class="li_menu_hide">
-                <li><a href="/zf_user/salaries/total-salary/list" class="track_event" data-track_event="section|lnb|salaries|lnb1331">도움말</a></li>
-                <li><a href="/zf_user/salaries/company/enterprise-list" class="track_event" data-track_event="section|lnb|salaries|lnb1332&quot;">자주묻는질문</a></li>
-                <li><a href="/zf_user/salaries/industry/service-list" class="track_event" data-track_event="section|lnb|salaries|lnb1333">공지사항</a></li>
-                <li><a href="/zf_user/salaries/1000/starting-list" class="track_event" data-track_event="section|lnb|salaries|lnb1334">이벤트</a></li>
-                <li><a href="/zf_user/salaries/total-salary/faq" class="track_event" data-track_event="section|lnb|salaries|lnb1335">약관</a></li>
+                <li><a href="../board/faqPer.do" class="track_event" data-track_event="section|lnb|salaries|lnb1331">자주묻는질문</a></li>
+                
+                <!-- <li><a href="/zf_user/salaries/industry/service-list" class="track_event" data-track_event="section|lnb|salaries|lnb1333">취업가이드</a></li> -->
+                
             </ul>
         </li>
-        <li class="li_menu">
+   <!--     <li class="li_menu">
             <a class="li_menu_a" data-track_event="section|lnb|salaries|lnb1340"><strong>기업 큐레이션</strong><span class="sri_lnb_icon arrow"></span></a>
             <ul class="li_menu_hide">
                                         <li>
@@ -334,8 +331,17 @@ $(document).ready(function () {
                         </li>
                         
                                     </ul>
+        </li> -->
+         <li class="lnb_menu">
+            <a href="../main/local.do" class="li_menu_a" data-track_event=""><strong>지역별</strong> <i class="sri_lnb_icon ic_new"></i></a>
         </li>
-        <li class="li_menu">
+         <li class="lnb_menu">
+            <a href="../main/job.do" class="li_menu_a" data-track_event=""><strong>직업별</strong> <i class="sri_lnb_icon ic_new"></i></a>
+        </li>
+         <li class="lnb_menu">
+            <a href="../main/job.do" class="li_menu_a" data-track_event=""><strong>산업별</strong> <i class="sri_lnb_icon ic_new"></i></a>
+        </li>
+<!--         <li class="li_menu">
             <a class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"  ><strong>지역별</strong><span class="sri_lnb_icon arrow"></span></a>
             <ul class="li_menu_hide">
                 <li><a  href="../main/local.do" class="track_event" data-track_event="section|lnb|salaries|lnb1415" >서울</a></li>
@@ -366,7 +372,7 @@ $(document).ready(function () {
                 <li><a  href="../main/job.do" class="track_event" onmousedown="try{n_trackEvent('section_lnb', 'jobarchive' , 'hr-magazine', 'news');}catch(e){}">기관·협회</a></li>
             </ul>
         </li>
-    </ul>
+ -->    </ul>
 </nav>         
         <ul class="items">
         

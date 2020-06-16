@@ -202,7 +202,7 @@ $(function() {
 				            <div class="tab-content p-4" id="v-pills-tabContent">
 
 				              <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
-				              	<form action="#" class="search-job">
+				              	<form action="../main/job.do" class="search-job">
 				              		<div class="row no-gutters">
 				            			<div class="col-md mr-md-2">
 				              				<div class="form-group">
@@ -863,35 +863,37 @@ $(function() {
 		        	<div class="">
 			        	<a href="#" class="company-wrap"><img src= "<c:url value="/resources/images/company-1.jpg"/>" class="img-fluid" alt="Colorlib Free Template"></a>
 			        	<div class="text p-3">
-			        		<h3><a href="#">Company Company</a></h3>
-			        		<p><span class="number">500</span> <span>Open position</span></p>
+			        		<h3><a href="${ranList[0].notice_num }">${ranList[0].notice_title }</a></h3>
+			        		<p><span class="number">${ranList[0].notice_num }</span> <span>${ranList[0].comp_name }</span></p>
 			        	</div>
 		        	</div>
 		        </div>
 		        <div class="sidebar-box ftco-animate">
 		        	<div class="">
-			        	<a href="#" class="company-wrap"><img src="<c:url value="/resources/images/company-2.jpg"/>" class="img-fluid" alt="Colorlib Free Template"></a>
+			        	<a href="${ranList[1].notice_num }" class="company-wrap"><img src="<c:url value="/resources/images/company-2.jpg"/>" class="img-fluid" alt="Colorlib Free Template"></a>
 			        	<div class="text p-3">
-			        		<h3><a href="#">Facebook Company</a></h3>
-			        		<p><span class="number">700</span> <span>Open position</span></p>
+					        	
+					        		<h3><a href="#">${ranList[1].notice_title }</a></h3>
+					        	
+			        		<p><span class="number">${ranList[1].notice_num }</span> <span>${ranList[1].comp_name }</span></p>
 			        	</div>
 			        </div>
 		        </div>
 		        <div class="sidebar-box ftco-animate">
 		        	<div class="">
-			        	<a href="#" class="company-wrap"><img src="<c:url value="/resources/images/company-3.jpg"/>" class="img-fluid" alt="Colorlib Free Template"></a>
+			        	<a href="${ranList[2].notice_num }" class="company-wrap"><img src="<c:url value="/resources/images/company-3.jpg"/>" class="img-fluid" alt="Colorlib Free Template"></a>
 			        	<div class="text p-3">
-			        		<h3><a href="#">IT Programming INC</a></h3>
-			        		<p><span class="number">700</span> <span>Open position</span></p>
+			        		<h3><a href="#">${ranList[2].notice_title }</a></h3>
+			        		<p><span class="number">${ranList[2].notice_num }</span> <span>${ranList[2].comp_name }</span></p>
 			        	</div>
 			        </div>
 		        </div>
 		        <div class="sidebar-box ftco-animate">
 		        	<div class="">
-			        	<a href="#" class="company-wrap"><img src="<c:url value="/resources/images/company-4.jpg"/>"class="img-fluid" alt="Colorlib Free Template"></a>
+			        	<a href="${ranList[3].notice_num }" class="company-wrap"><img src="<c:url value="/resources/images/company-4.jpg"/>"class="img-fluid" alt="Colorlib Free Template"></a>
 			        	<div class="text p-3">
-			        		<h3><a href="#">IT Programming INC</a></h3>
-			        		<p><span class="number">700</span> <span>Open position</span></p>
+			        		<h3><a href="#">${ranList[3].notice_title }</a></h3>
+			        		<p><span class="number">${ranList[3].notice_num }</span> <span>${ranList[3].comp_name }</span></p>
 			        	</div>
 			        </div>
 		        </div>
