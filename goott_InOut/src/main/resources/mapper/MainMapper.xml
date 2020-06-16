@@ -85,9 +85,22 @@
 
 <!-- 인재검색 해보자 -->
 
-<select id="selectSearchMember">
+<select id="selectSearchMember" resultType="ResumeDTO">
+	
+		select * from io_resume
+		<trim prefix="where" prefixOverrides="AND">
+			<if test=""> res_total_carrer </if>
+			<if test="">and board_type = #{board_type}</if>
+		</trim>
 	
 </select>
+
+<!-- 지원 대기중인 지원자 수  -->
+<select id="countApplyStatus" parameterType="String" resultType="int">
+	select count(*) from io_apply
+	where comp_id = #{comp_id} and apply_status = '지원';
+</select>
+
 
 
   </mapper>

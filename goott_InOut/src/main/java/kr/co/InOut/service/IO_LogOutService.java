@@ -8,6 +8,7 @@ public class IO_LogOutService {
 	
 	public void logOut(HttpSession se) {
 		se.removeAttribute("loginComp");
+		se.removeAttribute("applyStatus");
 //	se.setAttribute("loginComp", "");
 //		se.setAttribute("mem_id", "");
 		/*

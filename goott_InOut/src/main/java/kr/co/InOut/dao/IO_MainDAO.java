@@ -75,4 +75,9 @@ public class IO_MainDAO {
 	public IO_ResumeDTO selectOneReByNum(int res_num) {
 		return session.selectOne("selectOneResumeByNum",res_num);
 	}
+	
+	//지원 대기중인 지원자.
+	public int selectCountApplyStatus(String comp_id) {
+		return session.selectOne("countApplyStatus", comp_id);
+	}
 }
