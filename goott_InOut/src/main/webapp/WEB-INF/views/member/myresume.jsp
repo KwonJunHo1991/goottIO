@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
         <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+        <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -177,11 +178,11 @@ $(function(){
                        <c:choose>
                                              
                         <c:when test="${onelist.res_income eq 0}">회사 내규에 따름</c:when>
-       					<c:when test="${onelist.res_income eq 1}">2,000~3000만원</c:when>
-       					<c:when test="${onelist.res_income eq 2}"> 3000~4000만원</c:when>
-       					<c:when test="${onelist.res_income eq 3}">4000~5000만원</c:when>
+       					<c:when test="${onelist.res_income eq 1}">2,000~3,000만원</c:when>
+       					<c:when test="${onelist.res_income eq 2}">3,000~4,000만원</c:when>
+       					<c:when test="${onelist.res_income eq 3}">4,000~5,000만원</c:when>
        					<c:when test="${onelist.res_income eq 4}">5,000~6,000만원</c:when>
-       					<c:when test="${onelist.res_income eq 5}"> 6000만원 이상</c:when>
+       					<c:when test="${onelist.res_income eq 5}">6,000만원 이상</c:when>
        					<c:when test="${onelist.res_income eq 99}">면접후 결정</c:when>
        						
                         </c:choose>
@@ -269,7 +270,7 @@ $(function(){
                 <c:forEach var="unione" items="${unione }">
                
                 <tr>
-                   <td class="td2">${unione.un_stdate }~${unione.un_enddate }        </td>
+                   <td class="td2"><fmt:formatDate value="${unione.un_stdate}" pattern="YYYY-MM-dd"/>~<fmt:formatDate value="${unione.un_enddate}" pattern="YYYY-MM-dd"/> </td>
                    
                    
                    <td class="td">

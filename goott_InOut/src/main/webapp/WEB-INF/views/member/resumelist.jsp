@@ -99,7 +99,7 @@ height: 1500px;
             <div class="row">
             
                <c:forEach var="i" items="${list }">
-   <form name="resume" action="./selectresumebynum.do">
+   <form name="resume" action="./selectresumebynum.do" method="post">
                   
                   
                   <div class="job-post-item p-4 d-block d-lg-flex align-items-center" style="width: 850px; margin-left: 20px">
