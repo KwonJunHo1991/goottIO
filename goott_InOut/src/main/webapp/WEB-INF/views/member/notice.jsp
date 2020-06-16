@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -99,7 +100,7 @@ $(function(){
                       </div>
                       <div class="job-post-item-body d-block d-md-flex">
                       
-                        <div> <span>${i.apply_date }</span>
+                        <div> <span><fmt:formatDate value="${i.apply_date}" pattern="YYYY-MM-dd"/></span>
              
                         </div>
                       
@@ -107,7 +108,7 @@ $(function(){
                     
                         <div>
                      	
-                         <span class="icon-my_location"><span><a href="./selectresumebynum.do?res_num=${i.res_num }"><span>이력서 제목 : ${i.res_title }</span></span></span></a>
+                         <span class="icon-my_location"><span><a href="./selectresumebynum.do?res_num=${i.res_num }"><span>${i.res_title }</span></span></span></a>
                          </div>
               
                     </div>
