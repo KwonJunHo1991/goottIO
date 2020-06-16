@@ -56,7 +56,7 @@ $(function(){
 					<div class="area_title">
 
 						<div class="vix_state">
-							<a href="#" class="link_product">지금 바로 구매하기</a>
+							<a href="../company/pay.do" class="link_product">지금 바로 구매하기</a>
 						</div>
 						<p class="title">
 							<strong>프리미엄 채용서비스 MUST</strong>로<br>인재선발 한번에 해결하세요!
@@ -84,8 +84,8 @@ $(function(){
 							<c:forEach var="notice" items="${noticeList }" >
 							<ul>
 								
-								<input type="hidden" name="notice_num" value="${notice.notice_num }" />
 									<div class="info_recruit">
+								<input type="hidden" name="notice_num" value="${notice.notice_num }" />
 										<strong style="font-size: 30px;"> <a href="../company/noticeDetailMain.do?notice_num=${notice.notice_num }" class="title_real"> ${notice.notice_title }</a></strong>
 										<div class="date">
 											<dl>

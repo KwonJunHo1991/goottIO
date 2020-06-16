@@ -202,7 +202,7 @@ $(function() {
 				            <div class="tab-content p-4" id="v-pills-tabContent">
 
 				              <div class="tab-pane fade show active" id="v-pills-1" role="tabpanel" aria-labelledby="v-pills-nextgen-tab">
-				              	<form action="#" class="search-job">
+				              	<form action="../main/job.do" class="search-job">
 				              		<div class="row no-gutters">
 				            			<div class="col-md mr-md-2">
 				              				<div class="form-group">

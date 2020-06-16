@@ -202,12 +202,29 @@ public class IO_BoardController {
 	}
 	
 
-	   
+	//기업검색   
 	@RequestMapping(value = "/board/SearchComp.do")
 	public String searchComp() {
 	      return "/etc/cl_home_search";
 	   }
-	   
+	
+	//자주 묻는 질문
+	@RequestMapping(value = "/board/faqPer.do")
+	public String fapPer() {
+		return "help/h_help_faq_per";
+	}
+	//자주 묻는 질문
+	@RequestMapping(value = "/board/faqComp.do")
+	public String fapComp() {
+		return "help/h_help_faq_com";
+	}
+	
+	//취업 가이드
+	@RequestMapping(value = "/board/guidePer")
+	public String guidePer() {
+		return "help/h_guide_per_detail";
+	}
+	
 
 	
 }

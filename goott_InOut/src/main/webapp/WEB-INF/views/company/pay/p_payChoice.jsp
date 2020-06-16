@@ -351,7 +351,8 @@ margin-left: 450px;
 	</div>
    <jsp:include page="../../main/mainPage/loginPop.jsp"></jsp:include>
     <!-- END nav -->
-      <jsp:include page="../../etc/cl_sideNavi.jsp"></jsp:include>
+      <%-- <jsp:include page="../../etc/cl_sideNavi.jsp"></jsp:include> --%>
+       <jsp:include page="../../comp/com_sideNavi.jsp"></jsp:include>
 	<div class="main_Contents">
 		<div class="page_header">
 			<h2 class="title_real">InOut 이용권 구매</h2>
