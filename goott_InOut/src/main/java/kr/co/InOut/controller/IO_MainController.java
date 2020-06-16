@@ -36,7 +36,7 @@ public class IO_MainController {
 	}
 	
 	@RequestMapping(value= "/main/main.do")
-	public String mainPage(Model model) {
+	public String mainPage(Model model, HttpSession session) {
 		
 		
 		//플레티넘 공고
@@ -53,6 +53,13 @@ public class IO_MainController {
 		model.addAttribute("countComp", dao.countComp());
 		model.addAttribute("countMem", dao.countMem());
 		
+		//지원자 현황
+//		IO_Comp_BasicDTO compdto = (IO_Comp_BasicDTO)session.getAttribute("loginComp");
+//		
+//		if(compdto != null) {
+//			int a = dao.selectCountApplyStatus(compdto.getComp_id());
+//			model.addAttribute("applyCount", a);
+//		}
 		return "/main/mainPage/mp_mainPage";
 	}
 	
@@ -214,6 +221,8 @@ public class IO_MainController {
 		//기업 마이페이지로 
 		return "redirect:/main/main.do";
 	}
+	
+
 	
 
 	

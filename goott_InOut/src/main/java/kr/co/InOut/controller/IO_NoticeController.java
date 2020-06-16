@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import kr.co.InOut.dao.IO_MainDAO;
 import kr.co.InOut.dao.IO_NoticeDAO;
 import kr.co.InOut.dao.IO_Notice_PrcsDAO;
 import kr.co.InOut.dao.IO_Notice_QnaDAO;
@@ -58,6 +59,9 @@ public class IO_NoticeController {
 	public void setCbs(IO_CheckBoxService cbs) {
 		this.cbs = cbs;
 	}
+	
+	@Inject
+	IO_MainDAO maindao;
 	
 	// 새 공고 등록하는 창 들어가기
 	@RequestMapping(value = "/company/newNotice.do", method = RequestMethod.GET)
@@ -160,6 +164,10 @@ public class IO_NoticeController {
 		IO_Comp_BasicDTO dto = (IO_Comp_BasicDTO)session.getAttribute("loginComp");
 		List<IO_NoticeDTO> list = dao.selectAllNotice(dto.getComp_num());
 		model.addAttribute("noticeList", list);
+		
+		//지원 대기중 카운트
+		model.addAttribute("applyStatus",maindao.selectCountApplyStatus(dto.getComp_id()));
+		
 		return "comp/noticeList";
 	}
 	
@@ -174,13 +182,19 @@ public class IO_NoticeController {
 	// 지원자 상태 변경하기
 	@RequestMapping(value = "/company/volunteerStatusEdit.do")
 	public String volunteerStatusEdit(@RequestParam("notice_num")Integer notice_num, @RequestParam("apply_status")String apply_status, 
-			@RequestParam("apply_num")Integer apply_num, Model model) {
+			@RequestParam("apply_num")Integer apply_num, Model model,HttpSession se) {
 		IO_ApplyDTO a = new IO_ApplyDTO();
 		a.setApply_num(apply_num);
 		a.setApply_status(apply_status);
 		a.setNotice_num(notice_num);
 		model.addAttribute("notice_num", notice_num);
 		dao.updateOneVolunteerStatusByApplyNum(a);
+		
+		se.removeAttribute("applyStatus");
+		IO_Comp_BasicDTO dto = (IO_Comp_BasicDTO)se.getAttribute("loginComp");
+		maindao.selectCountApplyStatus(dto.getComp_id());
+		
+		
 		return "comp/redirectVolunteerList";
 	}
 }
