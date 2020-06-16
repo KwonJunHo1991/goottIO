@@ -491,7 +491,7 @@ background-image: url("<c:url value="resources/images/person_6.jpg"/>");
 						</div>
 					</div>
 				</div>
-				<div class="col-md-12">
+<!-- 				<div class="col-md-12">
 					<div class="team d-md-flex p-4 bg-white">
 						<div class="img_person" id="img_person_2"
 						></div>
@@ -580,7 +580,7 @@ background-image: url("<c:url value="resources/images/person_6.jpg"/>");
 							</p>
 						</div>
 					</div>
-				</div>
+				</div> -->
 			</div>
 			<div class="row mt-5">
 				<div class="col text-center">

@@ -45,7 +45,7 @@ $(function(){
     <!-- END nav -->
 
 
-	<div id="sri_section" style="margin-top: 100px; margin-left: 100px;">
+	<div id="sri_section" style="margin-top: 100px; margin-left: 300px;">
 
  <jsp:include page="../comp/com_sideNavi.jsp"></jsp:include>
 		<div id="content" class="basic_wide vix_main fixed">
@@ -63,20 +63,7 @@ $(function(){
 						</p>
 
 					</div>
-					<ul class="vix_info">
-						<li class="vix_item"><strong class="title_info">블라인드
-								채용</strong>
-							<p class="txt_info">NCS블라인드 채용보다 간단하게! 공정한 인재선발 블라인드 채용</p></li>
-						<li class="vix_item2"><strong class="title_info">협업
-								평가</strong>
-							<p class="txt_info">지원자 평가가 쉬워진다. 평가자를 초대하여 함께 평가하세요.</p></li>
-						<li class="vix_item3"><strong class="title_info">평가지
-								설계</strong>
-							<p class="txt_info">평가 기준 통일을 원한다면? 평가지 설계 후 함께 평가하세요.</p></li>
-						<li class="vix_item4"><strong class="title_info">합격자
-								관리</strong>
-							<p class="txt_info">합격자 이력서 제출 이제 그만! 합격자 적정 연봉 분석 제공은 덤!</p></li>
-					</ul>
+
 				</div>
 				<div id="tab_main" class="tab_main">
 					<ul class="tabListBar" data-fixed="fixed">
@@ -84,9 +71,7 @@ $(function(){
 							class="inTab"
 							onclick="pushDataLayer('ga_lead','Home_Tapmenu-all-recruit', 'all-recruit');"><span>전체
 									채용정보</span></a></li>
-						<li id="pass_tab"><a href="#" type="button" class="inTab"
-							onclick="pushDataLayer('ga_lead','Home_Tapmenu-acceptance-manage', 'acceptance-manage');"><span>합격자
-									관리</span></a></li>
+
 						<li id="new_notice_tab"><a href="./newNotice.do" type="button" class="inTab"	>
 						<span>공고 등록</span></a></li>
 					</ul>
@@ -94,35 +79,7 @@ $(function(){
 				<section id="inner_content_list" class="tabpanel">
 					<h2 class="blind">전체 채용정보</h2>
 					<div class="wrap_list_recruit">
-						<div class="wrap_filter">
-							<div class="area_left">
-								<span class="item"> <select class="inpSelTxt" id=""
-									name="list_type">
-										<option value="all" selected="">채용유형 전체</option>
-										<option value="bbs">속보채용 전체</option>
-										<option value="rtc001">일반채용</option>
-										<option value="rtc002">자사양식</option>
-										<option value="rtc003">블라인드</option>
-								</select>
-								</span> <span class="item"> <select class="inpSelTxt" id=""
-									name="mode">
-										<option value="entire" selected="">채용상태 전체</option>
-										<option value="ing">진행중 공고보기</option>
-										<option value="standby">대기중 공고보기</option>
-										<option value="incomplete">미완성 공고보기</option>
-										<option value="end">마감된 공고보기</option>
-								</select>
-								</span>
-							</div>
-							<div class="area_right">
-								<span class="item"><button type="button"
-										class="orderBtn btn_new" data-order_type="">최근등록일순</button></span> <span
-									class="item"><button type="button" class="orderBtn "
-										data-order_type="closing_dt">마감일순</button></span> <span class="item"><button
-										type="button" class="orderBtn " data-order_type="read_cnt">조회수순</button></span>
-							</div>
-						</div>
-						<!-- 전체 채용정보 목록 -->
+												<!-- 전체 채용정보 목록 -->
 						<div class="wrap_list" style="overflow-y:scroll;">
 							<c:forEach var="notice" items="${noticeList }" >
 							<ul>
@@ -154,14 +111,8 @@ $(function(){
 									</div>
 										<a href="./volunteerList.do?notice_num=${notice.notice_num }"><input type="button" id="showVolunteer" value="지원자 보기" /></a>
 										<a href="./editNotice.do?notice_num=${notice.notice_num }"><input type="button" id="editNotice" value="공고 수정" /></a>
-									<div class="area_message list_etc">
-										<div class="txt_message message_type6">
-											마감된 공고입니다. 동일한 공고를 진행하시려면 복사를 눌러 등록하세요.&nbsp;<a href=""
-												class="link"></a>
-										</div>
+									<div class="area_message list_etc" style="min-height: 2px;">
 										<div class="recruit_etc">
-											<a href="#" class="report" data-uilayer-btn="modal_report">채용
-												보고서</a>
 										</div>
 									</div>
 								</ul>
@@ -181,31 +132,10 @@ $(function(){
 								<button type="button" style="margin-left: 480px;" class="btnSizeM colorWhite btn_down">
 									 <span class="ico_down">등록하기</span>
 								</button></a>
-								<div class="inpSel sel_sort">
-									<select id="" name="pageCount" title="리스트 개수">
-										<option value="10">10개씩 보기</option>
-										<option value="20" selected="">20개씩 보기</option>
-										<option value="30">30개씩 보기</option>
-										<option value="40">40개씩 보기</option>
-										<option value="50">50개씩 보기</option>
-									</select>
-								</div>
+						
 							</div>
 
-							<form id="recruit_search_form">
-								<div class="area_search">
-									<div class="inpSel">
-										<select name="search_key" id="s_search_key">
-											<option value="title" label="공고제목">공고제목</option>
-											<option value="manager_nm" label="담당자명">&gt;담당자명</option>
-										</select>
-									</div>
-									<input type="text" name="search_value" id="s_search_value"
-										value="" class="inpTypo" placeholder="입력해주세요">
-									<button type="submit" class="btnSizeM colorBlue"
-										id="search_btn">검색</button>
-								</div>
-							</form>
+
 
 							<ul class="area_notice">
 								<li>· 마감된 채용은 <span class="point_color">'연장’ 또는 ‘복사’</span>기능으로
@@ -229,7 +159,7 @@ $(function(){
 
 			<!-- snb 영역 -->
 			<!-- 메인 snb -->
-			<div id="sri_snb" class="snb">
+			<!-- <div id="sri_snb" class="snb">
 				<button type="button" class="btn_search" id="candidate_search_btn"
 					data-uilayer-btn="modal_talent">후보자검색</button>
 				<ul class="snb_menu">
@@ -317,7 +247,7 @@ $(function(){
 
 
 			</div>
-
+ -->
 
 		</div>
 
