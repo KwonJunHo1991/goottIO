@@ -1,5 +1,6 @@
 package kr.co.InOut.controller;
 
+import java.awt.Window;
 import java.security.Provider.Service;
 import java.util.List;
 
@@ -12,6 +13,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -38,7 +40,7 @@ public class IO_LoginController {
 	
 	
 	//로그인화면
-	@RequestMapping("/member/login.do")
+	@RequestMapping(value = "/member/login.do")
 	public String login() {
 		return "/member/login";
 		
@@ -47,7 +49,7 @@ public class IO_LoginController {
 	}
 	
 	//2 로그인처리
-	@RequestMapping("/member/loginCheck.do")
+	@RequestMapping(value = "/member/loginCheck.do")
 	public ModelAndView loginCheck(Model model, @ModelAttribute IO_MemberDTO dto, HttpSession session) {
 		boolean result = io_memberservice.loginCheck(dto, session);
 		ModelAndView mav = new ModelAndView();
@@ -64,13 +66,13 @@ public class IO_LoginController {
 		if(result == true ) { //로그인 성공
 			mav.setViewName("redirect:/main/main.do");
 
-			mav.addObject("msg", "success");
+			
 		}else { // 로그인 실패
 			//로그인 jsp로 이동
 			
 			
 			mav.setViewName("/member/login");
-			mav.addObject("msg", "failure");
+			
 			
 			
 		

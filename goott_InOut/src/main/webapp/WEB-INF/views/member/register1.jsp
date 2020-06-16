@@ -399,7 +399,7 @@ $(function(){
           var fmt = RegExp(/^\d{6}[1234]\d{6}$/); 
 
          if($("#mem_id").val() == ""){
-            alert("아이디 입력해주세용"); 
+            alert("아이디 입력해주세요"); 
             $("#mem_id").focus(); 
             return false; 
            }if($("#mem_pw").val() == ""){
@@ -407,7 +407,7 @@ $(function(){
               $("#mem_pw").focus(); 
               return false;
             }else if($("#mem_email").val()==""){
-              alert("이메일일를  입력해주세요");
+              alert("이메일을  입력해주세요");
            $("#mem_email").focus();
            return false;
         }else if($("#mem_name").val()==""){
@@ -648,10 +648,9 @@ $(function() {
                   style="border-right: 1px solid #a3a3a3; width: 76px; height: 32px;">
                      *이메일</label> <input type="text" placeholder="이메일 입력해주세요"
                   class="EmailInput" id="mem_email" name="mem_email"
-                  style="border: 0px; margin-left: 30px; width: 250px;" /> <input
-                  type="button" value="인증"
-                  style="border: 1px solid #a3a3a3; float: rigth;" /> <input
-                  type="hidden" value="이메일주소를 다시 확인해주세요" /></li>
+                  style="border: 0px; margin-left: 30px; width: 250px;" /> 
+                   
+                 <input type="hidden" value="이메일주소를 다시 확인해주세요" /></li>
                <li class="Email_li"><label for=""
                   style="border-right: 1px solid #a3a3a3; width: 76px; height: 32px; ">*이름</label>
                   <input type="text" id="mem_name" name="mem_name"
