@@ -94,7 +94,7 @@ height: 1500px;
       
       </ul>
       
-      <span style="margin-left: 40px;">총{n개}</span>
+      <span style="margin-left: 40px;"></span>
          <div class="container">
             <div class="row">
             

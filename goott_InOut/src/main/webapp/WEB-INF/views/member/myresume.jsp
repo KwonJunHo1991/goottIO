@@ -53,6 +53,9 @@ word-break: break-word;
    font-weight: bold;
    
    }
+   *{
+   	list-style: none;
+   }
 </style>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -63,7 +66,7 @@ $(function(){
 
 		
 			document.adduni.action = "./gouniversity.do";
-			document.adduni.method = "get";
+			document.adduni.method = "post";
 			document.adduni.submit();
 	});
 });
@@ -75,7 +78,7 @@ $(function(){
 	
 		
 			document.addcar.action = "./gocarrer.do";
-			document.addcar.method = "get";
+			document.addcar.method = "post";
 			document.addcar.submit();
 	});
 });
@@ -86,7 +89,7 @@ $(function(){
 	
 		
 			document.meminfo.action = "./self_intro.do";
-			document.meminfo.method = "get";
+			document.meminfo.method = "post";
 			document.meminfo.submit();
 	});
 });
@@ -102,16 +105,29 @@ $(function(){
 
 
 <div style="width: 1000px; height:1500px; background-color: white; margin: auto; padding: 50px 0px 0px 100px; margin-top: 30px; ">
- <c:forEach var="i" items="${onelist}"> 
+ 
 
 
 
-<h3 class="title"> ${i.res_title } </h3>
+<h3 class="title"> ${onelist.res_title } </h3>
 <br />
 <hr style="width: 900px; margin-right: 100px;"/>
 
 <div class="my_data">
-            <span style="font-weight: bold; font-size: 20px;">${sessionScope.mem_name }</span>&nbsp;&nbsp;<span style="font-family: 나눔스퀘어; font-size: 15px;">${sessionScope.mem_birth }&nbsp;|&nbsp;</span><span style="font-family: 나눔스퀘어; font-size: 15px;">${sessionScope.mem_sex }&nbsp;|&nbsp;</span><span>${sessionScope.mem_seekwokr}</span>
+            <span style="font-weight: bold; font-size: 20px;">${sessionScope.mem_name }</span>&nbsp;&nbsp;<span style="font-family: 나눔스퀘어; font-size: 15px;">${sessionScope.mem_birth }&nbsp;|&nbsp;</span>
+            
+            <span style="font-family: 나눔스퀘어; font-size: 15px;">
+
+          		 <c:choose>                 
+                         	<c:when test="${sessionScope.mem_sex eq 1}">남자</c:when>
+       						<c:when test="${sessionScope.mem_sex eq 2}">여자</c:when>  
+             	</c:choose>
+            
+            </span>
+            
+
+            
+            
             <ul class="myaddress" style="padding-left: 0px;">
                 <li class="li"><span style="font-weight: bold;">이메일 :</span> ${sessionScope.mem_email }</li><br />
                 <li class="li"><span style="font-weight: bold; font-size: 15px;">전화번호 : </span>${sessionScope.mem_phone }</li> <br />
@@ -126,25 +142,47 @@ $(function(){
                  <ul style="padding-left: 0px;">
                     <li class="li2" >
                        <p style="margin-left: 60px;"><strong>학력사항</strong></p>
-                       <span style="margin-left: 20px; padding-left: 45px; "> ${i.res_school} </span>
+                       <span style="margin-left: 10px; padding-left: 45px; "> ${onelist.res_school} </span>
                     </li>
                     <li class="li2">
-                       <p style="margin-left: 75px;"><strong>경력사항</strong></p>
-                       <span style="margin-left: 50px; padding-left: 45px; "> ${i.res_seekwork} </span>
+                       <p style="margin-left: 55px;"><strong>경력사항</strong></p>
+                       
+                       <span style="margin-left: 28px; padding-left: 45px; ">
+                       
+                       <c:choose>
+                                             
+                         <c:when test="${onelist.res_total_career eq 0}">신입</c:when>
+       					<c:when test="${onelist.res_total_career eq 1}">1년</c:when>
+       					<c:when test="${onelist.res_total_career eq 2}">2년</c:when>
+       					<c:when test="${onelist.res_total_career eq 3}">3년</c:when>
+       					<c:when test="${onelist.res_total_career eq 4}">4년</c:when>
+       					<c:when test="${onelist.res_total_career eq 5}">5년</c:when>
+       					<c:when test="${onelist.res_total_career eq 99}">면접후 결정</c:when>
+       						
+                        </c:choose>
+                       
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        </span>
                     </li>
                     <li class="li2">
                        <p style="margin-left: 55px; padding: 0px;"><strong>희망연봉</strong></p>
                      
-                       <span style="margin-left: 35px;  ">
+                       <span style="margin-left: 35px;">
                        <c:choose>
                                              
-                         <c:when test="${i.res_income eq 0}">회사 내규에 따름</c:when>
-       					<c:when test="${i.res_income eq 1}">2,000~3000만원</c:when>
-       					<c:when test="${i.res_income eq 2}"> 3000~4000만원</c:when>
-       					<c:when test="${i.res_income eq 3}">4000~5000만원</c:when>
-       					<c:when test="${i.res_income eq 4}">5,000~6,000만원</c:when>
-       					<c:when test="${i.res_income eq 5}"> 6000만원 이상</c:when>
-       					<c:when test="${i.res_income eq 99}">면접후 결정</c:when>
+                        <c:when test="${onelist.res_income eq 0}">회사 내규에 따름</c:when>
+       					<c:when test="${onelist.res_income eq 1}">2,000~3000만원</c:when>
+       					<c:when test="${onelist.res_income eq 2}"> 3000~4000만원</c:when>
+       					<c:when test="${onelist.res_income eq 3}">4000~5000만원</c:when>
+       					<c:when test="${onelist.res_income eq 4}">5,000~6,000만원</c:when>
+       					<c:when test="${onelist.res_income eq 5}"> 6000만원 이상</c:when>
+       					<c:when test="${onelist.res_income eq 99}">면접후 결정</c:when>
        						
                         </c:choose>
                         </span>
@@ -157,29 +195,29 @@ $(function(){
                     
                    
                     <li class="li2">
-                       <p style="margin-left: 20px;"><strong>희망근무지/근무형태</strong></p>
+                       <p style="margin-left: 17px;"><strong>희망근무지/근무형태</strong></p>
                        <span style="margin-left: 35px;  "> 
                        
                        	 <c:choose>
-                          <c:when test="${i.res_rep_area eq 1}">구로구</c:when>
-                          <c:when test="${i.res_rep_area eq 2}">마포구</c:when>
-                          <c:when test="${i.res_rep_area eq 3}">동대문구</c:when>
-                          <c:when test="${i.res_rep_area eq 4}">송파구</c:when>
-                          <c:when test="${i.res_rep_area eq 5}">동작구</c:when>
-                          <c:when test="${i.res_rep_area eq 6}">용산구</c:when>
-                          <c:when test="${i.res_rep_area eq 7}">안양시</c:when>
-                          <c:when test="${i.res_rep_area eq 8}">일산</c:when>
-                          <c:when test="${i.res_rep_area eq 9}">군포시</c:when>
-                        <c:when test="${i.res_rep_area eq 10}">금천구</c:when>
-      		 			<c:when test="${i.res_rep_area eq 11}">용인시</c:when>
-						<c:when test="${i.res_rep_area eq 12}">양평시</c:when>
-		 				<c:when test="${i.res_rep_area eq 13}">남구</c:when>
- 						<c:when test="${i.res_rep_area eq 14}">달서구</c:when>
- 						<c:when test="${i.res_rep_area eq 15}">달성군</c:when>
- 						<c:when test="${i.res_rep_area eq 16}">동구</c:when>
- 						<c:when test="${i.res_rep_area eq 17}">북구</c:when>
- 						<c:when test="${i.res_rep_area eq 18}">중구</c:when>
- 					<c:when test="${i.res_rep_area eq 19}">대덕구</c:when>
+                          <c:when test="${onelist.res_rep_area eq 1}">구로구</c:when>
+                          <c:when test="${onelist.res_rep_area eq 2}">마포구</c:when>
+                          <c:when test="${onelist.res_rep_area eq 3}">동대문구</c:when>
+                          <c:when test="${onelist.res_rep_area eq 4}">송파구</c:when>
+                          <c:when test="${onelist.res_rep_area eq 5}">동작구</c:when>
+                          <c:when test="${onelist.res_rep_area eq 6}">용산구</c:when>
+                          <c:when test="${onelist.res_rep_area eq 7}">안양시</c:when>
+                          <c:when test="${onelist.res_rep_area eq 8}">일산</c:when>
+                          <c:when test="${onelist.res_rep_area eq 9}">군포시</c:when>
+                        <c:when test="${onelist.res_rep_area eq 10}">금천구</c:when>
+      		 			<c:when test="${onelist.res_rep_area eq 11}">용인시</c:when>
+						<c:when test="${onelist.res_rep_area eq 12}">양평시</c:when>
+		 				<c:when test="${onelist.res_rep_area eq 13}">남구</c:when>
+ 						<c:when test="${onelist.res_rep_area eq 14}">달서구</c:when>
+ 						<c:when test="${onelist.res_rep_area eq 15}">달성군</c:when>
+ 						<c:when test="${onelist.res_rep_area eq 16}">동구</c:when>
+ 						<c:when test="${onelist.res_rep_area eq 17}">북구</c:when>
+ 						<c:when test="${onelist.res_rep_area eq 18}">중구</c:when>
+ 					<c:when test="${onelist.res_rep_area eq 19}">대덕구</c:when>
 	
                        </c:choose>
                        
@@ -191,13 +229,13 @@ $(function(){
                        <span style="margin-left: 5px;  ">
                        
       				<c:choose>
-      				<c:when test="${i.res_shiftpattern eq 0}">정규직</c:when>
-						<c:when test="${i.res_shiftpattern eq 1}">정규직</c:when>
-						<c:when test="${i.res_shiftpattern eq 2}">교육생</c:when>
-						<c:when test="${i.res_shiftpattern eq 3}">별정직</c:when>
-						<c:when test="${i.res_shiftpattern eq 4}">파트</c:when>
-						<c:when test="${i.res_shiftpattern eq 5}">전임</c:when>
-						<c:when test="${i.res_shiftpattern eq 6}">계약직</c:when>
+      				<c:when test="${onelist.res_shiftpattern eq 0}">정규직</c:when>
+						<c:when test="${onelist.res_shiftpattern eq 1}">정규직</c:when>
+						<c:when test="${onelist.res_shiftpattern eq 2}">교육생</c:when>
+						<c:when test="${onelist.res_shiftpattern eq 3}">별정직</c:when>
+						<c:when test="${onelist.res_shiftpattern eq 4}">파트</c:when>
+						<c:when test="${onelist.res_shiftpattern eq 5}">전임</c:when>
+						<c:when test="${onelist.res_shiftpattern eq 6}">계약직</c:when>
 
 	
                       </c:choose>
@@ -205,7 +243,7 @@ $(function(){
                         </span>
                     </li>
                     <li class="li3">
-                       <p style="margin-left: 60px;"><strong>포트폴리오</strong></p>
+                       <p style="margin-left: 50px;"><strong>포트폴리오</strong></p>
                        <span style="margin-left: 50px; padding-left: 45px; "></span>
                     </li>
                  </ul>
@@ -226,6 +264,10 @@ $(function(){
                    <td class="td1">전공</td>
                    <td class="td1">학점</td>
                 </tr>
+                
+                
+                
+               
                 <tr>
                    <td class="td2"></td>
                    <td class="td">value</td>
@@ -239,25 +281,38 @@ $(function(){
              
              <form name = adduni >
              <input type="hidden" name="mem_id" id="mem_id" value="${sessionScope.mem_id }"/>
-             <input type="hidden" name="res_num" id = "res_num" value="${i.res_num }"/>
+             <input type="hidden" name="res_num" id = "res_num" value="${onelist.res_num }"/>
              
              
+            
+            
              <button style="width: 85px; height: 35px; float: right; background-color: #e3e3e3; border-radius: 3px; color: black; border: 1px solid gray;" id = "AddUni"><span style="font-family: 나눔스퀘어; font-weight: bold;" >등록/추가</span></button>
+         
           </form>
           
           
           
           </div>
         <div style="width: 900px; margin-left: 0px; margin-top: 30px;">
-             <h3><strong style="font-size: 25px;">경력</strong> <span style="color: red;">신입 </span><span>|</span><span style="color:red;"> ${i.res_shiftpattern} </span></h3>
-             
+             <h3><strong style="font-size: 25px;">경력</strong> <span style="color: red;">
+                  				<c:choose>
+      					<c:when test="${onelist.res_total_career eq 0}">신입</c:when>
+       					<c:when test="${onelist.res_total_career eq 1}">1년</c:when>
+       					<c:when test="${onelist.res_total_career eq 2}">2년</c:when>
+       					<c:when test="${onelist.res_total_career eq 3}">3년</c:when>
+       					<c:when test="${onelist.res_total_career eq 4}">4년</c:when>
+       					<c:when test="${onelist.res_total_career eq 5}">5년</c:when>
+       					<c:when test="${onelist.res_total_career eq 99}">면접후 결정</c:when>
 
+	
+                      </c:choose>
+        
+             </span><span>|</span><span style="color:red;"> 
              
-
              
-             
-          
-           
+    
+             </span></h3>
+                        
              <table style="width: 900px; height: 150px; border: 0px solid #a3a3a3; text-align: center; font-family: 나눔스퀘어;">
                 <tr>
                    <td class="td1"></td>
@@ -269,12 +324,12 @@ $(function(){
                 <tr>
                    <td rowspan="2">value</td>
                    <td>dd</td>
-                   <td>data</td>
+                   <td></td>
                    <td>value</td>
                    <td>value</td>
                 </tr>
                 <tr>
-                   <td colspan="4">1</td>
+                   <td colspan="4"></td>
                 </tr>
                 
              </table>
@@ -283,70 +338,13 @@ $(function(){
                 <form name = addcar >
              <input type="hidden" name="mem_id" id="mem_id" value="${sessionScope.mem_id }"/>
              <input type="hidden" name="res_num" id = "res_num" value="${i.res_num }"/>
-              <button style="width: 85px; height: 35px; float: right; background-color: #e3e3e3; border-radius : 3px; color: black; border: 1px solid gray" id = "AddCar"><span style="font-family: 나눔스퀘어; font-weight: bold;" >등록/추가</span></button>
-             </form>
+             <button style="width: 85px; height: 35px; float: right; background-color: #e3e3e3; border-radius : 3px; color: black; border: 1px solid gray" id = "AddCar"><span style="font-family: 나눔스퀘어; font-weight: bold;" >등록/추가</span></button>
+             	</form>
              
-        </div> 
-  
-        </c:forEach>
-         <!-- <div style="width: 900px; margin-left: 0px; margin-top: 50px;">
-         <h3><strong style="font-size: 25px;">자기소개서</strong> <span> |</span><span style="color:red;"> 자기소개서 안함</span></h3>
-         
-         <a href="p_introduce.jsp"><button style="width: 85px; height: 35px; float: right; background-color: #f7f7f7; color: black; border: 0px;"id=""><span style="font-family: 나눔스퀘어; font-weight: bold;">등록/추가</span></button></a>
-         
-         <talbe>
-            <tr>
-               <td></td>
-               <td></td>
-               <td></td>
-               <td></td>
-               <td></td>
-               <td></td>
-            </tr>
-         </talbe>
-         </div> -->
-            
- </div>
- 
- 
- 
-       <!-- <div style="width: 900px; margin-left: 0px; margin-top: 50px; ">
-             <h3><strong style="font-size: 25px;">자기소개서</strong> <span> |</span><span style="color:red;"></span></h3>
-             
-             <input type="text" name="res_title" id="res_title" placeholder="이력서 제목을 입력하세요 (100자리까지 입력가능)" style="width: 900px; height: 90px; border: 5px solid black; text-align: center;" />
-             
-             <div style="width: 900px; height: 500px;">
-             
-             <button style=" width: 100px; text-align: center; background-color: #eaeaea; margin-left: 10px;">자기소개서 항목 예시</button><button style=" width: 100px; text-align: center; background-color: #eaeaea; border-left: 1px; ">공채 Real자소서</button>
-             <p class=".">각 학목명은 변경할 수 있으며(최대 100자), 항목은 총 10개까지 작성 가능합니다.</p><br />
-             <strong>[작성한 자소서로 입사지원을 하려면 어떻게 하나요?]</strong>
-             <p>자소스를 작성 후 이력서 등록/수정 > [내 자소서 불러오기]를 통해 이력서에 추가 지원하시면 됩니다.]</p>
-             
-             <input type="text" style="width: 800px; height:50px; border: 1px 1px 0px 1px solid #a3a3a3; " />
-             <textarea rows="" cols="" placeholder="자소서 내용 " style="width: 800px; height: 250px;">
-             
-             
-             
-             </textarea>
-            <input type="submit" style="float: right;"/>             
-             </div>
-             
-       </div> -->
- 
- 
- 
-     
-
-
-
-
-
-
-
-</div>
-
-
-
+       		 		</div> 
+ 				</div>
+      		</div> 
+		</div>
 
 </body>
 
