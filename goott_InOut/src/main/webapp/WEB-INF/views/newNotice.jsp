@@ -1902,7 +1902,9 @@ body {
 											<option value="2">성남시</option>
 											<option value="3">수원시</option>
 									</select>
+
 									</span> <span class="manager_part"> <select name="notice_comp_adrs1"
+
 										id="form-control1_1" class="form-control"
 										style="width: 300px; height: 50px;">
 											<option value="999999">지역 선택</option>
@@ -2311,7 +2313,9 @@ body {
 
 			<div class="step_recruits" id="frmHiring">
 				<div class="frm_body frm_hiring">
+
 					<div class="itemss" id="jobCategory" style="display: flex;">
+
 						<div class="area_tit">
 							<strong class="tit">공고 대표 직무</strong>
 						</div>
@@ -2339,7 +2343,6 @@ body {
 									</div>
 
 									<div class="area_category_select">
-
 
 								
 											<div class="area_scroll category_step01">
@@ -2381,6 +2384,7 @@ body {
 										</div>
 
 										<!-- 두번째 카테고리1번대 -->
+
 
 
 										<div  id="1000" style="display: table-cell;">
@@ -2931,7 +2935,6 @@ body {
 
 										</div>
 										<!-- area_category_select end -->
-
 
 
 

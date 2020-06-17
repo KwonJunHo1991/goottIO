@@ -153,16 +153,45 @@ $(document).ready(function () {
 			<!-- 맨 위 목록 시작 -->
 			<div class="intro_company_review">
 				::before
+				 <c:choose>      
+                      <c:when test="${sessionScope.loginComp !=null}">
 				<strong class="tit_query">
-					<!-- 이름 ooo님 -->님,
+					${sessionScope.loginComp.comp_id }님,
+					<span class="">취준생들의 고민을 확인하세요</span>
+				</strong>
+				<div class="mid_txt tipping">
+					::before
+					나의 키워드
+					<button type="button">글</button>
+					확인하기
+				</div>
+                       </c:when>
+                           <c:when test="${sessionScope.mem_id !=null }">
+				<strong class="tit_query">
+					 ${sessionScope.mem_id }님,
 					<span class="">어떤 점이 궁금하신가요?</span>
 				</strong>
 				<div class="mid_txt tipping">
 					::before
 					나의 키워드
-					<button type="button">로그인</button>
+					<a href="../board/boardInsert.do"><button type="button">글</button></a>
+					작성하기
+				</div>
+					      </c:when>
+                              	
+                              	<c:otherwise>
+				<strong class="tit_query">	 
+					<a href="../member/login.do"><span class="" style="color: white;">로그인후에 질문해 주세요</span></a>
+				</strong>
+								<div class="mid_txt tipping">
+					::before
+					나의 키워드
+					<a href="../member/login.do"><button type="button">로그인</button></a>
 					해서 더 정확한 추천을 받아보세요
 				</div>
+                     </c:otherwise>
+                              	
+                              </c:choose>  
 			<div id="content">	
 				
 				<!-- @@@@@@@@@@@@@@@@@@목록 보이기 시작@@@@@@@@@@@@@@@@@@@@@@@@@@ -->
