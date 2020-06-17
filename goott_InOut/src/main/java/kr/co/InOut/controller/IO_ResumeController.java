@@ -210,6 +210,10 @@ public class IO_ResumeController {
 		List<IO_UniversityDTO> unione = rdao.selectOneUniBynum(dto.getRes_num());
 		model.addAttribute("unione", unione);
 		
+		//이력서 번호로 회원 정보 가져오기.
+		IO_MemberDTO memdto = mdao.selectMembyID(onelist.getMem_id());
+		model.addAttribute("memdto", memdto);
+		
 		return "/member/myresume";
 	}
 	

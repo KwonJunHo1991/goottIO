@@ -382,63 +382,11 @@ border: 0px;
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script type="text/javascript">
 $(function(){
-      $("#btn").click(function(){
- 
-    	  var comp_id = $("#comp_id").val(); 
-    	  var comp_pw = $("#comp_pw").val();
-    	  var comp_inf_period = $("#comp_inf_period").val();
-    	  var comp_num = $("#comp_num").val();
-    	  var comp_name = $("#comp_name").val();
-    	  var comp_username = $("#comp_username").val();
-    	  var comp_usertel = $("#comp_usertel").val();
-    	  var comp_inf_period = $("#comp_inf_period").val();
-    	  var mem_add = $("#mem_add").val();
-    	  var mem_add1 = $("#mem_add1").val();
-    	  
-      document.form1.action = "./register.do";
-      document.form1.method = "post"
-      document.form1.submit();
-         
-      });
+
 });
 $(function() {
 
-    var id = $(".Idinput").val();
-    
-    $()
-    
- 
-    $('#comp_id').keyup(
-          function() {
-          
-             // console.log(this.value);
-             for (var i = 0; i < this.value.length; i++) {
-
-                var ch = this.value.charAt(i);
-                //console.log(ch)
-
-                if (!(ch >= '0' && ch <= '9')
-                      && !(ch >= 'a' && ch <= 'z')
-                      && !(ch >= 'A' && ch <= 'Z')) {
-
-                   //console.log("영어 대소문자, 숫자만")
-
-                   $('#idcheck').text("영어 대소문자와 숫자만 입력 가능합니다.")
-             
-                   break;
-                   
-                } else {
-                   $('#idcheck').text("")
-
-                }
-                //if end
-             }//for end
-          });//아이디 유효성 end
-          
-          
-       /* 약관동의 체크박스 */
-
-    
+  
     $('#allcheckbox').click(function(){
        if ($("#allcheckbox").is(":checked") == true) {
           $('#pcheckbox').prop('checked', this.checked);
@@ -458,23 +406,30 @@ $(function() {
        }
     });
 
-
-    $("#btn").click(function() {
-       if ($("#allcheckbox").is(":checked")) {
-          $(location).attr('href', 'mainpage.do');
-          /* 요기 수정해야합니다 */
-
-       } else if($("pcheckbox").is(":checked") && $("#pcheckbox1").is(":checked")){
-          $(location).attr('href', 'mainpage.do');
-
-          
-       }else{
-          alert("모든약관에 동의해주세요!");
-       }
-    });
     /* 채크박스 정리끝 */  
     
-
+    $(function(){
+    	$("#btnCheck").click(function(){
+    	
+    		console.log("ㅇㅇ");
+    		$.ajax({
+    			url : "./idchkcomp.do",
+    			type : "post",
+    			dataType : "json",		
+    			data: {'comp_id' : $('#comp_id').val()},
+    			success : function(data){
+    				if(data == 1){
+    					console.log(data);
+    					alert("중복된 아이디입니다.");
+    				}else{
+    					$("#btnCheck").attr("value", "Y");
+    					alert("사용가능한 아이디입니다.");
+    				}
+    			}
+    		});
+    		
+    	});
+    });
     
     
     
@@ -488,7 +443,7 @@ $(function() {
 <body>
 
 	
-	<form action="" method="post">
+	<form action="#" method="post">
 	<div>
    <jsp:include page="main/mainPage/mp_naviBar.jsp"></jsp:include>
    </div> 
@@ -548,7 +503,7 @@ $(function() {
          <ul class="fieldset_ul">
             <li class="fieldset_li1" style="border-bottom: 1px solid #a3a3a3; margin-top: 0px; margin-bottom: 0px; padding-left :30px; padding: 0px;">
                <input type="text" placeholder="*아이디" class="Idinput" id="comp_id" name="comp_id"/>
-               <input type="button" id="btnCheck" name="confirm_id"  value="중복 체크"  onclick="confirmId()"/>
+               <input type="button" id="btnCheck" id="btnCheck"  value="중복 체크"  />
                
             
                

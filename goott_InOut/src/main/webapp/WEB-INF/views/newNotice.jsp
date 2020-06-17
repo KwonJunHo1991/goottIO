@@ -1256,7 +1256,7 @@ body {
 									<input type="text" name="" id="list_selected_item"
 										class=" inpTypo sizeL inp_keyword"
 										style="border: none; height: 45px;" title="업종명"
-										placeholder="업종명을 입력하세요">
+										placeholder="업종명을 입력하세요" disabled="disabled">
 									<button type="button" class="btn_add btn btn-link btn_more_ly"
 										id="btn_cat_area">수정·추가하기</button>
 								</div>
@@ -2329,7 +2329,7 @@ body {
 								<input type="text" name="" id="list_selected_item2"
 									class=" inpTypo sizeL inp_keyword"
 									style="border: none; height: 45px;" 
-									placeholder="직무를 입력하세요">
+									placeholder="직무를 입력하세요" disabled="disabled">
 								<button type="button" class="btn_add btn btn-link btn_more_ly"
 									id="btn_cat_area2">수정·추가하기</button>
 							</div>

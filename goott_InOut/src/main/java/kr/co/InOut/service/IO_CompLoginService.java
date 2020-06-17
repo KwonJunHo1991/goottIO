@@ -27,4 +27,9 @@ public class IO_CompLoginService {
 		}
 		return result;
 	}
+	
+	//기업 아이디 중복체크
+	public IO_Comp_BasicDTO idChkComp(String comp_id)throws Exception{
+		return dao.idChkComp(comp_id);
+	}
 }

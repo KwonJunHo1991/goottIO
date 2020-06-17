@@ -541,7 +541,7 @@ $(document).ready(function () {
 	   
 	   var url = ("../company/noticeDetailJoin.do?notice_num="+<c:out value='${notice.notice_num }'/>);
        
-      window.open(url,"confirm","toolbar = no, location = no, status = np, menubar = no, width = 530, height=420, left=700, top=250, menubar =no, overflow-x:hidden,overflow-y:hidden ");
+      window.open(url,"confirm","toolbar = no, location = no, status = np, menubar = no, width = 560, height=450, left=700, top=250, menubar =no, overflow-x:hidden,overflow-y:hidden ");
 	   
    }
    

@@ -48,4 +48,9 @@ public class IO_Comp_BasicDAO {
 	public IO_Comp_Notice_InfoDTO selectOneCompNoticeInfoByCn(int comp_num) {
 		return ss.selectOne("selectOneCompNoticeInfoByCn", comp_num);
 	}
+	
+	
+	public IO_Comp_BasicDTO idChkComp(String comp_id)throws Exception{
+		return ss.selectOne("idChkComp", comp_id);
+	}
 }

@@ -381,71 +381,62 @@ border: 0px;
 $(function(){
       $("#btn").click(function(){
  
-    	  var mem_id = $("#mem_id").val(); 
-    	  var mem_pw = $("#mem_pw").val();
-    	  var mem_sex = $("#mem_sex").val();
-    	  var mem_email = $("#mem_email").val();
-    	  var mem_name = $("#mem_name").val();
-    	  var mem_birth = $("#mem_birth").val();
-    	  var mem_phone = $("#mem_phone").val();
-    	  var mem_sex = $("#mem_sex").val();
-    	  var mem_add = $("#mem_add").val();
-    	  var mem_add1 = $("#mem_add1").val();
-    	  
-    	  var hobbyCheck = false; 
-          var getMail = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/); 
-          var getCheck= RegExp(/^[a-zA-Z0-9]{4,12}$/); 
-          var getName= RegExp(/^[가-힣]+$/); 
-          var fmt = RegExp(/^\d{6}[1234]\d{6}$/); 
+    	  	var hobbyCheck = false; 
+         	var getMail = RegExp(/^[A-Za-z0-9_\.\-]+@[A-Za-z0-9\-]+\.[A-Za-z0-9\-]+/); 
+          	var getCheck= RegExp(/^[a-zA-Z0-9]{8,20}$/); 
+          	var getName= RegExp(/^[가-힣]+$/); 
+          	var fmt = RegExp(/^\d{6}[1234]\d{6}$/); 
+         
+        	var phonNumberCheck = RegExp(/^01[0179][0-9]{7,8}$/);
 
-         if($("#mem_id").val() == ""){
-            alert("아이디 입력해주세요"); 
-            $("#mem_id").focus(); 
-            return false; 
-           }if($("#mem_pw").val() == ""){
-              alert("비밀번호를 입력해주세요"); 
-              $("#mem_pw").focus(); 
-              return false;
+         	if($("#mem_id").val() == ""){
+            	alert("아이디 입력해주세요"); 
+            	$("#mem_id").focus(); 
+            	return false; 
+           	}if($("#mem_pw").val() == ""){
+              	alert("비밀번호를 입력해주세요"); 
+              	$("#mem_pw").focus(); 
+              	return false;
             }else if($("#mem_email").val()==""){
-              alert("이메일을  입력해주세요");
-           $("#mem_email").focus();
+              	alert("이메일을  입력해주세요");
+           		$("#mem_email").focus();
+          	 	return false;
+       	 	}else if($("#mem_name").val()==""){
+           		alert("이름을  입력해주세요");
+           		$("#mem_name").focus();
+           		return false;
+       	 	}else if($("#mem_birth").val()==""){
+           		alert("생년월일  입력해주세요");
+           		$("#mem_birth").focus();
+           	return false;
+        	}else if($("#mem_phone").val()==""){
+           		alert("연락처를  입력해주세요");
+           		$("#mem_phone").focus();
+           	return false;
+        	}else if($("#sample4_roadAddress").val()==""){
+           		alert("주소를  입력해주세요");
+           		$("#sample4_roadAddress").focus();
+           	return false;
+        	}else if($("#mem_add1").val()==""){
+           		alert("상세주소를  입력해주세요");
+           		$("#mem_add1").focus();
            return false;
-        }else if($("#mem_name").val()==""){
-           alert("이름을  입력해주세요");
-           $("#mem_name").focus();
-           return false;
-        }else if($("#mem_birth").val()==""){
-           alert("생년월일  입력해주세요");
-           $("#mem_birth").focus();
-           return false;
-        }else if($("#mem_phone").val()==""){
-           alert("연락처를  입력해주세요");
-           $("#mem_phone").focus();
-           return false;
-        }else if($("#sample4_roadAddress").val()==""){
-           alert("도로명주소를  입력해주세요");
-           $("#sample4_roadAddress").focus();
-           return false;
-        }else if($("#mem_add1").val()==""){
-           alert("도로명주소를  입력해주세요");
-           $("#mem_add1").focus();
-           return false;
-        }else if (!$("input:checked[id='pcheckbox']").is(":checked") ){
-            alert("약관동의해주세요"); 
-            $("#allcheckbox").focus(); 
+        	}else if (!$("input:checked[id='pcheckbox']").is(":checked") ){
+            	alert("약관동의해주세요"); 
+            	$("#allcheckbox").focus(); 
             return; 
-        }else if (!$("input:checked[id='pcheckbox1']").is(":checked") ){
-            alert("약관동의해주세요"); 
-            $("#allcheckbox").focus(); 
+        	}else if (!$("input:checked[id='pcheckbox1']").is(":checked") ){
+            	alert("약관동의해주세요"); 
+            	$("#allcheckbox").focus(); 
             return; 
-        }
-        else{
+        	}
+        		else{
             document.form1.action = "./register.do";
-       }
+       		}
     	  
     
-      document.form1.method = "post"
-      document.form1.submit();
+      		document.form1.method = "post"
+      		document.form1.submit();
          
       });
 });
@@ -454,7 +445,7 @@ $(function(){
 $(function(){
 	$("#btnCheck").click(function(){
 	
-		//console.log(mem_id);
+		
 		$.ajax({
 			url : "./idchk.do",
 			type : "post",

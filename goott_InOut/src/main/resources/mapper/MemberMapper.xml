@@ -109,7 +109,10 @@
   	
   	
   	
-  	
+  	<select id="selectMemById" resultType="MemberDTO">
+  		select * from io_member 
+  		where mem_id = #{mem_id}
+  	</select>
   	
   	
   	

@@ -285,53 +285,22 @@ $(document).ready(function () {
                 <li><a href="../board/boardCharCheck.do" class="track_event" data-track_event="section|lnb|salaries|lnb1313">글자수 체크</a></li>
             </ul>
         </li>
+  
+  
+        <li class="li_menu">
+            <a class="li_menu_a" data-track_event="section|lnb|salaries|lnb1310"><strong>도움말</strong><span class="sri_lnb_icon arrow"></span></a> <!-- WMG-25293 -->
+            <ul class="li_menu_hide">
+                <li><a href="../board/faqPer.do" class="track_event" data-track_event="section|lnb|salaries|lnb1311">자주 묻는 질문</a></li>
+                </ul>
+        </li>
 
         
-         <li class="li_menu">
-            <a class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"><strong>고객센터</strong><span class="sri_lnb_icon arrow"></span></a> 
-            <ul class="li_menu_hide">
-                <li><a href="../board/faqPer.do" class="track_event" data-track_event="section|lnb|salaries|lnb1331">자주묻는질문</a></li>
-                
-                <!-- <li><a href="/zf_user/salaries/industry/service-list" class="track_event" data-track_event="section|lnb|salaries|lnb1333">취업가이드</a></li> -->
-                
-            </ul>
+
+
+         <li class="lnb_menu">
+            <a href="../board/boardSearch.do" class="li_menu_a" data-track_event=""><strong>취준고민</strong> <i class="sri_lnb_icon ic_new"></i></a>
         </li>
-   <!--     <li class="li_menu">
-            <a class="li_menu_a" data-track_event="section|lnb|salaries|lnb1340"><strong>기업 큐레이션</strong><span class="sri_lnb_icon arrow"></span></a>
-            <ul class="li_menu_hide">
-                                        <li>
-                            <a href="/zf_user/company-info/sri-certification?seq=186" target="_blank" class="track_event" data-track_event="section|lnb|salaries|lnb1341">대기업<i class="sri_lnb_icon ic_window">
-                                    
-                                </i>
-                            </a>
-                        </li>
-                                                <li>
-                            <a href="/zf_user/company-info/sri-certification?seq=104" target="_blank" class="track_event" data-track_event="section|lnb|salaries|lnb1342">공기업<i class="sri_lnb_icon ic_window">
-                                   
-                                </i>
-                            </a>
-                        </li>
-                                                <li>
-                            <a href="/zf_user/company-info/sri-certification?seq=108" target="_blank" class="track_event" data-track_event="section|lnb|salaries|lnb1343">외국계기업<i class="sri_lnb_icon ic_window">
-                                   
-                                </i>
-                            </a>
-                        </li>
-                                                <li>
-                            <a href="/zf_user/company-info/sri-certification?seq=108" target="_blank" class="track_event" data-track_event="section|lnb|salaries|lnb1343">중견기업<i class="sri_lnb_icon ic_window">
-                                   
-                                </i>
-                            </a>
-                        </li>
-                                                <li>
-                            <a href="/zf_user/company-info/sri-certification?seq=108" target="_blank" class="track_event" data-track_event="section|lnb|salaries|lnb1343">스타트업<i class="sri_lnb_icon ic_window">
-                                   
-                                </i>
-                            </a>
-                        </li>
-                        
-                                    </ul>
-        </li> -->
+
          <li class="lnb_menu">
             <a href="../main/local.do" class="li_menu_a" data-track_event=""><strong>지역별</strong> <i class="sri_lnb_icon ic_new"></i></a>
         </li>
@@ -341,38 +310,7 @@ $(document).ready(function () {
          <li class="lnb_menu">
             <a href="../main/job.do" class="li_menu_a" data-track_event=""><strong>산업별</strong> <i class="sri_lnb_icon ic_new"></i></a>
         </li>
-<!--         <li class="li_menu">
-            <a class="li_menu_a" data-track_event="section|lnb|salaries|lnb1330"  ><strong>지역별</strong><span class="sri_lnb_icon arrow"></span></a>
-            <ul class="li_menu_hide">
-                <li><a  href="../main/local.do" class="track_event" data-track_event="section|lnb|salaries|lnb1415" >서울</a></li>
-                <li><a  href="../main/local.do" class="track_event" data-track_event="section|lnb|salaries|lnb1419">수원</a></li>
-                <li><a  href="../main/local.do" class="track_event" data-track_event="section|lnb|salaries|lnb1416">성남</a></li>
-
-            </ul>
-        </li>
-        <li class="li_menu">
-            <a class="li_menu_a"   data-track_event="section|lnb|jobarchive|lnb1401"><strong>직업별</strong><span class="sri_lnb_icon arrow"></span></a>
-            <ul class="li_menu_hide">
-                <li><a  href="../main/job.do" class="track_event" data-track_event="section|lnb|salaries|lnb1402">경영·사무</a></li>
-                <li><a href="../main/job.do" class="track_event" data-track_event="section|lnb|salaries|lnb1402">영업·고객상담</a></li>
-                <li><a href="../main/job.do" class="track_event" data-track_event="section|lnb|salaries|lnb1402">생산·제조</a></li>
-                <li><a href="../main/job.do" class="track_event" data-track_event="section|lnb|salaries|lnb1402">IT·인터넷</a></li>
-                <li><a href="../main/job.do" class="track_event" data-track_event="section|lnb|salaries|lnb1402">유통·무역</a></li>
-                <li><a href="../main/job.do" class="track_event" data-track_event="section|lnb|salaries|lnb1402">서비스</a></li>
-            </ul>
-        </li>
-        <li class="li_menu">
-            <a class="li_menu_a"  href="../main/job.do"><strong>산업별</strong><span class="sri_lnb_icon arrow"></span></a>
-            <ul class="li_menu_hide">
-                <li><a  href="../main/job.do" class="track_event" onmousedown="try{n_trackEvent('section_lnb', 'jobarchive' , 'hr-magazine', 'hr-magazine');}catch(e){}">서비스업</a></li>
-                <li><a  href="../main/job.do" class="track_event" onmousedown="try{n_trackEvent('section_lnb', 'jobarchive' , 'hr-magazine', 'hr-series');}catch(e){}">제조·화학</a></li>
-                <li><a  href="../main/job.do" class="track_event" onmousedown="try{n_trackEvent('section_lnb', 'jobarchive' , 'hr-magazine', 'labor-counsel');}catch(e){}">IT·웹·통신</a></li>
-                <li><a  href="../main/job.do" class="track_event" onmousedown="try{n_trackEvent('section_lnb', 'jobarchive' , 'hr-magazine', 'news');}catch(e){}">은행·금융업</a></li>
-                <li><a  href="../main/job.do" class="track_event" onmousedown="try{n_trackEvent('section_lnb', 'jobarchive' , 'hr-magazine', 'news');}catch(e){}">미디어·디자인</a></li>
-                <li><a  href="../main/job.do" class="track_event" onmousedown="try{n_trackEvent('section_lnb', 'jobarchive' , 'hr-magazine', 'news');}catch(e){}">기관·협회</a></li>
-            </ul>
-        </li>
- -->    </ul>
+    </ul>
 </nav>         
         <ul class="items">
         

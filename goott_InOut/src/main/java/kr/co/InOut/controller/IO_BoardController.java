@@ -90,7 +90,11 @@ public class IO_BoardController {
 		List<IO_BoardDTO> reTop5 = dao.selectReTop5();
 		model.addAttribute("reTop5", reTop5);
 		model.addAttribute("msg", msg);
-		//return "boardList";
+		
+		//최상위 3개
+	    List<IO_BoardDTO> midList = dao.selectRan8();
+	    model.addAttribute("midList", midList);
+	    
 		return "/etc/cl_qaa";
 	}
 	

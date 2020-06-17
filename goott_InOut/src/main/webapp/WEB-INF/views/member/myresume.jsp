@@ -100,12 +100,18 @@ $(function(){
 </script>
 
 </head>
-<body style="background-color: #eaeaea; border: 0px;">
+<body style=" border: 0px;">
+
+   <jsp:include page="../main/mainPage/mp_naviBar.jsp"></jsp:include>
+
+   
+   <jsp:include page="../main/mainPage/loginPop.jsp"></jsp:include>
+   
 
 
 
+<div style="width: 1000px; height:1500px; background-color: #F2F2F2; margin: auto; padding: 50px 0px 0px 35px; margin-top: 30px; ">
 
-<div style="width: 1000px; height:1500px; background-color: white; margin: auto; padding: 50px 0px 0px 100px; margin-top: 30px; ">
  
 
 
@@ -115,13 +121,13 @@ $(function(){
 <hr style="width: 900px; margin-right: 100px;"/>
 
 <div class="my_data">
-            <span style="font-weight: bold; font-size: 20px;">${sessionScope.mem_name }</span>&nbsp;&nbsp;<span style="font-family: 나눔스퀘어; font-size: 15px;">${sessionScope.mem_birth }&nbsp;|&nbsp;</span>
+            <span style="font-weight: bold; font-size: 20px;">${memdto.mem_name }</span>&nbsp;&nbsp;<span style="font-family: 나눔스퀘어; font-size: 15px;">${memdto.mem_birth }&nbsp;|&nbsp;</span>
             
             <span style="font-family: 나눔스퀘어; font-size: 15px;">
 
           		 <c:choose>                 
-                         	<c:when test="${sessionScope.mem_sex eq 1}">남자</c:when>
-       						<c:when test="${sessionScope.mem_sex eq 2}">여자</c:when>  
+                         	<c:when test="${memdto.mem_sex eq 1}">남자</c:when>
+       						<c:when test="${memdto.mem_sex eq 2}">여자</c:when>  
              	</c:choose>
             
             </span>
@@ -129,11 +135,11 @@ $(function(){
 
             
             
-            <ul class="myaddress" style="padding-left: 0px;">
-                <li class="li"><span style="font-weight: bold;">이메일 :</span> ${sessionScope.mem_email }</li><br />
-                <li class="li"><span style="font-weight: bold; font-size: 15px;">전화번호 : </span>${sessionScope.mem_phone }</li> <br />
-                <li class=""><span style="font-weight: bold; font-size: 15px;">핸드폰번호 : </span>${sessionScope.mem_phone }</li> <br />
-                <li class="li"><span style="font-weight: bold; font-size: 15px;">도로명 주소 : </span>${sessionScope.mem_add }&nbsp;&nbsp;&nbsp; <span style="font-weight: bold; font-size: 15px;">상세주소: </span>${sessionScope.mem_add1 }</li>
+            <ul class="myaddress" style="padding-left: 0px; height: 130px;">
+                <li class="li"><span style="font-weight: bold;">이메일 :</span> ${memdto.mem_email }</li><br />
+                <li class="li"><span style="font-weight: bold; font-size: 15px;">전화번호 : </span>${memdto.mem_phone }</li> <br />
+                <li class="li"><span style="font-weight: bold; font-size: 15px;">핸드폰번호 : </span>${memdto.mem_phone }</li> <br />
+                
             </ul>
             <br />
             <br />

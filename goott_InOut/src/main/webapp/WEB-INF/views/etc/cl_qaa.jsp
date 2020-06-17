@@ -201,16 +201,25 @@ $(document).ready(function () {
             
             <div class="bx-viewport" aria-live="polite" style="width: 100%; overflow: hidden; position: relative; height: 272px;">
             <ul class="list_company_review" style="width: 9215%; position: relative; transition-duration: 0.5s; transform: translate3d(-2384px, 0px, 0px);">
+          
+                      
+
             <li style="float: left; list-style: none; position: relative; width: 290px; margin-right: 8px;" class="bx-clone" aria-hidden="true">
                             <div class="cont_list ">
                             	
                                 <div class="info_list">
-                                    <em class="tit_review latest">최신질문</em>
+                                    <em class="tit_review latest">Hot</em>
                                     <p class="txt_query">취업상담 및 자괴감 </p>
                                     <span class="txt_state"><span class="job">모든 기업</span><span class="category dot">생산·제조</span></span>
                                     <a href="#" class="link_detail"><span class="blind">상세 페이지로 이동</span></a>
                                 </div>
                             </div>
+                            
+                            
+		                          
+                            
+                            
+                            
                         </li><li style="float: left; list-style: none; position: relative; width: 290px; margin-right: 8px;" class="bx-clone" aria-hidden="true">
                             <div class="cont_list ">
                                 <div class="info_list">
@@ -278,76 +287,55 @@ $(document).ready(function () {
                                 </div>
                             </div>
                         </li>
-                                                            <li style="float: left; list-style: none; position: relative; width: 290px; margin-right: 8px;" aria-hidden="false">
+                        
+                        
+                        
+                 <c:forEach var="b" items="${midList }">
+                       
+<!--           <li style="float: left; list-style: none; position: relative; width: 290px; margin-right: 8px;" aria-hidden="false">
                             <div class="cont_list ">
                                 <div class="info_list">
-                                    <em class="tit_review latest">최신질문</em>
+                                    <em class="tit_review latest">Hot</em>
                                     <p class="txt_query">amd 가 md로 승진할 수 있는 기회가 주어지나요?</p>
                                     <span class="txt_state"><span class="job">(주)버킷플레이스</span><span class="category dot">모든 직무</span></span>
                                     <a href="#" class="link_detail"><span class="blind">상세 페이지로 이동</span></a>
                                 </div>
                             </div>
-                        </li>
-                                            <li style="float: left; list-style: none; position: relative; width: 290px; margin-right: 8px;" aria-hidden="false">
+                        </li> -->
+                 <li style="float: left; list-style: none; position: relative; width: 290px; margin-right: 8px;" aria-hidden="false">
                             <div class="cont_list ">
                                 <div class="info_list">
-                                    <em class="tit_review latest">최신질문</em>
-                                    <p class="txt_query">취업상담 및 자괴감 </p>
-                                    <span class="txt_state"><span class="job">모든 기업</span><span class="category dot">생산·제조</span></span>
+                                    <em class="tit_review latest">Hot</em>
+                                    <p class="txt_query">${b.board_title } </p>
+                                    <span class="txt_state"><span class="job">	                        <c:choose>
+		                    	<c:when test="${b.board_category eq 1}">직무</c:when>
+		                    	<c:when test="${b.board_category eq 2}">조직문화</c:when>
+		                    	<c:when test="${b.board_category eq 3}">근무환경</c:when>
+		                    	<c:when test="${b.board_category eq 4}">급여 및 복지</c:when>
+		                    	<c:when test="${b.board_category eq 5}">자기개발</c:when>
+		                    	<c:when test="${b.board_category eq 6}">경영진</c:when>
+		                    	<c:when test="${b.board_category eq 7}">면접/자소서</c:when>
+		                    	<c:when test="${b.board_category eq 8}">이직/퇴사</c:when>
+		                    	<c:when test="${b.board_category eq 9}">기타</c:when>
+		                    </c:choose></span><span class="category dot"> <span></span>
                                     <a href="#" class="link_detail"><span class="blind">상세 페이지로 이동</span></a>
                                 </div>
                             </div>
+                            
+                            
                         </li>
+</c:forEach>      
                                             <li style="float: left; list-style: none; position: relative; width: 290px; margin-right: 8px;" aria-hidden="false">
                             <div class="cont_list ">
                                 <div class="info_list">
-                                    <em class="tit_review latest">최신질문</em>
+                                    <em class="tit_review latest">Hot</em>
                                     <p class="txt_query">이것만은 필수다! 하고 이력서에 적어야 할 부분이 있을까요?</p>
                                     <span class="txt_state"><span class="job">모든 기업</span><span class="category dot">IT·인터넷</span></span>
                                     <a href="#" class="link_detail"><span class="blind">상세 페이지로 이동</span></a>
                                 </div>
                             </div>
                         </li>
-                                            <li style="float: left; list-style: none; position: relative; width: 290px; margin-right: 8px;" aria-hidden="true">
-                            <div class="cont_list ">
-                                <div class="info_list">
-                                    <em class="tit_review latest">최신질문</em>
-                                    <p class="txt_query">25살 고졸입니다 ㅠ ㅠ </p>
-                                    <span class="txt_state"><span class="job">모든 기업</span><span class="category dot">디자인</span></span>
-                                    <a href="#" class="link_detail"><span class="blind">상세 페이지로 이동</span></a>
-                                </div>
-                            </div>
-                        </li>
-                                            <li style="float: left; list-style: none; position: relative; width: 290px; margin-right: 8px;" aria-hidden="true">
-                            <div class="cont_list ">
-                                <div class="info_list">
-                                    <em class="tit_review latest">최신질문</em>
-                                    <p class="txt_query">나이 23살  5 년차 경력</p>
-                                    <span class="txt_state"><span class="job">모든 기업</span><span class="category dot">생산·제조</span></span>
-                                    <a href="#" class="link_detail"><span class="blind">상세 페이지로 이동</span></a>
-                                </div>
-                            </div>
-                        </li>
-                                            <li style="float: left; list-style: none; position: relative; width: 290px; margin-right: 8px;" aria-hidden="true">
-                            <div class="cont_list ">
-                                <div class="info_list">
-                                    <em class="tit_review latest">최신질문</em>
-                                    <p class="txt_query">대학고민</p>
-                                    <span class="txt_state"><span class="job">모든 기업</span><span class="category dot">경영·사무</span></span>
-                                    <a href="#" class="link_detail"><span class="blind">상세 페이지로 이동</span></a>
-                                </div>
-                            </div>
-                        </li>
-                           <li style="float: left; list-style: none; position: relative; width: 290px; margin-right: 8px;" class="bx-clone" aria-hidden="true">
-                            <div class="cont_list ">
-                                <div class="info_list">
-                                    <em class="tit_review latest">최신질문</em>
-                                    <p class="txt_query">amd 가 md로 승진할 수 있는 기회가 주어지나요?</p>
-                                    <span class="txt_state"><span class="job">(주)버킷플레이스</span><span class="category dot">모든 직무</span></span>
-                                    <a href="#" class="link_detail"><span class="blind">상세 페이지로 이동</span></a>
-                                </div>
-                            </div>
-                        </li></ul></div>
+</ul></div>
 
                         </div>
             <div class="bx-controls bx-has-pager">
