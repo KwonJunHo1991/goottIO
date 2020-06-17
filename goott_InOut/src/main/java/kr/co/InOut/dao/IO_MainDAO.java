@@ -85,4 +85,10 @@ public class IO_MainDAO {
 	public List<IO_NoticeDTO> selectRan4Main(){
 		return session.selectList("selectRan4Main");
 	}
+	
+	//인재검색 해보자.
+	public List<IO_ResumeDTO> selectSearchMember(IO_ResumeDTO dto){
+		return session.selectList("selectSearchMember", dto);
+	}
+	
 }

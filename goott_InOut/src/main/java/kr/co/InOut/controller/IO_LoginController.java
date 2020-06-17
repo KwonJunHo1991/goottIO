@@ -65,12 +65,12 @@ public class IO_LoginController {
 		
 		if(result == true ) { //로그인 성공
 			mav.setViewName("redirect:/main/main.do");
-
+			model.addAttribute("msg","success");	
 			
 		}else { // 로그인 실패
 			//로그인 jsp로 이동
 			
-			
+			model.addAttribute("msg","failure");
 			mav.setViewName("/member/login");
 			
 			
