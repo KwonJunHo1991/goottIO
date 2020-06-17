@@ -56,6 +56,11 @@ public class IO_MemberDAOImple implements IO_MemberDAO{
 	}
 
 
+	public IO_MemberDTO selectMembyID(String mem_id) {
+		// TODO Auto-generated method stub
+		return sqlsession.selectOne("selectMemById", mem_id);
+	}
+
 
 
 

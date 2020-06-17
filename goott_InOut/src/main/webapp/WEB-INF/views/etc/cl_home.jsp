@@ -319,31 +319,7 @@
                 </li>
                         </ul>
 </div>    
-		<div class="news">
-		<h2 class="title"><strong>취업 뉴스</strong>를 확인해보세요</h2>
-		    <div class="tblType">
-		        <table>
-		            <caption class="blind">취업뉴스 게시판</caption>
-		            <colgroup>
-		                <col width="">
-		                <col width="107">
-		            </colgroup>
-		            <tbody>
 
-		            	<tr>
-		                	<td class="content_tit">
-		                    	<a href="#" title="<!-- 취업뉴스 제목 -->">
-		                        	취업뉴스 제목</a>
-		                    </td>
-		                    <td class="date">올린 날짜</td>
-		                </tr>
-
-		            </tbody>
-		        </table>
-		        <a href="#" target="_blank" class="link_more" title="취업뉴스 더보기" onmousedown="COMPANYLAB.gaEvent('roadmap', 'go-roadmap')" style="position: inherit;float: right;">더보기</a>
-		    </div>
-		    
-            </div>
             
         </div>
     </div>

@@ -46,7 +46,7 @@ $(function(){
     <!-- END nav -->
 
 
-	<div id="sri_section" style="margin-top: 100px; margin-left: 350px;">
+	<div id="sri_section" style="margin-top: 100px; margin-left: 250px;">
 
  <jsp:include page="../comp/com_sideNavi.jsp"></jsp:include>
 		<div id="content" class="basic_wide vix_main fixed">

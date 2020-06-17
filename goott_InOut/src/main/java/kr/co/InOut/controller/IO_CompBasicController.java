@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import kr.co.InOut.dao.IO_Comp_BasicDAO;
@@ -112,7 +113,27 @@ public class IO_CompBasicController {
 	// 공고내 기업정보 저장버튼 클릭시 마이페이지로
 	@RequestMapping(value = "company/comp_notice_infoOk.do")
 	public String compNoticeInfoOk(@ModelAttribute()IO_Comp_Notice_InfoDTO dto) {
-//		dao.insertOneCompNoticeInfo(dto);
+
 		return "comp_notice_infoOk";
 	}
+	
+	//기업아이디 중복체크
+		@ResponseBody
+		@RequestMapping(value = "/company/idchkcomp.do")
+		public int postIdCheckComp(HttpServletRequest req)throws Exception{
+
+			
+			String comp_id = req.getParameter("comp_id");
+			System.out.println(comp_id);
+			IO_Comp_BasicDTO idcheckcomp = dao.idChkComp(comp_id);
+			
+			int result = 0;
+			
+			if(idcheckcomp !=null) {
+				result = 1;
+			}
+			return result;
+			
+			
+		}
 }

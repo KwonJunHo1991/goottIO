@@ -151,7 +151,7 @@
 #real_contents {
 	width: 80%;
 	height: 100%;
-	margin-left: 700px;
+	margin-left: 500px;
 	padding-top: 105px;
 }
 /* 정규직 전환 가능 체크했을 때  색깔 변경*/
@@ -862,6 +862,12 @@ body {
 	background-color: #686868;
 	width: 225px;
 }
+
+#this_body{
+height: 500px
+width: 1200px;
+
+}
 </style>
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -1106,31 +1112,6 @@ body {
 							if ($("#res_title").val() == "") {
 								alert("이력서 제목을 입력해주세요");
 								$("#res_title").focus();
-							} else if ($("#res_school").val() == "") {
-								alert("고등학교 학교명을 입력해주세요");
-								$("#res_school").focus();
-								return false;
-							} else if (!$(
-									"input:checked[name='res_shiftpattern']")
-									.is(":checked")) {
-								alert("근무형태를 선택해주세요");
-								$("#res_shiftpattern").focus();
-								return;
-							} else if (!$("input:checked[name='res_rep_area']")
-									.is(":checked")) {
-								alert("근무지역을 선택해주세요");
-								$("#res_rep_area").focus();
-								return;
-							} else if (!$("input:checked[name='res_too']").is(
-									":checked")) {
-								alert("직종을 선택해주세요");
-								$("#res_too").focus();
-								return;
-							} else if (!$("input:checked[name='res_tob']").is(
-									":checked")) {
-								alert("업종을 선택해주세요");
-								$("#res_tob").focus();
-								return;
 							} else {
 								document.frm1.action = "./insertresume.do";
 
@@ -1722,7 +1703,7 @@ body {
 
 										<div class="area_data">
 											<span class="manager_name"> <input type="text"
-												name="mem_name" id="mem_name" class="inpTypo sizeL"
+												name="res_title" id="res_title" class="inpTypo sizeL"
 												title="회사 이름 입력" placeholder="이력서 제목을 입력하세요 (100자리까지 입력가능)"
 												maxlength="50" style="width: 600px;" />
 											</span>
@@ -1957,7 +1938,7 @@ body {
 
 				</div>
 				<div
-					style="width: 1000px; height: 1400px; background-color: white; margin-bottom: 40px; padding-left: 50px;">
+					style="width: 1000px; height: 1100px; background-color: white; margin-bottom: 40px; padding-left: 50px;">
 					<ul style="padding-left: 5px;">
 						<li class="inputli" style="border: 0px;"><label for=""
 							class="inputlavel" style="border: 0px;">근무형태</label>&nbsp;&nbsp;<strong
@@ -2029,7 +2010,7 @@ body {
 					<div id="locdiv8"
 								style="background-color: white; width: 1000px; height: 150px;  margin-left: 185px; margin-top: 11px;">
 							<div class="area_data" style="height: 50px;">
-								<span class="manager_name"> <select name="res_workarea"
+								<span class="manager_name"> <select name="res_workarea2"
 									id="form-control2" class="form-control"
 									style="width: 300px; height: 50px; margin-top: -30px;">
 										<option value="7">지역별</option>
@@ -2091,29 +2072,28 @@ body {
 
 							</div> <!-- 직종 div -->
 		<div class="step_recruits" id="frmHiring">
-				<div class="frm_body frm_hiring">
-					<div class="itemss" id="jobCategory">
-						<div class="area_tit" style="height: 100px; ">
-							<strong class="tit">직종</strong>
+				<div  id="this_body">
+					<div class="itemss" id="jobCategory" style="display: block; float: left;">
+						<div class="area_tit" style="height: 100px; display: block; float: left;">
+							<label for="" class="inputlavel" style="float: left;">직종</label>&nbsp;&nbsp;<strong class="inputstrong" style="float: left;">필수</strong> 
+							</label>
 						</div>
-						<!--                <div class="area_data">
-                  <input type="text" id="cat_add" name="res_rep_too" class="inpTypo sizeL add-part" placeholder="대표 직종/직업을 선택하세요" />
-                  <button type="button" id="btn_add" class="btn btn-primary">추가하기</button>
-               </div> -->
-						<div class="area_data" id="industry" style="margin-bottom: 20px;">
+
+						<div class="area_data" id="industry" style="margin-bottom: 20px; width: 600px; padding-right: 500px; ">
 							<div class="selected_item" id="industry_summary">
 
 								<input type="text" name="" id="list_selected_item2"
 									class=" inpTypo sizeL inp_keyword"
-									style="border: none; height: 45px;" 
-									placeholder="선호직종">
+									style="border: none; height: 45px; " 
+									placeholder="선호직종" disabled="disabled">
 								<button type="button" class="btn_add btn btn-link btn_more_ly"
 									id="btn_cat_area2">수정·추가하기</button>
+							</div>
 							</div>
 
 							<div class="wrap_layer">
 								<div class="layer_frm layer_add_industry"
-									id="industry_all_list2" style="">
+									id="industry_all_list2" style="margin-left: 170px;margin-top: 50px;">
 									<div class="area_keyword">
 										<div class="wrap_search" id="industry_auto_complete_wrap">
 										</div>
@@ -2722,21 +2702,24 @@ body {
 								<!-- wrap_layer end -->
 							</div>
 							<!-- 업종 div의 area_data end -->
-							
+</div>
+</div></div></li>
+						
+						
 
+<div class="itemss" >
+						<div class="area_tit" style="height: 100px; display: inline-table; margin-left: 30px;">
+							<label for="" class="inputlavel" style="float: left;">업종</label>&nbsp;&nbsp;<strong class="inputstrong" >필수</strong> 
+							</label>
+						</div>
 
-
-<div class="itemss">
-							<div class="area_tit">
-								<strong class="tit">업종</strong>
-							</div>
-							<div class="area_data" id="industry">
+						<div class="area_data" id="industry" style="margin-bottom: 20px; width: 600px; ">
 								<div class="selected_item" id="industry_summary">
 
 									<input type="text" name="" id="list_selected_item"
 										class=" inpTypo sizeL inp_keyword"
 										style="border: none; height: 45px;" title="업종명"
-										placeholder="업종명을 입력하세요">
+										placeholder="업종명을 입력하세요" disabled="disabled">
 									<button type="button" class="btn_add btn btn-link btn_more_ly"
 										id="btn_cat_area">수정·추가하기</button>
 								</div>
@@ -3339,31 +3322,26 @@ body {
 													</div>
 												</div>
 												<!-- 두번째 카테고리 끝 -->
-
+												</div></div></ul>
+		
+								<input type="button" value="이력서 저장" id="resumecommit"  class="btn btn-primary btn-lg" style="margin-right: 250px; margin-top: 80px;"/>
+								<div style="margin-top: 60px;">	
+								<jsp:include page="../main/mainPage/mp_footer.jsp"></jsp:include>
+								
+								</div> 
 											</div>
 											<!-- area_category_select end -->
-
+</div>
 
 
 										</div>
 										<!-- layer_frm layer_add_industry end -->
-									</div>
-									<!-- wrap_layer end -->
-								</div>
-								<!-- 업종 div의 area_data end -->
 
-							</div>
-							<!-- 업종 itemss end -->
-
-
-						</div>
 						<!-- frm_body frm_managers end -->
 
 </div></li>
 
 
-								<input type="button" value="이력서 저장" id="resumecommit"  class="btn btn-primary btn-lg"
-									 />
 						</div>
 												</div>
 

@@ -89,8 +89,20 @@
 	
 		select * from io_resume
 		<trim prefix="where" prefixOverrides="AND">
-			<if test="res_total_career != 100"> res_total_career =#{res_total_career}</if>
-			<if test="res_income != 100">and res_income =#{res_income}</if>
+			<if test="res_total_career != 100"> res_total_career =#{res_total_career} </if>
+			<if test="res_income != 100">and res_income =#{res_income} </if>
+			
+			<if test="res_rep_too == 1">and res_rep_too like '1__' </if>
+			<if test="res_rep_too == 2">and res_rep_too like '2__' </if>
+			<if test="res_rep_too == 3">and res_rep_too like '3__' </if>
+			<if test="res_rep_too == 4">and res_rep_too like '4__' </if>
+			<if test="res_rep_too == 11">and res_rep_too like '11__' </if>
+			<if test="res_rep_too == 12">and res_rep_too like '12__' </if>
+			
+			<if test="res_workarea ==1">and res_workarea like '101%' </if>
+			<if test="res_workarea ==2">and res_workarea in (102180,102190,102200,102210) </if>
+			<if test="res_workarea ==3">and res_workarea in (102220,102230,102240,102250,102260) </if>
+			
 		</trim>
 	
 </select>

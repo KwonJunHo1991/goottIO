@@ -96,7 +96,7 @@ margin-left: 550px;
     </div>
 </div><!-- //view_company_cont -->
 
-    <div class="view_company_write non_login">
+ <!--    <div class="view_company_write non_login">
         <div class="guide">
             해당질문은
             모든 기업・
@@ -110,7 +110,7 @@ margin-left: 550px;
             <em class="num_total">답변 </em>
         </div>
 
-     <div class="view_company_write non_login">
+     <div class="view_company_write non_login"> -->
  <!--답변작성하기 박스 --> 
  		<form action="ReBoardInsertOk.do"> 
  		
@@ -399,9 +399,7 @@ margin-left: 550px;
                 </div>
             </div>
         </div>
-                </div>
-           <jsp:include page="../main/mainPage/mp_footer.jsp"></jsp:include>
-        </div>
+
                      
     </div>
 	

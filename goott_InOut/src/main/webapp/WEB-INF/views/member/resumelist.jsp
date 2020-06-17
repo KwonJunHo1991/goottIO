@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -107,8 +108,10 @@ height: 1500px;
                       <div class="job-post-item-header align-items-center">
                       <input type="hidden" name="mem_id" value="${mem_id }" />
                       <input type="hidden" name="res_num" value="${i.res_num }"/>
-                      <td>${i.res_num }</td>
-                                 <span class="subadge">수정${i.res_career_date}</span>
+                 
+                                 <span class="subadge">최종 수정일 : <fmt:formatDate value="${i.res_career_date}" pattern="YYYY-MM-dd"/>
+                                 
+                                 </span>
                         <h2 class="mr-3 text-black"><a href="#">${i.res_title }</a></h2>
                       </div>
                       <div class="job-post-item-body d-block d-md-flex">
@@ -160,6 +163,6 @@ height: 1500px;
             </div>
         
       </section>
-              <jsp:include page="../main/mainPage/mp_footer.jsp"></jsp:include> 
+
 </body>
 </html>

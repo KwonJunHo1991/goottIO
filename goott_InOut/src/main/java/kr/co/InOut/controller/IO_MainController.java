@@ -102,12 +102,16 @@ public class IO_MainController {
 	@RequestMapping(value = "/main/findPerson.do")
 	public String findPerson(Model model,
 			@RequestParam(value = "res_total_carrer", required = false, defaultValue = "100") int res_total_career,	
-			@RequestParam(value = "res_income", required = false, defaultValue = "100") int res_income	
+			@RequestParam(value = "res_income", required = false, defaultValue = "100") int res_income,	
+			@RequestParam(value = "res_workarea", required = false, defaultValue = "999") int res_workarea,
+			@RequestParam(value = "res_rep_too", required = false, defaultValue = "999") String res_rep_too	
 							) {
 		
 		IO_ResumeDTO dto = new IO_ResumeDTO();
 		dto.setRes_total_career(res_total_career);
 		dto.setRes_income(res_income);
+		dto.setRes_workarea(res_workarea);
+		dto.setRes_rep_too(res_rep_too);
 		
 		List<IO_ResumeDTO> redto = dao.selectSearchMember(dto);
 		
