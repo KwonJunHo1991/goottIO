@@ -54,7 +54,23 @@ display: inline-block;
 
 </head>
 <body>
+ <c:choose>      
+        <c:when test="${sessionScope.loginComp !=null}">
+
+<input type="image" style="width: 230px; height: 200px; right: 10px;" src="<c:url value="/resources/img/chat4.png"/>" alt="로그인하기" id="donaBtn2" onclick="location.href='../company/pay.do'"/>
+<input type="image" src="<c:url value="/resources/img/bell1.png"/>" alt="로그인하기" id="donaBtn" onclick="location.href='../company/pay.do'"/>
+  	</c:when>
+                              	<c:when test="${sessionScope.mem_id !=null }">
+<input type="image" style="width: 230px; height: 200px; right: 10px;"src="<c:url value="/resources/img/chat5.png"/>" alt="로그인하기" id="donaBtn2" onclick="location.href='../board/boardSearch.do'"/>
+<input type="image" src="<c:url value="/resources/img/bell1.png"/>" alt="로그인하기" id="donaBtn" onclick="location.href='../board/boardSearch.do'"/>
+                              	</c:when>
+                              	
+                              	<c:otherwise>
 <input type="image" src="<c:url value="/resources/img/chat1.png"/>" alt="로그인하기" id="donaBtn2" onclick="location.href='../member/login.do'"/>
 <input type="image" src="<c:url value="/resources/img/bell1.png"/>" alt="로그인하기" id="donaBtn" onclick="location.href='../member/login.do'"/>
+                              	</c:otherwise>
+                              	
+                              </c:choose>
+
 </body>
 </html>
