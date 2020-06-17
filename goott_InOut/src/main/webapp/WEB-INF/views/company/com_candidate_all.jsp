@@ -89,6 +89,9 @@
 												$("#btn_1").parents('li')
 														.show();
 												$("#span_1").text(value1);
+												$("#res_total_carrer").val(value1);
+												
+												
 											}
 
 										});
@@ -112,6 +115,7 @@
 												$("#btn_2").parents('li')
 														.show();
 												$("#span_2").text(value2);
+												$("#res_income").val(value2);
 											}
 
 										});
@@ -255,7 +259,6 @@ background-image: url("<c:url value="resources/images/person_6.jpg"/>");
 	<div id="contents_list">
 	    <jsp:include page="../etc/cl_sideNavi.jsp"></jsp:include>
 		<div class="wrap_talent_search">
-
 			<div id="search_panel" class="">
 				<ul class="tab_category">
 					<li class="basic_search select"><button type="button"
@@ -273,33 +276,29 @@ background-image: url("<c:url value="resources/images/person_6.jpg"/>");
 								<div class="title_detail_box">
 									<strong>경력</strong>
 								</div>
+
 								<div class="box_detail_panel">
-									<strong class="title_basic_sub">경력</strong> <span
-										class="inpChk"><input type="checkbox" id="career01"
-										name="career01" title="경력" value="2"><label
-										class="lbl" for="career01">경력</label></span> <span class="inpChk"><input
-										type="checkbox" id="newbie01" name="newbie01" title="신입"
-										value="1"><label class="lbl" for="newbie01">신입</label></span>
+									<strong class="title_basic_sub">경력</strong> 
 									<ul class="wrap_list_value column_two">
 										<li><label class="frm_chkbox02" for="career-years01"><input
 												type="checkbox" id="career-years01" name="RES_CAREER_DATE"
-												title="1년 미만" value=",1"><span>1년 <em
+												title="1년 미만" value="0"><span>신입 <em
 													class="ico_under">이하</em></span></label></li>
 										<li><label class="frm_chkbox02" for="career-years02"><input
 												type="checkbox" id="career-years02" name="RES_CAREER_DATE"
-												title="1~3년" value="1,3"><span>1~3년</span></label></li>
+												title="1~3년" value="1"><span>1년</span></label></li>
 										<li><label class="frm_chkbox02" for="career-years03"><input
 												type="checkbox" id="career-years03" name="RES_CAREER_DATE"
-												title="3~5년" value="3,5"><span>3~5년</span></label></li>
+												title="3~5년" value="2"><span>2년</span></label></li>
 										<li><label class="frm_chkbox02" for="career-years04"><input
 												type="checkbox" id="career-years04" name="RES_CAREER_DATE"
-												title="5~10년" value="5,10"><span>5~10년</span></label></li>
+												title="5~10년" value="3"><span>3년</span></label></li>
 										<li><label class="frm_chkbox02" for="career-years05"><input
 												type="checkbox" id="career-years05" name="RES_CAREER_DATE"
-												title="10~15년" value="10,15"><span>10~15년</span></label></li>
+												title="10~15년" value="4"><span>4년</span></label></li>
 										<li><label class="frm_chkbox02" for="career-years06"><input
 												type="checkbox" id="career-years06" name="RES_CAREER_DATE"
-												title="15년 이상" value="16,"><span>15년 <em
+												title="15년 이상" value="5"><span>5년 <em
 													class="ico_over">이상</em></span></label></li>
 									</ul>
 
@@ -317,30 +316,30 @@ background-image: url("<c:url value="resources/images/person_6.jpg"/>");
 
 										<li><label class="frm_chkbox01" for="age-interval01"><input
 												type="checkbox" id="age-interval01" name="RES_INCOME"
-												title="" value="0"><span>회사 내규에 따름</span></label></li>
+												title="" value="1"><span>회사 내규에 따름</span></label></li>
 										<li><label class="frm_chkbox01" for="age-interval02"><input
 												type="checkbox" id="age-interval02" name="RES_INCOME"
-												title="21~30" value="1"><span>2,000~3,000만원<em
+												title="21~30" value="2"><span>2,000~3,000만원<em
 													class="ico_under">이하</em></span></label></li>
 										<li><label class="frm_chkbox01" for="age-interval03"><input
 												type="checkbox" id="age-interval03" name="RES_INCOME"
-												title="31~35" value="2"><span>3,000~4,000만원</span></label></li>
+												title="31~35" value="3"><span>3,000~4,000만원</span></label></li>
 										<li><label class="frm_chkbox01" for="age-interval04"><input
 												type="checkbox" id="age-interval04" name="RES_INCOME"
-												title="36~40" value="3"><span>4,000~5,000만원</span></label></li>
+												title="36~40" value="4"><span>4,000~5,000만원</span></label></li>
 										<li><label class="frm_chkbox01" for="age-interval05"><input
 												type="checkbox" id="age-interval05" name="RES_INCOME"
-												title="41~50" value="4"><span>5,000~6,000만원</span></label></li>
+												title="41~50" value="5"><span>5,000~6,000만원</span></label></li>
 										<li><label class="frm_chkbox01" for="age-interval06"><input
 												type="checkbox" id="age-interval06" name="RES_INCOME"
-												title="51" value="5"><span>6,000만원 <em
+												title="51" value="6"><span>6,000만원 <em
 													class="ico_over">이상</em></span></label></li>
 									</ul>
 
 
 								</div>
 							</div>
-							<div class="wrap_detail_panel edu_last"
+					 		<div class="wrap_detail_panel edu_last"
 								id="basic-search-edu-part">
 								<div class="title_detail_box">
 									<strong>최종학력</strong>
@@ -444,6 +443,7 @@ background-image: url("<c:url value="resources/images/person_6.jpg"/>");
 						<li class="hiden_li"><span id="span_1" class="chose_span">경력</span>
 						<button id="btn_1" class="btn_del" data-id="career_cd"
 								data-component="Career">삭제</button></li>
+							
 						<li class="hiden_li"><span id="span_2" class="chose_span">희망연봉</span>
 						<button id="btn_2" class="btn_del" data-id="careerminmax"
 								data-component="Career">삭제</button></li>
@@ -461,11 +461,14 @@ background-image: url("<c:url value="resources/images/person_6.jpg"/>");
 
 					</ul>
 					<div class="btns_area">
-
+					<form action="#" method="get">
+						<input type="hidden" id="res_total_carrer" name="res_total_carrer" value="" />
+						<input type="hidden" id="res_income" name="res_income" value="" />
+					
 						<button type="button" class="btn_reset_cancel">초기화</button>
-						<button type="button" class="btn_save"
+						<button type="submit" class="btn_save"
 							style="display: inline-block;">검색</button>
-
+					</form>
 					</div>
 				</div>
 			</div>
@@ -473,24 +476,26 @@ background-image: url("<c:url value="resources/images/person_6.jpg"/>");
 		<!-- 캔디데이트 -->
 		<div class="person_list">
 			<div class="row">
+			
+			
+			<c:forEach var="list" items="${list }">
 				<div class="col-md-12">
 					<div class="team d-md-flex p-4 bg-white">
 						<div class="img_person" id="img_person_1"
 						></div>
 						<div class="text pl-md-4">
-							<span class="location mb-0">Western City, UK</span>
-							<h2>Danica Lewis</h2>
-							<span class="position">Graduate</span>
-							<p class="mb-2">Far far away, behind the word mountains, far
-								from the countries Vokalia and Consonantia, there live the blind
-								texts.</p>
-							<span class="seen">Last Activity 4 months ago</span>
+							<span class="location mb-0">${list.mem_id }</span>
+							<h2>${list.res_num }</h2>
+							<span class="position">${list.res_too }</span>
+							<p class="mb-2">${list.res_title }</p>
+							<span class="seen">${list.res_total_career }</span>
 							<p>
 								<a href="#" class="btn btn-primary">Shortlist</a>
 							</p>
 						</div>
 					</div>
 				</div>
+			</c:forEach>	
 <!-- 				<div class="col-md-12">
 					<div class="team d-md-flex p-4 bg-white">
 						<div class="img_person" id="img_person_2"

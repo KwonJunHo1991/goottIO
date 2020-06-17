@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -659,12 +660,19 @@ $(document).ready(function () {
 								</dl>
 								<dl>
 									<dt>학력</dt>
-									<dd>${notice.notice_req_edu }</dd>
+									<dd>
+										<c:choose>
+											<c:when test="${notice.notice_req_edu eq 0}">학력무관</c:when>
+											<c:when test="${notice.notice_req_edu eq 6}">고등학교졸업이상</c:when>
+											<c:when test="${notice.notice_req_edu eq 7}">대학졸업(2,3년)이상</c:when>
+											<c:when test="${notice.notice_req_edu eq 8}">대학교졸업(4년)이상</c:when>
+											<c:when test="${notice.notice_req_edu eq 9}">석사졸업이상</c:when>
+											<c:when test="${notice.notice_req_edu eq 5}">박사졸업</c:when>
+										</c:choose>
+									
+									</dd>
 								</dl>
-								<dl>
-									<dt>근무형태</dt>
-									<dd>${notice.notice_req_worktype }</dd>
-								</dl>
+
 								<dl>
 									<dt>근무 시간</dt>
 									<dd>${notice.notice_req_worktime }</dd>
@@ -674,7 +682,20 @@ $(document).ready(function () {
 							<div class="col" id="col2">
 								<dl>
 									<dt>연봉/급여</dt>
-									<dd>${notice.notice_req_sal }</dd>
+									<dd>
+									      <c:choose>
+                                             
+					                        <c:when test="${notice.notice_req_sal eq 0}">회사 내규에 따름</c:when>
+					       					<c:when test="${notice.notice_req_sal eq 1}">2,000~3000만원</c:when>
+					       					<c:when test="${notice.notice_req_sal eq 2}"> 3000~4000만원</c:when>
+					       					<c:when test="${notice.notice_req_sal eq 3}">4000~5000만원</c:when>
+					       					<c:when test="${notice.notice_req_sal eq 4}">5,000~6,000만원</c:when>
+					       					<c:when test="${notice.notice_req_sal eq 5}"> 6000만원 이상</c:when>
+					       					<c:when test="${notice.notice_req_sal eq 99}">면접후 결정</c:when>
+					       						
+					                       </c:choose>
+									
+									</dd>
 								</dl>
 								<dl>
 									<dt>대표 직무</dt>
@@ -750,12 +771,17 @@ $(document).ready(function () {
 								</dl>
 								<dl>
 									<dt>성별</dt>
-									<dd>${notice.notice_req_gender }</dd>
+									<dd>
+										<c:choose>
+											<c:when test="${notice.notice_req_gender eq 0}">성별무관</c:when>
+											<c:when test="${notice.notice_req_gender eq 1}">남자</c:when>
+											<c:when test="${notice.notice_req_gender eq 2}">여자</c:when>
+										</c:choose>
+									
+									
+									</dd>
 								</dl>
-								<dl>
-									<dt>근무지역</dt>
-									<dd>${notice.notice_comp_adrs1_detail }</dd>
-								</dl>
+	
 							</div>
 							
 							<ul class="meta"></ul>
@@ -792,8 +818,8 @@ $(document).ready(function () {
 												<div class="col-md-12 mb-3 mb-md-0">
 													<label for="fullname" class="font-weight-bold">담당자 이름</label>
 													<!-- 담당자 이름 받아오기 -->
-													<span class="mng_name">${notice.notice_man }</span>
-													<span class="mng_name" id="mng_part">(담당자 부서명)</span>
+													<span class="mng_name">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${notice.notice_man }</span>
+													
 												</div>
 											</div>
 											
@@ -802,7 +828,7 @@ $(document).ready(function () {
 												<div class="col-md-12 mb-3 mb-md-0">
 													<label class="font-weight-bold" for="fullname">담당자 전화번호</label>
 													<span class="mng_phone">
-														<span class="tel" id="tell1">${notice.notice_man_tel }</span>
+														<span class="tel" id="tell1">&nbsp;&nbsp;&nbsp;${notice.notice_man_tel }</span>
 													</span> <span class="mng_phone"> 
 														<span class="tel" id="tell2"></span>
 													</span>
@@ -820,7 +846,7 @@ $(document).ready(function () {
 														<span class="cell" id="cell1"></span>
 													</span>
 													<span class="mng_phone"> 
-														<span class="cell" id="cell2">${notice.notice_man_mp }</span>
+														<span class="cell" id="cell2">&nbsp;${notice.notice_man_mp }</span>
 													</span>
 													<span class="mng_phone">  
 														<span class="cell" id="cell3"></span>
@@ -832,7 +858,7 @@ $(document).ready(function () {
 											<div class="row form-group">
 												<div class="col-md-12 mb-3 mb-md-0">
 													<label class="font-weight-bold" for="fullname">담당자 이메일</label>
-													<span class="email">${notice.notice_man_email }</span>
+													<span class="email">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${notice.notice_man_email }</span>
 												</div>
 											</div>
 
@@ -896,7 +922,11 @@ $(document).ready(function () {
 												<dl class="info_period">
 													
 													<dt class="end" style="margin-left: 250px; margin-top: 0;">마감일</dt>
-													<dd style="margin-top: 0; margin-right: 230px;">${notice.notice_prcs_end }</dd>
+													<dd style="margin-top: 0; margin-right: 230px;">
+													
+													<%-- ${notice.notice_prcs_end } --%>
+													<fmt:formatDate value="${notice.notice_prcs_end }" pattern="YYYY-MM-dd"/>
+													</dd>
 													
 												</dl>
 											</div>

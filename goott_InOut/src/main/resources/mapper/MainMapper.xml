@@ -85,12 +85,12 @@
 
 <!-- 인재검색 해보자 -->
 
-<select id="selectSearchMember" resultType="ResumeDTO">
+<select id="selectSearchMember" resultType="ResumeDTO" parameterType="ResumeDTO">
 	
 		select * from io_resume
 		<trim prefix="where" prefixOverrides="AND">
-			<if test=""> res_total_carrer </if>
-			<if test="">and board_type = #{board_type}</if>
+			<if test="res_total_career != 100"> res_total_career =#{res_total_career}</if>
+			<if test="res_income != 100">and res_income =#{res_income}</if>
 		</trim>
 	
 </select>

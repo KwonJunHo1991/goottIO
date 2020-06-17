@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %> 
+       <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,7 +46,7 @@ $(function(){
     <!-- END nav -->
 
 
-	<div id="sri_section" style="margin-top: 100px; margin-left: 300px;">
+	<div id="sri_section" style="margin-top: 100px; margin-left: 350px;">
 
  <jsp:include page="../comp/com_sideNavi.jsp"></jsp:include>
 		<div id="content" class="basic_wide vix_main fixed">
@@ -89,10 +90,14 @@ $(function(){
 										<strong style="font-size: 30px;"> <a href="../company/noticeDetailMain.do?notice_num=${notice.notice_num }" class="title_real"> ${notice.notice_title }</a></strong>
 										<div class="date">
 											<dl>
-												<dt class="blind">접수기간</dt>
-												<dd>${notice.notice_prcs_start } ~ ${notice.notice_prcs_end }</dd>
 												<dt class="blind">등록&amp;수정일</dt>
-												<dd>06.09 수정</dd>
+												<dd>모집 기간</dd>
+												<dt class="blind">접수기간</dt>
+												<dd> 
+													<fmt:formatDate value="${notice.notice_prcs_start }" pattern="YYYY-MM-dd"/>~ 
+													<fmt:formatDate value="${notice.notice_prcs_end }" pattern="YYYY-MM-dd"/>
+												</dd>
+
 												<dt class="blind">모집분야</dt>
 												<dd>취업지원</dd>
 											</dl>

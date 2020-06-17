@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,10 +69,16 @@ $(function(){
 
 </head>
 <body>
+	<div>
+   <jsp:include page="../main/mainPage/mp_naviBar.jsp"></jsp:include>
+   </div> 
+   
+   <jsp:include page="../main/mainPage/loginPop.jsp"></jsp:include>
 
    
    <section class="ftco-section bg-light">
    <div style="width: 900px;  background-color: white; margin-left: 260px;">
+   <jsp:include page="../member/mem_sideNavi.jsp"></jsp:include>
       <ul>
          <strong style="font-size: 25px; color: black;">공고지원 현황</strong>
 
@@ -99,7 +106,7 @@ $(function(){
                       </div>
                       <div class="job-post-item-body d-block d-md-flex">
                       
-                        <div> <span>${i.apply_date }</span>
+                        <div> <span><fmt:formatDate value="${i.apply_date}" pattern="YYYY-MM-dd"/></span>
              
                         </div>
                       
@@ -107,7 +114,7 @@ $(function(){
                     
                         <div>
                      	
-                         <span class="icon-my_location"><span><a href="./selectresumebynum.do?res_num=${i.res_num }"><span>이력서 제목 : ${i.res_title }</span></span></span></a>
+                         <span class="icon-my_location"><span><a href="./selectresumebynum.do?res_num=${i.res_num }"><span>${i.res_title }</span></span></span></a>
                          </div>
               
                     </div>

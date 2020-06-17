@@ -100,9 +100,34 @@ public class IO_MainController {
 	
 	//인재검색
 	@RequestMapping(value = "/main/findPerson.do")
-	public String findPerson() {
+	public String findPerson(Model model,
+			@RequestParam(value = "res_total_carrer", required = false, defaultValue = "100") int res_total_career,	
+			@RequestParam(value = "res_income", required = false, defaultValue = "100") int res_income	
+							) {
+		
+		IO_ResumeDTO dto = new IO_ResumeDTO();
+		dto.setRes_total_career(res_total_career);
+		dto.setRes_income(res_income);
+		
+		List<IO_ResumeDTO> redto = dao.selectSearchMember(dto);
+		
+		model.addAttribute("list", redto);
+		
+		
+		
+		
+		
+		
 		return "/company/com_candidate_all";
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	//채용공고 detail
 	@RequestMapping(value = "/company/noticeDetailMain.do")
@@ -141,23 +166,7 @@ public class IO_MainController {
 			IO_NoticeDTO dto = 	dao.selectNoticeDetailByNoticeNum(notice_num);
 			model.addAttribute("dto", dto);
 		
-		
-		
-
-
-		
-		
-		
-		//		new IO_ApplyDTO(null,
-//				res_num,
-//				session.getAttribute("mem_id"),
-//				notice_num,
-//				noticeDto.getComp_num(),
-//				null,
-//				session.getAttribute("mem_birth"),
-//				session.getAttribute("mem_sex"),
-//				2000);
-		
+	
 		return "/company/post_detail_join";
 	}
 	//입사 지원.

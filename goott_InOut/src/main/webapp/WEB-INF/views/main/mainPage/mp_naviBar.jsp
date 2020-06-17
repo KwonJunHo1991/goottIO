@@ -217,7 +217,7 @@ z-index: 5;
                                     
                                 </ul>
                             </div>
-                            <c:if test="${sessionScope.applyStatus ne null || sessionScope.applyStatus == 0}">
+                            <c:if test="${sessionScope.applyStatus ne null || sessionScope.applyStatus ne 0}">
                             	<a href="../company/noticeList.do" class="btn_1 d-none d-lg-block">지원 대기 : ${sessionScope.applyStatus }</a>
                             </c:if> 
                         </nav>
